@@ -117,3 +117,192 @@ Implement and evolve the **hardware-agnostic** application logic.
   ```
 - Button inputs should be modeled as enums or small value types, never as raw keys or pin numbers.
 - Core app must not import any platforms.* modules.
+
+**When to use this agent:**
+
+* “Implement the state machine for play/pause/next/previous.”
+* “Add support for a Settings screen that can toggle shuffle on/off.”
+* “Add tests for wrapping behavior when pressing DOWN on the last track.”
+
+---
+
+### 3. PC Simulator Agent
+
+**Purpose:**
+Provide a usable, fast feedback loop on a **normal computer** without hardware.
+
+**Responsibilities:**
+
+* Implement `ConsoleScreen` (or simple GUI later) that conforms to `Screen`.
+
+  * Start with a simple “clear + print text” approach.
+* Map keyboard input → `ButtonEvent`s:
+
+  * For example: `w/s/a/d` = up/down/left/right, space = select, `p` = play/pause, `q` = back.
+* Implement `pc_audio_backend.py`:
+
+  * **Phase 1:** print debug logs (“Playing: Song One”).
+  * **Phase 2 (optional):** actually play MP3s via a PC audio library.
+* Implement `platforms/pc/main_pc.py` that:
+
+  * Creates test tracks
+  * Instantiates `PlayerApp`
+  * Loops on user key input
+
+**When to use this agent:**
+
+* “Create a simple console-based UI to exercise the core logic.”
+* “Add a nicer text layout for the Library and Now Playing views.”
+* “Add a command-line argument to load tracks from a directory on disk.”
+
+---
+
+### 4. ESP32 & Hardware Integration Agent
+
+**Purpose:**
+Adapt the core logic to run on real **ESP32 hardware with MicroPython**.
+
+**Responsibilities:**
+
+* Choose and document the specific ESP32 dev board being targeted.
+* Implement MicroPython versions of the interfaces:
+
+  * `EspScreen` using specific display drivers (e.g. ST7735, ST7789, SSD1306, etc.)
+  * `EspButtons` reading GPIO pins and debouncing into `ButtonEvent`s
+  * `EspAudioBackend` that:
+
+    * **Phase 1:** stub (log actions, maybe blink an LED)
+    * **Phase 2:** real audio via I2S or Bluetooth A2DP, depending on feasibility
+* Implement `platforms/esp32/main_esp32.py` that:
+
+  * Initializes hardware
+  * Instantiates `PlayerApp`
+  * Runs a main loop reading button events and calling `handle_button`
+
+**Constraints / Notes:**
+
+* Keep MicroPython memory and speed limits in mind.
+* Avoid heavy Python stdlib features that aren’t supported in MicroPython.
+* Where MicroPython lacks a feature, provide a thin compatibility shim that preserves the `core/` API.
+
+**When to use this agent:**
+
+* “Write a MicroPython driver wrapper that implements Screen for an ST7789 display.”
+* “Map 6 GPIO pins to UP/DOWN/LEFT/RIGHT/SELECT/BACK with debouncing.”
+* “Create a minimal main loop for ESP32 that calls into `PlayerApp`.”
+
+---
+
+### 5. Testing & Quality Agent
+
+**Purpose:**
+Ensure the behavior of the core app logic is well-specified and stable as the project evolves.
+
+**Responsibilities:**
+
+* Design and maintain **pytest** test suites for `core/` modules.
+* Define test scenarios for:
+
+  * Library navigation
+  * Play/pause behavior
+  * Switching between screens
+  * Edge conditions (start/end list, no tracks, etc.)
+* Keep tests fast and independent of hardware:
+
+  * Use dummy `Screen` and `AudioBackend` implementations.
+* Ensure that any change to core logic comes with appropriate test coverage.
+
+**Conventions:**
+
+* Use small dummy classes like:
+
+  ```python
+  class DummyScreen(Screen):
+      def __init__(self):
+          self.calls = []
+
+      def clear(self):
+          self.calls.append("clear")
+
+      def draw_text(self, x, y, text):
+          self.calls.append(("draw_text", x, y, text))
+
+      def refresh(self):
+          self.calls.append("refresh")
+  ```
+* Favor behavior-driven test names, e.g.:
+
+  * `test_down_moves_selection`
+  * `test_play_sets_playing_index`
+  * `test_back_from_now_playing_returns_to_library`
+
+**When to use this agent:**
+
+* “Write tests that define how the Now Playing screen should behave.”
+* “Add regression test for the bug where selection wraps incorrectly.”
+* “Refactor tests to reduce duplication and make intent clearer.”
+
+---
+
+### 6. Enclosure & Hardware-Mechanical Agent (Optional / Later)
+
+**Purpose:**
+Translate the working dev board + wiring into a physically usable, 3D-printed MP3 player.
+
+**Responsibilities:**
+
+* Document physical dimensions and port locations of the chosen ESP32 board, display, buttons, and battery.
+* Design an enclosure that:
+
+  * Accommodates the final hardware stack
+  * Supports tactile buttons in comfortable positions
+  * Has adequate ventilation if needed
+* Manage iterations of the case as STL or CAD files in `enclosure/`.
+
+**When to use this agent:**
+
+* “Propose a basic front layout resembling an iPod with a ring of buttons.”
+* “Adjust case dimensions after we finalize the button placement.”
+* “Create a printable test piece to validate button spacing.”
+
+---
+
+## How to Work With These Agents
+
+When asking Codex/agents to help, it’s useful to:
+
+* **Pick a primary agent** based on the task domain and mention it explicitly:
+
+  * “As the **Core App Logic Agent**, refactor `PlayerApp` to support playlists.”
+* If overlap is needed, call that out:
+
+  * “As the **Product & Architecture Agent**, propose an interface change; then as the **Core App Logic Agent**, implement it and add tests.”
+* Keep tasks **small and concrete**, especially when touching hardware-specific modules:
+
+  * e.g. “Implement a dummy `AudioBackend` for PC that just prints to stdout.”
+
+---
+
+## Initial Milestones (For All Agents)
+
+1. **Milestone 1 – Core + PC Simulator**
+
+   * [ ] `core/` models (`Track`, `PlayerState`, `ButtonEvent`)
+   * [ ] `PlayerApp` handling navigation + play/pause
+   * [ ] Basic PC console UI with keyboard mapping
+   * [ ] Pytest coverage for core logic
+
+2. **Milestone 2 – ESP32 Prototype**
+
+   * [ ] MicroPython port of `core/` (as-is or with minor tweaks)
+   * [ ] ESP32 display driver implementing `Screen`
+   * [ ] Button GPIO → `ButtonEvent` mapping
+   * [ ] Stub `EspAudioBackend`
+
+3. **Milestone 3 – Audio + Usability**
+
+   * [ ] Real audio playback strategy on ESP32 (I2S or Bluetooth)
+   * [ ] Improved UI (track metadata, simple progress indicator)
+   * [ ] First iteration of enclosure concept
+
+Each agent should align their work with the relevant milestone and ensure changes do not break the **PC simulator** or the **core tests**.
