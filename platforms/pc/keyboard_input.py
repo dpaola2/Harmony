@@ -21,22 +21,22 @@ KEYMAP = {
 QUIT_KEYS = {"x", "X"}
 
 
-def read_key() -> str:
+def read_key() -> Optional[str]:
     """Read a line from stdin without stripping spaces."""
     line = sys.stdin.readline()
     if line == "":
-        return ""  # EOF
+        return None  # EOF
     return line.rstrip("\n")
 
 
 def read_event() -> tuple[Optional[ButtonEvent], bool]:
     """Return (ButtonEvent or None, quit_flag). Blocking read."""
     key = read_key()
-    # EOF signals quit; Enter (empty string before newline strip) should map via KEYMAP.
-    if key == "":
-        return None, True if sys.stdin.closed else False
+    if key is None:
+        return None, True  # EOF
 
-    event = KEYMAP.get(key)
     if key in QUIT_KEYS:
         return None, True
+
+    event = KEYMAP.get(key)
     return event, False

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Optional
+from typing import List, Optional
 
 from .interfaces import AudioBackend, Screen
 from .models import ButtonEvent, PlayerState, ScreenID, Track
@@ -13,10 +13,17 @@ class PlayerApp:
         self.state = state
         self.screen = screen
         self.audio_backend = audio_backend
+        self._root_items: List[ScreenID] = [
+            ScreenID.LIBRARY,
+            ScreenID.NOW_PLAYING,
+            ScreenID.SETTINGS,
+        ]
 
     def handle_button(self, event: ButtonEvent) -> None:
         """Dispatch button input based on the current screen, then render."""
-        if self.state.current_screen == ScreenID.LIBRARY:
+        if self.state.current_screen == ScreenID.ROOT:
+            self._handle_root_input(event)
+        elif self.state.current_screen == ScreenID.LIBRARY:
             self._handle_library_input(event)
         elif self.state.current_screen == ScreenID.NOW_PLAYING:
             self._handle_now_playing_input(event)
@@ -28,7 +35,9 @@ class PlayerApp:
     def render(self) -> None:
         """Render the current screen."""
         self.screen.clear()
-        if self.state.current_screen == ScreenID.LIBRARY:
+        if self.state.current_screen == ScreenID.ROOT:
+            self._render_root()
+        elif self.state.current_screen == ScreenID.LIBRARY:
             self._render_library()
         elif self.state.current_screen == ScreenID.NOW_PLAYING:
             self._render_now_playing()
@@ -38,31 +47,47 @@ class PlayerApp:
 
     # Input handling
 
+    def _handle_root_input(self, event: ButtonEvent) -> None:
+        if event == ButtonEvent.UP:
+            self._move_root_selection(-1)
+        elif event == ButtonEvent.DOWN:
+            self._move_root_selection(1)
+        elif event in (ButtonEvent.RIGHT, ButtonEvent.SELECT):
+            self._enter_root_item()
+        # LEFT/BACK: no-op at root
+
     def _handle_library_input(self, event: ButtonEvent) -> None:
         if event == ButtonEvent.UP:
             self._move_selection(-1)
         elif event == ButtonEvent.DOWN:
             self._move_selection(1)
         elif event in (ButtonEvent.SELECT, ButtonEvent.RIGHT):
-            self._enter_now_playing()
+            self._play_from_library_and_jump()
         elif event == ButtonEvent.PLAY_PAUSE:
-            self._toggle_play_pause(selected_only=True)
-        elif event == ButtonEvent.BACK:
-            self.state.current_screen = ScreenID.SETTINGS
+            self._toggle_play_pause_on_index(self.state.selected_index)
+        elif event in (ButtonEvent.LEFT, ButtonEvent.BACK):
+            self._go_to_root(ScreenID.LIBRARY)
 
     def _handle_now_playing_input(self, event: ButtonEvent) -> None:
         if event in (ButtonEvent.LEFT, ButtonEvent.BACK):
-            self.state.current_screen = ScreenID.LIBRARY
+            self._go_to_root(ScreenID.NOW_PLAYING)
         elif event == ButtonEvent.PLAY_PAUSE:
-            self._toggle_play_pause(selected_only=False)
-        # LEFT/RIGHT for prev/next could be added later; keep minimal for now.
+            self._toggle_play_pause_on_index(self.state.playing_index)
+        # Other keys: no-op for now.
 
     def _handle_settings_input(self, event: ButtonEvent) -> None:
-        if event == ButtonEvent.BACK:
-            self.state.current_screen = ScreenID.LIBRARY
-        # Settings screen interactions are intentionally stubbed for now.
+        if event in (ButtonEvent.LEFT, ButtonEvent.BACK):
+            self._go_to_root(ScreenID.SETTINGS)
+        # Other keys: no-op for now.
 
     # Rendering helpers
+
+    def _render_root(self) -> None:
+        self.screen.draw_text(0, 0, "Menu")
+        for idx, item in enumerate(self._root_items):
+            prefix = ">" if idx == self.state.root_index else " "
+            label = self._root_label(item)
+            self.screen.draw_text(0, idx + 1, f"{prefix} {label}")
 
     def _render_library(self) -> None:
         self.screen.draw_text(0, 0, "Library")
@@ -77,7 +102,7 @@ class PlayerApp:
 
     def _render_now_playing(self) -> None:
         self.screen.draw_text(0, 0, "Now Playing")
-        track = self._current_track() or self._track_at(self.state.selected_index)
+        track = self._current_track()
         if not track:
             self.screen.draw_text(0, 1, "(nothing playing)")
             return
@@ -92,16 +117,9 @@ class PlayerApp:
 
     # Playback helpers
 
-    def _toggle_play_pause(self, *, selected_only: bool) -> None:
+    def _toggle_play_pause_on_index(self, target_index: Optional[int]) -> None:
         if not self.state.tracks:
             return
-
-        # Decide which track to act on.
-        target_index: Optional[int]
-        if self.state.playing_index is None or selected_only:
-            target_index = self.state.selected_index
-        else:
-            target_index = self.state.playing_index
 
         track = self._track_at(target_index)
         if track is None:
@@ -112,21 +130,36 @@ class PlayerApp:
             self.state.is_playing = False
             return
 
-        if self.state.playing_index != target_index or self.state.playing_index is None:
-            # Switch to a new track or start fresh.
+        if self.state.playing_index != target_index and self.state.playing_index is not None:
             self.audio_backend.stop()
-            self.state.playing_index = target_index
-            self.audio_backend.play(track)
-        else:
-            # Same track, currently paused.
+
+        if self.state.playing_index == target_index and not self.state.is_playing:
             self.audio_backend.resume()
+        else:
+            # Start or switch track.
+            self.audio_backend.play(track)
+            self.state.playing_index = target_index
 
         self.state.is_playing = True
 
-    def _enter_now_playing(self) -> None:
+    def _play_from_library_and_jump(self) -> None:
+        # Always start playback from the selected track, stopping current if needed.
+        track = self._track_at(self.state.selected_index)
+        if track is None:
+            return
+        if self.state.playing_index is not None:
+            self.audio_backend.stop()
+        self.state.playing_index = self.state.selected_index
+        self.audio_backend.play(track)
+        self.state.is_playing = True
         self.state.current_screen = ScreenID.NOW_PLAYING
 
     # Selection helpers
+
+    def _move_root_selection(self, delta: int) -> None:
+        new_index = self.state.root_index + delta
+        new_index = max(0, min(new_index, len(self._root_items) - 1))
+        self.state.root_index = new_index
 
     def _move_selection(self, delta: int) -> None:
         if not self.state.tracks:
@@ -138,6 +171,29 @@ class PlayerApp:
         self.state.selected_index = new_index
 
     # State accessors
+
+    def _enter_root_item(self) -> None:
+        target = self._root_items[self.state.root_index]
+        self.state.current_screen = target
+
+    def _go_to_root(self, highlight: ScreenID) -> None:
+        self.state.current_screen = ScreenID.ROOT
+        self.state.root_index = self._root_index_for(highlight)
+
+    def _root_index_for(self, item: ScreenID) -> int:
+        try:
+            return self._root_items.index(item)
+        except ValueError:
+            return 0
+
+    def _root_label(self, item: ScreenID) -> str:
+        if item == ScreenID.LIBRARY:
+            return "Library"
+        if item == ScreenID.NOW_PLAYING:
+            return "Now Playing"
+        if item == ScreenID.SETTINGS:
+            return "Settings"
+        return item.value
 
     def _track_at(self, index: Optional[int]) -> Optional[Track]:
         if index is None:

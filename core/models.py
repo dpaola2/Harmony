@@ -20,6 +20,7 @@ class ButtonEvent(Enum):
 class ScreenID(Enum):
     """High-level screens used by the state machine."""
 
+    ROOT = "root"
     LIBRARY = "library"
     NOW_PLAYING = "now_playing"
     SETTINGS = "settings"
@@ -44,4 +45,5 @@ class PlayerState:
     selected_index: int = 0
     playing_index: Optional[int] = None
     is_playing: bool = False
-    current_screen: ScreenID = ScreenID.LIBRARY
+    current_screen: ScreenID = ScreenID.ROOT
+    root_index: int = 0  # which root menu item is highlighted
