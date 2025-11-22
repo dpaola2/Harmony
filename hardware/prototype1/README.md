@@ -8,6 +8,37 @@
 - Wiring: 3V3/GND from dev kit; SPI for SD and ST7789V2; GPIOs for buttons. Document pin mappings once chosen.
 - Notes: S3 WROOM lacks classic BT; expect UI/navigation only. Plan to port to WROVER in Prototype 2 for audio.***
 
+## Wiring Plan (ESP32-S3-DevKitC-1 v1.1)
+
+- Power: use 3V3 and GND from the dev kit to SD and display. Common ground everywhere.
+- SPI shared for SD + ST7789V2:
+  - SCK: GPIO12
+  - MOSI: GPIO11
+  - MISO: GPIO13 (used only by SD)
+  - SD CS: GPIO10
+  - Display CS: GPIO9
+  - Display DC: GPIO8
+  - Display RST: GPIO18
+  - Display BL: GPIO17 (tie high for always-on backlight if you prefer)
+- Buttons (active-low to GND, enable internal pull-ups in code):
+  - Up: GPIO2
+  - Down: GPIO3
+  - Left: GPIO4
+  - Right: GPIO5
+  - Select: GPIO6
+  - Back: GPIO7
+  - Play/Pause: GPIO14
+  - Volume Up: GPIO15
+  - Volume Down: GPIO16
+
+## MicroPython Bring-Up Notes
+
+- SD: mount FAT32 with folder convention `Artist/Album/Track.ext` at root. Use SPI(2) (or explicit pins) with the mapping above.
+- Display: drive ST7789V2 over SPI using the same SCK/MOSI; set CS/DC/RST/BL per wiring above.
+- Input: poll buttons with internal pull-ups; translate to `ButtonEvent` values for `PlayerApp`.
+- Audio: none on this phase; use a stub `AudioBackend` (no-op play/pause/resume/stop, track loader from SD).
+- Main script flow: mount SD → build track list → init display/buttons/audio stub → run event loop feeding `PlayerApp.handle_button()` and calling `render()`.
+
 # ESP32-S3-DevKitC-1 v1.1 Docs
 
 https://www.digikey.com/en/products/detail/dfrobot/DFR0895/18069302
