@@ -6,10 +6,11 @@
 - [x] [CS4] Add pytest coverage in `tests/` for selection movement, play/pause toggles, screen transitions, and end-of-list edge cases.
 - [x] [CS5] Build PC simulator under `platforms/pc/` (console screen renderer, keyboard input mapper, stub/print-only audio backend, `main_pc.py` wiring).
 - [x] [CS5.1] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
-- [ ] [CS5.6] Add volume to `PlayerState` with clamped adjustments, integrate volume controls in core, map PC emulator keys, and cover with tests.
-- [ ] [CS6] Document hardware notes in `hardware/` (ESP32-WROVER choice, ST7789 display, rotary encoder plus aux buttons, SD storage; open questions on A2DP source support in MicroPython vs ESP-IDF shim).
-- [ ] [CS7] Plan ESP32 adapters under `platforms/esp32/` (stubs for screen/buttons/audio with TODOs on drivers, buffering strategy, and any C-extension needs for Bluetooth audio).
-- [ ] [CS8] Add a lightweight top-level pointer in `README`/`PROJECT_OVERVIEW` to the architecture plan and AGENTS rules so contributors follow separation-of-concerns and testing focus.
+- [x] [CS5.6] Add volume to `PlayerState` with clamped adjustments, integrate volume controls in core, map PC emulator keys, and cover with tests.
+- [ ] [H1] Prototype wiring plan (breadboard): ESP32 dev board, SD breakout (SPI), ST7789 (SPI), basic buttons (no rotary/battery); pin map + wiring notes.
+- [ ] [H2] Prototype BOM: list parts for breadboard build (dev board, SD breakout, ST7789, buttons, jumpers, breadboard).
+- [ ] [H3] ESP32 adapters plan: outline `platforms/esp32/` stubs (screen/buttons/audio) and note A2DP/source support approach.
+- [ ] [H4] Production hardware plan: rotary encoder, full button set, battery/power (LiPo + TP4056), optional I2S DAC/amp, enclosure mounting notes.
 
 ## CS3 Gameplan
 
