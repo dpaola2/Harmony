@@ -7,10 +7,10 @@
 - [x] [CS5] Build PC simulator under `platforms/pc/` (console screen renderer, keyboard input mapper, stub/print-only audio backend, `main_pc.py` wiring).
 - [x] [CS5.1] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
 - [x] [CS5.6] Add volume to `PlayerState` with clamped adjustments, integrate volume controls in core, map PC emulator keys, and cover with tests.
-- [ ] [H1] Prototype wiring plan (breadboard): ESP32 dev board, SD breakout (SPI), ST7789 (SPI), basic buttons (no rotary/battery); pin map + wiring notes.
-- [ ] [H2] Prototype BOM: list parts for breadboard build (dev board, SD breakout, ST7789, buttons, jumpers, breadboard).
+- [ ] [H1] Prototype 1 wiring plan: ESP32-S3 DevKitC-1 v1.1, SD SPI breakout, ST7789V2 (240x280), basic buttons (no rotary/battery); pin map + wiring notes.
+- [ ] [H2] Prototype 1 BOM: parts for the breadboard build (S3 dev kit, SD breakout, ST7789V2, buttons, jumpers, breadboard).
 - [ ] [H3] ESP32 adapters plan: outline `platforms/esp32/` stubs (screen/buttons/audio) and note A2DP/source support approach.
-- [ ] [H4] Production hardware plan: rotary encoder, full button set, battery/power (LiPo + TP4056), optional I2S DAC/amp, enclosure mounting notes.
+- [ ] [H4] Prototype 2 / Production plan: WROVER DevKitC (PSRAM, classic BT), rotary encoder, full button set, battery/power (LiPo + TP4056), optional I2S DAC/amp, enclosure mounting notes.
 
 ## CS3 Gameplan
 

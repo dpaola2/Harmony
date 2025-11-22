@@ -1,11 +1,8 @@
 # Hardware Notes
 
-## Target Platform
-- ESP32-WROVER dev board (PSRAM, classic BT + BLE). Alternative: ESP32-LyraT/Mini for richer audio but bulkier.
-- Audio path: Bluetooth A2DP source; optional I2S DAC (PCM5102A) or amp (MAX98357A) for wired/speaker output.
-- Storage: MicroSD (SPI) for library content using folder convention `Artist/Album/Track.ext`.
-- Display: 2.0–2.4" SPI IPS LCD (ST7789).
-- Inputs: rotary encoder (EC11) with push for scroll/select; aux buttons for back, play/pause, volume up/down (or rotary push/wheel for volume if desired).
+## Prototypes
+- Prototype 1: ESP32-S3-WROOM DevKitC-1 v1.1, SD SPI, ST7789V2 (1.69", 240x280), basic buttons, USB power. No audio/A2DP (S3 WROOM lacks classic BT); focus on UI/SD/display.
+- Prototype 2: ESP32-WROVER DevKitC (PSRAM, classic BT) for audio/A2DP; SD SPI, ST7789 (2.0–2.4"), rotary encoder + buttons, optional I2S DAC/amp; USB or LiPo/TP4056 later.
 
 ## Volume Input Options
 - Buttons: dedicated volume up/down buttons produce relative events; core clamps 0–100 and calls `set_volume`.
