@@ -24,6 +24,9 @@ python -m platforms.pc.main_pc
 
 Initial simulator will use an in-memory dummy track list and a print-only audio backend; no real MP3 playback or filesystem scanning yet.
 
+- Keyboard controls: `w/s` up/down, `a` left, `d` right, `space`/Enter select, `p` play/pause, `b` or `q` back, `x` quit.
+- Dependencies: stdlib only (no extra packages needed for the console simulator).
+
 ## Testing
 
 Pytest will target the `core/` logic. After real tests are added:
