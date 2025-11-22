@@ -57,6 +57,7 @@ All agents should follow these rules:
    - Run tests locally: `source .venv/bin/activate && pytest`
    - Run PC simulator (after implemented): `source .venv/bin/activate && python -m platforms.pc.main_pc`
    - PC simulator controls (console): `w/s` up/down, `a` left, `d` right, `space`/Enter select, `p` play/pause, `b/q` back, `x` quit. Uses dummy tracks + print-only audio.
+   - Optional `--music-dir` for simulator uses folder convention `Artist/Album/Track.ext` with simple filename parsing; no tag reading.
 
 ---
 

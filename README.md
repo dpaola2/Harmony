@@ -22,7 +22,7 @@ source .venv/bin/activate
 python -m platforms.pc.main_pc
 ```
 
-Initial simulator will use an in-memory dummy track list and a print-only audio backend; no real MP3 playback or filesystem scanning yet. You can optionally point it at a local music folder with `--music-dir /path/to/files` (simple filename parsing only).
+Initial simulator will use an in-memory dummy track list and a print-only audio backend; no real MP3 playback or filesystem scanning yet. You can optionally point it at a local music folder with `--music-dir /path/to/files` (folder convention `Artist/Album/Track.ext`, simple filename parsing, no tag reading).
 
 - Keyboard controls: `w/s` up/down, `a` left, `d` right, `space`/Enter select, `p` play/pause, `b` or `q` back, `x` quit.
 - Dependencies: stdlib only (no extra packages needed for the console simulator).
