@@ -54,6 +54,8 @@ All agents should follow these rules:
      - Button behavior
      - Playback state transitions
      - Edge cases (start/end of list, play/pause transitions, etc.)
+   - Run tests locally: `source .venv/bin/activate && pytest`
+   - Run PC simulator (after implemented): `source .venv/bin/activate && python -m platforms.pc.main_pc`
 
 ---
 
