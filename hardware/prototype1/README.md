@@ -12,14 +12,14 @@
 
 - Power: use 3V3 and GND from the dev kit to SD and display. Common ground everywhere.
 - SPI shared for SD + ST7789V2:
-  - SCK: GPIO12
-  - MOSI: GPIO11
-  - MISO: GPIO13 (used only by SD)
+  - CLK (SCK): GPIO12 → display `CLK`
+  - MOSI (DIN): GPIO11 → display `DIN`
+  - MISO: GPIO13 (used only by SD; display does not need it)
   - SD CS: GPIO10
   - Display CS: GPIO9
   - Display DC: GPIO8
   - Display RST: GPIO18
-  - Display BL: GPIO17 (tie high for always-on backlight if you prefer)
+  - Display BL: GPIO17 (or tie to 3V3 for always-on backlight)
 - Buttons (active-low to GND, enable internal pull-ups in code):
   - Up: GPIO2
   - Down: GPIO3
