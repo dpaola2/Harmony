@@ -5,6 +5,7 @@
 - [x] [CS3] Implement minimal `core/player_app.py` state machine for Library ↔ Now Playing ↔ Settings navigation and play/pause handling; remain hardware-agnostic.
 - [x] [CS4] Add pytest coverage in `tests/` for selection movement, play/pause toggles, screen transitions, and end-of-list edge cases.
 - [x] [CS5] Build PC simulator under `platforms/pc/` (console screen renderer, keyboard input mapper, stub/print-only audio backend, `main_pc.py` wiring).
+- [ ] [CS5.5] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
 - [ ] [CS6] Document hardware notes in `hardware/` (ESP32-WROVER choice, ST7789 display, rotary encoder plus aux buttons, SD storage; open questions on A2DP source support in MicroPython vs ESP-IDF shim).
 - [ ] [CS7] Plan ESP32 adapters under `platforms/esp32/` (stubs for screen/buttons/audio with TODOs on drivers, buffering strategy, and any C-extension needs for Bluetooth audio).
 - [ ] [CS8] Add a lightweight top-level pointer in `README`/`PROJECT_OVERVIEW` to the architecture plan and AGENTS rules so contributors follow separation-of-concerns and testing focus.
@@ -52,3 +53,25 @@
   - View: stub/options (to be defined).
   - `LEFT/BACK`: go up one level to Root (Settings remains highlighted there).
   - `UP/DOWN/RIGHT/SELECT`: TBD (no behavior yet).
+
+## CS5.5 Spec: Library Drilldown and Track Loading
+
+- Models: extend `Track` with `album`, `artist`, `track_number`. `id` remains stable path/UUID.
+- Library view: replace flat Library with drilldown:
+  - Library root shows list of artists.
+  - Selecting an artist shows that artist’s albums.
+  - Selecting an album shows tracks (sorted by track number, then title).
+  - Selecting a track starts playback (stop current, set playing index, auto-jump to Now Playing).
+  - Back/left moves up one level (album → artist → Library root).
+- Indexing: introduce a `Library` helper to hold tracks and derived mappings (artist → track indices, (artist, album) → track indices).
+- Missing metadata: allow empty/None artist/album; normalize to fallback labels (e.g., "Unknown Artist", "Unknown Album") for grouping so tracks remain reachable. Sort tracks by `track_number` when present, else by title.
+- Core remains storage-agnostic: platform code supplies a populated `Library`/track list; core only consumes normalized data and indexes.
+- PC loader: optional helper to scan a directory and build `Track` objects (ID3 parsing optional/stub) for the simulator, without baking storage logic into core.
+- Edge cases to handle in core/tests:
+  - Empty library: render gracefully without crashes at any level.
+  - Duplicate album names across artists: key albums by (artist, album) to avoid collisions.
+  - Missing track numbers: sort numbered tracks first, then unnumbered by title for stability.
+  - Long names: consider truncation/ellipsis in console renderer to avoid wrapping glitches.
+  - Unknown buckets: grouping under fallback labels is expected; ensure consistent behavior.
+  - Now Playing with no current track: placeholder view; play/pause should no-op safely.
+  - Root back/left: remains a no-op.
