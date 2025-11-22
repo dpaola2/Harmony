@@ -7,10 +7,20 @@
 - [x] [CS5] Build PC simulator under `platforms/pc/` (console screen renderer, keyboard input mapper, stub/print-only audio backend, `main_pc.py` wiring).
 - [x] [CS5.1] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
 - [x] [CS5.6] Add volume to `PlayerState` with clamped adjustments, integrate volume controls in core, map PC emulator keys, and cover with tests.
-- [ ] [H1] Prototype 1 wiring plan: ESP32-S3 DevKitC-1 v1.1, SD SPI breakout, ST7789V2 (240x280), basic buttons (no rotary/battery); pin map + wiring notes.
-- [ ] [H2] Prototype 1 BOM: parts for the breadboard build (S3 dev kit, SD breakout, ST7789V2, buttons, jumpers, breadboard).
-- [ ] [H3] ESP32 adapters plan: outline `platforms/esp32/` stubs (screen/buttons/audio) and note A2DP/source support approach.
-- [ ] [H4] Prototype 2 / Production plan: WROVER DevKitC (PSRAM, classic BT), rotary encoder, full button set, battery/power (LiPo + TP4056), optional I2S DAC/amp, enclosure mounting notes.
+- [ ] [PA1] Prototype 1 wiring plan: ESP32-S3 DevKitC-1 v1.1, SD SPI breakout, ST7789V2 (240x280), basic buttons (no rotary/battery); pin map + wiring notes.
+- [ ] [PA2] Prototype 1 BOM: parts for the breadboard build (S3 dev kit, SD breakout, ST7789V2, buttons, jumpers, breadboard).
+- [ ] [PA3] ESP32 adapters plan: outline `platforms/esp32` stubs (screen/buttons/audio) and note A2DP/source support approach.
+- [ ] [PB1] Prototype 2 / Production plan: WROVER DevKitC (PSRAM, classic BT), rotary encoder, full button set, battery/power (LiPo + TP4056), optional I2S DAC/amp, enclosure mounting notes.
+
+## Prototype 1 Plan (ESP32-S3 DevKitC-1 v1.1)
+
+- Wiring diagram: map SPI for SD breakout (MOSI/MISO/SCK/CS) and ST7789V2 (MOSI/SCK/CS/DC/RES/BL) on the S3 DevKitC-1 v1.1; assign GPIOs for buttons (up/down/left/right/select/back/play-pause/volume +/-); USB power only.
+- SD filesystem: FAT32 with folder convention `Artist/Album/Track.ext` at root; align loader with PC behavior.
+- MicroPython implementation:
+  - `platforms/esp32` stubs for ST7789V2 screen, GPIO button input, SD-based track loader using the folder convention.
+  - Main script: mount SD, build track list, instantiate `PlayerApp`, poll inputs → handle_button, render to ST7789; no audio backend on S3 WROOM.
+  - Volume: support button-based volume up/down; stub `set_volume` in audio backend to keep state consistent.
+- Notes: No A2DP/audio in this phase; focus on UI, storage, and input. Port pin map and code to Prototype 2 (WROVER) for audio once hardware arrives.
 
 ## Navigation Spec (iPod-style hierarchical)
 
