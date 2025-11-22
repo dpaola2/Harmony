@@ -16,6 +16,9 @@ KEYMAP = {
     "p": ButtonEvent.PLAY_PAUSE,
     "b": ButtonEvent.BACK,
     "q": ButtonEvent.BACK,
+    "+": ButtonEvent.VOLUME_UP,
+    "=": ButtonEvent.VOLUME_UP,
+    "-": ButtonEvent.VOLUME_DOWN,
 }
 
 QUIT_KEYS = {"x", "X"}

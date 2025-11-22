@@ -23,6 +23,11 @@ class PlayerApp:
 
     def handle_button(self, event: ButtonEvent) -> None:
         """Dispatch button input based on the current screen, then render."""
+        if event in (ButtonEvent.VOLUME_UP, ButtonEvent.VOLUME_DOWN):
+            self._handle_volume(event)
+            self.render()
+            return
+
         if self.state.current_screen == ScreenID.ROOT:
             self._handle_root_input(event)
         elif self.state.current_screen == ScreenID.LIBRARY:
@@ -168,6 +173,7 @@ class PlayerApp:
         artist = track.artist if track.artist else UNKNOWN_ARTIST
         self.screen.draw_text(0, 1, f"{track.title} - {artist}")
         self.screen.draw_text(0, 2, f"{status}")
+        self.screen.draw_text(0, 3, f"Vol: {self.state.volume}")
 
     def _render_settings(self) -> None:
         self.screen.draw_text(0, 0, "Settings")
@@ -199,6 +205,19 @@ class PlayerApp:
             self.state.playing_index = target_index
 
         self.state.is_playing = True
+
+    def _handle_volume(self, event: ButtonEvent) -> None:
+        delta = 0
+        if event == ButtonEvent.VOLUME_UP:
+            delta = 5
+        elif event == ButtonEvent.VOLUME_DOWN:
+            delta = -5
+        if delta == 0:
+            return
+        new_level = max(0, min(100, self.state.volume + delta))
+        if new_level != self.state.volume:
+            self.state.volume = new_level
+            self.audio_backend.set_volume(new_level)
 
     def _play_selected_track_and_jump(self) -> None:
         idx = self._current_track_index_from_library()

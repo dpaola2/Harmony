@@ -5,7 +5,8 @@
 - [x] [CS3] Implement minimal `core/player_app.py` state machine for Library ↔ Now Playing ↔ Settings navigation and play/pause handling; remain hardware-agnostic.
 - [x] [CS4] Add pytest coverage in `tests/` for selection movement, play/pause toggles, screen transitions, and end-of-list edge cases.
 - [x] [CS5] Build PC simulator under `platforms/pc/` (console screen renderer, keyboard input mapper, stub/print-only audio backend, `main_pc.py` wiring).
-- [x] [CS5.5] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
+- [x] [CS5.1] Add library drilldown (Artists → Albums → Tracks) support and a PC loader that can build Track data from a directory (keeping core storage-agnostic).
+- [ ] [CS5.6] Add volume to `PlayerState` with clamped adjustments, integrate volume controls in core, map PC emulator keys, and cover with tests.
 - [ ] [CS6] Document hardware notes in `hardware/` (ESP32-WROVER choice, ST7789 display, rotary encoder plus aux buttons, SD storage; open questions on A2DP source support in MicroPython vs ESP-IDF shim).
 - [ ] [CS7] Plan ESP32 adapters under `platforms/esp32/` (stubs for screen/buttons/audio with TODOs on drivers, buffering strategy, and any C-extension needs for Bluetooth audio).
 - [ ] [CS8] Add a lightweight top-level pointer in `README`/`PROJECT_OVERVIEW` to the architecture plan and AGENTS rules so contributors follow separation-of-concerns and testing focus.
@@ -75,3 +76,11 @@
   - Unknown buckets: grouping under fallback labels is expected; ensure consistent behavior.
   - Now Playing with no current track: placeholder view; play/pause should no-op safely.
   - Root back/left: remains a no-op.
+
+## CS5.6 Spec: Volume Handling
+
+- Add `volume` to `PlayerState` (0–100, default e.g., 50) and clamp adjustments.
+- Extend `AudioBackend` with `set_volume(level: int)`; update stubs/PC backend.
+- Handle volume events in `PlayerApp` (e.g., new button events for volume up/down) and update audio backend when changed.
+- PC emulator: map additional keys for volume up/down; reflect in docs.
+- Tests: cover volume clamping and backend calls when changing volume.

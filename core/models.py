@@ -15,6 +15,8 @@ class ButtonEvent(Enum):
     SELECT = auto()
     BACK = auto()
     PLAY_PAUSE = auto()
+    VOLUME_UP = auto()
+    VOLUME_DOWN = auto()
 
 
 class ScreenID(Enum):
@@ -63,3 +65,4 @@ class PlayerState:
     # Playback
     playing_index: Optional[int] = None
     is_playing: bool = False
+    volume: int = 50  # 0-100

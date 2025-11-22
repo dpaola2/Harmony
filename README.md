@@ -30,6 +30,7 @@ Initial simulator will use an in-memory dummy track list and a print-only audio 
 Navigation model (simulator/core):
 - Root menu: Library / Now Playing / Settings. `up/down` to highlight, `right/select` to enter, `left/back` no-op at root.
 - Library drilldown: Artists → Albums → Tracks. `right/select` drills in, `left/back` goes up. Selecting a track starts playback and auto-jumps to Now Playing; play/pause on a track toggles without leaving Library.
+- Volume: `+`/`=` for volume up, `-` for volume down (clamped 0–100, passed to audio backend).
 
 ## Testing
 

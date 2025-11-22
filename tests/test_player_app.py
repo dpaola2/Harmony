@@ -24,6 +24,7 @@ class DummyAudioBackend:
         self.stop_calls = 0
         self.pause_calls = 0
         self.resume_calls = 0
+        self.set_volume_calls: list[int] = []
 
     def play(self, track: Track) -> None:
         self.play_calls.append(track)
@@ -36,6 +37,9 @@ class DummyAudioBackend:
 
     def resume(self) -> None:
         self.resume_calls += 1
+
+    def set_volume(self, level: int) -> None:
+        self.set_volume_calls.append(level)
 
 
 def _make_app() -> tuple[PlayerApp, DummyAudioBackend, DummyScreen, list[Track]]:
@@ -182,3 +186,24 @@ def test_empty_library_behaves() -> None:
 
     app.handle_button(ButtonEvent.PLAY_PAUSE)
     assert not audio.play_calls
+
+
+def test_volume_changes_clamp_and_call_backend() -> None:
+    app, audio, _, _ = _make_app()
+    assert app.state.volume == 50
+
+    app.handle_button(ButtonEvent.VOLUME_UP)
+    assert app.state.volume == 55
+    assert audio.set_volume_calls[-1] == 55
+
+    # Big increase beyond 100
+    for _ in range(15):
+        app.handle_button(ButtonEvent.VOLUME_UP)
+    assert app.state.volume == 100
+    assert audio.set_volume_calls[-1] == 100
+
+    # Decrease below 0
+    for _ in range(25):
+        app.handle_button(ButtonEvent.VOLUME_DOWN)
+    assert app.state.volume == 0
+    assert audio.set_volume_calls[-1] == 0

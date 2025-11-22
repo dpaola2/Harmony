@@ -26,6 +26,8 @@ class AudioBackend(Protocol):
 
     def stop(self) -> None: ...
 
+    def set_volume(self, level: int) -> None: ...
+
 
 class InputSource(Protocol):
     """Abstract input source to produce logical button events."""

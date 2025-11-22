@@ -9,6 +9,7 @@ class PcAudioBackend(AudioBackend):
 
     def __init__(self) -> None:
         self.last_track: Track | None = None
+        self.volume: int | None = None
 
     def play(self, track: Track) -> None:
         self.last_track = track
@@ -22,6 +23,10 @@ class PcAudioBackend(AudioBackend):
 
     def stop(self) -> None:
         self._log("Stop")
+
+    def set_volume(self, level: int) -> None:
+        self.volume = level
+        self._log(f"Volume: {level}")
 
     def _log(self, message: str) -> None:
         print(f"[Audio] {message}")

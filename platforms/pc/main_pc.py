@@ -10,7 +10,7 @@ from .pc_audio_backend import PcAudioBackend
 from .track_loader import load_tracks_from_dir
 
 
-KEY_HINT = "w/s: up/down | a: left | d: right | space/enter: select | p: play/pause | b/q: back | x: quit"
+KEY_HINT = "w/s: up/down | a: left | d: right | space/enter: select | p: play/pause | +/-: volume | b/q: back | x: quit"
 
 
 def sample_tracks() -> list[Track]:
