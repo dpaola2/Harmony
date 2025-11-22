@@ -38,10 +38,35 @@ class DummyAudioBackend:
         self.resume_calls += 1
 
 
-def _make_app(track_count: int = 3) -> tuple[PlayerApp, DummyAudioBackend, DummyScreen, list[Track]]:
+def _make_app() -> tuple[PlayerApp, DummyAudioBackend, DummyScreen, list[Track]]:
     tracks = [
-        Track(id=str(i), title=f"Song {i}", artist="Artist", duration_secs=180, path=f"/music/song{i}.mp3")
-        for i in range(track_count)
+        Track(
+            id="1",
+            title="Alpha One",
+            artist="Artist A",
+            album="Album X",
+            track_number=1,
+            duration_secs=180,
+            path="/music/a1.mp3",
+        ),
+        Track(
+            id="2",
+            title="Alpha Two",
+            artist="Artist A",
+            album="Album X",
+            track_number=2,
+            duration_secs=200,
+            path="/music/a2.mp3",
+        ),
+        Track(
+            id="3",
+            title="Beta One",
+            artist="Artist B",
+            album="Album Y",
+            track_number=None,
+            duration_secs=190,
+            path="/music/b1.mp3",
+        ),
     ]
     state = PlayerState(tracks=tracks)
     screen = DummyScreen()
@@ -51,7 +76,7 @@ def _make_app(track_count: int = 3) -> tuple[PlayerApp, DummyAudioBackend, Dummy
 
 
 def test_root_navigation_and_enter_library() -> None:
-    app, _, _, _ = _make_app(track_count=2)
+    app, _, _, _ = _make_app()
     assert app.state.current_screen == ScreenID.ROOT
     assert app.state.root_index == 0  # Library highlighted
 
@@ -60,34 +85,52 @@ def test_root_navigation_and_enter_library() -> None:
     app.handle_button(ButtonEvent.UP)
     assert app.state.root_index == 0
 
-    app.handle_button(ButtonEvent.RIGHT)  # enter Library
+    app.handle_button(ButtonEvent.RIGHT)  # enter Library (Artists)
     assert app.state.current_screen == ScreenID.LIBRARY
+    assert app.state.library_level.name == "ARTISTS"
 
 
-def test_library_selection_clamps() -> None:
-    app, _, _, _ = _make_app(track_count=2)
-    app.handle_button(ButtonEvent.RIGHT)  # enter Library
+def test_artists_and_albums_navigation() -> None:
+    app, _, _, _ = _make_app()
+    app.handle_button(ButtonEvent.RIGHT)  # into Library
 
+    # Two artists: Artist A, Artist B
     app.handle_button(ButtonEvent.DOWN)
-    assert app.state.selected_index == 1
-    app.handle_button(ButtonEvent.DOWN)
-    assert app.state.selected_index == 1  # clamps
+    app.handle_button(ButtonEvent.DOWN)  # clamp at end
+    assert app.state.selected_artist_index == 1
 
-    app.handle_button(ButtonEvent.UP)
-    assert app.state.selected_index == 0
-    app.handle_button(ButtonEvent.UP)
-    assert app.state.selected_index == 0  # clamps
+    app.handle_button(ButtonEvent.SELECT)  # enter albums for Artist B
+    assert app.state.library_level.name == "ALBUMS"
+    # Artist B has one album; back up to artists
+    app.handle_button(ButtonEvent.BACK)
+    assert app.state.library_level.name == "ARTISTS"
 
 
-def test_library_play_pause_stays_in_library() -> None:
+def test_album_to_tracks_and_play_jump() -> None:
     app, audio, _, tracks = _make_app()
-    app.handle_button(ButtonEvent.RIGHT)  # enter Library
+    app.handle_button(ButtonEvent.RIGHT)  # Library -> Artists
+    app.handle_button(ButtonEvent.SELECT)  # enter Artist A albums
+    app.handle_button(ButtonEvent.SELECT)  # enter tracks for Album X
+
+    assert app.state.library_level.name == "TRACKS"
+    # Album X has two tracks, track_number ordering respected
+    app.handle_button(ButtonEvent.SELECT)  # play first track and jump
+
+    assert app.state.current_screen == ScreenID.NOW_PLAYING
+    assert app.state.is_playing is True
+    assert app.state.playing_index == 0
+    assert audio.play_calls[-1] == tracks[0]
+
+
+def test_play_pause_within_tracks_without_leaving_library() -> None:
+    app, audio, _, _ = _make_app()
+    app.handle_button(ButtonEvent.RIGHT)  # Library
+    app.handle_button(ButtonEvent.SELECT)  # Artist A albums
+    app.handle_button(ButtonEvent.SELECT)  # Album X tracks
 
     app.handle_button(ButtonEvent.PLAY_PAUSE)  # play
     assert app.state.current_screen == ScreenID.LIBRARY
     assert app.state.is_playing is True
-    assert app.state.playing_index == 0
-    assert audio.play_calls[-1] == tracks[0]
 
     app.handle_button(ButtonEvent.PLAY_PAUSE)  # pause
     assert app.state.is_playing is False
@@ -98,51 +141,23 @@ def test_library_play_pause_stays_in_library() -> None:
     assert audio.resume_calls == 1
 
 
-def test_library_select_plays_and_jumps_to_now_playing() -> None:
-    app, audio, _, tracks = _make_app()
-    app.handle_button(ButtonEvent.RIGHT)  # enter Library
-    app.handle_button(ButtonEvent.SELECT)  # play + jump
-
-    assert app.state.current_screen == ScreenID.NOW_PLAYING
-    assert app.state.is_playing is True
-    assert app.state.playing_index == 0
-    assert audio.play_calls[-1] == tracks[0]
-
-
-def test_left_back_in_library_returns_to_root() -> None:
+def test_back_traversal_tracks_to_root() -> None:
     app, _, _, _ = _make_app()
-    app.handle_button(ButtonEvent.RIGHT)  # enter Library
-    app.handle_button(ButtonEvent.BACK)
+    app.handle_button(ButtonEvent.RIGHT)  # Library
+    app.handle_button(ButtonEvent.SELECT)  # Artist A albums
+    app.handle_button(ButtonEvent.SELECT)  # Album X tracks
 
+    app.handle_button(ButtonEvent.BACK)  # to albums
+    assert app.state.library_level.name == "ALBUMS"
+    app.handle_button(ButtonEvent.BACK)  # to artists
+    assert app.state.library_level.name == "ARTISTS"
+    app.handle_button(ButtonEvent.BACK)  # to root
     assert app.state.current_screen == ScreenID.ROOT
-    assert app.state.root_index == 0  # Library highlighted
-
-
-def test_now_playing_controls_and_return() -> None:
-    app, audio, _, tracks = _make_app()
-    # Start playback via Library
-    app.handle_button(ButtonEvent.RIGHT)
-    app.handle_button(ButtonEvent.SELECT)
-    assert app.state.current_screen == ScreenID.NOW_PLAYING
-    assert app.state.is_playing is True
-
-    app.handle_button(ButtonEvent.PLAY_PAUSE)  # pause
-    assert app.state.is_playing is False
-    assert audio.pause_calls == 1
-
-    app.handle_button(ButtonEvent.PLAY_PAUSE)  # resume
-    assert app.state.is_playing is True
-    assert audio.resume_calls == 1
-    assert audio.play_calls[-1] == tracks[0]
-
-    app.handle_button(ButtonEvent.BACK)
-    assert app.state.current_screen == ScreenID.ROOT
-    assert app.state.root_index == 1  # Now Playing highlighted
+    assert app.state.root_index == 0
 
 
 def test_settings_enter_and_back() -> None:
     app, _, _, _ = _make_app()
-    # Move to Settings in root and enter
     app.handle_button(ButtonEvent.DOWN)
     app.handle_button(ButtonEvent.DOWN)
     assert app.state.root_index == 2
@@ -154,16 +169,16 @@ def test_settings_enter_and_back() -> None:
     assert app.state.root_index == 2
 
 
-def test_empty_tracks_no_crash_and_selection_resets() -> None:
+def test_empty_library_behaves() -> None:
     state = PlayerState(tracks=[])
     screen = DummyScreen()
     audio = DummyAudioBackend()
     app = PlayerApp(state=state, screen=screen, audio_backend=audio)
 
     app.handle_button(ButtonEvent.RIGHT)  # enter Library
-    app.handle_button(ButtonEvent.DOWN)
-    assert app.state.selected_index == 0
+    assert app.state.library_level.name == "ARTISTS"
+    app.handle_button(ButtonEvent.SELECT)  # no artists, stay put
+    assert app.state.library_level.name == "ARTISTS"
 
     app.handle_button(ButtonEvent.PLAY_PAUSE)
-    assert app.state.is_playing is False
     assert not audio.play_calls

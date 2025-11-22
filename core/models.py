@@ -26,13 +26,23 @@ class ScreenID(Enum):
     SETTINGS = "settings"
 
 
+class LibraryLevel(Enum):
+    """Navigation level within the Library drilldown."""
+
+    ARTISTS = auto()
+    ALBUMS = auto()
+    TRACKS = auto()
+
+
 @dataclass
 class Track:
     """Basic metadata for a track."""
 
     id: str
     title: str
-    artist: str
+    artist: Optional[str]
+    album: Optional[str]
+    track_number: Optional[int]
     duration_secs: int
     path: str  # local file path on PC or device
 
@@ -42,8 +52,14 @@ class PlayerState:
     """State shared across screens and platform implementations."""
 
     tracks: List[Track] = field(default_factory=list)
-    selected_index: int = 0
+    # Root navigation
+    root_index: int = 0  # which root menu item is highlighted
+    current_screen: ScreenID = ScreenID.ROOT
+    # Library drilldown navigation
+    library_level: LibraryLevel = LibraryLevel.ARTISTS
+    selected_artist_index: int = 0
+    selected_album_index: int = 0
+    selected_track_index: int = 0
+    # Playback
     playing_index: Optional[int] = None
     is_playing: bool = False
-    current_screen: ScreenID = ScreenID.ROOT
-    root_index: int = 0  # which root menu item is highlighted
