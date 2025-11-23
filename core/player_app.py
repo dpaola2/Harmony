@@ -117,9 +117,8 @@ class PlayerApp:
     def _render_root(self) -> None:
         self.screen.draw_text(0, 0, "Menu")
         for idx, item in enumerate(self._root_items):
-            prefix = ">" if idx == self.state.root_index else " "
             label = self._root_label(item)
-            self.screen.draw_text(0, idx + 1, f"{prefix} {label}")
+            self._draw_row(idx + 1, label, highlighted=idx == self.state.root_index)
 
     def _render_library(self) -> None:
         level = self.state.library_level
@@ -137,8 +136,7 @@ class PlayerApp:
             self.screen.draw_text(0, 1, "(no tracks)")
             return
         for idx, artist in enumerate(artists):
-            prefix = ">" if idx == self.state.selected_artist_index else " "
-            self.screen.draw_text(0, idx + 1, f"{prefix} {artist}")
+            self._draw_row(idx + 1, artist, highlighted=idx == self.state.selected_artist_index)
 
     def _render_albums(self) -> None:
         artist = self._current_artist_label()
@@ -148,8 +146,7 @@ class PlayerApp:
             self.screen.draw_text(0, 1, "(no albums)")
             return
         for idx, album in enumerate(albums):
-            prefix = ">" if idx == self.state.selected_album_index else " "
-            self.screen.draw_text(0, idx + 1, f"{prefix} {album}")
+            self._draw_row(idx + 1, album, highlighted=idx == self.state.selected_album_index)
 
     def _render_tracks(self) -> None:
         artist = self._current_artist_label()
@@ -161,8 +158,7 @@ class PlayerApp:
             return
         for idx, track_idx in enumerate(tracks):
             track = self.state.tracks[track_idx]
-            prefix = ">" if idx == self.state.selected_track_index else " "
-            self.screen.draw_text(0, idx + 1, f"{prefix} {track.title}")
+            self._draw_row(idx + 1, track.title, highlighted=idx == self.state.selected_track_index)
 
     def _render_now_playing(self) -> None:
         self.screen.draw_text(0, 0, "Now Playing")
@@ -312,6 +308,21 @@ class PlayerApp:
         if item == ScreenID.SETTINGS:
             return "Settings"
         return getattr(item, "value", "unknown")
+
+    def _draw_row(self, y: int, text: str, highlighted: bool) -> None:
+        """
+        Draw a row with optional highlight. If the screen supports
+        `draw_highlighted_text`, use it; otherwise fall back to a prefix arrow.
+        """
+        if highlighted and hasattr(self.screen, "draw_highlighted_text"):
+            try:
+                # type: ignore[attr-defined]
+                self.screen.draw_highlighted_text(0, y, text)
+                return
+            except TypeError:
+                pass
+        prefix = "> " if highlighted else "  "
+        self.screen.draw_text(0, y, f"{prefix}{text}")
 
     def _enter_albums(self) -> None:
         artists = self.library.artists()

@@ -92,6 +92,7 @@ def main():
     print("Starting demo UI…")
     state = models.PlayerState(tracks=sample_tracks())
     screen = esp_screen.EspScreen()
+    screen.show_splash()
     audio = esp_audio_backend.EspAudioBackend()
     app = player_app.PlayerApp(state=state, screen=screen, audio_backend=audio)
     app.render()

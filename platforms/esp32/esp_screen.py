@@ -130,23 +130,52 @@ class EspScreen:
         self._buf = bytearray(width * height * 2)
         self._fb = framebuf.FrameBuffer(self._buf, width, height, framebuf.RGB565)
         self.fg = 0x0010  # dark blue-ish text
-        self.bg = 0xFFFF  # white
+        self.bg = 0xFFFF  # white background
+        self.highlight_bg = 0xC618  # light gray highlight
+        self.highlight_fg = 0x0000  # black text on highlight
         self.x_padding = x_padding
         self.y_padding = y_padding
+        self.char_w = 8
+        self.char_h = 10
+        self.line_height = 14  # add breathing room
         self.clear()
 
     def clear(self) -> None:
         self._fb.fill(self.bg)
 
-    def draw_text(self, x: int, y: int, text: str) -> None:
+    def draw_text(self, x: int, y: int, text: str, color=None) -> None:
         # Treat x/y as character grid (like console renderer), not raw pixels.
-        char_w = 8
-        char_h = 10
-        px = self.x_padding + x * char_w
-        py = self.y_padding + y * char_h
+        color = self.fg if color is None else color
+        px = self.x_padding + x * self.char_w
+        py = self.y_padding + y * self.line_height
         if py >= self.height - self.y_padding:
             return
-        self._fb.text(text, px, py, self.fg)
+        self._fb.text(text, px, py, color)
+
+    def draw_highlighted_text(self, x: int, y: int, text: str) -> None:
+        px = self.x_padding + x * self.char_w
+        py = self.y_padding + y * self.line_height
+        w = self.width - 2 * self.x_padding
+        h = self.line_height
+        self._fb.fill_rect(px, py, w, h, self.highlight_bg)
+        self.draw_text(x, y, text, color=self.highlight_fg)
+
+    def fill_rect(self, x: int, y: int, w: int, h: int, color: int) -> None:
+        self._fb.fill_rect(x, y, w, h, color)
 
     def refresh(self) -> None:
         self.display.blit(memoryview(self._buf))
+
+    def show_splash(self, path="/assets/loading.raw", duration_ms=5000) -> None:
+        """
+        Simple splash: center a title while booting. If you later add an image,
+        replace this with BMP/raw loading.
+        """
+        self.clear()
+        title = "Harmony"
+        # Center text roughly using character dimensions.
+        px = max(0, (self.width - len(title) * self.char_w) // 2)
+        py = max(0, self.height // 2 - self.line_height)
+        self._fb.text(title, px, py, 0x001F)  # bright blue text
+        self.refresh()
+        time.sleep_ms(duration_ms)

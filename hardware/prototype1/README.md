@@ -81,6 +81,14 @@ mpremote connect /dev/tty.usbmodem* run main.py
 
 What it does: uses a mock library (artists → albums → tracks), animates through Library/Now Playing/Settings, and exercises play/pause/volume state so you can confirm rendering and navigation on the display.
 
+### Optional splash image
+
+If you want a branded/loading screen for ~5s on boot, place a raw RGB565 image sized 240x280 at `assets/loading.raw` on the device (relative to root). The demo will load it if present; otherwise it falls back to a text “Harmony MP3 / Loading…” splash. Copy with:
+
+```bash
+mpremote connect /dev/tty.usbmodem* cp assets/loading.raw :assets/loading.raw
+```
+
 # ESP32-S3-DevKitC-1 v1.1 Docs
 
 https://www.digikey.com/en/products/detail/dfrobot/DFR0895/18069302
