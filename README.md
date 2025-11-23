@@ -1,53 +1,47 @@
 # Offline MP3 Player (Harmony2)
 
-Hardware-agnostic MP3 player core with PC simulator and ESP32 target scaffolding. See `AGENTS.md`, `PROJECT_OVERVIEW.md`, and `PLAN.md` for context.
+Hardware-agnostic MP3 player core with a PC simulator and ESP32 targets. See `docs/README.md` for the doc map; hardware bring-up for Prototype 1 is in `hardware/prototype1/README.md`.
 
-Documentation map: see `docs/README.md` for where to find plans, tasks, and platform notes (Prototype 1 wiring/testing is in `hardware/prototype1/README.md`).
+## Architecture & Goals
+- Core app logic in Python, shared by PC simulator and MicroPython on ESP32.
+- iPod-style UI: Library → Now Playing → Settings with tactile buttons (no touch).
+- Portable storage (SD) and Bluetooth audio on hardware targets; PC sim for fast iteration.
+- More context: `PROJECT_OVERVIEW.md` (goals/constraints) and `PLAN.md` (roadmap).
 
-## Environment (macOS)
+## Development
+- **Environment (macOS)**:
+  - Install Homebrew if missing: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
+  - Python: `brew install python` (or `pyenv` if you prefer pinned versions).
+  - Recommended tooling: `pipx install uv` (or `pip install uv` in a venv); `pipx ensurepath`.
+  - Create venv: `python -m venv .venv && source .venv/bin/activate`.
+  - Install dev deps: `python -m pip install --upgrade pip uv pytest`.
 
-- Install Homebrew if missing: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
-- Python: `brew install python` (or `pyenv` if you prefer pinned versions).
-- Recommended tooling:
-  - `pipx install uv` for fast, isolated installs (or `pip install uv` inside a venv).
-  - `pipx install pipx` if you don’t have it yet.
-  - `pipx ensurepath` to expose pipx-installed tools.
-- Create a virtual environment: `python -m venv .venv && source .venv/bin/activate`.
-- Install dev deps (placeholder until requirements are defined): `python -m pip install --upgrade pip uv pytest`.
+- **Run PC simulator** (console UI):
+  ```bash
+  source .venv/bin/activate
+  python -m platforms.pc.main_pc [--music-dir /path/to/Artist/Album/Track.ext]
+  ```
+  Controls: `w/s` up/down, `a` left, `d` right, `space`/Enter select, `p` play/pause, `b` or `q` back, `x` quit, `+`/`=` volume up, `-` volume down. Defaults to an in-memory demo library.
 
-## Running (PC simulator)
+- **Tests**:
+  ```bash
+  source .venv/bin/activate
+  pytest
+  ```
+  (Targets `core/` behavior.)
 
-Once the PC simulator is implemented (from repo root):
-
-```bash
-source .venv/bin/activate
-python -m platforms.pc.main_pc
-```
-
-Initial simulator will use an in-memory dummy track list and a print-only audio backend; no real MP3 playback or filesystem scanning yet. You can optionally point it at a local music folder with `--music-dir /path/to/files` (folder convention `Artist/Album/Track.ext`, simple filename parsing, no tag reading).
-
-- Keyboard controls: `w/s` up/down, `a` left, `d` right, `space`/Enter select, `p` play/pause, `b` or `q` back, `x` quit.
-- Dependencies: stdlib only (no extra packages needed for the console simulator).
-
-Navigation model (simulator/core):
-- Root menu: Library / Now Playing / Settings. `up/down` to highlight, `right/select` to enter, `left/back` no-op at root.
-- Library drilldown: Artists → Albums → Tracks. `right/select` drills in, `left/back` goes up. Selecting a track starts playback and auto-jumps to Now Playing; play/pause on a track toggles without leaving Library.
-- Volume: `+`/`=` for volume up, `-` for volume down (clamped 0–100, passed to audio backend).
-
-## Testing
-
-Pytest will target the `core/` logic. After real tests are added:
-
-```bash
-source .venv/bin/activate
-pytest
-```
+- **ESP32 Prototype 1 upload (demo UI, no buttons required)**:
+  - See `hardware/prototype1/README.md` for wiring and flashing details.
+  - Convenience script from repo root:
+    ```bash
+    scripts/upload_proto1_demo.sh /dev/tty.usbmodem*   # adjust port as needed
+    ```
+    It copies `core/`, `platforms/esp32/*.py`, and `main_esp32.py` to the board and keeps `main.py` as entrypoint.
 
 ## Repo structure
-
 - `core/` hardware-agnostic logic and models
-- `platforms/pc/` PC simulator (console screen, keyboard input, audio stub)
+- `platforms/pc/` PC simulator (console screen, keyboard input, audio backend)
 - `platforms/esp32/` ESP32 adapters (screen, buttons, audio)
-- `hardware/` wiring/board notes
+- `hardware/` wiring/board notes (prototype phases)
 - `enclosure/` mechanical notes
 - `tests/` pytest cases for `core/`
