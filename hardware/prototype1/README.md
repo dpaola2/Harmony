@@ -10,16 +10,16 @@
 
 ## Wiring Plan (ESP32-S3-DevKitC-1 v1.1)
 
-- Power: use 3V3 and GND from the dev kit to SD and display. Common ground everywhere.
-- SPI shared for SD + ST7789V2:
+- Power: use 3V3 and GND from the dev kit. Common ground everywhere.
+- Display (ST7789V2 over SPI):
   - CLK (SCK): GPIO12 → display `CLK`
   - MOSI (DIN): GPIO11 → display `DIN`
-  - MISO: GPIO13 (used only by SD; display does not need it)
-  - SD CS: GPIO10
-  - Display CS: GPIO9
-  - Display DC: GPIO8
-  - Display RST: GPIO18
-  - Display BL: GPIO17 (or tie to 3V3 for always-on backlight)
+  - CS: GPIO9
+  - DC: GPIO8
+  - RST: GPIO18
+  - BL: GPIO17 (or tie to 3V3 for always-on backlight)
+  - MISO: not used by display
+- SD card: pause wiring for now (we’ll revisit once a better breakout is on hand). If you experiment, pick free GPIOs not used above and update `sd_test.py` accordingly.
 - Buttons (active-low to GND, enable internal pull-ups in code):
   - Up: GPIO2
   - Down: GPIO3
@@ -44,10 +44,9 @@
 Use these quick checks before wiring buttons:
 
 1) Flash MicroPython and confirm REPL works over USB.
-2) **SD test**: copy a small `sd_test.py` that mounts SPI with the pins above (CS=10) and `os.listdir('/')` after mounting; expect to see your `Artist/Album/Track.mp3` folders.
-3) **Display test**: copy a `display_test.py` that inits ST7789V2 with CS=9, DC=8, RST=18, BL=17 (or BL tied high) and fills the screen with a solid color/text.
-4) **Combined test**: mount SD, then draw “SD OK” on the display to prove both peripherals coexist.
-5) After buttons are wired, map the planned GPIOs, emit `ButtonEvent`s, and drive `PlayerApp`.
+2) **Display test**: copy `display_test.py` that inits ST7789V2 with CS=9, DC=8, RST=18, BL=17 (or BL tied high) and fills the screen with solid colors/text.
+3) **(Optional) SD test**: once you have a known-good breakout, wire it to free pins, update `sd_test.py` to match, and run it to list `/sd`.
+4) After buttons are wired, map the planned GPIOs, emit `ButtonEvent`s, and drive `PlayerApp`.
 
 ## How to Run the Tests / Flash & Upload
 
@@ -56,9 +55,10 @@ Use these quick checks before wiring buttons:
   - Download the latest ESP32-S3 MicroPython `.bin` from micropython.org.
   - Erase and flash: `esptool.py --chip esp32s3 --port /dev/tty.usbmodem* erase_flash` then `esptool.py --chip esp32s3 --port /dev/tty.usbmodem* write_flash -z 0x0 firmware.bin`.
 - Verify REPL: `mpremote connect /dev/tty.usbmodem* repl`.
-- Upload tests: `mpremote connect /dev/tty.usbmodem* cp sd_test.py :sd_test.py` and same for `display_test.py`.
-- Run on-board: `mpremote connect /dev/tty.usbmodem* run sd_test.py` (or `display_test.py`).
+- Upload tests: `mpremote connect /dev/tty.usbmodem* cp display_test.py :display_test.py` (and `sd_test.py` if you wire SD).
+- Run on-board: `mpremote connect /dev/tty.usbmodem* run display_test.py`.
 - When ready for the app, copy the MicroPython `main.py` (once we add it) and reboot; it will auto-run.
+- If/when you revisit SD, update `sd_test.py` pins to match your wiring and run it similarly: `mpremote … run sd_test.py`.
 
 # ESP32-S3-DevKitC-1 v1.1 Docs
 
