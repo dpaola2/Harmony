@@ -129,7 +129,7 @@ class EspScreen:
         self.height = height
         self._buf = bytearray(width * height * 2)
         self._fb = framebuf.FrameBuffer(self._buf, width, height, framebuf.RGB565)
-        self.fg = 0x0010  # dark blue-ish text
+        self.fg = 0x0008  # dark text
         self.bg = 0xFFFF  # white background
         self.highlight_bg = 0xC618  # light gray highlight
         self.highlight_fg = 0x0000  # black text on highlight
