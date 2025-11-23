@@ -1,6 +1,8 @@
-from __future__ import annotations
-
-from typing import Optional, Protocol
+try:
+    from typing import Optional, Protocol
+except ImportError:
+    Protocol = object  # type: ignore
+    Optional = object  # type: ignore
 
 from .models import ButtonEvent, Track
 

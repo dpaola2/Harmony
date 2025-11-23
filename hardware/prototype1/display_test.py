@@ -6,6 +6,13 @@ Run with:
     mpremote connect /dev/tty.usbmodem* run display_test.py
 """
 
+try:  # Skip under CPython/pytest
+    import machine  # type: ignore
+except ImportError:  # pragma: no cover
+    import pytest
+
+    pytest.skip("requires MicroPython hardware", allow_module_level=True)
+
 import time
 
 from machine import Pin, SPI

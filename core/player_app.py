@@ -1,6 +1,8 @@
-from __future__ import annotations
-
-from typing import List, Optional
+try:
+    from typing import List, Optional
+except ImportError:
+    List = list  # type: ignore
+    Optional = object  # type: ignore
 
 from .library import Library, UNKNOWN_ALBUM, UNKNOWN_ARTIST
 from .interfaces import AudioBackend, Screen
@@ -309,7 +311,7 @@ class PlayerApp:
             return "Now Playing"
         if item == ScreenID.SETTINGS:
             return "Settings"
-        return item.value
+        return getattr(item, "value", "unknown")
 
     def _enter_albums(self) -> None:
         artists = self.library.artists()

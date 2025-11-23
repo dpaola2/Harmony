@@ -60,6 +60,27 @@ Use these quick checks before wiring buttons:
 - When ready for the app, copy the MicroPython `main.py` (once we add it) and reboot; it will auto-run.
 - If/when you revisit SD, update `sd_test.py` pins to match your wiring and run it similarly: `mpremote … run sd_test.py`.
 
+## Running the demo UI on device (no buttons required)
+
+The ESP32 build mirrors the PC simulator UI and drives itself in a loop so you can see the screens on the ST7789 without wiring buttons yet.
+
+1) From repo root, copy the core logic and ESP32 platform adapter files:
+
+```bash
+mpremote connect /dev/tty.usbmodem* cp -r core :core
+mpremote connect /dev/tty.usbmodem* cp platforms/esp32/esp_screen.py :esp_screen.py
+mpremote connect /dev/tty.usbmodem* cp platforms/esp32/esp_audio_backend.py :esp_audio_backend.py
+mpremote connect /dev/tty.usbmodem* cp platforms/esp32/main_esp32.py :main.py
+```
+
+2) Run the demo (or just reboot to auto-run `main.py`):
+
+```bash
+mpremote connect /dev/tty.usbmodem* run main.py
+```
+
+What it does: uses a mock library (artists → albums → tracks), animates through Library/Now Playing/Settings, and exercises play/pause/volume state so you can confirm rendering and navigation on the display.
+
 # ESP32-S3-DevKitC-1 v1.1 Docs
 
 https://www.digikey.com/en/products/detail/dfrobot/DFR0895/18069302

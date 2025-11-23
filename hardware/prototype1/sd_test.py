@@ -5,10 +5,16 @@ Copy to the board and run with:
     mpremote connect /dev/tty.usbmodem* run sd_test.py
 """
 
+try:  # Skip under CPython/pytest
+    import machine  # type: ignore
+except ImportError:  # pragma: no cover
+    import pytest
+
+    pytest.skip("requires MicroPython hardware", allow_module_level=True)
+
 import os
 import sys
 import time
-
 import machine
 
 
