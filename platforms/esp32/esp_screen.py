@@ -8,6 +8,9 @@ from machine import Pin, SPI
 class ST7789:
     """Minimal ST7789V2 driver with a framebuffer blit helper."""
 
+    X_OFFSET = 0
+    Y_OFFSET = 20  # visible area starts at y=20 for 240x280 glass
+
     def __init__(self, spi, cs, dc, rst, bl, width=240, height=280):
         self.spi = spi
         self.cs = cs
@@ -55,6 +58,10 @@ class ST7789:
         time.sleep_ms(20)
 
     def _set_window(self, x0: int, y0: int, x1: int, y1: int) -> None:
+        x0 += self.X_OFFSET
+        x1 += self.X_OFFSET
+        y0 += self.Y_OFFSET
+        y1 += self.Y_OFFSET
         self._write_cmd(
             0x2A,
             bytes(
@@ -112,8 +119,8 @@ class EspScreen:
         pin_dc=8,
         pin_rst=18,
         pin_bl=17,
-        x_padding=20,
-        y_padding=40,
+        x_padding=15,
+        y_padding=20,
     ):
         spi = SPI(spi_id, baudrate=baudrate, sck=Pin(pin_clk), mosi=Pin(pin_mosi), miso=Pin(pin_miso))
         self.display = ST7789(
