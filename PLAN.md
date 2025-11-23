@@ -1,5 +1,7 @@
 You can get *really* far on the software side before you ever touch a soldering iron or 3D printer, as long as you structure things right.
 
+See `docs/README.md` for the documentation map and where to put gameplans vs. archives.
+
 Given our MP3 player plan (ESP32, MicroPython, tactile buttons + small screen, Bluetooth audio out, iPod-style UI), here’s how I’d do it.
 
 ---

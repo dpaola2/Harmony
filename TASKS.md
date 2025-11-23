@@ -1,5 +1,7 @@
 # TASKS
 
+> Doc map: see `docs/README.md` for where to place plans, tasks, and platform notes.
+
 - [x] [CS1] Scaffold repo structure (`core/`, `platforms/pc/`, `platforms/esp32/`, `hardware/`, `enclosure/`, `tests/`) with stub modules aligned to AGENTS conventions.
 - [x] [CS2] Define core types and interfaces in `core/models.py` and `core/interfaces.py` (Track, PlayerState, ButtonEvent, screen identifiers; Screen/AudioBackend/InputSource APIs with type hints).
 - [x] [CS3] Implement minimal `core/player_app.py` state machine for Library ↔ Now Playing ↔ Settings navigation and play/pause handling; remain hardware-agnostic.
@@ -22,71 +24,10 @@
   - Volume: support button-based volume up/down; stub `set_volume` in audio backend to keep state consistent.
 - Notes: No A2DP/audio in this phase; focus on UI, storage, and input. Port pin map and code to Prototype 2 (WROVER) for audio once hardware arrives.
 
-## Navigation Spec (iPod-style hierarchical)
+## Gameplans (moved to docs/gameplans)
 
-- Root menu (level 0): items `Library`, `Now Playing`, `Settings`.
-  - `UP/DOWN`: move highlight among root items.
-  - `RIGHT/SELECT`: enter highlighted item.
-  - `LEFT/BACK`: no-op at root.
-- Library (entered from root):
-  - View: list of tracks with a cursor.
-  - `UP/DOWN`: move selection (clamped).
-  - `RIGHT/SELECT`: start playback of selected track (stop any current), set playing index, auto-jump to Now Playing.
-  - `PLAY/PAUSE`: toggle play/pause for the selected track without leaving Library (starting playback if none).
-  - `LEFT/BACK`: go up one level to Root (Library remains highlighted there).
-- Now Playing (entered from root or via Library auto-jump):
-  - View: current track/status; if nothing playing, placeholder.
-  - `PLAY/PAUSE`: toggle playback.
-  - `LEFT/BACK`: go up one level to Root (Now Playing remains highlighted there).
-  - `UP/DOWN/RIGHT/SELECT`: no additional behavior for now.
-- Settings (entered from root):
-  - View: stub/options (to be defined).
-  - `LEFT/BACK`: go up one level to Root (Settings remains highlighted there).
-  - `UP/DOWN/RIGHT/SELECT`: TBD (no behavior yet).
-
-## CS5.5 Spec: Library Drilldown and Track Loading
-
-- Models: extend `Track` with `album`, `artist`, `track_number`. `id` remains stable path/UUID.
-- Library view: replace flat Library with drilldown:
-  - Library root shows list of artists.
-  - Selecting an artist shows that artist’s albums.
-  - Selecting an album shows tracks (sorted by track number, then title).
-  - Selecting a track starts playback (stop current, set playing index, auto-jump to Now Playing).
-  - Back/left moves up one level (album → artist → Library root).
-- Indexing: introduce a `Library` helper to hold tracks and derived mappings (artist → track indices, (artist, album) → track indices).
-- Missing metadata: allow empty/None artist/album; normalize to fallback labels (e.g., "Unknown Artist", "Unknown Album") for grouping so tracks remain reachable. Sort tracks by `track_number` when present, else by title.
-- Core remains storage-agnostic: platform code supplies a populated `Library`/track list; core only consumes normalized data and indexes.
-- PC loader: optional helper to scan a directory and build `Track` objects (ID3 parsing optional/stub) for the simulator, without baking storage logic into core.
-- Edge cases to handle in core/tests:
-  - Empty library: render gracefully without crashes at any level.
-  - Duplicate album names across artists: key albums by (artist, album) to avoid collisions.
-  - Missing track numbers: sort numbered tracks first, then unnumbered by title for stability.
-  - Long names: consider truncation/ellipsis in console renderer to avoid wrapping glitches.
-  - Unknown buckets: grouping under fallback labels is expected; ensure consistent behavior.
-  - Now Playing with no current track: placeholder view; play/pause should no-op safely.
-  - Root back/left: remains a no-op.
-
-## CS5.6 Spec: Volume Handling
-
-- Add `volume` to `PlayerState` (0–100, default e.g., 50) and clamp adjustments.
-- Extend `AudioBackend` with `set_volume(level: int)`; update stubs/PC backend.
-- Handle volume events in `PlayerApp` (e.g., new button events for volume up/down) and update audio backend when changed.
-- PC emulator: map additional keys for volume up/down; reflect in docs.
-- Tests: cover volume clamping and backend calls when changing volume.
-
-## Prototype 1 Display UI Plan (ST7789V2, aligns with core/PC emulator)
-
-- Screens to implement on-device: Root menu (Library/Now Playing/Settings), Library drilldown (artist → album → tracks), Now Playing (track metadata + play state + volume), and a placeholder Settings; mirror current core state machine and PC console behaviors.
-- Layout approach: simple text UI with highlighted row; reserve top status line for playback state/icon + volume, body for list items with scroll window, footer hint for buttons (e.g., Back/Play-Pause). Use ellipsis/truncation for long labels; keep 6–8 visible rows. Add safe insets (e.g., 4–6 px) to avoid the ST7789’s rounded corners.
-- Rendering strategy: double-buffer-ish redraw by clearing only changed regions per tick; minimal font and monochrome-style colors for clarity (e.g., black background, white text, accent highlight bar).
-- Input mapping: wire existing button events (up/down/left/right/select/back/play_pause/volume) from GPIO to `PlayerApp.handle_button`; no new core events needed.
-- Data flow: platform screen adapter pulls `PlayerState` and current view data from `PlayerApp` render helpers (similar to console screen), notifies on state changes, and formats strings; keep any string formatting inside platform layer to avoid core coupling to fonts/pixels.
-- Performance/refresh: poll loop ~20–30 Hz, debounce inputs in platform layer, and throttle full-screen clears; keep SPI at existing display-test speed unless ghosting/flicker requires tuning.
-
-## Prototype 1 UI Refresh Plan
-
-- Goals: keep monospace for a retro tech look, increase font size for readability, use highlight bars instead of `>` markers, and polish spacing/colors; show a simple loading screen for ~5s on first boot.
-- Visual tweaks: bump font scale (larger bitmap font or doubled glyphs), use a contrasting highlight bar for the selected row, maintain safe insets for rounded corners, refine spacing (line height, margins).
-- Colors/themes: light or dark background with consistent accent color; ensure volume/status lines remain legible.
-- Loading screen: on startup, render a static logo/title card with a brief delay before entering the main loop.
-- Data flow: reuse existing `PlayerApp` navigation; UI polish lives in the ESP32 screen renderer (no core data structure changes expected). If font scaling requires a custom glyph blitter, keep it in `EspScreen`.
+- Navigation spec: `docs/gameplans/NAV.md`
+- CS5.5 Library drilldown: `docs/gameplans/CS5.5.md`
+- CS5.6 Volume handling: `docs/gameplans/CS5.6.md`
+- Prototype 1 display UI plan: `docs/gameplans/PA-UI.md`
+- Prototype 1 UI refresh plan: `docs/gameplans/PA-UI-Refresh.md`

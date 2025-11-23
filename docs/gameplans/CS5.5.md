@@ -1,0 +1,21 @@
+# [CS5.5] Library Drilldown and Track Loading
+
+- Models: extend `Track` with `album`, `artist`, `track_number`. `id` remains stable path/UUID.
+- Library view: replace flat Library with drilldown:
+  - Library root shows list of artists.
+  - Selecting an artist shows that artist’s albums.
+  - Selecting an album shows tracks (sorted by track number, then title).
+  - Selecting a track starts playback (stop current, set playing index, auto-jump to Now Playing).
+  - Back/left moves up one level (album → artist → Library root).
+- Indexing: introduce a `Library` helper to hold tracks and derived mappings (artist → track indices, (artist, album) → track indices).
+- Missing metadata: allow empty/None artist/album; normalize to fallback labels (e.g., "Unknown Artist", "Unknown Album") for grouping so tracks remain reachable. Sort tracks by `track_number` when present, else by title.
+- Core remains storage-agnostic: platform code supplies a populated `Library`/track list; core only consumes normalized data and indexes.
+- PC loader: optional helper to scan a directory and build `Track` objects (ID3 parsing optional/stub) for the simulator, without baking storage logic into core.
+- Edge cases to handle in core/tests:
+  - Empty library: render gracefully without crashes at any level.
+  - Duplicate album names across artists: key albums by (artist, album) to avoid collisions.
+  - Missing track numbers: sort numbered tracks first, then unnumbered by title for stability.
+  - Long names: consider truncation/ellipsis in console renderer to avoid wrapping glitches.
+  - Unknown buckets: grouping under fallback labels is expected; ensure consistent behavior.
+  - Now Playing with no current track: placeholder view; play/pause should no-op safely.
+  - Root back/left: remains a no-op.

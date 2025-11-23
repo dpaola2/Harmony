@@ -1,0 +1,21 @@
+# [NAV] Navigation Spec (iPod-style hierarchical)
+
+- Root menu (level 0): items `Library`, `Now Playing`, `Settings`.
+  - `UP/DOWN`: move highlight among root items.
+  - `RIGHT/SELECT`: enter highlighted item.
+  - `LEFT/BACK`: no-op at root.
+- Library (entered from root):
+  - View: list of tracks with a cursor.
+  - `UP/DOWN`: move selection (clamped).
+  - `RIGHT/SELECT`: start playback of selected track (stop any current), set playing index, auto-jump to Now Playing.
+  - `PLAY/PAUSE`: toggle play/pause for the selected track without leaving Library (starting playback if none).
+  - `LEFT/BACK`: go up one level to Root (Library remains highlighted there).
+- Now Playing (entered from root or via Library auto-jump):
+  - View: current track/status; if nothing playing, placeholder.
+  - `PLAY/PAUSE`: toggle playback.
+  - `LEFT/BACK`: go up one level to Root (Now Playing remains highlighted there).
+  - `UP/DOWN/RIGHT/SELECT`: no additional behavior for now.
+- Settings (entered from root):
+  - View: stub/options (to be defined).
+  - `LEFT/BACK`: go up one level to Root (Settings remains highlighted there).
+  - `UP/DOWN/RIGHT/SELECT`: TBD (no behavior yet).

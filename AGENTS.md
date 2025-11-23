@@ -13,6 +13,8 @@ Core constraints:
 - Hardware platform: **ESP32** with built-in Bluetooth (able to *stream* audio, not just receive).
 - Case: **3D-printed** enclosure once hardware & UX are stable.
 
+Doc map: see `docs/README.md` for where plans, tasks, and platform notes live.
+
 ---
 
 ## Global Project Conventions

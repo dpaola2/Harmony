@@ -2,6 +2,8 @@
 
 Hardware-agnostic MP3 player core with PC simulator and ESP32 target scaffolding. See `AGENTS.md`, `PROJECT_OVERVIEW.md`, and `PLAN.md` for context.
 
+Documentation map: see `docs/README.md` for where to find plans, tasks, and platform notes (Prototype 1 wiring/testing is in `hardware/prototype1/README.md`).
+
 ## Environment (macOS)
 
 - Install Homebrew if missing: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
