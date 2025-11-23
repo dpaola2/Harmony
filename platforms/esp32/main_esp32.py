@@ -46,7 +46,9 @@ def demo_sequence():
     A short, loopable script of button events that walks through the UI:
     - Enter Library (artists -> albums -> tracks)
     - Play first track (auto-jumps to Now Playing)
-    - Pause/resume, back to root, enter Settings stub, back again.
+    - Pause/resume, back to root
+    - Enter Settings stub and return
+    - Enter Now Playing from root, then back
     """
     return [
         models.ButtonEvent.RIGHT,  # enter Library
@@ -56,6 +58,15 @@ def demo_sequence():
         models.ButtonEvent.PLAY_PAUSE,  # Pause
         models.ButtonEvent.PLAY_PAUSE,  # Resume
         models.ButtonEvent.LEFT,  # Back to root (Now Playing highlighted)
+        models.ButtonEvent.UP,  # highlight Library again
+        models.ButtonEvent.SELECT,  # back into Library
+        models.ButtonEvent.DOWN,  # Artist B
+        models.ButtonEvent.SELECT,  # Artist B albums
+        models.ButtonEvent.SELECT,  # album -> tracks
+        models.ButtonEvent.DOWN,  # move to second track (if present)
+        models.ButtonEvent.LEFT,  # back to albums
+        models.ButtonEvent.LEFT,  # back to artists
+        models.ButtonEvent.LEFT,  # back to root
         models.ButtonEvent.DOWN,  # move highlight to Settings
         models.ButtonEvent.DOWN,  # clamp at Settings
         models.ButtonEvent.SELECT,  # enter Settings
