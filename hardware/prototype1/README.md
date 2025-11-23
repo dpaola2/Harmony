@@ -39,6 +39,27 @@
 - Audio: none on this phase; use a stub `AudioBackend` (no-op play/pause/resume/stop, track loader from SD).
 - Main script flow: mount SD → build track list → init display/buttons/audio stub → run event loop feeding `PlayerApp.handle_button()` and calling `render()`.
 
+## Testing
+
+Use these quick checks before wiring buttons:
+
+1) Flash MicroPython and confirm REPL works over USB.
+2) **SD test**: copy a small `sd_test.py` that mounts SPI with the pins above (CS=10) and `os.listdir('/')` after mounting; expect to see your `Artist/Album/Track.mp3` folders.
+3) **Display test**: copy a `display_test.py` that inits ST7789V2 with CS=9, DC=8, RST=18, BL=17 (or BL tied high) and fills the screen with a solid color/text.
+4) **Combined test**: mount SD, then draw “SD OK” on the display to prove both peripherals coexist.
+5) After buttons are wired, map the planned GPIOs, emit `ButtonEvent`s, and drive `PlayerApp`.
+
+## How to Run the Tests / Flash & Upload
+
+- Host dependencies (macOS): Python 3.11+, `pip install --user esptool mpremote` (or use a venv). `mpremote` is simplest for copy/run.
+- Flash MicroPython (once per board):
+  - Download the latest ESP32-S3 MicroPython `.bin` from micropython.org.
+  - Erase and flash: `esptool.py --chip esp32s3 --port /dev/tty.usbmodem* erase_flash` then `esptool.py --chip esp32s3 --port /dev/tty.usbmodem* write_flash -z 0x0 firmware.bin`.
+- Verify REPL: `mpremote connect /dev/tty.usbmodem* repl`.
+- Upload tests: `mpremote connect /dev/tty.usbmodem* cp sd_test.py :sd_test.py` and same for `display_test.py`.
+- Run on-board: `mpremote connect /dev/tty.usbmodem* run sd_test.py` (or `display_test.py`).
+- When ready for the app, copy the MicroPython `main.py` (once we add it) and reboot; it will auto-run.
+
 # ESP32-S3-DevKitC-1 v1.1 Docs
 
 https://www.digikey.com/en/products/detail/dfrobot/DFR0895/18069302
