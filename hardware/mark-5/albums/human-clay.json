@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "tracks": [
+    {
+      "file": "01-01.MP3",
+      "title": "Are You Ready?",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 1,
+      "disc": 1,
+      "duration_secs": 286,
+      "bytes": 4563409,
+      "sha256": "0a1019a3cf019f9462a477f2fd977b5ec0de82f470e1c0fa8ec26403dd0cec0a"
+    },
+    {
+      "file": "01-02.MP3",
+      "title": "What If",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 2,
+      "disc": 1,
+      "duration_secs": 319,
+      "bytes": 5092956,
+      "sha256": "c0b7be1054200c5a4461090b12e75e6f4bb9e4a056f9b9275cf87ca8436c121d"
+    },
+    {
+      "file": "01-03.MP3",
+      "title": "Beautiful",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 3,
+      "disc": 1,
+      "duration_secs": 260,
+      "bytes": 4156730,
+      "sha256": "70422f09badcd4dd35840c4d387707645495163b03e48c760f9c7e52b5b75a9a"
+    },
+    {
+      "file": "01-04.MP3",
+      "title": "Say I",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 4,
+      "disc": 1,
+      "duration_secs": 316,
+      "bytes": 5052830,
+      "sha256": "697b27afedb7cd1d400d62ddfeeea845b4ad007bba6d6c260133f17011133908"
+    },
+    {
+      "file": "01-05.MP3",
+      "title": "Wrong Way",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 5,
+      "disc": 1,
+      "duration_secs": 260,
+      "bytes": 4152550,
+      "sha256": "fcbe7a8317c6d3ffcfc849561ff9fd38521af817871ffbd48535001d6019a4b3"
+    },
+    {
+      "file": "01-06.MP3",
+      "title": "Faceless Man",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 6,
+      "disc": 1,
+      "duration_secs": 359,
+      "bytes": 5745814,
+      "sha256": "0491a131385c3ab2c432bc5da5f02e601b0671eb472cd713b75d8cf044d67a7a"
+    },
+    {
+      "file": "01-07.MP3",
+      "title": "Never Die",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 7,
+      "disc": 1,
+      "duration_secs": 292,
+      "bytes": 4664968,
+      "sha256": "fc20c96437cdb7017842f6c66e3d1425c13e0e587e8001bbd55533e8a14bef76"
+    },
+    {
+      "file": "01-08.MP3",
+      "title": "With Arms Wide Open",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 8,
+      "disc": 1,
+      "duration_secs": 275,
+      "bytes": 4400828,
+      "sha256": "d9799dd5dc9c281d85a9c373dcd16378572a0c2a35b5ae657b5141c6d24790f1"
+    },
+    {
+      "file": "01-09.MP3",
+      "title": "Higher",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 9,
+      "disc": 1,
+      "duration_secs": 317,
+      "bytes": 5070386,
+      "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd"
+    },
+    {
+      "file": "01-10.MP3",
+      "title": "Wash Away Those Years",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 10,
+      "disc": 1,
+      "duration_secs": 365,
+      "bytes": 5831505,
+      "sha256": "86362d81868f0749e9217275f8d532cc4afc098992f24cc35661db91b0a97ad8"
+    },
+    {
+      "file": "01-11.MP3",
+      "title": "Inside Us All",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 11,
+      "disc": 1,
+      "duration_secs": 349,
+      "bytes": 5582394,
+      "sha256": "7413731fc23a0760ba4ffcc1a2589573f7d90c7a0d0b4fb4d305c71f3963c82b"
+    },
+    {
+      "file": "01-12.MP3",
+      "title": "Young Grow Old",
+      "artist": "Creed",
+      "album": "Human Clay",
+      "number": 12,
+      "disc": 1,
+      "duration_secs": 287,
+      "bytes": 4587652,
+      "sha256": "a6e126769976f269a77044160efa38f5aaea58c4882460bc1ef468cc5db38092"
+    }
+  ]
+}

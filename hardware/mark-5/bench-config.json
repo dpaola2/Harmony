@@ -1,0 +1,955 @@
+{
+  "work_item": "HARMONY-16",
+  "as_of": "2026-09-19",
+  "status": "album_functional_test_passed_full_album_endurance_pending",
+  "board": "Olimex ESP32-DevKit-Lipo Rev D, ESP32-WROVER-E",
+  "final_product_connector": "USB-C",
+  "bench_connector": "Micro-USB",
+  "firmware": {
+    "name": "MicroPython ESP32_GENERIC-SPIRAM",
+    "version": "1.29.0",
+    "url": "https://micropython.org/resources/firmware/ESP32_GENERIC-SPIRAM-20260824-v1.29.0.bin",
+    "sha256": "a8dc95b75cbbda9e5702a37166f94d08469f5b9046262be7187b1911ac07a358",
+    "size_bytes": 1612336,
+    "flash_offset": "0x1000",
+    "offline_check": "esptool 4.8.1: ESP32 image, bootloader checksum and validation hash valid",
+    "flashed": true,
+    "bench_verification": {
+      "date": "2026-09-19",
+      "port": "/dev/cu.usbserial-120",
+      "device_mac": "5c:01:3b:53:8f:70",
+      "write_baudrate": 115200,
+      "flash_write_hash_verified": true,
+      "boot_banner": "MicroPython v1.29.0 on 2026-08-24; Generic ESP32 module with SPIRAM with ESP32",
+      "cpu_hz": 160000000,
+      "heap_free_before_test_bytes": 4180368,
+      "filesystem_total_bytes": 2097152,
+      "filesystem_free_bytes": 2084864,
+      "psram_evidence": "2 MiB byte buffers allocated and SHA256-verified for 0x55 and 0xAA patterns in separate fresh-boot runs.",
+      "soft_reboot_passed": true,
+      "evidence_directory": "/Users/dave/Downloads/harmony-mark5-backups",
+      "pre_flash_state": "Whole-device ROM MD5 matched a 4 MiB all-0xFF image; reconstructed blank image saved with provenance.",
+      "limitations": [
+        "Bulk stub flash reads returned truncated packets, at both 460800 and 115200 baud. Flash write at 115200 succeeded and its hash verified.",
+        "Initial 2 MiB slice-fill loop tests exceeded 45 seconds and were interrupted; their performance remains unexplained. The later bulk pattern/hash checks passed.",
+        "Two sequential 2 MiB allocations in one REPL execution raised MemoryError despite del/gc.collect. Separate fresh-boot runs passed. Do not assume repeated large allocations are safe.",
+        "These checks establish boot and basic external-memory use, not exhaustive physical PSRAM coverage or sustained audio performance."
+      ]
+    }
+  },
+  "drivers": {
+    "audio_and_sd": {
+      "repository": "https://github.com/peterhinch/micropython-vs1053",
+      "commit": "ead5ed9b0c28cef5445a512cb1a35e71dfb7299d",
+      "first_track": "synchronous/vs1053_syn.py",
+      "integrated_player": "async/vs1053.py",
+      "sd": "sdcard.py",
+      "async_buffered": true,
+      "initial_volume_db": -40,
+      "first_test_mp3_bitrate_kbps": 128,
+      "required_adaptations": [
+        "Bound DREQ waits with timeouts for disconnected or failed hardware.",
+        "Set low volume after every reset; do not use the upstream full-volume sine test unchanged.",
+        "Remove the unused native playback decorator for the ESP32 port and explicitly import micropython.const.",
+        "Add pause/resume in the buffered feed loop and reset cancellation state between tracks.",
+        "Check filesystem APIs and import compatibility on the selected MicroPython release.",
+        "Start audio data SPI at 8 MHz on breadboard jumpers; retain the driver's slower initialization and SCI rates."
+      ]
+    },
+    "display": {
+      "repository": "https://github.com/russhughes/st7789py_mpy",
+      "commit": "7265925bd0c092e8105200d18b2dba9dfbc12c27",
+      "file": "lib/st7789py.py",
+      "constructor_width": 135,
+      "constructor_height": 240,
+      "rotation": 1,
+      "landscape_width": 240,
+      "landscape_height": 135,
+      "color_order_initial": "RGB",
+      "bench_checks": [
+        "orientation",
+        "full border visible",
+        "red/green/blue bars",
+        "partial updates during audio"
+      ],
+      "color_order_current": "BGR",
+      "color_order_reason": "Full BGR pattern confirmed by Dave using SoftSPI at 250 kHz."
+    }
+  },
+  "wiring": {
+    "numbering": "ESP32 GPIO numbers, not physical header positions",
+    "audio": {
+      "module": "Adafruit VS1053B Audio v4, product 1381",
+      "spi_id": 2,
+      "gpio": {
+        "SCLK": 18,
+        "MOSI": 23,
+        "MISO": 19,
+        "RST": 32,
+        "CS": 33,
+        "SDCS": 25,
+        "XDCS": 26,
+        "DREQ": 4
+      },
+      "power": {
+        "VCC": "Olimex V5 / +5V, USB powered",
+        "GND": "Olimex GND",
+        "3V3": "regulator output; do not join to Olimex 3V3"
+      },
+      "headphones": {
+        "LOUT": "jack tip",
+        "ROUT": "jack ring",
+        "AGND": "jack sleeve"
+      },
+      "jack_pin_identification": "Use multimeter continuity to identify physical jack legs before wiring.",
+      "storage": "Use this module's microSD slot; card must have a completed backup and FAT32 filesystem.",
+      "dreq_selection": "GPIO4 replaces GPIO36 to avoid ambiguous board labels. Dave confirmed connection; DREQ/reset and SCI communication verified on September 19.",
+      "bench_verification": {
+        "date": "2026-09-19",
+        "voltages_user_measured": {
+          "VCC": 4.77,
+          "3V3": 3.329
+        },
+        "checked_pin_pairs_user_reported_no_shorts": true,
+        "ground_connection": "Dave clarified that the VS1053 GND wire is on WROVER GND, not GPIO13.",
+        "port": "/dev/cu.usbserial-1120",
+        "device_mac_confirmed": "5c:01:3b:53:8f:70",
+        "spi_hz": 500000,
+        "status_reads": [
+          72,
+          72,
+          72
+        ],
+        "chip_version": 4,
+        "dreq_during_reset": 0,
+        "dreq_after_reset": 1,
+        "volume_write_readback_passed": [
+          25700,
+          20560
+        ],
+        "final_volume_db": -40,
+        "probe_execution": "Ran from RAM through raw REPL; no automatic boot script installed.",
+        "evidence": "/Users/dave/Downloads/harmony-mark5-backups/vs1053-probe-20260919.txt",
+        "limitations": [
+          "Full song and album not tested",
+          "Completed solder rows not visually inspected; Dave could not provide close-ups",
+          "Display and buttons not connected/tested"
+        ]
+      },
+      "jack_verification": {
+        "method": "Dave used an inserted male-to-male TRS cable and multimeter continuity.",
+        "orientation": "Jack viewed on its back, opening pointing south",
+        "tip_left": "west contact",
+        "ring_right": "east contact",
+        "sleeve_ground": "odd leg nearest jack opening",
+        "wiring_user_confirmed": {
+          "west": "LOUT",
+          "east": "ROUT",
+          "odd_near_opening": "AGND"
+        }
+      }
+    },
+    "display": {
+      "module": "Adafruit 1.14 inch ST7789 240x135, product 4383",
+      "initial_baudrate": 250000,
+      "gpio": {
+        "SCK": 14,
+        "MOSI": 13,
+        "TFTCS": 21,
+        "DC": 22,
+        "RST": 27
+      },
+      "controller_miso_gpio": 35,
+      "controller_miso_connection": "none; GPIO35 is only the unused SPI controller input",
+      "power": {
+        "Vin": "Olimex V5 / +5V, USB powered",
+        "GND": "Olimex GND",
+        "3V": "display regulator output; do not join to Olimex 3V3"
+      },
+      "LIT": "display 3V output",
+      "SDCS": "display 3V output to deselect unused SD socket",
+      "MISO": "unconnected",
+      "sd_socket": "unused",
+      "header_status": "Dave reports 11-pin header soldering completed; September 19, 2026.",
+      "wiring_status": "Dave reports wiring completed and USB reconnected. Display draw commands completed; visual confirmation pending.",
+      "interface": "SoftSPI",
+      "hardware_spi_id_reserved": 1
+    },
+    "buttons_reserved": {
+      "controller": "VS1053 GPIO, not ESP32 GPIO",
+      "gpio": {
+        "play_pause": 2,
+        "next": 3,
+        "previous": 4,
+        "volume_up": 5,
+        "volume_down": 6
+      },
+      "connection": "Normally open switch between each input and VS1053 3V3 output; active high.",
+      "bias": "Adafruit schematic R8/R16 provide 100k pulldowns; verify idle input readings on the physical board.",
+      "configuration": "VS1053 pins_direction(0); read pins(); debounce in software; leave I2S disabled and GPIO0/1 untouched.",
+      "availability": "Dave found pushbuttons; confirmed September 19, 2026.",
+      "first_button_wiring": "VS1053 3V3 to GPIO2 through tactile button straddling breadboard center trench. Three debounced presses/releases verified.",
+      "all_buttons_wiring": "Dave reports all five buttons wired: play/pause GPIO2, next GPIO3, previous GPIO4, volume up GPIO5, volume down GPIO6, each switched to VS1053 3V3. Five-button verification pending."
+    },
+    "avoid_esp32_gpio": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17,
+      34,
+      39
+    ],
+    "power_off_before_rewiring": true,
+    "battery_connected": false
+  },
+  "remaining_bench_checks": [
+    "Uninterrupted full-album playback with responsive controls and no crashes or persistent dropouts; this also checks album-length memory/playback stability. SD-related clicks and track-transition artifacts are accepted for Mark-5."
+  ],
+  "sources": [
+    "https://micropython.org/download/ESP32_GENERIC/",
+    "https://github.com/OLIMEX/ESP32-DevKit-LiPo/tree/master/HARDWARE/ESP32-DevKit-LiPo-Rev.D",
+    "https://www.olimex.com/Products/IoT/ESP32/ESP32-DevKit-LiPo/resources/ESP32-WROVER-DevKit-Lipo-GPIOs.pdf",
+    "https://github.com/adafruit/Adafruit-VS1053-Breakout-PCB",
+    "https://learn.adafruit.com/adafruit-vs1053-mp3-aac-ogg-midi-wav-play-and-record-codec-tutorial",
+    "https://learn.adafruit.com/adafruit-1-14-240x135-color-tft-breakout"
+  ],
+  "sd_preparation": {
+    "source": "/Users/dave/Music/Swinsian/Creed/Human Clay/01-09 Higher.mp3",
+    "card_path": "/HARMONY/HIGHER.MP3",
+    "source_and_copy_sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+    "bytes": 5070386,
+    "title": "Higher",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "codec": "mp3",
+    "bitrate_bps": 128000,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "duration_seconds": 316.760875,
+    "transcoded": false,
+    "format": "FAT32",
+    "volume_uuid": "E1985EA4-C194-3C8A-AB0D-D4C9E2107BFE",
+    "backup_complete_user_confirmed": true,
+    "device_read_verification": {
+      "date": "2026-09-19",
+      "bytes": 5070386,
+      "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+      "elapsed_ms": 54147,
+      "spi_actual_hz": 1311475,
+      "mounted_readonly": true,
+      "unmounted_after_check": true,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/sd-probe-20260919.txt"
+    }
+  },
+  "first_playback": {
+    "date": "2026-09-19",
+    "track": "Creed - Higher",
+    "path": "/sd/HARMONY/HIGHER.MP3",
+    "volume_db": -40,
+    "requested_duration_seconds": 30,
+    "elapsed_ms": 30001,
+    "sent_bytes": 483232,
+    "decoder_seconds_at_stop": 29,
+    "hdat1": 65531,
+    "spi_actual_hz": 1311475,
+    "user_feedback": "Music in both ears",
+    "automatic_stop_confirmed": true,
+    "end_state": "Volume attenuated to 0xFEFE, decoder held in reset, SD unmounted, SPI deinitialized",
+    "source": "platforms/esp32/mark5_playback_probe.py",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/playback-probe-20260919.txt",
+    "scope": "Short excerpt only; no full-song, album or UI/control acceptance claim"
+  },
+  "full_track_playback": {
+    "date": "2026-09-19",
+    "track": "Creed - Higher",
+    "sent_bytes": 5070386,
+    "elapsed_ms": 316705,
+    "total_elapsed_ms": 316839,
+    "decode_seconds": 316,
+    "volume_db": -40,
+    "spi_actual_hz": 1311475,
+    "eof": true,
+    "end_of_track_drained": true,
+    "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+    "user_feedback": "Faint regular background clicks at roughly 120 beats per minute (about twice per second), noticeable during fade-in and fade-out.",
+    "audio_quality_passed": false,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/full-track-probe-20260919.txt"
+  },
+  "internal_tone_diagnostic": {
+    "date": "2026-09-19",
+    "frequency_hz": 500,
+    "duration_seconds": 15,
+    "volume_db": -50,
+    "sd_access": false,
+    "ongoing_spi_traffic_during_tone": false,
+    "commands_completed": true,
+    "automatic_stop_confirmed": true,
+    "user_feedback": "Dave reports no clicks during the repeated 15-second tone test.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/tone-probe-20260919.txt",
+    "source": "platforms/esp32/mark5_tone_probe.py",
+    "datasheet": "https://www.vlsi.fi/fileadmin/datasheets/vs1053.pdf#page=66"
+  },
+  "ram_playback_diagnostic": {
+    "date": "2026-09-19",
+    "track": "Creed - Higher",
+    "preloaded_bytes": 528000,
+    "preloaded_sha256": "8cc551294d118c3ddc56c6183f8612316f76ecde808440f0db5069a6b4398375",
+    "source_prefix_hash_verified": true,
+    "duration_ms": 30009,
+    "sent_bytes": 482976,
+    "decode_seconds": 29,
+    "volume_db": -37,
+    "spi_actual_hz": 1311475,
+    "sd_reads_during_playback": false,
+    "automatic_stop_confirmed": true,
+    "user_feedback": "No clicks!",
+    "interpretation": "Clean preloaded excerpt and internal tone point toward SD activity or feed delays during streaming; root cause not yet distinguished. RAM test also includes pre-run garbage collection and was 3 dB louder than original music test. Full-song streaming fix still required.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/ram-playback-probe-20260919.txt"
+  },
+  "sd_latency_comparison": {
+    "date": "2026-09-19",
+    "scope": "Silent full-file reads with decoder held in reset. Both match full source SHA256. These are measured read latencies, not proof of audio underrun.",
+    "baseline": {
+      "elapsed_ms": 53155,
+      "readonly": true,
+      "max_read_offset": 1064960,
+      "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+      "bytes": 5070386,
+      "chunk_bytes": 2048,
+      "max_read_us": 27187,
+      "spi": "SPI(id=2, baudrate=1311475, polarity=0, phase=0, bits=8, firstbit=0, sck=18, mosi=23, miso=19)",
+      "sdcs_gpio": 25,
+      "mean_read_us": 20993,
+      "reads_over_50ms": 0,
+      "reads_over_100ms": 0,
+      "reads_over_20ms": 2476,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/sd-latency-baseline-20260919.txt"
+    },
+    "candidate": {
+      "elapsed_ms": 41834,
+      "readonly": true,
+      "max_read_offset": 908800,
+      "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+      "bytes": 5070386,
+      "chunk_bytes": 512,
+      "max_read_us": 8840,
+      "spi": "SPI(id=2, baudrate=4000000, polarity=0, phase=0, bits=8, firstbit=0, sck=18, mosi=23, miso=19)",
+      "sdcs_gpio": 25,
+      "mean_read_us": 3929,
+      "reads_over_50ms": 0,
+      "reads_over_100ms": 0,
+      "reads_over_20ms": 0,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/sd-latency-fast-20260919.txt"
+    }
+  },
+  "streaming_candidate_excerpt": {
+    "volume_db": -37,
+    "decode_seconds": 29,
+    "elapsed_ms": 30003,
+    "spi": "SPI(id=2, baudrate=4000000, polarity=0, phase=0, bits=8, firstbit=0, sck=18, mosi=23, miso=19)",
+    "eof": false,
+    "hdat1": 65531,
+    "preloaded": false,
+    "sent_bytes": 483328,
+    "chunk_bytes": 512,
+    "max_read_us": 11237,
+    "reads_over_20ms": 0,
+    "reads_over_50ms": 0,
+    "date": "2026-09-19",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/streaming-fast-probe-20260919.txt",
+    "user_feedback": "Clicks still present, but faster.",
+    "automatic_stop_confirmed": true,
+    "changes": [
+      "4 MHz shared SPI after slow initialization",
+      "512-byte SD reads",
+      "Pre-created 32-byte packet views",
+      "Garbage collection before playback loop"
+    ],
+    "audio_quality_passed": false
+  },
+  "tone_sd_interference_diagnostic": {
+    "date": "2026-09-19",
+    "frequency_hz": 500,
+    "volume_db": -50,
+    "sequence": "10 seconds idle, 10 seconds of 2048-byte card reads every 500 ms, 10 seconds idle",
+    "sd_read_count": 20,
+    "sd_read_spi_hz": 1311475,
+    "mp3_data_sent_to_decoder": false,
+    "user_feedback": "Clicks audible in middle phase, not beginning or end.",
+    "automatic_stop_confirmed": true,
+    "interpretation": "SD activity reproducibly couples into audible output even without MP3 feeding. Electrical interference is the working diagnosis; precise coupling path (power, ground, signal crosstalk) remains unverified. Faster/smaller reads did not fix it.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/tone-sd-interference-probe-20260919.txt"
+  },
+  "audio_noise_disposition": {
+    "date": "2026-09-19",
+    "decision": "Dave accepts faint SD-related clicks for this prototype and explicitly requests moving on to controls and display.",
+    "resolved": false,
+    "blocks_mark5_ui_work": false,
+    "further_troubleshooting": "Deferred at user request"
+  },
+  "display_probe": {
+    "date": "2026-09-19",
+    "draw_commands_completed": true,
+    "visual_confirmation": "Geometry confirmed in IMG_7633; normal BGR pattern later confirmed via 250 kHz SoftSPI. Hardware-SPI tests became blank after wiring work; root cause not established.",
+    "width": 240,
+    "height": 135,
+    "rotation": 1,
+    "color_order": "BGR",
+    "spi_hz": 10000000,
+    "source": "platforms/esp32/mark5_display_probe.py",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-probe-20260919.txt",
+    "execution": "Driver, font, and probe loaded through raw REPL into RAM; no boot script installed. Explicit micropython/const imports added to driver load; namespace class used because this runtime cannot construct module instances. Audio held in reset; SPI released with image left visible.",
+    "photo": "/Users/dave/Downloads/IMG_7633.HEIC",
+    "initial_rgb_evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-probe-rgb-20260919.txt"
+  },
+  "first_button_probe": {
+    "date": "2026-09-19",
+    "passed": true,
+    "stage": "GPIO2 press/release verification completed",
+    "dreq_during_reset": 1,
+    "dreq_after_reset": 1,
+    "sci_status_reads": [
+      0,
+      0,
+      0
+    ],
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/button-probe-20260919.txt",
+    "source": "platforms/esp32/mark5_button_probe.py",
+    "interpretation": "Previously working decoder now fails communication after display/button wiring. No button state was verified. Physical cause unconfirmed; isolate latest two button jumpers before retry.",
+    "end_state": "Reset asserted; all audio/SD chip selects high; SPI deinitialized",
+    "button_disconnected_retest": {
+      "user_action": "Dave disconnected the two new button jumpers with power off and reconnected USB.",
+      "sci_status_reads": [
+        0,
+        0,
+        0
+      ],
+      "dreq_during_reset": 1,
+      "dreq_after_reset": 1,
+      "communication_restored": false,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/button-disconnected-probe-20260919.txt",
+      "next": "Inspect existing VS1053 power/reset/SPI wiring. Removing button connections did not restore communication; do not attribute failure to switch alone."
+    },
+    "latest_retest": {
+      "date": "2026-09-19",
+      "trigger": "Dave requested retry after an unspecified adjustment.",
+      "dreq_during_reset": 0,
+      "dreq_after_reset": 1,
+      "sci_status_reads": [
+        0,
+        0,
+        0
+      ],
+      "communication_restored": false,
+      "interpretation": "Reset/DREQ behavior now correct; SCI reads still zero. Check SPI wiring, starting with VS1053 MISO to ESP32 GPIO19.",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/button-disconnected-retry-20260919.txt"
+    },
+    "connection_recovery": {
+      "date": "2026-09-19",
+      "trigger": "Dave reviewed complete pin map and requested retry; exact wiring correction not yet reported.",
+      "dreq_during_reset": 0,
+      "dreq_after_reset": 1,
+      "sci_status_reads": [
+        72,
+        72,
+        72
+      ],
+      "gpio_input_direction_readback_passed": true,
+      "idle_gpio_bits": 0,
+      "observation_seconds": 5,
+      "communication_restored": true,
+      "button_press_release_verified": false,
+      "button_wiring_present": "Awaiting confirmation",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/audio-connection-restored-20260919.txt"
+    },
+    "reconnected_test": {
+      "releases": 0,
+      "observed_high_bits": 4,
+      "initial_gpio_bits": 4,
+      "gpio": 2,
+      "passed": false,
+      "presses": 0,
+      "final_pressed": true,
+      "date": "2026-09-19",
+      "sci_status_reads": [
+        72,
+        72,
+        72
+      ],
+      "dreq_during_reset": 1,
+      "dreq_after_reset": 1,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/button-probe-20260919.txt",
+      "interpretation": "After reconnecting button, GPIO2 remained high for entire 35-second observation; no press/release edges. Suspect breadboard strips bypassing switch; inspect/reposition button across center trench. Reset/DREQ low observation was also high on this run, though SCI communication passed."
+    },
+    "verified_test": {
+      "releases": 3,
+      "observed_high_bits": 4,
+      "initial_gpio_bits": 0,
+      "gpio": 2,
+      "passed": true,
+      "presses": 3,
+      "final_pressed": false,
+      "date": "2026-09-19",
+      "sci_status_reads": [
+        72,
+        72,
+        72
+      ],
+      "dreq_during_reset": 0,
+      "dreq_after_reset": 1,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/button-gpio2-pass-20260919.txt",
+      "wiring": "Button now straddles breadboard center trench; diagonal contacts connect VS1053 3V3 and GPIO2.",
+      "scope": "Debounced physical input verified. Music play/pause behavior not yet implemented."
+    }
+  },
+  "all_buttons_probe": {
+    "gpio": "2..6",
+    "passed": true,
+    "presses": 5,
+    "observed_high_bits": 124,
+    "final_pressed": false,
+    "press_order": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "initial_gpio_bits": 0,
+    "releases": 5,
+    "expected_order": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "simultaneous_inputs": 0,
+    "date": "2026-09-19",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/all-buttons-probe-20260919.txt",
+    "scope": "Five physical inputs verified; integrated playback controls not yet tested."
+  },
+  "integrated_player": {
+    "date": "2026-09-19",
+    "source": "platforms/esp32/mark5_player.py",
+    "portable_transport": "core/transport.py",
+    "project_tests": "14 passed: .venv/bin/python -m pytest -q tests",
+    "test_collection_note": "Unscoped pytest entered vendored KiCad Python tests and failed collection; explicit project tests passed.",
+    "duration_limit_seconds": 180,
+    "initial_volume_level": 58,
+    "initial_volume_db": -37,
+    "bench_volume_range": "0=mute; positive levels approximately -60..-20 dB",
+    "storage_readonly": true,
+    "startup": "Ready and silent until physical play/pause press; RAM only, no automatic boot installed.",
+    "track": "Creed - Higher",
+    "track_count": 1,
+    "next_previous_behavior": "Wrap the single-track list and restart Higher during playback; preserve paused state when skipping while paused.",
+    "pause_behavior": "Stop feeding without reset or discarding file bytes; already queued decoder audio drains briefly.",
+    "user_feedback": "Audio and controls worked, but Dave clarified that nothing appeared on the display during the integrated test.",
+    "session_complete": true,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integrated-player-probe-20260919.txt",
+    "display_verified": false,
+    "result": {
+      "decode_seconds_current_track": 31,
+      "events": [
+        "play_pause",
+        "play_pause",
+        "play_pause",
+        "previous",
+        "previous",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_down",
+        "volume_down",
+        "volume_down",
+        "volume_down",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_down",
+        "volume_down",
+        "volume_down",
+        "volume_down",
+        "play_pause",
+        "play_pause",
+        "play_pause",
+        "volume_down",
+        "volume_down",
+        "volume_down"
+      ],
+      "final_status": "Paused",
+      "volume": 60,
+      "sent_bytes_current_track": 500768
+    },
+    "automatic_stop_confirmed": true,
+    "display_symptom": "Backlight glowing, blank image per Dave."
+  },
+  "display_recheck": {
+    "date": "2026-09-19",
+    "draw_commands_completed": true,
+    "visual_confirmation": "Dave reports backlit but blank after standalone redraw and power-cycle followed by another redraw.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-recheck-probe-20260919.txt",
+    "additional_comparison": {
+      "tests": [
+        "Original RGB at 10 MHz",
+        "BGR at 1 MHz"
+      ],
+      "draw_commands_completed": true,
+      "visual_result": "Pending",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-rgb-slow-probe-20260919.txt"
+    },
+    "wiring_user_reconfirmed": true,
+    "voltage_feedback": "Dave replied yes to 3V and RST readings expected near 3.3 V; exact numbers were not provided.",
+    "softspi_isolation": {
+      "spi_hz": 250000,
+      "method": "Independent ST7789 reset/init and all-white fill of entire 240x320 controller RAM; no st7789py/font code used.",
+      "commands_completed": true,
+      "gpio_output_readback": {
+        "RST": 1,
+        "CS": 1,
+        "DC": 1
+      },
+      "visual_result": "Dave confirms solid-white test works.",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-softspi-isolation-20260919.txt",
+      "host_runner": "/tmp/harmony-mark5-run-display-isolation.py"
+    },
+    "normal_driver_softspi": {
+      "spi_hz": 250000,
+      "visual_result": "Dave confirms full pattern visible with normal driver using SoftSPI.",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/display-driver-softspi-20260919.txt"
+    }
+  },
+  "integrated_player_softspi": {
+    "date": "2026-09-19",
+    "duration_limit_seconds": 90,
+    "display_spi_hz": 250000,
+    "passed": false,
+    "user_feedback": "Backlit blank display; delayed music onset followed by starting and stopping with all buttons released.",
+    "events": [
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause",
+      "play_pause"
+    ],
+    "sent_bytes": 1212608,
+    "decode_seconds_at_stop": 9,
+    "interpretation": "False play/pause input events recorded. Decoder time lagged far behind bytes sent. Cause not established; standalone display success does not verify integration.",
+    "automatic_stop_logged": true,
+    "subsequent_stop": "Device identity verified and GPIO32 asserted low; AUDIO_HELD_IN_RESET acknowledged.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integrated-player-softspi-20260919.txt"
+  },
+  "integration_silent_isolation": {
+    "date": "2026-09-19",
+    "phases": [
+      "before display initialization",
+      "after display initialization",
+      "after display text and border",
+      "audio SPI slowed to 500 kHz"
+    ],
+    "samples_per_phase": 12,
+    "gpio_raw": 2048,
+    "button_mask_all_samples": 0,
+    "mode": 18432,
+    "clock": 34816,
+    "volume": 65278,
+    "status": "First read 0x48, subsequent reads 0x40",
+    "display_visual_confirmation": "Dave confirms SILENT TEST and white border visible.",
+    "interpretation": "No false button edges during brief silent samples. Does not exclude a fault during streaming or intermittent wiring.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integration-isolation-20260919.txt"
+  },
+  "integration_stream_isolation": {
+    "date": "2026-09-19",
+    "duration_seconds": 20,
+    "muted": true,
+    "display": "Static text and border",
+    "button_mask_all_samples": 0,
+    "decoder_seconds_at_19_seconds": 18,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integration-stream-isolation-20260919.txt"
+  },
+  "integration_update_isolation": {
+    "date": "2026-09-19",
+    "duration_seconds": 30,
+    "muted": true,
+    "phases": "10 seconds static screen, 10 seconds writing one glyph every loop, 10 seconds static screen",
+    "button_mask_all_samples": 0,
+    "decoder_seconds_at_29_seconds": 25,
+    "finding": "Continuous glyph updates reduced feed throughput to roughly 9.7 KB/s, below the 16 KB/s track bitrate. No phantom inputs reproduced. This stress test demonstrates a feed-budget problem but does not explain the earlier blank screen or false input events.",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integration-update-isolation-20260919.txt",
+    "display_visual_confirmation": "Dave confirms MUTED UPDATE TEST and border visible."
+  },
+  "integration_update_feed32": {
+    "date": "2026-09-19",
+    "passed": false,
+    "change": "Increase pump budget from 8 to 32 packets per loop",
+    "finding": "Decoder time remained zero for entire 30-second muted test despite 730112 bytes sent by 29.773 s. No false button edges recorded. Not an accepted fix; reverted to 8 packets. Cause unestablished.",
+    "end_state": "Decoder reset, SD unmounted, SPI deinitialized",
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integration-update-feed32-20260919.txt",
+    "next": "Physical USB power cycle with all buttons released, then fresh-state checks."
+  },
+  "fresh_power_cycle_checks": {
+    "date": "2026-09-19",
+    "user_confirmed_usb_reconnected": true,
+    "muted_integrated": {
+      "decoded_seconds": 0,
+      "sent_bytes": 465152,
+      "unexpected_button_inputs": [],
+      "display": "Dave confirms backlit but blank",
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/fresh-muted-integrated-20260919.txt"
+    },
+    "original_playback_comparison": {
+      "hardware_spi": "Decoder remained at zero over 10 s",
+      "software_spi_500khz": "Decoder remained at zero over 10 s",
+      "evidence": [
+        "/Users/dave/Downloads/harmony-mark5-backups/fresh-original-muted-20260919.txt",
+        "/Users/dave/Downloads/harmony-mark5-backups/fresh-software-audio-muted-20260919.txt"
+      ]
+    },
+    "data_path": {
+      "requested_gpio26_levels": [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "vs1053_xdcs_readback_levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gpio_idata_raw": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048
+      ],
+      "card_prefix_bytes": 16384,
+      "card_prefix_sha256": "06e82f20e454db63d0a318b3ce8608126f0bfaa5ff31d7bcf382dece65554141",
+      "prefix_matches_mac_source": true,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/fresh-data-path-20260919.txt",
+      "interpretation": "VS1053 GPIO_IDATA bit 11 does not follow commanded ESP32 GPIO26 low transitions. Inspect/reseat GPIO26 to XDCS connection with USB off. Exact physical defect and relation to blank display not established.",
+      "datasheet": "https://www.vlsi.fi/fileadmin/datasheets/vs1053.pdf#page=75"
+    },
+    "end_state": "Decoder held in reset; card unmounted; no persistent code installed"
+  },
+  "xdcs_connection_recovery": {
+    "date": "2026-09-19",
+    "user_action": "Dave confirmed completing the power-off GPIO26-to-XDCS jumper reseat/replacement step; exact action not separately specified.",
+    "requested_gpio26_levels": [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "vs1053_xdcs_readback_levels": [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "readback_passed": true,
+    "card_prefix_sha256_matches": true,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/xdcs-reseated-data-path-20260919.txt"
+  },
+  "xdcs_repaired_muted_integration": {
+    "date": "2026-09-19",
+    "duration_seconds": 20,
+    "sent_bytes": 321056,
+    "decode_seconds_at_stop": 19,
+    "unexpected_button_inputs": [],
+    "display_user_confirmed": "HARMONY, Higher, and timer visible",
+    "passed": true,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/xdcs-reseated-muted-integrated-20260919.txt",
+    "scope": "Muted decoding and visible updating screen passed. Audible playback and physical controls still require integrated retest.",
+    "end_state": "Decoder reset, SD unmounted, SPI deinitialized"
+  },
+  "integrated_player_xdcs_repaired": {
+    "date": "2026-09-19",
+    "duration_limit_seconds": 120,
+    "result": {
+      "decode_seconds_current_track": 3,
+      "events": [
+        "play_pause",
+        "volume_up",
+        "volume_up",
+        "volume_down",
+        "volume_down",
+        "previous",
+        "volume_up",
+        "volume_up",
+        "play_pause",
+        "play_pause",
+        "next",
+        "volume_up",
+        "volume_down",
+        "play_pause"
+      ],
+      "final_status": "Paused",
+      "volume": 68,
+      "sent_bytes_current_track": 59392
+    },
+    "user_feedback": "Yes, music, screen, and all five buttons work",
+    "passed": true,
+    "automatic_stop_confirmed": true,
+    "evidence": "/Users/dave/Downloads/harmony-mark5-backups/integrated-player-xdcs-repaired-20260919.txt",
+    "scope": "Interactive single-track test. Includes pauses and restarts; not a two-minute continuous playback or full-album acceptance test.",
+    "audio_noise": "Previously accepted faint SD-related clicks remain deferred."
+  },
+  "video_demo": {
+    "date": "2026-09-19",
+    "requested_by_user": true,
+    "duration_limit_seconds": 300,
+    "starts": "Ready and silent until Play",
+    "state": "Completed; PLAYER_STOPPED confirmed",
+    "host_runner": "/tmp/harmony-mark5-run-player-video.py",
+    "evidence_when_finished": "/Users/dave/Downloads/harmony-mark5-backups/integrated-player-video-20260919.txt",
+    "host_session_id": 30079,
+    "result": {
+      "decode_seconds_current_track": 55,
+      "events": [
+        "play_pause",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "volume_up",
+        "play_pause"
+      ],
+      "final_status": "Paused",
+      "volume": 100,
+      "sent_bytes_current_track": 895168
+    },
+    "automatic_stop_confirmed": true,
+    "scope": "Five-minute session with about 55 seconds decoded and a long user pause; not continuous five-minute playback. Video capture itself not verified.",
+    "end_state": "Decoder muted and held in reset, SD unmounted, SPI deinitialized"
+  },
+  "session_review": {
+    "as_of": "2026-09-19",
+    "path": "/Users/dave/projects/assistant/05-projects/mp3-player/mark-5/2026-09-19-bench-review.md",
+    "assessment": "Working single-track wired prototype; full-album acceptance outstanding.",
+    "accepted_limits": [
+      "Faint SD-related clicks",
+      "USB bench power and Micro-USB connector",
+      "RAM-loaded player without persistent startup"
+    ],
+    "next_work_item": "HARMONY-16"
+  },
+  "album_support": {
+    "date": "2026-09-19",
+    "album": "Human Clay",
+    "artist": "Creed",
+    "track_count": 12,
+    "duration_seconds_rounded": 3685,
+    "bytes": 58902022,
+    "source_directory": "/Users/dave/Music/Swinsian/Creed/Human Clay",
+    "device_manifest": "/sd/HARMONY/HUMANCLAY/album.json",
+    "host_manifest": "hardware/mark-5/albums/human-clay.json",
+    "copies_checksum_verified": true,
+    "existing_card_files_preserved": true,
+    "behavior": "Disc/track ordering, automatic EOF advance, stop after last track, next/previous wrap and preserve pause, title/index/duration display. Bench runner exits after album or time limit; reload for another session.",
+    "project_tests": "30 passed: .venv/bin/python -m pytest -q tests",
+    "transition_test": {
+      "passed": true,
+      "muted": true,
+      "test_manifest": "/sd/HARMONY/TESTALBM/album.json",
+      "result": {
+        "completed_details": [
+          {
+            "id": "01-01.MP3",
+            "bytes": 48908,
+            "sha256": "408a47c49f3651c3bcc81bb18b856e606ba189f15be4cdc77139bfc46a561186",
+            "decode_seconds": 2
+          },
+          {
+            "id": "01-02.MP3",
+            "bytes": 48908,
+            "sha256": "2f37da366a17e4e0ac826293dc7195c2996180d92f2fd469e1e402e9fee99553",
+            "decode_seconds": 2
+          },
+          {
+            "id": "01-03.MP3",
+            "bytes": 48908,
+            "sha256": "bc1bfde35e42a1bddf0a33ecca1f692f130cc455f4d90b44711b07b9652a2feb",
+            "decode_seconds": 2
+          }
+        ],
+        "sent_bytes_current_track": 48908,
+        "events": [],
+        "final_status": "Ended",
+        "decode_seconds_current_track": 3,
+        "volume": 0,
+        "completed_tracks": [
+          "01-01.MP3",
+          "01-02.MP3",
+          "01-03.MP3"
+        ],
+        "track_count": 3
+      },
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/album-transitions-20260919.log"
+    },
+    "full_album_run": {
+      "state": "Interactive album test accepted by Dave. Manual skips and pause/resume are logged; track 5 subsequently completed with matching SHA256 and automatically advanced to track 6. Uninterrupted full-album acceptance remains outstanding.",
+      "limit_seconds": 4500,
+      "evidence": "/Users/dave/Downloads/harmony-mark5-backups/human-clay-album-20260919.log",
+      "host_session_id": 45800,
+      "audible_user_confirmation": "Dave: \"it works great.\" Reports an audio artifact at track transitions and explicitly accepts it for Mark-5.",
+      "functional_test_passed": true,
+      "uninterrupted_full_album_passed": false
+    },
+    "loader": "tools/run_mark5.py",
+    "preparation_tool": "tools/prepare_mark5_album.py",
+    "persistent_startup": false
+  },
+  "track_transition_artifact_disposition": {
+    "date": "2026-09-19",
+    "observation": "Dave hears an audio artifact at track transitions.",
+    "decision": "Accepted by Dave for Mark-5; nonblocking and deferred for future versions.",
+    "resolved": false,
+    "root_cause": "Unconfirmed; recorded separately from the previously isolated SD-related clicks."
+  },
+  "physical_prototyping_lessons": {
+    "date": "2026-09-19",
+    "source": "Dave, after successful interactive album test",
+    "breadboard": "The available breadboard is insufficient for the development board width, forcing a clunky female-to-male jumper arrangement. Check board width and accessible header rows when selecting the next prototyping setup.",
+    "interfaces": "Dave wishes he had bought button and other interface breakout boards rather than using bare pushbuttons on the breadboard. Plan suitable interface modules before the next build.",
+    "disposition": "Neither is a Mark-5 showstopper. Retain both lessons for future versions; no purchase requested."
+  },
+  "optional_followup": "Persistent startup and recovery if adopted; current bench player requires loading from the Mac after power cycling."
+}
