@@ -1,0 +1,2605 @@
+{
+  "source_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "derivation": "One record per footprint in each routed .kicad_pcb; population follows PCB attr flags.",
+  "summary": {
+    "tangara-mainboard": {
+      "footprints_total": 124,
+      "fitted": 92,
+      "dnp_flag": 5,
+      "excluded_from_bom": 29,
+      "fitted_missing_mpn": 0
+    },
+    "tangara-faceplate": {
+      "footprints_total": 46,
+      "fitted": 37,
+      "dnp_flag": 0,
+      "excluded_from_bom": 9,
+      "fitted_missing_mpn": 19
+    }
+  },
+  "duplicate_references_within_board": [],
+  "mpn_reconciliation_counts": {
+    "missing_in_both": 21,
+    "no_matching_schematic_audit_row": 53,
+    "pcb_differs_from_audit_candidates": 10,
+    "pcb_matches_one_audit_candidate": 86
+  },
+  "items": [
+    {
+      "board": "tangara-faceplate",
+      "reference": "C1",
+      "value": "0.1uF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "C2",
+      "value": "22uF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM319R61C226KE15D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "C3",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "C4",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "C5",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:oshwa-cert",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "LOGO",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "H1",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "H2",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "H3",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "H4",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "J1",
+      "value": "+",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "J2",
+      "value": "-",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "J4",
+      "value": "MB Connector",
+      "mpn": "GT-F0509SR15-15SMT01",
+      "footprint": "faceplate-footprints:G-Switch GT-F0509SR15-15SMT01",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GT-F0509SR15-15SMT01"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "LCD1",
+      "value": "JD-T1800",
+      "mpn": null,
+      "footprint": "faceplate-footprints:JD-T1800",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "Q1",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "PJC138K_R1_00001"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R1",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R2",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R3",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R4",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R5",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R6",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R7",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R8",
+      "value": "1M",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603FR-131ML"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "R9",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "REF**",
+      "value": "ESD-Logo_6.6x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:ESD-Logo_6.6x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "REF**",
+      "value": "WEEE-Logo_4.2x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:WEEE-Logo_4.2x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "REF**",
+      "value": "CE-Logo_8.5x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:CE-Logo_8.5x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "REF**",
+      "value": "FCC-Logo_7.3x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:FCC-Logo_7.3x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "REF**",
+      "value": "UKCA-Logo_6x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:UKCA-Logo_6x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "SW1",
+      "value": "BUTTON",
+      "mpn": null,
+      "footprint": "faceplate-footprints:qtouch-button",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "SW2",
+      "value": "WHEEL",
+      "mpn": null,
+      "footprint": "faceplate-footprints:qtouch-wheel",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "SW3",
+      "value": "GUARD",
+      "mpn": null,
+      "footprint": "faceplate-footprints:qtouch-guard",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP1",
+      "value": "SCL",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP2",
+      "value": "SDA",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP3",
+      "value": "PICO",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP4",
+      "value": "SCLK",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP5",
+      "value": "CS",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP6",
+      "value": "RS",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP7",
+      "value": "LED",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP8",
+      "value": "3V3",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "TP9",
+      "value": "GND",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "U1",
+      "value": "AT42QT2120",
+      "mpn": "AT42QT2120-MMH",
+      "footprint": "Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AT42QT2120-MMH"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "U2",
+      "value": "DRV2605LDGS",
+      "mpn": "DRV2605LDGST",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "DRV2605LDGST"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "kibuzzard-63E31E51",
+      "value": "G***",
+      "mpn": null,
+      "footprint": "kibuzzard-63E31E51",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-faceplate",
+      "reference": "kibuzzard-63E31E57",
+      "value": "G***",
+      "mpn": null,
+      "footprint": "kibuzzard-63E31E57",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C1",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C10",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM319R61C226KE15D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C12",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C13",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C14",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C15",
+      "value": "2700pF",
+      "mpn": "GRM1885C1H272JA01J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM1885C1H272JA01J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C16",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM319R61C226KE15D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C17",
+      "value": "100pF",
+      "mpn": "",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": true,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "dnp",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C18",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C19",
+      "value": "100pF",
+      "mpn": "",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": true,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "dnp",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "missing_in_both"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C2",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C23",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C24",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C25",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C27",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C29",
+      "value": "100uF",
+      "mpn": "GRM32EC70J107ME15K",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM32EC70J107ME15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C3",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C30",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C31",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C32",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C33",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C34",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C35",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM21BR61C106KE15K"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C37",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C38",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM319R61C226KE15D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C39",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C4",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C40",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C41",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM216R61C105KA88D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C42",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C6",
+      "value": "2700pF",
+      "mpn": "GRM1885C1H272JA01J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GRM1885C1H272JA01J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C7",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "C9",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "GCM188R71C104KA37J"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "D4",
+      "value": "BAT54C",
+      "mpn": "BAT54C",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "BAT54C"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:oshwa-cert",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:sparkles",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:sparkles",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star_small",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:heart",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "LOGO",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "G***",
+      "value": "LOGO",
+      "mpn": null,
+      "footprint": "footprints:star",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": true,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "H1",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "footprints:MountingHole_2.2mm_M2_Pad_Via2",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "H2",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "footprints:MountingHole_2.2mm_M2_Pad_Via2",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "H3",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "footprints:MountingHole_2.2mm_M2_Pad_Via2",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "H4",
+      "value": "MountingHole",
+      "mpn": null,
+      "footprint": "footprints:MountingHole_2.2mm_M2_Pad_Via2",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J1",
+      "value": "SJ-3506-SMT",
+      "mpn": "SJ-3506-SMT-TR",
+      "footprint": "footprints:CUI_SJ-3506-SMT",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "SJ-3506-SMT-TR"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J2",
+      "value": "FP Connector",
+      "mpn": "GT-F0509SR15-15SMT01",
+      "footprint": "footprints:G-Switch GT-F0509SR15-15SMT01",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J3",
+      "value": "JTAG",
+      "mpn": "FTSH-105-01-F-DV-K",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+      "dnp": true,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [
+        "GT-F0509SR15-15SMT01"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J4",
+      "value": "SD_Card",
+      "mpn": "DM1AA-SF-PEJ(82) ",
+      "footprint": "Connector_Card:SD_Hirose_DM1AA_SF_PEJ82",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "DM1AA-SF-PEJ(82)"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J5",
+      "value": "SWD",
+      "mpn": null,
+      "footprint": "footprints:SAMDSWD",
+      "dnp": true,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J6",
+      "value": "USB",
+      "mpn": "USB4510-03-1-A",
+      "footprint": "footprints:GCT_USB4510-03-1-A_REVA",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "USB4510-03-1-A"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "J7",
+      "value": "Battery",
+      "mpn": "S3B-PH-K-S(LF)(SN)",
+      "footprint": "Connector_JST:JST_PH_S3B-PH-K_1x03_P2.00mm_Horizontal",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "S3B-PH-K-S(LF)(SN)"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "L1",
+      "value": "4.7\u03bcH",
+      "mpn": "1239AS-H-4R7M=P2",
+      "footprint": "Inductor_SMD:L_1008_2520Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "1239AS-H-4R7M=P2"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "L2",
+      "value": "4.7\u03bcH",
+      "mpn": "1239AS-H-4R7M=P2",
+      "footprint": "Inductor_SMD:L_1008_2520Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "1239AS-H-4R7M=P2"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "Q1",
+      "value": "PMV48XPA2R",
+      "mpn": "PMV48XPA2R",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "PJC138K_R1_00001",
+        "PMV48XPA2R"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "Q2",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "Q3",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R1",
+      "value": "10k\u03a9",
+      "mpn": "0.1W 5%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": true,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "dnp",
+      "schematic_audit_mpn_candidates": [
+        "0.1W 5%"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R10",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R11",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R12",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R15",
+      "value": "560\u03a9",
+      "mpn": "RR1220P-561-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL",
+        "RR1220P-561-D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R2",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R21",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R22",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R26",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R3",
+      "value": "2.2k\u03a9",
+      "mpn": "RR1220P-222-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "RR1220P-222-D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R30",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R31",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R32",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R34",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R35",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R37",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R38",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R39",
+      "value": "1k\u03a9",
+      "mpn": "RC0603DR-071KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "RC0603DR-071KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R4",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R41",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R42",
+      "value": "1k\u03a9",
+      "mpn": "RC0603DR-071KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "RC0603DR-071KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R49",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R5",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R50",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML ",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603FR-131ML"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R51",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML ",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603FR-131ML"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R55",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R56",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML ",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603FR-131ML"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R57",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R58",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R59",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R6",
+      "value": "560\u03a9",
+      "mpn": "RR1220P-561-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL",
+        "RR1220P-561-D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R61",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R7",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML ",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603FR-131ML"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R8",
+      "value": "2.2k\u03a9",
+      "mpn": "RR1220P-222-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "RR1220P-222-D"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "R9",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "AC0603JR-0710KL"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "REF**",
+      "value": "UKCA-Logo_6x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:UKCA-Logo_6x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "REF**",
+      "value": "CE-Logo_8.5x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:CE-Logo_8.5x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "REF**",
+      "value": "FCC-Logo_7.3x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:FCC-Logo_7.3x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "REF**",
+      "value": "ESD-Logo_6.6x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:ESD-Logo_6.6x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "REF**",
+      "value": "WEEE-Logo_4.2x6mm_SilkScreen",
+      "mpn": null,
+      "footprint": "Symbol:WEEE-Logo_4.2x6mm_SilkScreen",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "SW1",
+      "value": "SW_SPDT",
+      "mpn": "JS102011SAQN",
+      "footprint": "Button_Switch_SMD:SW_SPDT_CK-JS102011SAQN",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "EVQ-P40B3M"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "SW2",
+      "value": "SW_Push",
+      "mpn": "EVQ-P40B3M",
+      "footprint": "footprints:SW_EVQ-P4HB3B",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "JS102011SAQN"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "SW3",
+      "value": "SW_Push",
+      "mpn": "EVQ-P40B3M",
+      "footprint": "footprints:SW_EVQ-P4HB3B",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "EVQ-P40B3M"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "TP3",
+      "value": "+5V",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "TP4",
+      "value": "-5V",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "TP5",
+      "value": "AMP_EN",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "TP6",
+      "value": "AMP_MUTE",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "TP7",
+      "value": "BAT",
+      "mpn": null,
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": false,
+      "exclude_from_bom": true,
+      "exclude_from_position_files": true,
+      "board_only": false,
+      "population": "excluded",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "INA1620RTWR",
+        "PCA8575BS,118"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U10",
+      "value": "MCP73871",
+      "mpn": "MCP73871-2CCI/ML",
+      "footprint": "footprints:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias2",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "MCP73871-2CCI/ML"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U12",
+      "value": "BD91N01NUX",
+      "mpn": "BD91N01NUX",
+      "footprint": "footprints:BD91N01NUX-E2",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "BD91N01NUX"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U13",
+      "value": "ATSAMD21E18A-AF",
+      "mpn": "ATSAMD21E18A-AF",
+      "footprint": "Package_QFP:TQFP-32_7x7mm_P0.8mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "ATSAMD21E18A-AF"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U14",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [],
+      "mpn_reconciliation": "no_matching_schematic_audit_row"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U15",
+      "value": "ESP32-WROVER-E",
+      "mpn": "ESP32-WROVER-E-N16R8",
+      "footprint": "footprints:ESP32-WROVER",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "ESP32-WROVER-E-N16R8"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U16",
+      "value": "TPS22948",
+      "mpn": "TPS22948DCKR",
+      "footprint": "footprints:SOT65P210X110-6N",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "TPS22948DCKR"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U17",
+      "value": "WM8523",
+      "mpn": "WM8523GEDT/R",
+      "footprint": "Package_SO:SSOP-20_4.4x6.5mm_P0.65mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "WM8523GEDT/R"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U3",
+      "value": "D5V0L2B3T-7",
+      "mpn": "D5V0L2B3T-7",
+      "footprint": "Package_TO_SOT_SMD:SOT-523",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "D5V0L2B3T-7"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U4",
+      "value": "TLV75533PDBV",
+      "mpn": "TLV75533PDBV",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "TLV75533PDBV"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U5",
+      "value": "PE1605C4A6",
+      "mpn": "PE1605C4A6",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "PE1605C4A6"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U7",
+      "value": "TPS65133",
+      "mpn": "TPS65133DPDR",
+      "footprint": "footprints:SON40P300X300X80-13N",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "TPS65133DPDR"
+      ],
+      "mpn_reconciliation": "pcb_matches_one_audit_candidate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "reference": "U9",
+      "value": "PCA8575",
+      "mpn": "PCA8575BS,118",
+      "footprint": "Package_DFN_QFN:HVQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm",
+      "dnp": false,
+      "exclude_from_bom": false,
+      "exclude_from_position_files": false,
+      "board_only": false,
+      "population": "fitted",
+      "schematic_audit_mpn_candidates": [
+        "74CBTLV3257PW-Q10J"
+      ],
+      "mpn_reconciliation": "pcb_differs_from_audit_candidates"
+    }
+  ]
+}

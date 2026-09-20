@@ -1,0 +1,1426 @@
+{
+  "source_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "purpose": "Placed schematic symbols with footprints, excluding power/net symbols. Geometry/test pads and DNP components are classified separately. Inspection aid only; schematic/PCB reconciliation and supplier BOM validation remain required.",
+  "parts": [
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP2",
+      "value": "SDA",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "U2",
+      "value": "DRV2605LDGS",
+      "mpn": "DRV2605LDGST",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R3",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R6",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "H4",
+      "value": "MountingHole",
+      "mpn": "",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "H3",
+      "value": "MountingHole",
+      "mpn": "",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "SW2",
+      "value": "WHEEL",
+      "mpn": "",
+      "footprint": "faceplate-footprints:qtouch-wheel",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP4",
+      "value": "SCLK",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "C3",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R4",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP6",
+      "value": "RS",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "J1",
+      "value": "+",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R8",
+      "value": "1M",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "C5",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "C2",
+      "value": "22uF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "SW3",
+      "value": "GUARD",
+      "mpn": "",
+      "footprint": "faceplate-footprints:qtouch-guard",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "Q1",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "C1",
+      "value": "0.1uF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP8",
+      "value": "3V3",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R5",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "C4",
+      "value": "1uF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP5",
+      "value": "CS",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "SW1",
+      "value": "BUTTON",
+      "mpn": "",
+      "footprint": "faceplate-footprints:qtouch-button",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R9",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R1",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "H1",
+      "value": "MountingHole",
+      "mpn": "",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R2",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "H2",
+      "value": "MountingHole",
+      "mpn": "",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2_Pad_Via",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP3",
+      "value": "PICO",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "U1",
+      "value": "AT42QT2120",
+      "mpn": "AT42QT2120-MMH",
+      "footprint": "Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "J2",
+      "value": "-",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP9",
+      "value": "GND",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "LCD1",
+      "value": "JD-T1800",
+      "mpn": "",
+      "footprint": "faceplate-footprints:JD-T1800",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "J4",
+      "value": "MB Connector",
+      "mpn": "GT-F0509SR15-15SMT01",
+      "footprint": "faceplate-footprints:G-Switch GT-F0509SR15-15SMT01",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP1",
+      "value": "SCL",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "R7",
+      "value": "10k",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-faceplate",
+      "sheet": "tangara-faceplate.kicad_sch",
+      "ref": "TP7",
+      "value": "LED",
+      "mpn": "",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "dnp": "no",
+      "procurement_class": "board_geometry_or_test_pad"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R21",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "U15",
+      "value": "ESP32-WROVER-E",
+      "mpn": "ESP32-WROVER-E-N16R8",
+      "footprint": "footprints:ESP32-WROVER",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C38",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C41",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C35",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C34",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R10",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C30",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C39",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C32",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R58",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R26",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R56",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R49",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C40",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R59",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R42",
+      "value": "1k\u03a9",
+      "mpn": "RC0603DR-071KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "U13",
+      "value": "ATSAMD21E18A-AF",
+      "mpn": "ATSAMD21E18A-AF",
+      "footprint": "Package_QFP:TQFP-32_7x7mm_P0.8mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "C33",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "tangara-mainboard.kicad_sch",
+      "ref": "R55",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R50",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "U12",
+      "value": "BD91N01NUX",
+      "mpn": "BD91N01NUX",
+      "footprint": "footprints:BD91N01NUX-E2",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R35",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C24",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R34",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C25",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "U10",
+      "value": "MCP73871",
+      "mpn": "MCP73871-2CCI/ML",
+      "footprint": "footprints:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias2",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R51",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R7",
+      "value": "1M\u03a9",
+      "mpn": "AC0603FR-131ML",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R39",
+      "value": "1k\u03a9",
+      "mpn": "RC0603DR-071KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C27",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "U4",
+      "value": "TLV75533PDBV",
+      "mpn": "TLV75533PDBV",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "U5",
+      "value": "PE1605C4A6",
+      "mpn": "PE1605C4A6",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "Q1",
+      "value": "PMV48XPA2R",
+      "mpn": "PMV48XPA2R",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R37",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C37",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R1",
+      "value": "10k\u03a9",
+      "mpn": "0.1W 5%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "yes",
+      "procurement_class": "do_not_populate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "Q1",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "D4",
+      "value": "BAT54C",
+      "mpn": "BAT54C",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C29",
+      "value": "100uF",
+      "mpn": "GRM32EC70J107ME15K",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "J6",
+      "value": "USB",
+      "mpn": "USB4510-03-1-A",
+      "footprint": "footprints:GCT_USB4510-03-1-A_REVA",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R38",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "C1",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "R41",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "power.kicad_sch",
+      "ref": "J7",
+      "value": "Battery",
+      "mpn": "S3B-PH-K-S(LF)(SN)",
+      "footprint": "Connector_JST:JST_PH_S3B-PH-K_1x03_P2.00mm_Horizontal",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R13",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "C30",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R11",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "Q1",
+      "value": "PJC138K",
+      "mpn": "PJC138K_R1_00001",
+      "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U1",
+      "value": "PCA8575",
+      "mpn": "PCA8575BS,118",
+      "footprint": "Package_DFN_QFN:HVQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R44",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "SW2",
+      "value": "SW_SPDT",
+      "mpn": "JS102011SAQN",
+      "footprint": "Button_Switch_SMD:SW_SPDT_CK-JS102011SAQN",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "C11",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "J3",
+      "value": "MB Connector",
+      "mpn": "GT-F0509SR15-15SMT01",
+      "footprint": "footprints:G-Switch GT-F0509SR15-15SMT01",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U9",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U9",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R12",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R17",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U9",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "SW1",
+      "value": "SW_Push",
+      "mpn": "EVQ-P40B3M",
+      "footprint": "footprints:SW_EVQ-P4HB3B",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R4",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U9",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R17",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U16",
+      "value": "TPS22948",
+      "mpn": "TPS22948DCKR",
+      "footprint": "footprints:SOT65P210X110-6N",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "SW3",
+      "value": "SW_Push",
+      "mpn": "EVQ-P40B3M",
+      "footprint": "footprints:SW_EVQ-P4HB3B",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R6",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "J4",
+      "value": "SD_Card",
+      "mpn": "DM1AA-SF-PEJ(82)",
+      "footprint": "Connector_Card:SD_Hirose_DM1AA_SF_PEJ82",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "U9",
+      "value": "74CBTLV3257",
+      "mpn": "74CBTLV3257PW-Q10J",
+      "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R17",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R15",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R17",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "C23",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "peripherals.kicad_sch",
+      "ref": "R9",
+      "value": "10k\u03a9",
+      "mpn": "AC0603JR-0710KL",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "J1",
+      "value": "SJ-3506-SMT",
+      "mpn": "SJ-3506-SMT-TR",
+      "footprint": "footprints:CUI_SJ-3506-SMT",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C19",
+      "value": "100pF",
+      "mpn": "",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "yes",
+      "procurement_class": "do_not_populate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C15",
+      "value": "2700pF",
+      "mpn": "GRM1885C1H272JA01J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "L1",
+      "value": "4.7\u03bcH",
+      "mpn": "1239AS-H-4R7M=P2",
+      "footprint": "Inductor_SMD:L_1008_2520Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C10",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U17",
+      "value": "WM8523",
+      "mpn": "WM8523GEDT/R",
+      "footprint": "Package_SO:SSOP-20_4.4x6.5mm_P0.65mm",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "R6",
+      "value": "560\u03a9",
+      "mpn": "RR1220P-561-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C4",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "R8",
+      "value": "2.2k\u03a9",
+      "mpn": "RR1220P-222-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U7",
+      "value": "TPS65133",
+      "mpn": "TPS65133DPDR",
+      "footprint": "footprints:SON40P300X300X80-13N",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U3",
+      "value": "D5V0L2B3T-7",
+      "mpn": "D5V0L2B3T-7",
+      "footprint": "Package_TO_SOT_SMD:SOT-523",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "L2",
+      "value": "4.7\u03bcH",
+      "mpn": "1239AS-H-4R7M=P2",
+      "footprint": "Inductor_SMD:L_1008_2520Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C11",
+      "value": "1\u03bcF",
+      "mpn": "GRM216R61C105KA88D",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C13",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C11",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "R15",
+      "value": "560\u03a9",
+      "mpn": "RR1220P-561-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C2",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C16",
+      "value": "22\u03bcF",
+      "mpn": "GRM319R61C226KE15D",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C18",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "R3",
+      "value": "2.2k\u03a9",
+      "mpn": "RR1220P-222-D",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C3",
+      "value": "10\u03bcF",
+      "mpn": "GRM21BR61C106KE15K",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C14",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C9",
+      "value": "0.1\u03bcF",
+      "mpn": "GCM188R71C104KA37J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C17",
+      "value": "100pF",
+      "mpn": "",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "yes",
+      "procurement_class": "do_not_populate"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "C6",
+      "value": "2700pF",
+      "mpn": "GRM1885C1H272JA01J",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    },
+    {
+      "board": "tangara-mainboard",
+      "sheet": "audio.kicad_sch",
+      "ref": "U1",
+      "value": "INA1620",
+      "mpn": "INA1620RTWR",
+      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+      "dnp": "no",
+      "procurement_class": "physical_component"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+pack_pin,pack_wire,function,adapter_input_header_pin,board_J7_pin,board_end_wire
+1,red,protected positive,1,3,red
+2,white,NTC sensor,2,1,white
+3,black,protected negative,3,2,black

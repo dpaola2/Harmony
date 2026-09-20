@@ -1,0 +1,77 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 8,
+    "sha256": "020c2606e8ed484089c2083e0be438b9d0736bee1558a6b76af0d58bd23f69cf"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4502,
+    "sha256": "19e17730747260a6730a28c8e9ea314b5550830b9b2a365edfd1043af63d7939"
+  },
+  {
+    "path": "artifacts/SHA256SUMS",
+    "bytes": 574,
+    "sha256": "97c998c3f420668191ad820919143ad5bea52cfebfb58160effeb60fb9cd830e"
+  },
+  {
+    "path": "artifacts/bootloader-tangara-bc1632d.bin",
+    "bytes": 8192,
+    "sha256": "b641b5a613d023dabf0bb0f330c861a3dad97e4fc17d8dcdfdad0f46ce3990fb"
+  },
+  {
+    "path": "artifacts/bootloader-tangara-bc1632d.elf",
+    "bytes": 155736,
+    "sha256": "3eaa1ee9651a784b36727f066646105d1e2fc12647153e558f940a953a4531a8"
+  },
+  {
+    "path": "artifacts/tangara-samd-v6.0.bin",
+    "bytes": 21640,
+    "sha256": "e2394c6b86194c3ad7dabd21941236a5e57dd4787cd3d1f3403bfc155bb5ab67"
+  },
+  {
+    "path": "artifacts/tangara-samd-v6.0.elf",
+    "bytes": 394108,
+    "sha256": "d19cd579939a4574fc3612a809ae79a6928f601a87f98c410046458a14cd657d"
+  },
+  {
+    "path": "artifacts/tangara-samd-v6.0.uf2",
+    "bytes": 43520,
+    "sha256": "edf8826ac455111479ac9a1ac7ca5ba811dd9751c7efbd6908d30e639782c480"
+  },
+  {
+    "path": "artifacts/update-bootloader-tangara-bc1632d.uf2",
+    "bytes": 19456,
+    "sha256": "42cf0e0e4e7dab8b899555e8d169bae996718a79a632d95d02e4da3243880288"
+  },
+  {
+    "path": "build-samd.sh",
+    "bytes": 4105,
+    "sha256": "4b5b4e0268c25626b2c17d7ebfab7b3c8e9ca923573d69ceb204c5737b6ed503"
+  },
+  {
+    "path": "logs/application-build.log",
+    "bytes": 9771,
+    "sha256": "af7f7a5503e87e51c93f360ab138bdbb7bb88eb09f4d18ec22697a7b8c21a14d"
+  },
+  {
+    "path": "logs/application-configure.log",
+    "bytes": 163,
+    "sha256": "3d487b5f70cfaa30048bcde41f5d7839e46bd13e1f6e68c0d1953c97a5fcc6ff"
+  },
+  {
+    "path": "logs/artifact-sizes.log",
+    "bytes": 312,
+    "sha256": "ca391ea2aa8895321058a3028a93f67512408ee8d1d6f3da8f4cbb9468a40469"
+  },
+  {
+    "path": "logs/bootloader-build.log",
+    "bytes": 19293,
+    "sha256": "ac38fc4fbdc0efb0025e6d82cb91406ce673ceaa46fed85ac7ad679f9f550e2b"
+  },
+  {
+    "path": "logs/toolchain-version.log",
+    "bytes": 285,
+    "sha256": "e5d5fdd1e3a8634d1981bc07130f5176636ecd4a28fef63c6271e44f57db621b"
+  }
+]

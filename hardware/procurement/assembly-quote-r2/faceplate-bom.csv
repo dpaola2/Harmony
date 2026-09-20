@@ -1,0 +1,11 @@
+board,mpn,value,footprint,references,qty_per_board,qty_for_1_board,qty_for_2_boards,qty_for_5_boards,identity_status
+faceplate,GCM188R71C104KA37J,0.1uF,Capacitor_SMD:C_0603_1608Metric,C1,1,1,2,5,SOURCE_MPN
+faceplate,GRM319R61C226KE15D,22uF,Capacitor_SMD:C_1206_3216Metric,C2,1,1,2,5,SOURCE_MPN
+faceplate,GRM216R61C105KA88D,1uF,Capacitor_SMD:C_0805_2012Metric,C3 C4 C5,3,3,6,15,SOURCE_MPN
+faceplate,GT-F0509SR15-15SMT01,MB Connector,faceplate-footprints:G-Switch GT-F0509SR15-15SMT01,J4,1,1,2,5,SOURCE_MPN
+faceplate,ER-TFT018-4,JD-T1800,faceplate-footprints:JD-T1800,LCD1,1,1,2,5,CANDIDATE_HOLD_MECHANICAL
+faceplate,PJC138K_R1_00001,PJC138K,Package_TO_SOT_SMD:SOT-323_SC-70,Q1,1,1,2,5,SOURCE_MPN
+faceplate,AC0603JR-0710KL,10k,Resistor_SMD:R_0603_1608Metric,R1 R2 R3 R4 R5 R6 R7 R9,8,8,16,40,SOURCE_MPN
+faceplate,AC0603FR-131ML,1M,Resistor_SMD:R_0603_1608Metric,R8,1,1,2,5,SOURCE_MPN
+faceplate,AT42QT2120-MMH,AT42QT2120,Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm,U1,1,1,2,5,SOURCE_MPN
+faceplate,DRV2605LDGST,DRV2605LDGS,Package_SO:VSSOP-10_3x3mm_P0.5mm,U2,1,1,2,5,SOURCE_MPN

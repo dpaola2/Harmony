@@ -1,0 +1,10 @@
+{
+  "hardware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-hw",
+    "commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52"
+  },
+  "routed_boards": "byte-identical to public source",
+  "schematics": "retained harmony-r3 corrections",
+  "revision": "harmony-r4",
+  "release": false
+}

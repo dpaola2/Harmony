@@ -1,0 +1,2561 @@
+{
+  "mainboard": [
+    {
+      "reference": "U10",
+      "footprint": "footprints:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias2",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            1.08,
+            1.08
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            1.08,
+            1.08
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            1.08,
+            1.08
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            1.08,
+            1.08
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "1",
+          "net": "SYS_POWER",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "2",
+          "net": "/Power/VBUS_SWITCHED",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "3",
+          "net": "CHG_SEL",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "4",
+          "net": "CHG_PROG",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "5",
+          "net": "/Power/NTC",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "6",
+          "net": "~{CHG_PWR_OK}",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "7",
+          "net": "CHG_STAT2",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "8",
+          "net": "CHG_STAT1",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "9",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "10",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "11",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "12",
+          "net": "Net-(U10-PROG3)",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "13",
+          "net": "Net-(U10-PROG1)",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "14",
+          "net": "Net-(J7-Pin_3)",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "15",
+          "net": "Net-(J7-Pin_3)",
+          "type": 1,
+          "size_mm": [
+            0.825,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "16",
+          "net": "Net-(J7-Pin_3)",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "17",
+          "net": "Net-(U10-CE)",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "18",
+          "net": "/Power/VBUS_SWITCHED",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "19",
+          "net": "/Power/VBUS_SWITCHED",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "20",
+          "net": "SYS_POWER",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.825
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            2.5,
+            2.5
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 270.0
+        }
+      ]
+    },
+    {
+      "reference": "U9",
+      "footprint": "Package_DFN_QFN:HVQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "",
+          "net": "",
+          "type": 1,
+          "size_mm": [
+            0.56,
+            0.56
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "1",
+          "net": "Net-(U14E-S)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "2",
+          "net": "Net-(U14E-~{OE})",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "3",
+          "net": "KEY_VOL_UP",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "4",
+          "net": "KEY_VOL_DOWN",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "5",
+          "net": "KEY_LOCK",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "6",
+          "net": "unconnected-(U9-IO0_5-Pad6)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "7",
+          "net": "unconnected-(U9-IO0_6-Pad7)",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "8",
+          "net": "~{SD_VDD_EN}",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "9",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "10",
+          "net": "3.5mm_DETECT",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "11",
+          "net": "AMP_EN",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "12",
+          "net": "SD_CD",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "unconnected-(U9-IO1_3-Pad13)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "14",
+          "net": "Net-(Q3-G)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "15",
+          "net": "unconnected-(U9-IO1_5-Pad15)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "16",
+          "net": "unconnected-(U9-IO1_6-Pad16)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "17",
+          "net": "unconnected-(U9-IO1_7-Pad17)",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "18",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.875,
+            0.25
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "19",
+          "net": "I2C.SCL",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "20",
+          "net": "I2C.SDA",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "21",
+          "net": "+3V3",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "22",
+          "net": "~{GPIO_INT}",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "23",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "24",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.25,
+            0.875
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "25",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "25",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "25",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            2.1,
+            2.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "25",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "25",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "footprint": "footprints:SON40P300X300X80-13N",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "1",
+          "net": "Net-(U7-SWP)",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "3",
+          "net": "+5VA",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "4",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "5",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "6",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "7",
+          "net": "AMP_EN",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "8",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "9",
+          "net": "-5VA",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "10",
+          "net": "Net-(U7-SWN)",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "11",
+          "net": "SYS_POWER",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "12",
+          "net": "SYS_POWER",
+          "type": 1,
+          "size_mm": [
+            0.86,
+            0.22
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            1.21,
+            2.02
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "13",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.5,
+            0.5
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 180.0
+        }
+      ]
+    },
+    {
+      "reference": "J6",
+      "footprint": "footprints:GCT_USB4510-03-1-A_REVA",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "A1_B12",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.6,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "A4_B9",
+          "net": "VBUS",
+          "type": 1,
+          "size_mm": [
+            0.6,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "A5",
+          "net": "Net-(J6-CC1)",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "A6",
+          "net": "USB.DP",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "A7",
+          "net": "USB.DN",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "A8",
+          "net": "unconnected-(J6-SBU1-PadA8)",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B1_A12",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            0.6,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B4_A9",
+          "net": "VBUS",
+          "type": 1,
+          "size_mm": [
+            0.6,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B5",
+          "net": "Net-(J6-CC2)",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B6",
+          "net": "USB.DP",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B7",
+          "net": "USB.DN",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "B8",
+          "net": "unconnected-(J6-SBU2-PadB8)",
+          "type": 1,
+          "size_mm": [
+            0.3,
+            1.1
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "S1",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            2.2
+          ],
+          "drill_mm": [
+            0.6,
+            1.8
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "S2",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.8
+          ],
+          "drill_mm": [
+            0.6,
+            1.4
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "S3",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.8
+          ],
+          "drill_mm": [
+            0.6,
+            1.4
+          ],
+          "rotation_deg": 180.0
+        },
+        {
+          "number": "S4",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            2.2
+          ],
+          "drill_mm": [
+            0.6,
+            1.8
+          ],
+          "rotation_deg": 180.0
+        }
+      ]
+    },
+    {
+      "reference": "U15",
+      "footprint": "footprints:ESP32-WROVER",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "2",
+          "net": "+3V3",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "3",
+          "net": "/ESP_EN",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "4",
+          "net": "BAT_LEVEL",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "5",
+          "net": "unconnected-(U15-I39{slash}NOINT-Pad5)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "6",
+          "net": "~{GPIO_INT}",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "7",
+          "net": "/~{SAMD_INT}",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "8",
+          "net": "DISPLAY_LED_EN",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "9",
+          "net": "DISPLAY_DR",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "10",
+          "net": "~{TOUCH_INT}",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "11",
+          "net": "DAC.BCK",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "12",
+          "net": "DAC.LRCK",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "13",
+          "net": "/JTAG.TMS",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "14",
+          "net": "/JTAG.TDI",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "15",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "16",
+          "net": "/JTAG.TCK",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "17",
+          "net": "unconnected-(U15-SHD{slash}SD2-Pad17)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "18",
+          "net": "unconnected-(U15-SWP{slash}SD3-Pad18)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "19",
+          "net": "unconnected-(U15-SCS{slash}CMD-Pad19)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "20",
+          "net": "unconnected-(U15-SCK{slash}CLK-Pad20)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "21",
+          "net": "unconnected-(U15-SDO{slash}SD0-Pad21)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "22",
+          "net": "unconnected-(U15-SDI{slash}SD1-Pad22)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "23",
+          "net": "/JTAG.TDO",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "24",
+          "net": "I2C.SCL",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "25",
+          "net": "DAC.MCK",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "26",
+          "net": "I2C.SDA",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "27",
+          "net": "unconnected-(U15-IO16-Pad27)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "28",
+          "net": "unconnected-(U15-IO17-Pad28)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "29",
+          "net": "DAC.DATA",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "30",
+          "net": "ESP_SPI.SCLK",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "31",
+          "net": "ESP_SPI.POCI",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "32",
+          "net": "unconnected-(U15-NC-Pad32)",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "33",
+          "net": "ESP_SPI.SD_CS",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "34",
+          "net": "/UART.ESP.RX",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "35",
+          "net": "/UART.ESP.TX",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "36",
+          "net": "ESP_SPI.DISPLAY_CS",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "37",
+          "net": "ESP_SPI.PICO",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "38",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            3.0,
+            0.9
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 1,
+          "size_mm": [
+            5.0,
+            5.0
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "39",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            0.8,
+            0.8
+          ],
+          "drill_mm": [
+            0.3,
+            0.3
+          ],
+          "rotation_deg": 270.0
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "footprint": "footprints:CUI_SJ-3506-SMT",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "2",
+          "net": "Net-(C17-Pad2)",
+          "type": 0,
+          "size_mm": [
+            1.8,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "3",
+          "net": "Net-(C19-Pad2)",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "4",
+          "net": "3.5mm_DETECT",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "5",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "6",
+          "net": "unconnected-(J1-Pad6)",
+          "type": 0,
+          "size_mm": [
+            1.8,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "SH1",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        },
+        {
+          "number": "SH2",
+          "net": "GND",
+          "type": 0,
+          "size_mm": [
+            1.7,
+            1.2
+          ],
+          "drill_mm": [
+            1.2,
+            0.7
+          ],
+          "rotation_deg": 270.0
+        }
+      ]
+    }
+  ],
+  "faceplate": [
+    {
+      "reference": "SW2",
+      "footprint": "faceplate-footprints:qtouch-wheel",
+      "attributes": 0,
+      "pads": [
+        {
+          "number": "1",
+          "net": "Net-(SW2-Pin_1)",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.0
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 212.0
+        },
+        {
+          "number": "2",
+          "net": "Net-(SW2-Pin_2)",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.0
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 212.0
+        },
+        {
+          "number": "3",
+          "net": "Net-(SW2-Pin_3)",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.0
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 212.0
+        }
+      ]
+    },
+    {
+      "reference": "SW3",
+      "footprint": "faceplate-footprints:qtouch-guard",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "1",
+          "net": "Net-(SW3-Pin_1)",
+          "type": 1,
+          "size_mm": [
+            0.254,
+            1.0
+          ],
+          "drill_mm": [
+            0.0,
+            0.0
+          ],
+          "rotation_deg": 350.0
+        }
+      ]
+    },
+    {
+      "reference": "SW1",
+      "footprint": "faceplate-footprints:qtouch-button",
+      "attributes": 2,
+      "pads": [
+        {
+          "number": "1",
+          "net": "Net-(SW1-Pin_1)",
+          "type": 0,
+          "size_mm": [
+            1.0,
+            1.0
+          ],
+          "drill_mm": [
+            0.2,
+            0.2
+          ],
+          "rotation_deg": 0.0
+        }
+      ]
+    }
+  ]
+}

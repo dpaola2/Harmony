@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-09-14T12:38:40.571853+00:00",
+  "responses": [
+    {
+      "name": "battery",
+      "url": "https://www.lithium-polymer-battery.net/lithium-polymer-battery-lp574459-2000mah-3-7v-7-4wh-with-pcm-and-ntc-and-wires/",
+      "error": "HTTP Error 403: Forbidden",
+      "saved": null
+    },
+    {
+      "name": "display_pdf",
+      "url": "https://www.buydisplay.com/download/manual/ER-TFT018-4_Datasheet.pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "saved": null
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "status": "digital fit prototype, not physically validated",
+  "parts": {
+    "front": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        57.6,
+        99.75,
+        11.6
+      ],
+      "volume_mm3": 14701.578,
+      "triangles": 26186
+    },
+    "back": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        57.6,
+        99.75,
+        12.6
+      ],
+      "volume_mm3": 18206.29,
+      "triangles": 42036
+    },
+    "touch-cover": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        43.9,
+        43.886,
+        0.6
+      ],
+      "volume_mm3": 904.557,
+      "triangles": 1508
+    },
+    "button-upper": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        11.1,
+        8.349,
+        3.4
+      ],
+      "volume_mm3": 214.725,
+      "triangles": 2038
+    },
+    "button-lower": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        11.1,
+        8.349,
+        3.4
+      ],
+      "volume_mm3": 214.725,
+      "triangles": 2038
+    },
+    "hold-switch": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        14.9,
+        21.2,
+        3.5
+      ],
+      "volume_mm3": 546.26,
+      "triangles": 1964
+    },
+    "sd-caddy": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        5.1,
+        27.0,
+        4.95
+      ],
+      "volume_mm3": 300.519,
+      "triangles": 3396
+    },
+    "battery-cage": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        53.35,
+        94.65,
+        7.9
+      ],
+      "volume_mm3": 1596.837,
+      "triangles": 40966
+    },
+    "fit-front": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        14.3,
+        14.375,
+        11.6
+      ],
+      "volume_mm3": 968.839,
+      "triangles": 2776
+    },
+    "fit-back": {
+      "solid_valid": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_size_mm": [
+        14.3,
+        14.375,
+        12.6
+      ],
+      "volume_mm3": 1077.981,
+      "triangles": 7298
+    }
+  },
+  "checks": {
+    "back_original_removed_mm3": 0.0,
+    "part_intersections_mm3": {},
+    "front_lens_intersection_mm3": 0.0,
+    "back_lens_intersection_mm3": 0.0,
+    "touch-cover_lens_intersection_mm3": 0.0,
+    "a1_plate_mm": [
+      256,
+      256
+    ],
+    "back_battery_intersection_mm3": 0.0,
+    "battery-cage_battery_intersection_mm3": 0.0
+  }
+}

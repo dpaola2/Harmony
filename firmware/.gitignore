@@ -1,0 +1,4 @@
+# Local checkouts and downloaded build tools are pinned by the validation records.
+/upstream/
+/toolchains/
+/.cache/

@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "boards": [
+    {
+      "board": "mainboard",
+      "pcb_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+      "byte_identical_to_public_reference": true,
+      "pin_nets_matching_schematic": 459
+    },
+    {
+      "board": "faceplate",
+      "pcb_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+      "byte_identical_to_public_reference": true,
+      "pin_nets_matching_schematic": 108
+    }
+  ]
+}

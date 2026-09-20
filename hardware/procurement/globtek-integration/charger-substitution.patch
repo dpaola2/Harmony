@@ -1,0 +1,11 @@
+--- R4/power.kicad_sch
++++ R5-draft/power.kicad_sch
+@@ -6472,7 +6472,7 @@
+ 				(hide yes)
+ 			)
+ 		)
+-		(property "MPN" "MCP73871-2CCI/ML"
++		(property "MPN" "MCP73871-1CCI/ML"
+ 			(at 93.98 132.08 0)
+ 			(effects
+ 				(font

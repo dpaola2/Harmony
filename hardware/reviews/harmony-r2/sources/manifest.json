@@ -1,0 +1,41 @@
+[
+  {
+    "file": "INA1620.pdf",
+    "url": "https://www.ti.com/lit/gpn/ina1620",
+    "retrieved": "2026-09-14",
+    "bytes": 2381826,
+    "sha256": "9eb2e4869cfd0f313604205b9937749afe51bbcb3310b8115b133a731b7593cb",
+    "status": "downloaded"
+  },
+  {
+    "file": "PCA8575.pdf",
+    "url": "https://www.nxp.com/docs/en/data-sheet/PCA8575.pdf",
+    "retrieved": "2026-09-14",
+    "bytes": 185814,
+    "sha256": "021d0e5eb26b822f4d59aaa0c38e9dea9e1ec2c54115686b5fa1ff771c321215",
+    "status": "downloaded"
+  },
+  {
+    "file": "WM8523.pdf",
+    "url": "https://statics.cirrus.com/pubs/proDatasheet/WM8523_v4.3.pdf",
+    "retrieved": "2026-09-14",
+    "bytes": 1193961,
+    "sha256": "9a94b3d005696005e248e6efd33da7c1616545a2eb02725e1039fe5ba9349298",
+    "status": "downloaded"
+  },
+  {
+    "file": "SJ-3506-SMT-TR.pdf",
+    "url": "https://www.sameskydevices.com/product/resource/sj-3506-smt-tr.pdf",
+    "retrieved": "2026-09-14",
+    "bytes": 445625,
+    "sha256": "9efc22b6c7b568ad4150730975e5726e1f0cf6530327b0939eab8b78c0acdc9e",
+    "status": "downloaded"
+  },
+  {
+    "file": "USB4510.pdf",
+    "url": "https://gct.co/files/drawings/usb4510.pdf",
+    "retrieved": "2026-09-14",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

@@ -1,0 +1,420 @@
+{
+  "status": "QUOTE_REVIEW_ONLY_NOT_FABRICATION_RELEASED",
+  "source_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "quote_quantities_complete_sets": [
+    1,
+    2,
+    5
+  ],
+  "generator": "generate_quote_package.py",
+  "native_kicad_cli": "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli",
+  "source_files": [
+    {
+      "path": "hardware/tangara-reference/tangara-mainboard/tangara-mainboard.kicad_pcb",
+      "bytes": 2816000,
+      "sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a"
+    },
+    {
+      "path": "hardware/tangara-reference/tangara-faceplate/tangara-faceplate.kicad_pcb",
+      "bytes": 1042764,
+      "sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "PROGRAMMING-NOTES-DRAFT.md",
+      "bytes": 2040,
+      "sha256": "69ac59abe0c120391bca0f8692a247a582ff6ae702d1cd1c888d92e33c3714a8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3350,
+      "sha256": "e90d8e614384f5ef49f9b7862bcc33e2a86edc1efd3912bb1a2315bc53673b1a"
+    },
+    {
+      "path": "RELEASE-HOLDS.md",
+      "bytes": 2972,
+      "sha256": "571f52b57115c88f61edd7b2f3206566a53de98ad0e5de2ce3ef5f460ec18e46"
+    },
+    {
+      "path": "SUPPLIER-NOTES-DRAFT.md",
+      "bytes": 2528,
+      "sha256": "6668c44d612d094f7fd356985387caa22776f471e7274c562ccfd9d755683e41"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 4588,
+      "sha256": "5d512f6c826e7a76c4f05123197ba8552bfdc00daf1b22fa6f0dd8de66f4fdb2"
+    },
+    {
+      "path": "VENDOR-QUESTIONS-DRAFT.md",
+      "bytes": 4769,
+      "sha256": "e622637ab94c3cb923da7bb516338230a57f89654b61046ee312adbe711f98e2"
+    },
+    {
+      "path": "dnp-and-non-purchased-structures.csv",
+      "bytes": 6921,
+      "sha256": "99dd75a82c0a8d967b4cc8ec9edde991cd52211e914a5030f69c24c183841bab"
+    },
+    {
+      "path": "external-parts-addendum.csv",
+      "bytes": 424,
+      "sha256": "b268fad3c5f4cfeca0ddb890559979aae2a58851c87b5309a4aa747a58618a98"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Cu.gbl",
+      "bytes": 529047,
+      "sha256": "418f243744b547eca4b36cda511cab3f9fc7f82a5a5fa29d5f40f0eff1a0870a"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Mask.gbs",
+      "bytes": 8945,
+      "sha256": "df89df2a7f81ac229ab6ba349f40b265b95615a850669d139ae4eda5e69a62b6"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Paste.gbp",
+      "bytes": 7462,
+      "sha256": "04ddae2d891683fb59d2b9e1e6f46e06a7085e8a45cd5de1ddc77f8d5f226237"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Silkscreen.gbo",
+      "bytes": 259447,
+      "sha256": "5e83490faf5db10d78d2b0a19392c6eefc085c13b62836571ff90b22c5b02863"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-Edge_Cuts.gm1",
+      "bytes": 1000,
+      "sha256": "70099dfdabd5a2b90a0afc0b237b513c87d66ab9ec19bd2ab125941a9945bef1"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Cu.gtl",
+      "bytes": 157427,
+      "sha256": "b697fa5c20208bb33c33d6d4d3e7553fa8674e785bdc6b8672c2eacd149ff25e"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Mask.gts",
+      "bytes": 1941,
+      "sha256": "310a086e1aae66c67c07e4e8e104d580ca2a1838f177d82b352cd5ef4c9ba2a8"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Paste.gtp",
+      "bytes": 862,
+      "sha256": "6f2608cea36c5eee99bf7f50334dbb97133a922f8a2d640d2c80381fb34a0925"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Silkscreen.gto",
+      "bytes": 1152,
+      "sha256": "25c1b1455eb9c05657dd27ff2355a51aff869f7f88918d5e6ced1b3956e39a5b"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-job.gbrjob",
+      "bytes": 2777,
+      "sha256": "2af59168a997f2a7555d02c0c3057718dd3b5be57746db83ac11d5a1183af06a"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate.drl",
+      "bytes": 2750,
+      "sha256": "c17259351604e8adf43e22178bced1c1d90a607a2621c92157d1b1a6972bc53d"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Cu.gbl",
+      "bytes": 488572,
+      "sha256": "2131e3dd57c2634dde9d9bedfb56189ec138dea9b9fa333b4cd9a015ca57de50"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Mask.gbs",
+      "bytes": 10321,
+      "sha256": "e16a05c736b5824cf83b6aaff40a9cb1d256682a0988b3be36c97bc0a5aeb07b"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Paste.gbp",
+      "bytes": 7246,
+      "sha256": "8907cb9f3b46ef808f98c29c87d953a97c1591965edbe8e25bede18182384240"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Silkscreen.gbo",
+      "bytes": 311607,
+      "sha256": "0ea4918b8ea7a5561dfd8366a7f598bb2c1d9a195af704d1e3a1db14aac1122b"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-Edge_Cuts.gm1",
+      "bytes": 4234,
+      "sha256": "6a415f00ed4da2682572658c69b491693d522216e48e13782aef9feef2350f82"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Cu.gtl",
+      "bytes": 563404,
+      "sha256": "401362bb46bcc6f6a26c37da64209762b04d9f5cdd093bae91d03e20b0938c69"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Mask.gts",
+      "bytes": 16364,
+      "sha256": "b10abe23bfd519c9400983fa148ec1a0092113a97fcff02bf39b229657a6b020"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Paste.gtp",
+      "bytes": 14594,
+      "sha256": "9fdf1567e5402bfee2c2f819a7c976e5d39b826b14dbb08ad604d3981147f4e5"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Silkscreen.gto",
+      "bytes": 135041,
+      "sha256": "99be0b2a0af7f67530b1004ad0217fd7d8dcc665ade0630ddfb6c34adff19da1"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-In1_Cu.g2",
+      "bytes": 364757,
+      "sha256": "4707d0da550da16687b1a6a36792cca4f0246a7731b603c4ee22707aa1cb2afd"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-In2_Cu.g3",
+      "bytes": 364757,
+      "sha256": "c7a9276d4c564e21ecd5c4d808a522707bf40b96ccc51f90b22a95d7618acce7"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-job.gbrjob",
+      "bytes": 4700,
+      "sha256": "30219be1ae5654b187ed228b5ae58372aa185949771db83181b7b2f00a5f7484"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard.drl",
+      "bytes": 10832,
+      "sha256": "a006c0fc866a32304e700b186cad0b65f5a86628038cc18b22476fbc2e795227"
+    },
+    {
+      "path": "faceplate-bom.csv",
+      "bytes": 1086,
+      "sha256": "969126d2746d365b5faf8c1a7481279d9b51f5a1e96df6cd236fd2fc89b40ab8"
+    },
+    {
+      "path": "faceplate-drc.json",
+      "bytes": 17023,
+      "sha256": "6ecfa8ad5d490a16840ae879a71b138d012d9009085426ad12336e45449826c5"
+    },
+    {
+      "path": "faceplate-erc.json",
+      "bytes": 17483,
+      "sha256": "79be82f05532de758d8aa718ccc0d10d3e20572260a19766ca87a247f3db1f5c"
+    },
+    {
+      "path": "faceplate-placement-kicad-raw.csv",
+      "bytes": 1634,
+      "sha256": "b7f1ac7e211aa0862163975959083e1d12381a18dd1255fdc576665d607b5690"
+    },
+    {
+      "path": "faceplate-placement-review.csv",
+      "bytes": 3997,
+      "sha256": "81ab8f8e2ac471ba821def0e7f935c892f248ef01d18935fe0ab2c88ca1dd014"
+    },
+    {
+      "path": "faceplate-placement-supplier.csv",
+      "bytes": 1318,
+      "sha256": "e3e2739ef8057fa6664f5b23d0ff88bfa02744921084730f8ff83a83e9844498"
+    },
+    {
+      "path": "generate_quote_package.py",
+      "bytes": 14708,
+      "sha256": "0fa163f4a6e178c80a43b92b66112222b17f6e152d0fae1ad195bc41cdb7a598"
+    },
+    {
+      "path": "logs/faceplate-drc-console.txt",
+      "bytes": 182,
+      "sha256": "c5035352b7145825fbff21d3f2753739bd742dfe42080351aec83980c9260795"
+    },
+    {
+      "path": "logs/faceplate-drc-exit-code.txt",
+      "bytes": 2,
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "path": "logs/faceplate-erc-console.txt",
+      "bytes": 480,
+      "sha256": "33032b89b70ff3a43422f3f504d596d3fabbde003c5efb79928fa711bb547c85"
+    },
+    {
+      "path": "logs/faceplate-erc-exit-code.txt",
+      "bytes": 2,
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "path": "logs/faceplate-export.json",
+      "bytes": 2984,
+      "sha256": "c43852c3dc023d004d4b20bbdebc8ee45a22d4febbf49acf1949df00aa2b3641"
+    },
+    {
+      "path": "logs/mainboard-drc-console.txt",
+      "bytes": 183,
+      "sha256": "f6d1c0b0cbc4b3e2da46e84b64565c5cbba5c45f8fc708f6bc2e0f9008e86916"
+    },
+    {
+      "path": "logs/mainboard-drc-exit-code.txt",
+      "bytes": 2,
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "path": "logs/mainboard-erc-console.txt",
+      "bytes": 481,
+      "sha256": "3bc1cc0cd366e078e47c1c55bb7cb4aba42073debee27cd19dbdea3f27d65f74"
+    },
+    {
+      "path": "logs/mainboard-erc-exit-code.txt",
+      "bytes": 2,
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "path": "logs/mainboard-export.json",
+      "bytes": 3260,
+      "sha256": "b462208a84d4b8297e08ca29ec7c52b50dd2ff5cc7ed1399030c725d00fd53a0"
+    },
+    {
+      "path": "mainboard-bom.csv",
+      "bytes": 3532,
+      "sha256": "05ed246f77320640a7f352afa16ea8dba6d57bebfa4df70b9ecd7f272c5ab188"
+    },
+    {
+      "path": "mainboard-drc.json",
+      "bytes": 77130,
+      "sha256": "3cd4aca2b5bfeb779d554fabe342656a3565c577e36cd296c940d133b47c2ea2"
+    },
+    {
+      "path": "mainboard-erc.json",
+      "bytes": 88351,
+      "sha256": "ef116b15ff4a9431682c10b2ffce6008b13f031500b3ffe0a4320835aedcf47a"
+    },
+    {
+      "path": "mainboard-placement-kicad-raw.csv",
+      "bytes": 7149,
+      "sha256": "1ac5edac894433bd282faf99e896b8dd4a9b1d0b16cbc662f0d720cb87bc29e8"
+    },
+    {
+      "path": "mainboard-placement-review.csv",
+      "bytes": 18774,
+      "sha256": "7790defa997e799e9b598f2cc61cd4d1c1b4b60df45897da55ee75e6335fab87"
+    },
+    {
+      "path": "mainboard-placement-supplier.csv",
+      "bytes": 6234,
+      "sha256": "49981670a3f1595d6cc2209a76038c55841fce01866456eda9e88845df7262d4"
+    },
+    {
+      "path": "programming/esp32-Generic.LC_COLLATE",
+      "bytes": 2586938,
+      "sha256": "b55d8270de7dfb650c92e990c840c2bf16215cd8f6dcb2c9e6451194f41c0e11"
+    },
+    {
+      "path": "programming/esp32-bootloader.bin",
+      "bytes": 24256,
+      "sha256": "e85b6407325cd47db5f80f89bc6aaa3cbb96dd4f0306a5b7d44087db7d790d59"
+    },
+    {
+      "path": "programming/esp32-lua.bin",
+      "bytes": 2097152,
+      "sha256": "12ff4aa847c037556374ea443c37759b5b9c366d42614ca5c93882696914c41a"
+    },
+    {
+      "path": "programming/esp32-ota_data_initial.bin",
+      "bytes": 8192,
+      "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+    },
+    {
+      "path": "programming/esp32-partition-table.bin",
+      "bytes": 3072,
+      "sha256": "802ba49322bc8e14e32547000811dc96b7fb84c02b905624867809e0290609b1"
+    },
+    {
+      "path": "programming/esp32-repl.bin",
+      "bytes": 131072,
+      "sha256": "fa85e4c4071bae719bfc2893cccad4d2deefa8454c50b4ae230bdb5d77e11fbe"
+    },
+    {
+      "path": "programming/esp32-tangara.bin",
+      "bytes": 2684736,
+      "sha256": "c55b17e914ac272777b10cbfcf98f3ae8a7ff285c11212cd4c86157adcd953f9"
+    },
+    {
+      "path": "programming/programming-manifest.json",
+      "bytes": 2989,
+      "sha256": "309865e8c8c5f1e467e6f0af1864a98f4885a38ed71dcd851ea12ef9cfdb02c4"
+    },
+    {
+      "path": "programming/samd-bootloader-tangara-bc1632d.bin",
+      "bytes": 8192,
+      "sha256": "b641b5a613d023dabf0bb0f330c861a3dad97e4fc17d8dcdfdad0f46ce3990fb"
+    },
+    {
+      "path": "programming/samd-bootloader-tangara-bc1632d.elf",
+      "bytes": 155736,
+      "sha256": "3eaa1ee9651a784b36727f066646105d1e2fc12647153e558f940a953a4531a8"
+    },
+    {
+      "path": "programming/samd-tangara-samd-v6.0.bin",
+      "bytes": 21640,
+      "sha256": "e2394c6b86194c3ad7dabd21941236a5e57dd4787cd3d1f3403bfc155bb5ab67"
+    },
+    {
+      "path": "programming/samd-tangara-samd-v6.0.uf2",
+      "bytes": 43520,
+      "sha256": "edf8826ac455111479ac9a1ac7ca5ba811dd9751c7efbd6908d30e639782c480"
+    },
+    {
+      "path": "source-and-tool-pins.json",
+      "bytes": 700,
+      "sha256": "abb08963a2832ea645524cf1bae9d08cbe905ca69ea9ed08f33e4841808c0e35"
+    },
+    {
+      "path": "tool-config/8.0/3d_viewer.json",
+      "bytes": 6944,
+      "sha256": "4e0d5f547621625edda8316efb70b9a6c48fa99523f5f19ed9c90b09d45b5000"
+    },
+    {
+      "path": "tool-config/8.0/cvpcb.json",
+      "bytes": 7297,
+      "sha256": "a73a2721771b436d65c897a895ff810de1fb7813001644bb5656ee90bd93aaa6"
+    },
+    {
+      "path": "tool-config/8.0/eeschema.json",
+      "bytes": 7846,
+      "sha256": "e9d85adc65e48021382e35f001fa10cab19211460a9240cab36dd09343669913"
+    },
+    {
+      "path": "tool-config/8.0/fp-lib-table",
+      "bytes": 22094,
+      "sha256": "0ac95e5f1289c38c8e2de3b9bc6bb142f6bd51909b64407de85a8024be1c8397"
+    },
+    {
+      "path": "tool-config/8.0/fpedit.json",
+      "bytes": 6051,
+      "sha256": "022a2dd5b3fde9fb3c4cbdc75aae0af7baa177190a57a36e5eedc337625c0f06"
+    },
+    {
+      "path": "tool-config/8.0/kicad.json",
+      "bytes": 4497,
+      "sha256": "b6951fbcabd57d8ad1c6b56ddd820f5d6fee55eeb0ac51b121805f840f2b67a3"
+    },
+    {
+      "path": "tool-config/8.0/kicad_common.json",
+      "bytes": 1952,
+      "sha256": "0cc2d97ba6d7ecef68562180f9c76e61dd84b453cb04133c521ae9a45fba4ccc"
+    },
+    {
+      "path": "tool-config/8.0/pcbnew.json",
+      "bytes": 15367,
+      "sha256": "b0f02d5859161494af8e535bec06fd0e8fbbf0f7b3945557780389656daa2b54"
+    },
+    {
+      "path": "tool-config/8.0/sym-lib-table",
+      "bytes": 33181,
+      "sha256": "35e852c9852fe3c8cb3b961ff57690df4e0aa5f6de7ad4132755ba2ce74ac4ba"
+    },
+    {
+      "path": "tool-config/8.0/symbol_editor.json",
+      "bytes": 3172,
+      "sha256": "2af9c99407576b3700262f08bf2065f7290e9ea41442322ce66f50028fab7de4"
+    },
+    {
+      "path": "validate_quote_package.py",
+      "bytes": 2963,
+      "sha256": "051cf1a80853f733efdc13e88cf425c4fbfa992b02c648795ee61a51d69b765a"
+    }
+  ]
+}

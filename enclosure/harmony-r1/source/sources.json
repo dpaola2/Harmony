@@ -1,0 +1,16 @@
+{
+  "repository": "https://codeberg.org/cool-tech-zone/tangara-hw",
+  "commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "files": {
+    "front.step": "case/artefacts/CTZ-1-3 Case Rev-03b (3D Printing Exports)/Case-Face (clearances 0.1mm-horizontal 0.1mm-vertical 0.3mm-pcb 2.4mm-dia-screwholes).step",
+    "back.step": "case/artefacts/CTZ-1-3 Case Rev-03b (3D Printing Exports)/Case-Back (clearances 0.1mm-horizontal 0.1mm-vertical 0.3mm-pcb 2.4mm-dia-screwholes).step",
+    "button.step": "case/artefacts/CTZ-1-3 Fittings Rev-04/Tangara Button Cover P0015 Rev-04.step",
+    "hold-switch.step": "case/artefacts/CTZ-1-3 Fittings Rev-04/Tangara Switch Cover P0016 Rev-04.step",
+    "sd-caddy.step": "case/artefacts/CTZ-1-3 Fittings Rev-04/Tangara SD Caddy P0017 Rev-04.step",
+    "battery-cage.step": "case/Battery Cage (Batch-1 Batteries).step",
+    "Case.FCStd": "case/Case.FCStd",
+    "LICENSE": "LICENSE",
+    "UPSTREAM-BOM.md": "BOM.md"
+  },
+  "brep_note": "Cached shape snapshots extracted from original Case.FCStd Document.xml; preserve their saved placements."
+}

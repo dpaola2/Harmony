@@ -1,0 +1,6 @@
+Loading board
+Running DRC...
+Found 83 violations
+Found 0 unconnected items
+Found 40 schematic parity issues
+Saved DRC Report to hardware/procurement/assembly-quote/mainboard-drc.json

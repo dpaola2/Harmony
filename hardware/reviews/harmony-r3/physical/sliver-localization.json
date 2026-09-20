@@ -1,0 +1,37 @@
+[
+  {
+    "removed_for_experiment": "SW1",
+    "sliver_count": 1,
+    "stdout": "Loading board\nRunning DRC...\nFound 16 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/SW1/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "SW2",
+    "sliver_count": 0,
+    "stdout": "Loading board\nRunning DRC...\nFound 17 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/SW2/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "SW3",
+    "sliver_count": 1,
+    "stdout": "Loading board\nRunning DRC...\nFound 16 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/SW3/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "zones",
+    "sliver_count": 1,
+    "stdout": "Loading board\nRunning DRC...\nFound 91 violations\nFound 97 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/zones/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "poly-0",
+    "sliver_count": 1,
+    "stdout": "Loading board\nRunning DRC...\nFound 16 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/poly-0/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "poly-1",
+    "sliver_count": 0,
+    "stdout": "Loading board\nRunning DRC...\nFound 15 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/poly-1/drc.json\n"
+  },
+  {
+    "removed_for_experiment": "poly-2",
+    "sliver_count": 1,
+    "stdout": "Loading board\nRunning DRC...\nFound 16 violations\nFound 0 unconnected items\nSaved DRC Report to /Users/dave/projects/Harmony2/hardware/reviews/harmony-r3/physical/sliver-localization/poly-2/drc.json\n"
+  }
+]

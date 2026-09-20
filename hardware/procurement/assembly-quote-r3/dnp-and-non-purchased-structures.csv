@@ -1,0 +1,60 @@
+board,reference,value,footprint,classification,dnp,excluded_from_bom,excluded_from_position,board_only,supplier_instruction
+faceplate,G***,LOGO,footprints:oshwa-cert,PCB_FEATURE,False,True,True,True,Do not purchase or place
+faceplate,G***,LOGO,LOGO,PCB_FEATURE,False,True,True,True,Do not purchase or place
+faceplate,H1,MountingHole,MountingHole:MountingHole_2.2mm_M2_Pad_Via,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,H2,MountingHole,MountingHole:MountingHole_2.2mm_M2_Pad_Via,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,H3,MountingHole,MountingHole:MountingHole_2.2mm_M2_Pad_Via,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,H4,MountingHole,MountingHole:MountingHole_2.2mm_M2_Pad_Via,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,J1,+,TestPoint:TestPoint_Pad_D1.5mm,PCB_FEATURE,False,False,True,False,Haptic motor solder pads; motor appears once in external addendum
+faceplate,J2,-,TestPoint:TestPoint_Pad_D1.5mm,PCB_FEATURE,False,False,True,False,Haptic motor solder pads; motor appears once in external addendum
+faceplate,REF**,ESD-Logo_6.6x6mm_SilkScreen,Symbol:ESD-Logo_6.6x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+faceplate,REF**,WEEE-Logo_4.2x6mm_SilkScreen,Symbol:WEEE-Logo_4.2x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+faceplate,REF**,CE-Logo_8.5x6mm_SilkScreen,Symbol:CE-Logo_8.5x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+faceplate,REF**,FCC-Logo_7.3x6mm_SilkScreen,Symbol:FCC-Logo_7.3x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+faceplate,REF**,UKCA-Logo_6x6mm_SilkScreen,Symbol:UKCA-Logo_6x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+faceplate,SW1,BUTTON,faceplate-footprints:qtouch-button,PCB_FEATURE,False,False,False,False,Do not purchase or place
+faceplate,SW2,WHEEL,faceplate-footprints:qtouch-wheel,PCB_FEATURE,False,False,False,False,Do not purchase or place
+faceplate,SW3,GUARD,faceplate-footprints:qtouch-guard,PCB_FEATURE,False,False,False,False,Do not purchase or place
+faceplate,TP1,SCL,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP2,SDA,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP3,PICO,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP4,SCLK,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP5,CS,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP6,RS,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP7,LED,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP8,3V3,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,TP9,GND,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,False,True,False,Do not purchase or place
+faceplate,kibuzzard-63E31E51,G***,kibuzzard-63E31E51,PCB_FEATURE,False,True,True,True,Do not purchase or place
+faceplate,kibuzzard-63E31E57,G***,kibuzzard-63E31E57,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,C17,100pF,Capacitor_SMD:C_0603_1608Metric,DNP,True,False,False,False,DNP; leave pads unpopulated
+mainboard,C19,100pF,Capacitor_SMD:C_0603_1608Metric,DNP,True,False,False,False,DNP; leave pads unpopulated
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:oshwa-cert,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:sparkles,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:sparkles,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star_small,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:heart,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,LOGO,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,G***,LOGO,footprints:star,PCB_FEATURE,False,True,True,True,Do not purchase or place
+mainboard,H1,MountingHole,footprints:MountingHole_2.2mm_M2_Pad_Via2,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,H2,MountingHole,footprints:MountingHole_2.2mm_M2_Pad_Via2,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,H3,MountingHole,footprints:MountingHole_2.2mm_M2_Pad_Via2,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,H4,MountingHole,footprints:MountingHole_2.2mm_M2_Pad_Via2,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,J3,JTAG,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD,PCB_FEATURE,True,True,False,False,Do not purchase or place
+mainboard,J5,SWD,footprints:SAMDSWD,PCB_FEATURE,True,True,False,False,Do not purchase or place
+mainboard,R1,10kΩ,Resistor_SMD:R_0603_1608Metric,DNP,True,False,False,False,DNP; leave pads unpopulated
+mainboard,REF**,UKCA-Logo_6x6mm_SilkScreen,Symbol:UKCA-Logo_6x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,REF**,CE-Logo_8.5x6mm_SilkScreen,Symbol:CE-Logo_8.5x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,REF**,FCC-Logo_7.3x6mm_SilkScreen,Symbol:FCC-Logo_7.3x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,REF**,ESD-Logo_6.6x6mm_SilkScreen,Symbol:ESD-Logo_6.6x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,REF**,WEEE-Logo_4.2x6mm_SilkScreen,Symbol:WEEE-Logo_4.2x6mm_SilkScreen,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,TP3,+5V,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,TP4,-5V,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,TP5,AMP_EN,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,TP6,AMP_MUTE,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,True,True,False,Do not purchase or place
+mainboard,TP7,BAT,TestPoint:TestPoint_Pad_D1.0mm,PCB_FEATURE,False,True,True,False,Do not purchase or place

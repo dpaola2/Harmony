@@ -1,0 +1,61 @@
+{
+  "baseline": "harmony-r2",
+  "revision": "harmony-r3",
+  "changes": [
+    {
+      "file": "VALIDATION.md",
+      "before_sha256": "f9e8cfb8c65e8870f57fe60ba7b08717d19efaa6306cf4d3ecfb5665808330b1",
+      "after_sha256": "4326f1bd06d5ac293e10adab123d174454353e665aac9a3253015cf7e435049e"
+    },
+    {
+      "file": "tangara-faceplate/faceplate-footprints.pretty/qtouch-button.kicad_mod",
+      "before_sha256": "4e0b0cc93e85c2d676a1dec3db08e11c4542ca0372586e041fe659dff6c89916",
+      "after_sha256": "3d9e6723d7b998826f7bae015635ad14d134695dc05a4f2686a89f4116c4afbc"
+    },
+    {
+      "file": "tangara-faceplate/tangara-faceplate.kicad_pcb",
+      "before_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+      "after_sha256": "61ff2e34f3346da04cb0fc314eb43b1cf935b769bdd7e401fa26d1326ec33b8e"
+    },
+    {
+      "file": "tangara-faceplate/tangara-faceplate.kicad_sch",
+      "before_sha256": "e8b33cd11df0ebb454dd483e27e5cee9f2c4fc5b36b574b9e6f6d98ddd8882bd",
+      "after_sha256": "f8c3e936e3ad1564d59dafcb2a39e32198acfd0f765ebc5b6a50f69bc15de224"
+    },
+    {
+      "file": "tangara-mainboard/audio.kicad_sch",
+      "before_sha256": "7c00845e2364bb989a02ccf69ce156c4122c52dbbfbfc97d55e483785c176c45",
+      "after_sha256": "b711e75b19d2e024f30448ee3539e36104b4fe56b525b5bc0f22c719b64d8f6b"
+    },
+    {
+      "file": "tangara-mainboard/footprints.pretty/CUI_SJ-3506-SMT.kicad_mod",
+      "before_sha256": "764424bd3880d743cc69e03c084689ce59904344dfef7dc0b3fe8ce309f28398",
+      "after_sha256": "4c2af36d54db71e0e06d1cb5763d20a2020e5137951e03e0ff6895a17f471f48"
+    },
+    {
+      "file": "tangara-mainboard/peripherals.kicad_sch",
+      "before_sha256": "b38cb3541032d4437770220ee3e8313813fe972fe95c8a462fb4a5ae8d0cb129",
+      "after_sha256": "18d12a6364b9619e3212fcb569acbf6030959d7f3a20d9a1e632f188e4a230be"
+    },
+    {
+      "file": "tangara-mainboard/power.kicad_sch",
+      "before_sha256": "3d71a65f4bb025b4915648ca5683ba137fc788357e85cdad5f689db1d62131d2",
+      "after_sha256": "2e75391613ddcc7861c24ba22e03514cb4a5dba8fb90d136a0730f61f134b52f"
+    },
+    {
+      "file": "tangara-mainboard/symbols.kicad_sym",
+      "before_sha256": "833ae95ca679e289f39c3a5410f38fed2a10dbaf9738ec1029520a661f327cb0",
+      "after_sha256": "7a47a7dbbbd1373c4ae3b058417aafe6388200f13950020f12021603e44feade"
+    },
+    {
+      "file": "tangara-mainboard/tangara-mainboard.kicad_pcb",
+      "before_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+      "after_sha256": "688d499afbafad4465b6e12abe67d648e8a49b0c73b9caac2f6a0e891d16b27c"
+    },
+    {
+      "file": "tangara-mainboard/tangara-mainboard.kicad_sch",
+      "before_sha256": "00bcd0246f4aaa58db919578b519118f228a4d83a9beeb302821fbf0358ea22e",
+      "after_sha256": "47cceeda10f7b9ffa89e3a0d2cab89578d9c4431d0a53650e062a5356951c60b"
+    }
+  ]
+}

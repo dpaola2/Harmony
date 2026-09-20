@@ -1,0 +1,13 @@
+{
+  "hardware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-hw",
+    "commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+    "derivation": "Harmony R2 schematic correction",
+    "tracking": "HARMONY-14"
+  },
+  "firmware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-fw",
+    "commit": "c092c5aae83aac241b3756b15d8b9dad9ed2c3fd"
+  },
+  "note": "Derived from the pinned Tangara source. Harmony R2 exposes U1 and U9 thermal-pad pins to preserve their explicit -5VA and GND connections, and corrects WM8523 electrical pin types. PCB copper and nets are unchanged; no fabrication outputs are approved."
+}

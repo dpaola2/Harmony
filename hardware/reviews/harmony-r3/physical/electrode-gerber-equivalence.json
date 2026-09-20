@@ -1,0 +1,32 @@
+[
+  {
+    "before": "faceplate-before-B_Cu.gbl",
+    "after": "faceplate-net-aware-before-refill-B_Cu.gbl",
+    "identical_geometry_commands": true,
+    "sha256": "1ff84da9052f80731036e44afe067c40d81bfc59b6dabd4bc0ee8e54d1957235"
+  },
+  {
+    "before": "faceplate-before-B_Mask.gbs",
+    "after": "faceplate-net-aware-before-refill-B_Mask.gbs",
+    "identical_geometry_commands": true,
+    "sha256": "7217a8ee1f00157b8b44c71cf6af03139785d2f3634c7301ac1c9de4b06ccdd1"
+  },
+  {
+    "before": "faceplate-before-Edge_Cuts.gm1",
+    "after": "faceplate-net-aware-before-refill-Edge_Cuts.gm1",
+    "identical_geometry_commands": true,
+    "sha256": "13355e772949142700936e2bc96e6a31f6b4903b2fe39e2455ef079c99abdbd3"
+  },
+  {
+    "before": "faceplate-before-F_Cu.gtl",
+    "after": "faceplate-net-aware-before-refill-F_Cu.gtl",
+    "identical_geometry_commands": true,
+    "sha256": "253e01bde2c08b028985dcde08e8c3b95c8cedf1d5c322d8958b8591450b3314"
+  },
+  {
+    "before": "faceplate-before-F_Mask.gts",
+    "after": "faceplate-net-aware-before-refill-F_Mask.gts",
+    "identical_geometry_commands": true,
+    "sha256": "56eaf97e6304b789bdbf4fdc29f740a98b3182d55d447712a2f36610733e4873"
+  }
+]

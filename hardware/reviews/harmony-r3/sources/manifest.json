@@ -1,0 +1,23 @@
+[
+  {
+    "file": "TPS65133.pdf",
+    "url": "https://www.ti.com/lit/ds/symlink/tps65133.pdf",
+    "retrieved": "2026-09-14",
+    "sha256": "1f3847a5f71aabc70acf70ec069af0dab46eb96fa688408c3e3804b44af0f28d"
+  },
+  {
+    "file": "TPS22948.pdf",
+    "url": "https://www.ti.com/lit/ds/symlink/tps22948.pdf",
+    "retrieved": "2026-09-14",
+    "sha256": "6de0e7fef6d907553cf01726d4da8881590ea188eb50efb805450f680ab27a2d"
+  },
+  {
+    "file": "USB4510-03-1-A.pdf",
+    "url": "https://www.ic-components.com/files/4c/USB4510-03-1-A.pdf",
+    "author": "GCT",
+    "revision": "A1, drawing date 1 July 2021, revision date 08/05/23 as printed",
+    "retrieved": "2026-09-14",
+    "sha256": "c74cdcbe58a9d19da80d6aefb55d999566d91d57094d717c396b6ad639889eb5",
+    "visual_review": "page1 rendered and inspected; recommended PCB thickness0.80mm, mid-mount offset1.60mm are distinct dimensions"
+  }
+]

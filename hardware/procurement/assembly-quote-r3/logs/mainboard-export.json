@@ -1,0 +1,52 @@
+[
+  {
+    "command": [
+      "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts",
+      "--output",
+      "/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/",
+      "/Users/dave/projects/Harmony2/hardware/revisions/harmony-r3/tangara-mainboard/tangara-mainboard.kicad_pcb"
+    ],
+    "returncode": 0,
+    "stdout": "Loading board\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-F_Cu.gtl'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-In1_Cu.g2'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-In2_Cu.g3'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-B_Cu.gbl'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-F_Paste.gtp'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-B_Paste.gbp'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-F_Silkscreen.gto'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-B_Silkscreen.gbo'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-F_Mask.gts'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-B_Mask.gbs'.\nPlotted to '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard-Edge_Cuts.gm1'.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "export",
+      "drill",
+      "--output",
+      "/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/",
+      "/Users/dave/projects/Harmony2/hardware/revisions/harmony-r3/tangara-mainboard/tangara-mainboard.kicad_pcb"
+    ],
+    "returncode": 0,
+    "stdout": "Loading board\nCreated file '/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/fabrication/mainboard/tangara-mainboard.drl'\nDone.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "export",
+      "pos",
+      "--format",
+      "csv",
+      "--units",
+      "mm",
+      "--side",
+      "both",
+      "--output",
+      "/Users/dave/projects/Harmony2/hardware/procurement/assembly-quote-r3/mainboard-placement-kicad-raw.csv",
+      "/Users/dave/projects/Harmony2/hardware/revisions/harmony-r3/tangara-mainboard/tangara-mainboard.kicad_pcb"
+    ],
+    "returncode": 0,
+    "stdout": "Loading board\n",
+    "stderr": ""
+  }
+]

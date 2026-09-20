@@ -2,6 +2,18 @@
 
 This repo keeps a small set of living docs, each with a clear purpose. Use this map to find or add information without duplicating content.
 
+## September 2026 device proposal
+
+- [Firmware baseline](../firmware/README.md): verified ESP32/SAMD builds, scripts, source pins, and hardware validation limits.
+- [Board reconciliation](../hardware/procurement/reconciliation/tangara-interface-bom-reconciliation.md): PCB component inventory and exact battery/display interfaces.
+
+- [Shopping list](../hardware/procurement/README.md): current sources, quantities, costs, and compatibility holds.
+- [Implementation plan](Harmony-2026-implementation-plan.md): stages, review decisions, and acceptance tests.
+
+- [Approach reassessment](Harmony-2026-reassessment.md): recommendation against the updated device goals.
+- [Technical basis](Harmony-2026-technical-basis.md): options, architecture, sourcing limits, and acceptance criteria.
+- [Printable case](../enclosure/harmony-r1/README.md): Tangara-based fit prototype for the Bambu A1.
+
 ## Core docs
 - `PROJECT_OVERVIEW.md` — why the project exists, constraints, and hardware/software goals.
 - `PLAN.md` — roadmap and near-term milestones; keep current sprint items at the top.

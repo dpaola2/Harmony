@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/dave/projects/Harmony2/hardware/revisions/harmony-r3/tangara-faceplate/tangara-faceplate.kicad_sch</source>
+    <date>2026-09-14T10:13:50-0400</date>
+    <tool>Eeschema 8.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>TANGARA</title>
+        <company>made by jacqueline</company>
+        <rev/>
+        <date>2024-06-21</date>
+        <source>tangara-faceplate.kicad_sch</source>
+        <comment number="1" value="SPDX-License-Identifier: CERN-OHL-S-2.0"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="PN"/>
+        <field name="MPN">GCM188R71C104KA37J</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="PN" value=""/>
+      <property name="MPN" value="GCM188R71C104KA37J"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>613a3f03-c2ce-42b2-ae12-6daf898470e3</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>22uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <fields>
+        <field name="PN"/>
+        <field name="MPN">GRM319R61C226KE15D</field>
+        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="PN" value=""/>
+      <property name="MPN" value="GRM319R61C226KE15D"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>409a5646-9c7d-4f8f-8417-ab46af3f9918</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="PN"/>
+        <field name="MPN">GRM216R61C105KA88D</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="PN" value=""/>
+      <property name="MPN" value="GRM216R61C105KA88D"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2bf64523-cef4-4c98-86a7-896912d10ca9</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="PN"/>
+        <field name="MPN">GRM216R61C105KA88D</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="PN" value=""/>
+      <property name="MPN" value="GRM216R61C105KA88D"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87ef1dd5-75f8-4cf3-8f34-a4a539e024ac</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="PN"/>
+        <field name="MPN">GRM216R61C105KA88D</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="PN" value=""/>
+      <property name="MPN" value="GRM216R61C105KA88D"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3b213848-38ea-40bf-9ecc-114a5f70ce8f</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.2mm_M2_Pad_Via</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_2.2mm_M2_Pad_Via</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2b2b191-b2dd-426c-a608-94087ffdc917</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.2mm_M2_Pad_Via</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_2.2mm_M2_Pad_Via</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a510a926-87c4-496a-9fbd-7e116b223da8</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.2mm_M2_Pad_Via</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_2.2mm_M2_Pad_Via</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2287654c-0320-4ba9-89dd-92eed8d101c7</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.2mm_M2_Pad_Via</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_2.2mm_M2_Pad_Via</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2027e013-b58e-4a9c-a2a4-4a2003f31ab9</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>+</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>39fdbce0-78bb-454e-8ce8-1cfbc2022806</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>-</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>caf8132e-46ee-4d30-baf3-4dc0929dd132</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>MB Connector</value>
+      <footprint>faceplate-footprints:G-Switch GT-F0509SR15-15SMT01</footprint>
+      <fields>
+        <field name="MPN">GT-F0509SR15-15SMT01</field>
+        <field name="Footprint">faceplate-footprints:G-Switch GT-F0509SR15-15SMT01</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x15" description="Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="GT-F0509SR15-15SMT01"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d49ce260-cc74-448c-ad9a-da30ad56f1a2</tstamps>
+    </comp>
+    <comp ref="LCD1">
+      <value>JD-T1800</value>
+      <footprint>faceplate-footprints:JD-T1800</footprint>
+      <fields>
+        <field name="Footprint">faceplate-footprints:JD-T1800</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="faceplate-symbols" part="JD-T1800" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_fp_filters" value="*JD-T1800*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cd12a975-d414-4ccf-86d3-57a30e1d342f</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>PJC138K</value>
+      <footprint>Package_TO_SOT_SMD:SOT-323_SC-70</footprint>
+      <fields>
+        <field name="MPN">PJC138K_R1_00001</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-323_SC-70</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="Q_NMOS_GSD" description="N-MOSFET transistor, gate/source/drain"/>
+      <property name="MPN" value="PJC138K_R1_00001"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4d1cc432-577d-4e2c-b79f-3aae6b2536d5</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a06d7ee9-d0db-427c-8ff9-085896480428</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2f58ce3-077d-4014-9fa1-3f2ff5dedb73</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1b4e4dfe-c640-4c70-8402-3d6b9b2bb6cb</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>31bc15e6-c14b-48b5-9856-f1e2a787ecac</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87b2d1fa-e7d0-4c87-86d0-9a56d1e3dbff</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1ee6a53b-e840-4059-8df3-2b2a2210fd2a</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>def331ab-18de-4f3b-b7e9-6195b260534f</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>1M</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603FR-131ML</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603FR-131ML"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3aa2ccf6-62e7-49ef-a7f7-5b44a9c4770b</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">AC0603JR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603JR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9e71d866-e797-4dff-a4fc-23cfd71f53c5</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>BUTTON</value>
+      <footprint>faceplate-footprints:qtouch-button</footprint>
+      <fields>
+        <field name="Footprint">faceplate-footprints:qtouch-button</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9558426a-eed3-4f88-b318-30c0eb22f23d</tstamps>
+    </comp>
+    <comp ref="SW2">
+      <value>WHEEL</value>
+      <footprint>faceplate-footprints:qtouch-wheel</footprint>
+      <fields>
+        <field name="Footprint">faceplate-footprints:qtouch-wheel</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27f97404-894d-4942-8e42-2b7fc15c9958</tstamps>
+    </comp>
+    <comp ref="SW3">
+      <value>GUARD</value>
+      <footprint>faceplate-footprints:qtouch-guard</footprint>
+      <fields>
+        <field name="Footprint">faceplate-footprints:qtouch-guard</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>437bed37-ada9-4455-bc85-1ef37c73dfdb</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>SCL</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d6bbcecb-b863-4996-8300-c1004c16af4e</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>SDA</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>051af7f6-9371-46a1-ab96-c947bc570b6d</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>PICO</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf9c3201-ca6a-4359-9020-d7c6f1291782</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>SCLK</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2ab0bdf4-718d-42c5-9bb0-055048c23c4d</tstamps>
+    </comp>
+    <comp ref="TP5">
+      <value>CS</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94b20512-7424-42cf-a4d8-597ca8155e09</tstamps>
+    </comp>
+    <comp ref="TP6">
+      <value>RS</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>32df4052-b0d6-4441-bc0c-e6020abe41b7</tstamps>
+    </comp>
+    <comp ref="TP7">
+      <value>LED</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ffff1762-eff8-4ff2-90c8-a9e9698606ed</tstamps>
+    </comp>
+    <comp ref="TP8">
+      <value>3V3</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7a404080-21ce-45c4-8a3f-f32ea15410fa</tstamps>
+    </comp>
+    <comp ref="TP9">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cbc8dba9-39f7-4d7c-ba55-f067d26d5090</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>AT42QT2120</value>
+      <footprint>Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <fields>
+        <field name="MPN">AT42QT2120-MMH</field>
+        <field name="Footprint">Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="faceplate-symbols" part="AT42QT2120" description=""/>
+      <property name="MPN" value="AT42QT2120-MMH"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c77889cf-7cb6-4074-9f7b-83b7bded2874</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>DRV2605LDGS</value>
+      <footprint>Package_SO:VSSOP-10_3x3mm_P0.5mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/drv2605l.pdf</datasheet>
+      <fields>
+        <field name="MPN">DRV2605LDGST</field>
+        <field name="Footprint">Package_SO:VSSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/drv2605l.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Driver_Haptic" part="DRV2605LDGS" description="Haptic driver for LRAs and ERMs with effect library, 2-5.2V, VSSOP-10"/>
+      <property name="MPN" value="DRV2605LDGST"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="tangara-faceplate.kicad_sch"/>
+      <property name="ki_keywords" value="haptic driver i2c"/>
+      <property name="ki_fp_filters" value="VSSOP*3x3mm*P0.5mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a6d3151-d298-4517-9fe4-1839d3c06cd6</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="TestPoint">
+      <description>test point</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Pin*</fp>
+        <fp>Test*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TestPoint</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x01">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x03">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x15">
+      <description>Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x15</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_NMOS_GSD">
+      <description>N-MOSFET transistor, gate/source/drain</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_GSD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">N-MOSFET transistor, gate/source/drain</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Driver_Haptic" part="DRV2605LDGS">
+      <description>Haptic driver for LRAs and ERMs with effect library, 2-5.2V, VSSOP-10</description>
+      <docs>http://www.ti.com/lit/ds/symlink/drv2605l.pdf</docs>
+      <footprints>
+        <fp>VSSOP*3x3mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DRV2605LDGS</field>
+        <field name="Footprint">Package_SO:VSSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/drv2605l.pdf</field>
+        <field name="Description">Haptic driver for LRAs and ERMs with effect library, 2-5.2V, VSSOP-10</field>
+      </fields>
+      <pins>
+        <pin num="1" name="REG" type="passive"/>
+        <pin num="2" name="SCL" type="input"/>
+        <pin num="3" name="SDA" type="bidirectional"/>
+        <pin num="4" name="IN/TRIG" type="input"/>
+        <pin num="5" name="EN" type="input"/>
+        <pin num="6" name="VDD/NC" type="power_in"/>
+        <pin num="7" name="OUT+" type="output"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="OUT-" type="output"/>
+        <pin num="10" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="faceplate-symbols" part="AT42QT2120">
+      <docs>DOCUMENTATION</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AT42QT2120</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="KEY6" type="bidirectional"/>
+        <pin num="2" name="KEY5" type="bidirectional"/>
+        <pin num="3" name="KEY4" type="bidirectional"/>
+        <pin num="4" name="KEY3" type="bidirectional"/>
+        <pin num="5" name="KEY2" type="bidirectional"/>
+        <pin num="6" name="KEY1" type="bidirectional"/>
+        <pin num="7" name="KEY0" type="bidirectional"/>
+        <pin num="8" name="VSS" type="power_in"/>
+        <pin num="9" name="VDD" type="power_in"/>
+        <pin num="10" name="MODE" type="input"/>
+        <pin num="11" name="SDA" type="tri_state"/>
+        <pin num="12" name="~{RESET}" type="input"/>
+        <pin num="13" name="NC" type="no_connect"/>
+        <pin num="14" name="SCL" type="tri_state"/>
+        <pin num="15" name="~{CHANGE}" type="tri_state"/>
+        <pin num="16" name="KEY11" type="bidirectional"/>
+        <pin num="17" name="KEY10" type="bidirectional"/>
+        <pin num="18" name="KEY9" type="bidirectional"/>
+        <pin num="19" name="KEY8" type="bidirectional"/>
+        <pin num="20" name="KEY7" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="faceplate-symbols" part="JD-T1800">
+      <footprints>
+        <fp>*JD-T1800*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">LCD</field>
+        <field name="Value">JD-T1800</field>
+        <field name="Footprint">JD-T1800</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="LEDK" type="input"/>
+        <pin num="4" name="LEDA" type="input"/>
+        <pin num="5" name="GND1" type="power_in"/>
+        <pin num="6" name="RESET" type="input"/>
+        <pin num="7" name="RS/DC" type="input"/>
+        <pin num="8" name="DATA" type="bidirectional"/>
+        <pin num="9" name="CLOCK" type="input"/>
+        <pin num="10" name="VCC" type="power_in"/>
+        <pin num="11" name="VCC2" type="power_in"/>
+        <pin num="12" name="CS" type="input"/>
+        <pin num="13" name="GND2" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/SharedSupport/symbols/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/SharedSupport/symbols/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/SharedSupport/symbols/Device.kicad_sym</uri>
+    </library>
+    <library logical="Driver_Haptic">
+      <uri>/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/SharedSupport/symbols/Driver_Haptic.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/SharedSupport/symbols/Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="faceplate-symbols">
+      <uri>/Users/dave/projects/Harmony2/hardware/revisions/harmony-r3/tangara-faceplate/faceplate-symbols.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="2" name="+3V3">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="J4" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="J4" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="J4" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="LCD1" pin="10" pinfunction="VCC" pintype="power_in"/>
+      <node ref="LCD1" pin="11" pinfunction="VCC2" pintype="power_in"/>
+      <node ref="LCD1" pin="4" pinfunction="LEDA" pintype="input"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="TP8" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U2" pin="10" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U2" pin="6" pinfunction="VDD/NC" pintype="power_in"/>
+    </net>
+    <net code="3" name="/CS">
+      <node ref="J4" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="LCD1" pin="12" pinfunction="CS" pintype="input"/>
+      <node ref="TP5" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="4" name="/LED_ENABLE">
+      <node ref="J4" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="TP7" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="5" name="/PICO">
+      <node ref="J4" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="LCD1" pin="8" pinfunction="DATA" pintype="bidirectional"/>
+      <node ref="TP3" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="6" name="/RS">
+      <node ref="J4" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="LCD1" pin="7" pinfunction="RS/DC" pintype="input"/>
+      <node ref="TP6" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="7" name="/SCL">
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="SCL" pintype="tri_state"/>
+      <node ref="U2" pin="2" pinfunction="SCL" pintype="input"/>
+    </net>
+    <net code="8" name="/SCLK">
+      <node ref="J4" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="LCD1" pin="9" pinfunction="CLOCK" pintype="input"/>
+      <node ref="TP4" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="9" name="/SDA">
+      <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="SDA" pintype="tri_state"/>
+      <node ref="U2" pin="3" pinfunction="SDA" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/TOUCH_INT">
+      <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="~{CHANGE}" pintype="tri_state"/>
+    </net>
+    <net code="13" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="H1" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H2" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H3" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H4" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J4" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="J4" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="LCD1" pin="13" pinfunction="GND2" pintype="power_in"/>
+      <node ref="LCD1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="LCD1" pin="5" pinfunction="GND1" pintype="power_in"/>
+      <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="MODE" pintype="input"/>
+      <node ref="U1" pin="8" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U2" pin="4" pinfunction="IN/TRIG" pintype="input"/>
+      <node ref="U2" pin="8" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="14" name="Net-(J1-Pin_1)">
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="OUT+" pintype="output"/>
+    </net>
+    <net code="15" name="Net-(J2-Pin_1)">
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="OUT-" pintype="output"/>
+    </net>
+    <net code="16" name="Net-(LCD1-LEDK)">
+      <node ref="LCD1" pin="3" pinfunction="LEDK" pintype="input"/>
+      <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(LCD1-RESET)">
+      <node ref="LCD1" pin="6" pinfunction="RESET" pintype="input"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(SW1-Pin_1)">
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(SW2-Pin_1)">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(SW2-Pin_2)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(SW2-Pin_3)">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="SW2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="22" name="Net-(SW3-Pin_1)">
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="SW3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="23" name="Net-(U1-KEY0)">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="KEY0" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="Net-(U1-KEY1)">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="KEY1" pintype="bidirectional"/>
+    </net>
+    <net code="25" name="Net-(U1-KEY2)">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="KEY2" pintype="bidirectional"/>
+    </net>
+    <net code="26" name="Net-(U1-KEY3)">
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="KEY3" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="Net-(U1-KEY4)">
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="KEY4" pintype="bidirectional"/>
+    </net>
+    <net code="28" name="Net-(U1-~{RESET})">
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="~{RESET}" pintype="input"/>
+    </net>
+    <net code="29" name="Net-(U2-EN)">
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="30" name="Net-(U2-REG)">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="REG" pintype="passive"/>
+    </net>
+    <net code="31" name="unconnected-(U1-KEY5-Pad2)">
+      <node ref="U1" pin="2" pinfunction="KEY5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(U1-KEY6-Pad1)">
+      <node ref="U1" pin="1" pinfunction="KEY6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(U1-KEY7-Pad20)">
+      <node ref="U1" pin="20" pinfunction="KEY7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(U1-KEY8-Pad19)">
+      <node ref="U1" pin="19" pinfunction="KEY8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(U1-KEY9-Pad18)">
+      <node ref="U1" pin="18" pinfunction="KEY9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(U1-KEY10-Pad17)">
+      <node ref="U1" pin="17" pinfunction="KEY10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(U1-KEY11-Pad16)">
+      <node ref="U1" pin="16" pinfunction="KEY11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(U1-NC-Pad13)">
+      <node ref="U1" pin="13" pinfunction="NC" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

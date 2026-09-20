@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "evidence": "Cirrus WM8523 v4.3 pp4 and15; TI INA1620 p3; NXP PCA8575 p5; reviewed by Codex",
+  "files": {
+    "audio.kicad_sch": {
+      "WM8523_pin_types": {
+        "1": "output",
+        "10": "bidirectional",
+        "11": "input",
+        "12": "bidirectional",
+        "13": "bidirectional",
+        "14": "input",
+        "15": "input",
+        "16": "input",
+        "17": "power_in",
+        "18": "output",
+        "19": "power_in",
+        "2": "output",
+        "20": "output",
+        "3": "output",
+        "4": "power_in",
+        "5": "output",
+        "6": "power_in",
+        "7": "output",
+        "8": "input",
+        "9": "bidirectional"
+      },
+      "INA1620_EP_visible": true
+    },
+    "symbols.kicad_sym": {
+      "WM8523_pin_types": {
+        "1": "output",
+        "10": "bidirectional",
+        "11": "input",
+        "12": "bidirectional",
+        "13": "bidirectional",
+        "14": "input",
+        "15": "input",
+        "16": "input",
+        "17": "power_in",
+        "18": "output",
+        "19": "power_in",
+        "2": "output",
+        "20": "output",
+        "3": "output",
+        "4": "power_in",
+        "5": "output",
+        "6": "power_in",
+        "7": "output",
+        "8": "input",
+        "9": "bidirectional"
+      },
+      "INA1620_EP_visible": true,
+      "PCA8575_EP_visible": true
+    },
+    "peripherals.kicad_sch": {
+      "PCA8575_EP_visible": true
+    }
+  }
+}

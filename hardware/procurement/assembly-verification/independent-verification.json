@@ -1,0 +1,98 @@
+{
+  "result": "PASS_PACKAGE_RECONCILIATION_ONLY",
+  "boards": [
+    {
+      "board": "mainboard",
+      "native_footprints": 124,
+      "bom_groups": 35,
+      "fitted_references": 92,
+      "excluded": 32,
+      "raw_placements": 97,
+      "supplier_placements": 92,
+      "copper_layers": 4
+    },
+    {
+      "board": "faceplate",
+      "native_footprints": 46,
+      "bom_groups": 10,
+      "fitted_references": 19,
+      "excluded": 27,
+      "raw_placements": 22,
+      "supplier_placements": 19,
+      "copper_layers": 2
+    }
+  ],
+  "limits": [
+    "Native DRC/ERC and schematic parity findings remain unresolved.",
+    "No supplier rotation preview, CAM sign-off, physical fit, or hardware qualification."
+  ],
+  "manifest_outputs_verified": 79,
+  "programming_images_matching_existing_build": [
+    {
+      "file": "esp32-bootloader.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/bootloader.bin"
+      ]
+    },
+    {
+      "file": "esp32-partition-table.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/partition-table.bin"
+      ]
+    },
+    {
+      "file": "esp32-ota_data_initial.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/ota_data_initial.bin"
+      ]
+    },
+    {
+      "file": "esp32-tangara.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/tangara.bin"
+      ]
+    },
+    {
+      "file": "esp32-Generic.LC_COLLATE",
+      "matches": [
+        "firmware/esp32-validation/artifacts/Generic.LC_COLLATE"
+      ]
+    },
+    {
+      "file": "esp32-lua.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/lua.bin"
+      ]
+    },
+    {
+      "file": "esp32-repl.bin",
+      "matches": [
+        "firmware/esp32-validation/artifacts/repl.bin"
+      ]
+    },
+    {
+      "file": "samd-bootloader-tangara-bc1632d.bin",
+      "matches": [
+        "firmware/samd-validation/artifacts/bootloader-tangara-bc1632d.bin"
+      ]
+    },
+    {
+      "file": "samd-bootloader-tangara-bc1632d.elf",
+      "matches": [
+        "firmware/samd-validation/artifacts/bootloader-tangara-bc1632d.elf"
+      ]
+    },
+    {
+      "file": "samd-tangara-samd-v6.0.bin",
+      "matches": [
+        "firmware/samd-validation/artifacts/tangara-samd-v6.0.bin"
+      ]
+    },
+    {
+      "file": "samd-tangara-samd-v6.0.uf2",
+      "matches": [
+        "firmware/samd-validation/artifacts/tangara-samd-v6.0.uf2"
+      ]
+    }
+  ]
+}

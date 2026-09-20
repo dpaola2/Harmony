@@ -1,0 +1,30 @@
+{
+  "result": "PASS_PACKAGE_RECONCILIATION_ONLY",
+  "boards": [
+    {
+      "board": "mainboard",
+      "native_footprints": 124,
+      "bom_groups": 35,
+      "fitted_references": 92,
+      "excluded": 32,
+      "raw_placements": 97,
+      "supplier_placements": 92,
+      "copper_layers": 4
+    },
+    {
+      "board": "faceplate",
+      "native_footprints": 46,
+      "bom_groups": 10,
+      "fitted_references": 19,
+      "excluded": 27,
+      "raw_placements": 22,
+      "supplier_placements": 19,
+      "copper_layers": 2
+    }
+  ],
+  "limits": [
+    "Native DRC/ERC and schematic parity findings remain unresolved.",
+    "No supplier rotation preview, CAM sign-off, physical fit, or hardware qualification."
+  ],
+  "manifest_outputs_verified": 79
+}

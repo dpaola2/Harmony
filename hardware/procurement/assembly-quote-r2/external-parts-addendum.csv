@@ -1,0 +1,4 @@
+item,mpn,qty_per_set,qty_for_1_set,qty_for_2_sets,qty_for_5_sets,assembly_scope
+Board interconnect FFC,FJH-15-R-03.00-4,1,1,2,5,Final assembly or return as kit; confirm tin contacts
+Haptic motor,VC1034B018F,1,1,2,5,Attach to faceplate J1/J2 pads; do not count pads as components
+Protected battery pack,LP574459 candidate,1,1,2,5,"HOLD: finished dimensions, NTC curve, pin order, protection and 1 A charge rating unresolved"

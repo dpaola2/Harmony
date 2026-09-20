@@ -1,0 +1,760 @@
+{
+  "r2": {
+    "pcb_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+    "footprint_at_mm": [
+      130.17331,
+      57.542584
+    ],
+    "footprint_rotation_deg": -90.0,
+    "footprint_layer": "B.Cu",
+    "pads": {
+      "1": {
+        "hole_center_world_mm": [
+          124.27331,
+          53.292584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          53.292584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "2": {
+        "hole_center_world_mm": [
+          124.27331,
+          61.142584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          60.992584
+        ],
+        "size_mm": [
+          1.8,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          -0.15,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "Net-(C17-Pad2)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "3": {
+        "hole_center_world_mm": [
+          136.07331,
+          62.942584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          62.942584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "Net-(C19-Pad2)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "4": {
+        "hole_center_world_mm": [
+          136.07331,
+          60.442584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          60.442584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "3.5mm_DETECT",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "5": {
+        "hole_center_world_mm": [
+          136.07331,
+          53.292584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          53.292584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "6": {
+        "hole_center_world_mm": [
+          124.27331,
+          62.942584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          63.092584
+        ],
+        "size_mm": [
+          1.8,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.15,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "unconnected-(J1-Pad6)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "SH1": {
+        "hole_center_world_mm": [
+          124.27331,
+          57.322584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          57.322584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "SH2": {
+        "hole_center_world_mm": [
+          136.07331,
+          57.322584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          57.322584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.2,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      }
+    }
+  },
+  "r3": {
+    "pcb_sha256": "688d499afbafad4465b6e12abe67d648e8a49b0c73b9caac2f6a0e891d16b27c",
+    "footprint_at_mm": [
+      130.17331,
+      57.542584
+    ],
+    "footprint_rotation_deg": -90.0,
+    "footprint_layer": "B.Cu",
+    "pads": {
+      "1": {
+        "hole_center_world_mm": [
+          124.27331,
+          53.292584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          53.292584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "2": {
+        "hole_center_world_mm": [
+          124.27331,
+          61.142584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          61.117584
+        ],
+        "size_mm": [
+          1.6,
+          1.25
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          -0.025,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "Net-(C17-Pad2)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "3": {
+        "hole_center_world_mm": [
+          136.07331,
+          62.942584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          62.942584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "Net-(C19-Pad2)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "4": {
+        "hole_center_world_mm": [
+          136.07331,
+          60.442584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          60.442584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "3.5mm_DETECT",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "5": {
+        "hole_center_world_mm": [
+          136.07331,
+          53.292584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          53.292584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "6": {
+        "hole_center_world_mm": [
+          124.27331,
+          62.942584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          62.967584
+        ],
+        "size_mm": [
+          1.6,
+          1.25
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.025,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "unconnected-(J1-Pad6)",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "SH1": {
+        "hole_center_world_mm": [
+          124.27331,
+          57.322584
+        ],
+        "copper_center_world_mm": [
+          124.17331,
+          57.322584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      },
+      "SH2": {
+        "hole_center_world_mm": [
+          136.07331,
+          57.322584
+        ],
+        "copper_center_world_mm": [
+          136.17331,
+          57.322584
+        ],
+        "size_mm": [
+          1.7,
+          1.2
+        ],
+        "drill_mm": [
+          1.1,
+          0.7
+        ],
+        "offset_mm": [
+          0.0,
+          -0.1
+        ],
+        "orientation_deg": 270.0,
+        "shape": 2,
+        "pad_type": 0,
+        "net": "GND",
+        "mask_margin_mm": 0.102,
+        "paste_margin_mm": 0.0,
+        "paste_ratio": 0.0,
+        "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+      }
+    }
+  },
+  "library": {
+    "1": {
+      "hole_center_world_mm": [
+        -4.25,
+        -5.9
+      ],
+      "copper_center_world_mm": [
+        -4.25,
+        -6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        -0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "2": {
+      "hole_center_world_mm": [
+        3.6,
+        -5.9
+      ],
+      "copper_center_world_mm": [
+        3.575,
+        -6.0
+      ],
+      "size_mm": [
+        1.6,
+        1.25
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        -0.025,
+        -0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "3": {
+      "hole_center_world_mm": [
+        5.4,
+        5.9
+      ],
+      "copper_center_world_mm": [
+        5.4,
+        6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "4": {
+      "hole_center_world_mm": [
+        2.9,
+        5.9
+      ],
+      "copper_center_world_mm": [
+        2.9,
+        6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "5": {
+      "hole_center_world_mm": [
+        -4.25,
+        5.9
+      ],
+      "copper_center_world_mm": [
+        -4.25,
+        6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "6": {
+      "hole_center_world_mm": [
+        5.4,
+        -5.9
+      ],
+      "copper_center_world_mm": [
+        5.425,
+        -6.0
+      ],
+      "size_mm": [
+        1.6,
+        1.25
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.025,
+        -0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "SH1": {
+      "hole_center_world_mm": [
+        -0.22,
+        -5.9
+      ],
+      "copper_center_world_mm": [
+        -0.22,
+        -6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        -0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    },
+    "SH2": {
+      "hole_center_world_mm": [
+        -0.22,
+        5.9
+      ],
+      "copper_center_world_mm": [
+        -0.22,
+        6.0
+      ],
+      "size_mm": [
+        1.7,
+        1.2
+      ],
+      "drill_mm": [
+        1.1,
+        0.7
+      ],
+      "offset_mm": [
+        0.0,
+        0.1
+      ],
+      "orientation_deg": 0.0,
+      "shape": 2,
+      "pad_type": 0,
+      "net": "",
+      "mask_margin_mm": 0.102,
+      "paste_margin_mm": 0.0,
+      "paste_ratio": 0.0,
+      "layer_mask": "0000|0000_0000|0000_0000|1100_0000|1111_1111|1111_1111|1111_1111|1111_1111"
+    }
+  },
+  "hole_centers_preserved": true,
+  "all_eight_slots_match_manufacturer_1p1_by_0p7": true,
+  "library_pad_size_matches": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "SH1": true,
+    "SH2": true
+  },
+  "library_placed_on_board_matches_exactly_including_masks": true,
+  "library_edge_cuts_match_exactly": true
+}

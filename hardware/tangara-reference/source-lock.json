@@ -1,0 +1,11 @@
+{
+  "hardware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-hw",
+    "commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52"
+  },
+  "firmware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-fw",
+    "commit": "c092c5aae83aac241b3756b15d8b9dad9ed2c3fd"
+  },
+  "note": "PCB/schematic sources retained; optional 3D libraries omitted; no fabrication outputs approved."
+}

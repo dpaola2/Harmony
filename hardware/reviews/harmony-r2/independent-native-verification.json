@@ -1,0 +1,162 @@
+{
+  "tool": "8.0.9",
+  "boards": [
+    {
+      "board": "mainboard",
+      "pcb_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+      "shared_pin_nets_checked": 459,
+      "mismatches": [],
+      "schematic_only_pin_count": 0,
+      "pcb_only_pin_count": 0,
+      "corrected_net_assignments": [
+        {
+          "reference": "C23",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "C31",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "C42",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J2",
+          "pin": "1",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J2",
+          "pin": "5",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J2",
+          "pin": "7",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J2",
+          "pin": "9",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J4",
+          "pin": "3",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J4",
+          "pin": "6",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J4",
+          "pin": "SH",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "J4",
+          "pin": "SW",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "Q3",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "SW1",
+          "pin": "1",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "SW2",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "SW3",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U14",
+          "pin": "8",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U16",
+          "pin": "2",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U16",
+          "pin": "5",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U9",
+          "pin": "18",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U9",
+          "pin": "23",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U9",
+          "pin": "24",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U9",
+          "pin": "25",
+          "before": "-5VA",
+          "after": "GND"
+        },
+        {
+          "reference": "U9",
+          "pin": "9",
+          "before": "-5VA",
+          "after": "GND"
+        }
+      ]
+    },
+    {
+      "board": "faceplate",
+      "pcb_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+      "shared_pin_nets_checked": 108,
+      "mismatches": [],
+      "schematic_only_pin_count": 0,
+      "pcb_only_pin_count": 0
+    }
+  ],
+  "result": "PASS_NATIVE_NET_RECONCILIATION_PCB_UNCHANGED"
+}

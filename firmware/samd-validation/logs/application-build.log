@@ -1,0 +1,112 @@
+[  2%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_delay.c.obj
+[  4%] Building C object atstart/CMakeFiles/atstart.dir/examples/driver_examples.c.obj
+[  4%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_init.c.obj
+[  4%] Building C object atstart/CMakeFiles/atstart.dir/driver_init.c.obj
+[  5%] Building C object atstart/CMakeFiles/atstart.dir/atmel_start.c.obj
+[  6%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_atomic.c.obj
+[  7%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_gpio.c.obj
+[  8%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_io.c.obj
+[  8%] Building C object atstart/CMakeFiles/atstart.dir/hal/utils/src/utils_assert.c.obj
+[  9%] Building C object atstart/CMakeFiles/atstart.dir/hal/src/hal_sleep.c.obj
+[ 10%] Building C object atstart/CMakeFiles/atstart.dir/hal/utils/src/utils_event.c.obj
+[ 11%] Building C object atstart/CMakeFiles/atstart.dir/hal/utils/src/utils_list.c.obj
+[ 12%] Building C object atstart/CMakeFiles/atstart.dir/hal/utils/src/utils_syscalls.c.obj
+[ 13%] Building C object atstart/CMakeFiles/atstart.dir/hpl/core/hpl_core_m0plus_base.c.obj
+[ 14%] Building C object atstart/CMakeFiles/atstart.dir/hpl/core/hpl_init.c.obj
+[ 15%] Building C object atstart/CMakeFiles/atstart.dir/hpl/dmac/hpl_dmac.c.obj
+[ 16%] Building C object atstart/CMakeFiles/atstart.dir/hpl/gclk/hpl_gclk.c.obj
+[ 17%] Building C object atstart/CMakeFiles/atstart.dir/hpl/pm/hpl_pm.c.obj
+[ 18%] Building C object atstart/CMakeFiles/atstart.dir/hpl/sysctrl/hpl_sysctrl.c.obj
+[ 19%] Building C object atstart/CMakeFiles/atstart.dir/samd21a/gcc/system_samd21.c.obj
+[ 20%] Building C object atstart/CMakeFiles/atstart.dir/samd21a/gcc/gcc/startup_samd21.c.obj
+[ 21%] Linking C static library libatstart.a
+[ 21%] Built target atstart
+[ 22%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/audio/audio_device.c.obj
+[ 24%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/cdc/cdc_rndis_host.c.obj
+[ 24%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/bth/bth_device.c.obj
+[ 25%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/cdc/cdc_host.c.obj
+[ 26%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 27%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 28%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/hid/hid_device.c.obj
+[ 29%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 30%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/msc/msc_host.c.obj
+[ 30%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/hid/hid_host.c.obj
+[ 31%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/midi/midi_device.c.obj
+[ 32%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/msc/msc_device.c.obj
+[ 33%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[ 34%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/net/ncm_device.c.obj
+[ 35%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+[ 36%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 37%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/vendor/vendor_host.c.obj
+[ 38%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/class/video/video_device.c.obj
+[ 39%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/common/tusb_fifo.c.obj
+[ 40%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/device/usbd_control.c.obj
+[ 41%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/device/usbd.c.obj
+[ 42%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/host/hub.c.obj
+[ 43%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/analog/max3421/hcd_max3421.c.obj
+[ 44%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/host/usbh.c.obj
+[ 45%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/bridgetek/ft9xx/dcd_ft9xx.c.obj
+[ 46%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/chipidea/ci_hs/hcd_ci_hs.c.obj
+[ 47%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/chipidea/ci_hs/dcd_ci_hs.c.obj
+[ 48%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/chipidea/ci_fs/dcd_ci_fs.c.obj
+[ 49%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/dialog/da146xx/dcd_da146xx.c.obj
+[ 49%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/ehci/ehci.c.obj
+[ 50%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/espressif/esp32sx/dcd_esp32sx.c.obj
+[ 51%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/mentor/musb/hcd_musb.c.obj
+[ 52%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/mentor/musb/dcd_musb.c.obj
+[ 53%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/microchip/pic/dcd_pic.c.obj
+[ 54%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/microchip/pic32mz/dcd_pic32mz.c.obj
+[ 55%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/microchip/samd/dcd_samd.c.obj
+[ 56%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/microchip/samx7x/dcd_samx7x.c.obj
+[ 57%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/microchip/samg/dcd_samg.c.obj
+[ 58%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/mindmotion/mm32/dcd_mm32f327x_otg.c.obj
+[ 59%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nuvoton/nuc120/dcd_nuc120.c.obj
+[ 60%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nordic/nrf5x/dcd_nrf5x.c.obj
+[ 61%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nuvoton/nuc121/dcd_nuc121.c.obj
+[ 62%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nuvoton/nuc505/dcd_nuc505.c.obj
+[ 63%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nxp/khci/dcd_khci.c.obj
+[ 64%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nxp/lpc17_40/dcd_lpc17_40.c.obj
+[ 65%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nxp/khci/hcd_khci.c.obj
+[ 66%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nxp/lpc17_40/hcd_lpc17_40.c.obj
+[ 67%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/nxp/lpc_ip3511/dcd_lpc_ip3511.c.obj
+[ 68%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/ohci/ohci.c.obj
+[ 69%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/raspberrypi/pio_usb/dcd_pio_usb.c.obj
+[ 70%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[ 70%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.obj
+[ 71%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.obj
+[ 72%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[ 73%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/renesas/rusb2/hcd_rusb2.c.obj
+[ 74%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/renesas/rusb2/dcd_rusb2.c.obj
+[ 75%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/renesas/rusb2/rusb2_common.c.obj
+[ 76%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/sony/cxd56/dcd_cxd56.c.obj
+[ 77%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/st/stm32_fsdev/dcd_stm32_fsdev.c.obj
+[ 78%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/st/typec/typec_stm32.c.obj
+[ 79%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/sunxi/dcd_sunxi_musb.c.obj
+[ 80%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/synopsys/dwc2/dcd_dwc2.c.obj
+[ 81%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/template/dcd_template.c.obj
+[ 82%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/template/hcd_template.c.obj
+[ 83%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/ti/msp430x5xx/dcd_msp430x5xx.c.obj
+[ 84%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/wch/dcd_ch32_usbhs.c.obj
+[ 85%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/wch/dcd_ch32_usbfs.c.obj
+[ 86%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/portable/valentyusb/eptri/dcd_eptri.c.obj
+[ 87%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/tusb.c.obj
+[ 88%] Building C object CMakeFiles/tinyusb.dir/tinyusb/src/typec/usbc.c.obj
+[ 89%] Linking C static library libtinyusb.a
+[ 89%] Built target tinyusb
+[ 90%] Building C object app/CMakeFiles/application.dir/sbrk.c.obj
+[ 92%] Building C object app/CMakeFiles/application.dir/i2c.c.obj
+[ 92%] Building C object app/CMakeFiles/application.dir/msc.c.obj
+[ 93%] Building C object app/CMakeFiles/application.dir/uart.c.obj
+[ 94%] Building C object app/CMakeFiles/application.dir/gpio.c.obj
+[ 95%] Building C object app/CMakeFiles/application.dir/usb_descriptors.c.obj
+[ 95%] Building C object app/CMakeFiles/application.dir/main.c.obj
+[ 96%] Building C object app/CMakeFiles/application.dir/cdc.c.obj
+[ 97%] Building C object app/CMakeFiles/application.dir/spi.c.obj
+[ 98%] Building C object app/CMakeFiles/application.dir/sd.c.obj
+[ 99%] Building C object app/CMakeFiles/application.dir/tick.c.obj
+[100%] Linking C executable application
+/Users/dave/projects/Harmony2/firmware/upstream/tangara-samd/tools/uf2/utils/uf2conv.py:211: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  words = re.split('\s+', line)
+Converted to uf2, output size: 43520, start address: 0x2000
+Wrote 43520 bytes to /Users/dave/projects/Harmony2/firmware/samd-validation/build/application/tangara.uf2
+[100%] Built target application

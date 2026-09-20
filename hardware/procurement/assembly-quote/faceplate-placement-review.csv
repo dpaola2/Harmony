@@ -1,0 +1,20 @@
+board,reference,value,mpn,footprint,x_mm,y_mm,side,rotation_deg,coordinate_basis,rotation_status
+faceplate,C1,0.1uF,GCM188R71C104KA37J,Capacitor_SMD:C_0603_1608Metric,138.926509,93.389199,Bottom,180,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,C2,22uF,GRM319R61C226KE15D,Capacitor_SMD:C_1206_3216Metric,178.098916,73.55,Bottom,0,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,C3,1uF,GRM216R61C105KA88D,Capacitor_SMD:C_0805_2012Metric,177.944946,137.049548,Bottom,45,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,C4,1uF,GRM216R61C105KA88D,Capacitor_SMD:C_0805_2012Metric,174.832053,140.199094,Bottom,45,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,C5,1uF,GRM216R61C105KA88D,Capacitor_SMD:C_0805_2012Metric,138.765079,95.421427,Bottom,0,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,J4,MB Connector,GT-F0509SR15-15SMT01,faceplate-footprints:G-Switch GT-F0509SR15-15SMT01,181,93.020776,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,LCD1,JD-T1800,ER-TFT018-4,faceplate-footprints:JD-T1800,160.199674,71.131556,Top,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,Q1,PJC138K,PJC138K_R1_00001,Package_TO_SOT_SMD:SOT-323_SC-70,177.4,63.05,Bottom,-90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R1,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,142.146655,94.932465,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R2,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,144.287542,94.932465,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R3,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,146.428429,94.932465,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R4,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,170.594234,138.760588,Bottom,45,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R5,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,148.811943,92.449431,Bottom,180,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R6,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,148.811943,90.492976,Bottom,180,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R7,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,136.825416,89.950281,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R8,1M,AC0603FR-131ML,Resistor_SMD:R_0603_1608Metric,176.775,59.775,Bottom,90,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,R9,10k,AC0603JR-0710KL,Resistor_SMD:R_0603_1608Metric,175.921676,69.934038,Bottom,180,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,U1,AT42QT2120,AT42QT2120-MMH,Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm,140.470005,90.319571,Bottom,180,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY
+faceplate,U2,DRV2605LDGS,DRV2605LDGST,Package_SO:VSSOP-10_3x3mm_P0.5mm,174.967338,135.876798,Bottom,45,KiCad PCB absolute source coordinates; auxiliary-origin offset not applied,SOURCE_ORIENTATION_REVIEW_ONLY

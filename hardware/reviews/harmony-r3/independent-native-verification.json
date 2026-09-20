@@ -1,0 +1,417 @@
+{
+  "tool": "8.0.9",
+  "boards": [
+    {
+      "board": "mainboard",
+      "pcb_sha256": "688d499afbafad4465b6e12abe67d648e8a49b0c73b9caac2f6a0e891d16b27c",
+      "shared_pin_nets_checked": 459,
+      "logical_nets_identical_to_R2": true,
+      "no_missing_pins": true,
+      "pad_changes": [
+        {
+          "uuid": "596ea9e4-3a48-43a3-a706-6b625c1b95f7",
+          "before": {
+            "reference": "J1",
+            "pin": "1",
+            "position": [
+              124273310,
+              53292584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "1",
+            "position": [
+              124273310,
+              53292584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "a1248520-0023-4b90-8bae-3b4f4cea14a0",
+          "before": {
+            "reference": "J1",
+            "pin": "2",
+            "position": [
+              124273310,
+              61142584
+            ],
+            "size": [
+              1800000,
+              1200000
+            ],
+            "offset": [
+              -150000,
+              100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "Net-(C17-Pad2)",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "2",
+            "position": [
+              124273310,
+              61142584
+            ],
+            "size": [
+              1600000,
+              1250000
+            ],
+            "offset": [
+              -25000,
+              100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "Net-(C17-Pad2)",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "f77f769d-e3ef-481d-bc63-a5624b29d2d2",
+          "before": {
+            "reference": "J1",
+            "pin": "3",
+            "position": [
+              136073310,
+              62942584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "Net-(C19-Pad2)",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "3",
+            "position": [
+              136073310,
+              62942584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "Net-(C19-Pad2)",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "f6b41203-a6b8-4d61-955c-2685798559ec",
+          "before": {
+            "reference": "J1",
+            "pin": "4",
+            "position": [
+              136073310,
+              60442584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "3.5mm_DETECT",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "4",
+            "position": [
+              136073310,
+              60442584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "3.5mm_DETECT",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "438a2d0f-b737-428b-ac5f-22d389083330",
+          "before": {
+            "reference": "J1",
+            "pin": "5",
+            "position": [
+              136073310,
+              53292584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "5",
+            "position": [
+              136073310,
+              53292584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "a515aa4e-757f-461f-bb78-24dfabe4d753",
+          "before": {
+            "reference": "J1",
+            "pin": "6",
+            "position": [
+              124273310,
+              62942584
+            ],
+            "size": [
+              1800000,
+              1200000
+            ],
+            "offset": [
+              150000,
+              100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "unconnected-(J1-Pad6)",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "6",
+            "position": [
+              124273310,
+              62942584
+            ],
+            "size": [
+              1600000,
+              1250000
+            ],
+            "offset": [
+              25000,
+              100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "unconnected-(J1-Pad6)",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "e8489b93-b6be-4c5d-9f48-edc15de972c6",
+          "before": {
+            "reference": "J1",
+            "pin": "SH1",
+            "position": [
+              124273310,
+              57322584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "SH1",
+            "position": [
+              124273310,
+              57322584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          }
+        },
+        {
+          "uuid": "e0e2283d-fa6f-4946-b19f-0b89b9e7a7dd",
+          "before": {
+            "reference": "J1",
+            "pin": "SH2",
+            "position": [
+              136073310,
+              57322584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1200000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          },
+          "after": {
+            "reference": "J1",
+            "pin": "SH2",
+            "position": [
+              136073310,
+              57322584
+            ],
+            "size": [
+              1700000,
+              1200000
+            ],
+            "offset": [
+              0,
+              -100000
+            ],
+            "drill": [
+              1100000,
+              700000
+            ],
+            "rotation": 270.0,
+            "net": "GND",
+            "layers": "00000c0_ffffffff"
+          }
+        }
+      ],
+      "all_nonzone_nonJ1_geometry_preserved": true
+    },
+    {
+      "board": "faceplate",
+      "pcb_sha256": "61ff2e34f3346da04cb0fc314eb43b1cf935b769bdd7e401fa26d1326ec33b8e",
+      "shared_pin_nets_checked": 108,
+      "logical_nets_identical_to_R2": true,
+      "no_missing_pins": true,
+      "pad_changes": [],
+      "all_nonzone_nonJ1_geometry_preserved": true
+    }
+  ],
+  "result": "PASS_CONNECTIVITY_AND_BOUNDED_GEOMETRY_CHANGE"
+}

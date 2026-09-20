@@ -1,0 +1,11 @@
+{
+  "expected_changed_files": [
+    "README.md",
+    "source-lock.json",
+    "tangara-mainboard/audio.kicad_sch",
+    "tangara-mainboard/peripherals.kicad_sch",
+    "tangara-mainboard/symbols.kicad_sym"
+  ],
+  "unexpected_changes": [],
+  "all_other_reference_files_byte_identical": true
+}

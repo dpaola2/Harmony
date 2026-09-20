@@ -1,0 +1,155 @@
+{
+  "circle_approximation_radial_error_bound_mm": 7e-09,
+  "pairs": [
+    {
+      "a": "Net-(SW2-Pin_1)",
+      "b": "Net-(SW2-Pin_3)",
+      "clearance_mm": 0.29136843478803615,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_1)",
+      "b": "Net-(SW2-Pin_2)",
+      "clearance_mm": 0.2921122295354395,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_1)",
+      "b": "Net-(SW3-Pin_1)",
+      "clearance_mm": 1.8572643766761885,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_1)",
+      "b": "Net-(SW1-Pin_1)",
+      "clearance_mm": 5.438464859620781,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_3)",
+      "b": "Net-(SW2-Pin_2)",
+      "clearance_mm": 0.2820973531952646,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_3)",
+      "b": "Net-(SW3-Pin_1)",
+      "clearance_mm": 1.8716697281926173,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_3)",
+      "b": "Net-(SW1-Pin_1)",
+      "clearance_mm": 5.326484629346485,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_2)",
+      "b": "Net-(SW3-Pin_1)",
+      "clearance_mm": 1.8836937832755065,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW2-Pin_2)",
+      "b": "Net-(SW1-Pin_1)",
+      "clearance_mm": 5.301832051551906,
+      "overlap_mm2": 0.0
+    },
+    {
+      "a": "Net-(SW3-Pin_1)",
+      "b": "Net-(SW1-Pin_1)",
+      "clearance_mm": 19.139426950324303,
+      "overlap_mm2": 0.0
+    }
+  ],
+  "contacts": [
+    {
+      "electrode": "Net-(SW2-Pin_1)",
+      "pad": "SW2.1",
+      "pad_net": "Net-(SW2-Pin_1)",
+      "centre_distance_mm": 0.0,
+      "centre_inside": true,
+      "pad_copper_overlap_mm2": 0.7747644040920055
+    },
+    {
+      "electrode": "Net-(SW2-Pin_1)",
+      "pad": "SW2.2",
+      "pad_net": "Net-(SW2-Pin_2)",
+      "centre_distance_mm": 1.6607659477160082,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW2-Pin_1)",
+      "pad": "SW2.3",
+      "pad_net": "Net-(SW2-Pin_3)",
+      "centre_distance_mm": 1.6482102106761278,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW2-Pin_3)",
+      "pad": "SW2.1",
+      "pad_net": "Net-(SW2-Pin_1)",
+      "centre_distance_mm": 1.154210017761491,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW2-Pin_3)",
+      "pad": "SW2.2",
+      "pad_net": "Net-(SW2-Pin_2)",
+      "centre_distance_mm": 1.8162343850541538,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW2-Pin_3)",
+      "pad": "SW2.3",
+      "pad_net": "Net-(SW2-Pin_3)",
+      "centre_distance_mm": 0.0,
+      "centre_inside": true,
+      "pad_copper_overlap_mm2": 0.7747644040920081
+    },
+    {
+      "electrode": "Net-(SW2-Pin_2)",
+      "pad": "SW2.1",
+      "pad_net": "Net-(SW2-Pin_1)",
+      "centre_distance_mm": 1.9696065796178652,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW2-Pin_2)",
+      "pad": "SW2.2",
+      "pad_net": "Net-(SW2-Pin_2)",
+      "centre_distance_mm": 0.0,
+      "centre_inside": true,
+      "pad_copper_overlap_mm2": 0.7747644040920021
+    },
+    {
+      "electrode": "Net-(SW2-Pin_2)",
+      "pad": "SW2.3",
+      "pad_net": "Net-(SW2-Pin_3)",
+      "centre_distance_mm": 1.616360906937544,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.0
+    },
+    {
+      "electrode": "Net-(SW3-Pin_1)",
+      "pad": "SW3.1",
+      "pad_net": "Net-(SW3-Pin_1)",
+      "centre_distance_mm": 0.37792145958164136,
+      "centre_inside": false,
+      "pad_copper_overlap_mm2": 0.025792062492842945
+    },
+    {
+      "electrode": "Net-(SW1-Pin_1)",
+      "pad": "SW1.1",
+      "pad_net": "Net-(SW1-Pin_1)",
+      "centre_distance_mm": 0.0,
+      "centre_inside": true,
+      "pad_copper_overlap_mm2": 0.774764404092008
+    }
+  ]
+}

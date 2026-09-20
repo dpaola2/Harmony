@@ -1,0 +1,46 @@
+09:23:58 AM: Debug: Adding duplicate image handler for 'PNG file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'JPEG file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'TIFF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'GIF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'PNM file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'PCX file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'IFF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'TGA file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'XPM file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'PNG file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'JPEG file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'TIFF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'GIF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'PNM file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'PCX file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'IFF file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'TGA file'
+09:23:58 AM: Debug: Adding duplicate image handler for 'XPM file'
+{
+  "tool": "8.0.9",
+  "boards": [
+    {
+      "board": "mainboard",
+      "pcb_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+      "shared_pin_nets_checked": 459,
+      "mismatches": [],
+      "schematic_only_pin_count": 0,
+      "pcb_only_pin_count": 0
+    },
+    {
+      "board": "faceplate",
+      "pcb_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+      "shared_pin_nets_checked": 108,
+      "mismatches": [],
+      "schematic_only_pin_count": 0,
+      "pcb_only_pin_count": 0
+    }
+  ],
+  "result": "PASS_NATIVE_NET_RECONCILIATION_PCB_UNCHANGED"
+}

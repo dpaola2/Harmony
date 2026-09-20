@@ -1,0 +1,6121 @@
+{
+  "tool": "pcbnew 8.0.9",
+  "coordinate_convention": "Native board coordinates; aux X right, aux Y up; native footprint rotation",
+  "boards": [
+    {
+      "board": "tangara-mainboard",
+      "source_sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a",
+      "copper_layers": 4,
+      "thickness_mm": 1.60252,
+      "aux_origin_mm": [
+        166.9,
+        54.05
+      ],
+      "edge_bbox_mm": [
+        117.45,
+        51.392584,
+        52.105031,
+        94.257416
+      ],
+      "footprints": [
+        {
+          "uuid": "48cee6fe-1e01-412c-9ac6-6ab3d32483d0",
+          "reference": "C1",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 125.05,
+          "y_board_mm": 127.95,
+          "x_aux_mm": -41.85,
+          "y_aux_up_mm": -73.9,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "a73b3e83-3e74-4bb6-953b-b5e5c345229a",
+          "reference": "C10",
+          "value": "22\u03bcF",
+          "mpn": "GRM319R61C226KE15D",
+          "footprint": "C_1206_3216Metric",
+          "x_board_mm": 134.614407,
+          "y_board_mm": 69.697232,
+          "x_aux_mm": -32.285593,
+          "y_aux_up_mm": -15.647232,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "-5VA"
+            }
+          ]
+        },
+        {
+          "uuid": "7f0a388a-f558-4051-87c7-a9da525991dc",
+          "reference": "C12",
+          "value": "1\u03bcF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 156.207041,
+          "y_board_mm": 69.648592,
+          "x_aux_mm": -10.692959,
+          "y_aux_up_mm": -15.598592,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U17-CPVOUTN)"
+            }
+          ]
+        },
+        {
+          "uuid": "42c24d91-03fa-47e5-a86e-ab5df142c6d8",
+          "reference": "C13",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 149.575,
+          "y_board_mm": 61.0,
+          "x_aux_mm": -17.325,
+          "y_aux_up_mm": -6.95,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "-5VA"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "b3dc2a48-0254-4af2-bac1-23409472bcad",
+          "reference": "C14",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 149.575,
+          "y_board_mm": 63.05,
+          "x_aux_mm": -17.325,
+          "y_aux_up_mm": -9.0,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+5VA"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "47a38f75-0346-48da-a10d-e4b59558d485",
+          "reference": "C15",
+          "value": "2700pF",
+          "mpn": "GRM1885C1H272JA01J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 151.0,
+          "y_board_mm": 67.3,
+          "x_aux_mm": -15.9,
+          "y_aux_up_mm": -13.25,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1A-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "b6d2a79b-78de-42d4-942e-7b013ed3b455",
+          "reference": "C16",
+          "value": "22\u03bcF",
+          "mpn": "GRM319R61C226KE15D",
+          "footprint": "C_1206_3216Metric",
+          "x_board_mm": 143.88511,
+          "y_board_mm": 70.193107,
+          "x_aux_mm": -23.01489,
+          "y_aux_up_mm": -16.143107,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+5VA"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "5fb2214d-cba0-44af-aef0-38988c004c0b",
+          "reference": "C17",
+          "value": "100pF",
+          "mpn": "",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 142.925,
+          "y_board_mm": 65.6,
+          "x_aux_mm": -23.975,
+          "y_aux_up_mm": -11.55,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": true,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 258,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U1A--)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(C17-Pad2)"
+            }
+          ]
+        },
+        {
+          "uuid": "6f388836-7b6f-489f-9681-be0dff606503",
+          "reference": "C18",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 139.111897,
+          "y_board_mm": 74.874786,
+          "x_aux_mm": -27.788103,
+          "y_aux_up_mm": -20.824786,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "acd7720f-2f75-4e11-b791-885816b1f78f",
+          "reference": "C19",
+          "value": "100pF",
+          "mpn": "",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 142.962124,
+          "y_board_mm": 58.425496,
+          "x_aux_mm": -23.937876,
+          "y_aux_up_mm": -4.375496,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": true,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 258,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U1B--)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(C19-Pad2)"
+            }
+          ]
+        },
+        {
+          "uuid": "dc2aca53-396f-432e-970a-d585b71642b0",
+          "reference": "C2",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 155.85,
+          "y_board_mm": 56.050297,
+          "x_aux_mm": -11.05,
+          "y_aux_up_mm": -2.000297,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "d921e30f-dade-485d-b189-d4b2a138e660",
+          "reference": "C23",
+          "value": "1\u03bcF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 141.935224,
+          "y_board_mm": 122.379451,
+          "x_aux_mm": -24.964776,
+          "y_aux_up_mm": -68.329451,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "1530eb87-22a3-40ae-9a09-b2d5784e70e2",
+          "reference": "C24",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 130.473198,
+          "y_board_mm": 130.774567,
+          "x_aux_mm": -36.426802,
+          "y_aux_up_mm": -76.724567,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "1bdb48af-19a6-4b0b-b54d-5491b2ce2204",
+          "reference": "C25",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 130.529632,
+          "y_board_mm": 138.571066,
+          "x_aux_mm": -36.370368,
+          "y_aux_up_mm": -84.521066,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J7-Pin_3)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "667ae2e9-a7f8-4858-a766-90b749595138",
+          "reference": "C27",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 132.103885,
+          "y_board_mm": 135.401996,
+          "x_aux_mm": -34.796115,
+          "y_aux_up_mm": -81.351996,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/Power/VBUS_SWITCHED"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "c92e9df1-b353-4bbc-9009-053e147b56c5",
+          "reference": "C29",
+          "value": "100uF",
+          "mpn": "GRM32EC70J107ME15K",
+          "footprint": "C_1210_3225Metric",
+          "x_board_mm": 122.3,
+          "y_board_mm": 127.375,
+          "x_aux_mm": -44.6,
+          "y_aux_up_mm": -73.325,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "4c57f1c4-aff3-425a-b817-570ace8fd1ee",
+          "reference": "C3",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 159.982062,
+          "y_board_mm": 69.634671,
+          "x_aux_mm": -6.917938,
+          "y_aux_up_mm": -15.584671,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "c8952f32-d735-43c4-8d88-d1a2381040a6",
+          "reference": "C30",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 158.706303,
+          "y_board_mm": 139.003159,
+          "x_aux_mm": -8.193697,
+          "y_aux_up_mm": -84.953159,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "c41c7694-2ee4-435b-a8c1-fbd2b676ea32",
+          "reference": "C31",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 122.55,
+          "y_board_mm": 117.375,
+          "x_aux_mm": -44.35,
+          "y_aux_up_mm": -63.325,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "ced54790-a85f-4359-a2f4-244aba4ba2a2",
+          "reference": "C32",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 162.35,
+          "y_board_mm": 123.775,
+          "x_aux_mm": -4.55,
+          "y_aux_up_mm": -69.725,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "4fcccb39-575f-4cfb-8e8c-70fda3772a18",
+          "reference": "C33",
+          "value": "1\u03bcF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 156.782387,
+          "y_board_mm": 139.153476,
+          "x_aux_mm": -10.117613,
+          "y_aux_up_mm": -85.103476,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U13-VDDCORE)"
+            }
+          ]
+        },
+        {
+          "uuid": "ddbeb857-1406-41c6-9c0d-b0fe7fe89779",
+          "reference": "C34",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 160.45,
+          "y_board_mm": 123.975,
+          "x_aux_mm": -6.45,
+          "y_aux_up_mm": -69.925,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "e36f8f23-c9a8-465e-b8cf-d5e9d140a640",
+          "reference": "C35",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 160.630219,
+          "y_board_mm": 139.163755,
+          "x_aux_mm": -6.269781,
+          "y_aux_up_mm": -85.113755,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "69e82bc6-6ce6-4572-b54e-2eed93455edb",
+          "reference": "C37",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 144.331648,
+          "y_board_mm": 126.305515,
+          "x_aux_mm": -22.568352,
+          "y_aux_up_mm": -72.255515,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "VBUS"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "aee199c3-1ed5-4b62-9a01-bd4999363735",
+          "reference": "C38",
+          "value": "22\u03bcF",
+          "mpn": "GRM319R61C226KE15D",
+          "footprint": "C_1206_3216Metric",
+          "x_board_mm": 124.169999,
+          "y_board_mm": 76.354839,
+          "x_aux_mm": -42.730001,
+          "y_aux_up_mm": -22.304839,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "aeda1e1a-d869-4afe-b140-98f07247fa61",
+          "reference": "C39",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 126.319733,
+          "y_board_mm": 77.14701,
+          "x_aux_mm": -40.580267,
+          "y_aux_up_mm": -23.09701,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "8166f636-be54-4d0b-b24b-1f2a874dc1fb",
+          "reference": "C4",
+          "value": "1\u03bcF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 158.07357,
+          "y_board_mm": 67.582319,
+          "x_aux_mm": -8.82643,
+          "y_aux_up_mm": -13.532319,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U17-CPCA)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U17-CPCB)"
+            }
+          ]
+        },
+        {
+          "uuid": "33a289df-a79c-44b9-8386-ef535b1b8f84",
+          "reference": "C40",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 132.464132,
+          "y_board_mm": 77.066611,
+          "x_aux_mm": -34.435868,
+          "y_aux_up_mm": -23.016611,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "BAT_LEVEL"
+            }
+          ]
+        },
+        {
+          "uuid": "03697c05-7ca2-4e1d-8fbf-efc358310d00",
+          "reference": "C41",
+          "value": "1\u03bcF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 128.357347,
+          "y_board_mm": 76.891611,
+          "x_aux_mm": -38.542653,
+          "y_aux_up_mm": -22.841611,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/ESP_EN"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "d6948c1a-6a7b-4e76-9569-e91a6cc1ca15",
+          "reference": "C42",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 131.3,
+          "y_board_mm": 119.6,
+          "x_aux_mm": -35.6,
+          "y_aux_up_mm": -65.55,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "1f76d240-473b-4704-80e3-a72a58aa6463",
+          "reference": "C6",
+          "value": "2700pF",
+          "mpn": "GRM1885C1H272JA01J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 150.95,
+          "y_board_mm": 57.175,
+          "x_aux_mm": -15.95,
+          "y_aux_up_mm": -3.125,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1B-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "8984f21b-9e2a-42bf-b5cf-27d9b125989f",
+          "reference": "C7",
+          "value": "10\u03bcF",
+          "mpn": "GRM21BR61C106KE15K",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 157.972253,
+          "y_board_mm": 56.05,
+          "x_aux_mm": -8.927747,
+          "y_aux_up_mm": -2.0,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U17-VMID)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "33649af6-0c1b-42f0-9a01-68e7351a2845",
+          "reference": "C9",
+          "value": "0.1\u03bcF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 136.325858,
+          "y_board_mm": 74.724126,
+          "x_aux_mm": -30.574142,
+          "y_aux_up_mm": -20.674126,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "270e8e2a-d61c-47e9-b1ab-bcff197eef83",
+          "reference": "D4",
+          "value": "BAT54C",
+          "mpn": "BAT54C",
+          "footprint": "SOT-23",
+          "x_board_mm": 129.6,
+          "y_board_mm": 123.5875,
+          "x_aux_mm": -37.3,
+          "y_aux_up_mm": -69.5375,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_PWR_EN_SAMD"
+            },
+            {
+              "number": "2",
+              "net": "KEY_LOCK"
+            },
+            {
+              "number": "3",
+              "net": "Net-(U4-EN)"
+            }
+          ]
+        },
+        {
+          "uuid": "1c1bb993-7b25-464c-92be-40d00a8a701e",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 120.265115,
+          "y_board_mm": 58.6034,
+          "x_aux_mm": -46.634885,
+          "y_aux_up_mm": -4.5534,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "2093924e-d82c-4023-ba1c-2bc8a64bfb40",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 162.626133,
+          "y_board_mm": 135.701341,
+          "x_aux_mm": -4.273867,
+          "y_aux_up_mm": -81.651341,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "432b2905-c5be-49e7-bf4b-7e6915340d03",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 149.8056,
+          "y_board_mm": 102.475349,
+          "x_aux_mm": -17.0944,
+          "y_aux_up_mm": -48.425349,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "5ce24042-7f8a-4435-9a18-a04015ed2d0b",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 151.868567,
+          "y_board_mm": 100.541318,
+          "x_aux_mm": -15.031433,
+          "y_aux_up_mm": -46.491318,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "65a0dd8d-015e-4005-a060-7c011b42a260",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "oshwa-cert",
+          "x_board_mm": 151.107956,
+          "y_board_mm": 59.589923,
+          "x_aux_mm": -15.792044,
+          "y_aux_up_mm": -5.539923,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "7c045ae7-8fe5-46e4-820f-769b40719834",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "sparkles",
+          "x_board_mm": 164.756174,
+          "y_board_mm": 80.938052,
+          "x_aux_mm": -2.143826,
+          "y_aux_up_mm": -26.888052,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "81d1cdc1-e8ea-4a6b-9c91-9add0c960e67",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "sparkles",
+          "x_board_mm": 166.596004,
+          "y_board_mm": 138.039154,
+          "x_aux_mm": -0.303996,
+          "y_aux_up_mm": -83.989154,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "9b3ab057-4658-4863-8543-41ac341fddcf",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 121.4715,
+          "y_board_mm": 61.800755,
+          "x_aux_mm": -45.4285,
+          "y_aux_up_mm": -7.750755,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "a9052714-c104-4321-9175-3136cfa00415",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 119.429926,
+          "y_board_mm": 138.649353,
+          "x_aux_mm": -47.470074,
+          "y_aux_up_mm": -84.599353,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "b3a9fd0b-abde-47d1-b4fb-0d855f0ec91c",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star_small",
+          "x_board_mm": 138.722433,
+          "y_board_mm": 54.152232,
+          "x_aux_mm": -28.177567,
+          "y_aux_up_mm": -0.102232,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "be49fe8d-6c71-4870-94ad-96b26ae36f5a",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "heart",
+          "x_board_mm": 130.379335,
+          "y_board_mm": 104.522832,
+          "x_aux_mm": -36.520665,
+          "y_aux_up_mm": -50.472832,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "c4e63273-c866-4fd9-855b-b87a09cc823b",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "LOGO",
+          "x_board_mm": 148.423879,
+          "y_board_mm": 73.545594,
+          "x_aux_mm": -18.476121,
+          "y_aux_up_mm": -19.495594,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "f637b6dd-7916-4231-83ad-ec67af1bb151",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "star",
+          "x_board_mm": 120.561728,
+          "y_board_mm": 134.762209,
+          "x_aux_mm": -46.338272,
+          "y_aux_up_mm": -80.712209,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "e54f1bff-8a90-4c9e-9903-05821963fbd5",
+          "reference": "H1",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via2",
+          "x_board_mm": 120.1,
+          "y_board_mm": 54.05,
+          "x_aux_mm": -46.8,
+          "y_aux_up_mm": 0.0,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "a4cc909e-54af-4ec6-a9a1-e305b66c8dbf",
+          "reference": "H2",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via2",
+          "x_board_mm": 166.9,
+          "y_board_mm": 54.05,
+          "x_aux_mm": 0.0,
+          "y_aux_up_mm": 0.0,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "c6fe83b2-ba36-4532-b5ac-28c5c92730f8",
+          "reference": "H3",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via2",
+          "x_board_mm": 120.1,
+          "y_board_mm": 143.0,
+          "x_aux_mm": -46.8,
+          "y_aux_up_mm": -88.95,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "0cde45e2-acb4-4366-a450-3cd4f0c33dea",
+          "reference": "H4",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via2",
+          "x_board_mm": 166.9,
+          "y_board_mm": 143.0,
+          "x_aux_mm": 0.0,
+          "y_aux_up_mm": -88.95,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "d9d505c9-bd1a-41ab-a9f0-5afa4b3c51ea",
+          "reference": "J1",
+          "value": "SJ-3506-SMT",
+          "mpn": "SJ-3506-SMT-TR",
+          "footprint": "CUI_SJ-3506-SMT",
+          "x_board_mm": 130.17331,
+          "y_board_mm": 57.542584,
+          "x_aux_mm": -36.72669,
+          "y_aux_up_mm": -3.492584,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(C17-Pad2)"
+            },
+            {
+              "number": "3",
+              "net": "Net-(C19-Pad2)"
+            },
+            {
+              "number": "4",
+              "net": "3.5mm_DETECT"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "unconnected-(J1-Pad6)"
+            },
+            {
+              "number": "SH1",
+              "net": "GND"
+            },
+            {
+              "number": "SH2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "6e83fbeb-5602-4217-84e1-9daad1ac9323",
+          "reference": "J2",
+          "value": "FP Connector",
+          "mpn": "GT-F0509SR15-15SMT01",
+          "footprint": "G-Switch GT-F0509SR15-15SMT01",
+          "x_board_mm": 166.75,
+          "y_board_mm": 96.05,
+          "x_aux_mm": -0.15,
+          "y_aux_up_mm": -42.0,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "0",
+              "net": ""
+            },
+            {
+              "number": "0",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "I2C.SCL"
+            },
+            {
+              "number": "3",
+              "net": "I2C.SDA"
+            },
+            {
+              "number": "4",
+              "net": "~{TOUCH_INT}"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "ESP_SPI.PICO"
+            },
+            {
+              "number": "7",
+              "net": "GND"
+            },
+            {
+              "number": "8",
+              "net": "ESP_SPI.SCLK"
+            },
+            {
+              "number": "9",
+              "net": "GND"
+            },
+            {
+              "number": "10",
+              "net": "ESP_SPI.DISPLAY_CS"
+            },
+            {
+              "number": "11",
+              "net": "DISPLAY_DR"
+            },
+            {
+              "number": "12",
+              "net": "DISPLAY_LED_EN"
+            },
+            {
+              "number": "13",
+              "net": "+3V3"
+            },
+            {
+              "number": "14",
+              "net": "+3V3"
+            },
+            {
+              "number": "15",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "b9341783-5c40-4762-a0b0-08159a4ba21f",
+          "reference": "J3",
+          "value": "JTAG",
+          "mpn": "FTSH-105-01-F-DV-K",
+          "footprint": "PinHeader_2x05_P1.27mm_Vertical_SMD",
+          "x_board_mm": 145.66,
+          "y_board_mm": 89.4,
+          "x_aux_mm": -21.24,
+          "y_aux_up_mm": -35.35,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": true,
+          "exclude_bom": true,
+          "exclude_position": false,
+          "attributes": 266,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/JTAG.TMS"
+            },
+            {
+              "number": "3",
+              "net": "GND"
+            },
+            {
+              "number": "4",
+              "net": "/JTAG.TCK"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "/JTAG.TDO"
+            },
+            {
+              "number": "7",
+              "net": "unconnected-(J3-UART_TX-Pad7)"
+            },
+            {
+              "number": "8",
+              "net": "/JTAG.TDI"
+            },
+            {
+              "number": "9",
+              "net": "unconnected-(J3-UART_RX-Pad9)"
+            },
+            {
+              "number": "10",
+              "net": "unconnected-(J3-nRst-Pad10)"
+            }
+          ]
+        },
+        {
+          "uuid": "94aeecb6-889e-4ca5-b174-da02f765879f",
+          "reference": "J4",
+          "value": "SD_Card",
+          "mpn": "DM1AA-SF-PEJ(82)",
+          "footprint": "SD_Hirose_DM1AA_SF_PEJ82",
+          "x_board_mm": 149.243505,
+          "y_board_mm": 119.7,
+          "x_aux_mm": -17.656495,
+          "y_aux_up_mm": -65.65,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "Net-(J4-CD{slash}DAT3)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-CMD)"
+            },
+            {
+              "number": "3",
+              "net": "GND"
+            },
+            {
+              "number": "4",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "5",
+              "net": "Net-(J4-CLK)"
+            },
+            {
+              "number": "6",
+              "net": "GND"
+            },
+            {
+              "number": "7",
+              "net": "Net-(J4-DAT0)"
+            },
+            {
+              "number": "8",
+              "net": "Net-(J4-DAT1)"
+            },
+            {
+              "number": "9",
+              "net": "Net-(J4-DAT2)"
+            },
+            {
+              "number": "CP",
+              "net": "SD_CD"
+            },
+            {
+              "number": "SH",
+              "net": "GND"
+            },
+            {
+              "number": "SH",
+              "net": "GND"
+            },
+            {
+              "number": "SH",
+              "net": "GND"
+            },
+            {
+              "number": "SH",
+              "net": "GND"
+            },
+            {
+              "number": "SW",
+              "net": "GND"
+            },
+            {
+              "number": "WP",
+              "net": ""
+            }
+          ]
+        },
+        {
+          "uuid": "b5fa04d0-cb2b-4a9b-9fce-bb1aef514277",
+          "reference": "J5",
+          "value": "SWD",
+          "mpn": "",
+          "footprint": "SAMDSWD",
+          "x_board_mm": 159.261989,
+          "y_board_mm": 143.978955,
+          "x_aux_mm": -7.638011,
+          "y_aux_up_mm": -89.928955,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": true,
+          "exclude_bom": true,
+          "exclude_position": false,
+          "attributes": 266,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/SWD.SWDIO"
+            },
+            {
+              "number": "3",
+              "net": "/SWD.SWCLK"
+            },
+            {
+              "number": "4",
+              "net": "/SWD.RESET"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "1bcb98b7-ce73-4f89-808f-ca5fd4c834ef",
+          "reference": "J6",
+          "value": "USB",
+          "mpn": "USB4510-03-1-A",
+          "footprint": "GCT_USB4510-03-1-A_REVA",
+          "x_board_mm": 143.434987,
+          "y_board_mm": 143.996371,
+          "x_aux_mm": -23.465013,
+          "y_aux_up_mm": -89.946371,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "A1_B12",
+              "net": "GND"
+            },
+            {
+              "number": "A4_B9",
+              "net": "VBUS"
+            },
+            {
+              "number": "A5",
+              "net": "Net-(J6-CC1)"
+            },
+            {
+              "number": "A6",
+              "net": "USB.DP"
+            },
+            {
+              "number": "A7",
+              "net": "USB.DN"
+            },
+            {
+              "number": "A8",
+              "net": "unconnected-(J6-SBU1-PadA8)"
+            },
+            {
+              "number": "B1_A12",
+              "net": "GND"
+            },
+            {
+              "number": "B4_A9",
+              "net": "VBUS"
+            },
+            {
+              "number": "B5",
+              "net": "Net-(J6-CC2)"
+            },
+            {
+              "number": "B6",
+              "net": "USB.DP"
+            },
+            {
+              "number": "B7",
+              "net": "USB.DN"
+            },
+            {
+              "number": "B8",
+              "net": "unconnected-(J6-SBU2-PadB8)"
+            },
+            {
+              "number": "S1",
+              "net": "GND"
+            },
+            {
+              "number": "S2",
+              "net": "GND"
+            },
+            {
+              "number": "S3",
+              "net": "GND"
+            },
+            {
+              "number": "S4",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "6093f9f7-b248-4132-810a-09e7a6cd7ed2",
+          "reference": "J7",
+          "value": "Battery",
+          "mpn": "S3B-PH-K-S(LF)(SN)",
+          "footprint": "JST_PH_S3B-PH-K_1x03_P2.00mm_Horizontal",
+          "x_board_mm": 125.384805,
+          "y_board_mm": 141.798597,
+          "x_aux_mm": -41.515195,
+          "y_aux_up_mm": -87.748597,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 1,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/Power/NTC"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "Net-(J7-Pin_3)"
+            }
+          ]
+        },
+        {
+          "uuid": "0f469fb3-b176-453e-a809-ec1799f64bf8",
+          "reference": "L1",
+          "value": "4.7\u03bcH",
+          "mpn": "1239AS-H-4R7M=P2",
+          "footprint": "L_1008_2520Metric",
+          "x_board_mm": 133.891932,
+          "y_board_mm": 72.973879,
+          "x_aux_mm": -33.008068,
+          "y_aux_up_mm": -18.923879,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U7-SWN)"
+            }
+          ]
+        },
+        {
+          "uuid": "7e73d888-5306-4a22-875c-5151fa89da94",
+          "reference": "L2",
+          "value": "4.7\u03bcH",
+          "mpn": "1239AS-H-4R7M=P2",
+          "footprint": "L_1008_2520Metric",
+          "x_board_mm": 143.044904,
+          "y_board_mm": 73.86026,
+          "x_aux_mm": -23.855096,
+          "y_aux_up_mm": -19.81026,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U7-SWP)"
+            },
+            {
+              "number": "2",
+              "net": "SYS_POWER"
+            }
+          ]
+        },
+        {
+          "uuid": "03e1194b-e529-48bd-a524-da7f11b9ebc4",
+          "reference": "Q1",
+          "value": "PMV48XPA2R",
+          "mpn": "PMV48XPA2R",
+          "footprint": "TSOT-23",
+          "x_board_mm": 134.972625,
+          "y_board_mm": 134.913826,
+          "x_aux_mm": -31.927375,
+          "y_aux_up_mm": -80.863826,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(Q1-G)"
+            },
+            {
+              "number": "2",
+              "net": "VBUS"
+            },
+            {
+              "number": "3",
+              "net": "/Power/VBUS_SWITCHED"
+            }
+          ]
+        },
+        {
+          "uuid": "f6e94a46-798a-43f1-bb23-19e307a57c96",
+          "reference": "Q2",
+          "value": "PJC138K",
+          "mpn": "PJC138K_R1_00001",
+          "footprint": "SOT-323_SC-70",
+          "x_board_mm": 134.751566,
+          "y_board_mm": 138.646014,
+          "x_aux_mm": -32.148434,
+          "y_aux_up_mm": -84.596014,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "BAT_LEVEL"
+            },
+            {
+              "number": "3",
+              "net": "Net-(Q2-D)"
+            }
+          ]
+        },
+        {
+          "uuid": "41093770-6aaa-4996-931d-3de55b4b124f",
+          "reference": "Q3",
+          "value": "PJC138K",
+          "mpn": "PJC138K_R1_00001",
+          "footprint": "SOT-323_SC-70",
+          "x_board_mm": 138.5,
+          "y_board_mm": 117.85,
+          "x_aux_mm": -28.4,
+          "y_aux_up_mm": -63.8,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(Q3-G)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "AMP_MUTE"
+            }
+          ]
+        },
+        {
+          "uuid": "827acc78-21f9-43bb-82ad-946a25197be1",
+          "reference": "R1",
+          "value": "10k\u03a9",
+          "mpn": "0.1W 5%",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 133.083246,
+          "y_board_mm": 141.855538,
+          "x_aux_mm": -33.816754,
+          "y_aux_up_mm": -87.805538,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": true,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 258,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/Power/NTC"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "5ebaca7a-1c1f-48c7-83d6-4d02479fc83d",
+          "reference": "R10",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 149.095421,
+          "y_board_mm": 106.457147,
+          "x_aux_mm": -17.804579,
+          "y_aux_up_mm": -52.407147,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/UART.ESP.RX"
+            }
+          ]
+        },
+        {
+          "uuid": "c7c3c69b-cfb6-4807-a3ab-7d45e77a64a0",
+          "reference": "R11",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.258592,
+          "y_board_mm": 123.260288,
+          "x_aux_mm": -36.641408,
+          "y_aux_up_mm": -69.210288,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-CMD)"
+            }
+          ]
+        },
+        {
+          "uuid": "74a67df7-7ee6-4789-8fd5-a663fcedc394",
+          "reference": "R12",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.258592,
+          "y_board_mm": 125.684409,
+          "x_aux_mm": -36.641408,
+          "y_aux_up_mm": -71.634409,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-CD{slash}DAT3)"
+            }
+          ]
+        },
+        {
+          "uuid": "fc9508e6-c505-410d-beb4-a21a2e355aba",
+          "reference": "R15",
+          "value": "560\u03a9",
+          "mpn": "RR1220P-561-D",
+          "footprint": "R_0805_2012Metric",
+          "x_board_mm": 153.6,
+          "y_board_mm": 64.9,
+          "x_aux_mm": -13.3,
+          "y_aux_up_mm": -10.85,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U17-LINEVOUTL)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1A-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "fd24a46e-38d6-4300-b532-14f708acf680",
+          "reference": "R2",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 140.712424,
+          "y_board_mm": 112.335939,
+          "x_aux_mm": -26.187576,
+          "y_aux_up_mm": -58.285939,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(Q3-G)"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "974fc9af-946e-4fa0-850c-66d1e6e525aa",
+          "reference": "R21",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 145.615125,
+          "y_board_mm": 122.153257,
+          "x_aux_mm": -21.284875,
+          "y_aux_up_mm": -68.103257,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "I2C.SDA"
+            }
+          ]
+        },
+        {
+          "uuid": "69eaa6a3-bdb2-41d8-9559-2b44e2715a47",
+          "reference": "R22",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 142.360517,
+          "y_board_mm": 112.351528,
+          "x_aux_mm": -24.539483,
+          "y_aux_up_mm": -58.301528,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "AMP_EN"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "94d4502c-d920-4fa5-a5d8-95d84716fa54",
+          "reference": "R26",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 147.443207,
+          "y_board_mm": 122.135929,
+          "x_aux_mm": -19.456793,
+          "y_aux_up_mm": -68.085929,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "I2C.SCL"
+            }
+          ]
+        },
+        {
+          "uuid": "12eaace5-471e-43da-9cc2-fb5e2c7d34d0",
+          "reference": "R3",
+          "value": "2.2k\u03a9",
+          "mpn": "RR1220P-222-D",
+          "footprint": "R_0805_2012Metric",
+          "x_board_mm": 149.1,
+          "y_board_mm": 67.5,
+          "x_aux_mm": -17.8,
+          "y_aux_up_mm": -13.45,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1A-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "3a96c3d7-b812-4465-9722-778ff0c00ccf",
+          "reference": "R30",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 143.74795,
+          "y_board_mm": 122.155803,
+          "x_aux_mm": -23.15205,
+          "y_aux_up_mm": -68.105803,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "~{GPIO_INT}"
+            }
+          ]
+        },
+        {
+          "uuid": "a9ae6043-aeac-4e40-a8c2-6b11ee7ae7ee",
+          "reference": "R31",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 148.336413,
+          "y_board_mm": 117.85,
+          "x_aux_mm": -18.563587,
+          "y_aux_up_mm": -63.8,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U14E-~{OE})"
+            }
+          ]
+        },
+        {
+          "uuid": "e8598c34-7b11-4402-a8de-44ef9fea1ec9",
+          "reference": "R32",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 148.35,
+          "y_board_mm": 119.5,
+          "x_aux_mm": -18.55,
+          "y_aux_up_mm": -65.45,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U14E-S)"
+            }
+          ]
+        },
+        {
+          "uuid": "70ee8a0f-c98e-46ad-8f04-7f84ac61dfe1",
+          "reference": "R34",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 122.439406,
+          "y_board_mm": 135.533013,
+          "x_aux_mm": -44.460594,
+          "y_aux_up_mm": -81.483013,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U10-CE)"
+            }
+          ]
+        },
+        {
+          "uuid": "183a584b-6152-4e51-9038-372a6365b590",
+          "reference": "R35",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 122.434189,
+          "y_board_mm": 137.149989,
+          "x_aux_mm": -44.465811,
+          "y_aux_up_mm": -83.099989,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U10-PROG3)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "33a881ae-5bc4-43eb-8c0a-58d6ec8c7fc3",
+          "reference": "R37",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 152.140258,
+          "y_board_mm": 138.904528,
+          "x_aux_mm": -14.759742,
+          "y_aux_up_mm": -84.854528,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "CHG_STAT1"
+            }
+          ]
+        },
+        {
+          "uuid": "4544866d-0969-47f3-b116-2bd2fba2d8d4",
+          "reference": "R38",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 153.888406,
+          "y_board_mm": 138.910188,
+          "x_aux_mm": -13.011594,
+          "y_aux_up_mm": -84.860188,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "CHG_STAT2"
+            }
+          ]
+        },
+        {
+          "uuid": "4e1126b2-d049-48d4-aa49-d96df11532b2",
+          "reference": "R39",
+          "value": "1k\u03a9",
+          "mpn": "RC0603DR-071KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 122.434189,
+          "y_board_mm": 138.766966,
+          "x_aux_mm": -44.465811,
+          "y_aux_up_mm": -84.716966,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U10-PROG1)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "bb7b36b4-a1cd-4e94-af7b-37c782901b8d",
+          "reference": "R4",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 125.47413,
+          "y_board_mm": 67.227334,
+          "x_aux_mm": -41.42587,
+          "y_aux_up_mm": -13.177334,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW1-C)"
+            },
+            {
+              "number": "2",
+              "net": "SYS_POWER"
+            }
+          ]
+        },
+        {
+          "uuid": "56eb4100-ec0b-4fc4-83e3-c1cc7d01e49f",
+          "reference": "R41",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 122.439439,
+          "y_board_mm": 133.203528,
+          "x_aux_mm": -44.460561,
+          "y_aux_up_mm": -79.153528,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "~{CHG_PWR_OK}"
+            }
+          ]
+        },
+        {
+          "uuid": "864e2106-cf6d-450c-b719-e3a1658014b1",
+          "reference": "R42",
+          "value": "1k\u03a9",
+          "mpn": "RC0603DR-071KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 162.554135,
+          "y_board_mm": 138.938126,
+          "x_aux_mm": -4.345865,
+          "y_aux_up_mm": -84.888126,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/SWD.SWCLK"
+            }
+          ]
+        },
+        {
+          "uuid": "2929651b-7793-4dba-8812-74277165667a",
+          "reference": "R49",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 134.180064,
+          "y_board_mm": 77.06106,
+          "x_aux_mm": -32.719936,
+          "y_aux_up_mm": -23.01106,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/~{SAMD_INT}"
+            }
+          ]
+        },
+        {
+          "uuid": "193b301d-8612-4b83-ac74-9e2801acf3a1",
+          "reference": "R5",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 149.8,
+          "y_board_mm": 72.5,
+          "x_aux_mm": -17.1,
+          "y_aux_up_mm": -18.45,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "AMP_MUTE"
+            }
+          ]
+        },
+        {
+          "uuid": "99f049d5-4902-4c2b-8eb5-8e498cab8923",
+          "reference": "R50",
+          "value": "1M\u03a9",
+          "mpn": "AC0603FR-131ML",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 132.76144,
+          "y_board_mm": 142.677326,
+          "x_aux_mm": -34.13856,
+          "y_aux_up_mm": -88.627326,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(Q2-D)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "7a9eddc1-2781-42b2-8f2d-d79c89b98f95",
+          "reference": "R51",
+          "value": "1M\u03a9",
+          "mpn": "AC0603FR-131ML",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 132.78644,
+          "y_board_mm": 140.877326,
+          "x_aux_mm": -34.11356,
+          "y_aux_up_mm": -86.827326,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J7-Pin_3)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(Q2-D)"
+            }
+          ]
+        },
+        {
+          "uuid": "f1391a42-2813-422c-a071-b0fa31d6368a",
+          "reference": "R55",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 135.915272,
+          "y_board_mm": 77.039769,
+          "x_aux_mm": -30.984728,
+          "y_aux_up_mm": -22.989769,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "DISPLAY_DR"
+            }
+          ]
+        },
+        {
+          "uuid": "2939d6a8-8df6-46b0-9cc6-e09c7ce30696",
+          "reference": "R56",
+          "value": "1M\u03a9",
+          "mpn": "AC0603FR-131ML",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.540607,
+          "y_board_mm": 77.091611,
+          "x_aux_mm": -36.359393,
+          "y_aux_up_mm": -23.041611,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "/ESP_EN"
+            }
+          ]
+        },
+        {
+          "uuid": "40cc64d1-50e4-4151-a434-6a6cf4d09719",
+          "reference": "R57",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.687103,
+          "y_board_mm": 109.171683,
+          "x_aux_mm": -36.212897,
+          "y_aux_up_mm": -55.121683,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-DAT1)"
+            }
+          ]
+        },
+        {
+          "uuid": "b5784622-9d0d-4e0f-b915-40e27f0379c0",
+          "reference": "R58",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 126.611948,
+          "y_board_mm": 107.939576,
+          "x_aux_mm": -40.288052,
+          "y_aux_up_mm": -53.889576,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "ESP_SPI.DISPLAY_CS"
+            }
+          ]
+        },
+        {
+          "uuid": "8d4a3f2e-7dd4-4a94-8243-a14fb81b07b2",
+          "reference": "R59",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 147.350884,
+          "y_board_mm": 106.473921,
+          "x_aux_mm": -19.549116,
+          "y_aux_up_mm": -52.423921,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "/UART.ESP.TX"
+            }
+          ]
+        },
+        {
+          "uuid": "58efcebe-9d78-4b0c-bc66-109139f2b075",
+          "reference": "R6",
+          "value": "560\u03a9",
+          "mpn": "RR1220P-561-D",
+          "footprint": "R_0805_2012Metric",
+          "x_board_mm": 153.55,
+          "y_board_mm": 59.5,
+          "x_aux_mm": -13.35,
+          "y_aux_up_mm": -5.45,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U17-LINEVOUTR)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1B-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "f2436aa1-0536-48fa-a4d6-55e675a63611",
+          "reference": "R61",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.258592,
+          "y_board_mm": 128.108531,
+          "x_aux_mm": -36.641408,
+          "y_aux_up_mm": -74.058531,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-DAT2)"
+            }
+          ]
+        },
+        {
+          "uuid": "b3de38d8-171b-424b-951f-73013760b593",
+          "reference": "R7",
+          "value": "1M\u03a9",
+          "mpn": "AC0603FR-131ML",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 126.93306,
+          "y_board_mm": 124.00986,
+          "x_aux_mm": -39.96694,
+          "y_aux_up_mm": -69.95986,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U4-EN)"
+            }
+          ]
+        },
+        {
+          "uuid": "2f8a357a-5c11-4563-8770-0ff651da9d5b",
+          "reference": "R8",
+          "value": "2.2k\u03a9",
+          "mpn": "RR1220P-222-D",
+          "footprint": "R_0805_2012Metric",
+          "x_board_mm": 149.1,
+          "y_board_mm": 57.0,
+          "x_aux_mm": -17.8,
+          "y_aux_up_mm": -2.95,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1B-+)"
+            }
+          ]
+        },
+        {
+          "uuid": "f79d64d6-faa6-4e40-aad4-3fa67d84fa65",
+          "reference": "R9",
+          "value": "10k\u03a9",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 130.656118,
+          "y_board_mm": 111.768645,
+          "x_aux_mm": -36.243882,
+          "y_aux_up_mm": -57.718645,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J4-VDD)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(J4-DAT0)"
+            }
+          ]
+        },
+        {
+          "uuid": "11ec228f-0657-4890-8d5b-4df3b676c899",
+          "reference": "REF**",
+          "value": "UKCA-Logo_6x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "UKCA-Logo_6x6mm_SilkScreen",
+          "x_board_mm": 150.392837,
+          "y_board_mm": 66.318386,
+          "x_aux_mm": -16.507163,
+          "y_aux_up_mm": -12.268386,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "186d7315-4c57-4b7f-a803-42c8945a2da8",
+          "reference": "REF**",
+          "value": "CE-Logo_8.5x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "CE-Logo_8.5x6mm_SilkScreen",
+          "x_board_mm": 159.539422,
+          "y_board_mm": 66.222616,
+          "x_aux_mm": -7.360578,
+          "y_aux_up_mm": -12.172616,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "2e38dac7-99a1-4d6b-9cb2-12c13ed8642d",
+          "reference": "REF**",
+          "value": "FCC-Logo_7.3x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "FCC-Logo_7.3x6mm_SilkScreen",
+          "x_board_mm": 142.287855,
+          "y_board_mm": 66.318386,
+          "x_aux_mm": -24.612145,
+          "y_aux_up_mm": -12.268386,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "2f6feff4-c1f3-4d98-891e-15eee3ef67b3",
+          "reference": "REF**",
+          "value": "ESD-Logo_6.6x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "ESD-Logo_6.6x6mm_SilkScreen",
+          "x_board_mm": 155.547728,
+          "y_board_mm": 73.299497,
+          "x_aux_mm": -11.352272,
+          "y_aux_up_mm": -19.249497,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "c2ce5849-0d10-4bbf-947f-cfdfcfb00a06",
+          "reference": "REF**",
+          "value": "WEEE-Logo_4.2x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "WEEE-Logo_4.2x6mm_SilkScreen",
+          "x_board_mm": 161.486922,
+          "y_board_mm": 73.249165,
+          "x_aux_mm": -5.413078,
+          "y_aux_up_mm": -19.199165,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "c4ba0d69-f450-417d-b0db-0138ca7692d3",
+          "reference": "SW1",
+          "value": "SW_SPDT",
+          "mpn": "JS102011SAQN",
+          "footprint": "SW_SPDT_CK-JS102011SAQN",
+          "x_board_mm": 119.98983,
+          "y_board_mm": 68.659556,
+          "x_aux_mm": -46.91017,
+          "y_aux_up_mm": -14.609556,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "KEY_LOCK"
+            },
+            {
+              "number": "3",
+              "net": "Net-(SW1-C)"
+            }
+          ]
+        },
+        {
+          "uuid": "9bcf2d0c-ebe6-4177-aa69-8be8da314915",
+          "reference": "SW2",
+          "value": "SW_Push",
+          "mpn": "EVQ-P40B3M",
+          "footprint": "SW_EVQ-P4HB3B",
+          "x_board_mm": 167.805031,
+          "y_board_mm": 62.580976,
+          "x_aux_mm": 0.905031,
+          "y_aux_up_mm": -8.530976,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "KEY_VOL_UP"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "MP",
+              "net": ""
+            },
+            {
+              "number": "MP",
+              "net": ""
+            }
+          ]
+        },
+        {
+          "uuid": "9d2036f1-6f63-45e0-a657-c6258e44e9ed",
+          "reference": "SW3",
+          "value": "SW_Push",
+          "mpn": "EVQ-P40B3M",
+          "footprint": "SW_EVQ-P4HB3B",
+          "x_board_mm": 167.805031,
+          "y_board_mm": 73.79166,
+          "x_aux_mm": 0.905031,
+          "y_aux_up_mm": -19.74166,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "KEY_VOL_DOWN"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "MP",
+              "net": ""
+            },
+            {
+              "number": "MP",
+              "net": ""
+            }
+          ]
+        },
+        {
+          "uuid": "43657f29-ff1e-4b97-9fe8-18b6b3a1d3d8",
+          "reference": "TP3",
+          "value": "+5V",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 145.718473,
+          "y_board_mm": 57.211564,
+          "x_aux_mm": -21.181527,
+          "y_aux_up_mm": -3.161564,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+5VA"
+            }
+          ]
+        },
+        {
+          "uuid": "4d25f1ae-4807-4e68-beec-17fabb2374e6",
+          "reference": "TP4",
+          "value": "-5V",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 143.216731,
+          "y_board_mm": 57.190541,
+          "x_aux_mm": -23.683269,
+          "y_aux_up_mm": -3.140541,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "-5VA"
+            }
+          ]
+        },
+        {
+          "uuid": "5c51c507-ad0a-4dbc-bd95-5283c8f28a7a",
+          "reference": "TP5",
+          "value": "AMP_EN",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 159.377204,
+          "y_board_mm": 82.646524,
+          "x_aux_mm": -7.522796,
+          "y_aux_up_mm": -28.596524,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "AMP_EN"
+            }
+          ]
+        },
+        {
+          "uuid": "d6233b1d-6ae6-42d5-af11-263c6292075a",
+          "reference": "TP6",
+          "value": "AMP_MUTE",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 153.533729,
+          "y_board_mm": 79.603407,
+          "x_aux_mm": -13.366271,
+          "y_aux_up_mm": -25.553407,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "AMP_MUTE"
+            }
+          ]
+        },
+        {
+          "uuid": "c389de54-7eeb-4c8c-ba3b-a0b6252ae21b",
+          "reference": "TP7",
+          "value": "BAT",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 134.452866,
+          "y_board_mm": 138.467202,
+          "x_aux_mm": -32.447134,
+          "y_aux_up_mm": -84.417202,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J7-Pin_3)"
+            }
+          ]
+        },
+        {
+          "uuid": "d5804af6-816a-4959-901f-09cb8daa8053",
+          "reference": "U1",
+          "value": "INA1620",
+          "mpn": "INA1620RTWR",
+          "footprint": "QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias",
+          "x_board_mm": 144.956329,
+          "y_board_mm": 62.016102,
+          "x_aux_mm": -21.943671,
+          "y_aux_up_mm": -7.966102,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "unconnected-(U1-Pad1)"
+            },
+            {
+              "number": "2",
+              "net": "+5VA"
+            },
+            {
+              "number": "3",
+              "net": "GND"
+            },
+            {
+              "number": "4",
+              "net": "unconnected-(U1C-NC-Pad4)"
+            },
+            {
+              "number": "5",
+              "net": "-5VA"
+            },
+            {
+              "number": "6",
+              "net": "unconnected-(U1-Pad6)"
+            },
+            {
+              "number": "7",
+              "net": "unconnected-(U1-Pad7)"
+            },
+            {
+              "number": "8",
+              "net": "unconnected-(U1-Pad8)"
+            },
+            {
+              "number": "9",
+              "net": "Net-(U1B-+)"
+            },
+            {
+              "number": "10",
+              "net": "Net-(U1B--)"
+            },
+            {
+              "number": "11",
+              "net": "Net-(U1B--)"
+            },
+            {
+              "number": "12",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "Net-(C19-Pad2)"
+            },
+            {
+              "number": "14",
+              "net": "Net-(C19-Pad2)"
+            },
+            {
+              "number": "15",
+              "net": "unconnected-(U1C-NC-Pad15)"
+            },
+            {
+              "number": "16",
+              "net": "AMP_MUTE"
+            },
+            {
+              "number": "17",
+              "net": "Net-(C17-Pad2)"
+            },
+            {
+              "number": "18",
+              "net": "Net-(C17-Pad2)"
+            },
+            {
+              "number": "19",
+              "net": "GND"
+            },
+            {
+              "number": "20",
+              "net": "Net-(U1A--)"
+            },
+            {
+              "number": "21",
+              "net": "Net-(U1A--)"
+            },
+            {
+              "number": "22",
+              "net": "Net-(U1A-+)"
+            },
+            {
+              "number": "23",
+              "net": "unconnected-(U1-Pad23)"
+            },
+            {
+              "number": "24",
+              "net": "unconnected-(U1-Pad24)"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            },
+            {
+              "number": "25",
+              "net": "-5VA"
+            }
+          ]
+        },
+        {
+          "uuid": "19fe9fb4-ffe4-459d-a337-8582d0fc3d0a",
+          "reference": "U10",
+          "value": "MCP73871",
+          "mpn": "MCP73871-2CCI/ML",
+          "footprint": "QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias2",
+          "x_board_mm": 127.902083,
+          "y_board_mm": 134.695156,
+          "x_aux_mm": -38.997917,
+          "y_aux_up_mm": -80.645156,
+          "rotation_deg": -90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "/Power/VBUS_SWITCHED"
+            },
+            {
+              "number": "3",
+              "net": "CHG_SEL"
+            },
+            {
+              "number": "4",
+              "net": "CHG_PROG"
+            },
+            {
+              "number": "5",
+              "net": "/Power/NTC"
+            },
+            {
+              "number": "6",
+              "net": "~{CHG_PWR_OK}"
+            },
+            {
+              "number": "7",
+              "net": "CHG_STAT2"
+            },
+            {
+              "number": "8",
+              "net": "CHG_STAT1"
+            },
+            {
+              "number": "9",
+              "net": "GND"
+            },
+            {
+              "number": "10",
+              "net": "GND"
+            },
+            {
+              "number": "11",
+              "net": "GND"
+            },
+            {
+              "number": "12",
+              "net": "Net-(U10-PROG3)"
+            },
+            {
+              "number": "13",
+              "net": "Net-(U10-PROG1)"
+            },
+            {
+              "number": "14",
+              "net": "Net-(J7-Pin_3)"
+            },
+            {
+              "number": "15",
+              "net": "Net-(J7-Pin_3)"
+            },
+            {
+              "number": "16",
+              "net": "Net-(J7-Pin_3)"
+            },
+            {
+              "number": "17",
+              "net": "Net-(U10-CE)"
+            },
+            {
+              "number": "18",
+              "net": "/Power/VBUS_SWITCHED"
+            },
+            {
+              "number": "19",
+              "net": "/Power/VBUS_SWITCHED"
+            },
+            {
+              "number": "20",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            },
+            {
+              "number": "21",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "4bdcd299-e637-48d0-88c0-4932f5242773",
+          "reference": "U12",
+          "value": "BD91N01NUX",
+          "mpn": "BD91N01NUX",
+          "footprint": "BD91N01NUX-E2",
+          "x_board_mm": 147.475461,
+          "y_board_mm": 128.00669,
+          "x_aux_mm": -19.424539,
+          "y_aux_up_mm": -73.95669,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "VBUS"
+            },
+            {
+              "number": "2",
+              "net": "Net-(Q1-G)"
+            },
+            {
+              "number": "3",
+              "net": "Net-(J6-CC1)"
+            },
+            {
+              "number": "4",
+              "net": "Net-(J6-CC2)"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "USB_TCC1"
+            },
+            {
+              "number": "7",
+              "net": "USB_TCC0"
+            },
+            {
+              "number": "8",
+              "net": "unconnected-(U12-ORIENT-Pad8)"
+            },
+            {
+              "number": "9",
+              "net": "unconnected-(U12-SWMONI-Pad9)"
+            },
+            {
+              "number": "10",
+              "net": "+3V3"
+            },
+            {
+              "number": "11",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "c41555d0-b281-4d71-9574-b5494ce03763",
+          "reference": "U13",
+          "value": "ATSAMD21E18A-AF",
+          "mpn": "ATSAMD21E18A-AF",
+          "footprint": "TQFP-32_7x7mm_P0.8mm",
+          "x_board_mm": 157.185125,
+          "y_board_mm": 131.081507,
+          "x_aux_mm": -9.714875,
+          "y_aux_up_mm": -77.031507,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SAMD_SPI.PICO"
+            },
+            {
+              "number": "2",
+              "net": "SAMD_SPI.SCLK"
+            },
+            {
+              "number": "3",
+              "net": "SAMD_SPI.CS"
+            },
+            {
+              "number": "4",
+              "net": "SYS_PWR_EN_SAMD"
+            },
+            {
+              "number": "5",
+              "net": "/UART.ESP.RX"
+            },
+            {
+              "number": "6",
+              "net": "/UART.ESP.TX"
+            },
+            {
+              "number": "7",
+              "net": "USB_TCC1"
+            },
+            {
+              "number": "8",
+              "net": "USB_TCC0"
+            },
+            {
+              "number": "9",
+              "net": "+3V3"
+            },
+            {
+              "number": "10",
+              "net": "GND"
+            },
+            {
+              "number": "11",
+              "net": "DAC.DATA"
+            },
+            {
+              "number": "12",
+              "net": "DAC.MCK"
+            },
+            {
+              "number": "13",
+              "net": "DAC.BCK"
+            },
+            {
+              "number": "14",
+              "net": "DAC.LRCK"
+            },
+            {
+              "number": "15",
+              "net": "/ESP_EN"
+            },
+            {
+              "number": "16",
+              "net": "/~{SAMD_INT}"
+            },
+            {
+              "number": "17",
+              "net": "I2C.SDA"
+            },
+            {
+              "number": "18",
+              "net": "I2C.SCL"
+            },
+            {
+              "number": "19",
+              "net": "SAMD_SPI.POCI"
+            },
+            {
+              "number": "20",
+              "net": "CHG_PROG"
+            },
+            {
+              "number": "21",
+              "net": "CHG_SEL"
+            },
+            {
+              "number": "22",
+              "net": "~{CHG_PWR_OK}"
+            },
+            {
+              "number": "23",
+              "net": "USB.DN"
+            },
+            {
+              "number": "24",
+              "net": "USB.DP"
+            },
+            {
+              "number": "25",
+              "net": "CHG_STAT1"
+            },
+            {
+              "number": "26",
+              "net": "/SWD.RESET"
+            },
+            {
+              "number": "27",
+              "net": "CHG_STAT2"
+            },
+            {
+              "number": "28",
+              "net": "GND"
+            },
+            {
+              "number": "29",
+              "net": "Net-(U13-VDDCORE)"
+            },
+            {
+              "number": "30",
+              "net": "+3V3"
+            },
+            {
+              "number": "31",
+              "net": "/SWD.SWCLK"
+            },
+            {
+              "number": "32",
+              "net": "/SWD.SWDIO"
+            }
+          ]
+        },
+        {
+          "uuid": "867d686e-58dd-4d22-a0f9-4cffdcee8f49",
+          "reference": "U14",
+          "value": "74CBTLV3257",
+          "mpn": "74CBTLV3257PW-Q10J",
+          "footprint": "TSSOP-16_4.4x5mm_P0.65mm",
+          "x_board_mm": 126.15,
+          "y_board_mm": 115.025,
+          "x_aux_mm": -40.75,
+          "y_aux_up_mm": -60.975,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U14E-S)"
+            },
+            {
+              "number": "2",
+              "net": "ESP_SPI.POCI"
+            },
+            {
+              "number": "3",
+              "net": "SAMD_SPI.POCI"
+            },
+            {
+              "number": "4",
+              "net": "Net-(J4-DAT0)"
+            },
+            {
+              "number": "5",
+              "net": "ESP_SPI.SCLK"
+            },
+            {
+              "number": "6",
+              "net": "SAMD_SPI.SCLK"
+            },
+            {
+              "number": "7",
+              "net": "Net-(J4-CLK)"
+            },
+            {
+              "number": "8",
+              "net": "GND"
+            },
+            {
+              "number": "9",
+              "net": "Net-(J4-CMD)"
+            },
+            {
+              "number": "10",
+              "net": "SAMD_SPI.PICO"
+            },
+            {
+              "number": "11",
+              "net": "ESP_SPI.PICO"
+            },
+            {
+              "number": "12",
+              "net": "Net-(J4-CD{slash}DAT3)"
+            },
+            {
+              "number": "13",
+              "net": "SAMD_SPI.CS"
+            },
+            {
+              "number": "14",
+              "net": "ESP_SPI.SD_CS"
+            },
+            {
+              "number": "15",
+              "net": "Net-(U14E-~{OE})"
+            },
+            {
+              "number": "16",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "c21758ef-2716-4adf-9399-df6133130d1d",
+          "reference": "U15",
+          "value": "ESP32-WROVER-E",
+          "mpn": "ESP32-WROVER-E-N16R8",
+          "footprint": "ESP32-WROVER",
+          "x_board_mm": 124.19,
+          "y_board_mm": 91.4,
+          "x_aux_mm": -42.71,
+          "y_aux_up_mm": -37.35,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            },
+            {
+              "number": "3",
+              "net": "/ESP_EN"
+            },
+            {
+              "number": "4",
+              "net": "BAT_LEVEL"
+            },
+            {
+              "number": "5",
+              "net": "unconnected-(U15-I39{slash}NOINT-Pad5)"
+            },
+            {
+              "number": "6",
+              "net": "~{GPIO_INT}"
+            },
+            {
+              "number": "7",
+              "net": "/~{SAMD_INT}"
+            },
+            {
+              "number": "8",
+              "net": "DISPLAY_LED_EN"
+            },
+            {
+              "number": "9",
+              "net": "DISPLAY_DR"
+            },
+            {
+              "number": "10",
+              "net": "~{TOUCH_INT}"
+            },
+            {
+              "number": "11",
+              "net": "DAC.BCK"
+            },
+            {
+              "number": "12",
+              "net": "DAC.LRCK"
+            },
+            {
+              "number": "13",
+              "net": "/JTAG.TMS"
+            },
+            {
+              "number": "14",
+              "net": "/JTAG.TDI"
+            },
+            {
+              "number": "15",
+              "net": "GND"
+            },
+            {
+              "number": "16",
+              "net": "/JTAG.TCK"
+            },
+            {
+              "number": "17",
+              "net": "unconnected-(U15-SHD{slash}SD2-Pad17)"
+            },
+            {
+              "number": "18",
+              "net": "unconnected-(U15-SWP{slash}SD3-Pad18)"
+            },
+            {
+              "number": "19",
+              "net": "unconnected-(U15-SCS{slash}CMD-Pad19)"
+            },
+            {
+              "number": "20",
+              "net": "unconnected-(U15-SCK{slash}CLK-Pad20)"
+            },
+            {
+              "number": "21",
+              "net": "unconnected-(U15-SDO{slash}SD0-Pad21)"
+            },
+            {
+              "number": "22",
+              "net": "unconnected-(U15-SDI{slash}SD1-Pad22)"
+            },
+            {
+              "number": "23",
+              "net": "/JTAG.TDO"
+            },
+            {
+              "number": "24",
+              "net": "I2C.SCL"
+            },
+            {
+              "number": "25",
+              "net": "DAC.MCK"
+            },
+            {
+              "number": "26",
+              "net": "I2C.SDA"
+            },
+            {
+              "number": "27",
+              "net": "unconnected-(U15-IO16-Pad27)"
+            },
+            {
+              "number": "28",
+              "net": "unconnected-(U15-IO17-Pad28)"
+            },
+            {
+              "number": "29",
+              "net": "DAC.DATA"
+            },
+            {
+              "number": "30",
+              "net": "ESP_SPI.SCLK"
+            },
+            {
+              "number": "31",
+              "net": "ESP_SPI.POCI"
+            },
+            {
+              "number": "32",
+              "net": "unconnected-(U15-NC-Pad32)"
+            },
+            {
+              "number": "33",
+              "net": "ESP_SPI.SD_CS"
+            },
+            {
+              "number": "34",
+              "net": "/UART.ESP.RX"
+            },
+            {
+              "number": "35",
+              "net": "/UART.ESP.TX"
+            },
+            {
+              "number": "36",
+              "net": "ESP_SPI.DISPLAY_CS"
+            },
+            {
+              "number": "37",
+              "net": "ESP_SPI.PICO"
+            },
+            {
+              "number": "38",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            },
+            {
+              "number": "39",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "f3cac23d-ffd8-4184-b437-4581c6978783",
+          "reference": "U16",
+          "value": "TPS22948",
+          "mpn": "TPS22948DCKR",
+          "footprint": "SOT65P210X110-6N",
+          "x_board_mm": 124.65,
+          "y_board_mm": 121.76,
+          "x_aux_mm": -42.25,
+          "y_aux_up_mm": -67.71,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "~{SD_VDD_EN}"
+            },
+            {
+              "number": "4",
+              "net": "unconnected-(U16-NC-Pad4)"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "Net-(J4-VDD)"
+            }
+          ]
+        },
+        {
+          "uuid": "aaed7834-d353-4f4c-9a38-05441df7323d",
+          "reference": "U17",
+          "value": "WM8523",
+          "mpn": "WM8523GEDT/R",
+          "footprint": "SSOP-20_4.4x6.5mm_P0.65mm",
+          "x_board_mm": 159.077489,
+          "y_board_mm": 62.215954,
+          "x_aux_mm": -7.822511,
+          "y_aux_up_mm": -8.165954,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U17-LINEVOUTL)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U17-CPVOUTN)"
+            },
+            {
+              "number": "3",
+              "net": "Net-(U17-CPCB)"
+            },
+            {
+              "number": "4",
+              "net": "GND"
+            },
+            {
+              "number": "5",
+              "net": "Net-(U17-CPCA)"
+            },
+            {
+              "number": "6",
+              "net": "+3V3"
+            },
+            {
+              "number": "7",
+              "net": "unconnected-(U17-ZFLAG-Pad7)"
+            },
+            {
+              "number": "8",
+              "net": "DAC.DATA"
+            },
+            {
+              "number": "9",
+              "net": "DAC.LRCK"
+            },
+            {
+              "number": "10",
+              "net": "DAC.BCK"
+            },
+            {
+              "number": "11",
+              "net": "DAC.MCK"
+            },
+            {
+              "number": "12",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "I2C.SDA"
+            },
+            {
+              "number": "14",
+              "net": "I2C.SCL"
+            },
+            {
+              "number": "15",
+              "net": "GND"
+            },
+            {
+              "number": "16",
+              "net": "GND"
+            },
+            {
+              "number": "17",
+              "net": "GND"
+            },
+            {
+              "number": "18",
+              "net": "Net-(U17-VMID)"
+            },
+            {
+              "number": "19",
+              "net": "+3V3"
+            },
+            {
+              "number": "20",
+              "net": "Net-(U17-LINEVOUTR)"
+            }
+          ]
+        },
+        {
+          "uuid": "a218917e-5d4d-49b2-8c60-6c61c50f3e4f",
+          "reference": "U3",
+          "value": "D5V0L2B3T-7",
+          "mpn": "D5V0L2B3T-7",
+          "footprint": "SOT-523",
+          "x_board_mm": 140.499979,
+          "y_board_mm": 62.121809,
+          "x_aux_mm": -26.400021,
+          "y_aux_up_mm": -8.071809,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(C17-Pad2)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(C19-Pad2)"
+            },
+            {
+              "number": "3",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "0bf0441b-a330-4c78-bab6-48fe3a363055",
+          "reference": "U4",
+          "value": "TLV75533PDBV",
+          "mpn": "TLV75533PDBV",
+          "footprint": "SOT-23-5",
+          "x_board_mm": 128.415497,
+          "y_board_mm": 127.954481,
+          "x_aux_mm": -38.484503,
+          "y_aux_up_mm": -73.904481,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "Net-(U4-EN)"
+            },
+            {
+              "number": "4",
+              "net": "unconnected-(U4-NC-Pad4)"
+            },
+            {
+              "number": "5",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "7b753bfa-6916-49d3-9dd0-be3e60d46e1b",
+          "reference": "U5",
+          "value": "PE1605C4A6",
+          "mpn": "PE1605C4A6",
+          "footprint": "SOT-23-6",
+          "x_board_mm": 143.434252,
+          "y_board_mm": 132.798345,
+          "x_aux_mm": -23.465748,
+          "y_aux_up_mm": -78.748345,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "USB.DN"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "USB.DP"
+            },
+            {
+              "number": "4",
+              "net": "Net-(J6-CC1)"
+            },
+            {
+              "number": "5",
+              "net": "VBUS"
+            },
+            {
+              "number": "6",
+              "net": "Net-(J6-CC2)"
+            }
+          ]
+        },
+        {
+          "uuid": "dee60ebe-d838-494b-b6d3-a175510a06c1",
+          "reference": "U7",
+          "value": "TPS65133",
+          "mpn": "TPS65133DPDR",
+          "footprint": "SON40P300X300X80-13N",
+          "x_board_mm": 139.214979,
+          "y_board_mm": 70.863235,
+          "x_aux_mm": -27.685021,
+          "y_aux_up_mm": -16.813235,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U7-SWP)"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "+5VA"
+            },
+            {
+              "number": "4",
+              "net": "GND"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "GND"
+            },
+            {
+              "number": "7",
+              "net": "AMP_EN"
+            },
+            {
+              "number": "8",
+              "net": "GND"
+            },
+            {
+              "number": "9",
+              "net": "-5VA"
+            },
+            {
+              "number": "10",
+              "net": "Net-(U7-SWN)"
+            },
+            {
+              "number": "11",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "12",
+              "net": "SYS_POWER"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "26d5b3ba-d3a1-445e-a4e1-8eb3b87b84fa",
+          "reference": "U9",
+          "value": "PCA8575",
+          "mpn": "PCA8575BS,118",
+          "footprint": "HVQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm",
+          "x_board_mm": 142.7875,
+          "y_board_mm": 117.3,
+          "x_aux_mm": -24.1125,
+          "y_aux_up_mm": -63.25,
+          "rotation_deg": 180.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "Net-(U14E-S)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U14E-~{OE})"
+            },
+            {
+              "number": "3",
+              "net": "KEY_VOL_UP"
+            },
+            {
+              "number": "4",
+              "net": "KEY_VOL_DOWN"
+            },
+            {
+              "number": "5",
+              "net": "KEY_LOCK"
+            },
+            {
+              "number": "6",
+              "net": "unconnected-(U9-IO0_5-Pad6)"
+            },
+            {
+              "number": "7",
+              "net": "unconnected-(U9-IO0_6-Pad7)"
+            },
+            {
+              "number": "8",
+              "net": "~{SD_VDD_EN}"
+            },
+            {
+              "number": "9",
+              "net": "GND"
+            },
+            {
+              "number": "10",
+              "net": "3.5mm_DETECT"
+            },
+            {
+              "number": "11",
+              "net": "AMP_EN"
+            },
+            {
+              "number": "12",
+              "net": "SD_CD"
+            },
+            {
+              "number": "13",
+              "net": "unconnected-(U9-IO1_3-Pad13)"
+            },
+            {
+              "number": "14",
+              "net": "Net-(Q3-G)"
+            },
+            {
+              "number": "15",
+              "net": "unconnected-(U9-IO1_5-Pad15)"
+            },
+            {
+              "number": "16",
+              "net": "unconnected-(U9-IO1_6-Pad16)"
+            },
+            {
+              "number": "17",
+              "net": "unconnected-(U9-IO1_7-Pad17)"
+            },
+            {
+              "number": "18",
+              "net": "GND"
+            },
+            {
+              "number": "19",
+              "net": "I2C.SCL"
+            },
+            {
+              "number": "20",
+              "net": "I2C.SDA"
+            },
+            {
+              "number": "21",
+              "net": "+3V3"
+            },
+            {
+              "number": "22",
+              "net": "~{GPIO_INT}"
+            },
+            {
+              "number": "23",
+              "net": "GND"
+            },
+            {
+              "number": "24",
+              "net": "GND"
+            },
+            {
+              "number": "25",
+              "net": "GND"
+            },
+            {
+              "number": "25",
+              "net": "GND"
+            },
+            {
+              "number": "25",
+              "net": "GND"
+            },
+            {
+              "number": "25",
+              "net": "GND"
+            },
+            {
+              "number": "25",
+              "net": "GND"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "board": "tangara-faceplate",
+      "source_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+      "copper_layers": 2,
+      "thickness_mm": 1.6,
+      "aux_origin_mm": [
+        134.3,
+        51.25
+      ],
+      "edge_bbox_mm": [
+        131.65,
+        48.6,
+        52.1,
+        94.25
+      ],
+      "footprints": [
+        {
+          "uuid": "918dc1bb-9a38-4204-bd5b-1a3b1e433d77",
+          "reference": "C1",
+          "value": "0.1uF",
+          "mpn": "GCM188R71C104KA37J",
+          "footprint": "C_0603_1608Metric",
+          "x_board_mm": 138.926509,
+          "y_board_mm": 93.389199,
+          "x_aux_mm": 4.626509,
+          "y_aux_up_mm": -42.139199,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "595eb265-1c73-4c47-9a4e-375e650d6599",
+          "reference": "C2",
+          "value": "22uF",
+          "mpn": "GRM319R61C226KE15D",
+          "footprint": "C_1206_3216Metric",
+          "x_board_mm": 178.098916,
+          "y_board_mm": 73.55,
+          "x_aux_mm": 43.798916,
+          "y_aux_up_mm": -22.3,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "44f93a98-3691-4f3f-9c27-52e78fcfa423",
+          "reference": "C3",
+          "value": "1uF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 177.944946,
+          "y_board_mm": 137.049548,
+          "x_aux_mm": 43.644946,
+          "y_aux_up_mm": -85.799548,
+          "rotation_deg": 45.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "a135f6e1-8960-448e-aaca-1f1a7d19ce57",
+          "reference": "C4",
+          "value": "1uF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 174.832053,
+          "y_board_mm": 140.199094,
+          "x_aux_mm": 40.532053,
+          "y_aux_up_mm": -88.949094,
+          "rotation_deg": 45.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U2-REG)"
+            }
+          ]
+        },
+        {
+          "uuid": "57ac9c5e-c7a0-4e13-90af-da5648701b6d",
+          "reference": "C5",
+          "value": "1uF",
+          "mpn": "GRM216R61C105KA88D",
+          "footprint": "C_0805_2012Metric",
+          "x_board_mm": 138.765079,
+          "y_board_mm": 95.421427,
+          "x_aux_mm": 4.465079,
+          "y_aux_up_mm": -44.171427,
+          "rotation_deg": 0.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "0efe2e21-be9b-4968-94bd-c6302fb66314",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "oshwa-cert",
+          "x_board_mm": 157.889132,
+          "y_board_mm": 56.948653,
+          "x_aux_mm": 23.589132,
+          "y_aux_up_mm": -5.698653,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "d378cfbd-0d0c-4f92-88e0-081279a9333a",
+          "reference": "G***",
+          "value": "LOGO",
+          "mpn": "",
+          "footprint": "LOGO",
+          "x_board_mm": 154.844831,
+          "y_board_mm": 70.904324,
+          "x_aux_mm": 20.544831,
+          "y_aux_up_mm": -19.654324,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "bb80bc60-2838-4cf5-be34-5433886c85dc",
+          "reference": "H1",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via",
+          "x_board_mm": 134.3,
+          "y_board_mm": 51.25,
+          "x_aux_mm": 0.0,
+          "y_aux_up_mm": 0.0,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "ec0facc4-e7f0-4a17-956b-45899574d6f6",
+          "reference": "H2",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via",
+          "x_board_mm": 181.1,
+          "y_board_mm": 51.25,
+          "x_aux_mm": 46.8,
+          "y_aux_up_mm": 0.0,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "b0eed96b-fecb-4db9-8e07-d5b37a30fb46",
+          "reference": "H3",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via",
+          "x_board_mm": 134.3,
+          "y_board_mm": 140.2,
+          "x_aux_mm": 0.0,
+          "y_aux_up_mm": -88.95,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "fdde57dc-9a8a-4fca-8387-52315ca48b67",
+          "reference": "H4",
+          "value": "MountingHole",
+          "mpn": "",
+          "footprint": "MountingHole_2.2mm_M2_Pad_Via",
+          "x_board_mm": 181.1,
+          "y_board_mm": 140.2,
+          "x_aux_mm": 46.8,
+          "y_aux_up_mm": -88.95,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "62591709-e371-4348-ae4f-c89289412e47",
+          "reference": "J1",
+          "value": "+",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.5mm",
+          "x_board_mm": 180.714429,
+          "y_board_mm": 127.881326,
+          "x_aux_mm": 46.414429,
+          "y_aux_up_mm": -76.631326,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J1-Pin_1)"
+            }
+          ]
+        },
+        {
+          "uuid": "99a0ccbc-2052-4358-822d-07b3e7f4b533",
+          "reference": "J2",
+          "value": "-",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.5mm",
+          "x_board_mm": 181.63167,
+          "y_board_mm": 125.364791,
+          "x_aux_mm": 47.33167,
+          "y_aux_up_mm": -74.114791,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(J2-Pin_1)"
+            }
+          ]
+        },
+        {
+          "uuid": "6f3d8b97-3f7f-4ec9-a37d-bcf9b5f688c8",
+          "reference": "J4",
+          "value": "MB Connector",
+          "mpn": "GT-F0509SR15-15SMT01",
+          "footprint": "G-Switch GT-F0509SR15-15SMT01",
+          "x_board_mm": 181.0,
+          "y_board_mm": 93.020776,
+          "x_aux_mm": 46.7,
+          "y_aux_up_mm": -41.770776,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "0",
+              "net": ""
+            },
+            {
+              "number": "0",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "GND"
+            },
+            {
+              "number": "2",
+              "net": "/SCL"
+            },
+            {
+              "number": "3",
+              "net": "/SDA"
+            },
+            {
+              "number": "4",
+              "net": "/TOUCH_INT"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "/PICO"
+            },
+            {
+              "number": "7",
+              "net": "GND"
+            },
+            {
+              "number": "8",
+              "net": "/SCLK"
+            },
+            {
+              "number": "9",
+              "net": "GND"
+            },
+            {
+              "number": "10",
+              "net": "/CS"
+            },
+            {
+              "number": "11",
+              "net": "/RS"
+            },
+            {
+              "number": "12",
+              "net": "/LED_ENABLE"
+            },
+            {
+              "number": "13",
+              "net": "+3V3"
+            },
+            {
+              "number": "14",
+              "net": "+3V3"
+            },
+            {
+              "number": "15",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "f78f87bf-a54c-4bfb-99b6-ff1c0a154656",
+          "reference": "LCD1",
+          "value": "JD-T1800",
+          "mpn": "",
+          "footprint": "JD-T1800",
+          "x_board_mm": 160.199674,
+          "y_board_mm": 71.131556,
+          "x_aux_mm": 25.899674,
+          "y_aux_up_mm": -19.881556,
+          "rotation_deg": 90.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": ""
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "Net-(LCD1-LEDK)"
+            },
+            {
+              "number": "4",
+              "net": "+3V3"
+            },
+            {
+              "number": "5",
+              "net": "GND"
+            },
+            {
+              "number": "6",
+              "net": "Net-(LCD1-RESET)"
+            },
+            {
+              "number": "7",
+              "net": "/RS"
+            },
+            {
+              "number": "8",
+              "net": "/PICO"
+            },
+            {
+              "number": "9",
+              "net": "/SCLK"
+            },
+            {
+              "number": "10",
+              "net": "+3V3"
+            },
+            {
+              "number": "11",
+              "net": "+3V3"
+            },
+            {
+              "number": "12",
+              "net": "/CS"
+            },
+            {
+              "number": "13",
+              "net": "GND"
+            },
+            {
+              "number": "14",
+              "net": ""
+            }
+          ]
+        },
+        {
+          "uuid": "c1043f45-88b6-46bf-a698-6930c3a6655c",
+          "reference": "Q1",
+          "value": "PJC138K",
+          "mpn": "PJC138K_R1_00001",
+          "footprint": "SOT-323_SC-70",
+          "x_board_mm": 177.4,
+          "y_board_mm": 63.05,
+          "x_aux_mm": 43.1,
+          "y_aux_up_mm": -11.8,
+          "rotation_deg": -90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/LED_ENABLE"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            },
+            {
+              "number": "3",
+              "net": "Net-(LCD1-LEDK)"
+            }
+          ]
+        },
+        {
+          "uuid": "945d9b1c-94e3-4aa1-8f67-ec10b8bacf24",
+          "reference": "R1",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 142.146655,
+          "y_board_mm": 94.932465,
+          "x_aux_mm": 7.846655,
+          "y_aux_up_mm": -43.682465,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW2-Pin_1)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1-KEY0)"
+            }
+          ]
+        },
+        {
+          "uuid": "86c80f65-fc79-488b-bafc-2882f87bbad6",
+          "reference": "R2",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 144.287542,
+          "y_board_mm": 94.932465,
+          "x_aux_mm": 9.987542,
+          "y_aux_up_mm": -43.682465,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW2-Pin_2)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1-KEY1)"
+            }
+          ]
+        },
+        {
+          "uuid": "31760ca1-c985-4b35-b42a-7a417431f3ff",
+          "reference": "R3",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 146.428429,
+          "y_board_mm": 94.932465,
+          "x_aux_mm": 12.128429,
+          "y_aux_up_mm": -43.682465,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW2-Pin_3)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1-KEY2)"
+            }
+          ]
+        },
+        {
+          "uuid": "61de2888-38e5-4064-9b0c-00e0ab59217e",
+          "reference": "R4",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 170.594234,
+          "y_board_mm": 138.760588,
+          "x_aux_mm": 36.294234,
+          "y_aux_up_mm": -87.510588,
+          "rotation_deg": 45.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U2-EN)"
+            }
+          ]
+        },
+        {
+          "uuid": "dc979a5e-9c90-4204-8c94-2bf6a9574c1c",
+          "reference": "R5",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 148.811943,
+          "y_board_mm": 92.449431,
+          "x_aux_mm": 14.511943,
+          "y_aux_up_mm": -41.199431,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW1-Pin_1)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1-KEY3)"
+            }
+          ]
+        },
+        {
+          "uuid": "07e46cb2-01b0-4b68-ae00-2fd523cec6aa",
+          "reference": "R6",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 148.811943,
+          "y_board_mm": 90.492976,
+          "x_aux_mm": 14.511943,
+          "y_aux_up_mm": -39.242976,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW3-Pin_1)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(U1-KEY4)"
+            }
+          ]
+        },
+        {
+          "uuid": "18c8a0b3-b42c-4794-9cdd-286a54724430",
+          "reference": "R7",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 136.825416,
+          "y_board_mm": 89.950281,
+          "x_aux_mm": 2.525416,
+          "y_aux_up_mm": -38.700281,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U1-~{RESET})"
+            },
+            {
+              "number": "2",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "4046ce15-1e3b-4d56-8424-0d185f9edbd9",
+          "reference": "R8",
+          "value": "1M",
+          "mpn": "AC0603FR-131ML",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 176.775,
+          "y_board_mm": 59.775,
+          "x_aux_mm": 42.475,
+          "y_aux_up_mm": -8.525,
+          "rotation_deg": 90.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/LED_ENABLE"
+            },
+            {
+              "number": "2",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "f06fdfc5-b9ab-4e3a-84db-c3817ad4816a",
+          "reference": "R9",
+          "value": "10k",
+          "mpn": "AC0603JR-0710KL",
+          "footprint": "R_0603_1608Metric",
+          "x_board_mm": 175.921676,
+          "y_board_mm": 69.934038,
+          "x_aux_mm": 41.621676,
+          "y_aux_up_mm": -18.684038,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            },
+            {
+              "number": "2",
+              "net": "Net-(LCD1-RESET)"
+            }
+          ]
+        },
+        {
+          "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6",
+          "reference": "REF**",
+          "value": "ESD-Logo_6.6x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "ESD-Logo_6.6x6mm_SilkScreen",
+          "x_board_mm": 161.976227,
+          "y_board_mm": 70.656605,
+          "x_aux_mm": 27.676227,
+          "y_aux_up_mm": -19.406605,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "9ce9ca5d-495f-4a9a-a6f5-2f61566cdc8a",
+          "reference": "REF**",
+          "value": "WEEE-Logo_4.2x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "WEEE-Logo_4.2x6mm_SilkScreen",
+          "x_board_mm": 167.915421,
+          "y_board_mm": 70.606273,
+          "x_aux_mm": 33.615421,
+          "y_aux_up_mm": -19.356273,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "a4ba6ac1-7184-4b23-a2df-1bfc0a85e130",
+          "reference": "REF**",
+          "value": "CE-Logo_8.5x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "CE-Logo_8.5x6mm_SilkScreen",
+          "x_board_mm": 165.967921,
+          "y_board_mm": 63.579724,
+          "x_aux_mm": 31.667921,
+          "y_aux_up_mm": -12.329724,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "b15e222b-7e97-4f74-b9e8-94c665099bbb",
+          "reference": "REF**",
+          "value": "FCC-Logo_7.3x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "FCC-Logo_7.3x6mm_SilkScreen",
+          "x_board_mm": 148.716354,
+          "y_board_mm": 63.675494,
+          "x_aux_mm": 14.416354,
+          "y_aux_up_mm": -12.425494,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "d642b6ac-9e56-4983-a0ef-cabf0f2617b5",
+          "reference": "REF**",
+          "value": "UKCA-Logo_6x6mm_SilkScreen",
+          "mpn": "",
+          "footprint": "UKCA-Logo_6x6mm_SilkScreen",
+          "x_board_mm": 156.821336,
+          "y_board_mm": 63.675494,
+          "x_aux_mm": 22.521336,
+          "y_aux_up_mm": -12.425494,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 12,
+          "pads": []
+        },
+        {
+          "uuid": "dcc39ac0-b1c8-47ff-b56e-5024955579e1",
+          "reference": "SW1",
+          "value": "BUTTON",
+          "mpn": "",
+          "footprint": "qtouch-button",
+          "x_board_mm": 157.7,
+          "y_board_mm": 117.8,
+          "x_aux_mm": 23.4,
+          "y_aux_up_mm": -66.55,
+          "rotation_deg": 0.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW1-Pin_1)"
+            }
+          ]
+        },
+        {
+          "uuid": "5f58668b-6224-42f3-a7ac-570a0c76b55e",
+          "reference": "SW2",
+          "value": "WHEEL",
+          "mpn": "",
+          "footprint": "qtouch-wheel",
+          "x_board_mm": 157.687776,
+          "y_board_mm": 117.890948,
+          "x_aux_mm": 23.387776,
+          "y_aux_up_mm": -66.640948,
+          "rotation_deg": -148.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 0,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW2-Pin_1)"
+            },
+            {
+              "number": "2",
+              "net": "Net-(SW2-Pin_2)"
+            },
+            {
+              "number": "3",
+              "net": "Net-(SW2-Pin_3)"
+            }
+          ]
+        },
+        {
+          "uuid": "785211cc-6156-4d8a-b86e-a48636645006",
+          "reference": "SW3",
+          "value": "GUARD",
+          "mpn": "",
+          "footprint": "qtouch-guard",
+          "x_board_mm": 157.7,
+          "y_board_mm": 117.885573,
+          "x_aux_mm": 23.4,
+          "y_aux_up_mm": -66.635573,
+          "rotation_deg": -10.0,
+          "side": "F.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(SW3-Pin_1)"
+            }
+          ]
+        },
+        {
+          "uuid": "c6db0084-5dfa-43d5-83d9-6824b75e3702",
+          "reference": "TP1",
+          "value": "SCL",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 146.489725,
+          "y_board_mm": 87.388385,
+          "x_aux_mm": 12.189725,
+          "y_aux_up_mm": -36.138385,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/SCL"
+            }
+          ]
+        },
+        {
+          "uuid": "7c5d7dfa-1788-48fd-8738-088bf8b244e5",
+          "reference": "TP2",
+          "value": "SDA",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 144.557161,
+          "y_board_mm": 85.785918,
+          "x_aux_mm": 10.257161,
+          "y_aux_up_mm": -34.535918,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/SDA"
+            }
+          ]
+        },
+        {
+          "uuid": "dc1a39fb-ffd9-433f-9300-ebeb2797cc6b",
+          "reference": "TP3",
+          "value": "PICO",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 169.079818,
+          "y_board_mm": 77.634194,
+          "x_aux_mm": 34.779818,
+          "y_aux_up_mm": -26.384194,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/PICO"
+            }
+          ]
+        },
+        {
+          "uuid": "6628b7e8-dd5f-4197-b20c-e54a56fb35df",
+          "reference": "TP4",
+          "value": "SCLK",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 170.921907,
+          "y_board_mm": 80.546231,
+          "x_aux_mm": 36.621907,
+          "y_aux_up_mm": -29.296231,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/SCLK"
+            }
+          ]
+        },
+        {
+          "uuid": "b2b356d1-7a4e-40d7-a149-a3e34c964973",
+          "reference": "TP5",
+          "value": "CS",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 174.890013,
+          "y_board_mm": 83.195085,
+          "x_aux_mm": 40.590013,
+          "y_aux_up_mm": -31.945085,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/CS"
+            }
+          ]
+        },
+        {
+          "uuid": "37d4198e-0b40-45e9-8b12-2753a5553acc",
+          "reference": "TP6",
+          "value": "RS",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 175.211463,
+          "y_board_mm": 79.058913,
+          "x_aux_mm": 40.911463,
+          "y_aux_up_mm": -27.808913,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/RS"
+            }
+          ]
+        },
+        {
+          "uuid": "959566ca-2f60-446d-a787-a9ebca6dff95",
+          "reference": "TP7",
+          "value": "LED",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 174.101532,
+          "y_board_mm": 60.687565,
+          "x_aux_mm": 39.801532,
+          "y_aux_up_mm": -9.437565,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "/LED_ENABLE"
+            }
+          ]
+        },
+        {
+          "uuid": "bef5164e-bd51-4e9f-821d-cd4ffed4a838",
+          "reference": "TP8",
+          "value": "3V3",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 176.805864,
+          "y_board_mm": 77.028092,
+          "x_aux_mm": 42.505864,
+          "y_aux_up_mm": -25.778092,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "43a73776-c086-4e87-9a35-378fa4f57760",
+          "reference": "TP9",
+          "value": "GND",
+          "mpn": "",
+          "footprint": "TestPoint_Pad_D1.0mm",
+          "x_board_mm": 180.083484,
+          "y_board_mm": 77.421033,
+          "x_aux_mm": 45.783484,
+          "y_aux_up_mm": -26.171033,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": true,
+          "attributes": 4,
+          "pads": [
+            {
+              "number": "1",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "uuid": "4b08134d-2f84-46fb-a0d9-e8de5d210346",
+          "reference": "U1",
+          "value": "AT42QT2120",
+          "mpn": "AT42QT2120-MMH",
+          "footprint": "VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm",
+          "x_board_mm": 140.470005,
+          "y_board_mm": 90.319571,
+          "x_aux_mm": 6.170005,
+          "y_aux_up_mm": -39.069571,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "",
+              "net": ""
+            },
+            {
+              "number": "1",
+              "net": "unconnected-(U1-KEY6-Pad1)"
+            },
+            {
+              "number": "2",
+              "net": "unconnected-(U1-KEY5-Pad2)"
+            },
+            {
+              "number": "3",
+              "net": "Net-(U1-KEY4)"
+            },
+            {
+              "number": "4",
+              "net": "Net-(U1-KEY3)"
+            },
+            {
+              "number": "5",
+              "net": "Net-(U1-KEY2)"
+            },
+            {
+              "number": "6",
+              "net": "Net-(U1-KEY1)"
+            },
+            {
+              "number": "7",
+              "net": "Net-(U1-KEY0)"
+            },
+            {
+              "number": "8",
+              "net": "GND"
+            },
+            {
+              "number": "9",
+              "net": "+3V3"
+            },
+            {
+              "number": "10",
+              "net": "GND"
+            },
+            {
+              "number": "11",
+              "net": "/SDA"
+            },
+            {
+              "number": "12",
+              "net": "Net-(U1-~{RESET})"
+            },
+            {
+              "number": "13",
+              "net": "unconnected-(U1-NC-Pad13)"
+            },
+            {
+              "number": "14",
+              "net": "/SCL"
+            },
+            {
+              "number": "15",
+              "net": "/TOUCH_INT"
+            },
+            {
+              "number": "16",
+              "net": "unconnected-(U1-KEY11-Pad16)"
+            },
+            {
+              "number": "17",
+              "net": "unconnected-(U1-KEY10-Pad17)"
+            },
+            {
+              "number": "18",
+              "net": "unconnected-(U1-KEY9-Pad18)"
+            },
+            {
+              "number": "19",
+              "net": "unconnected-(U1-KEY8-Pad19)"
+            },
+            {
+              "number": "20",
+              "net": "unconnected-(U1-KEY7-Pad20)"
+            },
+            {
+              "number": "21",
+              "net": ""
+            }
+          ]
+        },
+        {
+          "uuid": "89ce1889-1fa1-4e0e-a771-a2bef4ac494c",
+          "reference": "U2",
+          "value": "DRV2605LDGS",
+          "mpn": "DRV2605LDGST",
+          "footprint": "VSSOP-10_3x3mm_P0.5mm",
+          "x_board_mm": 174.967338,
+          "y_board_mm": 135.876798,
+          "x_aux_mm": 40.667338,
+          "y_aux_up_mm": -84.626798,
+          "rotation_deg": 45.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": false,
+          "exclude_position": false,
+          "attributes": 2,
+          "pads": [
+            {
+              "number": "1",
+              "net": "Net-(U2-REG)"
+            },
+            {
+              "number": "2",
+              "net": "/SCL"
+            },
+            {
+              "number": "3",
+              "net": "/SDA"
+            },
+            {
+              "number": "4",
+              "net": "GND"
+            },
+            {
+              "number": "5",
+              "net": "Net-(U2-EN)"
+            },
+            {
+              "number": "6",
+              "net": "+3V3"
+            },
+            {
+              "number": "7",
+              "net": "Net-(J1-Pin_1)"
+            },
+            {
+              "number": "8",
+              "net": "GND"
+            },
+            {
+              "number": "9",
+              "net": "Net-(J2-Pin_1)"
+            },
+            {
+              "number": "10",
+              "net": "+3V3"
+            }
+          ]
+        },
+        {
+          "uuid": "e4a31433-277b-4e3e-b1e8-14db4d7ad8b5",
+          "reference": "kibuzzard-63E31E51",
+          "value": "G***",
+          "mpn": "",
+          "footprint": "kibuzzard-63E31E51",
+          "x_board_mm": 178.935286,
+          "y_board_mm": 127.897299,
+          "x_aux_mm": 44.635286,
+          "y_aux_up_mm": -76.647299,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        },
+        {
+          "uuid": "16f3bb13-ecf0-419e-b6ab-5f03ef815c5e",
+          "reference": "kibuzzard-63E31E57",
+          "value": "G***",
+          "mpn": "",
+          "footprint": "kibuzzard-63E31E57",
+          "x_board_mm": 179.735836,
+          "y_board_mm": 125.364791,
+          "x_aux_mm": 45.435836,
+          "y_aux_up_mm": -74.114791,
+          "rotation_deg": 180.0,
+          "side": "B.Cu",
+          "dnp": false,
+          "exclude_bom": true,
+          "exclude_position": true,
+          "attributes": 28,
+          "pads": []
+        }
+      ]
+    }
+  ]
+}

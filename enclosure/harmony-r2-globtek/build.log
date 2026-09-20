@@ -1,0 +1,110 @@
+{
+  "status": "CAD-verified fit prototype; actual electronics, battery, wire routing and retention not physically verified",
+  "rear_depth_added_mm": 6.0,
+  "pack_mpn": "BL2200F9031781S1PCKT",
+  "pack_max_body_mm": [
+    31,
+    78,
+    9.3
+  ],
+  "clearance_envelope_mm": [
+    32,
+    79,
+    10.5
+  ],
+  "checks": {
+    "preserved_upper_back_removed_mm3": 0.0,
+    "preserved_upper_back_added_mm3": 0.0,
+    "front_battery_allowance_intersection_mm3": 0.0,
+    "back_battery_allowance_intersection_mm3": 0.0,
+    "touch-cover_battery_allowance_intersection_mm3": 0.0,
+    "button-upper_battery_allowance_intersection_mm3": 0.0,
+    "button-lower_battery_allowance_intersection_mm3": 0.0,
+    "hold-switch_battery_allowance_intersection_mm3": 0.0,
+    "sd-caddy_battery_allowance_intersection_mm3": 0.0,
+    "battery-cage_battery_allowance_intersection_mm3": 0.0,
+    "part_intersections_mm3": {}
+  },
+  "parts": {
+    "front": {
+      "size_mm": [
+        57.6,
+        99.75,
+        11.6
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 14701.578
+    },
+    "back": {
+      "size_mm": [
+        57.6,
+        99.75,
+        18.6
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 24241.702
+    },
+    "touch-cover": {
+      "size_mm": [
+        43.9,
+        43.886,
+        0.6
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 904.557
+    },
+    "button-upper": {
+      "size_mm": [
+        11.1,
+        8.349,
+        3.4
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 214.725
+    },
+    "button-lower": {
+      "size_mm": [
+        11.1,
+        8.349,
+        3.4
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 214.725
+    },
+    "hold-switch": {
+      "size_mm": [
+        14.9,
+        21.2,
+        3.5
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 546.26
+    },
+    "sd-caddy": {
+      "size_mm": [
+        5.1,
+        27.0,
+        4.95
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 300.519
+    },
+    "battery-cage": {
+      "size_mm": [
+        34.4,
+        81.4,
+        5.0
+      ],
+      "solid_valid": true,
+      "watertight": true,
+      "volume_mm3": 3854.24
+    }
+  }
+}

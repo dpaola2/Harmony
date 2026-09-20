@@ -1,0 +1,25 @@
+{
+  "status": "NOT_EXECUTED_REQUIRES_PHYSICAL_PACK_AND_BOARD",
+  "purpose": "Check the actual NTC without waiting for a manufacturer email; one sample measurement does not establish production tolerances.",
+  "charger_source": "Microchip DS20002090F electrical characteristics: I_THERM 47\u201353 uA; cold 1.20\u20131.26 V; hot 0.23\u20130.27 V",
+  "guaranteed_suspend_resistance_limits_ohm": {
+    "at_0C_min": 26808.510638297874,
+    "at_45C_max": 4339.622641509434
+  },
+  "all_corner_charge_permitted_resistance_interval_ohm": [
+    5744.68085106383,
+    22641.509433962263
+  ],
+  "measurement_plan": [
+    "Disconnect the pack from all electronics. Measure NTC-to-protected-negative resistance, not across the power terminals.",
+    "Stabilize an uncharged/unloaded pack in a controlled dry environment at 0, 5, 25, 40 and 45 C, with an independent contact temperature probe. Never heat or cool by charging the pack; avoid condensation.",
+    "Record temperature, resistance, instrument uncertainty, settling time and sample identity. Account for uncertainty before comparing boundary limits.",
+    "For the assembled board, emulate the NTC with a resistance box and verify charge suspension at both boundaries and sensor open/short. Use a suitable battery simulator or controlled bench setup.",
+    "Verify thermal attachment/lag and cutoff behavior with the actual pack, then log current, voltage, temperature, termination and elapsed time through a supervised cycle. Stop if a pack limit is exceeded."
+  ],
+  "failure_action": "If the actual NTC cannot meet the cutoff window, do not bypass it. Engineer a specified external NTC/conditioning network or change pack, then repeat qualification.",
+  "limits": [
+    "Sensor characterization requires physical hardware and test instruments.",
+    "Temperature cutoff, retention, wire routing, runtime and safe portable charging are not verified by CAD or a netlist."
+  ]
+}

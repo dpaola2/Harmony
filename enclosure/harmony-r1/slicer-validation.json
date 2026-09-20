@@ -1,0 +1,55 @@
+{
+  "tool": "Bambu Studio 02.08.02.61",
+  "machine": "Bambu Lab A1, 0.4 mm nozzle",
+  "filament": "Bambu PLA Basic",
+  "status": "Offline slicing successful; no print sent or physical print tested",
+  "settings": {
+    "wall_loops": 4,
+    "top_shell_layers": 5,
+    "bottom_shell_layers": 5,
+    "infill": "15% gyroid",
+    "support": "automatic, build plate only"
+  },
+  "plates": {
+    "shells": {
+      "input": "print/harmony-shells.3mf",
+      "sha256": "a6d929ae59eaf7edf49a362dcc3d56505d57bb5c2e1af79e943f91e83a1d8899",
+      "layer_height_mm": 0.16,
+      "estimated_minutes": 117.9,
+      "estimated_grams": 38.48,
+      "objects": [
+        "front",
+        "back"
+      ],
+      "warnings": ""
+    },
+    "small": {
+      "input": "print/harmony-small-parts.3mf",
+      "sha256": "dbffa054d9f8421706232f4558923da62d8480fd3e981f13bd4fa3124fa9f587",
+      "layer_height_mm": 0.12,
+      "estimated_minutes": 29.2,
+      "estimated_grams": 4.9,
+      "objects": [
+        "battery-cage",
+        "touch-cover",
+        "hold-switch",
+        "sd-caddy",
+        "button-upper",
+        "button-lower"
+      ],
+      "warnings": ""
+    },
+    "fit": {
+      "input": "print/harmony-fit-test.3mf",
+      "sha256": "b5c9212eae3fc5be5fbfb26705aa26e1139293982879ac4131efb966341627f6",
+      "layer_height_mm": 0.16,
+      "estimated_minutes": 20.5,
+      "estimated_grams": 2.51,
+      "objects": [
+        "fit-back",
+        "fit-front"
+      ],
+      "warnings": ""
+    }
+  }
+}

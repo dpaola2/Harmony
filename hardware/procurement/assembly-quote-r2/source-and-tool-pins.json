@@ -1,0 +1,19 @@
+{
+  "hardware": {
+    "url": "https://codeberg.org/cool-tech-zone/tangara-hw",
+    "upstream_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+    "derived_revision": "harmony-r2",
+    "pcb_format": "KiCad 8.0"
+  },
+  "kicad": {
+    "version": "8.0.9",
+    "path_used": "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli"
+  },
+  "firmware": {
+    "esp32_application": "c092c5aae83aac241b3756b15d8b9dad9ed2c3fd",
+    "esp_idf": "8c750b088c7cd857d079c0eeb495da199b359461",
+    "samd_application": "8066c54bff5d26398fa08955d2bc24e7f05702a2",
+    "samd_bootloader": "bc1632d9736493467000ba119fd0b16fd46ccbe6",
+    "release_state": "build-validated; hardware-unqualified; programming draft only"
+  }
+}

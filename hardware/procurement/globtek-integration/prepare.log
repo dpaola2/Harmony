@@ -1,0 +1,34 @@
+{
+  "status": "PASS_LOCAL_CHANGE_CHECKS_NOT_HARDWARE_QUALIFICATION",
+  "R4_sources_unchanged": true,
+  "mainboard_pin_nets_unchanged": 459,
+  "faceplate_sources_unchanged": true,
+  "pcb_delta": "one MPN string; reversing it restores byte-identical R4 PCB",
+  "changed_reference": "U10",
+  "charger_voltage_v": [
+    4.0794999999999995,
+    4.120499999999999
+  ],
+  "pack_max_charge_v": 4.2,
+  "R39_charge_mA_5percent_resistor_screen": [
+    857.1428571428571,
+    1157.8947368421054
+  ],
+  "R39_note": "Conservative 5% resistor bound used; original RC0603DR tolerance is tighter. MCP73871 +/-10% current bound at 1 kOhm.",
+  "R35_termination_mA": [
+    71.42857142857143,
+    131.57894736842107
+  ],
+  "termination_disposition": "Earlier than pack recommended 22 mA; retains conservative early termination with reduced usable capacity. Measure actual full-cycle behavior.",
+  "timer_h": [
+    5.4,
+    6.6
+  ],
+  "timer_disposition": "Retained as backup; not equivalent to pack recommended 5 h standard / 2.5 h rapid completion. Validate cycle time before portable charging.",
+  "thermal_status": "BLOCKED: exact pack NTC curve/tolerances or physical characterization needed. 10 kOhm alone cannot prove 0\u201345 C cutoff.",
+  "sources": {
+    "r4_bom_sha256": "90249117e97ef598da1b1babe19ea1997f69de374b96d53d79a799fd27c56caf",
+    "prior_netlist_sha256": "dfad357dfaa3767b60d1c7ce134926e38c66a6f55f1d8799a029d9c4d1862be9",
+    "new_netlist_sha256": "516a4299f18257f63b766d7c10d172524f6942fdd9be45ac16ffb5ab8a01529a"
+  }
+}

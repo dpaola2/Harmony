@@ -1,0 +1,54 @@
+{
+  "scope": "Read-only independent review of final mainboard J1 correction",
+  "verdict": "Pass for changed nominal J1 geometry and source scope; not a fabrication release",
+  "board_sha256": "688d499afbafad4465b6e12abe67d648e8a49b0c73b9caac2f6a0e891d16b27c",
+  "outside_J1_and_zone_blocks_byte_identical_to_R2": true,
+  "no_trace_via_unrelated_footprint_or_hole_center_movement": true,
+  "library_reimport_matches_board_pads_offsets_shapes_layers_masks_paste_margins_and_EdgeCuts_exactly": true,
+  "primary_source": {
+    "file": "hardware/reviews/harmony-r2/sources/SJ-3506-SMT-TR.pdf",
+    "page": 2,
+    "drawing_date": "09/12/2024 as printed",
+    "review_method": "Visual inspection of manufacturer page 2 rendered image",
+    "eight_finished_slots_mm": [
+      1.1,
+      0.7
+    ],
+    "PCB_tolerance_mm": 0.05,
+    "cutout_width_mm": 10.1,
+    "slot_row_spacing_mm": 11.8,
+    "pin_2_to_6_slot_edge_gap_mm": 0.7,
+    "longitudinal_hole_positions_mm": {
+      "side_1": [
+        1.85,
+        5.88,
+        9.7,
+        11.5
+      ],
+      "side_2": [
+        1.85,
+        5.88,
+        9.0,
+        11.5
+      ]
+    }
+  },
+  "changed_dimensions_match_manufacturer_drawing": true,
+  "nominal_analytic_min_annulus_mm": {
+    "1": 0.1499999997817077,
+    "2": 0.16319660045153736,
+    "3": 0.14999999978170767,
+    "4": 0.14999999978170767,
+    "5": 0.14999999978170767,
+    "6": 0.1631966006879194,
+    "SH1": 0.1499999997817077,
+    "SH2": 0.14999999978170767
+  },
+  "existing_native_DRC_J1_physical_findings": [],
+  "limitations": [
+    "Pad copper adjustment is an engineering change to maintain annulus and routing clearance; manufacturer drawing confirms holes and cutout, not approval of these copper dimensions.",
+    "Finished slot and board-route tolerances must meet the drawing and fabricator capability. Nominal equality does not replace manufacturing tolerance review.",
+    "Existing mainboard release blockers, including USB 0.8 mm recommended versus 1.60252 mm board thickness and U15 starved thermal after refill, remain outside this J1 geometry pass."
+  ],
+  "review_correction": "Initial manual library replacement missed pre-existing library dimension differences. Root regenerated from native board geometry; independent reverse placement now matches exactly."
+}

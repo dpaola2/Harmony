@@ -1,0 +1,11 @@
+# R3 fabrication questions, unsent
+
+The attached R3 data is for engineering and quote review. Please do not fabricate, buy components or substitute parts without a later release. Quote complete sets at quantities 1, 2 and 5, including mixed SMT/plated connector assembly and optional programming.
+
+1. **USB-C fit:** J6 is GCT USB4510-03-1-A. The controlled GCT A1 drawing recommends a 0.80 mm PCB; the four-layer mainboard totals 1.60252 mm. Confirm shell-stake engagement, soldering process and fit at this thickness with a section drawing or sample measurement. Twelve signal pads end at the routed connector cutout. Confirm the actual copper-to-route tolerance and whether this footprint can be built reliably. If not, identify the required footprint/connector change before quoting it as buildable.
+2. **Audio-jack machining:** J1 is Same Sky SJ-3506-SMT-TR. R3 uses eight plated 1.10 × 0.70 mm slots, a 10.10 mm cutout, and revised copper lands that pass the existing 0.15 mm annular-ring and 0.30 mm edge checks. Confirm finished-slot dimensions/tolerances, plating and pin soldering against the manufacturer drawing.
+3. **Touch electrode artwork:** the three wheel electrodes have minimum pair gaps of 0.282097, 0.291368 and 0.292112 mm; the project QTouch rule is 0.5 mm. The Pin 3 electrode also triggers KiCad's sliver warning. Please review the supplied copper contour for etching reliability. Supplier manufacturability acceptance alone will not establish touch sensitivity; that still needs a prototype through the printed cover.
+4. **Thermal relief:** native zone refill reports one B.Cu spoke at the U15 ESP32 ground pad 39 location x134.01, y89.00 mm, against two configured minimum spokes. Review the full multilayer ground connection and reflow process; propose a local correction or a specific accepted exception.
+5. **CAM/assembly preview:** review small or clipped silkscreen, four side-button edge gaps within 0.00003 mm of 0.30 mm, mixed plated/SMT footprint metadata, RF antenna keepout, rotations and polarity. Return marked previews and a list of proposed CAM edits. Do not silently repair copper.
+
+Battery and display specifications remain in [vendor questions](VENDOR-QUESTIONS-DRAFT.md). No supplier has received this draft, and no acceptance is recorded.

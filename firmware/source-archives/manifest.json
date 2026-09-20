@@ -1,0 +1,29 @@
+[
+  {
+    "path": "tangara-fw-source.tar.gz",
+    "files": 35011,
+    "bytes": 261725551,
+    "sha256": "a174f6c1c77178d6e6a14c6ff433c4fa6ea703a5f293735b364edef5830abc50",
+    "commit": "c092c5aae83aac241b3756b15d8b9dad9ed2c3fd",
+    "includes_recursive_submodules": true,
+    "includes_git_history": false
+  },
+  {
+    "path": "tangara-samd-source.tar.gz",
+    "files": 2418,
+    "bytes": 14195604,
+    "sha256": "da3186147beaf995fe0fb8fa649aeb3f291ae9309542a01cf40689e2b95ed8be",
+    "commit": "8066c54bff5d26398fa08955d2bc24e7f05702a2",
+    "includes_recursive_submodules": true,
+    "includes_git_history": false
+  },
+  {
+    "path": "tangara-samd-bootloader-source.tar.gz",
+    "files": 4658,
+    "bytes": 93513735,
+    "sha256": "4c147c69630e3e0cd31d3a87430d3efc145f79fc5d8f0bafa0f7b8f6365dae9b",
+    "commit": "bc1632d9736493467000ba119fd0b16fd46ccbe6",
+    "includes_recursive_submodules": true,
+    "includes_git_history": false
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "mainboard:U12": {
+    "source_mpn": "BD91N01NUX",
+    "order_mpn": "BD91N01NUX-E2",
+    "reason": "Exact code in original production BOM and current ROHM product listing.",
+    "source": "https://www.rohm.com/products/interface/usb-type-c-power-delivery/controller/BD91N01NUX-product"
+  },
+  "mainboard:U4": {
+    "source_mpn": "TLV75533PDBV",
+    "order_mpn": "TLV75533PDBVR",
+    "reason": "TI orderable form of the same 3.3 V DBV/SOT-23-5 device; R specifies tape/reel.",
+    "source": "https://www.ti.com/product/TLV755P/part-details/TLV75533PDBVR"
+  },
+  "mainboard:U5": {
+    "source_mpn": "PE1605C4A6",
+    "order_mpn": "PE1605C4A6_R1_00001",
+    "reason": "PANJIT manufacturer lists this complete order code for the same non-AU SOT-23 6L part; no automatic AU variant substitution.",
+    "source": "https://panjit.com.tw/en/Stock/PE1605C4A6"
+  }
+}

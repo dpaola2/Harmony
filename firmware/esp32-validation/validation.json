@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-14",
+  "host": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "source_url": "https://codeberg.org/cool-tech-zone/tangara-fw.git",
+  "source_commit": "c092c5aae83aac241b3756b15d8b9dad9ed2c3fd",
+  "idf_commit": "8c750b088c7cd857d079c0eeb495da199b359461",
+  "source_changes": "",
+  "build_passed": true,
+  "compiler_warning_count": 29,
+  "cmake_warning_count": 1,
+  "application_bytes": 2684736,
+  "application_partition_bytes": 4194304,
+  "flash_layout_checked": true,
+  "image_checksum_checked": true,
+  "runtime_tested": false,
+  "bit_for_bit_clean_rebuild_verified": false,
+  "warning_classes": [
+    "[-Wdeprecated-declarations]",
+    "[-Wdeprecated]",
+    "[-Wimplicit-fallthrough=]",
+    "[-Wnull-dereference]",
+    "[-Wunused-function]",
+    "[-Wunused-variable]"
+  ],
+  "artifacts": [
+    {
+      "offset": "0x1000",
+      "file": "bootloader.bin",
+      "bytes": 24256,
+      "sha256": "e85b6407325cd47db5f80f89bc6aaa3cbb96dd4f0306a5b7d44087db7d790d59"
+    },
+    {
+      "offset": "0x10000",
+      "file": "tangara.bin",
+      "bytes": 2684736,
+      "sha256": "c55b17e914ac272777b10cbfcf98f3ae8a7ff285c11212cd4c86157adcd953f9"
+    },
+    {
+      "offset": "0x8000",
+      "file": "partition-table.bin",
+      "bytes": 3072,
+      "sha256": "802ba49322bc8e14e32547000811dc96b7fb84c02b905624867809e0290609b1"
+    },
+    {
+      "offset": "0xd000",
+      "file": "ota_data_initial.bin",
+      "bytes": 8192,
+      "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+    },
+    {
+      "offset": "0x810000",
+      "file": "Generic.LC_COLLATE",
+      "bytes": 2586938,
+      "sha256": "b55d8270de7dfb650c92e990c840c2bf16215cd8f6dcb2c9e6451194f41c0e11"
+    },
+    {
+      "offset": "0xb10000",
+      "file": "lua.bin",
+      "bytes": 2097152,
+      "sha256": "12ff4aa847c037556374ea443c37759b5b9c366d42614ca5c93882696914c41a"
+    },
+    {
+      "offset": "0xf10000",
+      "file": "repl.bin",
+      "bytes": 131072,
+      "sha256": "fa85e4c4071bae719bfc2893cccad4d2deefa8454c50b4ae230bdb5d77e11fbe"
+    }
+  ]
+}

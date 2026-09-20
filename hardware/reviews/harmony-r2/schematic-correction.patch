@@ -1,0 +1,276 @@
+--- hardware/tangara-reference/tangara-mainboard/audio.kicad_sch
++++ hardware/revisions/harmony-r2/tangara-mainboard/audio.kicad_sch
+@@ -1470,7 +1470,7 @@
+ 				)
+ 				(pin power_in line
+ 					(at 0 -8.89 90)
+-					(length 3.81) hide
++					(length 3.81)
+ 					(name "EP"
+ 						(effects
+ 							(font
+@@ -3226,7 +3226,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin bidirectional line
+ 					(at -21.59 13.97 0)
+ 					(length 2.54)
+ 					(name "BCLK"
+@@ -3244,7 +3244,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin input line
+ 					(at -21.59 8.89 0)
+ 					(length 2.54)
+ 					(name "MCLK"
+@@ -3262,7 +3262,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin bidirectional line
+ 					(at -21.59 -6.35 0)
+ 					(length 2.54)
+ 					(name "SDOUT/DEEMPH"
+@@ -3280,7 +3280,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin bidirectional line
+ 					(at -21.59 2.54 0)
+ 					(length 2.54)
+ 					(name "SDA"
+@@ -3298,7 +3298,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin input line
+ 					(at -21.59 0 0)
+ 					(length 2.54)
+ 					(name "SCLK"
+@@ -3316,7 +3316,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin input line
+ 					(at -21.59 -8.89 0)
+ 					(length 2.54)
+ 					(name "{~CS}/{~MUTE}"
+@@ -3334,7 +3334,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin input line
+ 					(at -21.59 -11.43 0)
+ 					(length 2.54)
+ 					(name "CIFMODE"
+@@ -3352,7 +3352,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin power_in line
+ 					(at -2.54 -30.48 90)
+ 					(length 2.54)
+ 					(name "AGND"
+@@ -3388,7 +3388,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin power_in line
+ 					(at -3.81 27.94 270)
+ 					(length 2.54)
+ 					(name "AVDD"
+@@ -3460,7 +3460,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin power_in line
+ 					(at 2.54 -30.48 90)
+ 					(length 2.54)
+ 					(name "LINEGND"
+@@ -3496,7 +3496,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin power_in line
+ 					(at 1.27 27.94 270)
+ 					(length 2.54)
+ 					(name "LINEVDD"
+@@ -3532,7 +3532,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin input line
+ 					(at -21.59 16.51 0)
+ 					(length 2.54)
+ 					(name "DACDAT"
+@@ -3550,7 +3550,7 @@
+ 						)
+ 					)
+ 				)
+-				(pin output line
++				(pin bidirectional line
+ 					(at -21.59 11.43 0)
+ 					(length 2.54)
+ 					(name "LRCLK"
+--- hardware/tangara-reference/tangara-mainboard/peripherals.kicad_sch
++++ hardware/revisions/harmony-r2/tangara-mainboard/peripherals.kicad_sch
+@@ -2426,7 +2426,7 @@
+ 			(symbol "PCA8575BS_1_0"
+ 				(pin power_in line
+ 					(at 0 -25.4 90)
+-					(length 2.54) hide
++					(length 2.54)
+ 					(name "EP"
+ 						(effects
+ 							(font
+--- hardware/tangara-reference/tangara-mainboard/symbols.kicad_sym
++++ hardware/revisions/harmony-r2/tangara-mainboard/symbols.kicad_sym
+@@ -4670,7 +4670,7 @@
+ 			)
+ 			(pin power_in line
+ 				(at 0 -8.89 90)
+-				(length 3.81) hide
++				(length 3.81)
+ 				(name "EP"
+ 					(effects
+ 						(font
+@@ -7792,7 +7792,7 @@
+ 		(symbol "PCA8575BS_1_0"
+ 			(pin power_in line
+ 				(at 0 -25.4 90)
+-				(length 2.54) hide
++				(length 2.54)
+ 				(name "EP"
+ 					(effects
+ 						(font
+@@ -15872,7 +15872,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin bidirectional line
+ 				(at -21.59 13.97 0)
+ 				(length 2.54)
+ 				(name "BCLK"
+@@ -15890,7 +15890,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin input line
+ 				(at -21.59 8.89 0)
+ 				(length 2.54)
+ 				(name "MCLK"
+@@ -15908,7 +15908,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin bidirectional line
+ 				(at -21.59 -6.35 0)
+ 				(length 2.54)
+ 				(name "SDOUT/DEEMPH"
+@@ -15926,7 +15926,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin bidirectional line
+ 				(at -21.59 2.54 0)
+ 				(length 2.54)
+ 				(name "SDA"
+@@ -15944,7 +15944,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin input line
+ 				(at -21.59 0 0)
+ 				(length 2.54)
+ 				(name "SCLK"
+@@ -15962,7 +15962,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin input line
+ 				(at -21.59 -8.89 0)
+ 				(length 2.54)
+ 				(name "{~CS}/{~MUTE}"
+@@ -15980,7 +15980,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin input line
+ 				(at -21.59 -11.43 0)
+ 				(length 2.54)
+ 				(name "CIFMODE"
+@@ -15998,7 +15998,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin power_in line
+ 				(at -2.54 -30.48 90)
+ 				(length 2.54)
+ 				(name "AGND"
+@@ -16034,7 +16034,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin power_in line
+ 				(at -3.81 27.94 270)
+ 				(length 2.54)
+ 				(name "AVDD"
+@@ -16106,7 +16106,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin power_in line
+ 				(at 2.54 -30.48 90)
+ 				(length 2.54)
+ 				(name "LINEGND"
+@@ -16142,7 +16142,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin power_in line
+ 				(at 1.27 27.94 270)
+ 				(length 2.54)
+ 				(name "LINEVDD"
+@@ -16178,7 +16178,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin input line
+ 				(at -21.59 16.51 0)
+ 				(length 2.54)
+ 				(name "DACDAT"
+@@ -16196,7 +16196,7 @@
+ 					)
+ 				)
+ 			)
+-			(pin output line
++			(pin bidirectional line
+ 				(at -21.59 11.43 0)
+ 				(length 2.54)
+ 				(name "LRCLK"

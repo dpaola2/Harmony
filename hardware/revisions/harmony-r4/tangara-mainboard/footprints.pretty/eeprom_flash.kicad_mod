@@ -1,0 +1,47 @@
+(footprint "eeprom_flash" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 0)
+  (attr smd)
+  (fp_text reference "REF**" (at -0.05 -2.8 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp b70266d5-0142-4ec7-b340-c703c0a84ff0)
+  )
+  (fp_text value "eeprom_flash" (at 0.1 4.25 unlocked) (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp be19346d-3d98-40d1-90c9-681ab8413264)
+  )
+  (fp_text user "${REFERENCE}" (at 0 2.5 unlocked) (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 4038a8fe-0556-4a7e-be93-7b01abb97560)
+  )
+  (fp_circle (center 2.45 0) (end 2.45 0.95) (layer "F.SilkS") (width 0.12) (fill none) (tstamp 05097dd7-8292-401e-b261-e4ba3b1ebb38))
+  (fp_circle (center -0.05 0) (end -0.05 0.95) (layer "F.SilkS") (width 0.12) (fill none) (tstamp 09af71da-767d-4485-a03d-e3acdb09d5a2))
+  (fp_circle (center -2.55 0) (end -2.55 0.95) (layer "F.SilkS") (width 0.12) (fill none) (tstamp fe3bb655-a249-42d1-ac2c-4dda5e260b78))
+  (fp_circle (center -0.05 0) (end 1.2 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp 2312c9f1-52f7-40c9-9102-e19d493a1b2d))
+  (fp_circle (center 2.45 0) (end 3.7 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp 707b2e57-ab6a-4abd-98e0-d8e7a1c1a93e))
+  (fp_circle (center -2.55 0) (end -1.3 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp d25a48d2-cb56-4383-87e9-8019db2111a7))
+  (pad "1" smd circle (at -2.55 0) (size 1.5 1.5) (layers "F.Cu" "F.Mask") (tstamp 84889189-1fec-4006-bdc3-eabcda42bc90))
+  (pad "2" smd circle (at -0.05 0) (size 1.5 1.5) (layers "F.Cu" "F.Mask") (tstamp 6f2f8378-b726-468a-9f19-f5b7272e47e2))
+  (pad "3" smd circle (at 2.45 0) (size 1.5 1.5) (layers "F.Cu" "F.Mask") (tstamp a0057a89-2915-494e-bcb0-476fe61cc5c8))
+  (group "" (id 57ba9102-2940-4c59-aeb1-9999112d144d)
+    (members
+      05097dd7-8292-401e-b261-e4ba3b1ebb38
+      707b2e57-ab6a-4abd-98e0-d8e7a1c1a93e
+      a0057a89-2915-494e-bcb0-476fe61cc5c8
+    )
+  )
+  (group "" (id 956b3399-dd8c-446e-8800-8a2fea22bacc)
+    (members
+      09af71da-767d-4485-a03d-e3acdb09d5a2
+      2312c9f1-52f7-40c9-9102-e19d493a1b2d
+      6f2f8378-b726-468a-9f19-f5b7272e47e2
+    )
+  )
+  (group "" (id e16e68ff-6f64-4a1b-aaff-a74181dd7e11)
+    (members
+      84889189-1fec-4006-bdc3-eabcda42bc90
+      d25a48d2-cb56-4383-87e9-8019db2111a7
+      fe3bb655-a249-42d1-ac2c-4dda5e260b78
+    )
+  )
+)

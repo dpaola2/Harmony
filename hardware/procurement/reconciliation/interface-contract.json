@@ -1,0 +1,62 @@
+{
+  "source_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "status": "review_evidence_not_released_bom",
+  "battery_j7": {
+    "board_mpn": "S3B-PH-K-S(LF)(SN)",
+    "pitch_mm": 2.0,
+    "circuits": {
+      "1": "NTC",
+      "2": "GND",
+      "3": "BAT_POSITIVE"
+    },
+    "required_pack_order": ["NTC", "CELL_NEGATIVE", "PROTECTED_CELL_POSITIVE"],
+    "thermistor": {
+      "nominal_ohms_at_25c": 10000,
+      "charger": "MCP73871-2CCI/ML",
+      "board_emulation_resistor": "R1",
+      "board_emulation_resistor_population": "DNP_for_real_NTC"
+    },
+    "fitted_prog1_ohms": 1000,
+    "configured_prog1_ceiling_ma": 1000,
+    "firmware_control": "ESP32 NVS defaults fast charge enabled; SAMD v4+ permits adapter path only for a detected 1.5A or 3A USB-C source, otherwise selects 100mA or 500mA USB current control",
+    "release_state": "hold_pending_pack_drawing_ntc_curve_pin_order_and_charge_rating"
+  },
+  "display_lcd1": {
+    "schematic_value": "JD-T1800",
+    "schematic_mpn": null,
+    "proposed_mpn": "ER-TFT018-4",
+    "pad_pitch_mm": 0.8,
+    "pads": {
+      "1": "NC",
+      "2": "GND",
+      "3": "LED_K",
+      "4": "LED_A_3V3",
+      "5": "GND",
+      "6": "RESET",
+      "7": "RS_DC",
+      "8": "SPI_DATA_PICO",
+      "9": "SPI_CLOCK",
+      "10": "3V3",
+      "11": "3V3",
+      "12": "CHIP_SELECT",
+      "13": "GND",
+      "14": "NC"
+    },
+    "manufacturer_listing": {
+      "controller": "ST7735S",
+      "resolution": "128x160",
+      "interface": "4-wire SPI",
+      "connection": "soldering FPC",
+      "outline_mm": [34.74, 46.70, 2.3],
+      "active_area_mm": [28.03, 35.04]
+    },
+    "electrical_pinout_reconciliation": "exact_match_to_ER-TFT018-4_datasheet_rev_1_0",
+    "supply_reconciliation": "pins_10_and_11_at_3V3_equal_published_operating_maximum",
+    "release_state": "hold_pending_archived_drawing_and_full_scale_mechanical_overlay"
+  },
+  "bom_holds": [
+    "schematic-parts-audit.json duplicates multi-unit and hierarchical local references and is not quantity-safe",
+    "LCD1 has no schematic MPN or datasheet",
+    "power-sheet DNP R1 has non-MPN text in its MPN field"
+  ]
+}

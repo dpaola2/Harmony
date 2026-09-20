@@ -1,0 +1,43 @@
+{
+  "status": "engineering correction complete; fabrication remains blocked by explicit residuals",
+  "changes": [
+    "Assigned actual nets to SW1 button circle, SW2 three polygons, and SW3 guard circle using native KiCad net fields; all electrode geometry preserved exactly.",
+    "Refilled GND zones using KiCad 8.0.9, correcting guard clearance from 0.2545 mm to the existing 0.5 mm requirement.",
+    "Corrected SW1 and qtouch-button library attribute from SMD to through_hole; no pad dimensions changed."
+  ],
+  "verified": {
+    "gerber_equivalence": "Before versus net assignment only: F.Cu, B.Cu, both soldermasks and Edge.Cuts have identical commands after stripping G04 comments. Zone refill is a separate deliberate copper delta recorded in source-delta.json.",
+    "net_assignment": "All electrodes intersect their matching pad copper and no other electrode pad; guard overlap confirmed using native pad polygon.",
+    "native_drc_counts": {
+      "warning": 13
+    },
+    "unconnected_count": 0,
+    "guard_pad_overlap_mm2": 0.025792062492842945
+  },
+  "residuals": [
+    {
+      "item": "wheel clearance",
+      "finding": "All three inter-electrode gaps are positive but below 0.5 mm QTouch netclass: 0.291368435, 0.292112230, 0.282097353 mm. Native DRC does not report graphic-to-graphic pair gaps.",
+      "disposition": "Preserved exact original contours. Requires an explicit scoped touch-electrode spacing decision; no rule or waiver was added."
+    },
+    {
+      "item": "copper_sliver",
+      "finding": "Native unpositioned F.Cu sliver localized to SW2 pad3 electrode polygon UUID 52a16c30-173a-482c-a962-efae53334f95 by separate deletion experiments on source copies. Removing this polygon eliminates the warning; removing either other wheel polygon, SW1, SW3, or zones does not.",
+      "disposition": "Preserved contour rather than reshape touch geometry without physical validation. Evidence in sliver-localization.json."
+    },
+    {
+      "item": "via_dangling",
+      "finding": "Via UUID 9beac3e6-1d53-440c-9527-78bfbd009e1f at 174.101532,60.687565 is exactly coincident with TP7 pad1 and connected to LED_ENABLE B.Cu routing.",
+      "disposition": "Preserved top-side plated test access. It is not an electrically floating via; removing branch would delete TP7 test access."
+    },
+    {
+      "item": "touch qualification",
+      "finding": "No physical touch operation, sensitivity, noise immunity, or assembled interaction has been qualified."
+    },
+    {
+      "item": "library synchronization",
+      "finding": "Electrode board geometry remains native net-aware graphics. Library graphic shapes carry no portable named board net; future footprint updates must reverify electrode net fields and isolation."
+    }
+  ],
+  "ownership": "Only faceplate PCB, qtouch-button.kicad_mod, and this physical evidence directory changed. Mainboard connector review remains with root."
+}

@@ -1,0 +1,691 @@
+{
+  "status": "QUOTE_REVIEW_ONLY_NOT_FABRICATION_RELEASED",
+  "upstream_source_commit": "9853b4a1dc8a0e3ea3ec75450522e42df12eaa52",
+  "derived_revision": "harmony-r2",
+  "quote_quantities_complete_sets": [
+    1,
+    2,
+    5
+  ],
+  "generator": "generate_quote_package.py",
+  "native_kicad_cli": "/Users/dave/projects/Harmony2/firmware/toolchains/kicad-8.0.9/KiCad.app/Contents/MacOS/kicad-cli",
+  "source_files": [
+    {
+      "path": "hardware/revisions/harmony-r2/BOM.md",
+      "bytes": 2863,
+      "sha256": "cf2e2c46ef4372bb4e1d21939fd447ff369f9664835175e7d686e6a635778316"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/LICENSE",
+      "bytes": 13419,
+      "sha256": "253ad3f89603e728abfa60c36fbcaf8225cf55c1eab12725f19fb3d74d647f3a"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/README.md",
+      "bytes": 689,
+      "sha256": "657c0974f062740028bc0230ed9338d272299360a132f1e2fa1dab4420f1e586"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/VALIDATION.md",
+      "bytes": 4038,
+      "sha256": "f9e8cfb8c65e8870f57fe60ba7b08717d19efaa6306cf4d3ecfb5665808330b1"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/sheet.kicad_wks",
+      "bytes": 2291,
+      "sha256": "2f2b69cf4290127f78081f5fc607952b1b9b666428fe209aa15a521114fc5117"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/source-lock.json",
+      "bytes": 630,
+      "sha256": "0f2a68bbaab7583ab132d30f97e60eff8902139401f1116fd43f6c2a02d9aa7c"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/G-Switch GT-F0509SR15-15SMT01.kicad_mod",
+      "bytes": 7294,
+      "sha256": "5a59f639c5054ee8d04a6c74aa38b2559aac6eef544ef5cc3c204c3e3c44f4b2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/JD-T1800.kicad_mod",
+      "bytes": 4077,
+      "sha256": "c553e4036fb921bc80507eb2a70e2be6cef7ac44613b8c46ca23466add3e1057"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/molex_5052781533.kicad_mod",
+      "bytes": 5521,
+      "sha256": "b0dbc29d4887ca19d6ec6035d885a49a101faf088c222fdfed48ec35a1128286"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/qtouch-button.kicad_mod",
+      "bytes": 891,
+      "sha256": "4e0b0cc93e85c2d676a1dec3db08e11c4542ca0372586e041fe659dff6c89916"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/qtouch-guard.kicad_mod",
+      "bytes": 914,
+      "sha256": "14e87a47bca729618234c8547cf5d24824481eb11e06ba22f0a09b9a724a2590"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-footprints.pretty/qtouch-wheel.kicad_mod",
+      "bytes": 116942,
+      "sha256": "5830f0bc1b4bfdde24ed0b55adb4f3fba225df49ad9fd89381082732e2a48c88"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/faceplate-symbols.kicad_sym",
+      "bytes": 10210,
+      "sha256": "475f9d7adf4f0f87b99bcc1371a83eecfb3e5c9ac0497183ffaba66aff474196"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/fp-lib-table",
+      "bytes": 151,
+      "sha256": "111a857274d6c45061dbd9cfaff6247926e01e2ee99adaccda1949c1e49820c4"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/sym-lib-table",
+      "bytes": 149,
+      "sha256": "0d03bcbc0d80348563590d476ab496bb18300ee7ca68cfb67f82e2280bae4858"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/tangara-faceplate.kicad_pcb",
+      "bytes": 1042764,
+      "sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/tangara-faceplate.kicad_pro",
+      "bytes": 15366,
+      "sha256": "2be311c615a47011636c94b76bebb4931647825724ffbef01bf48aedaafa0b6c"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-faceplate/tangara-faceplate.kicad_sch",
+      "bytes": 153147,
+      "sha256": "e8b33cd11df0ebb454dd483e27e5cee9f2c4fc5b36b574b9e6f6d98ddd8882bd"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/audio.kicad_sch",
+      "bytes": 179265,
+      "sha256": "7c00845e2364bb989a02ccf69ce156c4122c52dbbfbfc97d55e483785c176c45"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/BD91N01NUX-E2.kicad_mod",
+      "bytes": 12328,
+      "sha256": "ae01e54712374cf361a4ff7e1cbb5cbd02f299c5e3c0f0a7804c8a5441754839"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/CUI_SJ-3506-SMT.kicad_mod",
+      "bytes": 8522,
+      "sha256": "764424bd3880d743cc69e03c084689ce59904344dfef7dc0b3fe8ce309f28398"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/CUI_SJ-3566AN.kicad_mod",
+      "bytes": 4955,
+      "sha256": "5459c44db50ead8a2fd440a009e045883b1997c1f88474ca5eaae62144f45ed6"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/CUI_SJ-43504-SMT-TR.kicad_mod",
+      "bytes": 5131,
+      "sha256": "c6ce830124f144c88f1ae7e9b1c8d770775c7c3c27fb9ecdbe87fd692236a22b"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/ESD7016MUTAG.kicad_mod",
+      "bytes": 13315,
+      "sha256": "64d32974b33982846f1ba77fb21b1f8dbf2dc4442878cd1f050ad2463cf1901c"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/ESP32-WROVER.kicad_mod",
+      "bytes": 9996,
+      "sha256": "c8e1193f435a40b81e56361833f329c90df83357134217395846c5b3b83c6d01"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/G-Switch GT-F0509SR15-15SMT01.kicad_mod",
+      "bytes": 7294,
+      "sha256": "5a59f639c5054ee8d04a6c74aa38b2559aac6eef544ef5cc3c204c3e3c44f4b2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/GCT_USB4510-03-1-A_REVA.kicad_mod",
+      "bytes": 5906,
+      "sha256": "f3c6cf508f037d02b3cf3c63037df163ddb4c0f5931156abeb532ce782a12a84"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/MAX9720AEUE.kicad_mod",
+      "bytes": 23478,
+      "sha256": "166b44e1894452713420f9b68f76584b15f2aee4e1597b8ad4c1ab2af64df3d2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/MOLEX_0528080470.kicad_mod",
+      "bytes": 3226,
+      "sha256": "7f5c5a663098d3becb5073d9e67d889321258d11089e752d8117a6fbeee433ca"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/MountingHole_2.2mm_M2_Pad_Via2.kicad_mod",
+      "bytes": 2341,
+      "sha256": "7d15bb6a167a3d8e6a680513bb55cebf869bd0299ea57fde99ff0ef237b2d708"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias2.kicad_mod",
+      "bytes": 8165,
+      "sha256": "c6fa0f21a727022a479ff72b46e37267c9c08ad034984dfe452593223878f3a2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SAMDSWD.kicad_mod",
+      "bytes": 1354,
+      "sha256": "facdcb77b309cf5cbcefe3707e238cbcf0bdb4e1cfd7080ce6176af35891cad8"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SOIC-14.kicad_mod",
+      "bytes": 3625,
+      "sha256": "b1d13a100a6f9d4ab515d5453a43ffb5bb06bf8f236012fed144e6ee935bb106"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SOIC127P1040X265-21N.kicad_mod",
+      "bytes": 15992,
+      "sha256": "ab60670f044c83c305ef63da33712dc5491a870e4df1ecf13c1a62ed719a1a44"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SOIC127P600X175-8N.kicad_mod",
+      "bytes": 8484,
+      "sha256": "35258eb3a93ddd5c58967c2ae5d796a54d901403a36b012fbff3afc4c4e588ef"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SON40P300X300X80-13N.kicad_mod",
+      "bytes": 5053,
+      "sha256": "6c2eaa43da095db15ea5c5e0e5525814689b9eeeb1cb809da7a053568113ccfb"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SOP50P490X110-10N.kicad_mod",
+      "bytes": 10055,
+      "sha256": "8bab20799999bd9e4d7ae63101d2a0c5a4265a17e3827420fae9afc692e173ea"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SOT65P210X110-6N.kicad_mod",
+      "bytes": 3254,
+      "sha256": "b02faa0d732d7e3293efdd3959c4c1b8c3efaf1be173f32d5b2efc75372f12c7"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/SW_EVQ-P4HB3B.kicad_mod",
+      "bytes": 6876,
+      "sha256": "f0ae15e8378408d27567c24faf4722ceb0cf4e67d2c95d098aa97d79cc40211e"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/TSSOP-10-CS.kicad_mod",
+      "bytes": 3420,
+      "sha256": "4d22801fe05b586f2379c5d630e610ddb6c961e05c28b3f65edaf704f818508c"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/WSON-12.kicad_mod",
+      "bytes": 5489,
+      "sha256": "4663d04fc11f621a945b69fdc26a7330573674bf6294e12a68bf6cea403afcc3"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/eeprom_flash.kicad_mod",
+      "bytes": 2420,
+      "sha256": "cb0dcb5167710b0ceab296233d0a3b0a1a44c5e02aeddbe58109d6b0565cb743"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/heart.kicad_mod",
+      "bytes": 2305,
+      "sha256": "3b2a4da70d975789c755e1526d99200c98610d2910afef10446826395a577091"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/i2c_tp.kicad_mod",
+      "bytes": 1808,
+      "sha256": "3d0bd9af135583efa879069c2e684acabdeb7ee5ece04c654e5191014aad22de"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/molex-zif-12p.kicad_mod",
+      "bytes": 3464,
+      "sha256": "25a706cd6e1cb293de0a84f0c9a6ccea0ed5d14b12c7c9f3ed71071ea42f3656"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/molex-zif-14p.kicad_mod",
+      "bytes": 3779,
+      "sha256": "377d367f0723e33773940db844f5fad2103e2a9fae354ba1f04f908dd3576ee5"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/molex-zif-4p.kicad_mod",
+      "bytes": 2158,
+      "sha256": "5b4ac7e18e4ce054dfd6c1343d72aaf3887306880f1dfc441f8f75348b210ee6"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/molex_5052781533.kicad_mod",
+      "bytes": 5521,
+      "sha256": "b0dbc29d4887ca19d6ec6035d885a49a101faf088c222fdfed48ec35a1128286"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/oshwa-cert.kicad_mod",
+      "bytes": 54232,
+      "sha256": "cff61272b5bcb0103b0d05a0be69265b90ffdfc6cbb07daa5f087732863ce899"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/sparkles.kicad_mod",
+      "bytes": 4593,
+      "sha256": "1b0e33aab81e6d0ba51258e2507ae7a9ce56680b2a80a17372a01254b321d032"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/star.kicad_mod",
+      "bytes": 3278,
+      "sha256": "4163172e5b117448e02d468f84ce5432b051c82f0c04592599768eac4ff1f6a5"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/footprints.pretty/star_small.kicad_mod",
+      "bytes": 3273,
+      "sha256": "ca1efacd9a4bd4f699fb9fd2d01e52259aaee21069ffae654f61d6d320cd15a2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/fp-lib-table",
+      "bytes": 131,
+      "sha256": "235a0549cf8351cc9b9de55815b89c9ed4386b3e85ed24b81087c792c7866c4e"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/ibom.config.ini",
+      "bytes": 562,
+      "sha256": "323fb822f7f7ea0f0e5ed7a941ef1681f2ac22d14775b9ba2c38a287ae40314b"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/peripherals.kicad_sch",
+      "bytes": 177162,
+      "sha256": "b38cb3541032d4437770220ee3e8313813fe972fe95c8a462fb4a5ae8d0cb129"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/power.kicad_sch",
+      "bytes": 143098,
+      "sha256": "3d71a65f4bb025b4915648ca5683ba137fc788357e85cdad5f689db1d62131d2"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/sym-lib-table",
+      "bytes": 129,
+      "sha256": "c44ffddc3ec4ffd651402d8ca8061bcb7c9d3c2e3613213b01785347e74dc259"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/symbols.kicad_sym",
+      "bytes": 226989,
+      "sha256": "833ae95ca679e289f39c3a5410f38fed2a10dbaf9738ec1029520a661f327cb0"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/tangara-mainboard.kicad_pcb",
+      "bytes": 2816000,
+      "sha256": "14393141dafa082b62292bfda0174a9fc70f6c0a5cf1dd56874bbf27471c654a"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/tangara-mainboard.kicad_pro",
+      "bytes": 16024,
+      "sha256": "b6ef758d47d59fc90a785c52a9001a9f3175835a7d1ae149ca6bf2301c1d0f2f"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/tangara-mainboard/tangara-mainboard.kicad_sch",
+      "bytes": 158093,
+      "sha256": "00bcd0246f4aaa58db919578b519118f228a4d83a9beeb302821fbf0358ea22e"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/touchwheel-cover/tangara-panel.kicad_pcb",
+      "bytes": 6762,
+      "sha256": "785d1d3d6ba0ea4753599f14cef797079c7535bc868a33fe95ffb4114eba6db0"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/touchwheel-cover/tangara-panel.kicad_pro",
+      "bytes": 8005,
+      "sha256": "9cab8160a251d8397d7f70a2ffa573ee5f3376ac1c01332015499db54351f781"
+    },
+    {
+      "path": "hardware/revisions/harmony-r2/touchwheel-cover/tangara-panel.kicad_sch",
+      "bytes": 105,
+      "sha256": "1624516e06019e42b7900ace2b1ecff9f73073f358177c71914b3d9def5114c5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "PROGRAMMING-NOTES-DRAFT.md",
+      "bytes": 2040,
+      "sha256": "69ac59abe0c120391bca0f8692a247a582ff6ae702d1cd1c888d92e33c3714a8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1724,
+      "sha256": "2f35c6c34bcda10e0544cbf45e36dbab320f4f3425cd83f4fa3942e12d856d84"
+    },
+    {
+      "path": "RELEASE-HOLDS.md",
+      "bytes": 2907,
+      "sha256": "793d5b058591ad839e81547f5af430339947b7660d5e4d5c29b418780c34f661"
+    },
+    {
+      "path": "SUPPLIER-NOTES-DRAFT.md",
+      "bytes": 2528,
+      "sha256": "6668c44d612d094f7fd356985387caa22776f471e7274c562ccfd9d755683e41"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 978,
+      "sha256": "8f30decc2bfc8d472866b7561c62392353d447120f1f12bde5cf873523972ea6"
+    },
+    {
+      "path": "VENDOR-QUESTIONS-DRAFT.md",
+      "bytes": 4769,
+      "sha256": "e622637ab94c3cb923da7bb516338230a57f89654b61046ee312adbe711f98e2"
+    },
+    {
+      "path": "dnp-and-non-purchased-structures.csv",
+      "bytes": 6921,
+      "sha256": "99dd75a82c0a8d967b4cc8ec9edde991cd52211e914a5030f69c24c183841bab"
+    },
+    {
+      "path": "external-parts-addendum.csv",
+      "bytes": 424,
+      "sha256": "b268fad3c5f4cfeca0ddb890559979aae2a58851c87b5309a4aa747a58618a98"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Cu.gbl",
+      "bytes": 529047,
+      "sha256": "27ea18f2337c24d5418b19e1c246cc7d9f41a4bb37e1f9577836b1e0bd6c0b3d"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Mask.gbs",
+      "bytes": 8945,
+      "sha256": "8926ddeac572be36111828083fd410e1219c894ec8bf777df5fd35aa3b84d1dc"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Paste.gbp",
+      "bytes": 7462,
+      "sha256": "cfa95974acc7dd86a9130e365d781a4ddb9cba530d0470e0f90e97c08107242b"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-B_Silkscreen.gbo",
+      "bytes": 259447,
+      "sha256": "f0b77d1eac07d85c972cf1cea0ddbb81a7b95ee5eb5ea7642f0c541513655493"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-Edge_Cuts.gm1",
+      "bytes": 1000,
+      "sha256": "abe9ed978b6bb484f9357304a02d01e0a0a405e514528607240747f8ad6d4b7d"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Cu.gtl",
+      "bytes": 157427,
+      "sha256": "40c91704d4f1b6360213daf1f929f2d328dc4017aa1c342cc16abf026ba004f5"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Mask.gts",
+      "bytes": 1941,
+      "sha256": "78e5fe8dc6cba41dddbc1d36d695fc7cfe7760eba7103797bc8561a62545e115"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Paste.gtp",
+      "bytes": 862,
+      "sha256": "60364a582a04336f5a5b3e0dbac4b94f98c003c1180e094a61912871f4fcdf79"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-F_Silkscreen.gto",
+      "bytes": 1152,
+      "sha256": "59bc3d5b86781d808d6d158da2b9c9c90972d6a0a2d0caa46f3472d4d56aaa9e"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate-job.gbrjob",
+      "bytes": 2777,
+      "sha256": "a894e8a235b9819e034e389c8c3400972bbc3bc14929340ca4da2dba0adcb3e6"
+    },
+    {
+      "path": "fabrication/faceplate/tangara-faceplate.drl",
+      "bytes": 2750,
+      "sha256": "3b84095fccd5cc9932cbc592dffc4dd3baaa0848b820e7866f040eea00891085"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Cu.gbl",
+      "bytes": 488572,
+      "sha256": "a2da5e8c88aec868298cd4d7bb052028122d9a93497dee1bd4defb217aed27ef"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Mask.gbs",
+      "bytes": 10321,
+      "sha256": "3ef61608630557d6bb239e846a3a949f944c4db63a1936dad3654e72927736d7"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Paste.gbp",
+      "bytes": 7246,
+      "sha256": "82fd96b20dab0a847091928f237c8c055ecc4b50db188b688abe972f07a46611"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-B_Silkscreen.gbo",
+      "bytes": 311607,
+      "sha256": "eab4f484d7f37ced8a4bbb2bba75bfa9bba4e0524b1ac279064c9868ffa21237"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-Edge_Cuts.gm1",
+      "bytes": 4234,
+      "sha256": "c4b8bc02fe8c2745ec39b13cdd770d811894db550a048c9e306ae2ab957b9985"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Cu.gtl",
+      "bytes": 563404,
+      "sha256": "a3aa52c3de4547b689e3cbb26336418b2bcd574694a970ff36038b6426b48fbf"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Mask.gts",
+      "bytes": 16364,
+      "sha256": "a16dae96e29541203d7f7828ed24d1ab48561a3f31cf44947d69fd7694922885"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Paste.gtp",
+      "bytes": 14594,
+      "sha256": "ac4a4144e894e4f41cdd5672bd4db1fe7f28a6af1bac8c68772fbb4b47ebf8fa"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-F_Silkscreen.gto",
+      "bytes": 135041,
+      "sha256": "05bd2bad8c8f0fed7357bea29c9c3bd3837b7c009bad62d9b3ecd4f70e7be644"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-In1_Cu.g2",
+      "bytes": 364757,
+      "sha256": "b195ad0a750045e1b86af60a0ddc11e9361491f3c8f42b6cdebbcf24daa6be11"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-In2_Cu.g3",
+      "bytes": 364757,
+      "sha256": "d344b8a90a5eb0cc7f7b20c43add8fe6ad51cdbf528403a9d54df624ac9b65c4"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard-job.gbrjob",
+      "bytes": 4700,
+      "sha256": "50b53d1f31fbc8aebdcc3afa5c55835500f063cb6840337c1f22353dd30016f1"
+    },
+    {
+      "path": "fabrication/mainboard/tangara-mainboard.drl",
+      "bytes": 10832,
+      "sha256": "6e5d767dda92a8bcfd89073063d792b516920b09383600112d879811feda3351"
+    },
+    {
+      "path": "faceplate-bom.csv",
+      "bytes": 1086,
+      "sha256": "969126d2746d365b5faf8c1a7481279d9b51f5a1e96df6cd236fd2fc89b40ab8"
+    },
+    {
+      "path": "faceplate-drc.json",
+      "bytes": 17023,
+      "sha256": "96d8c485904ab300cf7c3cebce32308b0e2054d976b6fa4bcd0f7e8ff2190c59"
+    },
+    {
+      "path": "faceplate-erc.json",
+      "bytes": 17483,
+      "sha256": "1da6f0c1f6207568c3d4108f511fad75361cc4a4c55d263f51c792d2c26bbc7a"
+    },
+    {
+      "path": "faceplate-placement-kicad-raw.csv",
+      "bytes": 1634,
+      "sha256": "b7f1ac7e211aa0862163975959083e1d12381a18dd1255fdc576665d607b5690"
+    },
+    {
+      "path": "faceplate-placement-review.csv",
+      "bytes": 3997,
+      "sha256": "81ab8f8e2ac471ba821def0e7f935c892f248ef01d18935fe0ab2c88ca1dd014"
+    },
+    {
+      "path": "faceplate-placement-supplier.csv",
+      "bytes": 1318,
+      "sha256": "e3e2739ef8057fa6664f5b23d0ff88bfa02744921084730f8ff83a83e9844498"
+    },
+    {
+      "path": "generate_quote_package.py",
+      "bytes": 14907,
+      "sha256": "fc1837ff95ae68a120f1153078ff41988119857075fe3fb4cc2fea5dd045e8b3"
+    },
+    {
+      "path": "logs/faceplate-export.json",
+      "bytes": 3032,
+      "sha256": "c0424873f8e89dd913a10c5527d408185c16b0b9d26f3a3e570a66003303f8cf"
+    },
+    {
+      "path": "logs/mainboard-export.json",
+      "bytes": 3314,
+      "sha256": "f80bdbd39ccd73801e90ca4f91d08ae19f3e1ea74442e0b0974a4cdbde778985"
+    },
+    {
+      "path": "mainboard-bom.csv",
+      "bytes": 3532,
+      "sha256": "05ed246f77320640a7f352afa16ea8dba6d57bebfa4df70b9ecd7f272c5ab188"
+    },
+    {
+      "path": "mainboard-drc.json",
+      "bytes": 61755,
+      "sha256": "29a60fc1f40d267f7f1d73aa594be592a2eb718e4208e9c282191359d22db091"
+    },
+    {
+      "path": "mainboard-erc.json",
+      "bytes": 69243,
+      "sha256": "2864ac8747317b5d324f4debbf9bf76d55fec344105d524768299e7d728a14f3"
+    },
+    {
+      "path": "mainboard-placement-kicad-raw.csv",
+      "bytes": 7149,
+      "sha256": "1ac5edac894433bd282faf99e896b8dd4a9b1d0b16cbc662f0d720cb87bc29e8"
+    },
+    {
+      "path": "mainboard-placement-review.csv",
+      "bytes": 18774,
+      "sha256": "7790defa997e799e9b598f2cc61cd4d1c1b4b60df45897da55ee75e6335fab87"
+    },
+    {
+      "path": "mainboard-placement-supplier.csv",
+      "bytes": 6234,
+      "sha256": "49981670a3f1595d6cc2209a76038c55841fce01866456eda9e88845df7262d4"
+    },
+    {
+      "path": "programming/esp32-Generic.LC_COLLATE",
+      "bytes": 2586938,
+      "sha256": "b55d8270de7dfb650c92e990c840c2bf16215cd8f6dcb2c9e6451194f41c0e11"
+    },
+    {
+      "path": "programming/esp32-bootloader.bin",
+      "bytes": 24256,
+      "sha256": "e85b6407325cd47db5f80f89bc6aaa3cbb96dd4f0306a5b7d44087db7d790d59"
+    },
+    {
+      "path": "programming/esp32-lua.bin",
+      "bytes": 2097152,
+      "sha256": "12ff4aa847c037556374ea443c37759b5b9c366d42614ca5c93882696914c41a"
+    },
+    {
+      "path": "programming/esp32-ota_data_initial.bin",
+      "bytes": 8192,
+      "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+    },
+    {
+      "path": "programming/esp32-partition-table.bin",
+      "bytes": 3072,
+      "sha256": "802ba49322bc8e14e32547000811dc96b7fb84c02b905624867809e0290609b1"
+    },
+    {
+      "path": "programming/esp32-repl.bin",
+      "bytes": 131072,
+      "sha256": "fa85e4c4071bae719bfc2893cccad4d2deefa8454c50b4ae230bdb5d77e11fbe"
+    },
+    {
+      "path": "programming/esp32-tangara.bin",
+      "bytes": 2684736,
+      "sha256": "c55b17e914ac272777b10cbfcf98f3ae8a7ff285c11212cd4c86157adcd953f9"
+    },
+    {
+      "path": "programming/programming-manifest.json",
+      "bytes": 2989,
+      "sha256": "309865e8c8c5f1e467e6f0af1864a98f4885a38ed71dcd851ea12ef9cfdb02c4"
+    },
+    {
+      "path": "programming/samd-bootloader-tangara-bc1632d.bin",
+      "bytes": 8192,
+      "sha256": "b641b5a613d023dabf0bb0f330c861a3dad97e4fc17d8dcdfdad0f46ce3990fb"
+    },
+    {
+      "path": "programming/samd-bootloader-tangara-bc1632d.elf",
+      "bytes": 155736,
+      "sha256": "3eaa1ee9651a784b36727f066646105d1e2fc12647153e558f940a953a4531a8"
+    },
+    {
+      "path": "programming/samd-tangara-samd-v6.0.bin",
+      "bytes": 21640,
+      "sha256": "e2394c6b86194c3ad7dabd21941236a5e57dd4787cd3d1f3403bfc155bb5ab67"
+    },
+    {
+      "path": "programming/samd-tangara-samd-v6.0.uf2",
+      "bytes": 43520,
+      "sha256": "edf8826ac455111479ac9a1ac7ca5ba811dd9751c7efbd6908d30e639782c480"
+    },
+    {
+      "path": "source-and-tool-pins.json",
+      "bytes": 747,
+      "sha256": "43a2699ffb9c0958ddde569859691386c8982c2c235de6b037f3850a65bd9f83"
+    },
+    {
+      "path": "tool-config/8.0/3d_viewer.json",
+      "bytes": 6944,
+      "sha256": "4e0d5f547621625edda8316efb70b9a6c48fa99523f5f19ed9c90b09d45b5000"
+    },
+    {
+      "path": "tool-config/8.0/cvpcb.json",
+      "bytes": 7297,
+      "sha256": "a73a2721771b436d65c897a895ff810de1fb7813001644bb5656ee90bd93aaa6"
+    },
+    {
+      "path": "tool-config/8.0/eeschema.json",
+      "bytes": 7846,
+      "sha256": "e9d85adc65e48021382e35f001fa10cab19211460a9240cab36dd09343669913"
+    },
+    {
+      "path": "tool-config/8.0/fp-lib-table",
+      "bytes": 22094,
+      "sha256": "0ac95e5f1289c38c8e2de3b9bc6bb142f6bd51909b64407de85a8024be1c8397"
+    },
+    {
+      "path": "tool-config/8.0/fpedit.json",
+      "bytes": 6051,
+      "sha256": "022a2dd5b3fde9fb3c4cbdc75aae0af7baa177190a57a36e5eedc337625c0f06"
+    },
+    {
+      "path": "tool-config/8.0/kicad.json",
+      "bytes": 4497,
+      "sha256": "b6951fbcabd57d8ad1c6b56ddd820f5d6fee55eeb0ac51b121805f840f2b67a3"
+    },
+    {
+      "path": "tool-config/8.0/kicad_common.json",
+      "bytes": 1952,
+      "sha256": "0cc2d97ba6d7ecef68562180f9c76e61dd84b453cb04133c521ae9a45fba4ccc"
+    },
+    {
+      "path": "tool-config/8.0/pcbnew.json",
+      "bytes": 15367,
+      "sha256": "b0f02d5859161494af8e535bec06fd0e8fbbf0f7b3945557780389656daa2b54"
+    },
+    {
+      "path": "tool-config/8.0/sym-lib-table",
+      "bytes": 33181,
+      "sha256": "35e852c9852fe3c8cb3b961ff57690df4e0aa5f6de7ad4132755ba2ce74ac4ba"
+    },
+    {
+      "path": "tool-config/8.0/symbol_editor.json",
+      "bytes": 3172,
+      "sha256": "2af9c99407576b3700262f08bf2065f7290e9ea41442322ce66f50028fab7de4"
+    },
+    {
+      "path": "validate_quote_package.py",
+      "bytes": 2972,
+      "sha256": "9a7f432547ea03f6eac37a9358c6644b79fb3db6862677e9751221c8941295f3"
+    }
+  ]
+}

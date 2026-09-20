@@ -1,0 +1,242 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-14T10:01:04-0400",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "tangara-faceplate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/LED_ENABLE] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 174.101532,
+                        "y": 60.687565
+                    },
+                    "uuid": "9beac3e6-1d53-440c-9527-78bfbd009e1f"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(SW1-Pin_1)] on B.Cu, length 3.5994 mm",
+                    "pos": {
+                        "x": 160.245172,
+                        "y": 115.254828
+                    },
+                    "uuid": "2803b74b-ba97-4b29-856c-f57cff145940"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "The current configuration does not include the library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 157.687776,
+                        "y": 117.890948
+                    },
+                    "uuid": "5f58668b-6224-42f3-a7ac-570a0c76b55e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 157.7,
+                        "y": 117.885573
+                    },
+                    "uuid": "785211cc-6156-4d8a-b86e-a48636645006"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint LCD1",
+                    "pos": {
+                        "x": 160.199674,
+                        "y": 71.131556
+                    },
+                    "uuid": "f78f87bf-a54c-4bfb-99b6-ff1c0a154656"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the library 'footprints'.",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 157.889132,
+                        "y": 56.948653
+                    },
+                    "uuid": "0efe2e21-be9b-4968-94bd-c6302fb66314"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Footprint 'VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm' does not match copy in library 'Package_DFN_QFN'.",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 140.470005,
+                        "y": 90.319571
+                    },
+                    "uuid": "4b08134d-2f84-46fb-a0d9-e8de5d210346"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "The current configuration does not include the library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint J4",
+                    "pos": {
+                        "x": 181.0,
+                        "y": 93.020776
+                    },
+                    "uuid": "6f3d8b97-3f7f-4ec9-a37d-bcf9b5f688c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Footprint 'ESD-Logo_6.6x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'VSSOP-10_3x3mm_P0.5mm' does not match copy in library 'Package_SO'.",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 174.967338,
+                        "y": 135.876798
+                    },
+                    "uuid": "89ce1889-1fa1-4e0e-a771-a2bef4ac494c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'WEEE-Logo_4.2x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 167.915421,
+                        "y": 70.606273
+                    },
+                    "uuid": "9ce9ca5d-495f-4a9a-a6f5-2f61566cdc8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'CE-Logo_8.5x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 165.967921,
+                        "y": 63.579724
+                    },
+                    "uuid": "a4ba6ac1-7184-4b23-a2df-1bfc0a85e130"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'FCC-Logo_7.3x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 148.716354,
+                        "y": 63.675494
+                    },
+                    "uuid": "b15e222b-7e97-4f74-b9e8-94c665099bbb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'SOT-323_SC-70' does not match copy in library 'Package_TO_SOT_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 177.4,
+                        "y": 63.05
+                    },
+                    "uuid": "c1043f45-88b6-46bf-a698-6930c3a6655c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'UKCA-Logo_6x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 156.821336,
+                        "y": 63.675494
+                    },
+                    "uuid": "d642b6ac-9e56-4983-a0ef-cabf0f2617b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Copper sliver (F.Cu)",
+            "items": [],
+            "severity": "warning",
+            "type": "copper_sliver"
+        }
+    ]
+}

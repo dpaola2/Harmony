@@ -1,0 +1,33 @@
+{
+  "source": "hardware/revisions/harmony-r3/tangara-faceplate/tangara-faceplate.kicad_pcb",
+  "before_sha256": "8dcd970b178d227c9842788eaf300b04382f5288aa27ffa9006d595d525b115f",
+  "after_sha256": "61ff2e34f3346da04cb0fc314eb43b1cf935b769bdd7e401fa26d1326ec33b8e",
+  "non_zone_changes_exactly_five_net_assignments_and_SW1_attribute": true,
+  "no_footprint_pad_track_via_outline_or_electrode_geometry_changes": true,
+  "zone_delta": {
+    "F.Cu": {
+      "copper_added_mm2": 2.248888261055531e-06,
+      "copper_removed_mm2": 35.39707523622598,
+      "change_bounds_mm": [
+        132.449908,
+        49.399908,
+        182.832883,
+        141.932883
+      ]
+    },
+    "B.Cu": {
+      "copper_added_mm2": 0.2540043561528717,
+      "copper_removed_mm2": 1.2857723736444062e-06,
+      "change_bounds_mm": [
+        132.449908,
+        49.399908,
+        182.832883,
+        141.932883
+      ]
+    }
+  },
+  "guard_GND_FCu_clearance_mm": {
+    "before": 0.2544991181385236,
+    "after": 0.5004994570375682
+  }
+}

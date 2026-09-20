@@ -1,0 +1,495 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-15T11:53:49-0400",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [
+        {
+            "description": "Duplicate footprints",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 167.915421,
+                        "y": 70.606273
+                    },
+                    "uuid": "9ce9ca5d-495f-4a9a-a6f5-2f61566cdc8a"
+                },
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "duplicate_footprints"
+        },
+        {
+            "description": "Duplicate footprints",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 165.967921,
+                        "y": 63.579724
+                    },
+                    "uuid": "a4ba6ac1-7184-4b23-a2df-1bfc0a85e130"
+                },
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "duplicate_footprints"
+        },
+        {
+            "description": "Duplicate footprints",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 148.716354,
+                        "y": 63.675494
+                    },
+                    "uuid": "b15e222b-7e97-4f74-b9e8-94c665099bbb"
+                },
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "duplicate_footprints"
+        },
+        {
+            "description": "Duplicate footprints",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 156.821336,
+                        "y": 63.675494
+                    },
+                    "uuid": "d642b6ac-9e56-4983-a0ef-cabf0f2617b5"
+                },
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "duplicate_footprints"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 167.915421,
+                        "y": 70.606273
+                    },
+                    "uuid": "9ce9ca5d-495f-4a9a-a6f5-2f61566cdc8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 165.967921,
+                        "y": 63.579724
+                    },
+                    "uuid": "a4ba6ac1-7184-4b23-a2df-1bfc0a85e130"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 148.716354,
+                        "y": 63.675494
+                    },
+                    "uuid": "b15e222b-7e97-4f74-b9e8-94c665099bbb"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 156.821336,
+                        "y": 63.675494
+                    },
+                    "uuid": "d642b6ac-9e56-4983-a0ef-cabf0f2617b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "tangara-faceplate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/LED_ENABLE] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 174.101532,
+                        "y": 60.687565
+                    },
+                    "uuid": "9beac3e6-1d53-440c-9527-78bfbd009e1f"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Clearance violation (netclass 'QTouch' clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [Net-(SW2-Pin_1)] of SW2",
+                    "pos": {
+                        "x": 144.225012,
+                        "y": 126.303415
+                    },
+                    "uuid": "3e3521a1-ba65-495b-a125-361363e48a46"
+                },
+                {
+                    "description": "Polygon [<no net>] on F.Cu",
+                    "pos": {
+                        "x": 167.35703,
+                        "y": 135.228525
+                    },
+                    "uuid": "6f9ed1f2-c8a0-4a46-b920-bde52c578371"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'QTouch' clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(SW2-Pin_2)] of SW2",
+                    "pos": {
+                        "x": 173.100881,
+                        "y": 126.979228
+                    },
+                    "uuid": "5c183b03-468a-4dc1-913a-e8144f81c69d"
+                },
+                {
+                    "description": "Polygon [<no net>] on F.Cu",
+                    "pos": {
+                        "x": 167.578103,
+                        "y": 134.021499
+                    },
+                    "uuid": "2aeb4562-8b99-46f2-9004-79778bf86f52"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'QTouch' clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [Net-(SW2-Pin_3)] of SW2",
+                    "pos": {
+                        "x": 157.689465,
+                        "y": 99.919214
+                    },
+                    "uuid": "ff11a6f7-6f94-455c-8e0e-ddd32a6d7acd"
+                },
+                {
+                    "description": "Polygon [<no net>] on F.Cu",
+                    "pos": {
+                        "x": 174.090243,
+                        "y": 125.447482
+                    },
+                    "uuid": "52a16c30-173a-482c-a962-efae53334f95"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'QTouch' clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(SW3-Pin_1)] of SW3 on F.Cu",
+                    "pos": {
+                        "x": 167.342162,
+                        "y": 96.890962
+                    },
+                    "uuid": "ac62df8e-9ff7-4995-bd7c-8ba537aefcd5"
+                },
+                {
+                    "description": "Circle [<no net>] on F.Cu",
+                    "pos": {
+                        "x": 157.7,
+                        "y": 117.885573
+                    },
+                    "uuid": "601e80af-a3da-4105-8a70-8dd1c79e8432"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'QTouch' clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [Net-(SW1-Pin_1)] of SW1",
+                    "pos": {
+                        "x": 157.7,
+                        "y": 117.8
+                    },
+                    "uuid": "230fe596-6c26-46e0-a55e-69eca35e2804"
+                },
+                {
+                    "description": "Circle [<no net>] on F.Cu",
+                    "pos": {
+                        "x": 157.7,
+                        "y": 117.8
+                    },
+                    "uuid": "0c6880e3-6998-4b7b-bca0-d0df79940f38"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads (expected 'Through hole'; actual 'SMD')",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 157.7,
+                        "y": 117.8
+                    },
+                    "uuid": "dcc39ac0-b1c8-47ff-b56e-5024955579e1"
+                }
+            ],
+            "severity": "error",
+            "type": "footprint_type_mismatch"
+        },
+        {
+            "description": "Footprint 'JD-T1800' does not match copy in library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint LCD1",
+                    "pos": {
+                        "x": 160.199674,
+                        "y": 71.131556
+                    },
+                    "uuid": "f78f87bf-a54c-4bfb-99b6-ff1c0a154656"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "The current configuration does not include the library 'footprints'.",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 157.889132,
+                        "y": 56.948653
+                    },
+                    "uuid": "0efe2e21-be9b-4968-94bd-c6302fb66314"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Footprint 'VQFN-20-1EP_3x3mm_P0.45mm_EP1.55x1.55mm' does not match copy in library 'Package_DFN_QFN'.",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 140.470005,
+                        "y": 90.319571
+                    },
+                    "uuid": "4b08134d-2f84-46fb-a0d9-e8de5d210346"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'G-Switch GT-F0509SR15-15SMT01' does not match copy in library 'faceplate-footprints'.",
+            "items": [
+                {
+                    "description": "Footprint J4",
+                    "pos": {
+                        "x": 181.0,
+                        "y": 93.020776
+                    },
+                    "uuid": "6f3d8b97-3f7f-4ec9-a37d-bcf9b5f688c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'ESD-Logo_6.6x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 161.976227,
+                        "y": 70.656605
+                    },
+                    "uuid": "7bce162b-8ddd-4232-a4a6-e7169806d5f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'VSSOP-10_3x3mm_P0.5mm' does not match copy in library 'Package_SO'.",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 174.967338,
+                        "y": 135.876798
+                    },
+                    "uuid": "89ce1889-1fa1-4e0e-a771-a2bef4ac494c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'WEEE-Logo_4.2x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 167.915421,
+                        "y": 70.606273
+                    },
+                    "uuid": "9ce9ca5d-495f-4a9a-a6f5-2f61566cdc8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'CE-Logo_8.5x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 165.967921,
+                        "y": 63.579724
+                    },
+                    "uuid": "a4ba6ac1-7184-4b23-a2df-1bfc0a85e130"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'FCC-Logo_7.3x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 148.716354,
+                        "y": 63.675494
+                    },
+                    "uuid": "b15e222b-7e97-4f74-b9e8-94c665099bbb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'SOT-323_SC-70' does not match copy in library 'Package_TO_SOT_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 177.4,
+                        "y": 63.05
+                    },
+                    "uuid": "c1043f45-88b6-46bf-a698-6930c3a6655c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'UKCA-Logo_6x6mm_SilkScreen' does not match copy in library 'Symbol'.",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 156.821336,
+                        "y": 63.675494
+                    },
+                    "uuid": "d642b6ac-9e56-4983-a0ef-cabf0f2617b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Copper sliver (F.Cu)",
+            "items": [],
+            "severity": "warning",
+            "type": "copper_sliver"
+        }
+    ]
+}
