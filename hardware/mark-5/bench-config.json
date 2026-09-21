@@ -951,5 +951,21 @@
     "interfaces": "Dave wishes he had bought button and other interface breakout boards rather than using bare pushbuttons on the breadboard. Plan suitable interface modules before the next build.",
     "disposition": "Neither is a Mark-5 showstopper. Retain both lessons for future versions; no purchase requested."
   },
-  "optional_followup": "Persistent startup and recovery if adopted; current bench player requires loading from the Mac after power cycling."
+  "optional_followup": "Persistent startup and recovery if adopted; current bench player requires loading from the Mac after power cycling.",
+  "cold_start_recheck": {
+    "date": "2026-09-20",
+    "purpose": "Dave asked to re-run the last test to capture video; used as a cold-start re-verification of the Mark-5 assembly.",
+    "command": "tools/run_mark5.py --manifest /sd/HARMONY/HUMANCLAY/album.json --seconds 4500",
+    "port": "/dev/cu.usbserial-1120",
+    "device_identity_verified": "5c013b538f70",
+    "result": "PLAYER_READY reached; Dave pressed Play; reached Paused on track 1 with decode_seconds 6 and sent_bytes 103072.",
+    "stopped_by": "Dave, via SIGINT to the host runner after roughly two minutes.",
+    "log": "/Users/dave/Downloads/harmony-mark5-backups/human-clay-album-20260920-video.log",
+    "acceptance_evidence": false,
+    "acceptance_note": "Too short to bear on the uninterrupted full-album check, which remains outstanding.",
+    "clean_shutdown_confirmed": false,
+    "clean_shutdown_note": "The host closes the serial port immediately after sending the interrupt, so PLAYER_STOPPED was not captured. A subsequent port open for verification caused rst:0x1 POWERON_RESET, so cleanup cannot be distinguished from the reboot.",
+    "verified_end_state": "MicroPython 1.29.0 booted fresh, REPL responsive, nothing feeding the decoder, SD not mounted by the ESP32. Card was mounted read-only throughout, so an abrupt stop cannot corrupt it.",
+    "video_captured": "unverified"
+  }
 }
