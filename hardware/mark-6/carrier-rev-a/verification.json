@@ -1,0 +1,232 @@
+{
+  "status": "PASS - schematic checks only",
+  "erc_violations": 0,
+  "checks": [
+    "Feather header mapping and reserved pins",
+    "Separate storage/display signal nets",
+    "EYESPI pin numbering and unused pins",
+    "microSD card pins, detect contacts and shield",
+    "STEMMA QT power/SDA/SCL order",
+    "TPS62162 power/feedback/ground mapping",
+    "USB, MCU 3V3, peripheral 3V3 and GND are distinct nets",
+    "All selected footprint electrical pad sets match symbols"
+  ],
+  "footprints": [
+    {
+      "ref": "C1",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C2",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C3",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C4",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C5",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C6",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "C7",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "F1",
+      "footprint": "Fuse:Fuse_1206_3216Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "J1",
+      "footprint": "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical",
+      "unique_pad_count": 16
+    },
+    {
+      "ref": "J2",
+      "footprint": "Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical",
+      "unique_pad_count": 12
+    },
+    {
+      "ref": "J3",
+      "footprint": "Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal",
+      "unique_pad_count": 19
+    },
+    {
+      "ref": "J4",
+      "footprint": "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5",
+      "unique_pad_count": 11
+    },
+    {
+      "ref": "J5",
+      "footprint": "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal",
+      "unique_pad_count": 5
+    },
+    {
+      "ref": "L1",
+      "footprint": "Inductor_SMD:L_Coilcraft_XxL4020",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R1",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R2",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R3",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R4",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R5",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R6",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R7",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R8",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R9",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R10",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R11",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R12",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R13",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R14",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R15",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R16",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R17",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R18",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R19",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R20",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "R21",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "unique_pad_count": 2
+    },
+    {
+      "ref": "TP1",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "unique_pad_count": 1
+    },
+    {
+      "ref": "TP2",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "unique_pad_count": 1
+    },
+    {
+      "ref": "TP3",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "unique_pad_count": 1
+    },
+    {
+      "ref": "TP4",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "unique_pad_count": 1
+    },
+    {
+      "ref": "TP5",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "unique_pad_count": 1
+    },
+    {
+      "ref": "U1",
+      "footprint": "Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias",
+      "unique_pad_count": 9
+    }
+  ],
+  "limitations": [
+    "PCB routing/DRC covered separately by pcb-verification.json",
+    "No physical polarity, load, thermal, signal-integrity or RF qualification",
+    "Connector contact orientation and full mechanical fit require review",
+    "GPIO electrical types are not modeled by passive Feather socket symbols; vendor mapping is checked explicitly"
+  ],
+  "hashes": {
+    "harmony-mark6-carrier.kicad_sch": "b2bac9cd1b49d364c95209d197d58a30d54b2a4489e58143463dc770861de352",
+    "netlist.xml": "f03c8c345dc890ba0336a0d86a85d5e25b3d99f640d14865a7bb76a3047051e2",
+    "Harmony.kicad_sym": "ff63a50adf3d7969b06b394fb46f5dae07b44a827b8838c5aa8932b028612de4"
+  }
+}

@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/dave/projects/Harmony2/hardware/mark-6/carrier-rev-a/harmony-mark6-carrier.kicad_sch</source>
+    <date>2026-09-22T07:27:02-0400</date>
+    <tool>Eeschema 8.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Harmony Mark-6 USB carrier</title>
+        <company/>
+        <rev>A-DRAFT</rev>
+        <date>2026-09-21</date>
+        <source>harmony-mark6-carrier.kicad_sch</source>
+        <comment number="1" value="HARMONY-17 - schematic review only, not for manufacture"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>22uF</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="MPN">C3225X7R1C226M250AC</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C3225X7R1C226M250AC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ca4565e-04d2-5225-8454-926bfd4a8cd7</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>22uF</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="MPN">C3225X7R1C226M250AC</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C3225X7R1C226M250AC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c3090794-1cc5-5fe2-80dd-3cb024b7d55b</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">C0805C104K5RACTU</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C0805C104K5RACTU"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d0af8f7-6979-590f-96a6-cc49f8b6ec56</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">C2012X7R1A106K125AC</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C2012X7R1A106K125AC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c97516ed-f1b5-543e-9afd-d80721e9949f</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">C0805C104K5RACTU</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C0805C104K5RACTU"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a8a464ec-1fb2-5b62-b9d4-200dc93ce86a</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">C2012X7R1A106K125AC</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C2012X7R1A106K125AC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1604cad5-b8d0-5f61-b476-bdb519253f4e</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">C0805C104K5RACTU</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="C" description=""/>
+      <property name="MPN" value="C0805C104K5RACTU"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00d8a19e-6af4-5a91-b70f-319c086eb371</tstamps>
+    </comp>
+    <comp ref="F1">
+      <value>0.75A hold PTC</value>
+      <footprint>Fuse:Fuse_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">MF-NSMF075-2</field>
+        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Fuse" description=""/>
+      <property name="MPN" value="MF-NSMF075-2"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a916193f-c4a5-5ed4-836e-cc768143df7f</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Feather JP1 socket</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="MPN">SSW-116-01-G-S</field>
+        <field name="Footprint">Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Feather_16" description=""/>
+      <property name="MPN" value="SSW-116-01-G-S"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>19345055-d0ba-58b9-a602-ef7c7c9e90ca</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Feather JP3 socket</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="MPN">SSW-112-01-G-S</field>
+        <field name="Footprint">Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Feather_12" description=""/>
+      <property name="MPN" value="SSW-112-01-G-S"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b615334c-f943-51e8-b569-8967be08b470</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>EYESPI ribbon</value>
+      <footprint>Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal</footprint>
+      <fields>
+        <field name="MPN">FH12-18S-0.5SH(55)</field>
+        <field name="Footprint">Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="EYESPI_18" description=""/>
+      <property name="MPN" value="FH12-18S-0.5SH(55)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0453cf4-398b-593d-b8fe-410d24483d68</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Dedicated microSD</value>
+      <footprint>Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5</footprint>
+      <fields>
+        <field name="MPN">DM3AT-SF-PEJM5</field>
+        <field name="Footprint">Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="MicroSD" description=""/>
+      <property name="MPN" value="DM3AT-SF-PEJM5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ae0f2136-2110-5a2b-995d-6ae6ef551360</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>ANO #6310 cable</value>
+      <footprint>Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal</footprint>
+      <fields>
+        <field name="MPN">SM04B-SRSS-TB(LF)(SN)</field>
+        <field name="Footprint">Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="STEMMA_QT" description=""/>
+      <property name="MPN" value="SM04B-SRSS-TB(LF)(SN)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2fea9fb5-5351-55c1-8483-ab233d35bf72</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>2.2uH</value>
+      <footprint>Inductor_SMD:L_Coilcraft_XxL4020</footprint>
+      <fields>
+        <field name="MPN">XFL4020-222MEC</field>
+        <field name="Footprint">Inductor_SMD:L_Coilcraft_XxL4020</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="L" description=""/>
+      <property name="MPN" value="XFL4020-222MEC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2b051c8-74a6-5e4e-a924-0f6f49e5567f</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b1c7d2e-d91e-5dec-8d1b-d83212757ceb</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42f93435-e1d9-5a1f-be78-ad9eb84b7248</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cb485331-4cbc-5c76-997b-25064864f161</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2017ea8f-b266-5cf0-ae77-de2f33f46464</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c6bc656c-ff18-527b-af65-b1e899f9317d</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8986b7d-6599-54b5-8e54-ed918210f668</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b49e319f-b326-53a1-bd32-ca570a669ad9</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a5508a0-2025-5e1c-bb67-f7d5befdcba2</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>54964825-ea56-50dd-8a5e-2031715638d6</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100RL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>398b9c7e-785d-5e8f-be67-ca55ff63402b</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>33480d64-a6ff-5359-a6d6-a858d2be0c37</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46044771-e686-5277-833f-855ee25f4392</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bc01a220-a99b-53fc-a913-9f8e43870e86</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>39215f82-438e-5dee-90eb-ddbea3efdc12</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a5870c0f-71f6-5437-b80b-8f35e341fb42</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0747KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>22eff1b9-1d5a-58db-85b3-2ed04e9f26a6</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>85477ee0-9c1e-5fdf-8c1c-e908edcb97f7</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f7fe055c-53b2-5660-8c9b-0a1677d33ee0</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b1a67f59-39ba-5fb5-b29c-cc311ed6127f</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>406393dc-d6a1-535e-9217-e222fac2fca2</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-07100KL</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f9e56b14-8666-5d0f-9351-9039bd645085</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>USB_5V</value>
+      <footprint>TestPoint:TestPoint_Pad_D2.0mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D2.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TestPoint" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>14bdd099-ac38-57a1-9020-6a9d2f9ab051</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>MCU_3V3</value>
+      <footprint>TestPoint:TestPoint_Pad_D2.0mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D2.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TestPoint" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f6fa93f6-84f0-55e9-8eaf-aafe159a2294</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>PERIPH_3V3</value>
+      <footprint>TestPoint:TestPoint_Pad_D2.0mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D2.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TestPoint" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>198823e4-3720-50e7-9584-02f55c154f8f</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_Pad_D2.0mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D2.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TestPoint" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b5f126c4-2c74-5136-91d5-51d0045ba788</tstamps>
+    </comp>
+    <comp ref="TP5">
+      <value>PERIPH_PG</value>
+      <footprint>TestPoint:TestPoint_Pad_D2.0mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D2.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TestPoint" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e72c1ef1-31cc-52fe-97e9-7170b68d47b1</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>TPS62162DSGR / 3.3V</value>
+      <footprint>Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias</footprint>
+      <fields>
+        <field name="MPN">TPS62162DSGR</field>
+        <field name="Footprint">Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="TPS62162" description=""/>
+      <property name="MPN" value="TPS62162DSGR"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark6-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0cb142a6-1651-590e-9edd-fdd61991afe0</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Harmony" part="C">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="EYESPI_18">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">EYESPI_18</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="passive"/>
+        <pin num="2" name="LITE" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+        <pin num="4" name="SCK" type="passive"/>
+        <pin num="5" name="MOSI" type="passive"/>
+        <pin num="6" name="MISO" type="passive"/>
+        <pin num="7" name="DC" type="passive"/>
+        <pin num="8" name="RST" type="passive"/>
+        <pin num="9" name="TFT_CS" type="passive"/>
+        <pin num="10" name="SD_CS" type="passive"/>
+        <pin num="11" name="MEM_CS" type="passive"/>
+        <pin num="12" name="TS_CS" type="passive"/>
+        <pin num="13" name="SCL" type="passive"/>
+        <pin num="14" name="SDA" type="passive"/>
+        <pin num="15" name="INT" type="passive"/>
+        <pin num="16" name="BUSY" type="passive"/>
+        <pin num="17" name="GPIO1" type="passive"/>
+        <pin num="18" name="GPIO2" type="passive"/>
+        <pin num="MP" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="Feather_12">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Feather_12</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="BAT" type="passive"/>
+        <pin num="2" name="EN" type="passive"/>
+        <pin num="3" name="USB_VBUS" type="passive"/>
+        <pin num="4" name="GPIO13_LED" type="passive"/>
+        <pin num="5" name="GPIO12_STRAP" type="passive"/>
+        <pin num="6" name="GPIO27" type="passive"/>
+        <pin num="7" name="GPIO33" type="passive"/>
+        <pin num="8" name="GPIO15_STRAP" type="passive"/>
+        <pin num="9" name="GPIO32" type="passive"/>
+        <pin num="10" name="GPIO14" type="passive"/>
+        <pin num="11" name="SCL_GPIO20" type="passive"/>
+        <pin num="12" name="SDA_GPIO22" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="Feather_16">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Feather_16</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="I37" type="passive"/>
+        <pin num="2" name="TX_GPIO8" type="passive"/>
+        <pin num="3" name="RX_GPIO7" type="passive"/>
+        <pin num="4" name="MISO_GPIO21" type="passive"/>
+        <pin num="5" name="MOSI_GPIO19" type="passive"/>
+        <pin num="6" name="SCK_GPIO5" type="passive"/>
+        <pin num="7" name="A5_GPIO4" type="passive"/>
+        <pin num="8" name="A4_I36" type="passive"/>
+        <pin num="9" name="A3_I39" type="passive"/>
+        <pin num="10" name="A2_I34" type="passive"/>
+        <pin num="11" name="A1_GPIO25" type="passive"/>
+        <pin num="12" name="A0_GPIO26" type="passive"/>
+        <pin num="13" name="GND" type="passive"/>
+        <pin num="14" name="NC" type="passive"/>
+        <pin num="15" name="3V3_OUT" type="passive"/>
+        <pin num="16" name="RESET" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="Fuse">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="L">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="MicroSD">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MicroSD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="DAT2" type="passive"/>
+        <pin num="2" name="DAT3_CS" type="passive"/>
+        <pin num="3" name="CMD_MOSI" type="passive"/>
+        <pin num="4" name="VDD" type="passive"/>
+        <pin num="5" name="CLK" type="passive"/>
+        <pin num="6" name="VSS" type="passive"/>
+        <pin num="7" name="DAT0_MISO" type="passive"/>
+        <pin num="8" name="DAT1" type="passive"/>
+        <pin num="9" name="CD1" type="passive"/>
+        <pin num="10" name="CD2" type="passive"/>
+        <pin num="11" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="R">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="STEMMA_QT">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">STEMMA_QT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="passive"/>
+        <pin num="2" name="VCC" type="passive"/>
+        <pin num="3" name="SDA" type="passive"/>
+        <pin num="4" name="SCL" type="passive"/>
+        <pin num="MP" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="TPS62162">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TPS62162</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PGND" type="power_in"/>
+        <pin num="2" name="VIN" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="AGND" type="power_in"/>
+        <pin num="5" name="FB" type="input"/>
+        <pin num="6" name="VOS" type="input"/>
+        <pin num="7" name="SW" type="power_out"/>
+        <pin num="8" name="PG" type="open_collector"/>
+        <pin num="9" name="EP" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="TestPoint">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TestPoint</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PROBE" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Harmony">
+      <uri>/Users/dave/projects/Harmony2/hardware/mark-6/carrier-rev-a/Harmony.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/BUCK_SW">
+      <node ref="L1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="SW" pintype="power_out"/>
+    </net>
+    <net code="2" name="/DISPLAY_SD_CS">
+      <node ref="J3" pin="10" pinfunction="SD_CS" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="/GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="J1" pin="13" pinfunction="GND" pintype="passive"/>
+      <node ref="J3" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="J3" pin="MP" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J4" pin="11" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J4" pin="6" pinfunction="VSS" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="GND" pintype="passive"/>
+      <node ref="J5" pin="MP" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="PROBE" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="PGND" pintype="power_in"/>
+      <node ref="U1" pin="4" pinfunction="AGND" pintype="power_in"/>
+      <node ref="U1" pin="5" pinfunction="FB" pintype="input"/>
+      <node ref="U1" pin="9" pinfunction="EP" pintype="power_in"/>
+    </net>
+    <net code="4" name="/I2C_SCL">
+      <node ref="J2" pin="11" pinfunction="SCL_GPIO20" pintype="passive"/>
+      <node ref="J5" pin="4" pinfunction="SCL" pintype="passive"/>
+    </net>
+    <net code="5" name="/I2C_SDA">
+      <node ref="J2" pin="12" pinfunction="SDA_GPIO22" pintype="passive"/>
+      <node ref="J5" pin="3" pinfunction="SDA" pintype="passive"/>
+    </net>
+    <net code="6" name="/MCU_3V3">
+      <node ref="J1" pin="15" pinfunction="3V3_OUT" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="PROBE" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="7" name="/PERIPH_3V3">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="VIN" pintype="passive"/>
+      <node ref="J4" pin="4" pinfunction="VDD" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="VCC" pintype="passive"/>
+      <node ref="L1" pin="2" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="PROBE" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="VOS" pintype="input"/>
+    </net>
+    <net code="8" name="/PERIPH_PG">
+      <node ref="J1" pin="10" pinfunction="A2_I34" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="TP5" pin="1" pinfunction="PROBE" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="PG" pintype="open_collector"/>
+    </net>
+    <net code="9" name="/SD_CS">
+      <node ref="J4" pin="2" pinfunction="DAT3_CS" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="/SD_CS_MCU">
+      <node ref="J1" pin="11" pinfunction="A1_GPIO25" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+    </net>
+    <net code="11" name="/SD_DAT1">
+      <node ref="J4" pin="8" pinfunction="DAT1" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="12" name="/SD_DAT2">
+      <node ref="J4" pin="1" pinfunction="DAT2" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+    </net>
+    <net code="13" name="/SD_MISO">
+      <node ref="J4" pin="7" pinfunction="DAT0_MISO" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="14" name="/SD_MISO_MCU">
+      <node ref="J1" pin="4" pinfunction="MISO_GPIO21" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+    </net>
+    <net code="15" name="/SD_MOSI">
+      <node ref="J4" pin="3" pinfunction="CMD_MOSI" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="16" name="/SD_MOSI_MCU">
+      <node ref="J1" pin="5" pinfunction="MOSI_GPIO19" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="17" name="/SD_SCK">
+      <node ref="J4" pin="5" pinfunction="CLK" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="18" name="/SD_SCK_MCU">
+      <node ref="J1" pin="6" pinfunction="SCK_GPIO5" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+    </net>
+    <net code="19" name="/TFT_CS">
+      <node ref="J3" pin="9" pinfunction="TFT_CS" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="20" name="/TFT_CS_MCU">
+      <node ref="J1" pin="12" pinfunction="A0_GPIO26" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+    </net>
+    <net code="21" name="/TFT_DC">
+      <node ref="J3" pin="7" pinfunction="DC" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="22" name="/TFT_DC_MCU">
+      <node ref="J2" pin="7" pinfunction="GPIO33" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+    </net>
+    <net code="23" name="/TFT_LITE">
+      <node ref="J3" pin="2" pinfunction="LITE" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+    </net>
+    <net code="24" name="/TFT_LITE_MCU">
+      <node ref="J1" pin="7" pinfunction="A5_GPIO4" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+    </net>
+    <net code="25" name="/TFT_MOSI">
+      <node ref="J3" pin="5" pinfunction="MOSI" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="26" name="/TFT_MOSI_MCU">
+      <node ref="J2" pin="6" pinfunction="GPIO27" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="27" name="/TFT_RST">
+      <node ref="J3" pin="8" pinfunction="RST" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="28" name="/TFT_RST_MCU">
+      <node ref="J2" pin="9" pinfunction="GPIO32" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+    </net>
+    <net code="29" name="/TFT_SCK">
+      <node ref="J3" pin="4" pinfunction="SCK" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="30" name="/TFT_SCK_MCU">
+      <node ref="J2" pin="10" pinfunction="GPIO14" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="31" name="/USB_5V">
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="USB_VBUS" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="PROBE" pintype="passive"/>
+    </net>
+    <net code="32" name="/USB_PROTECTED">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="F1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="VIN" pintype="power_in"/>
+    </net>
+    <net code="33" name="unconnected-(J1-A3_I39-Pad9)">
+      <node ref="J1" pin="9" pinfunction="A3_I39" pintype="passive+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(J1-A4_I36-Pad8)">
+      <node ref="J1" pin="8" pinfunction="A4_I36" pintype="passive+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(J1-I37-Pad1)">
+      <node ref="J1" pin="1" pinfunction="I37" pintype="passive+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(J1-NC-Pad14)">
+      <node ref="J1" pin="14" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(J1-RESET-Pad16)">
+      <node ref="J1" pin="16" pinfunction="RESET" pintype="passive+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(J1-RX_GPIO7-Pad3)">
+      <node ref="J1" pin="3" pinfunction="RX_GPIO7" pintype="passive+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(J1-TX_GPIO8-Pad2)">
+      <node ref="J1" pin="2" pinfunction="TX_GPIO8" pintype="passive+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(J2-BAT-Pad1)">
+      <node ref="J2" pin="1" pinfunction="BAT" pintype="passive+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(J2-EN-Pad2)">
+      <node ref="J2" pin="2" pinfunction="EN" pintype="passive+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(J2-GPIO12_STRAP-Pad5)">
+      <node ref="J2" pin="5" pinfunction="GPIO12_STRAP" pintype="passive+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(J2-GPIO13_LED-Pad4)">
+      <node ref="J2" pin="4" pinfunction="GPIO13_LED" pintype="passive+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(J2-GPIO15_STRAP-Pad8)">
+      <node ref="J2" pin="8" pinfunction="GPIO15_STRAP" pintype="passive+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(J3-BUSY-Pad16)">
+      <node ref="J3" pin="16" pinfunction="BUSY" pintype="passive+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(J3-GPIO1-Pad17)">
+      <node ref="J3" pin="17" pinfunction="GPIO1" pintype="passive+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(J3-GPIO2-Pad18)">
+      <node ref="J3" pin="18" pinfunction="GPIO2" pintype="passive+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(J3-INT-Pad15)">
+      <node ref="J3" pin="15" pinfunction="INT" pintype="passive+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(J3-MEM_CS-Pad11)">
+      <node ref="J3" pin="11" pinfunction="MEM_CS" pintype="passive+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(J3-MISO-Pad6)">
+      <node ref="J3" pin="6" pinfunction="MISO" pintype="passive+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(J3-SCL-Pad13)">
+      <node ref="J3" pin="13" pinfunction="SCL" pintype="passive+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(J3-SDA-Pad14)">
+      <node ref="J3" pin="14" pinfunction="SDA" pintype="passive+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(J3-TS_CS-Pad12)">
+      <node ref="J3" pin="12" pinfunction="TS_CS" pintype="passive+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(J4-CD1-Pad9)">
+      <node ref="J4" pin="9" pinfunction="CD1" pintype="passive+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(J4-CD2-Pad10)">
+      <node ref="J4" pin="10" pinfunction="CD2" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

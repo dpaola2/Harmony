@@ -1,0 +1,114 @@
+{
+    "error_string": "Success.",
+    "export_time": 374,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 127,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 211.35890197753906,
+                "Custom": 367.07720947265625,
+                "Flush": 25.0,
+                "Gap infill": 92.26168823242188,
+                "Inner wall": 111.55007934570313,
+                "Internal solid infill": 552.6436767578125,
+                "Outer wall": 210.52447509765625,
+                "Top surface": 138.69937133789063,
+                "Travel": 256.9219665527344,
+                "Undefined": 240.03652954101563
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 14.797940254211426,
+                    "total_used_g": 14.797940254211426
+                }
+            ],
+            "generate_support_material_time": 11,
+            "id": 1,
+            "infill_time": 36,
+            "layer_filament_change": 0,
+            "main_predication": 1548.922119140625,
+            "make_perimeters_time": 85,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 169.0,
+                        "height": 1.600000023841858,
+                        "width": 66.19999694824219,
+                        "x": 95.06981658935547,
+                        "y": 43.5,
+                        "z": 0.0
+                    },
+                    "id": 71,
+                    "name": "harmony-mark6-carrier-gauge.stl",
+                    "triangle_count": 4116
+                },
+                {
+                    "bbox": {
+                        "depth": 6.0333428382873535,
+                        "height": 12.0,
+                        "width": 6.032192707061768,
+                        "x": 96.86956787109375,
+                        "y": 145.2887420654297,
+                        "z": 0.0
+                    },
+                    "id": 82,
+                    "name": "harmony-mark6-ano-spacer-12mm.stl_1",
+                    "triangle_count": 1008
+                },
+                {
+                    "bbox": {
+                        "depth": 6.0333476066589355,
+                        "height": 12.0,
+                        "width": 6.032198905944824,
+                        "x": 99.52516174316406,
+                        "y": 151.7654571533203,
+                        "z": 0.0
+                    },
+                    "id": 93,
+                    "name": "harmony-mark6-ano-spacer-12mm.stl_2",
+                    "triangle_count": 1008
+                },
+                {
+                    "bbox": {
+                        "depth": 6.0333476066589355,
+                        "height": 12.0,
+                        "width": 6.032194137573242,
+                        "x": 94.2139663696289,
+                        "y": 138.81202697753906,
+                        "z": 0.0
+                    },
+                    "id": 104,
+                    "name": "harmony-mark6-ano-spacer-12mm.stl_3",
+                    "triangle_count": 1008
+                },
+                {
+                    "bbox": {
+                        "depth": 6.033337116241455,
+                        "height": 12.0,
+                        "width": 6.03219747543335,
+                        "x": 102.1807632446289,
+                        "y": 158.2421875,
+                        "z": 0.0
+                    },
+                    "id": 115,
+                    "name": "harmony-mark6-ano-spacer-12mm.stl_4",
+                    "triangle_count": 1008
+                }
+            ],
+            "sliced_time": 1175,
+            "sliced_time_with_cache": 1016,
+            "total_predication": 1949.1138916015625,
+            "triangle_count": 8148,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

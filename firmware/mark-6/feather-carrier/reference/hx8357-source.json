@@ -1,0 +1,20 @@
+{
+  "commit": "bca58c0024f64e48e7c6a623e3cd8147ec19e10e",
+  "files": [
+    {
+      "file": "Adafruit_HX8357.cpp",
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_HX8357_Library/bca58c0024f64e48e7c6a623e3cd8147ec19e10e/Adafruit_HX8357.cpp",
+      "sha256": "86e9defb0666ee8fb9338afbb749b4808c28a990969b086580603aac319a0e74"
+    },
+    {
+      "file": "Adafruit_HX8357.h",
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_HX8357_Library/bca58c0024f64e48e7c6a623e3cd8147ec19e10e/Adafruit_HX8357.h",
+      "sha256": "f32381fed27bf8dfcedd00a5467b7acba12775319c0759107c051faa67287973"
+    },
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_HX8357_Library/bca58c0024f64e48e7c6a623e3cd8147ec19e10e/README.md",
+      "sha256": "185229055d8728ddd7080527f6b9ed5ea557b00fa74923ddea62a457814fbad6"
+    }
+  ]
+}

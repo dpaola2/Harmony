@@ -1,0 +1,98 @@
+[
+  {
+    "file": "Adafruit 3.5 inch 480x320 Capacitive Touch Display.brd",
+    "repository": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB",
+    "commit": "f229969d9b1416f34bedc4015fce967aaf7c5b00",
+    "sha256": "04c8483aabd3357d61002fa98ad1cc5d6cba8ad5e479d3682c1694184f0152e7"
+  },
+  {
+    "file": "Adafruit 3.5 inch 480x320 Capacitive Touch Display.sch",
+    "repository": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB",
+    "commit": "f229969d9b1416f34bedc4015fce967aaf7c5b00",
+    "sha256": "8add977d50d87d5216cbd60e2e9a4b9e9fa7983f2462e1cb226128cd6b315847"
+  },
+  {
+    "file": "DISPLAY-README.md",
+    "repository": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB",
+    "commit": "f229969d9b1416f34bedc4015fce967aaf7c5b00",
+    "sha256": "9e869d52d73a1cf1cd2020fc6573cac467993dceb637c61b72ba82ad6ec60c94"
+  },
+  {
+    "file": "DISPLAY-license.txt",
+    "repository": "https://github.com/adafruit/3.5inch-TFT-Breakout-PCB",
+    "commit": "f229969d9b1416f34bedc4015fce967aaf7c5b00",
+    "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+  },
+  {
+    "file": "Adafruit ANO Rotary Encoder to I2C.brd",
+    "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C",
+    "commit": "4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901",
+    "sha256": "95372a6e3059ac47ff0f520a1dd098adda89328b4270d056187ba5d10d40ffa2"
+  },
+  {
+    "file": "Adafruit ANO Rotary Encoder to I2C.sch",
+    "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C",
+    "commit": "4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901",
+    "sha256": "7d90c6b96348f31fb47226f009dcea3225d2469b9b2842d4662becb513ac77ef"
+  },
+  {
+    "file": "ANO-README.md",
+    "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C",
+    "commit": "4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901",
+    "sha256": "aeabf68013a07da407a6ca5593453de069a08332e02374ec7c43349c44751660"
+  },
+  {
+    "file": "ANO-license.txt",
+    "repository": "https://github.com/adafruit/Adafruit-ANO-Rotary-Navigation-Encoder-to-I2C",
+    "commit": "4bf9961d2f3bbb52921cd88fdf38c1d5cd38e901",
+    "sha256": "075dad5e5fc96c27014fabc269f4f5732909cffd178a486f546d982b6cf86b74"
+  },
+  {
+    "file": "Adafruit ESP32 Feather V2.brd",
+    "repository": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "77fdb1f97d934c0ddbc536d5503b9c867a7815a944ac8c8f061de8632e5150fe"
+  },
+  {
+    "file": "Adafruit ESP32 Feather V2.sch",
+    "repository": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "b36bab9fe7b53f3cd1ee77af42140027ae02b607c040076431ed3cbf386dc42b"
+  },
+  {
+    "file": "FEATHER-README.md",
+    "repository": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "e1ada0ad91653800ba60233ecfcf11a5c4f24b1b95b27b192eac74ef0cc2d5a4"
+  },
+  {
+    "file": "FEATHER-license.txt",
+    "repository": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "075dad5e5fc96c27014fabc269f4f5732909cffd178a486f546d982b6cf86b74"
+  },
+  {
+    "file": "Adafruit EYESPI Breakout Board.brd",
+    "repository": "https://github.com/adafruit/Adafruit-EYESPI-PCB",
+    "commit": "bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b",
+    "sha256": "980a07b3e4ffe77d07f7cedaf70c3356e2b34062b28a7dd54c361a6482c1c47d"
+  },
+  {
+    "file": "Adafruit EYESPI Breakout Board.sch",
+    "repository": "https://github.com/adafruit/Adafruit-EYESPI-PCB",
+    "commit": "bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b",
+    "sha256": "51649ecb7216c5a9a87b9ec5054ec75583afb24be768326b0277e0aba29bd7a9"
+  },
+  {
+    "file": "EYESPI-README.md",
+    "repository": "https://github.com/adafruit/Adafruit-EYESPI-PCB",
+    "commit": "bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b",
+    "sha256": "24fe13ab30197f8687fd8190cc4a9499fa27aff887f732e1cb7fa467d124e95e"
+  },
+  {
+    "file": "EYESPI-license.txt",
+    "repository": "https://github.com/adafruit/Adafruit-EYESPI-PCB",
+    "commit": "bc5fa13b55c25feb3bf47e483b4d0bc770fbf20b",
+    "sha256": "075dad5e5fc96c27014fabc269f4f5732909cffd178a486f546d982b6cf86b74"
+  }
+]

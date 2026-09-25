@@ -1,0 +1,219 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-21T22:04:33-0400",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "harmony-mark6-carrier.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [PERIPH_3V3] on F.Cu, length 4.0000 mm",
+                    "pos": {
+                        "x": 61.05,
+                        "y": 61.0
+                    },
+                    "uuid": "2c4fd679-d548-4caa-95eb-60cf61d362ea"
+                },
+                {
+                    "description": "Pad 1 [PERIPH_3V3] of J3 on F.Cu",
+                    "pos": {
+                        "x": 58.25,
+                        "y": 53.85
+                    },
+                    "uuid": "05cea07c-9339-4ab2-8295-a296d4de8dd8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [SD_CS] of R4 on F.Cu",
+                    "pos": {
+                        "x": 24.825,
+                        "y": 158.0
+                    },
+                    "uuid": "d6ccc553-1294-43e3-a236-9e096ec9a6b5"
+                },
+                {
+                    "description": "Track [SD_CS] on F.Cu, length 0.0547 mm",
+                    "pos": {
+                        "x": 50.6047,
+                        "y": 25.725
+                    },
+                    "uuid": "4fd76c5c-bd63-4cfc-a42e-d541328d48e5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2733 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 70.0,
+                        "y": 6.0
+                    },
+                    "uuid": "3a675f29-7b56-4aae-89ff-08a4cdd16bb0"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.2517 mm",
+                    "pos": {
+                        "x": 68.375,
+                        "y": 17.325
+                    },
+                    "uuid": "27afd1a0-60de-41f1-8474-4cf75681f0b0"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2733 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 70.0,
+                        "y": 6.0
+                    },
+                    "uuid": "3a675f29-7b56-4aae-89ff-08a4cdd16bb0"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 13.5000 mm",
+                    "pos": {
+                        "x": 69.6267,
+                        "y": 17.325
+                    },
+                    "uuid": "6d90269a-2e57-489f-8625-8206c276c7cd"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2733 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 70.0,
+                        "y": 6.0
+                    },
+                    "uuid": "3a675f29-7b56-4aae-89ff-08a4cdd16bb0"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 0.8508 mm",
+                    "pos": {
+                        "x": 68.7759,
+                        "y": 30.825
+                    },
+                    "uuid": "bbbb314f-f990-4601-b0ef-7ef26a027b9e"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2241 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 32.0,
+                        "y": 138.5
+                    },
+                    "uuid": "ab8f0937-34df-41ea-bd46-a46bd37c2539"
+                },
+                {
+                    "description": "Track [I2C_SDA] on B.Cu, length 1.3554 mm",
+                    "pos": {
+                        "x": 32.2666,
+                        "y": 148.7249
+                    },
+                    "uuid": "af81ac87-b001-4aee-ab97-4616ec0deb47"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2523 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 32.0,
+                        "y": 138.5
+                    },
+                    "uuid": "ab8f0937-34df-41ea-bd46-a46bd37c2539"
+                },
+                {
+                    "description": "Track [TFT_MOSI_MCU] on F.Cu, length 6.1520 mm",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 146.4982
+                    },
+                    "uuid": "0e69a07d-3171-4783-8f22-9e7129c8ea6c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.2383 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 94.0
+                    },
+                    "uuid": "10ff7269-a021-44c6-9132-1f4dc2033500"
+                },
+                {
+                    "description": "Track [TFT_RST] on B.Cu, length 2.0987 mm",
+                    "pos": {
+                        "x": 41.3873,
+                        "y": 93.0911
+                    },
+                    "uuid": "6ec42302-63ca-48dc-a1b5-aa09341b56a9"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "PCB Text 'QT / ANO' on F.Silkscreen",
+                    "pos": {
+                        "x": 34.0,
+                        "y": 102.0
+                    },
+                    "uuid": "846c321d-c33e-4c13-9422-62e0da410410"
+                },
+                {
+                    "description": "Reference 'J5'",
+                    "pos": {
+                        "x": 34.0,
+                        "y": 101.98
+                    },
+                    "uuid": "6f4aaec6-a0cc-40b9-8740-93d65455b813"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

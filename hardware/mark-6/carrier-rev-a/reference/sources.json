@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Adafruit ESP32 Feather V2.brd",
+    "source": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit_at_inspection": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "77fdb1f97d934c0ddbc536d5503b9c867a7815a944ac8c8f061de8632e5150fe"
+  },
+  {
+    "file": "Adafruit ESP32 Feather V2.sch",
+    "source": "https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB",
+    "commit_at_inspection": "cbde2c6658acb3c788616ceb13423b5d36305ef0",
+    "sha256": "b36bab9fe7b53f3cd1ee77af42140027ae02b607c040076431ed3cbf386dc42b"
+  },
+  {
+    "file": "Adafruit 1.14-inch 240x135 Color TFT.brd",
+    "source": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB",
+    "commit_at_inspection": "e87c63d29caea5604ad987077b2ca9eb61a4284f",
+    "sha256": "9a1f762be5009829f24f51933e0b15c66eb699f6df0304310680fcb1bab151cf"
+  },
+  {
+    "file": "Adafruit 1.14-inch 240x135 Color TFT.sch",
+    "source": "https://github.com/adafruit/Adafruit-1.14-inch-240x135-TFT-PCB",
+    "commit_at_inspection": "e87c63d29caea5604ad987077b2ca9eb61a4284f",
+    "sha256": "a448e3d2989a73c6984c96688447290e3bb2f51e6807e116c924617b3425c1b1"
+  }
+]

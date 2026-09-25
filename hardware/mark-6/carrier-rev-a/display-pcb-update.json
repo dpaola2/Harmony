@@ -1,0 +1,10 @@
+{
+  "harmony-mark6-carrier.kicad_pcb": {
+    "module_outline_updated": true,
+    "electrical_geometry_unchanged": true
+  },
+  "routed-base.kicad_pcb": {
+    "module_outline_updated": true,
+    "electrical_geometry_unchanged": true
+  }
+}

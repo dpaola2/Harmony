@@ -1,0 +1,29 @@
+{
+  "status": "PASS - CAD checks; hardware not qualified",
+  "pcb_violations": 0,
+  "unconnected_items": 0,
+  "matched_electrical_pads": 122,
+  "header_coordinates_matched": 28,
+  "footprints": 52,
+  "layers": 4,
+  "tracks": 434,
+  "vias": 53,
+  "zones": 3,
+  "checks": [
+    "Every populated and unconnected PCB pad matches exported schematic netlist",
+    "All 28 mating socket coordinates match vendor Feather CAD",
+    "No PCB DRC violations or opens under saved project rules",
+    "Schematic ERC clear"
+  ],
+  "limits": [
+    "No powered hardware, signal integrity, thermal or RF qualification",
+    "Final display thickness, header tolerance and cable fit require physical check",
+    "Via-in-pad filling/capping and assembler DFM acceptance required"
+  ],
+  "sha256": {
+    "harmony-mark6-carrier.kicad_pcb": "294645bb15c5d2c6d839ca276be179127df3083b0d237ba4329a8aa8f7816aa5",
+    "harmony-mark6-carrier.kicad_sch": "b2bac9cd1b49d364c95209d197d58a30d54b2a4489e58143463dc770861de352",
+    "netlist.xml": "f03c8c345dc890ba0336a0d86a85d5e25b3d99f640d14865a7bb76a3047051e2",
+    "final-drc.json": "e7f0799d80957b9d1897f385d6d2a5690ed5605164d39b9490d962a096ad9789"
+  }
+}

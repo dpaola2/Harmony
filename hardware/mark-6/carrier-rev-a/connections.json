@@ -1,0 +1,608 @@
+{
+  "status": "draft",
+  "power": "USB only; battery not connected",
+  "components": [
+    {
+      "ref": "J1",
+      "symbol": "Feather_16",
+      "value": "Feather JP1 socket",
+      "nets": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "SD_MISO_MCU",
+        "5": "SD_MOSI_MCU",
+        "6": "SD_SCK_MCU",
+        "7": "TFT_LITE_MCU",
+        "8": null,
+        "9": null,
+        "10": "PERIPH_PG",
+        "11": "SD_CS_MCU",
+        "12": "TFT_CS_MCU",
+        "13": "GND",
+        "14": null,
+        "15": "MCU_3V3",
+        "16": null
+      },
+      "footprint": "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical",
+      "mpn": "SSW-116-01-G-S",
+      "note": "Factory-installed Samtec socket: 8.51mm body, 2.64mm solder tails; vendor top-view coordinates"
+    },
+    {
+      "ref": "J2",
+      "symbol": "Feather_12",
+      "value": "Feather JP3 socket",
+      "nets": {
+        "1": null,
+        "2": null,
+        "3": "USB_5V",
+        "4": null,
+        "5": null,
+        "6": "TFT_MOSI_MCU",
+        "7": "TFT_DC_MCU",
+        "8": null,
+        "9": "TFT_RST_MCU",
+        "10": "TFT_SCK_MCU",
+        "11": "I2C_SCL",
+        "12": "I2C_SDA"
+      },
+      "footprint": "Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical",
+      "mpn": "SSW-112-01-G-S",
+      "note": "Factory-installed Samtec socket: 8.51mm body, 2.64mm solder tails; vendor top-view coordinates"
+    },
+    {
+      "ref": "J4",
+      "symbol": "MicroSD",
+      "value": "Dedicated microSD",
+      "nets": {
+        "1": "SD_DAT2",
+        "2": "SD_CS",
+        "3": "SD_MOSI",
+        "4": "PERIPH_3V3",
+        "5": "SD_SCK",
+        "6": "GND",
+        "7": "SD_MISO",
+        "8": "SD_DAT1",
+        "9": null,
+        "10": null,
+        "11": "GND"
+      },
+      "footprint": "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5",
+      "mpn": "DM3AT-SF-PEJM5",
+      "note": "Pins 9/10 are unused card-detect contacts. Pin 11 is shield, including all four mounting tabs."
+    },
+    {
+      "ref": "R1",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "SD_SCK_MCU",
+        "2": "SD_SCK"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R2",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "SD_MOSI_MCU",
+        "2": "SD_MOSI"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R3",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "SD_MISO_MCU",
+        "2": "SD_MISO"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R4",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "SD_CS_MCU",
+        "2": "SD_CS"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R11",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "SD_MOSI"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R12",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "SD_MISO"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R13",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "SD_CS"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R14",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "SD_DAT1"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R15",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "SD_DAT2"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R16",
+      "symbol": "R",
+      "value": "47k",
+      "nets": {
+        "1": "MCU_3V3",
+        "2": "SD_SCK_MCU"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0747KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "C4",
+      "symbol": "C",
+      "value": "10uF",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C2012X7R1A106K125AC",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "C5",
+      "symbol": "C",
+      "value": "100nF",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C0805C104K5RACTU",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "J3",
+      "symbol": "EYESPI_18",
+      "value": "EYESPI ribbon",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "TFT_LITE",
+        "3": "GND",
+        "4": "TFT_SCK",
+        "5": "TFT_MOSI",
+        "6": null,
+        "7": "TFT_DC",
+        "8": "TFT_RST",
+        "9": "TFT_CS",
+        "10": "DISPLAY_SD_CS",
+        "11": null,
+        "12": null,
+        "13": null,
+        "14": null,
+        "15": null,
+        "16": null,
+        "17": null,
+        "18": null,
+        "MP": "GND"
+      },
+      "footprint": "Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal",
+      "mpn": "FH12-18S-0.5SH(55)",
+      "note": "Bottom contact, 0.3mm FPC, 0.5mm pitch; Adafruit #5239 A-B cable maps 1 to 1. Copper faces board; blue stiffener outward"
+    },
+    {
+      "ref": "R5",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_SCK_MCU",
+        "2": "TFT_SCK"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R6",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_MOSI_MCU",
+        "2": "TFT_MOSI"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R7",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_CS_MCU",
+        "2": "TFT_CS"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R8",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_DC_MCU",
+        "2": "TFT_DC"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R9",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_RST_MCU",
+        "2": "TFT_RST"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R10",
+      "symbol": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TFT_LITE_MCU",
+        "2": "TFT_LITE"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100RL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R17",
+      "symbol": "R",
+      "value": "10k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "TFT_CS"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0710KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R18",
+      "symbol": "R",
+      "value": "10k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "TFT_RST"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0710KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R19",
+      "symbol": "R",
+      "value": "10k",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "DISPLAY_SD_CS"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-0710KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "C6",
+      "symbol": "C",
+      "value": "10uF",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C2012X7R1A106K125AC",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "C7",
+      "symbol": "C",
+      "value": "100nF",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C0805C104K5RACTU",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "F1",
+      "symbol": "Fuse",
+      "value": "0.75A hold PTC",
+      "nets": {
+        "1": "USB_5V",
+        "2": "USB_PROTECTED"
+      },
+      "footprint": "Fuse:Fuse_1206_3216Metric",
+      "mpn": "MF-NSMF075-2",
+      "note": "Bourns 1206, 6V, 0.75A hold at 23C; 0.52A at 60C; 1.5A trip at 23C. Peripheral branch only; not GPIO protection"
+    },
+    {
+      "ref": "U1",
+      "symbol": "TPS62162",
+      "value": "TPS62162DSGR / 3.3V",
+      "nets": {
+        "1": "GND",
+        "2": "USB_PROTECTED",
+        "3": "MCU_3V3",
+        "4": "GND",
+        "5": "GND",
+        "6": "PERIPH_3V3",
+        "7": "BUCK_SW",
+        "8": "PERIPH_PG",
+        "9": "GND"
+      },
+      "footprint": "Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias",
+      "mpn": "TPS62162DSGR",
+      "note": ""
+    },
+    {
+      "ref": "L1",
+      "symbol": "L",
+      "value": "2.2uH",
+      "nets": {
+        "1": "BUCK_SW",
+        "2": "PERIPH_3V3"
+      },
+      "footprint": "Inductor_SMD:L_Coilcraft_XxL4020",
+      "mpn": "XFL4020-222MEC",
+      "note": "2.2uH shielded; Coilcraft XFL4020 series. 4.0 x 4.0mm body, 2.2mm maximum height; shielded"
+    },
+    {
+      "ref": "C1",
+      "symbol": "C",
+      "value": "22uF",
+      "nets": {
+        "1": "USB_PROTECTED",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "mpn": "C3225X7R1C226M250AC",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "C2",
+      "symbol": "C",
+      "value": "22uF",
+      "nets": {
+        "1": "PERIPH_3V3",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "mpn": "C3225X7R1C226M250AC",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "C3",
+      "symbol": "C",
+      "value": "100nF",
+      "nets": {
+        "1": "USB_PROTECTED",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "mpn": "C0805C104K5RACTU",
+      "note": "X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+    },
+    {
+      "ref": "R20",
+      "symbol": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MCU_3V3",
+        "2": "PERIPH_PG"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "R21",
+      "symbol": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MCU_3V3",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "mpn": "RC0603FR-07100KL",
+      "note": "Yageo RC series, 1%, 0.1W, 0603"
+    },
+    {
+      "ref": "J5",
+      "symbol": "STEMMA_QT",
+      "value": "ANO #6310 cable",
+      "nets": {
+        "1": "GND",
+        "2": "PERIPH_3V3",
+        "3": "I2C_SDA",
+        "4": "I2C_SCL",
+        "MP": "GND"
+      },
+      "footprint": "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal",
+      "mpn": "SM04B-SRSS-TB(LF)(SN)",
+      "note": ""
+    },
+    {
+      "ref": "TP1",
+      "symbol": "TestPoint",
+      "value": "USB_5V",
+      "nets": {
+        "1": "USB_5V"
+      },
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "mpn": "",
+      "note": "Bare PCB probe pad; no assembly component"
+    },
+    {
+      "ref": "TP2",
+      "symbol": "TestPoint",
+      "value": "MCU_3V3",
+      "nets": {
+        "1": "MCU_3V3"
+      },
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "mpn": "",
+      "note": "Bare PCB probe pad; no assembly component"
+    },
+    {
+      "ref": "TP3",
+      "symbol": "TestPoint",
+      "value": "PERIPH_3V3",
+      "nets": {
+        "1": "PERIPH_3V3"
+      },
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "mpn": "",
+      "note": "Bare PCB probe pad; no assembly component"
+    },
+    {
+      "ref": "TP4",
+      "symbol": "TestPoint",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "mpn": "",
+      "note": "Bare PCB probe pad; no assembly component"
+    },
+    {
+      "ref": "TP5",
+      "symbol": "TestPoint",
+      "value": "PERIPH_PG",
+      "nets": {
+        "1": "PERIPH_PG"
+      },
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "mpn": "",
+      "note": "Bare PCB probe pad; no assembly component"
+    },
+    {
+      "ref": "#FLG01",
+      "symbol": "PowerFlag",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "USB_5V"
+      },
+      "footprint": "",
+      "mpn": "",
+      "note": ""
+    },
+    {
+      "ref": "#FLG02",
+      "symbol": "PowerFlag",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "USB_PROTECTED"
+      },
+      "footprint": "",
+      "mpn": "",
+      "note": ""
+    },
+    {
+      "ref": "#FLG03",
+      "symbol": "PowerFlag",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "MCU_3V3"
+      },
+      "footprint": "",
+      "mpn": "",
+      "note": ""
+    },
+    {
+      "ref": "#FLG04",
+      "symbol": "PowerFlag",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "PERIPH_3V3"
+      },
+      "footprint": "",
+      "mpn": "",
+      "note": ""
+    },
+    {
+      "ref": "#FLG05",
+      "symbol": "PowerFlag",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "mpn": "",
+      "note": ""
+    }
+  ]
+}

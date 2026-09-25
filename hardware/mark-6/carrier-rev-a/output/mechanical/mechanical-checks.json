@@ -1,0 +1,54 @@
+{
+  "status": "nominal stack review; physical fit unverified",
+  "case_mm": [
+    74,
+    178,
+    28
+  ],
+  "carrier_z_mm": [
+    6.5,
+    8.1
+  ],
+  "feather_z_mm": [
+    19.15,
+    25.52
+  ],
+  "ano_board_z_mm": [
+    20.1,
+    21.67
+  ],
+  "ano_front_max_z_mm": 27.47,
+  "display_envelope_z_mm": [
+    16.74952,
+    27.3
+  ],
+  "display_vendor_step_thickness_mm": 10.55048,
+  "battery_reserved_z_mm": [
+    1.6,
+    12.1
+  ],
+  "feather_front_wall_nominal_gap_mm": 0.88,
+  "display_battery_nominal_gap_mm": 4.64952,
+  "intersection_volume_mm3": {
+    "Carrier_1p6mm / Feather_vendor_model_no_headers": 0.0,
+    "Carrier_1p6mm / ANO_vendor_model": 0.0,
+    "Future_battery_reservation_NOT_CONNECTED / Display_Waveshare_29318_vendor": 0.0,
+    "ANO_vendor_model / Feather_vendor_model_no_headers": 0.0
+  },
+  "eyespi_display_center_case_xy_mm": [
+    37.01,
+    20.32
+  ],
+  "eyespi_carrier_center_case_xy_mm": [
+    54,
+    52
+  ],
+  "eyespi_cable": "Adafruit 5239 100mm; reserve loop above battery; no sharp crease",
+  "qt_cable": "Adafruit 4399 50mm to upper ANO connector",
+  "limits": [
+    "Waveshare STEP thickness 10.55048mm exceeds published 10.31mm drawing; physical tolerance/fit still required",
+    "Factory header body height assumed 2.54mm; insertion fit/tolerance must be checked",
+    "STEP does not model actual cable bending or a final hollow shell",
+    "Antenna has carrier cutout; unavoidable socket copper remains inside 15mm halo"
+  ]
+}

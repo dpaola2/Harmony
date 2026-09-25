@@ -1,0 +1,14 @@
+{
+  "repository": "https://api.github.com/repos/adafruit/Adafruit_Seesaw/commits/master",
+  "commit": "985b41efae3d9a8cba12a7b4d9ff0d226f9e0759",
+  "files": {
+    "Adafruit_seesaw.cpp": {
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_Seesaw/985b41efae3d9a8cba12a7b4d9ff0d226f9e0759/Adafruit_seesaw.cpp",
+      "sha256": "2615ee12ffe78c2697915072dbff14d5d67fd4760493e0cfb65668f3ae99d70a"
+    },
+    "Adafruit_seesaw.h": {
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_Seesaw/985b41efae3d9a8cba12a7b4d9ff0d226f9e0759/Adafruit_seesaw.h",
+      "sha256": "e0e0b8705da84ffffc0f187a47df2e129355e82b6e159e92c147ddb772c32b6e"
+    }
+  }
+}

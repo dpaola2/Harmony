@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-22",
+  "display": "Waveshare 29318 ST7796S",
+  "display_rect_mm": [
+    6.5,
+    4.0,
+    61.0111908,
+    92.4468164
+  ],
+  "display_z_mm": [
+    16.74952,
+    27.3
+  ],
+  "case_mm": [
+    74,
+    178,
+    28
+  ],
+  "wall_mm": 1.6,
+  "lid_clearance_mm": 0.25,
+  "display_bezel_mm": 0.4,
+  "carrier_mount_z_mm": 6.5,
+  "ports": {
+    "usb": {
+      "case_y_mm": [
+        155.66,
+        168.66
+      ],
+      "case_z_mm": [
+        19.4,
+        28
+      ]
+    },
+    "sd": {
+      "case_y_mm": [
+        14,
+        34
+      ],
+      "case_z_mm": [
+        7.2,
+        15.2
+      ]
+    }
+  },
+  "parts": {
+    "tray": {
+      "dimensions_mm": [
+        74.0,
+        178.0,
+        26.399999618530273
+      ],
+      "watertight": true,
+      "connected_solids": 1,
+      "volume_mm3": 40469.976451925846,
+      "print_z_min": 0.0,
+      "3mf_round_trip": true
+    },
+    "front": {
+      "dimensions_mm": [
+        74.0,
+        178.0,
+        4.599999904632591
+      ],
+      "watertight": true,
+      "connected_solids": 1,
+      "volume_mm3": 12350.72028129208,
+      "print_z_min": -2.1927868659840817e-14,
+      "3mf_round_trip": true
+    },
+    "carrier-gauge": {
+      "dimensions_mm": [
+        66.19999694824219,
+        169.0,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "connected_solids": 1,
+      "volume_mm3": 11285.302653576233,
+      "print_z_min": 0.0,
+      "3mf_round_trip": true
+    },
+    "ano-spacer-12mm": {
+      "dimensions_mm": [
+        5.0,
+        4.998445710458327,
+        12.0
+      ],
+      "watertight": true,
+      "connected_solids": 1,
+      "volume_mm3": 166.8436510200046,
+      "print_z_min": 0.0,
+      "3mf_round_trip": true
+    }
+  },
+  "status": "CAD/mesh checked; unpowered fit prototype, physical fit unverified",
+  "limitations": [
+    "Display recess uses Waveshare 29318 STEP; physical tolerances and cable fit unverified",
+    "Thin 0.4mm display bezel is sacrificial; do not force or use as a permanent retainer",
+    "No display fasteners: support the module during unpowered trial fit",
+    "Printed gauge has no electrical contacts and is not a PCB",
+    "Case uses alignment lip, not a qualified snap fit; tape closed for trial",
+    "Battery remains unconnected; no charging or swelling qualification"
+  ],
+  "nominal_intersection_mm3": {
+    "tray/feather": 0.0,
+    "front/feather": 0.0,
+    "tray/ano": 0.0,
+    "front/ano": 0.0,
+    "tray/display_vendor_29318": 0.0,
+    "front/display_vendor_29318": 0.0,
+    "tray/battery_reserved": 0.0,
+    "front/battery_reserved": 0.0,
+    "tray/front": 0.0
+  },
+  "hashes": {
+    "print/harmony-mark6-ano-spacer-12mm.3mf": "ff4ea237f369f877499c7d24e2671b9c1bb5b94101bb5d0c70ccbea688e36507",
+    "print/harmony-mark6-ano-spacer-12mm.stl": "e5842b80422741d30ebada007977df86a1dc0185267ebeeee6805b80d820c481",
+    "print/harmony-mark6-carrier-gauge.3mf": "bf5bd6505e9ff15afdd0a7baa9f9db522efe23cae490d78c4aaeb138f7cc4163",
+    "print/harmony-mark6-carrier-gauge.stl": "8128b2f98cf2aabd6fdb88a18a5a6739385a0db828eaa6b2cfaa76dafb297d90",
+    "print/harmony-mark6-front.3mf": "6a2a6668cbee0047b5f0c3fcc831f5be3b5543a0e6a8b538cce63467518495d5",
+    "print/harmony-mark6-front.stl": "8950a6757d1642cd19e287e78af5d05854bd13595bfa83d4ec14c72d79e2e195",
+    "print/harmony-mark6-tray.3mf": "2dd488271ee98837f4f2f93cd0ec281fcf2c2ba683e820b4ace8172525094268",
+    "print/harmony-mark6-tray.stl": "075150617739cca8ecf47754d36a5f976776acc6e9ab6c3aee932a4e0d964395"
+  }
+}

@@ -1,0 +1,8 @@
+menu "Mark-6 display bench"
+config BENCH_DISPLAY_SOFT_SPI
+    bool "Use software SPI for display isolation"
+    default n
+config BENCH_DISPLAY_SIGNAL_CHECK
+    bool "Run static display-pin diagnostic instead of drawing"
+    default n
+endmenu

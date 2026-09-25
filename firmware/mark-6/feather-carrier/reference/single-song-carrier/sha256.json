@@ -1,0 +1,10 @@
+{
+  "README.md": "5b2b2851cab19317ba4913ccfdc1e30ece06a1843f039d2f6d6b84e988039186",
+  "verification.json": "977242fe5a88e3353d9c191535db559b2a5b5247a1967bf0cca10243d26639e8",
+  "main/CMakeLists.txt": "07d1f32f9f4e64215ab5d918792e650141e46168fa394688505bf960de926a4b",
+  "main/carrier_controls.c": "6e6f2474b10a3289371c4759a129f949f5bac46f4473467891a1b58162c1c00e",
+  "main/player_display.c": "dbedd13e2bfd6af5537773ffbb8910278223fca925a9e7e3b81b44d4fb7a6f6f",
+  "main/audio_player.h": "ed871faffc8f201cdfcd184262d2414f7b7992cd96a43b25f1e1f8976376b01c",
+  "main/main.c": "c02e16c092afd95fe99b352afea0b46764a04582d6ffa77b6ec590652fb3054d",
+  "main/audio_player.c": "3ef0e4a7583e2aaad5506f2ecc18f8502808cd5290d646e9859ac94a2b1d94ab"
+}

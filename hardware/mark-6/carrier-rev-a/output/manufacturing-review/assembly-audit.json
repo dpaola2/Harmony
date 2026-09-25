@@ -1,0 +1,399 @@
+{
+  "date": "2026-09-22",
+  "status": "PASS package consistency; physical and supplier review pending",
+  "assembled_parts": 36,
+  "SMT": 34,
+  "through_hole": 2,
+  "placements": [
+    {
+      "ref": "C1",
+      "mpn": "C3225X7R1C226M250AC",
+      "method": "SMT",
+      "x_mm": 48.0,
+      "y_mm": 70.5,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "C2",
+      "mpn": "C3225X7R1C226M250AC",
+      "method": "SMT",
+      "x_mm": 61.0,
+      "y_mm": 76.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C3",
+      "mpn": "C0805C104K5RACTU",
+      "method": "SMT",
+      "x_mm": 48.0,
+      "y_mm": 75.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "C4",
+      "mpn": "C2012X7R1A106K125AC",
+      "method": "SMT",
+      "x_mm": 58.0,
+      "y_mm": 36.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C5",
+      "mpn": "C0805C104K5RACTU",
+      "method": "SMT",
+      "x_mm": 62.0,
+      "y_mm": 36.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C6",
+      "mpn": "C2012X7R1A106K125AC",
+      "method": "SMT",
+      "x_mm": 62.0,
+      "y_mm": 57.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C7",
+      "mpn": "C0805C104K5RACTU",
+      "method": "SMT",
+      "x_mm": 62.0,
+      "y_mm": 61.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "F1",
+      "mpn": "MF-NSMF075-2",
+      "method": "SMT",
+      "x_mm": 46.0,
+      "y_mm": 86.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "J1",
+      "mpn": "SSW-116-01-G-S",
+      "method": "Through-hole",
+      "x_mm": 49.95,
+      "y_mm": 172.32,
+      "rotation_deg": -90.0
+    },
+    {
+      "ref": "J2",
+      "mpn": "SSW-112-01-G-S",
+      "method": "Through-hole",
+      "x_mm": 22.01,
+      "y_mm": 152.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "J3",
+      "mpn": "FH12-18S-0.5SH(55)",
+      "method": "SMT",
+      "x_mm": 54.0,
+      "y_mm": 52.0,
+      "rotation_deg": 180.0
+    },
+    {
+      "ref": "J4",
+      "mpn": "DM3AT-SF-PEJM5",
+      "method": "SMT",
+      "x_mm": 61.0,
+      "y_mm": 24.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "J5",
+      "mpn": "SM04B-SRSS-TB(LF)(SN)",
+      "method": "SMT",
+      "x_mm": 34.0,
+      "y_mm": 98.0,
+      "rotation_deg": 180.0
+    },
+    {
+      "ref": "L1",
+      "mpn": "XFL4020-222MEC",
+      "method": "SMT",
+      "x_mm": 57.0,
+      "y_mm": 71.75,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R1",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 24.0,
+      "y_mm": 164.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R10",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 22.0,
+      "y_mm": 143.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R11",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 19.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R12",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 22.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R13",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 25.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R14",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 28.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R15",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 31.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R16",
+      "mpn": "RC0603FR-0747KL",
+      "method": "SMT",
+      "x_mm": 16.0,
+      "y_mm": 157.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R17",
+      "mpn": "RC0603FR-0710KL",
+      "method": "SMT",
+      "x_mm": 44.0,
+      "y_mm": 59.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "R18",
+      "mpn": "RC0603FR-0710KL",
+      "method": "SMT",
+      "x_mm": 48.0,
+      "y_mm": 59.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "R19",
+      "mpn": "RC0603FR-0710KL",
+      "method": "SMT",
+      "x_mm": 52.0,
+      "y_mm": 59.0,
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "R2",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 24.0,
+      "y_mm": 161.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R20",
+      "mpn": "RC0603FR-07100KL",
+      "method": "SMT",
+      "x_mm": 16.0,
+      "y_mm": 164.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R21",
+      "mpn": "RC0603FR-07100KL",
+      "method": "SMT",
+      "x_mm": 16.0,
+      "y_mm": 160.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R3",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 49.0,
+      "y_mm": 34.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R4",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 24.0,
+      "y_mm": 158.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R5",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 30.0,
+      "y_mm": 146.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R6",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 30.0,
+      "y_mm": 143.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R7",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 26.0,
+      "y_mm": 146.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R8",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 26.0,
+      "y_mm": 143.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R9",
+      "mpn": "RC0603FR-07100RL",
+      "method": "SMT",
+      "x_mm": 22.0,
+      "y_mm": 146.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "U1",
+      "mpn": "TPS62162DSGR",
+      "method": "SMT",
+      "x_mm": 52.0,
+      "y_mm": 72.0,
+      "rotation_deg": 0.0
+    }
+  ],
+  "socket_holes": [
+    {
+      "ref": "J1",
+      "count": 16,
+      "finished_hole_mm": 1.0,
+      "pad_mm": 1.7,
+      "nominal_tail_projection_mm": 1.04
+    },
+    {
+      "ref": "J2",
+      "count": 12,
+      "finished_hole_mm": 1.0,
+      "pad_mm": 1.7,
+      "nominal_tail_projection_mm": 1.04
+    }
+  ],
+  "via_in_pad": [
+    {
+      "ref": "C4",
+      "pad": "2",
+      "x_mm": 58.95,
+      "y_mm": 36.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "C6",
+      "pad": "2",
+      "x_mm": 62.95,
+      "y_mm": 57.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "C7",
+      "pad": "2",
+      "x_mm": 62.95,
+      "y_mm": 61.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "C5",
+      "pad": "2",
+      "x_mm": 62.95,
+      "y_mm": 36.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "C2",
+      "pad": "2",
+      "x_mm": 62.475,
+      "y_mm": 76.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "R13",
+      "pad": "2",
+      "x_mm": 49.825,
+      "y_mm": 25.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "R4",
+      "pad": "2",
+      "x_mm": 24.825,
+      "y_mm": 158.0,
+      "drill_mm": 0.3
+    },
+    {
+      "ref": "U1",
+      "pad": "9",
+      "x_mm": 52.0,
+      "y_mm": 71.5,
+      "drill_mm": 0.25
+    },
+    {
+      "ref": "U1",
+      "pad": "9",
+      "x_mm": 52.0,
+      "y_mm": 72.5,
+      "drill_mm": 0.25
+    }
+  ],
+  "ignored_rule": {
+    "name": "footprint_type_mismatch",
+    "reason": "U1 is SMT with two plated thermal holes on exposed ground pad 9; strict DRC expects Through hole because of those holes"
+  },
+  "strict_drc": {
+    "violations": 1,
+    "errors": 0,
+    "unconnected": 0,
+    "reviewed_warning": "Only U1 footprint_type_mismatch"
+  },
+  "sources": {
+    "Hirose_J3": "https://www.hirose.com/en/product/p/CL0586-0530-1-55",
+    "Samtec_J1": "https://www.samtec.com/products/ssw-116-01-g-s",
+    "Samtec_dimensions": "https://suddendocs.samtec.com/catalog_english/ssw_th.pdf"
+  },
+  "sha256": {
+    "harmony-mark6-carrier.kicad_pcb": "294645bb15c5d2c6d839ca276be179127df3083b0d237ba4329a8aa8f7816aa5",
+    "harmony-mark6-carrier.kicad_pro": "4d76dcf21fdaf032d58d03b03bbaed38cbb260d83d6c83296a9871cc5f5f060e",
+    "bom-draft.csv": "4c09fd30f51627021ce32cbfbf3aec53aafca0e785e2e1e039c6e2e7c2018ef1",
+    "output/all-positions.csv": "51307508b741fe3bd384755aa97f98a47b2c4d8d122f179a90998cf2517367cb"
+  }
+}

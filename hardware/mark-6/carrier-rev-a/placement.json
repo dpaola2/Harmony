@@ -1,0 +1,109 @@
+{
+  "revision": "B",
+  "units": "mm",
+  "status": "Size and planar placement study; no enclosure or PCB manufacturing release",
+  "case": [
+    74,
+    178,
+    28
+  ],
+  "case_corner_radius": 5,
+  "depth_status": "28 mm is a mockup assumption within the provisional 25-30 mm budget",
+  "rectangle_format": "[left, top, width, height] from front-view upper-left",
+  "display_board": [
+    6.5,
+    4,
+    61.0111908,
+    92.4468164
+  ],
+  "display_active_guide": [
+    12.5256,
+    13.5034,
+    48.96,
+    73.44
+  ],
+  "controls_board": [
+    16.68,
+    103.0,
+    40.64,
+    35.56
+  ],
+  "controls_rotation_deg": 90,
+  "wheel_center": [
+    37,
+    120.78
+  ],
+  "wheel_diameter": 34.4,
+  "feather_board": [
+    5.5,
+    150.73,
+    50.8,
+    22.86
+  ],
+  "feather_usb_occupied_extension_left": 1.5,
+  "antenna_vendor_restrict_local_bounds": [
+    44.97,
+    4.83,
+    50.37,
+    18.03
+  ],
+  "antenna_case_bounds": [
+    50.47,
+    155.56,
+    55.87,
+    168.76
+  ],
+  "antenna_15mm_halo_bounds": [
+    35.47,
+    140.56,
+    70.87,
+    183.76
+  ],
+  "antenna_halo_format": "[left, top, right, bottom]",
+  "antenna_status": "Planar reservation for other modules; Feather sockets and carrier copper intrude and require RF layout review. Halo extends beyond the proposed plastic shell. No all-direction RF clearance or performance pass.",
+  "battery_reserved": [
+    4,
+    8,
+    32,
+    79,
+    10.5
+  ],
+  "rear_reservations": {
+    "SD": [
+      43,
+      12,
+      20,
+      18
+    ],
+    "3V3 supply": [
+      43,
+      38,
+      20,
+      15
+    ],
+    "Ribbon": [
+      43,
+      63,
+      20,
+      10
+    ]
+  },
+  "checks": {
+    "display_to_controls_gap": 6.553,
+    "controls_to_antenna_halo_gap": 2.0,
+    "feather_bottom_to_case_edge": 4.41,
+    "halo_beyond_case_bottom": 5.76
+  },
+  "limitations": [
+    "No Z-stack collision check; 28 mm depth unverified",
+    "No functional apertures, fasteners or mounting bosses",
+    "QT plug and ribbon bend volumes still unmodeled",
+    "Carrier RF cutout and socket land review remain",
+    "ANO direction mapping needs 90-degree firmware remap",
+    "Battery reserve is not a qualified swelling allowance; USB first"
+  ],
+  "sources": [
+    "reference/design-sources.json",
+    "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/pcb-layout-design.html"
+  ]
+}

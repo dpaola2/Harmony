@@ -1,0 +1,42 @@
+ref,value,mpn,footprint,note
+J1,Feather JP1 socket,SSW-116-01-G-S,Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical,"Factory-installed Samtec socket: 8.51mm body, 2.64mm solder tails; vendor top-view coordinates"
+J2,Feather JP3 socket,SSW-112-01-G-S,Connector_PinSocket_2.54mm:PinSocket_1x12_P2.54mm_Vertical,"Factory-installed Samtec socket: 8.51mm body, 2.64mm solder tails; vendor top-view coordinates"
+J4,Dedicated microSD,DM3AT-SF-PEJM5,Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5,"Pins 9/10 are unused card-detect contacts. Pin 11 is shield, including all four mounting tabs."
+R1,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R2,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R3,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R4,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R11,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R12,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R13,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R14,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R15,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R16,47k,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+C4,10uF,C2012X7R1A106K125AC,Capacitor_SMD:C_0805_2012Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+C5,100nF,C0805C104K5RACTU,Capacitor_SMD:C_0805_2012Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+J3,EYESPI ribbon,FH12-18S-0.5SH(55),Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal,"Bottom contact, 0.3mm FPC, 0.5mm pitch; Adafruit #5239 A-B cable maps 1 to 1. Copper faces board; blue stiffener outward"
+R5,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R6,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R7,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R8,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R9,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R10,100R,RC0603FR-07100RL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R17,10k,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R18,10k,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R19,10k,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+C6,10uF,C2012X7R1A106K125AC,Capacitor_SMD:C_0805_2012Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+C7,100nF,C0805C104K5RACTU,Capacitor_SMD:C_0805_2012Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+F1,0.75A hold PTC,MF-NSMF075-2,Fuse:Fuse_1206_3216Metric,"Bourns 1206, 6V, 0.75A hold at 23C; 0.52A at 60C; 1.5A trip at 23C. Peripheral branch only; not GPIO protection"
+U1,TPS62162DSGR / 3.3V,TPS62162DSGR,Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm_ThermalVias,
+L1,2.2uH,XFL4020-222MEC,Inductor_SMD:L_Coilcraft_XxL4020,"2.2uH shielded; Coilcraft XFL4020 series. 4.0 x 4.0mm body, 2.2mm maximum height; shielded"
+C1,22uF,C3225X7R1C226M250AC,Capacitor_SMD:C_1210_3225Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+C2,22uF,C3225X7R1C226M250AC,Capacitor_SMD:C_1210_3225Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+C3,100nF,C0805C104K5RACTU,Capacitor_SMD:C_0805_2012Metric,"X7R; C1/C2 22uF 16V +/-20% 1210, C4/C6 10uF 10V, 100nF 50V. See power-review.md for bias/temperature budget"
+R20,100k,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+R21,100k,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,"Yageo RC series, 1%, 0.1W, 0603"
+J5,ANO #6310 cable,SM04B-SRSS-TB(LF)(SN),Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,
+TP1,USB_5V,,TestPoint:TestPoint_Pad_D2.0mm,Bare PCB probe pad; no assembly component
+TP2,MCU_3V3,,TestPoint:TestPoint_Pad_D2.0mm,Bare PCB probe pad; no assembly component
+TP3,PERIPH_3V3,,TestPoint:TestPoint_Pad_D2.0mm,Bare PCB probe pad; no assembly component
+TP4,GND,,TestPoint:TestPoint_Pad_D2.0mm,Bare PCB probe pad; no assembly component
+TP5,PERIPH_PG,,TestPoint:TestPoint_Pad_D2.0mm,Bare PCB probe pad; no assembly component

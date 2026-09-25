@@ -1,0 +1,201 @@
+{
+  "note": "Vendor board top-view Eagle coordinates; not a carrier pin map. Do not mirror without checking mating orientation. Applies to PCB underlying #5400/#5900.",
+  "pins": [
+    {
+      "header": "JP1",
+      "pin": 1,
+      "vendor_net": "I37",
+      "eagle_x_mm": 44.45,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 2,
+      "vendor_net": "TX/IO8",
+      "eagle_x_mm": 41.91,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 3,
+      "vendor_net": "RX/IO7",
+      "eagle_x_mm": 39.37,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 4,
+      "vendor_net": "MISO",
+      "eagle_x_mm": 36.83,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 5,
+      "vendor_net": "MOSI",
+      "eagle_x_mm": 34.29,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 6,
+      "vendor_net": "SCK",
+      "eagle_x_mm": 31.75,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 7,
+      "vendor_net": "A5_IO4",
+      "eagle_x_mm": 29.21,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 8,
+      "vendor_net": "A4_I36",
+      "eagle_x_mm": 26.67,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 9,
+      "vendor_net": "A3_I39",
+      "eagle_x_mm": 24.13,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 10,
+      "vendor_net": "A2_I34",
+      "eagle_x_mm": 21.59,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 11,
+      "vendor_net": "A1_DAC1",
+      "eagle_x_mm": 19.05,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 12,
+      "vendor_net": "A0_DAC2",
+      "eagle_x_mm": 16.51,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 13,
+      "vendor_net": "GND",
+      "eagle_x_mm": 13.97,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 14,
+      "vendor_net": null,
+      "eagle_x_mm": 11.43,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 15,
+      "vendor_net": "3.3V",
+      "eagle_x_mm": 8.89,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP1",
+      "pin": 16,
+      "vendor_net": "!RESET",
+      "eagle_x_mm": 6.35,
+      "eagle_y_mm": 1.27
+    },
+    {
+      "header": "JP3",
+      "pin": 1,
+      "vendor_net": "VBAT",
+      "eagle_x_mm": 16.51,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 2,
+      "vendor_net": "EN",
+      "eagle_x_mm": 19.05,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 3,
+      "vendor_net": "VBUS",
+      "eagle_x_mm": 21.59,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 4,
+      "vendor_net": "IO13_A12",
+      "eagle_x_mm": 24.13,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 5,
+      "vendor_net": "IO12_A11",
+      "eagle_x_mm": 26.67,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 6,
+      "vendor_net": "IO27_A10",
+      "eagle_x_mm": 29.21,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 7,
+      "vendor_net": "IO33_A9",
+      "eagle_x_mm": 31.75,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 8,
+      "vendor_net": "IO15_A8",
+      "eagle_x_mm": 34.29,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 9,
+      "vendor_net": "IO32_A7",
+      "eagle_x_mm": 36.83,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 10,
+      "vendor_net": "IO14_A6",
+      "eagle_x_mm": 39.37,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 11,
+      "vendor_net": "SCL",
+      "eagle_x_mm": 41.91,
+      "eagle_y_mm": 21.59
+    },
+    {
+      "header": "JP3",
+      "pin": 12,
+      "vendor_net": "SDA",
+      "eagle_x_mm": 44.45,
+      "eagle_y_mm": 21.59
+    }
+  ]
+}

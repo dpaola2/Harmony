@@ -9,3 +9,23 @@ hardware/procurement/assembly-quote-r2/programming/*.bin filter=lfs diff=lfs mer
 hardware/procurement/assembly-quote-r2/programming/*.elf filter=lfs diff=lfs merge=lfs -text
 hardware/procurement/assembly-quote-r2/programming/*.uf2 filter=lfs diff=lfs merge=lfs -text
 hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=lfs merge=lfs -text
+
+# Mark-6 review assets, exact paths only.
+"enclosure/mark-6/fit-prototype/slicing/harmony-mark6-a1-plates.zip" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/size-mockup/print/harmony-mark6-size-74x178x28.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/archive/2026-09-22-before-waveshare/harmony-mark6-rev-a-review.zip" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/output/harmony-mark6-rev-a-review.zip" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/output/mechanical/ANO_vendor_model.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/output/mechanical/Display_Waveshare_29318_vendor.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/output/mechanical/Feather_vendor_model_no_headers.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/output/mechanical/harmony-mark6-assembly-review.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/5400 ESP32 Feather V2.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/5740 ANO Rotary Encoder QT.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/Adafruit 3.5 inch 480x320 Capacitive Touch Display.brd" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/Adafruit ANO Rotary Encoder to I2C.brd" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/Adafruit ESP32 Feather V2.brd" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/datasheets/tps62160.pdf" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_3Dand2D.zip" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_3Dand2D/3.5inch Capacitive Touch LCD.dwg" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_3Dand2D/3.5inch_Capacitive_Touch_LCD.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_Demo_Pi.zip" filter=lfs diff=lfs merge=lfs -text

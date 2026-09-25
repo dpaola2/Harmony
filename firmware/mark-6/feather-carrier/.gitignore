@@ -1,0 +1,4 @@
+/build/
+/sdkconfig.old
+/build-log.txt
+__pycache__/

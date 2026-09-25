@@ -1,0 +1,430 @@
+{
+  "as_of": "2026-09-21",
+  "work_item": "HARMONY-17",
+  "device": {
+    "chip": "ESP32-D0WD-V3",
+    "revision": "3.1",
+    "base_mac": "5c:01:3b:89:24:04",
+    "bluetooth_mac": "5c:01:3b:89:24:06",
+    "flash_bytes": 4194304,
+    "port": "/dev/cu.usbserial-1120",
+    "spare": true
+  },
+  "receiver": {
+    "name": "SoundCore 2",
+    "address": "f4:2b:7d:5a:35:43"
+  },
+  "idf_commit": "8c750b088c7cd857d079c0eeb495da199b359461",
+  "upstream_example": "examples/bluetooth/bluedroid/classic_bt/a2dp_source",
+  "preflash": {
+    "path": "/Users/dave/Downloads/harmony-mark6-backups/spare-5c013b892404-before.bin",
+    "sha256": "cd3517473707d59c3d915b52a3e16213cadce80d9ffb2b4371958fb7acb51a08",
+    "blank": true
+  },
+  "tone": {
+    "frequency_hz": 500,
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "bits_per_sample": 16,
+    "peak_sample": 512,
+    "pattern": "1 second tone, 1 second silence",
+    "duration_seconds": 30
+  },
+  "verification": {
+    "build": "passed, no compiler warnings",
+    "flash": "passed, all written image hashes verified",
+    "pairing": "authenticated and connected",
+    "audio": "passed: Dave heard clear alternating beeps",
+    "album": "deferred until after Bluetooth test",
+    "transport_stop": "media suspended and A2DP disconnected automatically at approximately 51.3 seconds uptime",
+    "pcm_frames_at_stop": 1762048,
+    "minimum_free_heap_bytes": 156464,
+    "listener_report": "Yes, clear beeps",
+    "scope": "generated audio only; no MP3, SD or full album tested"
+  },
+  "sha256": {
+    "firmware/mark-6/bluetooth-tone/main/main.c": "9b8ce808cb4f99ef92fee82101349fa18762b798a925c722a78b2b9fd8db58ca",
+    "firmware/mark-6/bluetooth-tone/main/bt_app_core.c": "c8e3c0eafe656675fb6c69cf7dd3ab50abb791e03631c2f0000e5564a3cf0f08",
+    "firmware/mark-6/bluetooth-tone/main/bt_app_core.h": "1e628de103992d3f7df27d6b22ec450e5901d8c99d28fdcd94900ae7d1f3267e",
+    "firmware/mark-6/bluetooth-tone/build/a2dp_source.bin": "90753f490ed418da4cbb5fc38ba7c26a94eb5af8cf127f5ba11dadb732b734aa",
+    "firmware/mark-6/bluetooth-tone/build/bootloader/bootloader.bin": "1a3cf5abfe6cdb9d325872384b4806da514fa6e3a15bb5ff2e19702518240016",
+    "firmware/mark-6/bluetooth-tone/build/partition_table/partition-table.bin": "7f00b6c042a89b15b0cac534f82ed988caf29278ff5700b0c511eb1b5bb7c820",
+    "hardware/mark-6/tone-sdkconfig": "bb6d929f4c659ad68ea49a242a2c39968439ed02b2acc9d4e79d64d0dabc5427"
+  },
+  "sd_wiring_proposed": {
+    "module": "HW-125 Micro SD Card Adapter; identified from IMG_7664/7665, not Adafruit #254",
+    "photos": [
+      "/Users/dave/Downloads/IMG_7664.HEIC",
+      "/Users/dave/Downloads/IMG_7665.HEIC"
+    ],
+    "connections": {
+      "CS": "GPIO25",
+      "SCK": "GPIO18",
+      "MOSI": "GPIO23",
+      "MISO": "GPIO19",
+      "VCC": "WROVER V5 / +5V (USB powered)",
+      "GND": "WROVER GND"
+    },
+    "status": "Dave reports wired and card inserted; read-only full-file device test passed",
+    "mode": "SPI; dedicated bus initially",
+    "note": "Onboard regulator/logic buffer present; use 5V at VCC. Match printed labels, not physical pin numbers."
+  },
+  "sd_verification": {
+    "file": "/HARMONY/HIGHER.MP3",
+    "bytes": 5070386,
+    "sha256": "0fbc69ad617c28395ed4b6c62571ac63898a057309a872a73d4aad6a303ca6dd",
+    "seconds": 16.656,
+    "bytes_per_second": 304410,
+    "spi_hz": 4000000,
+    "result": "passed and unmounted",
+    "writes": "blocked at sdmmc_write_sectors link boundary"
+  },
+  "mp3_first_attempt": {
+    "build": "passed",
+    "flash": "hash verified",
+    "psram": "8 MiB detected; 4 MiB mapped; boot memory test passed",
+    "sd_init": "ESP_ERR_INVALID_CRC on CMD52 after reflash",
+    "audio": "not started; preparation failure left Bluetooth off",
+    "log": "/Users/dave/Downloads/harmony-mark6-backups/mp3-first-20260921.log",
+    "next": "power-cycle requested; cause not established",
+    "second_attempt": "Same CMD52 CRC failure observed after user power-cycle and opening serial monitor"
+  },
+  "mp3_reset_fix": {
+    "change": "Two CMD0 commands before normal card initialization, matching IDF go-idle sequence",
+    "result": "Mounted successfully after reflash; streaming started",
+    "scope": "Protocol reset only; sector writes still blocked",
+    "cause_assessment": "Consistent with card staying powered in SPI/CRC state across ESP32 reset; monitor opening can also reset MCU"
+  },
+  "mp3_host_verification": {
+    "asan_ubsan": "passed",
+    "samples": 27938304,
+    "seconds": 316.760816,
+    "peak": 32768,
+    "rms": 8082.27,
+    "invalid_file": "rejected",
+    "48000_hz_stereo_file": "rejected",
+    "core_tests": "30 passed"
+  },
+  "mp3_sha256": {
+    "firmware/mark-6/bluetooth-mp3/main/CMakeLists.txt": "d3ebf965672ddbb3f117e409a55ee3aaafbdae005fc6395183efcd3e6ca983bb",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.c": "279f1140e9aa3125b771c4288b7933a44da3884ebc044be8c592e2e5ce9180d6",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.h": "2abacd273e84c038c5b6bd28f154d5a1a2b9a93cffc5ed53a8092cb04bdefeeb",
+    "firmware/mark-6/bluetooth-mp3/main/main.c": "1783a25ae9156b6102f6dff0736e512a5821a7b4a234db37d21e031edf4d6ecd",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.h": "1e628de103992d3f7df27d6b22ec450e5901d8c99d28fdcd94900ae7d1f3267e",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.c": "67063ef0f5a0bbbf5bafb9fadb37d6942bb738507da5bc94bb96db3012e56f9d",
+    "firmware/mark-6/bluetooth-mp3/main/Kconfig.projbuild": "025edd25d8bccb31e2f7e9131869d0eb3d17c613b6f41c281e710c929cad938c",
+    "firmware/mark-6/components/bench_storage/CMakeLists.txt": "4df27b19b4cfc4b9452a3aa345f0388ea9d965f87cf6dd55a7e9fc8d82749523",
+    "firmware/mark-6/components/bench_storage/bench_storage.h": "96071d6a0005720a1927c92da00df53c5ab56dda4a50050d83b0234939c5114b",
+    "firmware/mark-6/components/bench_storage/bench_storage.c": "7fc74edf4745ddc8ff037a40fcb20f9a74aa3daa6430c34051a628021a8cfe44",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.h": "7d4a997c198b33ce8975b1669cdcbbcb9065816013eb9dbe3de12fdcdc9eba37",
+    "firmware/mark-6/components/bench_mp3/CMakeLists.txt": "db465a9352ad8c3f4ac6ff08df5584dc7f3806407526b62cc92cece224c29f83",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.c": "b8f835158ff65a2c640ae61bdc344d057c010746312f6ef1938d77bd6c7c27da",
+    "firmware/mark-6/components/minimp3/CMakeLists.txt": "08d9be0f2a4717519d972599800950cca854046138a799cc0046afd694b4e738",
+    "firmware/mark-6/components/minimp3/LICENSE": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+    "firmware/mark-6/components/minimp3/README.md": "ce8a219c5783d7b991070a7aca4c31f8dfcafc183925bf947b80b835ed36b45d",
+    "firmware/mark-6/components/minimp3/minimp3.h": "57e437c5c1f0e8b243885d3929c8973b5e6c778451e0100ab4251d19915cb3ad",
+    "firmware/mark-6/components/minimp3/decoder.c": "2e74d9d1488282ceae01c194c10eded4ff86798af65d6ae57f360240e96047ec",
+    "firmware/mark-6/components/minimp3/source-lock.json": "66a4d8403a526f7cd556498128ea576c9e3eb8d472efcd0781afe273a6f2e244",
+    "firmware/mark-6/bluetooth-mp3/sdkconfig.defaults": "88c71943126e470286c550e347e3b4fa89d9f86f68c667c51005569b64387a6d",
+    "firmware/mark-6/bluetooth-mp3/partitions.csv": "856d64dc7f307246235a5269e24299d5f6264c0fec08d5945a544d84dcfd70ba",
+    "firmware/mark-6/bluetooth-mp3/build/mark6_bluetooth_mp3.bin": "b7614e53e656f765952b0bfd1071b83622462075c7a96c7b247ff415217a0c61",
+    "firmware/mark-6/bluetooth-mp3/build/bootloader/bootloader.bin": "0a3a722fe16fdaacc732d26f2fe1a51534a1009934172c0f20a612c525f8a910",
+    "firmware/mark-6/bluetooth-mp3/build/partition_table/partition-table.bin": "73c0b5c3e5fcba3a151cc70c453c93dd5f4798899e7f2f8cca76da1f32ffc501"
+  },
+  "mp3_reset_run_sha256": {
+    "firmware/mark-6/bluetooth-mp3/main/CMakeLists.txt": "d3ebf965672ddbb3f117e409a55ee3aaafbdae005fc6395183efcd3e6ca983bb",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.c": "c8e3c0eafe656675fb6c69cf7dd3ab50abb791e03631c2f0000e5564a3cf0f08",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.h": "2abacd273e84c038c5b6bd28f154d5a1a2b9a93cffc5ed53a8092cb04bdefeeb",
+    "firmware/mark-6/bluetooth-mp3/main/main.c": "28f3ce86ef826b36dfa2264e9d675ade823b382700109db0bb0c7d6bfabad501",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.h": "1e628de103992d3f7df27d6b22ec450e5901d8c99d28fdcd94900ae7d1f3267e",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.c": "67063ef0f5a0bbbf5bafb9fadb37d6942bb738507da5bc94bb96db3012e56f9d",
+    "firmware/mark-6/bluetooth-mp3/main/Kconfig.projbuild": "025edd25d8bccb31e2f7e9131869d0eb3d17c613b6f41c281e710c929cad938c",
+    "firmware/mark-6/components/bench_storage/CMakeLists.txt": "4df27b19b4cfc4b9452a3aa345f0388ea9d965f87cf6dd55a7e9fc8d82749523",
+    "firmware/mark-6/components/bench_storage/bench_storage.h": "96071d6a0005720a1927c92da00df53c5ab56dda4a50050d83b0234939c5114b",
+    "firmware/mark-6/components/bench_storage/bench_storage.c": "7fc74edf4745ddc8ff037a40fcb20f9a74aa3daa6430c34051a628021a8cfe44",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.h": "7d4a997c198b33ce8975b1669cdcbbcb9065816013eb9dbe3de12fdcdc9eba37",
+    "firmware/mark-6/components/bench_mp3/CMakeLists.txt": "db465a9352ad8c3f4ac6ff08df5584dc7f3806407526b62cc92cece224c29f83",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.c": "b8f835158ff65a2c640ae61bdc344d057c010746312f6ef1938d77bd6c7c27da",
+    "firmware/mark-6/components/minimp3/CMakeLists.txt": "08d9be0f2a4717519d972599800950cca854046138a799cc0046afd694b4e738",
+    "firmware/mark-6/components/minimp3/LICENSE": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+    "firmware/mark-6/components/minimp3/README.md": "ce8a219c5783d7b991070a7aca4c31f8dfcafc183925bf947b80b835ed36b45d",
+    "firmware/mark-6/components/minimp3/minimp3.h": "57e437c5c1f0e8b243885d3929c8973b5e6c778451e0100ab4251d19915cb3ad",
+    "firmware/mark-6/components/minimp3/decoder.c": "2e74d9d1488282ceae01c194c10eded4ff86798af65d6ae57f360240e96047ec",
+    "firmware/mark-6/components/minimp3/source-lock.json": "66a4d8403a526f7cd556498128ea576c9e3eb8d472efcd0781afe273a6f2e244",
+    "firmware/mark-6/bluetooth-mp3/sdkconfig.defaults": "88c71943126e470286c550e347e3b4fa89d9f86f68c667c51005569b64387a6d",
+    "firmware/mark-6/bluetooth-mp3/partitions.csv": "856d64dc7f307246235a5269e24299d5f6264c0fec08d5945a544d84dcfd70ba",
+    "firmware/mark-6/bluetooth-mp3/build/mark6_bluetooth_mp3.bin": "68bb87f5129056eacb10468cbd364118929dadea7c1b854d1fdafb1623366904",
+    "firmware/mark-6/bluetooth-mp3/build/bootloader/bootloader.bin": "0a3a722fe16fdaacc732d26f2fe1a51534a1009934172c0f20a612c525f8a910",
+    "firmware/mark-6/bluetooth-mp3/build/partition_table/partition-table.bin": "73c0b5c3e5fcba3a151cc70c453c93dd5f4798899e7f2f8cca76da1f32ffc501"
+  },
+  "mp3_stack_fix": {
+    "failure": "Tmr Svc stack overflow at 262.401 seconds uptime; zero underruns through previous sample, full song incomplete",
+    "change": "Move diagnostics out of shared timer callback into Bluetooth application task; increase application stack from 3072 to 6144 bytes; log app and timer stack high-water marks",
+    "verification": "Complete single-song repeat passed; no reset or underrun; app minimum free stack 3956 bytes, timer 1292 bytes",
+    "listener_report_before_failure": "Yes, music sounds clean",
+    "failed_run_log": "mp3-reset-20260921.log",
+    "binary_backup_directory": "/Users/dave/Downloads/harmony-mark6-backups",
+    "binary_backups": {
+      "mp3-stack-bootloader.bin": "0a3a722fe16fdaacc732d26f2fe1a51534a1009934172c0f20a612c525f8a910",
+      "mp3-stack-app.bin": "b7614e53e656f765952b0bfd1071b83622462075c7a96c7b247ff415217a0c61",
+      "mp3-stack-partition-table.bin": "73c0b5c3e5fcba3a151cc70c453c93dd5f4798899e7f2f8cca76da1f32ffc501"
+    }
+  },
+  "mp3_verification": {
+    "result": "passed single-song device run",
+    "log": "mp3-stack-20260921.log",
+    "file": "/HARMONY/HIGHER.MP3",
+    "duration_seconds": 316.760816,
+    "produced_pcm_frames": 13969152,
+    "consumed_pcm_frames": 13969152,
+    "queued_at_end_bytes": 0,
+    "underrun_bytes": 0,
+    "max_read_decode_us": 88229,
+    "failed": false,
+    "resets_during_playback": 0,
+    "unmounted_uptime_ms": 328511,
+    "a2dp_disconnected_uptime_ms": 332481,
+    "minimum_free_heap_bytes_including_psram": 4118308,
+    "app_stack_min_free_bytes": 3956,
+    "timer_stack_min_free_bytes": 1292,
+    "listener_report": "Yes, music sounds clean",
+    "listener_report_scope": "User confirmed during first playback; repeat verified to completion by UART counters",
+    "album": "not run; deferred",
+    "controls_display": "not integrated in this firmware",
+    "log_sha256": "e88f21be78d3507e0dc5c0d79436683a924b9b99986070658f2a549b96ab8df5"
+  },
+  "display_wiring_proposed": {
+    "module": "Adafruit #4383 ST7789 1.14 inch 240x135",
+    "source": "Dave authorizes reuse of Mark-5 display and disassembly on 2026-09-21",
+    "gpio": {
+      "SCK": 14,
+      "MOSI": 13,
+      "TFTCS": 26,
+      "DC": 33,
+      "RST": 32
+    },
+    "power": {
+      "Vin": "WROVER V5/+5V",
+      "GND": "WROVER GND"
+    },
+    "local_jumpers": {
+      "LIT": "display 3V output",
+      "SDCS": "display 3V output"
+    },
+    "MISO": "unconnected",
+    "status": "Dave confirms RST now wired to GPIO32; other signal continuity previously reported good",
+    "reserved": {
+      "GPIO21": "future controls I2C SDA",
+      "GPIO22": "future controls I2C SCL"
+    },
+    "bus": "Software SPI on GPIO14/13; separate from SD hardware SPI3",
+    "references": [
+      "https://www.olimex.com/Products/IoT/ESP32/ESP32-DevKit-LiPo/resources/ESP32-WROVER-DevKit-Lipo-GPIOs.pdf",
+      "https://learn.adafruit.com/adafruit-1-14-240x135-color-tft-breakout/pinouts"
+    ]
+  },
+  "mp3_audio_only_sha256": {
+    "firmware/mark-6/bluetooth-mp3/main/CMakeLists.txt": "d3ebf965672ddbb3f117e409a55ee3aaafbdae005fc6395183efcd3e6ca983bb",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.c": "279f1140e9aa3125b771c4288b7933a44da3884ebc044be8c592e2e5ce9180d6",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.h": "2abacd273e84c038c5b6bd28f154d5a1a2b9a93cffc5ed53a8092cb04bdefeeb",
+    "firmware/mark-6/bluetooth-mp3/main/main.c": "1783a25ae9156b6102f6dff0736e512a5821a7b4a234db37d21e031edf4d6ecd",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.h": "1e628de103992d3f7df27d6b22ec450e5901d8c99d28fdcd94900ae7d1f3267e",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.c": "67063ef0f5a0bbbf5bafb9fadb37d6942bb738507da5bc94bb96db3012e56f9d",
+    "firmware/mark-6/bluetooth-mp3/main/Kconfig.projbuild": "025edd25d8bccb31e2f7e9131869d0eb3d17c613b6f41c281e710c929cad938c",
+    "firmware/mark-6/components/bench_storage/CMakeLists.txt": "4df27b19b4cfc4b9452a3aa345f0388ea9d965f87cf6dd55a7e9fc8d82749523",
+    "firmware/mark-6/components/bench_storage/bench_storage.h": "96071d6a0005720a1927c92da00df53c5ab56dda4a50050d83b0234939c5114b",
+    "firmware/mark-6/components/bench_storage/bench_storage.c": "7fc74edf4745ddc8ff037a40fcb20f9a74aa3daa6430c34051a628021a8cfe44",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.h": "7d4a997c198b33ce8975b1669cdcbbcb9065816013eb9dbe3de12fdcdc9eba37",
+    "firmware/mark-6/components/bench_mp3/CMakeLists.txt": "db465a9352ad8c3f4ac6ff08df5584dc7f3806407526b62cc92cece224c29f83",
+    "firmware/mark-6/components/bench_mp3/mp3_reader.c": "b8f835158ff65a2c640ae61bdc344d057c010746312f6ef1938d77bd6c7c27da",
+    "firmware/mark-6/components/minimp3/CMakeLists.txt": "08d9be0f2a4717519d972599800950cca854046138a799cc0046afd694b4e738",
+    "firmware/mark-6/components/minimp3/LICENSE": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+    "firmware/mark-6/components/minimp3/README.md": "ce8a219c5783d7b991070a7aca4c31f8dfcafc183925bf947b80b835ed36b45d",
+    "firmware/mark-6/components/minimp3/minimp3.h": "57e437c5c1f0e8b243885d3929c8973b5e6c778451e0100ab4251d19915cb3ad",
+    "firmware/mark-6/components/minimp3/decoder.c": "2e74d9d1488282ceae01c194c10eded4ff86798af65d6ae57f360240e96047ec",
+    "firmware/mark-6/components/minimp3/source-lock.json": "66a4d8403a526f7cd556498128ea576c9e3eb8d472efcd0781afe273a6f2e244",
+    "firmware/mark-6/bluetooth-mp3/sdkconfig.defaults": "88c71943126e470286c550e347e3b4fa89d9f86f68c667c51005569b64387a6d",
+    "firmware/mark-6/bluetooth-mp3/partitions.csv": "856d64dc7f307246235a5269e24299d5f6264c0fec08d5945a544d84dcfd70ba",
+    "firmware/mark-6/bluetooth-mp3/build/mark6_bluetooth_mp3.bin": "b7614e53e656f765952b0bfd1071b83622462075c7a96c7b247ff415217a0c61",
+    "firmware/mark-6/bluetooth-mp3/build/bootloader/bootloader.bin": "0a3a722fe16fdaacc732d26f2fe1a51534a1009934172c0f20a612c525f8a910",
+    "firmware/mark-6/bluetooth-mp3/build/partition_table/partition-table.bin": "73c0b5c3e5fcba3a151cc70c453c93dd5f4798899e7f2f8cca76da1f32ffc501"
+  },
+  "display_probe": {
+    "build": "passed, no compiler warnings",
+    "flash": "written hashes verified",
+    "driver": "native SPI2 at 250kHz, separate from SD SPI3",
+    "initialization": "pinned Mark-5 init sequence twice; landscape 1, BGR, column offset40/row offset53",
+    "uart": "DRAW_COMPLETE at 4.009 seconds uptime",
+    "visual_confirmation": "FAILED: Dave reports blank display and is unsure whether backlight/power is present",
+    "log": "display-probe-20260921.log",
+    "next_diagnostic": "Measure display LIT relative to display GND with USB connected; expected about 3.3V. Supply rails reported normal.",
+    "power_check": "Dave confirms Vin approximately 5V and regulator 3V approximately 3.3V; no exact readings supplied"
+  },
+  "display_probe_sha256": {
+    "firmware/mark-6/components/bench_display/LICENSE-st7789": "753fb979c31b6bc93ef513f705af993ae72857c5ea2d4b79ff6cc983c2d2de81",
+    "firmware/mark-6/components/bench_display/CMakeLists.txt": "7f4a0a217a2e2bac14f721391af8a8598f72f53e36ebb500550430b6f61e35d9",
+    "firmware/mark-6/components/bench_display/font8x16.h": "2cb990e52a058f12047af070526a3fccd687977c1f732fa85b00a5faf698cf9f",
+    "firmware/mark-6/components/bench_display/bench_display.h": "f47be0c2e2d030e5ce6db52ac975d34a700307bdb9aa33b8c47413f744969130",
+    "firmware/mark-6/components/bench_display/panel_init.h": "03def58570ae978c73b0c08e347dca48906c18ec459483b0a1160c4df49d4af0",
+    "firmware/mark-6/components/bench_display/source-lock.json": "4bed1314b0c9518aea98466e9c11831599417d21f8ab9e1c17fccfc77ba90ef3",
+    "firmware/mark-6/components/bench_display/bench_display.c": "75547084278525a8f1e8a7c423d355e36db5bfc744796f5d8a501bd24c0ce57d",
+    "firmware/mark-6/display-probe/main/CMakeLists.txt": "d53802cc64de44745886c74115a129042ca3e6851dfa975f04a06fd7df776ec2",
+    "firmware/mark-6/display-probe/main/main.c": "79c19f877292a990115efa7b92617ad7a16d1f874c3428046f7e85dea379b9f1",
+    "firmware/mark-6/display-probe/sdkconfig.defaults": "59918ab54694dbbba4409aabd1fb4bbf32459db63052d510b848c7b0d8448429",
+    "firmware/mark-6/display-probe/build/mark6_display_probe.bin": "ccd6159381e92d5206e5e0ec8cd20102c6f5b0da877c057e83c8415a3b83615a"
+  },
+  "display_white_probe": {
+    "build": "passed without compiler warnings",
+    "flash": "written hashes verified",
+    "transport": "software SPI, MSB first, mode0, 2us half-cycle delays",
+    "drawing": "all 240x320 controller RAM filled white; viewport offsets excluded",
+    "uart": "WHITE_FILL_COMPLETE at 10.707 seconds uptime",
+    "visual_confirmation": "FAILED: Dave reports still dark/blank",
+    "lit_rst_measurement": "pending",
+    "log": "display-white-20260921.log"
+  },
+  "display_white_sha256": {
+    "firmware/mark-6/components/bench_display/LICENSE-st7789": "753fb979c31b6bc93ef513f705af993ae72857c5ea2d4b79ff6cc983c2d2de81",
+    "firmware/mark-6/components/bench_display/CMakeLists.txt": "7f4a0a217a2e2bac14f721391af8a8598f72f53e36ebb500550430b6f61e35d9",
+    "firmware/mark-6/components/bench_display/font8x16.h": "2cb990e52a058f12047af070526a3fccd687977c1f732fa85b00a5faf698cf9f",
+    "firmware/mark-6/components/bench_display/Kconfig": "d13401908d03a999a7b23bf392df987267a1bd439f16e49e88d0438244839ed3",
+    "firmware/mark-6/components/bench_display/bench_display.h": "c5d30c15b7143191720ec18d8e84068713f37fcafecf50761814a2332e0673d7",
+    "firmware/mark-6/components/bench_display/panel_init.h": "03def58570ae978c73b0c08e347dca48906c18ec459483b0a1160c4df49d4af0",
+    "firmware/mark-6/components/bench_display/source-lock.json": "4bed1314b0c9518aea98466e9c11831599417d21f8ab9e1c17fccfc77ba90ef3",
+    "firmware/mark-6/components/bench_display/bench_display.c": "16582ba8d21a62e638000ca5987e5fc739793b58457954375da1bdae709ddf5b",
+    "firmware/mark-6/display-probe/main/CMakeLists.txt": "d53802cc64de44745886c74115a129042ca3e6851dfa975f04a06fd7df776ec2",
+    "firmware/mark-6/display-probe/main/main.c": "b5d35e2491a774b88bc41c985125cabc4bf1241de121160342945044b032d79d",
+    "firmware/mark-6/display-probe/sdkconfig.defaults": "bae121e392b91849746f723c55749de3290882f41c190c3f60d5c45712124b19",
+    "hardware/mark-6/display-white-sdkconfig": "25b60b403da53c71661746149b719d9433032799a42353914acef8c98a12730c",
+    "firmware/mark-6/display-probe/build/mark6_display_probe.bin": "c19881e261a5f94b5e78a8152976b73b8f756a6e76360a8c9f2439d5246fa2c2"
+  },
+  "display_mark5_replay": {
+    "reference": "hardware/mark-5/reference-scripts/display-isolation-20260919.py",
+    "change": "Recovered exact historical minimal hard/software-reset and panel initialization; CS held for all 153600 white bytes. Prior test used normal driver init and per-row CS. Native GPIO bit-banging and new CS/DC pin assignment remain platform differences.",
+    "build": "passed, no compiler warnings",
+    "flash": "hash verified",
+    "uart": "MARK5_REPLAY_WHITE_COMPLETE at 7.727 seconds uptime",
+    "visual_confirmation": "Earlier yes was ambiguous; repeat of identical saved binary confirmed LCD still dark. No verified Mark-6 white-screen pass.",
+    "log": "display-replay-20260921.log",
+    "cause_assessment": "Unresolved; prior recovery claim withdrawn after explicit repeated visual check",
+    "lit_rst_measurement": "Dave reports LIT about3V/backlight on and RST3.3V",
+    "clarification_pending": "Earlier yes was treated as LCD solid-white confirmation. After pattern stayed blank, asked whether yes meant LCD white or board power LED; do not treat the physical recovery as established until clarified."
+  },
+  "display_replay_sha256": {
+    "firmware/mark-6/components/bench_display/LICENSE-st7789": "753fb979c31b6bc93ef513f705af993ae72857c5ea2d4b79ff6cc983c2d2de81",
+    "firmware/mark-6/components/bench_display/CMakeLists.txt": "7f4a0a217a2e2bac14f721391af8a8598f72f53e36ebb500550430b6f61e35d9",
+    "firmware/mark-6/components/bench_display/font8x16.h": "2cb990e52a058f12047af070526a3fccd687977c1f732fa85b00a5faf698cf9f",
+    "firmware/mark-6/components/bench_display/Kconfig": "d13401908d03a999a7b23bf392df987267a1bd439f16e49e88d0438244839ed3",
+    "firmware/mark-6/components/bench_display/bench_display.h": "c5d30c15b7143191720ec18d8e84068713f37fcafecf50761814a2332e0673d7",
+    "firmware/mark-6/components/bench_display/panel_init.h": "03def58570ae978c73b0c08e347dca48906c18ec459483b0a1160c4df49d4af0",
+    "firmware/mark-6/components/bench_display/source-lock.json": "4bed1314b0c9518aea98466e9c11831599417d21f8ab9e1c17fccfc77ba90ef3",
+    "firmware/mark-6/components/bench_display/bench_display.c": "e26105ee1b8b651c1cb8aa908268292c85365caaf84966ecb454013e89967b1e",
+    "firmware/mark-6/display-probe/main/CMakeLists.txt": "d53802cc64de44745886c74115a129042ca3e6851dfa975f04a06fd7df776ec2",
+    "firmware/mark-6/display-probe/main/main.c": "21b4cbc4bece87b5321f3dd93c470eb34cfb1af8f8cdc96b81eaa28c8604550c",
+    "firmware/mark-6/display-probe/sdkconfig.defaults": "bae121e392b91849746f723c55749de3290882f41c190c3f60d5c45712124b19",
+    "hardware/mark-6/display-replay-sdkconfig": "25b60b403da53c71661746149b719d9433032799a42353914acef8c98a12730c",
+    "firmware/mark-6/display-probe/build/mark6_display_probe.bin": "5f24f828f4d308b02abf711165023e5ccfa38eb7ad68efba789dddd161bfe997"
+  },
+  "display_pattern": {
+    "status": "FAILED visual check: Dave sees board powered but screen still blank",
+    "transport": "software SPI, minimal hard/software reset, CS held through each rectangle",
+    "geometry": "240x135 landscape, BGR, offset40/53",
+    "uart": "DRAW_COMPLETE at 5.328 seconds uptime",
+    "log": "display-pattern-20260921.log"
+  },
+  "display_integrated_sha256": {
+    "firmware/mark-6/components/bench_display/LICENSE-st7789": "753fb979c31b6bc93ef513f705af993ae72857c5ea2d4b79ff6cc983c2d2de81",
+    "firmware/mark-6/components/bench_display/CMakeLists.txt": "7f4a0a217a2e2bac14f721391af8a8598f72f53e36ebb500550430b6f61e35d9",
+    "firmware/mark-6/components/bench_display/font8x16.h": "2cb990e52a058f12047af070526a3fccd687977c1f732fa85b00a5faf698cf9f",
+    "firmware/mark-6/components/bench_display/Kconfig": "d13401908d03a999a7b23bf392df987267a1bd439f16e49e88d0438244839ed3",
+    "firmware/mark-6/components/bench_display/bench_display.h": "c5d30c15b7143191720ec18d8e84068713f37fcafecf50761814a2332e0673d7",
+    "firmware/mark-6/components/bench_display/panel_init.h": "03def58570ae978c73b0c08e347dca48906c18ec459483b0a1160c4df49d4af0",
+    "firmware/mark-6/components/bench_display/source-lock.json": "4bed1314b0c9518aea98466e9c11831599417d21f8ab9e1c17fccfc77ba90ef3",
+    "firmware/mark-6/components/bench_display/bench_display.c": "ed1c32195338e7d53d4b47b4a0c418400613f57724cfd42a518008b6d4336695",
+    "firmware/mark-6/bluetooth-mp3/main/CMakeLists.txt": "932b816a8ae4aa754c923b8111ad0c4a2c3b8907f910f1950692f8b45a2b36d3",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.c": "279f1140e9aa3125b771c4288b7933a44da3884ebc044be8c592e2e5ce9180d6",
+    "firmware/mark-6/bluetooth-mp3/main/player_display.c": "9330660b8881610024f8be479091f11967ee13a54c944ab3db2d878a55074f65",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.h": "ed871faffc8f201cdfcd184262d2414f7b7992cd96a43b25f1e1f8976376b01c",
+    "firmware/mark-6/bluetooth-mp3/main/main.c": "6273a8c7a47f2b5b47c062131128f3a669ed4f276757fd6d1ad7cb6cda53996e",
+    "firmware/mark-6/bluetooth-mp3/main/bt_app_core.h": "1e628de103992d3f7df27d6b22ec450e5901d8c99d28fdcd94900ae7d1f3267e",
+    "firmware/mark-6/bluetooth-mp3/main/player_display.h": "a35fad766a6296786a80eeef13c8159b1ecef730021f1cb17a5b0b57e8c074b4",
+    "firmware/mark-6/bluetooth-mp3/main/audio_player.c": "3ef0e4a7583e2aaad5506f2ecc18f8502808cd5290d646e9859ac94a2b1d94ab",
+    "firmware/mark-6/bluetooth-mp3/main/Kconfig.projbuild": "025edd25d8bccb31e2f7e9131869d0eb3d17c613b6f41c281e710c929cad938c",
+    "firmware/mark-6/bluetooth-mp3/sdkconfig.defaults": "e1a27e1dc2f6fde5f676155154dcb1ea04f415dc31aa6a680ffa3b7a7d5a5df9",
+    "firmware/mark-6/bluetooth-mp3/build/mark6_bluetooth_mp3.bin": "96bf3878eabee3504b0d94e36d87ca1977a24a26d01f4b774fbdfed5aa94522a",
+    "hardware/mark-6/display-integrated-sdkconfig": "566be602af6d85c301454e645311bed1605f47a0a0accffbd6157eb22b924708"
+  },
+  "display_white_repeat": {
+    "reason": "Dave is multitasking and requested repeating the white test",
+    "image": "Saved display-replay-app.bin, checksum verified against original replay evidence",
+    "flash": "written hash verified",
+    "uart": "MARK5_REPLAY_WHITE_COMPLETE at 7.727 seconds uptime",
+    "visual_confirmation": "FAILED: Dave confirms LCD still dark after repeat held static",
+    "instruction": "Leave this static white test installed until Dave has checked; do not advance automatically",
+    "log": "display-white-repeat-20260921.log"
+  },
+  "display_electrical_checks": {
+    "Vin": "Dave confirms about 5V",
+    "regulator_3V": "Dave confirms about 3.3V",
+    "LIT": "Dave reports about 3V and confirms backlight on",
+    "RST": "Dave reports 3.3V",
+    "visual": "backlit but blank, including repeated minimal-init full-white software-SPI test",
+    "next": "Power off; check/reseat or replace direct WROVER GPIO27-to-display RST jumper; reconnect and repeat RST-to-GND measurement with reset-low diagnostic still installed",
+    "signal_continuity": "Dave confirms all four power-off pairs beep: TFTCS26, DC33, SCK14, MOSI13"
+  },
+  "display_signal_probe": {
+    "build": "passed without compiler warnings",
+    "flash": "written hash verified",
+    "current_phase": "r: RST27 LOW; CS26/DC33/SCK14/MOSI13 HIGH, held until explicit command or reset",
+    "pad_readback": {
+      "RST27": 0,
+      "CS26": 1,
+      "DC33": 1,
+      "SCK14": 1,
+      "MOSI13": 1
+    },
+    "output_mismatch": false,
+    "display_rst_measurement": "Dave measures 3.3V at display RST-to-GND while firmware pad readback says GPIO27=0",
+    "log": "display-signal-20260921.log",
+    "app_sha256": "2e0e7327f9396ba8f485c7d508b347469b0c3fb5bf160d9f4fca6eded51e6294",
+    "finding": "Reset voltage at measured display pin does not follow the driven WROVER pad. Physical RST27 path/measurement point needs correction; exact defect not established."
+  },
+  "display_reset_pin_change": {
+    "requested_by": "Dave",
+    "from_gpio": 27,
+    "to_gpio": 32,
+    "reason": "Requested alternate pin after display RST remained3.3V despite GPIO27 pad reading0 and jumper replacement",
+    "old_pin_recheck": "Fresh UART phase-r check again reads GPIO27=0",
+    "status": "Dave confirms reset wire moved to GPIO32 and USB reconnected; new diagnostic flashed with hash verified",
+    "qualification": "GPIO32 free in current wiring; internal RC RTC clock configured; does not establish GPIO27 is defective"
+  },
+  "display_signal32_probe": {
+    "current_phase": "r: RST32 LOW, CS26/DC33/SCK14/MOSI13 HIGH",
+    "pad_readback": {
+      "RST32": 0,
+      "CS26": 1,
+      "DC33": 1,
+      "SCK14": 1,
+      "MOSI13": 1
+    },
+    "output_mismatch": false,
+    "display_rst_measurement": "Dave reported3.3V at display RST while GPIO32 read0 on previous breadboard",
+    "log": "display-signal32-20260921.log",
+    "app_sha256": "c060bd25fbe56102d8aee694c7d4dd6c6895effe41d36ae13240f6c53a96ad10"
+  },
+  "display_new_breadboard": {
+    "user_report": "Changed breadboard and requested repeat test",
+    "status": "Cannot run host check yet: no USB serial device enumerated",
+    "installed_diagnostic": "GPIO32 reset-low diagnostic remains flashed; do not infer electrical result on new breadboard"
+  },
+  "hardware_smoke_incident": {
+    "reported_by": "Dave",
+    "date": "2026-09-21",
+    "report": "Smoke coming from the ESP32; will replace board with spare",
+    "affected_board_recorded_base_mac": "5c:01:3b:89:24:04",
+    "exact_component_and_cause": "unknown; not established as GPIO damage or a particular jumper fault",
+    "state": "Stop powered testing of affected board; disconnect USB/battery; replacement identity unverified",
+    "next": "Verify bare replacement model/MAC before firmware; inspect power wiring and breadboard shorts; bring peripherals up separately",
+    "firmware_note": "Current bench firmware MAC guards still target old board. Do not remove guard or flash replacement until identified and any existing contents preserved."
+  }
+}

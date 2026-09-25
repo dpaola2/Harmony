@@ -1,0 +1,144 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (29) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (29) boot: compile time Sep 21 2026 06:31:16
+I (29) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (37) boot.esp32: SPI Mode       : DIO
+I (41) boot.esp32: SPI Flash Size : 4MB
+I (44) boot: Enabling RNG early entropy source...
+I (49) boot: Partition Table:
+I (51) boot: ## Label            Usage          Type ST Offset   Length
+I (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (71) boot:  2 factory          factory app      00 00 00010000 00100000
+I (77) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2920ch (168460) map
+I (146) esp_image: segment 1: paddr=00039234 vaddr=3ff80000 size=00020h (    32) load
+I (146) esp_image: segment 2: paddr=0003925c vaddr=3ffbdb60 size=04874h ( 18548) load
+I (157) esp_image: segment 3: paddr=0003dad8 vaddr=40080000 size=02540h (  9536) load
+I (161) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=a93e8h (693224) map
+I (401) esp_image: segment 5: paddr=000e9410 vaddr=40082540 size=14f98h ( 85912) load
+I (447) boot: Loaded app from partition at offset 0x10000
+I (447) boot: Disabling RNG early entropy source...
+I (457) cpu_start: Multicore app
+I (466) cpu_start: Pro cpu start user code
+I (466) cpu_start: cpu freq: 160000000 Hz
+I (466) app_init: Application information:
+I (466) app_init: Project name:     a2dp_source
+I (470) app_init: App version:      8ad9094
+I (474) app_init: Compile time:     Sep 21 2026 06:31:00
+I (479) app_init: ELF file SHA256:  49b682c3a...
+I (483) app_init: ESP-IDF:          8c750b08
+I (487) efuse_init: Min chip rev:     v0.0
+I (491) efuse_init: Max chip rev:     v3.99 
+I (495) efuse_init: Chip rev:         v3.1
+I (499) heap_init: Initializing. RAM available for dynamic allocation:
+I (505) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (510) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (515) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (521) heap_init: At 3FFCCB20 len 000134E0 (77 KiB): DRAM
+I (526) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (537) heap_init: At 400974D8 len 00008B28 (34 KiB): IRAM
+I (544) spi_flash: detected chip: generic
+I (546) spi_flash: flash io: dio
+I (550) coexist: coex firmware version: 831ec70
+I (554) main_task: Started on CPU0
+I (564) main_task: Calling app_main()
+I (574) BT_AV: MARK6_TONE_TEST target=SoundCore 2 duration=30s peak=-36dBFS
+I (584) BTDM_INIT: BT controller compile version [b992c7d]
+I (584) BTDM_INIT: Bluetooth MAC: 5c:01:3b:89:24:06
+I (594) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+I (1244) BT_AV: Own address:[5c:01:3b:89:24:06]
+W (1254) BT_BTC: A2DP Enable with AVRC
+W (1254) BT_AVRC: For AVRCP Target Cateory 1 and 3, SDP record shall contain additional protocol list
+I (1264) BT_AV: Starting device discovery...
+I (1274) BT_AV: bt_app_av_sm_hdlr state: 1, event: 0x4
+I (1274) BT_AV: event: 10
+I (1274) BT_AV: event: 10
+I (1284) BT_AV: event: 10
+I (1284) BT_AV: ESP_BT_GAP_GET_DEV_NAME_CMPL_EVT device name: Harmony Mark-6
+I (1284) main_task: Returned from app_main()
+I (1284) BT_AV: Discovery started.
+I (5624) BT_AV: Scanned device: f4:2b:7d:5a:35:43
+I (5624) BT_AV: --Class of Device: 0x240404
+I (5624) BT_AV: --RSSI: -48
+I (5624) BT_AV: --Name: SoundCore 2
+I (5624) BT_AV: Found a target device, address f4:2b:7d:5a:35:43, name SoundCore 2
+I (5634) BT_AV: Cancel device discovery ...
+I (5644) BT_AV: Device discovery stopped.
+I (5644) BT_AV: a2dp connecting to peer: SoundCore 2
+W (5644) BT_APPL: reset flags
+I (5654) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x0
+W (6294) BT_HCI: hcif conn complete: hdl 0x80, st 0x0
+I (6304) BT_AV: event: 16
+I (7174) BT_AV: authentication success: SoundCore 2
+I (7174) BT_AV: f4 2b 7d 5a 35 43
+I (7174) BT_AV: event: 21
+I (7234) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x2
+W (7264) BT_APPL: new conn_srvc id:18, app_id:0
+I (7274) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x0
+I (7274) BT_AV: a2dp connected
+I (7344) RC_CT: AVRC conn_state event: state 1, [f4:2b:7d:5a:35:43]
+I (7344) RC_CT: AVRC remote features 24b, TG features 2
+I (7354) RC_CT: remote rn_cap: count 2, bitmask 0x2040
+I (11264) BT_AV: BENCH frames=0 heap=165272 min_heap=157948
+I (11264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (11264) BT_AV: a2dp media ready checking ...
+I (11264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x3
+I (11264) BT_AV: a2dp media ready, starting ...
+W (11274) BT_APPL: new conn_srvc id:18, app_id:1
+I (11284) BT_LOG: bta_av_link_role_ok hndl:x41 role:0 conn_audio:x1 bits:1 features:x864b
+
+I (11294) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x3
+I (11294) BT_AV: a2dp media start successfully.
+I (11294) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x1
+I (12304) RC_CT: AVRC event notification: 13
+I (12304) RC_CT: Volume changed: 33
+I (12394) RC_CT: AVRC event notification: 13
+I (12394) RC_CT: Volume changed: 32
+I (21264) BT_AV: BENCH frames=439168 heap=165236 min_heap=156464
+I (21264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (31264) BT_AV: BENCH frames=879616 heap=165216 min_heap=156464
+I (31264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (41264) BT_AV: BENCH frames=1320192 heap=165236 min_heap=156464
+I (41264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (51264) BT_AV: BENCH frames=1762048 heap=165236 min_heap=156464
+I (51264) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (51264) BT_AV: TONE_TEST_FINISHED frames=1762048
+I (51264) BT_AV: a2dp media suspending...
+I (51284) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x3
+I (51284) BT_AV: a2dp media suspend successfully, disconnecting...
+I (51284) BT_AV: bt_app_av_sm_hdlr state: 6, event: 0x1
+W (51284) BT_APPL: Media task Scheduled after Suspend
+I (51294) BT_AV: bt_app_av_sm_hdlr state: 6, event: 0x0
+W (51324) BT_HCI: hci cmd send: sniff: hdl 0x80, intv(400 800)
+I (51324) RC_CT: AVRC conn_state event: state 0, [00:00:00:00:00:00]
+I (51324) BT_AV: bt_app_av_sm_hdlr state: 6, event: 0x0
+W (51334) BT_HCI: hcif mode change: hdl 0x80, mode 2, intv 800, status 0x0
+I (51334) BT_AV: a2dp disconnected
+I (51344) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 2
+W (55324) BT_HCI: hci cmd send: disconnect: hdl 0x80, rsn:0x13
+W (55654) BT_HCI: hcif mode change: hdl 0x80, mode 0, intv 0, status 0x0
+I (55654) BT_AV: ESP_BT_GAP_MODE_CHG_EVT mode: 0
+W (55724) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x16 dev_find 1
+I (55724) BT_AV: event: 17
+I (61264) BT_AV: BENCH frames=1762048 heap=171304 min_heap=156464
+I (61264) BT_AV: bt_app_av_sm_hdlr state: 3, event: 0xff00
+I (71264) BT_AV: BENCH frames=1762048 heap=171304 min_heap=156464
+I (71264) BT_AV: bt_app_av_sm_hdlr state: 3, event: 0xff00
+I (81264) BT_AV: BENCH frames=1762048 heap=171304 min_heap=156464
+I (81264) BT_AV: bt_app_av_sm_hdlr state: 3, event: 0xff00
+I (91264) BT_AV: BENCH frames=1762048 heap=171304 min_heap=156464
+I (91264) BT_AV: bt_app_av_sm_hdlr state: 3, event: 0xff00

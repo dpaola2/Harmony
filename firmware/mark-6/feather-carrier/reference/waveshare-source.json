@@ -1,0 +1,161 @@
+{
+  "source": "https://files.waveshare.com/wiki/3.5inch%20Capacitive%20Touch%20LCD/3.5inch_Capacitive_Touch_LCD_Demo_Pi.zip",
+  "file": "waveshare-st7796.c",
+  "sha256": "1359b531970d4f6126a51ee9b2e199cbfdb5dd302fade0611eee987e8232a6de",
+  "init_steps": [
+    {
+      "cmd": 17,
+      "data": [],
+      "delay_ms": 120
+    },
+    {
+      "cmd": 54,
+      "data": [
+        8
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 58,
+      "data": [
+        5
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 240,
+      "data": [
+        195
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 240,
+      "data": [
+        150
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 180,
+      "data": [
+        1
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 183,
+      "data": [
+        198
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 192,
+      "data": [
+        128,
+        69
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 193,
+      "data": [
+        19
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 194,
+      "data": [
+        167
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 197,
+      "data": [
+        10
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 232,
+      "data": [
+        64,
+        138,
+        0,
+        0,
+        41,
+        25,
+        165,
+        51
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 224,
+      "data": [
+        208,
+        8,
+        15,
+        6,
+        6,
+        51,
+        48,
+        51,
+        71,
+        23,
+        19,
+        19,
+        43,
+        49
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 225,
+      "data": [
+        208,
+        10,
+        17,
+        11,
+        9,
+        7,
+        47,
+        51,
+        71,
+        56,
+        21,
+        22,
+        44,
+        50
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 240,
+      "data": [
+        60
+      ],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 240,
+      "data": [
+        105
+      ],
+      "delay_ms": 120
+    },
+    {
+      "cmd": 33,
+      "data": [],
+      "delay_ms": 0
+    },
+    {
+      "cmd": 41,
+      "data": [],
+      "delay_ms": 0
+    }
+  ]
+}

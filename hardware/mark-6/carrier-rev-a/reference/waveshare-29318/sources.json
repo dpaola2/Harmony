@@ -1,0 +1,21 @@
+{
+  "retrieved": "2026-09-22",
+  "sku": "29318",
+  "files": [
+    {
+      "file": "3.5inch_Capacitive_Touch_LCD_Schematic.pdf",
+      "url": "https://files.waveshare.com/wiki/3.5inch%20Capacitive%20Touch%20LCD/3.5inch_Capacitive_Touch_LCD_Schematic.pdf",
+      "sha256": "4542aad10d6b9c6645aff881c07c85476fe222c2602fb80a324edb8fa05a5f7b"
+    },
+    {
+      "file": "3.5inch_Capacitive_Touch_LCD_3Dand2D.zip",
+      "url": "https://files.waveshare.com/wiki/3.5inch%20Capacitive%20Touch%20LCD/3.5inch_Capacitive_Touch_LCD_3Dand2D.zip",
+      "sha256": "6dd570fccfbb62147a2f916e8048b55484a74036810a1f85e8704cdbc1f4f8b1"
+    },
+    {
+      "file": "3.5inch_Capacitive_Touch_LCD_Demo_Pi.zip",
+      "url": "https://files.waveshare.com/wiki/3.5inch%20Capacitive%20Touch%20LCD/3.5inch_Capacitive_Touch_LCD_Demo_Pi.zip",
+      "sha256": "d55a06e7c8ff1f5d302b84f5089f2f87b89712b2850d7a015285225b994e93cd"
+    }
+  ]
+}

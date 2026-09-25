@@ -1,0 +1,89 @@
+#include <assert.h>
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
+#include "mock_idf.h"
+#include "carrier_board.h"
+#include "bench_display.h"
+
+static bool powered, inject_error;
+static unsigned transactions, pixel_bytes, bus_count;
+static uint8_t current_command, column[4], row[4], last_pixel[2];
+static uint8_t commands[64], format, orientation;
+static unsigned command_count, delayed_ms;
+static int levels[40];
+bool carrier_board_ready(void) { return powered; }
+esp_err_t gpio_set_level(int pin, int level)
+{
+    if (pin == CARRIER_TFT_LITE && level) assert(pixel_bytes == 320 * 480 * 2);
+    levels[pin] = level;
+    return ESP_OK;
+}
+void vTaskDelay(unsigned ticks) { delayed_ms += ticks; }
+esp_err_t spi_bus_initialize(int host, const spi_bus_config_t *cfg, int dma)
+{
+    assert(host == SPI2_HOST && cfg->mosi_io_num == 27 && cfg->sclk_io_num == 14);
+    assert(cfg->miso_io_num == -1); ++bus_count; return ESP_OK;
+}
+esp_err_t spi_bus_add_device(int host, const spi_device_interface_config_t *cfg, spi_device_handle_t *out)
+{
+    assert(host == SPI2_HOST && cfg->clock_speed_hz == 4000000 && cfg->spics_io_num == -1);
+    *out = (void *)1; return ESP_OK;
+}
+esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t)
+{
+    assert(powered && !levels[CARRIER_TFT_CS] && t->length % 8 == 0);
+    ++transactions;
+    if (inject_error) return ESP_ERR_TIMEOUT;
+    const uint8_t *b = t->tx_buffer;
+    size_t n = t->length / 8;
+    if (!levels[CARRIER_TFT_DC]) {
+        assert(n == 1); current_command = *b;
+        if (command_count < sizeof(commands)) commands[command_count] = *b;
+        ++command_count;
+    }
+    else if (current_command == 0x3a) { assert(n == 1); format = *b; }
+    else if (current_command == 0x36) { assert(n == 1); orientation = *b; }
+    else if (current_command == 0x2a) { assert(n == 4); memcpy(column, b, 4); }
+    else if (current_command == 0x2b) { assert(n == 4); memcpy(row, b, 4); }
+    else if (current_command == 0x2c) {
+        assert(n <= 640 && n % 2 == 0);
+        pixel_bytes += n;
+        if (n >= 2) memcpy(last_pixel, b + n - 2, 2);
+    }
+    return ESP_OK;
+}
+int main(void)
+{
+    assert(bench_display_init() == ESP_ERR_INVALID_STATE && bus_count == 0);
+    powered = true;
+    assert(bench_display_init() == ESP_OK && bus_count == 1);
+    const uint8_t expected[] = {0x11,0x36,0x3a,0xf0,0xf0,0xb4,0xb7,0xc0,0xc1,
+        0xc2,0xc5,0xe8,0xe0,0xe1,0xf0,0xf0,0x21,0x29,0x2a,0x2b,0x2c};
+    assert(command_count == sizeof(expected) && !memcmp(commands, expected, sizeof(expected)));
+    assert(format == 0x05 && orientation == 0x08 && delayed_ms == 540);
+    assert(pixel_bytes == 307200 && levels[CARRIER_TFT_LITE]);
+    assert(!memcmp(column, (uint8_t[]){0,0,1,63}, 4));
+    assert(!memcmp(row, (uint8_t[]){0,0,1,223}, 4));
+    unsigned before = transactions;
+    assert(bench_display_fill(-1, 0, 1, 1, 0) == ESP_ERR_INVALID_ARG);
+    assert(bench_display_fill(319, 479, 2, 1, 0) == ESP_ERR_INVALID_ARG);
+    assert(bench_display_fill(0, 0, INT_MAX, 1, 0) == ESP_ERR_INVALID_ARG);
+    assert(bench_display_text(0, 465, "bad", 0, 0) == ESP_ERR_INVALID_ARG);
+    assert(transactions == before);
+    assert(bench_display_fill(319, 479, 1, 1, 0xf800) == ESP_OK);
+    assert(!memcmp(column, (uint8_t[]){1,63,1,63}, 4));
+    assert(!memcmp(row, (uint8_t[]){1,223,1,223}, 4));
+    assert(last_pixel[0] == 0xf8 && last_pixel[1] == 0x00);
+    unsigned pixels_before = pixel_bytes;
+    assert(bench_display_text(312, 464, "clipped", 0xffff, 0) == ESP_OK);
+    assert(pixel_bytes - pixels_before == 8 * 16 * 2);
+    assert(bench_display_probe() == ESP_OK);
+    inject_error = true;
+    assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_TIMEOUT);
+    assert(levels[CARRIER_TFT_CS] == 1);
+    before = transactions; powered = false;
+    assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_INVALID_STATE);
+    assert(transactions == before && levels[CARRIER_TFT_CS] == 1);
+    puts("PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling");
+}

@@ -1,0 +1,76 @@
+{
+    "error_string": "Success.",
+    "export_time": 654,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 41,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 612.2870483398438,
+                "Custom": 367.7119140625,
+                "Flush": 25.0,
+                "Gap infill": 38.57326126098633,
+                "Inner wall": 706.4500122070313,
+                "Internal solid infill": 1460.60009765625,
+                "Outer wall": 826.4652099609375,
+                "Overhang wall": 1.5744004249572754,
+                "Top surface": 485.3755187988281,
+                "Travel": 528.6746826171875,
+                "Undefined": 511.3826904296875
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 64.73648071289063,
+                    "total_used_g": 64.73648071289063
+                }
+            ],
+            "generate_support_material_time": 52,
+            "id": 1,
+            "infill_time": 116,
+            "layer_filament_change": 0,
+            "main_predication": 4634.6689453125,
+            "make_perimeters_time": 210,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 26.399999618530273,
+                        "width": 74.00000762939453,
+                        "x": 128.99998474121094,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 38,
+                    "name": "harmony-mark6-tray.stl",
+                    "triangle_count": 5120
+                },
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 4.599999904632568,
+                        "width": 74.0,
+                        "x": 53.000030517578125,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 49,
+                    "name": "harmony-mark6-front.stl",
+                    "triangle_count": 2156
+                }
+            ],
+            "sliced_time": 737,
+            "sliced_time_with_cache": 282,
+            "total_predication": 5035.0888671875,
+            "triangle_count": 7276,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

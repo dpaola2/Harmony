@@ -1,0 +1,33 @@
+{
+  "status": "Mesh-verified solid size dummy. No functional electronics cavity or physical fit pass.",
+  "dimensions_mm": [
+    74.0,
+    178.0,
+    28.0
+  ],
+  "bottom_z_mm": 0.0,
+  "solid_valid": true,
+  "watertight": true,
+  "winding_consistent": true,
+  "connected_bodies": 1,
+  "fits_256mm_build_volume": true,
+  "three_mf_round_trip": true,
+  "volume_mm3": 365214.575,
+  "screen_recess_mm": 0.7,
+  "wheel_recess_mm": 0.7,
+  "placement_revision": "B",
+  "limitations": [
+    "No Z-stack collision check; 28 mm depth unverified",
+    "No functional apertures, fasteners or mounting bosses",
+    "QT plug and ribbon bend volumes still unmodeled",
+    "Carrier RF cutout and socket land review remain",
+    "ANO direction mapping needs 90-degree firmware remap",
+    "Battery reserve is not a qualified swelling allowance; USB first"
+  ],
+  "hashes": {
+    "print/harmony-mark6-size-74x178x28.stl": "1dae37ea24e4bd03e0957d9554efb6b661da964833a49c1d5c8cb71f8344d3e4",
+    "print/harmony-mark6-size-74x178x28.3mf": "573a28a5d5c2815cc4e9f33469998fcd49fbe9172b22a77b21c13a0fc3f74fc7",
+    "cad/harmony-mark6-size.step": "3a48f17585c6b05f9c67158c66c124d27cea8eb7a3fe486a808dd26b0745ab06"
+  },
+  "mechanical_source_sha256": "8e37388beb910a3704a1ee8a37dc153de13dffe276b7505733835aab5a0deeee"
+}

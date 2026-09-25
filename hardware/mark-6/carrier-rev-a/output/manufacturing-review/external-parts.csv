@@ -1,0 +1,7 @@
+Quantity,Part,Source,Note
+1,Adafruit 5900 factory-headered ESP32 Feather V2,https://www.adafruit.com/product/5900,Classic Bluetooth required; cart quantity four is separate from per-device BOM
+1,Waveshare 29318 3.5-inch ST7796S IPS display,https://www.pishop.us/product/3-5inch-capacitive-touch-display-320-480-ips-2tpd/,Ordered by customer; shipment reported; physical fit and cable checks remain
+1,Adafruit 6310 assembled ANO controls,https://www.adafruit.com/product/6310,Customer order shipped Sept 21; use upper QT connector
+1,Adafruit 5239 EYESPI 100mm cable,https://www.adafruit.com/product/5239,Optional if included Waveshare FPC fails length/contact/pin-mapping checks
+1,Adafruit 4399 QT-to-QT 50mm cable,https://www.adafruit.com/product/4399,"50mm preferred; customer 4210 100mm QT-to-QT shipped, case slack unverified"
+4,12mm M2.5 insulating spacers,Printed parts received by customer,Final screw lengths depend on physical fit

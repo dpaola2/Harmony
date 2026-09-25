@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-21",
+  "visual_review": {
+    "design-review.pdf": "All 3 rendered pages checked; first-page overlap corrected; board legend contrast improved",
+    "schematic-draft.pdf": "Rendered A2 page checked; test points moved inside sheet bounds"
+  },
+  "package": "34 files; all SHA256 entries and ZIP CRCs verified",
+  "assembly": "36 BOM items and 36 placement rows; five test points excluded from purchase BOM",
+  "writing_review": "Detector scores 1-3. Retained actual source list and technical use of PCB features; no generic prose patterns requiring revision.",
+  "pdf_sha256": {
+    "design-review.pdf": "42c02f9598a6f3b22239b11c23f836f412c3eb605978d66a8e9ebf2eb945b5aa",
+    "schematic-draft.pdf": "eefdda043afda1fe73e24cef6d459ddfcf0f1b632eb86115a03b2d0c702133f8"
+  }
+}

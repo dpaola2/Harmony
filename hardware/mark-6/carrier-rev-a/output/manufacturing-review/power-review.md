@@ -1,0 +1,26 @@
+# Mark-6 power review
+
+Revision A review, September 21, 2026. USB only. These calculations establish a design budget; they are not measurements from an assembled carrier.
+
+The Feather USB pin feeds F1 and the TPS62162 peripheral regulator. The Feather's own 3.3 V output enables the regulator and pulls up its power-good output. The two 3.3 V outputs are never tied together. Display, SD and ANO use PERIPH_3V3. The unused Feather battery pin is unconnected; do not attach the reserved battery.
+
+## Load and source budget
+
+Allow 450 mA at 3.3 V for display, SD peaks and controls. At 85% assumed efficiency and 4.75 V USB input, the peripheral branch draws 368 mA. Allow another 250 mA for the Feather: total 618 mA before source/cable margin. Use a known 5 V USB supply with at least 1 A available for qualification. A 500 mA host port is insufficient for this budget. USB-C does not by itself guarantee a particular available current.
+
+F1 is Bourns MF-NSMF075-2: 0.75 A hold at 23 C, 0.52 A at 60 C, 6 V maximum. Its post-reflow resistance limit is 0.4 ohm; at 368 mA that implies up to 0.147 V drop and 54 mW dissipation. This leaves about 4.60 V at the converter with a 4.75 V source, before cable and trace loss. The fuse protects only the peripheral branch and responds thermally. It cannot guarantee protection from an incorrectly connected signal or a display fault. [Bourns datasheet](https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf).
+
+U1 is the fixed 3.3 V TPS62162, rated for 1 A. L1 is Coilcraft XFL4020-222MEC, 2.2 uH. FB is grounded as TI recommends for the fixed-voltage part, VOS returns to C2, and the exposed pad joins ground. The local switch conductor is short. The board uses a ground plane on In1, with ground fill on In2 and the back. Long power conductors use 0.5 mm tracks; fine-pitch escapes are narrower. [TI datasheet](https://www.ti.com/lit/ds/symlink/tps62160.pdf), [Coilcraft part data](https://www.coilcraft.com/en-us/products/power/high-voltage-inductors/xfl/xfl4020/xfl4020-222/).
+
+C1 and C2 are TDK C3225X7R1C226M250AC, 22 uF, 16 V, +/-20%, X7R, 1210, maximum 2.8 mm high. This is the manufacturer-recommended replacement for the earlier 10 V part, which is not recommended for new designs. Local SD and display bulk capacitors are 10 uF, with 100 nF bypass capacitors. Use the exact BOM dielectric and voltage ratings; nominal capacitance alone is not an acceptable substitution. DC bias, tolerance, temperature and aging reduce effective capacitance. Qualification must include startup, load steps and sustained operation with the actual display and SD card. The [TDK characterization curve](https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/charasheet/c3225x7r1c226m250ac.pdf) shows about 8% loss at 5 V and 3% at 3.3 V. Rounded design allowances of 10%/5% bias loss, 20% tolerance, 15% temperature variation and an assumed 10% aging reserve give about 12.1 uF at the input and 12.8 uF at the output. These are calculated allowances from typical curves, not guaranteed combined minima. TI lists 10 uF nominal with 2.2 uH among its recommended output combinations, so this selection has useful nominal margin. The archived characterization sheet is a TDK document retrieved from a distributor mirror; its part number and specifications match TDK's indexed original.
+
+## Assembly and first power sequence
+
+The assembler installs all 36 electrical parts, including both through-hole sockets. Pads TP1-TP5, mounting holes and fiducials are PCB features, not BOM parts. Some vias occupy SMT pads, including the regulator exposed pad. Fabrication must use filled, copper-capped via-in-pad construction; solder-mask tenting alone is not an acceptable replacement. The supplier must review stencil coverage for U1 and confirm the socket tail/drill tolerances.
+
+Before installing any modules, inspect the assembled carrier and check for shorts between USB_5V, MCU_3V3, PERIPH_3V3 and GND. With a current-limited fixture, supply USB_5V and a separate 3.3 V enable at MCU_3V3; the carrier does not produce its own MCU supply. Check the regulated output and PG. Remove fixture power before inserting the Feather. Plug cables only with USB disconnected. Add the controls, then SD, then display, checking current and temperature at each step. Do not connect a battery.
+
+Firmware must wait for PG before peripheral I/O, set inactive chip selects, and start both SPI hosts conservatively. Test SD reads and display refresh during A2DP transmission to SoundCore 2, then reconnection and the deferred full-album run. Save current, rail ripple, startup and temperature results before declaring the power design qualified. The prior WROVER failures remain unexplained; a clean CAD check does not establish their cause.
+
+
+September 22 display update: Waveshare 29318 is specified for 3.3 V supply and logic, with approximately 63 mA typical operating current in its vendor FAQ. The 450 mA combined peripheral allowance and existing power components remain. This does not establish worst-case current. The selected module uses an onboard ME6217 LDO, TXS0108E level shifting and transistor backlight control; qualify startup, brightness and signal timing at the retained 4 MHz initial SPI rate. See [display selection](display-sourcing.md).

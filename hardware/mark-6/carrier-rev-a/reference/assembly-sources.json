@@ -1,0 +1,25 @@
+{
+  "retrieved": "2026-09-21",
+  "sources": [
+    {
+      "file": "reference/5400 ESP32 Feather V2.step",
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_CAD_Parts/6f52ee4d48df0e7118d2d82f485cb572051a24fe/5400%20ESP32%20Feather%20V2/5400%20ESP32%20Feather%20V2.step",
+      "commit": "6f52ee4d48df0e7118d2d82f485cb572051a24fe",
+      "sha256": "03d772cce4cf21e474096da40b22c31896babd4643d98557aa730d3fff8074cc"
+    },
+    {
+      "file": "reference/5740 ANO Rotary Encoder QT.step",
+      "url": "https://raw.githubusercontent.com/adafruit/Adafruit_CAD_Parts/6f52ee4d48df0e7118d2d82f485cb572051a24fe/5740%20ANO%20Rotary%20Encoder%20QT/5740%20ANO%20Rotary%20Encoder%20QT.step",
+      "commit": "6f52ee4d48df0e7118d2d82f485cb572051a24fe",
+      "sha256": "27196783648319d4c221b6b1a3e3ba484a5520e20605b243034d47bb4308364d"
+    },
+    {
+      "file": "reference/datasheets/c3225x7r1c226m250ac.pdf",
+      "manufacturer": "TDK",
+      "original": "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/charasheet/c3225x7r1c226m250ac.pdf",
+      "retrieved_from": "https://www.axtekic.com/web/uploads/file/20250814/A27Nhp1k59n570PQi0K6f0CH1D5G54Kf.pdf",
+      "retrieval_note": "Public manufacturer document mirror; expired mirror TLS certificate required per-request bypass. Part and ratings checked against TDK indexed original.",
+      "sha256": "ced8303a667c7ed30dae6a9d329d2d538c4eb99f10c6b22077d6827f6001de2d"
+    }
+  ]
+}

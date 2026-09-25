@@ -1,0 +1,7 @@
+{
+  "date": "2026-09-22",
+  "command": ".venv/bin/pytest -q tests",
+  "result": "30 passed",
+  "scope": "existing portable core; no hardware qualification",
+  "collection_note": "Unscoped pytest traversed bundled KiCad/toolchain tests and failed collection. Explicit project tests passed."
+}
