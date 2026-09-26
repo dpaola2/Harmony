@@ -16,8 +16,11 @@
   "attempts": [
     "esptool5 compressed stub 115200: bootloader MD5 mismatch",
     "esptool4.12 ROM uncompressed 115200: sequence 0 invalid message 0105",
-    "esptool4.12 stub uncompressed 115200 explicit eFuse SPI pins: bootloader MD5 mismatch"
+    "esptool4.12 stub uncompressed 115200 explicit eFuse SPI pins: bootloader MD5 mismatch",
+    "Further esptool5 stub 115200 retry: bootloader MD5 mismatch aaed19cb3b700240b31c08fec224d69f"
   ],
   "state": "Bootloader area partly overwritten; no verified bootable diagnostic. ROM loader remains responsive. Full original flash backup saved outside repository. No eFuse changes or peripheral connections.",
-  "next_step": "Requested USB disconnect/reconnect with another data cable, directly to Mac, before further programming."
+  "next_step": "Await Dave removing any packaging/foam and reconnecting the bare board on a nonconductive surface; verify strap voltage before another write. Foam presence is not yet confirmed.",
+  "flash_voltage_observation": "esptool reports 1.8 V selected by strapping pin; manufacturer support states this board requires 3.3 V and conductive shipping foam can pull GPIO12 high.",
+  "manufacturer_reference": "https://forums.adafruit.com/viewtopic.php?t=223541"
 }
