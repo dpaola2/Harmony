@@ -10,6 +10,22 @@ PCBWay is the proposed first supplier. Its published capabilities include turnke
 
 The selected process fits the carrier's mixed assembly and via-in-pad requirements. The supplier must confirm this particular design, exact MPN availability and total cost. Its advertised assembly starting price is not an estimate for this board.
 
+## Web quote attempt, September 26
+
+Dave requested a direct upload through PCBWay. The Chrome assembly quote form accepted one assembled carrier and five bare boards. Parameters entered: 169 × 66.2 mm, four layers, FR-4 S1000H TG150, 1.6 mm, ENIG, 1 oz outer and inner copper, 6/6 mil track/space category, 0.25 mm minimum drill, green mask, white silkscreen, top-side turnkey assembly and via-in-pad. The special requests explicitly require resin fill and copper caps at the nine listed locations, exact BOM parts, installation of both through-hole sockets and DFM review before production.
+
+The preliminary calculator showed $189.35 for five PCBs, $29 assembly for one, $27.27 DHL shipping and an equal shipping discount: $218.35 displayed total. Components, duties and taxes are not included; pricing is subject to review. The displayed bare-board build time was 4–5 days, not a confirmed turnkey lead time.
+
+Dave approved PCBWay's upload declaration and completed sign-in. All four uploads reached 100% Success and were submitted through Submit the File Now. The cart then showed both entries as **Subject to audit**, with all four file links present:
+
+- PCB fabrication **W1170583AS1Y5**: five boards, preliminary $189.35.
+- Assembly **T-1Y6W1170583A**: one assembled board, preliminary $29 service charge; components still $0 pending quotation.
+- Gerbers: `output/harmony-mark6-rev-a-fabrication.zip`, a CRC-verified 16-file archive containing unchanged Gerbers, PTH/NPTH drills, via-in-pad locations and the supplier README.
+- BOM: `assembly-bom.csv`; centroid: `assembly-positions.csv`.
+- Assembly supporting files: the complete, previously verified `harmony-mark6-rev-a-supplier-quote.zip`.
+
+The assigned representative is Lyra, service32@pcbway.com. The upload page states review takes 1–2 days; this is not a confirmed schedule. The [review cart](https://member.pcbway.com/Order/CartList/) remains open in Chrome. No payment, checkout or production release occurred. Await supplier DFM findings and actual component/turnkey pricing before deciding whether to purchase.
+
 ## Physical evidence and limits
 
 Dave reports that the revision B shells close evenly. The LCD sits flat, all four retainers align, and the carrier gauge rests on its mounting posts. Dave accepted the wheel coupon with 14 mm spacers and a 33 mm opening. These observations do not verify a populated carrier.
