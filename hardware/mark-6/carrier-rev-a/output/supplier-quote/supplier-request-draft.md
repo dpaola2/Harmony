@@ -1,6 +1,6 @@
 # Mark 6 supplier request draft
 
-Sent September 26, 2026 through AgentMail to service@pcbway.com. See `supplier-quote-send-receipt.json`.
+Prepared September 26, 2026. Unsent. Proposed recipient: service@pcbway.com.
 Attachment: `harmony-mark6-rev-a-supplier-quote.zip`.
 
 Subject: DFM review and turnkey quote: Harmony Mark 6 carrier, Rev A

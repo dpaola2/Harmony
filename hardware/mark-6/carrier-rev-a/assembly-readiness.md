@@ -1,5 +1,7 @@
 # Mark 6 assembly review
 
+September 26 update: the [supplier quote package](supplier-quote-notes.md) has fresh ERC/DRC reports and current fit context. PCBWay has received it for review and pricing. Revision B display supports are printed and align in the loose fit. Padded retention, fasteners, real socket mating and ribbon mapping remain unverified. The September 22 audit below records the unchanged carrier design.
+
 Reviewed September 22, 2026 for HARMONY-17. The carrier package is ready for a supplier's DFM review. It is not released for fabrication. The remaining decisions require the physical modules or the assembler's process limits.
 
 The review caught a conflict between the ENIG finish specified in the instructions and the Gerber job file's `None` value. The editable PCB now specifies ENIG, and the regenerated Gerber job agrees. Board routing and electrical nets did not change.

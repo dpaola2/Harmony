@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-26",
+  "sender": "dpaola2-assistant@agentmail.to",
+  "to": "service@pcbway.com",
+  "subject": "DFM review and turnkey quote: Harmony Mark 6 carrier, Rev A",
+  "attachment": "harmony-mark6-rev-a-supplier-quote.zip",
+  "attachment_sha256": "e8294f7d03469f21e3c4bf66140f071b38da8a98badd338901bbf9099a8ac114",
+  "production_authorized": false,
+  "response": {
+    "message_id": "<010001a0df665db9-3cccff14-ba00-4d01-a714-d5b443c3cd21-000000@email.amazonses.com>",
+    "thread_id": "e327fcca-4cd2-48d5-9ca7-24af9e06b54f"
+  }
+}

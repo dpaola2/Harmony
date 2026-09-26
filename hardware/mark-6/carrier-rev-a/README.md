@@ -1,6 +1,6 @@
 # Harmony Mark-6 carrier, revision A
 
-Current logistics, September 22: Dave has received the printed shells, gauge and spacers. The ordered PiShop display has shipped. Physical fit and the other deliveries remain unconfirmed. Use the [arrival checklist](arrival-checklist.md) for the next checks. A [supplier request draft](supplier-request-draft.md) is prepared but unsent.
+Current logistics, September 26: core modules are received, and the revision B shells, LCD supports and carrier gauge passed loose fit checks. Screws and foam are ordered. The SD trial playlist is prepared. The assembled carrier remains unordered. A [supplier quote request](supplier-quote-notes.md) was sent to PCBWay for DFM review and pricing; the response is pending. Physical mating, cable mapping and powered qualification remain open. The historical design record below retains its original dated assumptions.
 
 September 22 display update: **Waveshare 29318 (ST7796S)** replaces unavailable Adafruit #5846. [PiShop.us](https://www.pishop.us/product/3-5inch-capacitive-touch-display-320-480-ips-2tpd/) lists it in stock at $24.95. The [sourcing and compatibility review](display-sourcing.md), [hollow prototype](../../../enclosure/mark-6/fit-prototype/README.md) and [firmware](../../../firmware/mark-6/feather-carrier/README.md) now use this module. The carrier electrical nets are unchanged. Manufacturing remains review-only.
 

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-26",
+  "purpose": "DFM and quote only; production not released",
+  "installed_parts": 36,
+  "unique_mpns": 15,
+  "smt": 34,
+  "through_hole": 2,
+  "via_in_pad_locations": 9,
+  "saved_audit_source_hashes": "matched current sources",
+  "fresh_erc": "passed",
+  "fresh_saved_rule_drc": "passed",
+  "fresh_strict_drc": "one documented U1 footprint_type_mismatch warning, zero opens",
+  "source_sha256": {
+    "harmony-mark6-carrier.kicad_pcb": "294645bb15c5d2c6d839ca276be179127df3083b0d237ba4329a8aa8f7816aa5",
+    "harmony-mark6-carrier.kicad_sch": "b2bac9cd1b49d364c95209d197d58a30d54b2a4489e58143463dc770861de352",
+    "bom-draft.csv": "4c09fd30f51627021ce32cbfbf3aec53aafca0e785e2e1e039c6e2e7c2018ef1",
+    "all-positions.csv": "51307508b741fe3bd384755aa97f98a47b2c4d8d122f179a90998cf2517367cb"
+  }
+}
