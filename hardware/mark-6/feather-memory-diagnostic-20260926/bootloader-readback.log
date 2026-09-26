@@ -1,0 +1,17 @@
+esptool v5.0.0
+Serial port /dev/cu.usbserial-5B1E0643571:
+Connecting......
+Detecting chip type... ESP32
+Connected to ESP32 on /dev/cu.usbserial-5B1E0643571:
+Chip type:          ESP32-PICO-V3-02 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Embedded Flash, Embedded PSRAM, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                14:33:5c:99:1a:28
+
+
+Attaching flash from eFuses' SPI pads configuration (CLK:6, Q:17, D:23, HD:16, CS:11)...
+Configuring flash size...
+Note: In case of failure, please set a specific flash size.
+Read 26240 bytes from 0x00001000 in 4.1 seconds (51.1 kbit/s) to '/tmp/harmony-bootloader-readback.bin'.
+
+Staying in bootloader.

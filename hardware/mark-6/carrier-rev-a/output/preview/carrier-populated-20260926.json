@@ -1,0 +1,14 @@
+{
+  "source_board": "hardware/mark-6/carrier-rev-a/harmony-mark6-carrier.kicad_pcb",
+  "source_sha256": "294645bb15c5d2c6d839ca276be179127df3083b0d237ba4329a8aa8f7816aa5",
+  "image_sha256": "4e95ea5cc681702c4e9810884427de0d1b88f5182faf95a460cfeb46974dc872",
+  "method": "KiCad 8 STEP export, CadQuery 2.8 assembly import, VTK tessellated solid rendering",
+  "limits": [
+    "Generic KiCad component bodies, not exact manufacturer appearances",
+    "L1 shown as 4 x 4 x 2 mm package envelope",
+    "Silkscreen, exposed pads, surface tracks and solder fillets omitted",
+    "External Feather, display, rotary control and cables intentionally absent"
+  ],
+  "extra_j5_model": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
+  "pcb_design_modified": false
+}
