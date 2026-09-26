@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-09-26T21:48:36.836156+00:00",
+  "board_context": "Replacement Adafruit ESP32 Feather V2 #5900; Dave reports standalone USB connection with peripherals disconnected",
+  "port": "/dev/cu.usbserial-5B1E0643571",
+  "tool": "esptool 5.0.0",
+  "command": "esptool --port /dev/cu.usbserial-5B1E0643571 --baud 115200 --no-stub --after no-reset flash-id",
+  "chip": "ESP32-PICO-V3-02",
+  "revision": "v3.1",
+  "base_mac": "14:33:5c:99:1a:28",
+  "flash_detected_mb": 8,
+  "flash_manufacturer_hex": "20",
+  "flash_device_hex": "4017",
+  "crystal_mhz": 40,
+  "embedded_psram_reported": true,
+  "psram_capacity_tested": false,
+  "psram_memory_test_run": false,
+  "flash_written": false,
+  "efuses_written": false,
+  "application_mac_guard_changed": false,
+  "end_state": "ROM download bootloader; reset or power cycle to run existing firmware",
+  "scope": "USB serial connection, ROM chip identity and flash ID only; not carrier or playback qualification"
+}
