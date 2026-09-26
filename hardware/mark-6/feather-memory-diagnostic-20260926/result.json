@@ -1,11 +1,12 @@
 {
-  "status": "build passed; programming failed; diagnostic has NOT run",
+  "status": "Programming verified; standalone memory diagnostic PASSED",
   "mac": "14:33:5c:99:1a:28",
-  "psram_test_passed": null,
+  "psram_test_passed": true,
   "backup": {
     "path": "/Users/dave/Downloads/harmony-feather-14335c991a28-original-20260926.bin",
     "size": 8388608,
-    "sha256": "7647b6eb2274a52c142a66fc772d2298154fce1af64028b6242aa654709144ae"
+    "sha256": "7647b6eb2274a52c142a66fc772d2298154fce1af64028b6242aa654709144ae",
+    "caveat": "Captured before foam removal while flash strap selected 1.8 V; complete file and hash preserved, but original contents were not independently verified and must not be assumed reliable for restoration."
   },
   "build": {
     "idf_commit": "8c750b088c7cd857d079c0eeb495da199b359461",
@@ -17,10 +18,28 @@
     "esptool5 compressed stub 115200: bootloader MD5 mismatch",
     "esptool4.12 ROM uncompressed 115200: sequence 0 invalid message 0105",
     "esptool4.12 stub uncompressed 115200 explicit eFuse SPI pins: bootloader MD5 mismatch",
-    "Further esptool5 stub 115200 retry: bootloader MD5 mismatch aaed19cb3b700240b31c08fec224d69f"
+    "Further esptool5 stub 115200 retry: bootloader MD5 mismatch aaed19cb3b700240b31c08fec224d69f",
+    "After Dave removed shipping foam: esptool5 stub 115200 verified bootloader, partition table and application hashes; diagnostic booted and passed."
   ],
-  "state": "Bootloader area partly overwritten; no verified bootable diagnostic. ROM loader remains responsive. Full original flash backup saved outside repository. No eFuse changes or peripheral connections.",
-  "next_step": "Await Dave removing any packaging/foam and reconnecting the bare board on a nonconductive surface; verify strap voltage before another write. Foam presence is not yet confirmed.",
-  "flash_voltage_observation": "esptool reports 1.8 V selected by strapping pin; manufacturer support states this board requires 3.3 V and conductive shipping foam can pull GPIO12 high.",
-  "manufacturer_reference": "https://forums.adafruit.com/viewtopic.php?t=223541"
+  "state": "Standalone diagnostic installed and completed successfully at 11.725 s uptime. No peripheral/radio initialization or eFuse changes. Reboot repeats the diagnostic.",
+  "next_step": "Standalone Feather memory check complete. Next is staged display-only breadboard wiring via the supplied LCD harness, followed by display test firmware; keep conductive shipping foam away from powered pins.",
+  "flash_voltage_observation": "Before foam removal: 1.8 V strap selection. Dave confirmed board was in foam. After removal: same MAC and flash identity, 3.3 V strap selection; programming verified and memory diagnostic passed.",
+  "manufacturer_reference": "https://forums.adafruit.com/viewtopic.php?t=223541",
+  "result": {
+    "flash_capacity_bytes": 8388608,
+    "psram_capacity_bytes": 2097152,
+    "psram_test_bytes": 2060288,
+    "internal_ram_test_bytes": 65536,
+    "patterns_per_round": 6,
+    "rounds_per_memory_type": 3,
+    "startup_psram_test_passed": true,
+    "heap_integrity_passed": true,
+    "diagnostic_pass_uptime_ms": 11725,
+    "limitations": "No destructive whole-flash test; carrier, display, SD, controls, radios and integrated power operation remain untested on this Feather."
+  },
+  "evidence_sha256": {
+    "identity-after-foam.log": "8f6fe9a3c841d353dd174d5a220b5b8ad267e94ee67b29883875f8037354715b",
+    "flash-after-foam.log": "efc40c738c85274014d59d9cd84bc7b4e50539077a42538311e3f44453376cc8",
+    "diagnostic-pass.log": "8a16db9cf42134f4944e561da5d35daaf5c37452d7faa6f8ef2827bdf78b839f"
+  }
 }

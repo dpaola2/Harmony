@@ -1,0 +1,76 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 26 2026 17:51:20
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0e5f0h ( 58864) map
+I (109) esp_image: segment 1: paddr=0001e618 vaddr=3ff80000 size=00020h (    32) load
+I (109) esp_image: segment 2: paddr=0001e640 vaddr=3ffb0000 size=019d8h (  6616) load
+I (115) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=17550h ( 95568) map
+I (153) esp_image: segment 4: paddr=00037578 vaddr=3ffb19d8 size=00b04h (  2820) load
+I (154) esp_image: segment 5: paddr=00038084 vaddr=40080000 size=10760h ( 67424) load
+I (191) boot: Loaded app from partition at offset 0x10000
+I (191) boot: Disabling RNG early entropy source...
+I (202) quad_psram: This chip is ESP32-PICO-V3-02
+I (203) esp_psram: Found 2MB PSRAM device
+I (203) esp_psram: Speed: 40MHz
+I (203) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (210) cpu_start: Multicore app
+I (675) esp_psram: SPI SRAM memory test OK
+I (684) cpu_start: Pro cpu start user code
+I (684) cpu_start: cpu freq: 240000000 Hz
+I (684) app_init: Application information:
+I (684) app_init: Project name:     mark6_feather_memory_diagnostic
+I (690) app_init: App version:      90f4b23
+I (694) app_init: Compile time:     Sep 26 2026 17:51:11
+I (699) app_init: ELF file SHA256:  3b0adbeaa...
+I (703) app_init: ESP-IDF:          8c750b08
+I (707) efuse_init: Min chip rev:     v0.0
+I (711) efuse_init: Max chip rev:     v3.99 
+I (715) efuse_init: Chip rev:         v3.1
+I (719) heap_init: Initializing. RAM available for dynamic allocation:
+I (725) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (730) heap_init: At 3FFB2E10 len 0002D1F0 (180 KiB): DRAM
+I (735) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (741) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (746) heap_init: At 40090760 len 0000F8A0 (62 KiB): IRAM
+I (752) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (759) spi_flash: detected chip: generic
+I (762) spi_flash: flash io: dio
+I (765) main_task: Started on CPU0
+I (775) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (775) main_task: Calling app_main()
+I (775) memory_diag: Standalone diagnostic; no carrier GPIO, radios, SD or display initialized
+I (785) memory_diag: Identity matched 14:33:5c:99:1a:28
+I (785) memory_diag: Flash=8388608 bytes; PSRAM=2097152 bytes
+I (795) memory_diag: TEST PSRAM: 2060288 bytes, 6 patterns x 3 rounds
+I (4325) memory_diag: PASS PSRAM round 1/3
+I (7845) memory_diag: PASS PSRAM round 2/3
+I (11365) memory_diag: PASS PSRAM round 3/3
+I (11365) memory_diag: TEST internal RAM: 65536 bytes, 6 patterns x 3 rounds
+I (11485) memory_diag: PASS internal RAM round 1/3
+I (11605) memory_diag: PASS internal RAM round 2/3
+I (11725) memory_diag: PASS internal RAM round 3/3
+I (11725) memory_diag: DIAGNOSTIC PASS: identity, capacities, PSRAM patterns, internal RAM patterns, heap integrity
+I (11725) memory_diag: Flash capacity/readback only; no destructive whole-flash test. Carrier and radio operation untested.
+I (11735) main_task: Returned from app_main()
