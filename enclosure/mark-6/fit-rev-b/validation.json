@@ -1,0 +1,248 @@
+{
+  "date": "2026-09-26",
+  "status": "CAD candidate; physical fit and fastener qualification required",
+  "measured_wheel_mm": 31.83,
+  "opening_mm": 33.0,
+  "spacer_mm": 14.0,
+  "nominal_control_front_above_face_mm": 1.47,
+  "closure_screws_xy": [
+    [
+      3.7,
+      3.7
+    ],
+    [
+      70.3,
+      3.7
+    ],
+    [
+      3.2,
+      174
+    ]
+  ],
+  "display_support_feet_xy": [
+    [
+      14.2305,
+      15.9985
+    ],
+    [
+      59.7905,
+      15.9985
+    ],
+    [
+      14.2305,
+      89.8385
+    ],
+    [
+      59.7905,
+      89.8385
+    ]
+  ],
+  "display_support_top_z": 16.7,
+  "display_foot_bottom_z": 17.0,
+  "display_pad_uncompressed_mm": 0.5,
+  "parts": {
+    "tray": {
+      "dimensions_mm": [
+        74.0,
+        178.0,
+        26.399999618530273
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    },
+    "front": {
+      "dimensions_mm": [
+        74.0,
+        178.0,
+        13.199999809265137
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": -6.118513377733877e-16
+    },
+    "ano-spacer-14mm": {
+      "dimensions_mm": [
+        5.0,
+        4.999011516571045,
+        14.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    },
+    "wheel-coupon": {
+      "dimensions_mm": [
+        50.0,
+        50.0,
+        4.329999923706055
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    },
+    "display-retainer-left": {
+      "dimensions_mm": [
+        15.030085304490058,
+        4.999227406107821,
+        3.9000000953674316
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    },
+    "display-retainer-right": {
+      "dimensions_mm": [
+        15.009084701538086,
+        4.999227406107821,
+        3.9000000953674316
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    },
+    "pilot-coupon": {
+      "dimensions_mm": [
+        40.0,
+        12.0,
+        8.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "print_z_min": 0.0
+    }
+  },
+  "source_sha256": "64bc1940c22fd28506890ce95c98013daadd7fe4e3c2230ed13c912d1f8eecc8",
+  "intersection_mm3": {
+    "tray/feather": 0.0,
+    "front/feather": 0.0,
+    "retainer0/feather": 0.0,
+    "retainer1/feather": 0.0,
+    "retainer2/feather": 0.0,
+    "retainer3/feather": 0.0,
+    "tray/ano": 0.0,
+    "front/ano": 0.0,
+    "retainer0/ano": 0.0,
+    "retainer1/ano": 0.0,
+    "retainer2/ano": 0.0,
+    "retainer3/ano": 0.0,
+    "tray/display": 0.0,
+    "front/display": 0.0,
+    "retainer0/display": 0.0,
+    "retainer1/display": 0.0,
+    "retainer2/display": 0.0,
+    "retainer3/display": 0.0,
+    "tray/carrier": 0.0,
+    "front/carrier": 0.0,
+    "retainer0/carrier": 0.0,
+    "retainer1/carrier": 0.0,
+    "retainer2/carrier": 0.0,
+    "retainer3/carrier": 0.0,
+    "tray/retainer0": 0.0,
+    "front/retainer0": 0.0,
+    "tray/retainer1": 0.0,
+    "front/retainer1": 0.0,
+    "tray/retainer2": 0.0,
+    "front/retainer2": 0.0,
+    "tray/retainer3": 0.0,
+    "front/retainer3": 0.0,
+    "control0_shaft/tray": 0.0,
+    "control0_shaft/front": 0.0,
+    "control0_shaft/ano": 0.0,
+    "control0_shaft/display": 0.0,
+    "control0_shaft/feather": 0.0,
+    "control0_shaft/carrier": 0.0,
+    "control0_head/tray": 0.0,
+    "control0_head/front": 0.0,
+    "control0_head/ano": 0.0,
+    "control0_head/display": 0.0,
+    "control0_head/feather": 0.0,
+    "control0_head/carrier": 0.0,
+    "control0_nut/tray": 0.0,
+    "control0_nut/front": 0.0,
+    "control0_nut/ano": 0.0,
+    "control0_nut/display": 0.0,
+    "control0_nut/feather": 0.0,
+    "control0_nut/carrier": 0.0,
+    "control0_sleeve/tray": 0.0,
+    "control0_sleeve/front": 0.0,
+    "control0_sleeve/ano": 0.0,
+    "control0_sleeve/display": 0.0,
+    "control0_sleeve/feather": 0.0,
+    "control0_sleeve/carrier": 0.0,
+    "control1_shaft/tray": 0.0,
+    "control1_shaft/front": 0.0,
+    "control1_shaft/ano": 0.0,
+    "control1_shaft/display": 0.0,
+    "control1_shaft/feather": 0.0,
+    "control1_shaft/carrier": 0.0,
+    "control1_head/tray": 0.0,
+    "control1_head/front": 0.0,
+    "control1_head/ano": 0.0,
+    "control1_head/display": 0.0,
+    "control1_head/feather": 0.0,
+    "control1_head/carrier": 0.0,
+    "control1_nut/tray": 0.0,
+    "control1_nut/front": 0.0,
+    "control1_nut/ano": 0.0,
+    "control1_nut/display": 0.0,
+    "control1_nut/feather": 0.0,
+    "control1_nut/carrier": 0.0,
+    "control1_sleeve/tray": 0.0,
+    "control1_sleeve/front": 0.0,
+    "control1_sleeve/ano": 0.0,
+    "control1_sleeve/display": 0.0,
+    "control1_sleeve/feather": 0.0,
+    "control1_sleeve/carrier": 0.0,
+    "control2_shaft/tray": 0.0,
+    "control2_shaft/front": 0.0,
+    "control2_shaft/ano": 0.0,
+    "control2_shaft/display": 0.0,
+    "control2_shaft/feather": 0.0,
+    "control2_shaft/carrier": 0.0,
+    "control2_head/tray": 0.0,
+    "control2_head/front": 0.0,
+    "control2_head/ano": 0.0,
+    "control2_head/display": 0.0,
+    "control2_head/feather": 0.0,
+    "control2_head/carrier": 0.0,
+    "control2_nut/tray": 0.0,
+    "control2_nut/front": 0.0,
+    "control2_nut/ano": 0.0,
+    "control2_nut/display": 0.0,
+    "control2_nut/feather": 0.0,
+    "control2_nut/carrier": 0.0,
+    "control2_sleeve/tray": 0.0,
+    "control2_sleeve/front": 0.0,
+    "control2_sleeve/ano": 0.0,
+    "control2_sleeve/display": 0.0,
+    "control2_sleeve/feather": 0.0,
+    "control2_sleeve/carrier": 0.0,
+    "control3_shaft/tray": 0.0,
+    "control3_shaft/front": 0.0,
+    "control3_shaft/ano": 0.0,
+    "control3_shaft/display": 0.0,
+    "control3_shaft/feather": 0.0,
+    "control3_shaft/carrier": 0.0,
+    "control3_head/tray": 0.0,
+    "control3_head/front": 0.0,
+    "control3_head/ano": 0.0,
+    "control3_head/display": 0.0,
+    "control3_head/feather": 0.0,
+    "control3_head/carrier": 0.0,
+    "control3_nut/tray": 0.0,
+    "control3_nut/front": 0.0,
+    "control3_nut/ano": 0.0,
+    "control3_nut/display": 0.0,
+    "control3_nut/feather": 0.0,
+    "control3_nut/carrier": 0.0,
+    "control3_sleeve/tray": 0.0,
+    "control3_sleeve/front": 0.0,
+    "control3_sleeve/ano": 0.0,
+    "control3_sleeve/display": 0.0,
+    "control3_sleeve/feather": 0.0,
+    "control3_sleeve/carrier": 0.0,
+    "tray/front": 0.0,
+    "coupon/ano": 0.0
+  }
+}

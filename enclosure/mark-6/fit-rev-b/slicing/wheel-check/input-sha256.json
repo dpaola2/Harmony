@@ -1,0 +1,14 @@
+{
+  "/Users/dave/projects/Harmony2/enclosure/mark-6/fit-rev-b/print/harmony-m6-b-wheel-coupon.stl": {
+    "quantity": 1,
+    "sha256": "44b8a7465f040eca242d9bd2554d9acea7770434d9c34801f2393a7b8e77b511"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-6/fit-rev-b/print/harmony-m6-b-ano-spacer-14mm.stl": {
+    "quantity": 4,
+    "sha256": "2cdfac2085d8b056004ccba63b27c19e5dd1c9b09db05cc7fb4a55a69ef35680"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-6/fit-rev-b/print/harmony-m6-b-pilot-coupon.stl": {
+    "quantity": 1,
+    "sha256": "b645a082581593a7ff474259bdc1ae7fa8876012e1db8c90c990cfff4363717d"
+  }
+}

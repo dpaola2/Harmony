@@ -1,0 +1,18 @@
+{
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle.json": "f17e7679e69b0bbe2fd611d514b276a0c5dc117124f3d8c7c83ba11418c316bc",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/fdm_bbl_3dp_001_common.json": "2ca207f457c1f9b3eb25a1801adb2eaa8ddc5620f5a8945abb51a3fcddab5e47",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/fdm_machine_common.json": "26ef8ee697849323e67d8e1a9026c175cebe3397e38c5091dddb5cd3fc52e94c",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle template machine_start_gcode.json": "a5d4de36e2bd9414f24803ed3800e889995920068319382de78655f48a961e8d",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle template machine_end_gcode.json": "e12b6bbbc4060f90740e2c774ba0183655511fe1a8b549a4f8788f7635e38412",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle template time_lapse_gcode.json": "631cba6aeb4b908aab43ae93fafa423172837fd1f6204b133e43005712d80c56",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle template change_filament_gcode.json": "4cadc87c4af05af853a6ccb3cfa2ab2718cec17953580a34a618556e49f6ec36",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/machine/Bambu Lab A1 0.4 nozzle template layer_change_gcode.json": "356f55bd21199b1ae692db7451f01292a758739bf1b48628b96aed9bb5faea8d",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/process/0.20mm Standard @BBL A1.json": "2bd33159b3ec659567a63b6ea6f5373af7431c68516e7d3e02693a4cef395079",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/process/fdm_process_single_0.20.json": "cdda8d56d67f62a0faa892cb6efc605ebb5c745bf742f6ead4daaeb6627c182a",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/process/fdm_process_single_common.json": "05b38ac1318e465e817978b36da51754f928da0172738a20bb3a8d4a69eb4769",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/process/fdm_process_common.json": "d7981c4b92854f251b8697e1bb621c63fe393f263fb8024ab63c401525d543d7",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/filament/Bambu PLA Basic @BBL A1.json": "966589ca1c1d5007a470fb0d60e42a4fae2b15ef2fba535fbd8ad72aa92c047d",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/filament/Bambu PLA Basic @base.json": "7783968745a19570354ca0601258cd5b82a6c96f835b682741635095b49e9cc7",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/filament/fdm_filament_pla.json": "670d21ea6bdf1cd4b0a2bfddc743612ffd896cd6e5dbe767c25d2c4165c49a30",
+  "/Applications/BambuStudio.app/Contents/Resources/profiles/BBL/filament/fdm_filament_common.json": "8c7105b7d59a28f600c43a946f067b8b4d707b9711c0bf6b88e9166e48878548"
+}

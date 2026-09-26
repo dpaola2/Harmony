@@ -1,0 +1,129 @@
+{
+    "error_string": "Success.",
+    "export_time": 416,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 189,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 82.78002166748047,
+                "Bridge": 15.002435684204102,
+                "Custom": 367.42816162109375,
+                "Flush": 25.0,
+                "Gap infill": 91.84065246582031,
+                "Inner wall": 156.58901977539063,
+                "Internal solid infill": 247.4705352783203,
+                "Outer wall": 235.14828491210938,
+                "Sparse infill": 55.64748764038086,
+                "Top surface": 62.56742858886719,
+                "Travel": 323.36077880859375,
+                "Undefined": 306.46929931640625
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 7.839195728302002,
+                    "total_used_g": 7.839195728302002
+                }
+            ],
+            "generate_support_material_time": 29,
+            "id": 1,
+            "infill_time": 121,
+            "layer_filament_change": 0,
+            "main_predication": 1245.405029296875,
+            "make_perimeters_time": 224,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 49.999996185302734,
+                        "height": 4.329999923706055,
+                        "width": 50.0,
+                        "x": 106.49948120117188,
+                        "y": 109.99999237060547,
+                        "z": 0.0
+                    },
+                    "id": 90,
+                    "name": "harmony-m6-b-wheel-coupon.stl",
+                    "triangle_count": 5704
+                },
+                {
+                    "bbox": {
+                        "depth": 12.000001907348633,
+                        "height": 8.0,
+                        "width": 40.0,
+                        "x": 114.50205993652344,
+                        "y": 96.00000762939453,
+                        "z": 0.0
+                    },
+                    "id": 145,
+                    "name": "harmony-m6-b-pilot-coupon.stl",
+                    "triangle_count": 2540
+                },
+                {
+                    "bbox": {
+                        "depth": 6.646884918212891,
+                        "height": 14.0,
+                        "width": 6.646414279937744,
+                        "x": 98.67680358886719,
+                        "y": 134.5150909423828,
+                        "z": 0.0
+                    },
+                    "id": 101,
+                    "name": "harmony-m6-b-ano-spacer-14mm.stl_1",
+                    "triangle_count": 1264
+                },
+                {
+                    "bbox": {
+                        "depth": 6.646891117095947,
+                        "height": 14.0,
+                        "width": 6.646411895751953,
+                        "x": 98.67679595947266,
+                        "y": 141.51504516601563,
+                        "z": 0.0
+                    },
+                    "id": 112,
+                    "name": "harmony-m6-b-ano-spacer-14mm.stl_2",
+                    "triangle_count": 1264
+                },
+                {
+                    "bbox": {
+                        "depth": 6.646894454956055,
+                        "height": 14.0,
+                        "width": 6.646411895751953,
+                        "x": 98.67679595947266,
+                        "y": 127.51512145996094,
+                        "z": 0.0
+                    },
+                    "id": 123,
+                    "name": "harmony-m6-b-ano-spacer-14mm.stl_3",
+                    "triangle_count": 1264
+                },
+                {
+                    "bbox": {
+                        "depth": 6.646896839141846,
+                        "height": 14.0,
+                        "width": 6.646411895751953,
+                        "x": 98.67679595947266,
+                        "y": 148.51499938964844,
+                        "z": 0.0
+                    },
+                    "id": 134,
+                    "name": "harmony-m6-b-ano-spacer-14mm.stl_4",
+                    "triangle_count": 1264
+                }
+            ],
+            "sliced_time": 2265,
+            "sliced_time_with_cache": 1801,
+            "total_predication": 1645.941650390625,
+            "triangle_count": 13300,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

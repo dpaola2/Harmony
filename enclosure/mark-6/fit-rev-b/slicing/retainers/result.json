@@ -1,0 +1,101 @@
+{
+    "error_string": "Success.",
+    "export_time": 348,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 114,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 1.556692361831665,
+                "Custom": 367.52239990234375,
+                "Flush": 25.0,
+                "Gap infill": 12.811077117919922,
+                "Inner wall": 59.80498504638672,
+                "Internal solid infill": 22.96623420715332,
+                "Outer wall": 42.28092575073242,
+                "Top surface": 10.45090103149414,
+                "Travel": 102.53356170654297,
+                "Undefined": 85.5792465209961
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 0.804932713508606,
+                    "total_used_g": 0.804932713508606
+                }
+            ],
+            "generate_support_material_time": 8,
+            "id": 1,
+            "infill_time": 34,
+            "layer_filament_change": 0,
+            "main_predication": 227.40817260742188,
+            "make_perimeters_time": 73,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 5.571343421936035,
+                        "height": 3.9000000953674316,
+                        "width": 15.210569381713867,
+                        "x": 123.89420318603516,
+                        "y": 132.02137756347656,
+                        "z": 0.0
+                    },
+                    "id": 60,
+                    "name": "harmony-m6-b-display-retainer-left.stl_1",
+                    "triangle_count": 1696
+                },
+                {
+                    "bbox": {
+                        "depth": 5.571350574493408,
+                        "height": 3.9000000953674316,
+                        "width": 15.210569381713867,
+                        "x": 123.89420318603516,
+                        "y": 125.02214050292969,
+                        "z": 0.0
+                    },
+                    "id": 71,
+                    "name": "harmony-m6-b-display-retainer-left.stl_2",
+                    "triangle_count": 1696
+                },
+                {
+                    "bbox": {
+                        "depth": 5.571680068969727,
+                        "height": 3.9000000953674316,
+                        "width": 15.189921379089355,
+                        "x": 123.91502380371094,
+                        "y": 118.02277374267578,
+                        "z": 0.0
+                    },
+                    "id": 82,
+                    "name": "harmony-m6-b-display-retainer-right.stl_1",
+                    "triangle_count": 1588
+                },
+                {
+                    "bbox": {
+                        "depth": 15.189926147460938,
+                        "height": 3.9000000953674316,
+                        "width": 5.571683406829834,
+                        "x": 116.89506530761719,
+                        "y": 120.40489959716797,
+                        "z": 0.0
+                    },
+                    "id": 93,
+                    "name": "harmony-m6-b-display-retainer-right.stl_2",
+                    "triangle_count": 1588
+                }
+            ],
+            "sliced_time": 537,
+            "sliced_time_with_cache": 404,
+            "total_predication": 627.9762573242188,
+            "triangle_count": 6568,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

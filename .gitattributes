@@ -29,3 +29,12 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_3Dand2D/3.5inch Capacitive Touch LCD.dwg" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_3Dand2D/3.5inch_Capacitive_Touch_LCD.step" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-6/carrier-rev-a/reference/waveshare-29318/3.5inch_Capacitive_Touch_LCD_Demo_Pi.zip" filter=lfs diff=lfs merge=lfs -text
+
+# September 26 Mark-6 mechanical trial and original fit evidence.
+"enclosure/mark-6/fit-rev-b/cad/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/preview/assembled-ano.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/preview/assembled-display.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/evidence/IMG_7699.HEIC" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/evidence/IMG_7701.HEIC" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/evidence/IMG_7702.HEIC" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-6/fit-rev-b/evidence/IMG_7704.HEIC" filter=lfs diff=lfs merge=lfs -text

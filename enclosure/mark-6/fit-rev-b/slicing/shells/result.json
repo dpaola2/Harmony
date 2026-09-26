@@ -1,0 +1,76 @@
+{
+    "error_string": "Success.",
+    "export_time": 480,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 40,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 611.7372436523438,
+                "Custom": 367.5023498535156,
+                "Flush": 25.0,
+                "Gap infill": 110.69105529785156,
+                "Inner wall": 926.1893310546875,
+                "Internal solid infill": 1507.3968505859375,
+                "Outer wall": 952.3425903320313,
+                "Overhang wall": 2.2308409214019775,
+                "Top surface": 493.42742919921875,
+                "Travel": 906.70458984375,
+                "Undefined": 889.6209716796875
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 66.56024932861328,
+                    "total_used_g": 66.56024932861328
+                }
+            ],
+            "generate_support_material_time": 92,
+            "id": 1,
+            "infill_time": 247,
+            "layer_filament_change": 0,
+            "main_predication": 5485.23046875,
+            "make_perimeters_time": 553,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 26.399999618530273,
+                        "width": 74.00000762939453,
+                        "x": 128.99998474121094,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 38,
+                    "name": "harmony-m6-b-tray.stl",
+                    "triangle_count": 9452
+                },
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 13.199999809265137,
+                        "width": 74.0,
+                        "x": 53.000030517578125,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 49,
+                    "name": "harmony-m6-b-front.stl",
+                    "triangle_count": 9088
+                }
+            ],
+            "sliced_time": 1572,
+            "sliced_time_with_cache": 533,
+            "total_predication": 5885.64892578125,
+            "triangle_count": 18540,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

@@ -1,5 +1,7 @@
 # Mark 6 hollow fit prototype
 
+September 26: the physical trial found a recessed control and excessive wheel clearance. Use the [revision B candidate and assembly plan](../fit-rev-b/README.md) for the next print. The original print files remain unchanged for comparison.
+
 September 22 update: Dave reports that the printed tray, front, carrier gauge and spacers are received. The display has shipped. These reports confirm procurement progress; physical fit remains unverified. Use the [arrival checklist](../../../hardware/mark-6/carrier-rev-a/arrival-checklist.md) for the dry fit.
 
 Prepared September 22, 2026 after Dave accepted the 74 × 178 × 28 mm solid size dummy. This is an unpowered fit shell for the current carrier geometry. The updated front fits the selected Waveshare 29318 vendor geometry. See the [display selection](../../../hardware/mark-6/carrier-rev-a/display-sourcing.md).

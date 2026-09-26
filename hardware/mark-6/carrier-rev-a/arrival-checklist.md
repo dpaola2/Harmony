@@ -1,5 +1,7 @@
 # Mark 6 arrival and release checklist
 
+September 26: the shell, gauge and LCD passed the initial unpowered fit checks. The control needs a higher mount and smaller opening. Follow the [revision B assembly plan](../../../enclosure/mark-6/fit-rev-b/README.md) for the next print. Its 14 mm spacer candidate supersedes the 12 mm trial below. Carrier procurement and powered qualification remain open.
+
 Dave has received the printed shells, carrier gauge and spacers. The PiShop Waveshare display has shipped. Physical fit remains unconfirmed.
 
 The next useful hardware step is an unpowered dry fit. The carrier still needs supplier DFM review and an assembled-board order.
