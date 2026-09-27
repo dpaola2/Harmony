@@ -61,7 +61,7 @@ int main(void)
     const uint8_t expected[] = {0x11,0x36,0x3a,0xf0,0xf0,0xb4,0xb7,0xc0,0xc1,
         0xc2,0xc5,0xe8,0xe0,0xe1,0xf0,0xf0,0x21,0x29,0x2a,0x2b,0x2c};
     assert(command_count == sizeof(expected) && !memcmp(commands, expected, sizeof(expected)));
-    assert(format == 0x05 && orientation == 0x08 && delayed_ms == 540);
+    assert(format == 0x05 && orientation == 0x48 && delayed_ms == 540);
     assert(pixel_bytes == 307200 && levels[CARRIER_TFT_LITE]);
     assert(!memcmp(column, (uint8_t[]){0,0,1,63}, 4));
     assert(!memcmp(row, (uint8_t[]){0,0,1,223}, 4));

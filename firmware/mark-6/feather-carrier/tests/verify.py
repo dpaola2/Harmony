@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Host behavior tests plus independent carrier/vendor GPIO cross-check."""
 from pathlib import Path
+from datetime import date
 import hashlib
 import json
 import re
@@ -141,8 +142,12 @@ actual_steps = []
 for cmd, count, delay, values in re.findall(r'\{(0x[0-9a-f]+), (\d+), (\d+), \{([^}]*)\}\}', table):
     data = [int(v.strip(), 0) for v in values.split(',')][:int(count)]
     actual_steps.append({'cmd':int(cmd,0), 'data':data, 'delay_ms':int(delay)})
-assert actual_steps == waveshare['init_steps']
-results.append('PASS Waveshare ST7796S vendor initialization: all 18 commands, parameters and delays')
+# Preserve the vendor record; allow only the documented portrait MX correction.
+expected_steps = [dict(step, data=list(step['data'])) for step in waveshare['init_steps']]
+assert expected_steps[1] == {'cmd': 0x36, 'data': [0x08], 'delay_ms': 0}
+expected_steps[1]['data'] = [0x48]
+assert actual_steps == expected_steps
+results.append('PASS Waveshare ST7796S initialization: all 18 commands checked with documented portrait MX correction')
 print(results[-1])
 for key in ['CONFIG_BTDM_CTRL_MODE_BR_EDR_ONLY=y', 'CONFIG_BT_A2DP_ENABLE=y',
             'CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y', 'CONFIG_SPIRAM=y',
@@ -161,7 +166,7 @@ print(results[-1])
 
 inputs = [f for folder in ['main', 'components', 'tests'] for f in (P / folder).rglob('*') if f.is_file()]
 inputs += [P / n for n in ['CMakeLists.txt', 'sdkconfig', 'sdkconfig.defaults', 'partitions.csv', 'build.sh']]
-report = {'date': '2026-09-22', 'status': 'PASS compile and host tests only; not flashed or hardware-qualified',
+report = {'date': date.today().isoformat(), 'status': 'PASS compile and host tests only; not flashed or hardware-qualified',
           'checks': results, 'pin_count': len(checked),
           'app_bytes': (P / 'build/mark6_feather_carrier.bin').stat().st_size,
           'app_sha256': hashlib.sha256((P / 'build/mark6_feather_carrier.bin').read_bytes()).hexdigest(),

@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-22",
+  "date": "2026-09-27",
   "status": "PASS compile and host tests only; not flashed or hardware-qualified",
   "checks": [
     "PASS playback: 100000 randomized transfers, exact EOF drain, stale skip rejection, pause/reconnect, error/replay and album boundaries",
@@ -11,12 +11,12 @@
     "PASS actual audio tasks: concurrent producer/callback, skip flush, quiet gain, pause/disconnect, exact three-track sample counts, format failure and unmount",
     "PASS actual Bluetooth state handlers: connection timeout/late response, 60 simulated heartbeats, retry, stop-before-ACK and fatal shutdown",
     "PASS all 13 GPIOs traced through carrier socket nets to vendor MCU pins",
-    "PASS Waveshare ST7796S vendor initialization: all 18 commands, parameters and delays",
+    "PASS Waveshare ST7796S initialization: all 18 commands checked with documented portrait MX correction",
     "PASS pinned references, native ESP32 build config, isolated components, flash-command rejection"
   ],
   "pin_count": 13,
   "app_bytes": 1189776,
-  "app_sha256": "2d1a59ca05eb8c024a90e8288ba454bbf98197691308ed2d6212879802511f29",
+  "app_sha256": "88addefd3eb6aa027222af107bc201f7220b7823b063e60439e8c859ed456136",
   "source_hashes": {
     "CMakeLists.txt": "828f4ea7f603bd4cf33791b0bfaedea37babacd9d526b6a39f59bb5bbb113561",
     "build.sh": "669b5f0f32b8ec3a498484143a335443f8a3b8fec0566807364b9f7d4767a0d4",
@@ -29,7 +29,7 @@
     "components/bench_display/hx8357_init.h": "1fe3bae30ac2526f04628b66b39db0591e9122abfcc82dd98c30fff4ba80a677",
     "components/bench_display/panel_init.h": "03def58570ae978c73b0c08e347dca48906c18ec459483b0a1160c4df49d4af0",
     "components/bench_display/source-lock.json": "4bed1314b0c9518aea98466e9c11831599417d21f8ab9e1c17fccfc77ba90ef3",
-    "components/bench_display/st7796_init.h": "cd58cd842c623f0340985ff1ea84b29fa4bc68606d556af6010bfd2b936bb276",
+    "components/bench_display/st7796_init.h": "06f740770277a18d5bc7cdc3cc2ae803323c245b6c21115e690bfedb3d4e6a1d",
     "components/bench_storage/CMakeLists.txt": "35d4b3886c65abf2d8d3c05804a0ac9f982225a027a642241d71cd222e27df8e",
     "components/bench_storage/bench_storage.c": "ed4d2712b9ee4ffdc2153388060ea517cfba9bab4f55459b53e409b95f08336d",
     "components/bench_storage/bench_storage.h": "96071d6a0005720a1927c92da00df53c5ab56dda4a50050d83b0234939c5114b",
@@ -68,10 +68,10 @@
     "tests/test_bluetooth.inc": "6b5ee4a3624d36a3719a53a34010756bf10ca9d31d55546cbb2574b59600bcb0",
     "tests/test_bluetooth_main.inc": "165691f75d3b46f5ba24013f94f7ae7517048078eead6cd510dbfc043939de69",
     "tests/test_board.c": "39c4642f07e7994c59ae09caa9b9112aba287185dca4b7529c99c959c52177d3",
-    "tests/test_display.c": "17a97a09e897065cb6f3971782796f6fe7f7dcc2ea8de448aa7cbf9aedbf8230",
+    "tests/test_display.c": "b86346d3555474148855f7312cdb618bbf1dee9fae06e72b12f758c6d3a68812",
     "tests/test_input.c": "cac973914d48ca1ce43809fd5e0edca3c884a870aa87c8865477dd069b525017",
     "tests/test_playback.c": "04b13d9c3510992dd09474153e55b5446ac0a450701997f18b7d7154d79b0239",
     "tests/test_policy.c": "1296331f3d5c840527c2200d082bb8fd2b67e703c96bb1d9cb221128ae2a78b2",
-    "tests/verify.py": "741d6e3ab62c2a6a081b2979e1cc67d727c422fb1bda06e382b1d611fe5577c1"
+    "tests/verify.py": "8fcff1a13526908d3d93e8c2cafc21b4114d176674d0bc66eac8cb75951d86f4"
   }
 }

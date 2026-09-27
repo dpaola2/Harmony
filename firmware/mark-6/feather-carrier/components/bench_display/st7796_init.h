@@ -1,12 +1,15 @@
 /* Initialization register values from Waveshare SKU 29318 vendor demo.
  * Source archive and SHA256: reference/waveshare-source.json.
+ * Harmony portrait correction: MADCTL 0x48 (MX | BGR), rather than the
+ * vendor demo 0x08. IMG_7717.HEIC showed horizontal mirroring with 0x08.
+ * ST7796S datasheet section 9.2.28 defines MX as column address order.
  * Transport, bounds checks and renderer are the Harmony native driver.
  */
 #pragma once
 #include <stdint.h>
 static const struct { uint8_t cmd, count; uint16_t delay_ms; uint8_t data[14]; } st7796_init[] = {
     {0x11, 0, 120, {0}},
-    {0x36, 1, 0, {0x08}},
+    {0x36, 1, 0, {0x48}},
     {0x3a, 1, 0, {0x05}},
     {0xf0, 1, 0, {0xc3}},
     {0xf0, 1, 0, {0x96}},

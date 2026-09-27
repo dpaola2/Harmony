@@ -1,0 +1,68 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 27 2026 15:39:07
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10430h ( 66608) map
+I (112) esp_image: segment 1: paddr=00020458 vaddr=3ff80000 size=00020h (    32) load
+I (112) esp_image: segment 2: paddr=00020480 vaddr=3ffb0000 size=028e4h ( 10468) load
+I (119) esp_image: segment 3: paddr=00022d6c vaddr=40080000 size=0d2ach ( 53932) load
+I (144) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=19dd8h (105944) map
+I (181) esp_image: segment 5: paddr=00049e00 vaddr=4008d2ac size=054f8h ( 21752) load
+I (198) boot: Loaded app from partition at offset 0x10000
+I (198) boot: Disabling RNG early entropy source...
+I (209) quad_psram: This chip is ESP32-PICO-V3-02
+I (210) esp_psram: Found 2MB PSRAM device
+I (210) esp_psram: Speed: 40MHz
+I (210) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (217) cpu_start: Multicore app
+I (682) esp_psram: SPI SRAM memory test OK
+I (691) cpu_start: Pro cpu start user code
+I (691) cpu_start: cpu freq: 240000000 Hz
+I (691) app_init: Application information:
+I (691) app_init: Project name:     mark6_feather_display_bench
+I (696) app_init: App version:      fe4ea27-dirty
+I (701) app_init: Compile time:     Sep 27 2026 15:42:02
+I (706) app_init: ELF file SHA256:  75a96692f...
+I (710) app_init: ESP-IDF:          8c750b08
+I (714) efuse_init: Min chip rev:     v0.0
+I (718) efuse_init: Max chip rev:     v3.99 
+I (722) efuse_init: Chip rev:         v3.1
+I (726) heap_init: Initializing. RAM available for dynamic allocation:
+I (732) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (737) heap_init: At 3FFB3250 len 0002CDB0 (179 KiB): DRAM
+I (742) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (748) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (753) heap_init: At 400927A4 len 0000D85C (54 KiB): IRAM
+I (759) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (766) spi_flash: detected chip: generic
+I (769) spi_flash: flash io: dio
+I (772) main_task: Started on CPU0
+I (782) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (782) main_task: Calling app_main()
+I (782) LCD_BENCH: Standalone LCD on Feather 3V; no carrier, SD, touch, controls or radios
+I (792) LCD_BENCH: Identity and capacities matched; LCD-only outputs enabled
+I (1962) DISPLAY: ST7796S SPI2 4MHz 320x480; write completed, visual check required
+I (2132) DISPLAY: DRAW_COMPLETE: no display readback; visual confirmation required
+I (2132) LCD_BENCH: DISPLAY_WRITE_COMPLETE; confirm text, white border and red/green/blue blocks visually
+I (12142) LCD_BENCH: Display test running: 10 seconds after drawing

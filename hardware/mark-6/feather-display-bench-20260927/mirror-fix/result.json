@@ -1,0 +1,15 @@
+{
+  "status": "Display-only bench visual check PASSED after horizontal mirror correction",
+  "visual_passed": true,
+  "evidence_before": {
+    "file": "/Users/dave/Downloads/IMG_7717.HEIC",
+    "sha256": "2545ddeae2b079cf3f85c6ce016878c7a54e1d7a0b7ca15a07696af050460b11",
+    "observation": "User confirms display works but mirrored. Photo shows mirrored text and B/G/R physical order; colors themselves appear correct."
+  },
+  "change": "MADCTL command 0x36: parameter 0x08 -> 0x48; set MX only, preserve BGR and portrait dimensions",
+  "reference": "https://files.waveshare.com/wiki/common/ST7796S_Datasheet.pdf section 9.2.28",
+  "application_sha256": "e62364b5f313daf16156fb818e75810e0c78a8a8e799e196cda181cb1dfd570c",
+  "checks": "Both bench and carrier native builds passed; bench adapter/display tests and all 11 carrier verification groups passed. Corrected bench application hash verified after flash; startup PSRAM test and DRAW_COMPLETE observed. Carrier firmware not flashed.",
+  "next_step": "Display-only bench check complete. Next candidate is ANO rotary control bring-up; integrated SD/audio/carrier qualification remains pending.",
+  "user_confirmation": "Yes, it looks correct (readable text and red/green/blue left-to-right confirmed September 27, 2026)"
+}

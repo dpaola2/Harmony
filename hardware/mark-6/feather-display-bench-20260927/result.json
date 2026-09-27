@@ -1,12 +1,13 @@
 {
-  "status": "Firmware built and flashed with verified hashes; display write completed; visual confirmation pending",
+  "status": "Initial display works but horizontal mirroring confirmed by user and IMG_7717.HEIC; superseded by mirror-fix/result.json",
   "mac": "14:33:5c:99:1a:28",
   "application_sha256": "2871cc870ffc8da0c5d8304bc570850dd1b676db237512859548d92417a30b3c",
   "application_bytes": 258848,
-  "visual_passed": null,
+  "visual_passed": false,
   "flash_voltage": "3.3 V strapping",
   "host_tests": "Bench adapter and shared display driver passed with ASan/UBSan",
   "firmware": "firmware/mark-6/feather-display-bench",
   "wiring": "See firmware bench-config.json. User reported wiring ready and reconnected; no photograph verified this session.",
-  "limitations": "No carrier PG input or carrier power qualification; no touch, SD, controls or radio initialization; visual confirmation required"
+  "limitations": "No carrier PG input or carrier power qualification; no touch, SD, controls or radio initialization; visual confirmation required",
+  "superseded_by": "mirror-fix/result.json"
 }
