@@ -1,5 +1,5 @@
 {
-  "status": "Read-only SD bench PASSED; screen/controls response confirmation pending",
+  "status": "Read-only SD bench PASSED; display and rotary response confirmed",
   "mac": "14:33:5c:99:1a:28",
   "application_sha256": "d572839211a3c077be3fa4d2e65203e2bc0846e9bff336d97d647405100162f7",
   "application_bytes": 376160,
@@ -19,7 +19,8 @@
   "read_only": "No format attempted; sdmmc_write_sectors wrapper linked and blocks writes",
   "display_draw_completed": true,
   "rotary_detected": true,
-  "manual_shared_bus_response_confirmed": null,
+  "manual_shared_bus_response_confirmed": true,
   "limitations": "No carrier power-good or carrier supply/ribbon qualification; no touch or radio initialization. Native rotary directions not final enclosure mapping. No full-library hash or audio playback in this test.",
-  "next_step": "Confirm display/rotary counters remain responsive; then prepare Bluetooth playback using the known SoundCore 2."
+  "next_step": "Prepare SoundCore 2 at low volume for Bluetooth playback on the current temporary LCD/SD/QT bench.",
+  "user_confirmation": "Dave answered yes when asked whether SD PASS is visible and wheel/button counters still respond (2026-09-27)."
 }
