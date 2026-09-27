@@ -1,0 +1,33 @@
+{
+  "purpose": "Standalone Waveshare 29318 LCD harness bench, powered from Feather 3V; not carrier firmware",
+  "mac": "14:33:5c:99:1a:28",
+  "lcd_harness_15pin_to_feather_label": {
+    "1 VCC": "3V",
+    "3 GND": "GND",
+    "5 MOSI": "27",
+    "6 SCLK": "14",
+    "8 LCD_CS": "A0 (GPIO26)",
+    "9 LCD_DC": "33",
+    "10 LCD_RST": "32",
+    "11 LCD_BL": "A5 (GPIO4)"
+  },
+  "unused": "15-pin pin 2 (3V3), 4 (MISO), 7 (SD_CS), 12-15 (touch); no SD card, battery, ribbon or rotary attached",
+  "spi_hz": 4000000,
+  "display": [
+    320,
+    480
+  ],
+  "driver": "Shared unchanged feather-carrier bench_display; bench-only carrier_board adapter selected by isolated CMake project",
+  "limitations": "No carrier PG input or carrier power qualification; no touch, SD, controls or radio initialization; visual confirmation required",
+  "sources_sha256": {
+    "firmware/mark-6/feather-display-bench/main/main.c": "2d68d97cb693f96e7cf11ade4dbd9e9965eb0afb137bc6c1d0f5ab1eb7ceb0e1",
+    "firmware/mark-6/feather-display-bench/components/carrier_board/bench_board.c": "d599facf609d9b9b8491c15d8e8d19d9f250b5af43ee1e1b010b16ccd32edda2",
+    "firmware/mark-6/feather-display-bench/components/carrier_board/carrier_board.h": "ac681f2792bf90fc3b0d49ca66634fb7c65fd24c2373e129583b90e99c8b3901",
+    "firmware/mark-6/feather-display-bench/sdkconfig.defaults": "957adb86d56ebf28d061e46938a91adc22bb1a4304d4e3c412657afaef557e0e",
+    "firmware/mark-6/feather-carrier/components/bench_display/bench_display.c": "8a0e35be96b7f10b7197dc23fff02efd2531f0e3b9529c499ede9f676836d1b1",
+    "firmware/mark-6/feather-carrier/components/bench_display/st7796_init.h": "cd58cd842c623f0340985ff1ea84b29fa4bc68606d556af6010bfd2b936bb276",
+    "firmware/mark-6/feather-carrier/components/carrier_board/carrier_pins.h": "5f9a3dfb7b12e10290039595880a3e86b0834f0f71b500a7739f541e3684e703"
+  },
+  "application_sha256": "2871cc870ffc8da0c5d8304bc570850dd1b676db237512859548d92417a30b3c",
+  "application_bytes": 258848
+}

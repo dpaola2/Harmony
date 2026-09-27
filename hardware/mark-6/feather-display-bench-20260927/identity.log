@@ -1,0 +1,22 @@
+esptool v5.0.0
+Serial port /dev/cu.usbserial-5B1E0643571:
+Connecting.....
+Detecting chip type... ESP32
+Connected to ESP32 on /dev/cu.usbserial-5B1E0643571:
+Chip type:          ESP32-PICO-V3-02 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Embedded Flash, Embedded PSRAM, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                14:33:5c:99:1a:28
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+
+Flash Memory Information:
+=========================
+Manufacturer: 20
+Device: 4017
+Detected flash size: 8MB
+Flash voltage set by a strapping pin: 3.3V
+
+Staying in bootloader.
