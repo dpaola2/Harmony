@@ -1,5 +1,5 @@
 {
-  "status": "Bluetooth playback repeat passed observed runtime checks; listening confirmation pending",
+  "status": "Integrated temporary-bench Bluetooth playback listening and display check PASSED",
   "mac": "14:33:5c:99:1a:28",
   "bluetooth_mac": "14:33:5c:99:1a:2a",
   "receiver": {
@@ -21,9 +21,11 @@
   "failed": false,
   "resets_observed": false,
   "display_state": "PLAYING with ongoing updates",
-  "listening_confirmed": null,
+  "listening_confirmed": true,
   "prior_run_controls": "Center pause/resume and wheel/up/down selection of tracks 7 and 44 observed in initial run before callback fix",
   "checks": "Both native builds, 11 carrier host groups, standalone/shared display and board/input/album tests, plus player board QT sequencing passed. Includes bus-lock cleanup errors and a stalled audio mutex test. All flashed image hashes verified.",
   "change": "Initial immediate try-lock emitted 41472 bytes of contention silence. Added 2 ms bounded mutex wait and callback duration telemetry; repeat showed zero contention silence.",
-  "remaining": "Listening quality confirmation, controls during corrected build, deliberate disconnect/reconnect and full album/endurance; carrier/enclosure/power/RF qualification still open."
+  "remaining": "Controls during corrected build, deliberate disconnect/reconnect and full-album/endurance testing; carrier/enclosure/power/RF qualification remains open.",
+  "display_user_confirmed": true,
+  "user_confirmation": "Dave reports: yeah, everything sounds good, display is right (2026-09-27)."
 }
