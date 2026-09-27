@@ -14,6 +14,10 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 - [Technical basis](Harmony-2026-technical-basis.md): options, architecture, sourcing limits, and acceptance criteria.
 - [Printable case](../enclosure/harmony-r1/README.md): Tangara-based fit prototype for the Bambu A1.
 
+## Current player UI
+
+- [Player UI requirements](Harmony-player-ui-requirements.md): September 27 draft covering music navigation, controls, volume, and Bluetooth management on the verified Feather bench.
+
 ## Core docs
 - `PROJECT_OVERVIEW.md` — why the project exists, constraints, and hardware/software goals.
 - `PLAN.md` — roadmap and near-term milestones; keep current sprint items at the top.
