@@ -37,3 +37,7 @@ void vTaskDelay(unsigned ticks);
 esp_err_t spi_bus_initialize(int host, const spi_bus_config_t *cfg, int dma);
 esp_err_t spi_bus_add_device(int host, const spi_device_interface_config_t *cfg, spi_device_handle_t *out);
 esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t);
+
+#define portMAX_DELAY 0xffffffffU
+esp_err_t spi_device_acquire_bus(spi_device_handle_t device, unsigned wait);
+void spi_device_release_bus(spi_device_handle_t device);

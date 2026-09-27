@@ -9,12 +9,31 @@
 #include "mp3_reader.h"
 #include "audio_player.h"
 static pthread_t task;
+static SemaphoreHandle_t test_mutex;
+static atomic_bool held;
 static atomic_bool mounted;
 static atomic_uint fail_track;
 static void (*producer_fn)(void *);
 static void *run(void *arg) {producer_fn(arg);return NULL;}
-SemaphoreHandle_t xSemaphoreCreateMutexStatic(StaticSemaphore_t *p) {assert(!pthread_mutex_init(p,NULL));return p;}
-int xSemaphoreTake(SemaphoreHandle_t p,uint32_t ticks) {return !(ticks?pthread_mutex_lock(p):pthread_mutex_trylock(p));}
+SemaphoreHandle_t xSemaphoreCreateMutexStatic(StaticSemaphore_t *p) {assert(!pthread_mutex_init(p,NULL));test_mutex=p;return p;}
+int xSemaphoreTake(SemaphoreHandle_t p,uint32_t ticks) {
+    if(ticks==portMAX_DELAY) return !pthread_mutex_lock(p);
+    assert(ticks==2); // A2DP waits only for its small explicit budget.
+    int64_t deadline=esp_timer_get_time()+(int64_t)ticks*1000;
+    do {
+        if(!pthread_mutex_trylock(p)) return 1;
+        usleep(50);
+    } while(esp_timer_get_time()<deadline);
+    return 0;
+}
+static void *hold_audio_lock(void *arg) {
+    (void)arg;
+    pthread_mutex_lock(test_mutex);
+    atomic_store(&held,true);
+    usleep(30000);
+    pthread_mutex_unlock(test_mutex);
+    return NULL;
+}
 void xSemaphoreGive(SemaphoreHandle_t p) {assert(!pthread_mutex_unlock(p));}
 void vSemaphoreDelete(SemaphoreHandle_t p) {assert(!pthread_mutex_destroy(p));}
 int xTaskCreatePinnedToCore(void (*fn)(void*),const char *name,unsigned stack,void *arg,unsigned priority,void *handle,int core)
@@ -58,6 +77,13 @@ int main(void)
     assert(audio_player_snapshot().count==3);
     silence(); /* disconnected before first media start */
     audio_player_connected(true);
+    pthread_t holder;
+    assert(!pthread_create(&holder,NULL,hold_audio_lock,NULL));
+    while(!atomic_load(&held)) usleep(50);
+    int64_t callback_start=esp_timer_get_time();
+    silence(); // A stalled owner must not make the callback wait indefinitely.
+    assert(esp_timer_get_time()-callback_start < 20000);
+    pthread_join(holder,NULL);
     audio_player_activate();silence();assert(audio_player_snapshot().paused);
     audio_player_connected(false);audio_player_activate();silence();
     audio_player_connected(true);

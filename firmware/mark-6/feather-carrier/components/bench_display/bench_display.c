@@ -32,12 +32,14 @@ static esp_err_t send_bytes(const void *data, size_t len)
 
 static esp_err_t command(uint8_t cmd, const uint8_t *data, size_t len)
 {
+    TRY(spi_device_acquire_bus(lcd, portMAX_DELAY));
     gpio_set_level(CS, 0);
     gpio_set_level(DC, 0);
     esp_err_t err = send_bytes(&cmd, 1);
     gpio_set_level(DC, 1);
     if (err == ESP_OK && len) err = send_bytes(data, len);
     gpio_set_level(CS, 1);
+    spi_device_release_bus(lcd);
     return err;
 }
 
@@ -49,13 +51,15 @@ static esp_err_t window(int x, int y, int w, int h)
     uint8_t rows[] = {y0 >> 8, y0, y1 >> 8, y1};
     TRY(command(0x2a, cols, sizeof(cols)));
     TRY(command(0x2b, rows, sizeof(rows)));
-    /* Keep CS asserted while streaming each rectangle. */
+    /* Hold bus ownership for the complete manual-CS pixel stream so an SD
+     * task cannot clock the LCD while its CS is low. */
+    TRY(spi_device_acquire_bus(lcd, portMAX_DELAY));
     gpio_set_level(CS, 0);
     gpio_set_level(DC, 0);
     uint8_t write_ram = 0x2c;
     esp_err_t err = send_bytes(&write_ram, 1);
     gpio_set_level(DC, 1);
-    if (err != ESP_OK) gpio_set_level(CS, 1);
+    if (err != ESP_OK) { gpio_set_level(CS, 1); spi_device_release_bus(lcd); }
     return err;
 }
 
@@ -75,6 +79,7 @@ esp_err_t bench_display_fill(int x, int y, int w, int h, uint16_t color)
         err = send_pixels(w);
     }
     gpio_set_level(CS, 1);
+    spi_device_release_bus(lcd);
     return err;
 }
 
@@ -100,6 +105,7 @@ esp_err_t bench_display_text(int x, int y, const char *text, uint16_t fg, uint16
         err = send_pixels(n * 8);
     }
     gpio_set_level(CS, 1);
+    spi_device_release_bus(lcd);
     return err;
 }
 
@@ -128,7 +134,7 @@ static esp_err_t display_init(bool existing_bus)
 }
 
 /* The caller owns the existing SPI2 bus and must initialize any SD card first.
- * Display calls and SD transfers must be serialized by that caller. */
+ * Only one task may call the display API; bus ownership serializes SD transfers. */
 esp_err_t bench_display_init_on_existing_bus(void) { return display_init(true); }
 esp_err_t bench_display_init(void) { return display_init(false); }
 

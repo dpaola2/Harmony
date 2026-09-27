@@ -1,0 +1,29 @@
+{
+  "status": "Bluetooth playback repeat passed observed runtime checks; listening confirmation pending",
+  "mac": "14:33:5c:99:1a:28",
+  "bluetooth_mac": "14:33:5c:99:1a:2a",
+  "receiver": {
+    "name": "SoundCore 2",
+    "mac": "f4:2b:7d:5a:35:43",
+    "matching": "Both name and MAC required"
+  },
+  "application_sha256": "5b4c47456308a5617af7891698885a76326a00c1fe695beb33394000c3606b3c",
+  "application_bytes": 1189296,
+  "track": "Creed / Human Clay / Are You Ready",
+  "playlist_count": 45,
+  "last_uptime_ms": 83432,
+  "pcm_frames_consumed": 3082240,
+  "audio_seconds_consumed": 69.89206349206349,
+  "underrun_bytes": 0,
+  "contention_silence_bytes": 0,
+  "max_callback_us": 566,
+  "max_read_decode_us": 57537,
+  "failed": false,
+  "resets_observed": false,
+  "display_state": "PLAYING with ongoing updates",
+  "listening_confirmed": null,
+  "prior_run_controls": "Center pause/resume and wheel/up/down selection of tracks 7 and 44 observed in initial run before callback fix",
+  "checks": "Both native builds, 11 carrier host groups, standalone/shared display and board/input/album tests, plus player board QT sequencing passed. Includes bus-lock cleanup errors and a stalled audio mutex test. All flashed image hashes verified.",
+  "change": "Initial immediate try-lock emitted 41472 bytes of contention silence. Added 2 ms bounded mutex wait and callback duration telemetry; repeat showed zero contention silence.",
+  "remaining": "Listening quality confirmation, controls during corrected build, deliberate disconnect/reconnect and full album/endurance; carrier/enclosure/power/RF qualification still open."
+}

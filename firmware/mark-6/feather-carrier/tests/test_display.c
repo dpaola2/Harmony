@@ -12,7 +12,8 @@
 #else
 #define EXPECTED_BUS_COUNT 1
 #endif
-static bool powered, inject_error;
+static bool powered, inject_error, bus_owned;
+static bool acquire_error, pixel_error, write_command_error;
 static unsigned transactions, pixel_bytes, bus_count;
 static uint8_t current_command, column[4], row[4], last_pixel[2];
 static uint8_t commands[64], format, orientation;
@@ -22,8 +23,21 @@ bool carrier_board_ready(void) { return powered; }
 esp_err_t gpio_set_level(int pin, int level)
 {
     if (pin == CARRIER_TFT_LITE && level) assert(pixel_bytes == 320 * 480 * 2);
+    if (pin == CARRIER_TFT_CS && !level) assert(bus_owned);
     levels[pin] = level;
     return ESP_OK;
+}
+esp_err_t spi_device_acquire_bus(spi_device_handle_t device, unsigned wait)
+{
+    assert(!bus_owned && wait == portMAX_DELAY);
+    if (acquire_error) return ESP_ERR_TIMEOUT;
+    bus_owned = true;
+    return ESP_OK;
+}
+void spi_device_release_bus(spi_device_handle_t device)
+{
+    assert(bus_owned && levels[CARRIER_TFT_CS]);
+    bus_owned = false;
 }
 void vTaskDelay(unsigned ticks) { delayed_ms += ticks; }
 esp_err_t spi_bus_initialize(int host, const spi_bus_config_t *cfg, int dma)
@@ -38,13 +52,14 @@ esp_err_t spi_bus_add_device(int host, const spi_device_interface_config_t *cfg,
 }
 esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t)
 {
-    assert(powered && !levels[CARRIER_TFT_CS] && t->length % 8 == 0);
+    assert(bus_owned && powered && !levels[CARRIER_TFT_CS] && t->length % 8 == 0);
     ++transactions;
     if (inject_error) return ESP_ERR_TIMEOUT;
     const uint8_t *b = t->tx_buffer;
     size_t n = t->length / 8;
     if (!levels[CARRIER_TFT_DC]) {
         assert(n == 1); current_command = *b;
+        if (write_command_error && *b == 0x2c) return ESP_ERR_TIMEOUT;
         if (command_count < sizeof(commands)) commands[command_count] = *b;
         ++command_count;
     }
@@ -53,6 +68,7 @@ esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t)
     else if (current_command == 0x2a) { assert(n == 4); memcpy(column, b, 4); }
     else if (current_command == 0x2b) { assert(n == 4); memcpy(row, b, 4); }
     else if (current_command == 0x2c) {
+        if (pixel_error) return ESP_ERR_TIMEOUT;
         assert(n <= 640 && n % 2 == 0);
         pixel_bytes += n;
         if (n >= 2) memcpy(last_pixel, b + n - 2, 2);
@@ -85,9 +101,22 @@ int main(void)
     assert(bench_display_text(312, 464, "clipped", 0xffff, 0) == ESP_OK);
     assert(pixel_bytes - pixels_before == 8 * 16 * 2);
     assert(bench_display_probe() == ESP_OK);
+    assert(!bus_owned);
+    acquire_error = true;
+    assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_TIMEOUT);
+    assert(!bus_owned && levels[CARRIER_TFT_CS]);
+    acquire_error = false;
+    pixel_error = true;
+    assert(bench_display_fill(0, 0, 2, 2, 0) == ESP_ERR_TIMEOUT);
+    assert(!bus_owned && levels[CARRIER_TFT_CS]);
+    pixel_error = false;
+    write_command_error = true;
+    assert(bench_display_fill(0, 0, 2, 2, 0) == ESP_ERR_TIMEOUT);
+    assert(!bus_owned && levels[CARRIER_TFT_CS]);
+    write_command_error = false;
     inject_error = true;
     assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_TIMEOUT);
-    assert(levels[CARRIER_TFT_CS] == 1);
+    assert(levels[CARRIER_TFT_CS] == 1 && !bus_owned);
     before = transactions; powered = false;
     assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_INVALID_STATE);
     assert(transactions == before && levels[CARRIER_TFT_CS] == 1);

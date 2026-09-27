@@ -208,7 +208,11 @@ static void filter_inquiry_scan_result(esp_bt_gap_cb_param_t *param)
             return;
         }
         ESP_LOGI(BT_AV_TAG, "--Name: %s", s_peer_bdname);
-        if (strcasecmp((char *)s_peer_bdname, remote_device_name) == 0) {
+        if (strcasecmp((char *)s_peer_bdname, remote_device_name) == 0
+#ifdef CONFIG_BENCH_PEER_MAC
+            && strcasecmp(bda_str, CONFIG_BENCH_PEER_MAC) == 0
+#endif
+        ) {
             ESP_LOGI(BT_AV_TAG, "Found a target device, address %s, name %s", bda_str, s_peer_bdname);
             s_a2d_state = APP_AV_STATE_DISCOVERED;
             memcpy(s_peer_bda, param->disc_res.bda, ESP_BD_ADDR_LEN);

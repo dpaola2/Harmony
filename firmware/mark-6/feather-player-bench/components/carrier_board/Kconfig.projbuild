@@ -1,0 +1,31 @@
+menu "Harmony Feather carrier"
+    config CARRIER_EXPECTED_MAC
+        string "Commissioned Feather Wi-Fi station MAC (xx:xx:xx:xx:xx:xx)"
+        default ""
+        help
+            Empty by default. The application exits before peripheral GPIO
+            changes until this matches the physically identified Feather V2.
+    config CARRIER_CONTROLS_DIAGNOSTIC
+        bool "Enable ANO input reader and raw event logs"
+        default y
+    config CARRIER_CONTROLS_ACTIONS
+        bool "Enable debounced playback actions"
+        depends on CARRIER_CONTROLS_DIAGNOSTIC
+        default y
+    config CARRIER_ANO_ROTATION
+        int "Clockwise quarter-turns from raw ANO labels"
+        range 0 3
+        default 1
+        help
+            Provisional rotated case mapping. Verify all four directions on
+            the delivered assembly before qualification.
+    config CARRIER_ENCODER_REVERSE
+        bool "Reverse album browse encoder direction"
+        default n
+    config CARRIER_DISPLAY_ONLY
+        bool "Draw display test pattern and exit before SD/Bluetooth initialization"
+        default n
+        help
+            Use for the first visual display check on commissioned hardware.
+            The default build prepares the album integration bench.
+endmenu

@@ -1,0 +1,15 @@
+{
+  "status": "Bluetooth connected and played selected tracks; brief callback-contention silence observed; superseded by bounded-wait correction",
+  "receiver": "f4:2b:7d:5a:35:43",
+  "tracks_observed": [
+    1,
+    7,
+    44
+  ],
+  "last_total_pcm_frames": 2761216,
+  "last_underrun_bytes": 0,
+  "last_contention_silence_bytes": 41472,
+  "user_listening_confirmation": null,
+  "user_controls_observed": "Center pause/resume and selecting tracks 7 and 44; wheel and up/down events; user left track 44 paused",
+  "resets_observed": false
+}

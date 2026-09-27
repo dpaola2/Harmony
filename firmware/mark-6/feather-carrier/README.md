@@ -46,7 +46,7 @@ The old 400-second cutoff is removed. Album completion keeps the connection and 
 
 The producer owns SD reads and MP3 decoding. A 128 KiB PSRAM queue holds PCM; each track prefills half the queue unless EOF arrives first. A generation counter rejects decoded audio from a track skipped during an SD read. Queue operations and state changes share a mutex. No file I/O, decoding, logging or drawing occurs while that mutex is held.
 
-The Bluetooth callback attempts the mutex without waiting. If busy, it returns silence and records `contention` bytes. `underrun` records missing PCM during active playback. Both counters must be checked during hardware qualification. Pause, disconnect and initial buffering intentionally produce silence without consuming queued music.
+The Bluetooth callback waits at most 2 ms for the mutex. If the wait expires, it returns silence and records `contention` bytes. `underrun` records missing PCM during active playback. Both counters must be checked during hardware qualification. Pause, disconnect and initial buffering intentionally produce silence without consuming queued music.
 
 Host tests establish software behavior under mocks. They do not establish SD latency, Bluetooth timing, sound quality or RF performance. Dave's earlier clean Higher result applies to the WROVER bench. The full album and this new carrier remain untested on hardware.
 

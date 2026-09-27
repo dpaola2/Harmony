@@ -19,10 +19,11 @@ static SemaphoreHandle_t lock;
 static StaticSemaphore_t lock_storage;
 static playback_t player;
 static album_t *album;
-static atomic_uint_least32_t max_decode_us, contention_bytes;
+static atomic_uint_least32_t max_decode_us, contention_bytes, max_callback_us;
 static const char *TAG = "ALBUM";
 /* The mutex protects RAM copies/state only. Never hold it over SD/decoder I/O,
- * logging, sleeps or display writes. The A2DP callback never waits for it. */
+ * logging, sleeps or display writes. The A2DP callback waits at most 2 ms
+ * for a short RAM-copy critical section before falling back to silence. */
 #define LOCK() xSemaphoreTake(lock, portMAX_DELAY)
 #define UNLOCK() xSemaphoreGive(lock)
 
@@ -128,17 +129,26 @@ fail:
     return false;
 }
 
+static void record_callback_time(int64_t start)
+{
+    uint32_t elapsed = (uint32_t)(esp_timer_get_time() - start);
+    if (elapsed > atomic_load(&max_callback_us)) atomic_store(&max_callback_us, elapsed);
+}
+
 int32_t audio_player_read(uint8_t *data, int32_t len)
 {
     if (!data || len <= 0) return 0;
+    int64_t started = esp_timer_get_time();
     memset(data, 0, len);
     if (!lock) return len;
-    if (xSemaphoreTake(lock, 0) != pdTRUE) {
+    if (xSemaphoreTake(lock, pdMS_TO_TICKS(2)) != pdTRUE) {
         atomic_fetch_add(&contention_bytes, (uint32_t)len);
+        record_callback_time(started);
         return len;
     }
     playback_read(&player, data, (size_t)len);
     UNLOCK();
+    record_callback_time(started);
     return len;
 }
 void audio_player_connected(bool connected)
@@ -190,8 +200,8 @@ void audio_player_log(void)
 {
     if (!lock) return;
     LOCK(); playback_t p = player; UNLOCK();
-    ESP_LOGI(TAG, "PLAYBACK track=%u/%u frames=%"PRIu32" total=%"PRIu64" queued=%u underrun=%"PRIu64" contention=%"PRIu32" max_decode_us=%"PRIu32" done=%d failed=%d paused=%d connected=%d",
+    ESP_LOGI(TAG, "PLAYBACK track=%u/%u frames=%"PRIu32" total=%"PRIu64" queued=%u underrun=%"PRIu64" contention=%"PRIu32" max_decode_us=%"PRIu32" callback_us=%"PRIu32" done=%d failed=%d paused=%d connected=%d",
         p.track + 1, p.count, p.consumed_frames, p.total_frames, (unsigned)p.queued,
-        p.underrun_bytes, atomic_load(&contention_bytes), atomic_load(&max_decode_us),
+        p.underrun_bytes, atomic_load(&contention_bytes), atomic_load(&max_decode_us), atomic_load(&max_callback_us),
         p.finished, p.failed, p.paused, p.connected);
 }
