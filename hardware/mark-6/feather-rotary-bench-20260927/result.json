@@ -1,5 +1,5 @@
 {
-  "status": "Firmware uploaded and rotary detected; user input test pending",
+  "status": "LCD and rotary bench manual input check PASSED",
   "mac": "14:33:5c:99:1a:28",
   "application_sha256": "238281ca36bc7b4747adf68688432482d6b1f124eb288ce13cb46924dca507aa",
   "application_bytes": 291152,
@@ -7,9 +7,10 @@
   "reported_seesaw_version": "0x166c4a97",
   "product_id": 5740,
   "initial_buttons": "All five released",
-  "user_input_test_passed": null,
+  "user_input_test_passed": true,
   "test_instructions": "Rotate both ways, press/release center and each of four directions; confirm changing wheel value and all five press counters. Native labels may differ from physical holding orientation.",
   "limitations": "No carrier power-good or carrier supply/ribbon qualification; no touch, SD or radio initialization. Rotary directions use vendor native orientation, not final enclosure rotation.",
-  "next_step": "Await manual input confirmation; save serial observation log.",
-  "serial_observation": "55-second capture: successful init, all five initially released, polling heartbeats through 50.574 s, no input events or resets observed during capture"
+  "next_step": "Plan read-only SD bring-up on the temporary bench; final directional mapping, carrier qualification and integrated SD/Bluetooth playback remain pending.",
+  "serial_observation": "55-second capture: successful init, all five initially released, polling heartbeats through 50.574 s, no input events or resets observed during capture",
+  "user_confirmation": "Dave reports: it all works great, after being asked to verify wheel movement in both directions and all five button press counters (2026-09-27)."
 }
