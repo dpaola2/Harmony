@@ -1,0 +1,81 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 27 2026 15:39:07
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11b50h ( 72528) map
+I (114) esp_image: segment 1: paddr=00021b78 vaddr=3ff80000 size=00020h (    32) load
+I (114) esp_image: segment 2: paddr=00021ba0 vaddr=3ffb0000 size=028f4h ( 10484) load
+I (121) esp_image: segment 3: paddr=0002449c vaddr=40080000 size=0bb7ch ( 47996) load
+I (144) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=20180h (131456) map
+I (189) esp_image: segment 5: paddr=000501a8 vaddr=4008bb7c size=06f84h ( 28548) load
+I (209) boot: Loaded app from partition at offset 0x10000
+I (209) boot: Disabling RNG early entropy source...
+I (220) quad_psram: This chip is ESP32-PICO-V3-02
+I (221) esp_psram: Found 2MB PSRAM device
+I (222) esp_psram: Speed: 40MHz
+I (222) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (228) cpu_start: Multicore app
+I (694) esp_psram: SPI SRAM memory test OK
+I (702) cpu_start: Pro cpu start user code
+I (702) cpu_start: cpu freq: 240000000 Hz
+I (702) app_init: Application information:
+I (702) app_init: Project name:     mark6_feather_display_bench
+I (707) app_init: App version:      c3c6179-dirty
+I (712) app_init: Compile time:     Sep 27 2026 15:50:46
+I (717) app_init: ELF file SHA256:  ed7193133...
+I (721) app_init: ESP-IDF:          8c750b08
+I (725) efuse_init: Min chip rev:     v0.0
+I (729) efuse_init: Max chip rev:     v3.99 
+I (733) efuse_init: Chip rev:         v3.1
+I (737) heap_init: Initializing. RAM available for dynamic allocation:
+I (743) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (748) heap_init: At 3FFB3288 len 0002CD78 (179 KiB): DRAM
+I (754) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (759) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (764) heap_init: At 40092B00 len 0000D500 (53 KiB): IRAM
+I (770) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (777) spi_flash: detected chip: generic
+I (780) spi_flash: flash io: dio
+I (784) main_task: Started on CPU0
+I (794) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (794) main_task: Calling app_main()
+I (794) LCD_BENCH: LCD and QT rotary bench; no SD, touch or radios
+I (804) LCD_BENCH: Identity and capacities matched; LCD-only outputs enabled
+I (1974) DISPLAY: ST7796S SPI2 4MHz 320x480; write completed, visual check required
+I (2144) DISPLAY: DRAW_COMPLETE: no display readback; visual confirmation required
+W (2394) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs
+I (2434) ANO_BENCH: DETECTED address=0x49 product=5740 version=0x166c4a97
+I (2494) ANO_BENCH: POSITION=0 delta=0
+I (2514) ANO_BENCH: CENTER released count=0
+I (2534) ANO_BENCH: UP released count=0
+I (2554) ANO_BENCH: LEFT released count=0
+I (2574) ANO_BENCH: DOWN released count=0
+I (2594) ANO_BENCH: RIGHT released count=0
+I (2614) ANO_BENCH: READY_FOR_INPUT
+I (10574) ANO_BENCH: Input polling active
+I (18574) ANO_BENCH: Input polling active
+I (26574) ANO_BENCH: Input polling active
+I (34574) ANO_BENCH: Input polling active
+I (42574) ANO_BENCH: Input polling active
+I (50574) ANO_BENCH: Input polling active

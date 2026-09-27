@@ -1,0 +1,3 @@
+PASS controls: startup-held key, 40ms bounce/hold handling, encoder and clock wrap, jump rejection, four rotations
+PASS bench identity/capacity rejection, display-only GPIO and latch ordering
+PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling
