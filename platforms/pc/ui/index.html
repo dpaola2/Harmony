@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Harmony · UI study</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="page-header"><a href="/" class="wordmark">harmony<span>●</span></a><span class="edition">INTERFACE STUDY / 01</span></header>
+<main>
+  <section class="intro">
+    <div class="eyebrow">YOUR MUSIC. WITH YOU.</div>
+    <h1>A little less.<br>A lot to listen to.</h1>
+    <p class="lead">A familiar wheel. Your whole collection.<br>Pick a record and settle in.</p>
+    <div class="instructions">
+      <h2>Take it for a spin</h2>
+      <p>Scroll over the player, drag around the wheel, or use <kbd>↑</kbd> <kbd>↓</kbd> to move.</p>
+      <dl><div><dt><kbd>Enter</kbd></dt><dd>Select</dd></div><div><dt><kbd>Esc</kbd></dt><dd>Back</dd></div><div><dt><kbd>Space</kbd></dt><dd>Play / pause</dd></div><div><dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>Previous / next</dd></div></dl>
+      <p class="tip">On Now Playing, turn the wheel to adjust volume.</p>
+    </div>
+    <div class="prototype-note"><span class="dot"></span><p>Interactive prototype · 45 real track titles<br>Audio and Bluetooth are simulated.</p></div>
+  </section>
+  <section class="stage" aria-label="Harmony player prototype">
+    <div class="device" id="device">
+      <div class="screen" aria-label="Player screen">
+        <div class="status"><span id="transport">Ⅱ</span><span id="receiver">SoundCore 2</span><span id="volume">VOL 25</span></div>
+        <div class="screen-heading"><div id="subtitle" class="eyebrow"></div><h2 id="title">Harmony</h2></div>
+        <div id="content" class="content"></div>
+        <div id="notice" role="status"></div>
+        <div class="screen-footer"><span id="footer-left">SELECT TO OPEN</span><span id="position">1 / 4</span></div>
+      </div>
+      <div class="wheel" id="wheel" aria-label="Navigation wheel">
+        <button class="wheel-button top" data-action="back" aria-label="Back">MENU</button>
+        <button class="wheel-button left" data-action="previous" aria-label="Previous track">Ⅰ◀</button>
+        <button class="wheel-button right" data-action="next" aria-label="Next track">▶Ⅰ</button>
+        <button class="wheel-button bottom" data-action="play_pause" aria-label="Play or pause">▶Ⅱ</button>
+        <button class="center" data-action="select" aria-label="Select"><span></span></button>
+      </div>
+      <div class="device-brand">harmony</div>
+    </div>
+    <div class="stage-caption"><span>320 × 480 DISPLAY</span><button id="home" data-action="home">Home ↗</button></div>
+  </section>
+</main>
+<footer class="page-footer"><span>OFFLINE BY DESIGN</span><span>Music / Now Playing / Bluetooth / Settings</span></footer>
+<div id="error" role="alert" hidden></div>
+<script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,407 @@
+[
+  {
+    "id": "0",
+    "title": "Are You Ready",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 1,
+    "duration_secs": 285,
+    "path": "Creed/Human Clay/01-01 Are You Ready.mp3"
+  },
+  {
+    "id": "1",
+    "title": "What If",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 2,
+    "duration_secs": 318,
+    "path": "Creed/Human Clay/01-02 What If.mp3"
+  },
+  {
+    "id": "2",
+    "title": "Beautiful",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 3,
+    "duration_secs": 260,
+    "path": "Creed/Human Clay/01-03 Beautiful.mp3"
+  },
+  {
+    "id": "3",
+    "title": "Say I",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 4,
+    "duration_secs": 316,
+    "path": "Creed/Human Clay/01-04 Say I.mp3"
+  },
+  {
+    "id": "4",
+    "title": "Wrong Way",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 5,
+    "duration_secs": 259,
+    "path": "Creed/Human Clay/01-05 Wrong Way.mp3"
+  },
+  {
+    "id": "5",
+    "title": "Never Die",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 7,
+    "duration_secs": 291,
+    "path": "Creed/Human Clay/01-07 Never Die.mp3"
+  },
+  {
+    "id": "6",
+    "title": "With Arms Wide Open",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 8,
+    "duration_secs": 275,
+    "path": "Creed/Human Clay/01-08 With Arms Wide Open.mp3"
+  },
+  {
+    "id": "7",
+    "title": "Higher",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 9,
+    "duration_secs": 317,
+    "path": "Creed/Human Clay/01-09 Higher.mp3"
+  },
+  {
+    "id": "8",
+    "title": "Wash Away Those Years",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 10,
+    "duration_secs": 364,
+    "path": "Creed/Human Clay/01-10 Wash Away Those Years.mp3"
+  },
+  {
+    "id": "9",
+    "title": "Inside Us All",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 11,
+    "duration_secs": 349,
+    "path": "Creed/Human Clay/01-11 Inside Us All.mp3"
+  },
+  {
+    "id": "10",
+    "title": "Young Grow Old",
+    "artist": "Creed",
+    "album": "Human Clay",
+    "track_number": 12,
+    "duration_secs": 287,
+    "path": "Creed/Human Clay/01-12 Young Grow Old.mp3"
+  },
+  {
+    "id": "11",
+    "title": "15 Step",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 1,
+    "duration_secs": 238,
+    "path": "Radiohead/In Rainbows/01 15 Step.mp3"
+  },
+  {
+    "id": "12",
+    "title": "Bodysnatchers",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 2,
+    "duration_secs": 242,
+    "path": "Radiohead/In Rainbows/02 Bodysnatchers.mp3"
+  },
+  {
+    "id": "13",
+    "title": "Nude",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 3,
+    "duration_secs": 256,
+    "path": "Radiohead/In Rainbows/03 Nude.mp3"
+  },
+  {
+    "id": "14",
+    "title": "Weird Fishes - Arpeggi",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 4,
+    "duration_secs": 318,
+    "path": "Radiohead/In Rainbows/04 Weird Fishes - Arpeggi.mp3"
+  },
+  {
+    "id": "15",
+    "title": "All I Need",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 5,
+    "duration_secs": 229,
+    "path": "Radiohead/In Rainbows/05 All I Need.mp3"
+  },
+  {
+    "id": "16",
+    "title": "Faust Arp",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 6,
+    "duration_secs": 130,
+    "path": "Radiohead/In Rainbows/06 Faust Arp.mp3"
+  },
+  {
+    "id": "17",
+    "title": "Reckoner",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 7,
+    "duration_secs": 290,
+    "path": "Radiohead/In Rainbows/07 Reckoner.mp3"
+  },
+  {
+    "id": "18",
+    "title": "House Of Cards",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 8,
+    "duration_secs": 328,
+    "path": "Radiohead/In Rainbows/08 House Of Cards.mp3"
+  },
+  {
+    "id": "19",
+    "title": "Jigsaw Falling Into Place",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 9,
+    "duration_secs": 249,
+    "path": "Radiohead/In Rainbows/09 Jigsaw Falling Into Place.mp3"
+  },
+  {
+    "id": "20",
+    "title": "Videotape",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "track_number": 10,
+    "duration_secs": 280,
+    "path": "Radiohead/In Rainbows/10 Videotape.mp3"
+  },
+  {
+    "id": "21",
+    "title": "Cats and Dogs",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 1,
+    "duration_secs": 116,
+    "path": "The Head and The Heart/The Head and the Heart/01 Cats and Dogs.mp3"
+  },
+  {
+    "id": "22",
+    "title": "Coeur d'Alene",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 2,
+    "duration_secs": 261,
+    "path": "The Head and The Heart/The Head and the Heart/02 Coeur d'Alene.mp3"
+  },
+  {
+    "id": "23",
+    "title": "Ghosts",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 3,
+    "duration_secs": 259,
+    "path": "The Head and The Heart/The Head and the Heart/03 Ghosts.mp3"
+  },
+  {
+    "id": "24",
+    "title": "Down in the Valley",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 4,
+    "duration_secs": 304,
+    "path": "The Head and The Heart/The Head and the Heart/04 Down in the Valley.mp3"
+  },
+  {
+    "id": "25",
+    "title": "Rivers and Roads",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 5,
+    "duration_secs": 284,
+    "path": "The Head and The Heart/The Head and the Heart/05 Rivers and Roads.mp3"
+  },
+  {
+    "id": "26",
+    "title": "Honey Come Home",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 6,
+    "duration_secs": 201,
+    "path": "The Head and The Heart/The Head and the Heart/06 Honey Come Home.mp3"
+  },
+  {
+    "id": "27",
+    "title": "Lost in My Mind",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 7,
+    "duration_secs": 259,
+    "path": "The Head and The Heart/The Head and the Heart/07 Lost in My Mind.mp3"
+  },
+  {
+    "id": "28",
+    "title": "Winter Song",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 8,
+    "duration_secs": 164,
+    "path": "The Head and The Heart/The Head and the Heart/08 Winter Song.mp3"
+  },
+  {
+    "id": "29",
+    "title": "Sounds Like Hallelujah",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 9,
+    "duration_secs": 190,
+    "path": "The Head and The Heart/The Head and the Heart/09 Sounds Like Hallelujah.mp3"
+  },
+  {
+    "id": "30",
+    "title": "Heaven Go Easy on Me",
+    "artist": "The Head and The Heart",
+    "album": "The Head and the Heart",
+    "track_number": 10,
+    "duration_secs": 340,
+    "path": "The Head and The Heart/The Head and the Heart/10 Heaven Go Easy on Me.mp3"
+  },
+  {
+    "id": "31",
+    "title": "Losing A Whole Year",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 1,
+    "duration_secs": 201,
+    "path": "Third Eye Blind/Third Eye Blind/01-01 Losing A Whole Year.mp3"
+  },
+  {
+    "id": "32",
+    "title": "Narcolepsy",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 2,
+    "duration_secs": 229,
+    "path": "Third Eye Blind/Third Eye Blind/01-02 Narcolepsy.mp3"
+  },
+  {
+    "id": "33",
+    "title": "Semi-Charmed Life",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 3,
+    "duration_secs": 269,
+    "path": "Third Eye Blind/Third Eye Blind/01-03 Semi-Charmed Life.mp3"
+  },
+  {
+    "id": "34",
+    "title": "Jumper",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 4,
+    "duration_secs": 273,
+    "path": "Third Eye Blind/Third Eye Blind/01-04 Jumper.mp3"
+  },
+  {
+    "id": "35",
+    "title": "Graduate",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 5,
+    "duration_secs": 190,
+    "path": "Third Eye Blind/Third Eye Blind/01-05 Graduate.mp3"
+  },
+  {
+    "id": "36",
+    "title": "How's It Going To Be",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 6,
+    "duration_secs": 254,
+    "path": "Third Eye Blind/Third Eye Blind/01-06 How's It Going To Be.mp3"
+  },
+  {
+    "id": "37",
+    "title": "Thanks A Lot",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 7,
+    "duration_secs": 298,
+    "path": "Third Eye Blind/Third Eye Blind/01-07 Thanks A Lot.mp3"
+  },
+  {
+    "id": "38",
+    "title": "Burning Man",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 8,
+    "duration_secs": 180,
+    "path": "Third Eye Blind/Third Eye Blind/01-08 Burning Man.mp3"
+  },
+  {
+    "id": "39",
+    "title": "Good For You",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 9,
+    "duration_secs": 232,
+    "path": "Third Eye Blind/Third Eye Blind/01-09 Good For You.mp3"
+  },
+  {
+    "id": "40",
+    "title": "London",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 10,
+    "duration_secs": 187,
+    "path": "Third Eye Blind/Third Eye Blind/01-10 London.mp3"
+  },
+  {
+    "id": "41",
+    "title": "I Want You",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 11,
+    "duration_secs": 269,
+    "path": "Third Eye Blind/Third Eye Blind/01-11 I Want You.mp3"
+  },
+  {
+    "id": "42",
+    "title": "The Background",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 12,
+    "duration_secs": 297,
+    "path": "Third Eye Blind/Third Eye Blind/01-12 The Background.mp3"
+  },
+  {
+    "id": "43",
+    "title": "Motorcycle Drive By",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 13,
+    "duration_secs": 263,
+    "path": "Third Eye Blind/Third Eye Blind/01-13 Motorcycle Drive By.mp3"
+  },
+  {
+    "id": "44",
+    "title": "God Of Wine",
+    "artist": "Third Eye Blind",
+    "album": "Third Eye Blind",
+    "track_number": 14,
+    "duration_secs": 318,
+    "path": "Third Eye Blind/Third Eye Blind/01-14 God Of Wine.mp3"
+  }
+]

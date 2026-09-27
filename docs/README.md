@@ -16,6 +16,7 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 
 ## Current player UI
 
+- [Interactive desktop prototype](../platforms/pc/ui/README.md): run the 320 × 480 menu and wheel simulation using the 45-track trial library.
 - [Player UI requirements](Harmony-player-ui-requirements.md): September 27 draft covering music navigation, controls, volume, and Bluetooth management on the verified Feather bench.
 
 ## Core docs
