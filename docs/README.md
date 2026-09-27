@@ -16,10 +16,13 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 
 ## Current player UI
 
+- [Changelog](../CHANGELOG.md): dated implementation, fixes and validation.
+- [Mark-7 visual reference](mark-7-design-reference.md): frozen desktop appearance and capacitive-wheel/battery design direction.
+
 - [Native Feather UI bench](../firmware/mark-6/feather-player-bench/README.md): device music tree, Now Playing, controls, and current limits.
 
 - [Interactive desktop prototype](../platforms/pc/ui/README.md): run the 320 × 480 menu and wheel simulation using the 45-track trial library.
-- [Player UI requirements](Harmony-player-ui-requirements.md): September 27 draft covering music navigation, controls, volume, and Bluetooth management on the verified Feather bench.
+- [Player UI requirements](Harmony-player-ui-requirements.md): Accepted Mark-6 scope (HARMONY-18), covering music navigation, controls, volume, and Bluetooth management on the verified Feather bench.
 
 ## Core docs
 - `PROJECT_OVERVIEW.md` — why the project exists, constraints, and hardware/software goals.

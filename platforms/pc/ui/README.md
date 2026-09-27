@@ -12,7 +12,7 @@ Scroll over the player or drag around the wheel to move the highlight. Click the
 
 Keyboard controls: Up/Down scroll, Enter selects, Escape goes back, Space pauses, and Left/Right skip. Rows are also clickable.
 
-The fixture contains the 45 trial tracks' titles, paths, and durations. It contains no audio or private source paths. Playback time and Bluetooth outcomes are simulated. The device firmware is unchanged.
+The fixture contains the 45 trial tracks' titles, paths, and durations. It contains no audio or private source paths. Playback time and Bluetooth outcomes are simulated. This server does not control the device firmware.
 
 Artist, album, song, and playlist browsing work. The model retains the playback queue while browsing. Bluetooth supports simulated pairing, switching, disconnecting, and confirmed forgetting. Repeat works; shuffle and display timeout are marked deferred. Preferences reset when the server restarts.
 
@@ -21,3 +21,5 @@ The hardware-independent model is in `core/ui_prototype.py`. The HTTP adapter li
 Validation: 43 Python tests passed, including 13 prototype behavior tests. Browser checks covered artist/album/song navigation, returning to the selected song, pause, volume, and simulated pairing/forgetting. The compact layout was visually inspected.
 
 Related: [UI requirements](../../../docs/Harmony-player-ui-requirements.md), Harmony Mark-6: Bluetooth bench player (HARMONY-17).
+
+The approved September 27 appearance is frozen at tag `mark7-visual-reference-20260927`. See the [Mark-7 design reference](../../../docs/mark-7-design-reference.md).

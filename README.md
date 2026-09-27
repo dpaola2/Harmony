@@ -2,6 +2,17 @@
 
 Hardware-agnostic MP3 player core with a PC simulator and ESP32 targets. See `docs/README.md` for the doc map; hardware bring-up for Prototype 1 is in `hardware/prototype1/README.md`.
 
+## Current Mark-6 build
+
+The active player uses native ESP-IDF firmware on the Adafruit ESP32 Feather V2. The Python/MicroPython architecture below is retained historical context.
+
+- [Feather bench firmware and instructions](firmware/mark-6/feather-player-bench/README.md)
+- [Native UI and renderer](firmware/mark-6/feather-carrier/main/)
+- [UI requirements and completion status](docs/Harmony-player-ui-requirements.md)
+- [Desktop UI prototype](platforms/pc/ui/README.md)
+- [Preserved Mark-7 visual reference](docs/mark-7-design-reference.md)
+- [Changelog](CHANGELOG.md)
+
 ## Architecture & Goals
 - Core app logic in Python, shared by PC simulator and MicroPython on ESP32.
 - iPod-style UI: Library → Now Playing → Settings with tactile buttons (no touch).

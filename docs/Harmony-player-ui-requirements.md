@@ -1,21 +1,21 @@
 # Harmony player UI requirements
 Date: 2026-09-27
-Status: draft for discussion
-Tracking: Harmony Mark-6: Bluetooth bench player (HARMONY-17)
+Status: accepted Mark-6 scope; implementation incomplete
+Tracking: Complete Mark-6 player UI (HARMONY-18), under Harmony Mark-6: Bluetooth bench player (HARMONY-17)
 
 Build the first usable interface around music browsing, playback, volume, and Bluetooth device management. The verified temporary bench can support UI development while carrier qualification continues.
 
-Dave requested these features after confirming clean audio, the display, pause/resume, track selection, and previous/next controls. The detailed behavior below is proposed, except where identified as existing.
+Dave requested these features after confirming clean audio, the display, pause/resume, track selection, and previous/next controls. On September 27, Dave requested the full requirements for Mark-6. The remaining implementation is tracked in HARMONY-18. Mark-7 preserves the desktop visual direction for future hardware; it does not defer this UI scope.
 
 ## Existing requirements and implementation
 
 The historical library plan specifies Artists → Albums → Tracks, metadata fallbacks, and ordered tracks. The Python simulator implements that hierarchy and a 0–100 volume state. Settings remains a placeholder.
 
-The current native ESP-IDF firmware has a flat playlist capped at 64 tracks, filename titles, fixed -24 dB attenuation, and one configured receiver. It does not use the Python UI. Bluetooth device browsing and unpairing need new requirements and implementation.
+The current native ESP-IDF firmware implements artist/album/song navigation, album queues, selection restoration, playback controls and Now Playing. It uses folder/filename metadata and a playlist capped at 64 tracks, fixed -24 dB attenuation, and one configured receiver. Bluetooth and Settings remain explanatory placeholders. The browser prototype simulates additional features; those are not proof of device implementation.
 
 Sources: [library plan](gameplans/CS5.5.md), [navigation plan](gameplans/NAV.md), [volume plan](gameplans/CS5.6.md), [Python app](../core/player_app.py), and [native player](../firmware/mark-6/feather-carrier/README.md).
 
-## Proposed menu tree
+## Required menu tree
 
 ```text
 Music
@@ -35,7 +35,7 @@ Settings
 
 Artist browsing is the first implementation. Albums, Songs, and existing M3U playlists follow. Playlist editing and text search are deferred.
 
-## Proposed controls
+## Required controls
 
 Directions refer to the front of the finished enclosure. Verify the physical mapping separately.
 
@@ -75,7 +75,7 @@ Pair only after the user selects a device. Support connection cancellation and t
 
 Disconnect retains the saved pairing. Forget requires confirmation and removes the local bond and reconnect preference. It cannot promise to clear the receiver's own pairing record.
 
-Reconnect to the last selected saved receiver. Never switch to an arbitrary discovered device. Pause after an unexpected disconnect and require resume after reconnection. This proposed behavior replaces the bench's automatic playback continuation.
+Reconnect to the last selected saved receiver. Never switch to an arbitrary discovered device. Pause after an unexpected disconnect and require resume after reconnection. This required behavior replaces the bench's automatic playback continuation.
 
 If discovery interrupts audio, pause deliberately and show that state. Do not conceal interference as playback glitches. Verify discovery behavior on hardware before promising uninterrupted playback during a scan.
 
@@ -91,13 +91,29 @@ If discovery interrupts audio, pause deliberately and show that state. Do not co
 
 Preferences belong in device storage; the music card stays read-only. Library scanning, Bluetooth events, rendering, and audio must not block one another.
 
+## Implementation status, September 27
+
+| Area | On the Feather | Remaining for Mark-6 |
+| --- | --- | --- |
+| Music | Artists, Albums, album songs and album playback queues | All Songs, M3U playlists, metadata-first index, disc/track order, long-name access and an explicit library capacity beyond 64 entries |
+| Now Playing | Title, artist, album, elapsed time and trial-library duration/progress | Adjustable volume, live receiver information and duration discovery for general files |
+| Controls/rendering | Wheel navigation, center select, back, pause and skip; incremental highlight redraw | Continue responsiveness checks as all menus are added |
+| Volume | Fixed quiet -24 dB attenuation | 0–100 digital gain, mute, startup ceiling and persistence |
+| Bluetooth | SoundCore 2 bench connection | Saved/discovered lists, explicit pairing, cancel/errors, switching, disconnect, confirmed Forget and paused reconnect |
+| Settings | Placeholder | Shuffle, repeat off/all/one and display timeout |
+| Persistence/recovery | Bench startup automatically plays | Saved preferences/selection, paused cold boot, usable storage/file/connection recovery |
+| Acceptance | Dave reports corrected UI is “much better”; short bench capture has zero underrun/contention bytes | Second receiver, restart/reconnect and full-album use with finished menus |
+
+Album art, seeking, gapless playback, text search, playlist editing and additional codecs remain outside this first UI release. The physical carrier and battery qualification have separate acceptance criteria.
+
 ## Development order
 
 1. Prototype the menu layout and control behavior on the desktop.
 2. Implement Artists → Albums → Songs and Now Playing on the verified Feather bench.
 3. Add adjustable volume.
 4. Add saved devices, discovery, pairing, disconnect, and forget.
-5. Add queue settings and persistence, then complete endurance and reconnect tests.
+5. Complete Songs/Playlists, metadata indexing and Now Playing details.
+6. Add queue settings, display timeout, persistence and recovery, then complete endurance and reconnect tests.
 
 Keep the current working firmware available for rollback. Carrier power, ribbon, enclosure, and RF qualification remain separate from UI acceptance.
 

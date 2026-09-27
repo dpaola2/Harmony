@@ -1,5 +1,5 @@
 {
-  "status": "Corrected UI firmware uploaded; center selection and album playback observed in serial; user responsiveness confirmation pending",
+  "status": "Corrected UI firmware uploaded; center selection and album playback observed in serial; Dave confirmed improved responsiveness",
   "metrics": {
     "queue_position": 5,
     "queue_count": 10,
@@ -34,7 +34,11 @@
   "input_poll_ms_during_user_actions": "typically 28-35; startup-inclusive max344",
   "max_draw_us": 1346244,
   "audio_user_confirmed_on_initial_ui_build": true,
-  "corrected_ui_manual_confirmation": null,
+  "corrected_ui_manual_confirmation": {
+    "date": "2026-09-27",
+    "quote": "much better!",
+    "scope": "User assessment of corrected native UI responsiveness; not full UI or endurance acceptance"
+  },
   "checks": [
     "Two native builds without compiler warnings",
     "11 existing carrier host verification groups",
@@ -44,5 +48,5 @@
     "Application flash checksum verified"
   ],
   "rollback": "/Users/dave/Downloads/harmony-mark6-backups/pre-ui-20260927",
-  "limits": "Fixed -24dB level and SoundCore 2 receiver. Volume/Bluetooth management deferred. Carrier/endurance/reconnect remain unqualified. Scrolling quality still awaits user assessment."
+  "limits": "Fixed -24dB level and SoundCore 2 receiver. Full volume/Bluetooth/settings/library work remains Mark-6 scope (HARMONY-18). Carrier/endurance/reconnect remain unqualified. Full-screen redraws remain slower than the browser prototype."
 }
