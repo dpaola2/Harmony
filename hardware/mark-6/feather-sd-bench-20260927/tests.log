@@ -1,0 +1,5 @@
+PASS album: ordered BOM/CRLF M3U, 64-track bound, empty/invalid/traversal rejection
+PASS controls: startup-held key, 40ms bounce/hold handling, encoder and clock wrap, jump rejection, four rotations
+PASS bench identity/capacity rejection, LCD/SD GPIO and latch ordering
+PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling
+PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling

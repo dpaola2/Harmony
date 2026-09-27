@@ -6,6 +6,12 @@
 #include "carrier_board.h"
 #include "bench_display.h"
 
+#ifdef TEST_SHARED_BUS
+#define bench_display_init bench_display_init_on_existing_bus
+#define EXPECTED_BUS_COUNT 0
+#else
+#define EXPECTED_BUS_COUNT 1
+#endif
 static bool powered, inject_error;
 static unsigned transactions, pixel_bytes, bus_count;
 static uint8_t current_command, column[4], row[4], last_pixel[2];
@@ -57,7 +63,7 @@ int main(void)
 {
     assert(bench_display_init() == ESP_ERR_INVALID_STATE && bus_count == 0);
     powered = true;
-    assert(bench_display_init() == ESP_OK && bus_count == 1);
+    assert(bench_display_init() == ESP_OK && bus_count == EXPECTED_BUS_COUNT);
     const uint8_t expected[] = {0x11,0x36,0x3a,0xf0,0xf0,0xb4,0xb7,0xc0,0xc1,
         0xc2,0xc5,0xe8,0xe0,0xe1,0xf0,0xf0,0x21,0x29,0x2a,0x2b,0x2c};
     assert(command_count == sizeof(expected) && !memcmp(commands, expected, sizeof(expected)));

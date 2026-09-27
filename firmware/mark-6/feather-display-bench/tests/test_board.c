@@ -13,8 +13,8 @@ esp_err_t esp_flash_get_size(void *chip,uint32_t *out){*out=flash_bytes;return E
 size_t esp_psram_get_size(void){return psram_bytes;}
 bool esp_psram_is_initialized(void){return initialized;}
 esp_err_t gpio_set_level(int pin,int level){
-    assert(pin==26 || pin==32 || pin==33 || pin==4);
-    assert(level==(pin==26 || pin==32));
+    assert(pin==25 || pin==26 || pin==32 || pin==33 || pin==4);
+    assert(level==(pin==25 || pin==26 || pin==32));
     ++levels;return ESP_OK;
 }
 esp_err_t gpio_set_direction(int pin,int direction){
@@ -35,6 +35,6 @@ int main(void){
     assert(!levels && !directions);
     psram_bytes=2097152;
     assert(carrier_board_init()==ESP_OK);
-    assert(levels==4 && directions==4 && carrier_board_ready());
-    puts("PASS bench identity/capacity rejection, display-only GPIO and latch ordering");
+    assert(levels==5 && directions==5 && carrier_board_ready());
+    puts("PASS bench identity/capacity rejection, LCD/SD GPIO and latch ordering");
 }

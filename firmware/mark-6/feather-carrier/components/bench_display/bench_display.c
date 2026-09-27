@@ -103,13 +103,13 @@ esp_err_t bench_display_text(int x, int y, const char *text, uint16_t fg, uint16
     return err;
 }
 
-esp_err_t bench_display_init(void)
+static esp_err_t display_init(bool existing_bus)
 {
     if (!carrier_board_ready() || ready) return ESP_ERR_INVALID_STATE;
     spi_bus_config_t bus = {.mosi_io_num = CARRIER_TFT_MOSI, .miso_io_num = -1,
         .sclk_io_num = CARRIER_TFT_SCK, .quadwp_io_num = -1, .quadhd_io_num = -1,
         .max_transfer_sz = sizeof(pixels)};
-    TRY(spi_bus_initialize(SPI2_HOST, &bus, SPI_DMA_CH_AUTO));
+    if (!existing_bus) TRY(spi_bus_initialize(SPI2_HOST, &bus, SPI_DMA_CH_AUTO));
     spi_device_interface_config_t dev = {.clock_speed_hz = 4000000, .mode = 0,
         .spics_io_num = -1, .queue_size = 1};
     TRY(spi_bus_add_device(SPI2_HOST, &dev, &lcd));
@@ -126,6 +126,11 @@ esp_err_t bench_display_init(void)
     ESP_LOGI("DISPLAY", "ST7796S SPI2 4MHz 320x480; write completed, visual check required");
     return ESP_OK;
 }
+
+/* The caller owns the existing SPI2 bus and must initialize any SD card first.
+ * Display calls and SD transfers must be serialized by that caller. */
+esp_err_t bench_display_init_on_existing_bus(void) { return display_init(true); }
+esp_err_t bench_display_init(void) { return display_init(false); }
 
 esp_err_t bench_display_white_isolation(void)
 {

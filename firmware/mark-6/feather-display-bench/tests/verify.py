@@ -11,13 +11,15 @@ with tempfile.TemporaryDirectory() as td:
         f=tmp/name;f.parent.mkdir(parents=True,exist_ok=True)
         f.write_text('#include "mock_idf.h"\nbool esp_psram_is_initialized(void);\n')
     for name,sources in {
+        'album':[shared/'tests/test_album.c',shared/'main/album.c'],
         'input':[shared/'tests/test_input.c',shared/'main/input_filter.c'],
         'board':[p/'tests/test_board.c',p/'components/carrier_board/bench_board.c'],
+        'display_shared':[shared/'tests/test_display.c',shared/'components/bench_display/bench_display.c'],
         'display':[shared/'tests/test_display.c',shared/'components/bench_display/bench_display.c'],
     }.items():
         exe=tmp/name
         includes=[tmp,shared/'main',p/'components/carrier_board',shared/'tests',shared/'components/carrier_board',shared/'components/bench_display']
         subprocess.run(['cc','-std=gnu11','-Wall','-Wextra','-Werror','-Wno-unused-parameter',
-            '-fsanitize=address,undefined',*['-I'+str(i) for i in includes],
+            '-fsanitize=address,undefined',*(['-DTEST_SHARED_BUS'] if name=='display_shared' else []),*['-I'+str(i) for i in includes],
             *map(str,sources),'-o',str(exe)],check=True)
         subprocess.run([str(exe)],check=True)

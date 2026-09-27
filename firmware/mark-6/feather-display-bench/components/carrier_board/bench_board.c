@@ -21,14 +21,14 @@ esp_err_t carrier_board_init(void)
     if (memcmp(mac, expected_mac, sizeof mac) || flash_size != 8*1024*1024 ||
         !esp_psram_is_initialized() || esp_psram_get_size() != 2*1024*1024)
         return ESP_ERR_INVALID_STATE;
-    // Only display control pins. SPI driver later configures MOSI27 and SCK14.
-    const int pins[] = {CARRIER_TFT_CS,CARRIER_TFT_RST,CARRIER_TFT_DC,CARRIER_TFT_LITE};
-    const int levels[] = {1,1,0,0};
+    // Both chip selects inactive before shared SPI initialization.
+    const int pins[] = {CARRIER_SD_CS,CARRIER_TFT_CS,CARRIER_TFT_RST,CARRIER_TFT_DC,CARRIER_TFT_LITE};
+    const int levels[] = {1,1,1,0,0};
     for (unsigned i=0;i<sizeof pins/sizeof pins[0];i++) {
         TRY(gpio_set_level(pins[i],levels[i]));
         TRY(gpio_set_direction(pins[i],GPIO_MODE_OUTPUT));
     }
     ready = true;
-    ESP_LOGI("LCD_BENCH", "Identity and capacities matched; LCD-only outputs enabled");
+    ESP_LOGI("LCD_BENCH", "Identity and capacities matched; LCD/SD control outputs enabled");
     return ESP_OK;
 }

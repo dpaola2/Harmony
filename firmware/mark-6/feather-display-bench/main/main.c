@@ -1,6 +1,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 #include "ano_bench.h"
+#include "sd_bench.h"
 #include "bench_display.h"
 #include "carrier_board.h"
 #include "input_filter.h"
@@ -25,15 +26,21 @@ static void show_error(const char *where,esp_err_t err)
 }
 void app_main(void)
 {
-    ESP_LOGI("LCD_BENCH","LCD and QT rotary bench; no SD, touch or radios");
+    ESP_LOGI("LCD_BENCH","LCD, QT rotary and read-only SD bench; no touch or radios");
     esp_err_t err=carrier_board_init();
     if(err!=ESP_OK){ESP_LOGE("LCD_BENCH","Identity/capacity check failed; outputs disabled");return;}
-    err=bench_display_init();
+    err=sd_bench_mount();
+    if(err!=ESP_OK){ESP_LOGE("SD_BENCH","SD mount failed: %s; no LCD traffic",esp_err_to_name(err));return;}
+    err=bench_display_init_on_existing_bus();
     if(err==ESP_OK) err=bench_display_probe();
     if(err!=ESP_OK){gpio_set_level(CARRIER_TFT_LITE,0);return;}
     err=ano_bench_init();
     if(err!=ESP_OK){show_error("Rotary init",err);return;}
     if((err=line(180,"ROTARY CONNECTED"))!=ESP_OK){show_error("Display",err);return;}
+    err=sd_bench_verify_start();
+    if(err!=ESP_OK){show_error("SD inventory",err);return;}
+    bool sd_done=false;
+    unsigned sd_percent=101;
     const char *names[]={"CENTER","UP","LEFT","DOWN","RIGHT"};
     const unsigned logical[]={INPUT_SELECT,INPUT_UP,INPUT_LEFT,INPUT_DOWN,INPUT_RIGHT};
     unsigned counts[5]={0};
@@ -43,6 +50,17 @@ void app_main(void)
     bool first=true;
     unsigned heartbeats=0;
     for(;;){
+        if(!sd_done){
+            unsigned percent;
+            err=sd_bench_verify_step(&sd_done,&percent);
+            if(err!=ESP_OK){show_error("SD verify",err);return;}
+            if(sd_done || percent!=sd_percent){
+                char status[39];
+                snprintf(status,sizeof status,sd_done?"SD PASS: 45 tracks; song checksum OK":"SD: 45 tracks; checking song %u%%",percent);
+                if((err=line(440,status))!=ESP_OK){show_error("Display",err);return;}
+                sd_percent=percent;
+            }
+        }
         uint32_t position,buttons;
         err=ano_bench_read(&position,&buttons);
         if(err!=ESP_OK){show_error("Rotary read",err);return;}
