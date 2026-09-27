@@ -1,0 +1,401 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 27 2026 16:17:03
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00300000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3dc2ch (252972) map
+I (175) esp_image: segment 1: paddr=0004dc54 vaddr=3ff80000 size=00020h (    32) load
+I (176) esp_image: segment 2: paddr=0004dc7c vaddr=3ffbdb60 size=0239ch (  9116) load
+I (183) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=c9e3ch (826940) map
+I (469) esp_image: segment 4: paddr=00119e64 vaddr=3ffbfefc size=03c90h ( 15504) load
+I (475) esp_image: segment 5: paddr=0011dafc vaddr=40080000 size=1ee38h (126520) load
+I (540) boot: Loaded app from partition at offset 0x10000
+I (540) boot: Disabling RNG early entropy source...
+I (550) quad_psram: This chip is ESP32-PICO-V3-02
+I (552) esp_psram: Found 2MB PSRAM device
+I (552) esp_psram: Speed: 40MHz
+I (552) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (558) cpu_start: Multicore app
+I (1024) esp_psram: SPI SRAM memory test OK
+I (1032) cpu_start: Pro cpu start user code
+I (1032) cpu_start: cpu freq: 240000000 Hz
+I (1032) app_init: Application information:
+I (1033) app_init: Project name:     mark6_feather_player_bench
+I (1038) app_init: App version:      1a3990b-dirty
+I (1043) app_init: Compile time:     Sep 27 2026 16:55:33
+I (1048) app_init: ELF file SHA256:  0bd3963a1...
+I (1052) app_init: ESP-IDF:          8c750b08
+I (1056) efuse_init: Min chip rev:     v0.0
+I (1060) efuse_init: Max chip rev:     v3.99 
+I (1064) efuse_init: Chip rev:         v3.1
+I (1069) heap_init: Initializing. RAM available for dynamic allocation:
+I (1075) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (1080) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (1085) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (1090) heap_init: At 3FFCFDC0 len 00010240 (64 KiB): DRAM
+I (1096) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (1101) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (1107) heap_init: At 4009EE38 len 000011C8 (4 KiB): IRAM
+I (1112) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (1120) spi_flash: detected chip: generic
+I (1122) spi_flash: flash io: dio
+I (1126) coexist: coex firmware version: 831ec70
+I (1130) main_task: Started on CPU0
+I (1132) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (1140) main_task: Calling app_main()
+I (1394) LCD_BENCH: Identity and capacities matched; LCD/SD control outputs enabled
+I (1394) BT_AV: MARK6_FEATHER_ALBUM target=SoundCore 2 playlist=HARMONY/ALBUM.M3U
+I (1397) SD_BENCH: READ_ONLY mount: SCK=14 MOSI=27 MISO=21 CS=25, shared SPI2 4MHz
+I (1447) SD_BENCH: CARD_RESET_DONE before initialization
+I (1447) sdspi_transaction: cmd=52, R1 response: command not supported
+I (1489) sdspi_transaction: cmd=5, R1 response: command not supported
+Name: SD
+Type: SDHC
+Speed: 4.00 MHz (limit: 4.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+I (1585) ALBUM: TRACK index=1/45 file=/sd/HARMONY/Creed/Human Clay/01-01 Are You Ready.mp3 generation=1
+I (2872) DISPLAY: ST7796S SPI2 4MHz 320x480; write completed, visual check required
+W (2875) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs
+I (2939) ANO: RAW_POSITION=0
+I (2970) BTDM_INIT: BT controller compile version [b992c7d]
+I (2975) BTDM_INIT: Bluetooth MAC: 14:33:5c:99:1a:2a
+I (2978) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+I (3541) BT_AV: Own address:[14:33:5c:99:1a:2a]
+I (3545) BT_AV: Starting device discovery...
+E (3549) RC_CT: Invalid AVRC event: 10
+W (3552) BT_BTC: A2DP Enable with AVRC
+W (3553) BT_AVRC: For AVRCP Target Cateory 1 and 3, SDP record shall contain additional protocol list
+I (3567) BT_AV: bt_app_av_sm_hdlr state: 1, event: 0x4
+I (3572) BT_AV: event: 10
+I (3575) BT_AV: event: 10
+I (3575) BT_AV: event: 10
+I (3575) BT_AV: event: 10
+I (3577) BT_AV: ESP_BT_GAP_GET_DEV_NAME_CMPL_EVT device name: Harmony Mark-6
+I (3581) BT_AV: Discovery started.
+I (3585) main_task: Returned from app_main()
+I (4223) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=60 max_draw_us=1346244 stack_free_min=3628
+I (9224) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3436
+I (12396) BT_AV: Scanned device: f4:2b:7d:5a:35:43
+I (12397) BT_AV: --Class of Device: 0x240404
+I (12397) BT_AV: --RSSI: -62
+I (12397) BT_AV: --Name: SoundCore 2
+I (12400) BT_AV: Found a target device, address f4:2b:7d:5a:35:43, name SoundCore 2
+I (12407) BT_AV: Cancel device discovery ...
+I (12414) BT_AV: Device discovery stopped.
+I (12415) BT_AV: a2dp connecting to peer: SoundCore 2
+W (12420) BT_APPL: reset flags
+I (12428) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x0
+W (13087) BT_HCI: hcif conn complete: hdl 0x80, st 0x0
+I (13091) BT_AV: event: 16
+I (13176) BT_AV: event: 21
+I (13213) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x2
+W (13241) BT_APPL: new conn_srvc id:18, app_id:0
+I (13243) BT_AV: bt_app_av_sm_hdlr state: 4, event: 0x0
+I (13341) RC_CT: AVRC conn_state event: state 1, [f4:2b:7d:5a:35:43]
+I (13342) RC_CT: AVRC remote features 24b, TG features 2
+I (13350) RC_CT: remote rn_cap: count 2, bitmask 0x2040
+I (13546) BT_AV: BENCH frames=0 heap=1376796 min_heap=1369492
+I (13546) ALBUM: PLAYBACK track=1/45 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=56767 callback_us=0 done=0 failed=0 paused=0 connected=0
+I (13555) BT_AV: STACK_FREE_MIN app=3844 timer=1292
+I (13559) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (13565) BT_AV: a2dp media ready checking ...
+I (13569) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x3
+I (13574) BT_AV: a2dp media ready, starting ...
+W (13581) BT_APPL: new conn_srvc id:18, app_id:1
+I (13595) BT_LOG: bta_av_link_role_ok hndl:x41 role:0 conn_audio:x1 bits:1 features:x864b
+
+I (13597) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x3
+I (13598) BT_AV: a2dp media start successfully.
+I (13602) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0x1
+I (13951) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=2 max_draw_us=1346244 stack_free_min=3356
+I (14989) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3356
+I (15089) RC_CT: AVRC event notification: 13
+I (15090) RC_CT: Volume changed: 89
+I (15204) RC_CT: AVRC event notification: 13
+I (15205) RC_CT: Volume changed: 88
+I (18053) ANO: RAW_POSITION=1
+I (18353) ANO: RAW_POSITION=2
+I (18472) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (18860) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=15 max_draw_us=1346244 stack_free_min=3324
+I (19072) ANO: RAW_POSITION=3
+I (19252) ANO: RAW_POSITION=2
+I (19474) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (19495) ANO: RAW_POSITION=1
+I (19702) ANO: RAW_POSITION=0
+I (19880) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (19885) ANO: RAW_POSITION=-1
+I (20277) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (23546) BT_AV: BENCH frames=437760 heap=1376760 min_heap=1367472
+I (23547) ALBUM: PLAYBACK track=1/45 frames=437760 total=437760 queued=131072 underrun=0 contention=0 max_decode_us=120038 callback_us=1608 done=0 failed=0 paused=0 connected=1
+I (23557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (23561) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (23634) ANO: UP pressed poll_ms=32 max_poll_ms=344
+I (23635) ANO: RIGHT pressed poll_ms=32 max_poll_ms=344
+I (23693) ANO: DEBOUNCED pressed=0x06 poll_ms=28 max_poll_ms=344
+I (23812) ANO: UP released poll_ms=30 max_poll_ms=344
+I (23814) ANO: RIGHT released poll_ms=30 max_poll_ms=344
+I (23827) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (24444) ANO: SELECT pressed poll_ms=30 max_poll_ms=344
+I (24503) ANO: DEBOUNCED pressed=0x01 poll_ms=28 max_poll_ms=344
+I (24504) ANO: UI_BUTTON action=1 queued=1
+I (24565) ANO: SELECT released poll_ms=32 max_poll_ms=344
+I (25085) DISPLAY: UI page=1 title=Music selection=0/2 strips=18 max_draw_us=1346244 stack_free_min=3324
+I (25344) ANO: SELECT pressed poll_ms=32 max_poll_ms=344
+I (25403) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=344
+I (25404) ANO: UI_BUTTON action=1 queued=1
+I (25435) ANO: SELECT released poll_ms=31 max_poll_ms=344
+I (25999) DISPLAY: UI page=2 title=Artists selection=0/4 strips=16 max_draw_us=1346244 stack_free_min=3324
+I (26724) ANO: RAW_POSITION=0
+I (27141) DISPLAY: UI page=2 title=Artists selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (27323) ANO: SELECT pressed poll_ms=29 max_poll_ms=344
+I (27382) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=344
+I (27385) ANO: UI_BUTTON action=1 queued=1
+I (27414) ANO: SELECT released poll_ms=31 max_poll_ms=344
+I (28069) DISPLAY: UI page=3 title=Albums selection=0/1 strips=28 max_draw_us=1346244 stack_free_min=3324
+I (28315) ANO: SELECT pressed poll_ms=32 max_poll_ms=344
+I (28372) ANO: DEBOUNCED pressed=0x01 poll_ms=28 max_poll_ms=344
+I (28375) ANO: UI_BUTTON action=1 queued=1
+I (28437) ANO: SELECT released poll_ms=30 max_poll_ms=344
+I (29035) ANO: SELECT pressed poll_ms=31 max_poll_ms=344
+I (29096) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=344
+I (29098) ANO: UI_BUTTON action=1 queued=1
+I (29125) ANO: SELECT released poll_ms=29 max_poll_ms=344
+I (29134) DISPLAY: UI page=4 title=In Rainbows selection=0/10 strips=25 max_draw_us=1346244 stack_free_min=3324
+I (29188) ALBUM: TRACK index=12/45 file=/sd/HARMONY/Radiohead/In Rainbows/01 15 Step.mp3 generation=2
+I (29755) ANO: RAW_POSITION=1
+I (30142) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=42 max_draw_us=1346244 stack_free_min=3324
+I (30498) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=5 max_draw_us=1346244 stack_free_min=3324
+I (30859) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (31105) ANO: UP pressed poll_ms=33 max_poll_ms=344
+I (31164) ANO: DEBOUNCED pressed=0x02 poll_ms=32 max_poll_ms=344
+I (31165) ANO: UI_BUTTON action=2 queued=1
+I (31286) ANO: UP released poll_ms=28 max_poll_ms=344
+I (31824) ANO: UP pressed poll_ms=31 max_poll_ms=344
+I (31886) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=344
+I (31887) ANO: UI_BUTTON action=2 queued=1
+I (31945) ANO: UP released poll_ms=29 max_poll_ms=344
+I (32031) ANO: UP pressed poll_ms=26 max_poll_ms=344
+I (32094) ANO: DEBOUNCED pressed=0x02 poll_ms=32 max_poll_ms=344
+I (32096) ANO: UI_BUTTON action=2 queued=1
+I (32126) ANO: UP released poll_ms=31 max_poll_ms=344
+I (32185) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (32193) DISPLAY: UI page=4 title=In Rainbows selection=0/10 strips=44 max_draw_us=1346244 stack_free_min=3324
+I (32276) ANO: UP released poll_ms=29 max_poll_ms=344
+I (32336) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (32426) ANO: UP released poll_ms=30 max_poll_ms=344
+I (32484) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (32573) ANO: UP released poll_ms=31 max_poll_ms=344
+I (33051) DISPLAY: UI page=2 title=Artists selection=1/4 strips=34 max_draw_us=1346244 stack_free_min=3324
+I (33546) BT_AV: BENCH frames=878336 heap=1376760 min_heap=1366864
+I (33546) ALBUM: PLAYBACK track=1/10 frames=183936 total=869120 queued=131072 underrun=0 contention=0 max_decode_us=123185 callback_us=1608 done=0 failed=0 paused=0 connected=1
+I (33557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (33561) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (36325) ANO: UP pressed poll_ms=31 max_poll_ms=344
+I (36384) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=344
+I (36385) ANO: UI_BUTTON action=2 queued=1
+I (36446) ANO: UP released poll_ms=34 max_poll_ms=344
+I (36506) ANO: UP pressed poll_ms=29 max_poll_ms=344
+I (36625) ANO: UP released poll_ms=30 max_poll_ms=344
+I (36682) ANO: UP pressed poll_ms=27 max_poll_ms=344
+I (36805) ANO: UP released poll_ms=29 max_poll_ms=344
+I (37072) DISPLAY: UI page=1 title=Music selection=0/2 strips=26 max_draw_us=1346244 stack_free_min=3324
+I (38478) DISPLAY: UI page=1 title=Music selection=0/2 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (43547) BT_AV: BENCH frames=1320192 heap=1376760 min_heap=1366864
+I (43548) ALBUM: PLAYBACK track=1/10 frames=625792 total=1310976 queued=128000 underrun=0 contention=0 max_decode_us=123185 callback_us=1608 done=0 failed=0 paused=0 connected=1
+I (43559) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (43563) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (45412) ANO: UP pressed poll_ms=28 max_poll_ms=344
+I (45474) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=344
+I (45475) ANO: UI_BUTTON action=2 queued=1
+I (45536) ANO: UP released poll_ms=32 max_poll_ms=344
+I (46071) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=18 max_draw_us=1346244 stack_free_min=3324
+I (46138) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (46164) ANO: UP pressed poll_ms=31 max_poll_ms=344
+I (46224) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=344
+I (46225) ANO: UI_BUTTON action=2 queued=1
+I (46255) ANO: UP released poll_ms=30 max_poll_ms=344
+I (46357) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (49072) ANO: RAW_POSITION=2
+I (49136) ANO: RAW_POSITION=3
+I (49225) ANO: RAW_POSITION=4
+I (49314) ANO: RAW_POSITION=5
+I (49434) ANO: RAW_POSITION=6
+I (49461) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (49851) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (50064) ANO: RAW_POSITION=5
+I (50185) ANO: RAW_POSITION=4
+I (50395) ANO: RAW_POSITION=3
+I (50452) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (50903) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (50963) ANO: RAW_POSITION=2
+I (51095) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (51503) ANO: RAW_POSITION=1
+I (51658) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (52703) ANO: SELECT pressed poll_ms=29 max_poll_ms=344
+I (52763) ANO: DEBOUNCED pressed=0x01 poll_ms=29 max_poll_ms=344
+I (52764) ANO: UI_BUTTON action=1 queued=1
+I (52826) ANO: SELECT released poll_ms=32 max_poll_ms=344
+I (53371) DISPLAY: UI page=1 title=Music selection=0/2 strips=18 max_draw_us=1346244 stack_free_min=3324
+I (53546) BT_AV: BENCH frames=1760640 heap=1376760 min_heap=1366864
+I (53547) ALBUM: PLAYBACK track=1/10 frames=1066240 total=1751424 queued=131072 underrun=0 contention=0 max_decode_us=138334 callback_us=1608 done=0 failed=0 paused=0 connected=1
+I (53557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (53562) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (54143) ANO: SELECT pressed poll_ms=30 max_poll_ms=344
+I (54202) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=344
+I (54204) ANO: UI_BUTTON action=1 queued=1
+I (54234) ANO: SELECT released poll_ms=31 max_poll_ms=344
+I (54770) DISPLAY: UI page=2 title=Artists selection=0/4 strips=16 max_draw_us=1346244 stack_free_min=3324
+I (55223) ANO: RAW_POSITION=2
+I (55641) DISPLAY: UI page=2 title=Artists selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (55974) ANO: RAW_POSITION=3
+I (56343) DISPLAY: UI page=2 title=Artists selection=2/4 strips=15 max_draw_us=1346244 stack_free_min=3324
+I (56663) ANO: SELECT pressed poll_ms=29 max_poll_ms=344
+I (56722) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=344
+I (56725) ANO: UI_BUTTON action=1 queued=1
+I (56787) ANO: SELECT released poll_ms=32 max_poll_ms=344
+I (57471) DISPLAY: UI page=3 title=Albums selection=0/1 strips=28 max_draw_us=1346244 stack_free_min=3324
+I (57652) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (57713) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=344
+I (57715) ANO: UI_BUTTON action=2 queued=1
+I (57777) ANO: UP released poll_ms=32 max_poll_ms=344
+I (58459) DISPLAY: UI page=2 title=Artists selection=2/4 strips=28 max_draw_us=1346244 stack_free_min=3324
+I (58878) DISPLAY: UI page=2 title=Artists selection=2/4 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (58912) ANO: SELECT pressed poll_ms=30 max_poll_ms=344
+I (58975) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=344
+I (58976) ANO: UI_BUTTON action=1 queued=1
+I (59036) ANO: SELECT released poll_ms=32 max_poll_ms=344
+I (59691) DISPLAY: UI page=3 title=Albums selection=0/1 strips=28 max_draw_us=1346244 stack_free_min=3324
+I (59992) ANO: SELECT pressed poll_ms=29 max_poll_ms=344
+I (60052) ANO: DEBOUNCED pressed=0x01 poll_ms=29 max_poll_ms=344
+I (60053) ANO: UI_BUTTON action=1 queued=1
+I (60146) ANO: SELECT released poll_ms=29 max_poll_ms=344
+I (60813) DISPLAY: UI page=4 title=The Head and the Heart selection=0/10 strips=25 max_draw_us=1346244 stack_free_min=3324
+I (62035) ANO: RAW_POSITION=4
+I (62186) ANO: RAW_POSITION=5
+I (62421) DISPLAY: UI page=4 title=The Head and the Heart selection=1/10 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (62573) ANO: RAW_POSITION=6
+I (62824) DISPLAY: UI page=4 title=The Head and the Heart selection=2/10 strips=15 max_draw_us=1346244 stack_free_min=3324
+I (62995) ANO: RAW_POSITION=7
+I (63229) DISPLAY: UI page=4 title=The Head and the Heart selection=3/10 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (63445) ANO: SELECT pressed poll_ms=30 max_poll_ms=344
+I (63505) ANO: SELECT released poll_ms=30 max_poll_ms=344
+I (63546) BT_AV: BENCH frames=2201216 heap=1376760 min_heap=1366864
+I (63547) ALBUM: PLAYBACK track=1/10 frames=1506816 total=2192000 queued=131072 underrun=0 contention=0 max_decode_us=138334 callback_us=2029 done=0 failed=0 paused=0 connected=1
+I (63557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (63562) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (63621) DISPLAY: UI page=4 title=The Head and the Heart selection=4/10 strips=16 max_draw_us=1346244 stack_free_min=3324
+I (64676) ANO: SELECT pressed poll_ms=30 max_poll_ms=344
+I (64732) ANO: DEBOUNCED pressed=0x01 poll_ms=29 max_poll_ms=344
+I (64734) ANO: UI_BUTTON action=1 queued=1
+I (64768) ANO: SELECT released poll_ms=35 max_poll_ms=344
+I (64795) ALBUM: TRACK index=26/45 file=/sd/HARMONY/The Head and The Heart/The Head and the Heart/05 Rivers and Roads.mp3 generation=3
+I (65750) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=42 max_draw_us=1346244 stack_free_min=3324
+I (66064) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=2 max_draw_us=1346244 stack_free_min=3324
+I (66396) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=2 max_draw_us=1346244 stack_free_min=3324
+I (67290) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (68327) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (69300) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (70289) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (71339) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (72302) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (72894) ANO: RAW_POSITION=8
+I (73049) ANO: RAW_POSITION=9
+I (73164) ANO: RAW_POSITION=10
+I (73255) ANO: RAW_POSITION=11
+I (73281) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=5 max_draw_us=1346244 stack_free_min=3324
+I (73344) ANO: RAW_POSITION=12
+I (73467) ANO: RAW_POSITION=13
+I (73546) BT_AV: BENCH frames=2643072 heap=1368028 min_heap=1366864
+I (73547) ALBUM: PLAYBACK track=5/10 frames=378368 total=2624640 queued=129536 underrun=0 contention=0 max_decode_us=138334 callback_us=2029 done=0 failed=0 paused=0 connected=1
+I (73557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (73562) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (73615) ANO: RAW_POSITION=14
+I (73648) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (73739) ANO: RAW_POSITION=15
+I (73916) ANO: RAW_POSITION=16
+I (73953) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (74006) ANO: RAW_POSITION=17
+I (74098) ANO: RAW_POSITION=18
+I (74187) ANO: RAW_POSITION=19
+I (74245) ANO: RAW_POSITION=20
+I (74256) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (74336) ANO: RAW_POSITION=21
+I (74426) ANO: RAW_POSITION=22
+I (74575) ANO: RAW_POSITION=23
+I (74647) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (74694) ANO: RAW_POSITION=24
+I (74971) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (75330) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (75438) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=0 max_draw_us=1346244 stack_free_min=3324
+I (76105) ANO: UP pressed poll_ms=29 max_poll_ms=344
+I (76168) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=344
+I (76169) ANO: UI_BUTTON action=2 queued=1
+I (76284) ANO: UP released poll_ms=28 max_poll_ms=344
+I (76297) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1346244 stack_free_min=3324
+I (76408) ANO: UP pressed poll_ms=32 max_poll_ms=344
+I (76466) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=344
+I (76468) ANO: UI_BUTTON action=2 queued=1
+I (76497) ANO: UP released poll_ms=31 max_poll_ms=344
+I (76675) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (76731) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=344
+I (76732) ANO: UI_BUTTON action=2 queued=1
+I (76796) ANO: UP released poll_ms=33 max_poll_ms=344
+I (76855) ANO: UP pressed poll_ms=27 max_poll_ms=344
+I (76946) ANO: UP released poll_ms=31 max_poll_ms=344
+I (77036) ANO: UP pressed poll_ms=31 max_poll_ms=344
+I (77094) ANO: UP released poll_ms=30 max_poll_ms=344
+I (77186) ANO: UP pressed poll_ms=31 max_poll_ms=344
+I (77245) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=344
+I (77246) ANO: UI_BUTTON action=2 queued=1
+I (77273) ANO: UP released poll_ms=29 max_poll_ms=344
+I (77330) DISPLAY: UI page=4 title=The Head and the Heart selection=4/10 strips=44 max_draw_us=1346244 stack_free_min=3324
+I (78171) DISPLAY: UI page=1 title=Music selection=0/2 strips=33 max_draw_us=1346244 stack_free_min=3324
+I (78174) ANO: UP pressed poll_ms=30 max_poll_ms=344
+I (78234) ANO: UP released poll_ms=29 max_poll_ms=344
+I (79194) ANO: UP pressed poll_ms=32 max_poll_ms=344
+I (79256) ANO: DEBOUNCED pressed=0x02 poll_ms=33 max_poll_ms=344
+I (79257) ANO: UI_BUTTON action=2 queued=1
+I (79316) ANO: UP released poll_ms=30 max_poll_ms=344
+I (79893) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=18 max_draw_us=1346244 stack_free_min=3324
+I (80842) ANO: RAW_POSITION=25
+I (80965) ANO: RAW_POSITION=26
+I (81272) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (81663) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=15 max_draw_us=1346244 stack_free_min=3324
+I (81894) ANO: RAW_POSITION=27
+I (82283) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=17 max_draw_us=1346244 stack_free_min=3324
+I (82432) ANO: SELECT pressed poll_ms=28 max_poll_ms=344
+I (82493) ANO: DEBOUNCED pressed=0x01 poll_ms=29 max_poll_ms=344
+I (82494) ANO: UI_BUTTON action=1 queued=1
+I (82557) ANO: SELECT released poll_ms=32 max_poll_ms=344
+I (83211) DISPLAY: UI page=7 title=Settings selection=0/0 strips=29 max_draw_us=1346244 stack_free_min=3324
+I (83546) BT_AV: BENCH frames=3083520 heap=1376760 min_heap=1366864
+I (83547) ALBUM: PLAYBACK track=5/10 frames=818816 total=3065088 queued=131072 underrun=0 contention=0 max_decode_us=138334 callback_us=2029 done=0 failed=0 paused=0 connected=1
+I (83557) BT_AV: STACK_FREE_MIN app=3796 timer=1292
+I (83562) BT_AV: bt_app_av_sm_hdlr state: 5, event: 0xff00
+I (83722) ANO: UP pressed poll_ms=28 max_poll_ms=344
+I (83784) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=344
+I (83785) ANO: UI_BUTTON action=2 queued=1
+I (83878) ANO: UP released poll_ms=32 max_poll_ms=344
+I (84574) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=29 max_draw_us=1346244 stack_free_min=3324

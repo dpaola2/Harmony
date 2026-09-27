@@ -69,7 +69,7 @@ esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t)
     else if (current_command == 0x2b) { assert(n == 4); memcpy(row, b, 4); }
     else if (current_command == 0x2c) {
         if (pixel_error) return ESP_ERR_TIMEOUT;
-        assert(n <= 640 && n % 2 == 0);
+        assert(n <= 5120 && n % 2 == 0);
         pixel_bytes += n;
         if (n >= 2) memcpy(last_pixel, b + n - 2, 2);
     }
@@ -101,12 +101,26 @@ int main(void)
     assert(bench_display_text(312, 464, "clipped", 0xffff, 0) == ESP_OK);
     assert(pixel_bytes - pixels_before == 8 * 16 * 2);
     assert(bench_display_probe() == ESP_OK);
+    const uint16_t strip[] = {0xf800, 0x07e0, 0x001f, 0xffff};
+    pixels_before = pixel_bytes;
+    assert(bench_display_blit(318, 478, 2, 2, strip) == ESP_OK);
+    assert(pixel_bytes - pixels_before == 8 && last_pixel[0] == 0xff && last_pixel[1] == 0xff);
+    assert(bench_display_blit(0, 0, 2, 9, strip) == ESP_ERR_INVALID_ARG);
+    assert(bench_display_blit(319, 0, 2, 2, strip) == ESP_ERR_INVALID_ARG);
+    assert(bench_display_blit(0, 0, 2, 2, NULL) == ESP_ERR_INVALID_ARG);
+    uint16_t full_strip[320*8];
+    for (unsigned i=0;i<320*8;i++) full_strip[i]=(uint16_t)i;
+    pixels_before=pixel_bytes;
+    assert(bench_display_blit(0, 0, 320, 8, full_strip) == ESP_OK);
+    assert(pixel_bytes-pixels_before==5120 && last_pixel[0]==9 && last_pixel[1]==255);
     assert(!bus_owned);
     acquire_error = true;
     assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_TIMEOUT);
     assert(!bus_owned && levels[CARRIER_TFT_CS]);
     acquire_error = false;
     pixel_error = true;
+    assert(bench_display_blit(0, 0, 2, 2, strip) == ESP_ERR_TIMEOUT);
+    assert(!bus_owned && levels[CARRIER_TFT_CS]);
     assert(bench_display_fill(0, 0, 2, 2, 0) == ESP_ERR_TIMEOUT);
     assert(!bus_owned && levels[CARRIER_TFT_CS]);
     pixel_error = false;

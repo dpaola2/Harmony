@@ -21,7 +21,7 @@
 #define HEIGHT 480
 static spi_device_handle_t lcd;
 static bool ready;
-static DMA_ATTR uint8_t pixels[WIDTH * 2];
+static DMA_ATTR uint8_t pixels[WIDTH * 8 * 2];
 
 static esp_err_t send_bytes(const void *data, size_t len)
 {
@@ -104,6 +104,22 @@ esp_err_t bench_display_text(int x, int y, const char *text, uint16_t fg, uint16
         }
         err = send_pixels(n * 8);
     }
+    gpio_set_level(CS, 1);
+    spi_device_release_bus(lcd);
+    return err;
+}
+
+esp_err_t bench_display_blit(int x, int y, int w, int h, const uint16_t *data)
+{
+    if (!data || !ready || x < 0 || y < 0 || w <= 0 || h <= 0 || h > 8 ||
+        x > WIDTH - w || y > HEIGHT - h) return ESP_ERR_INVALID_ARG;
+    /* Stage the complete strip before taking the bus, then one DMA transfer. */
+    for (int i = 0; i < w*h; ++i) {
+        uint16_t c = data[i];
+        pixels[i*2] = c >> 8; pixels[i*2+1] = c;
+    }
+    TRY(window(x, y, w, h));
+    esp_err_t err = send_pixels(w*h);
     gpio_set_level(CS, 1);
     spi_device_release_bus(lcd);
     return err;

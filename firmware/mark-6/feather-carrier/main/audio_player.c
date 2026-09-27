@@ -19,6 +19,7 @@ static SemaphoreHandle_t lock;
 static StaticSemaphore_t lock_storage;
 static playback_t player;
 static album_t *album;
+static unsigned queue_tracks[ALBUM_MAX_TRACKS];
 static atomic_uint_least32_t max_decode_us, contention_bytes, max_callback_us;
 static const char *TAG = "ALBUM";
 /* The mutex protects RAM copies/state only. Never hold it over SD/decoder I/O,
@@ -43,7 +44,7 @@ static void producer(void *arg)
         playback_tick(&player);
         bool stopped = player.stopped;
         uint32_t requested = player.generation;
-        unsigned track = player.track;
+        unsigned track = queue_tracks[player.track];
         UNLOCK();
         if (stopped) break;
         if (requested != generation) {
@@ -108,6 +109,7 @@ bool audio_player_prepare(void)
         strcpy(album->tracks[0].title, "Higher");
         ESP_LOGI(TAG, "No ALBUM.M3U: using the original Higher fixture");
     } else goto fail;
+    for (unsigned i = 0; i < album->count; ++i) queue_tracks[i] = i;
     playback_init(&player, storage, PCM_BYTES, album->count);
     lock = xSemaphoreCreateMutexStatic(&lock_storage);
     if (!lock) goto fail;
@@ -171,6 +173,33 @@ void audio_player_activate(void)
     if (!lock) return;
     LOCK(); playback_activate(&player); UNLOCK();
 }
+const album_t *audio_player_library(void)
+{
+    return lock ? album : NULL;
+}
+bool audio_player_play_queue(const unsigned *tracks, unsigned count, unsigned start)
+{
+    if (!lock || !tracks || !count || count > ALBUM_MAX_TRACKS || start >= count) return false;
+    for (unsigned i = 0; i < count; ++i) if (tracks[i] >= album->count) return false;
+    LOCK();
+    if (player.stopped) { UNLOCK(); return false; }
+    memcpy(queue_tracks, tracks, count * sizeof(*tracks));
+    player.count = count;
+    player.selection = start;
+    /* Activate starts a new decoder generation even if the index is unchanged. */
+    player.finished = true;
+    playback_activate(&player);
+    UNLOCK();
+    return true;
+}
+void audio_player_toggle_pause(void)
+{
+    if (!lock) return;
+    LOCK();
+    player.selection = player.track;
+    playback_activate(&player);
+    UNLOCK();
+}
 bool audio_player_finished(void)
 {
     if (!lock) return false;
@@ -187,12 +216,13 @@ audio_player_snapshot_t audio_player_snapshot(void)
     if (!lock) return s;
     LOCK();
     s = (audio_player_snapshot_t){.consumed_frames = player.consumed_frames,
-        .generation = player.generation, .track = player.track, .selection = player.selection,
-        .count = player.count, .finished = player.finished, .stopped = player.stopped,
+        .generation = player.generation, .track = queue_tracks[player.track],
+        .selection = queue_tracks[player.selection], .count = album->count,
+        .queue_position = player.track, .queue_count = player.count, .finished = player.finished, .stopped = player.stopped,
         .failed = player.failed, .paused = player.paused, .connected = player.connected,
         .buffering = player.buffering};
-    strcpy(s.title, album->tracks[player.track].title);
-    strcpy(s.selected_title, album->tracks[player.selection].title);
+    strcpy(s.title, album->tracks[queue_tracks[player.track]].title);
+    strcpy(s.selected_title, album->tracks[queue_tracks[player.selection]].title);
     UNLOCK();
     return s;
 }

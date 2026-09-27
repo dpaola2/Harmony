@@ -3,72 +3,69 @@
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_heap_caps.h"
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "bench_display.h"
 #include "audio_player.h"
 #include "player_display.h"
-#define WHITE 0xffff
-#define CYAN 0x07ff
-/* Fixed 38-character fields clear shorter replacements without a full redraw. */
-static esp_err_t field(unsigned y, const char *text, uint16_t color)
-{
-    char line[39];
-    snprintf(line, sizeof(line), "%-38.38s", text);
-    return bench_display_text(8, y, line, color, 0);
-}
+#include "player_ui.h"
+#include "ui_render.h"
+#include "ui_assets/trial_durations.h"
+
+#define FRAME_WORDS (320*480)
+#define STRIP_WORDS (320*8)
+static uint16_t *frame, *previous;
+static player_ui_view_t drawn_view;
+
 static void draw_task(void *arg)
 {
-    esp_err_t err = field(16, "HARMONY", CYAN);
-    if (err == ESP_OK) err = field(112, "SoundCore 2", CYAN);
-    if (err == ESP_OK) err = field(320, "Wheel / up / down: browse", WHITE);
-    if (err == ESP_OK) err = field(344, "Center: choose / play / pause", WHITE);
-    if (err == ESP_OK) err = field(368, "Left / right: previous / next", WHITE);
-    audio_player_snapshot_t previous = {0};
     bool first = true;
-    char previous_state[16] = "";
+    esp_err_t err = ESP_OK;
     uint32_t max_draw_us = 0;
     unsigned updates = 0;
     while (err == ESP_OK) {
-        audio_player_snapshot_t s = audio_player_snapshot();
-        const char *state = s.failed ? "TRACK ERROR" : s.stopped ? "STOPPED" :
-            s.finished ? "ALBUM FINISHED" : s.paused ? "PAUSED" :
-            !s.connected ? "CONNECTING" : s.buffering ? "BUFFERING" : "PLAYING";
+        player_ui_update();
+        player_ui_view_t view = player_ui_view();
+        /* Only elapsed whole seconds affect the pixels. Static menus must not
+         * continually rasterize into PSRAM and delay physical input polling. */
+        view.audio.consumed_frames = view.page == PLAYER_UI_NOW_PLAYING ?
+            (view.audio.consumed_frames / 44100) * 44100 : 0;
+        bool changed = first || memcmp(&view, &drawn_view, sizeof(view));
+        const album_t *library = audio_player_library();
+        unsigned duration = library && view.audio.track < library->count ?
+            trial_duration(library->tracks[view.audio.track].path) : 0;
         int64_t start = esp_timer_get_time();
-        char label[64];
-        if (first || s.generation != previous.generation) {
-            err = field(56, s.title, WHITE);
-            snprintf(label, sizeof(label), "Track %u of %u", s.track + 1, s.count);
-            if (err == ESP_OK) err = field(80, label, WHITE);
+        if (changed && (first || !ui_render_selection(frame, &view, &drawn_view)))
+            ui_render(frame, &view, duration);
+        unsigned strips = 0;
+        for (int y = 0; changed && y < 480 && err == ESP_OK; y += 8) {
+            uint16_t *current = frame + y*320;
+            uint16_t *old = previous + y*320;
+            if (!first && !memcmp(current, old, STRIP_WORDS*sizeof(*frame))) continue;
+            err = bench_display_blit(0, y, 320, 8, current);
+            if (err == ESP_OK) memcpy(old, current, STRIP_WORDS*sizeof(*frame));
+            ++strips;
+            /* Limit each LCD bus hold to eight rows (~11 ms at 4 MHz).
+             * Yield between strips for the audio producer and SD transactions. */
+            vTaskDelay(1);
         }
-        if (err == ESP_OK && strcmp(state, previous_state)) {
-            err = field(160, state, CYAN);
-            snprintf(previous_state, sizeof(previous_state), "%s", state);
-        }
-        unsigned seconds = s.consumed_frames / 44100;
-        if (err == ESP_OK && (first || s.generation != previous.generation || seconds != previous.consumed_frames / 44100)) {
-            snprintf(label, sizeof(label), "Elapsed %u:%02u", seconds / 60, seconds % 60);
-            err = field(192, label, WHITE);
-        }
-        if (err == ESP_OK && (first || s.selection != previous.selection)) {
-            snprintf(label, sizeof(label), "Choose %u of %u", s.selection + 1, s.count);
-            err = field(256, label, CYAN);
-            if (err == ESP_OK) err = field(280, s.selected_title, WHITE);
-        }
-        previous = s;
-        first = false;
         uint32_t elapsed = (uint32_t)(esp_timer_get_time() - start);
         if (elapsed > max_draw_us) max_draw_us = elapsed;
-        if (++updates % 40 == 0)
-            ESP_LOGI("DISPLAY", "UPDATE state=%s max_draw_us=%"PRIu32" stack_free_min=%u",
-                     state, max_draw_us, (unsigned)uxTaskGetStackHighWaterMark(NULL));
-        if (s.stopped) break;
-        vTaskDelay(pdMS_TO_TICKS(250));
+        if (changed || ++updates % 250 == 0)
+            ESP_LOGI("DISPLAY", "UI page=%u title=%s selection=%u/%u strips=%u max_draw_us=%"PRIu32" stack_free_min=%u",
+                (unsigned)view.page, view.title, view.selected, view.total_count, strips,
+                max_draw_us, (unsigned)uxTaskGetStackHighWaterMark(NULL));
+        first = false;
+        drawn_view = view;
+        if (view.audio.stopped) break;
+        vTaskDelay(pdMS_TO_TICKS(20));
     }
     if (err != ESP_OK) {
         audio_player_stop();
         ESP_LOGE("DISPLAY", "Drawing failed; playback stopped: %s", esp_err_to_name(err));
     }
+    free(frame); free(previous); frame = previous = NULL;
     vTaskDelete(NULL);
 }
 bool player_display_start(void)
@@ -78,5 +75,12 @@ bool player_display_start(void)
         ESP_LOGE("DISPLAY", "Initialization failed: %s", esp_err_to_name(err));
         return false;
     }
-    return xTaskCreatePinnedToCore(draw_task, "player_display", 6144, NULL, 2, NULL, 0) == pdPASS;
+    frame = heap_caps_malloc(FRAME_WORDS*sizeof(*frame), MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    previous = heap_caps_malloc(FRAME_WORDS*sizeof(*previous), MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    if (!frame || !previous) { free(frame); free(previous); frame = previous = NULL; return false; }
+    player_ui_init(); /* Before controls task starts producing input. */
+    if (xTaskCreatePinnedToCore(draw_task, "player_display", 8192, NULL, 1, NULL, 0) != pdPASS) {
+        free(frame); free(previous); frame = previous = NULL; return false;
+    }
+    return true;
 }

@@ -3,6 +3,9 @@
 #include "carrier_controls.h"
 #include "carrier_board.h"
 #include "audio_player.h"
+#ifdef HARMONY_PLAYER_UI
+#include "player_ui.h"
+#endif
 #include "input_filter.h"
 #include "esp_timer.h"
 #include "driver/i2c_master.h"
@@ -34,11 +37,21 @@ static esp_err_t read_register(uint8_t base, uint8_t reg, uint32_t *value)
     return ESP_OK;
 }
 
+#ifdef HARMONY_PLAYER_UI
+static void ui_button(player_ui_input_t input)
+{
+    bool queued = player_ui_input(input, 0);
+    ESP_LOGI("ANO", "UI_BUTTON action=%u queued=%d", (unsigned)input, queued);
+    if (!queued) ESP_LOGW("ANO", "UI input queue full");
+}
+#endif
+
 static void controls_task(void *unused)
 {
     const char *names[] = {"SELECT", "UP", "LEFT", "DOWN", "RIGHT"};
     uint32_t previous_position = 0, previous_buttons = 0x3e;
     bool first = true;
+    uint32_t previous_poll_ms = 0, max_poll_gap_ms = 0;
     input_filter_t filter = {0};
     while (carrier_board_ready()) {
         uint32_t position, buttons;
@@ -48,11 +61,29 @@ static void controls_task(void *unused)
             ESP_LOGE("ANO", "Input diagnostic stopped: %s", esp_err_to_name(err));
             break;
         }
+        uint32_t now_ms = (uint32_t)(esp_timer_get_time() / 1000);
+        uint32_t poll_gap_ms = first ? 0 : now_ms - previous_poll_ms;
+        previous_poll_ms = now_ms;
+        if (poll_gap_ms > max_poll_gap_ms) max_poll_gap_ms = poll_gap_ms;
         input_events_t events = input_filter_poll(&filter, position, buttons,
-            (uint32_t)(esp_timer_get_time() / 1000), CONFIG_CARRIER_ANO_ROTATION);
+            now_ms, CONFIG_CARRIER_ANO_ROTATION);
+        if (events.pressed)
+            ESP_LOGI("ANO", "DEBOUNCED pressed=0x%02x poll_ms=%" PRIu32 " max_poll_ms=%" PRIu32,
+                     events.pressed, poll_gap_ms, max_poll_gap_ms);
         if (CONFIG_CARRIER_CONTROLS_ACTIONS) {
             int steps = events.steps;
             if (CONFIG_CARRIER_ENCODER_REVERSE) steps = -steps;
+#ifdef HARMONY_PLAYER_UI
+            if (steps && !player_ui_input(PLAYER_UI_SCROLL, steps)) ESP_LOGW("ANO", "UI input queue full");
+            switch (events.pressed) {
+            case 1U << INPUT_SELECT: ui_button(PLAYER_UI_SELECT); break;
+            case 1U << INPUT_UP: ui_button(PLAYER_UI_BACK); break;
+            case 1U << INPUT_DOWN: ui_button(PLAYER_UI_PLAY_PAUSE); break;
+            case 1U << INPUT_LEFT: ui_button(PLAYER_UI_PREVIOUS); break;
+            case 1U << INPUT_RIGHT: ui_button(PLAYER_UI_NEXT); break;
+            default: break;
+            }
+#else
             if (steps) audio_player_browse(steps);
             /* Simultaneous keys are ignored; avoid contradictory actions. */
             switch (events.pressed) {
@@ -63,13 +94,15 @@ static void controls_task(void *unused)
             case 1U << INPUT_RIGHT: audio_player_step(1); break;
             default: break;
             }
+#endif
         }
         if (first || position != previous_position)
             ESP_LOGI("ANO", "RAW_POSITION=%" PRId32, (int32_t)position);
         for (unsigned i = 0; i < 5; ++i) {
             uint32_t mask = 1U << (i + 1);
             if ((buttons ^ previous_buttons) & mask)
-                ESP_LOGI("ANO", "%s %s", names[i], buttons & mask ? "released" : "pressed");
+                ESP_LOGI("ANO", "%s %s poll_ms=%" PRIu32 " max_poll_ms=%" PRIu32,
+                         names[i], buttons & mask ? "released" : "pressed", poll_gap_ms, max_poll_gap_ms);
         }
         first = false;
         previous_position = position;
@@ -104,7 +137,7 @@ esp_err_t carrier_controls_start(void)
         vTaskDelay(pdMS_TO_TICKS(2));
     }
     if (err == ESP_OK && xTaskCreatePinnedToCore(controls_task, "ano_diag", 3072,
-                                               NULL, 1, NULL, 0) != pdPASS)
+                                               NULL, 3, NULL, 0) != pdPASS)
         err = ESP_ERR_NO_MEM;
     if (err != ESP_OK) { i2c_master_bus_rm_device(device); i2c_del_master_bus(bus); }
     return err;

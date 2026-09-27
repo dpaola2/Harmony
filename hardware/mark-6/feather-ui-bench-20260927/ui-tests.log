@@ -1,0 +1,3 @@
+PASS native UI: artist/album identity, numeric titles, noncontiguous queue, exact Back restoration, clamping, pause, browse independence, bounded events and empty library
+PASS actual renderer: all pages, long names, Unicode fallback, unknown duration, frame bounds
+PASS actual audio queue: validation, global indices, clamped skips, pause retention, reordered decoder output, exact samples and stop at selected queue end

@@ -1,0 +1,48 @@
+{
+  "status": "Corrected UI firmware uploaded; center selection and album playback observed in serial; user responsiveness confirmation pending",
+  "metrics": {
+    "queue_position": 5,
+    "queue_count": 10,
+    "track_frames": 818816,
+    "total_frames": 3065088,
+    "queued_bytes": 131072,
+    "underrun_bytes": 0,
+    "contention_bytes": 0,
+    "max_decode_us": 138334,
+    "max_callback_us": 2029,
+    "done": 0,
+    "failed": 0,
+    "paused": 0,
+    "connected": 1
+  },
+  "last_metrics_uptime_ms": 83547,
+  "observed_tracks": [
+    "Creed / Human Clay / Are You Ready",
+    "Radiohead / In Rainbows / 15 Step",
+    "The Head and The Heart / The Head and the Heart / Rivers and Roads"
+  ],
+  "observed_ui_pages": [
+    "Harmony",
+    "Music",
+    "Artists",
+    "Albums",
+    "Songs",
+    "Now Playing",
+    "Settings"
+  ],
+  "button_queue_accepted": 12,
+  "input_poll_ms_during_user_actions": "typically 28-35; startup-inclusive max344",
+  "max_draw_us": 1346244,
+  "audio_user_confirmed_on_initial_ui_build": true,
+  "corrected_ui_manual_confirmation": null,
+  "checks": [
+    "Two native builds without compiler warnings",
+    "11 existing carrier host verification groups",
+    "3 native UI/render/audio queue groups under ASan/UBSan",
+    "Incremental selection output pixel-identical to full render",
+    "Display diagnostic and player board checks",
+    "Application flash checksum verified"
+  ],
+  "rollback": "/Users/dave/Downloads/harmony-mark6-backups/pre-ui-20260927",
+  "limits": "Fixed -24dB level and SoundCore 2 receiver. Volume/Bluetooth management deferred. Carrier/endurance/reconnect remain unqualified. Scrolling quality still awaits user assessment."
+}

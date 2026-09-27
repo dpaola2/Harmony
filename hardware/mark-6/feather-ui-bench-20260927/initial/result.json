@@ -1,0 +1,13 @@
+{
+  "status": "Input responsiveness failure; scrolling and music work, center button missed",
+  "user_report": "scrolling works, but selection via the middle button does not work. music is playing correctly.",
+  "app_sha256": "9d7a82a5efbf7c2e2f5855878aa2a9ae8ea0814a2cede77ef5557cb00b3ccb44",
+  "app_bytes": 1225984,
+  "last_uptime_ms": 83528,
+  "frames": 3082240,
+  "underrun_bytes": 0,
+  "contention_bytes": 0,
+  "max_draw_us": 1290170,
+  "suspected_cause": "Display task priority 2 with unconditional rendering delayed lower-priority input task 1; raw presses observed without navigation.",
+  "correction": "Prioritize input and render only changed views; preserve 40 ms debounce."
+}

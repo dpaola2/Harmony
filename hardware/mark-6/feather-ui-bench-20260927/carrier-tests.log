@@ -1,0 +1,11 @@
+PASS playback: 100000 randomized transfers, exact EOF drain, stale skip rejection, pause/reconnect, error/replay and album boundaries
+PASS album: ordered BOM/CRLF M3U, 64-track bound, empty/invalid/traversal rejection
+PASS controls: startup-held key, 40ms bounce/hold handling, encoder and clock wrap, jump rejection, four rotations
+PASS MAC rejection, case handling and PG debounce/reset/saturation
+PASS actual board startup: identity/memory rejection, low/chattering PG, latch ordering, PG loss
+PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling
+PASS actual audio tasks: concurrent producer/callback, skip flush, quiet gain, pause/disconnect, exact three-track sample counts, format failure and unmount
+PASS actual Bluetooth state handlers: connection timeout/late response, 60 simulated heartbeats, retry, stop-before-ACK and fatal shutdown
+PASS all 13 GPIOs traced through carrier socket nets to vendor MCU pins
+PASS Waveshare ST7796S initialization: all 18 commands checked with documented portrait MX correction
+PASS pinned references, native ESP32 build config, isolated components, flash-command rejection

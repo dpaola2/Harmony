@@ -119,4 +119,5 @@ int main(void)
     audio_player_log();audio_player_stop();pthread_join(task,NULL);
     assert(!atomic_load(&mounted));silence();
     puts("PASS actual audio tasks: concurrent producer/callback, skip flush, quiet gain, pause/disconnect, exact three-track sample counts, format failure and unmount");
+    return 0;
 }
