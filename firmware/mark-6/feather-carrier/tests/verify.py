@@ -25,7 +25,7 @@ with tempfile.TemporaryDirectory(prefix='harmony-carrier-tests-') as tmp:
         f.write_text('#include "mock_idf.h"\n')
     for name, sources in {
         'playback': [P / 'main/playback.c'],
-        'album': [P / 'main/album.c'],
+        'album': [P / 'main/album.c', P / 'main/album_metadata.c'],
         'input': [P / 'main/input_filter.c'],
         'policy': [board / 'carrier_policy.c'],
         'board': [board / 'carrier_policy.c', board / 'carrier_board.c'],
@@ -54,7 +54,7 @@ with tempfile.TemporaryDirectory(prefix='harmony-audio-runtime-') as tmp:
                     '-Wno-unused-parameter', '-fsanitize=address,undefined', '-pthread',
                     '-I'+str(tmp), '-I'+str(tests / 'audio_mock'), '-I'+str(P / 'main'),
                     str(tests / 'test_audio_runtime.c'), str(P / 'main/audio_player.c'),
-                    str(P / 'main/playback.c'), str(P / 'main/album.c'), '-o', str(exe)], check=True)
+                    str(P / 'main/playback.c'), str(P / 'main/album.c'), str(P / 'main/album_metadata.c'), '-o', str(exe)], check=True)
     result = subprocess.check_output([str(exe)], text=True).strip()
     print(result)
     results.append(result)

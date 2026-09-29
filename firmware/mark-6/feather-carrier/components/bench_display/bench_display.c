@@ -153,6 +153,8 @@ static esp_err_t display_init(bool existing_bus)
  * Only one task may call the display API; bus ownership serializes SD transfers. */
 esp_err_t bench_display_init_on_existing_bus(void) { return display_init(true); }
 esp_err_t bench_display_init(void) { return display_init(false); }
+esp_err_t bench_display_init_without_storage(void) { return display_init(false); }
+esp_err_t bench_display_backlight(bool on) { return gpio_set_level(CARRIER_TFT_LITE, on ? 1 : 0); }
 
 esp_err_t bench_display_white_isolation(void)
 {

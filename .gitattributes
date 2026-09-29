@@ -38,3 +38,8 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "enclosure/mark-6/fit-rev-b/evidence/IMG_7701.HEIC" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-6/fit-rev-b/evidence/IMG_7702.HEIC" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-6/fit-rev-b/evidence/IMG_7704.HEIC" filter=lfs diff=lfs merge=lfs -text
+
+# Mark-7 inventory originals and final Mark-6 source checkpoint.
+"hardware/mark-7/inventory-20260928/IMG_7727.HEIC" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/inventory-20260928/IMG_7730.HEIC" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-6/feather-complete-ui-bench-20260927/checkpoint-not-flashed.bin" filter=lfs diff=lfs merge=lfs -text

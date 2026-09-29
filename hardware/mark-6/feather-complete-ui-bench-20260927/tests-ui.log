@@ -1,0 +1,4 @@
+PASS native UI: library queues/Back, volume boundaries, paused restore, real BT intent/Forget, settings, timeout wake, bounded events and storage recovery
+PASS actual renderer: all pages, long names, Unicode fallback, unknown duration, frame bounds
+PASS: Bluetooth command/event policy, cancellation, stale peers, bonds and reconnect
+PASS actual audio queue: validation, global indices, clamped skips, pause retention, reordered decoder output, exact samples and stop at selected queue end

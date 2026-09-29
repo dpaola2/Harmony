@@ -1,0 +1,136 @@
+ed      : 40MHz
+I (38) boot.�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 27 2026 16:17:03
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00300000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3ddb4h (253364) map
+I (175) esp_image: segment 1: paddr=0004dddc vaddr=3ff80000 size=00020h (    32) load
+I (176) esp_image: segment 2: paddr=0004de04 vaddr=3ffbdb60 size=02214h (  8724) load
+I (183) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ccf44h (839492) map
+I (474) esp_image: segment 4: paddr=0011cf6c vaddr=3ffbfd74 size=03e28h ( 15912) load
+I (480) esp_image: segment 5: paddr=00120d9c vaddr=40080000 size=1e8c4h (125124) load
+I (544) boot: Loaded app from partition at offset 0x10000
+I (544) boot: Disabling RNG early entropy source...
+I (554) quad_psram: This chip is ESP32-PICO-V3-02
+I (556) esp_psram: Found 2MB PSRAM device
+I (556) esp_psram: Speed: 40MHz
+I (556) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (562) cpu_start: Multicore app
+I (1028) esp_psram: SPI SRAM memory test OK
+I (1036) cpu_start: Pro cpu start user code
+I (1036) cpu_start: cpu freq: 240000000 Hz
+I (1036) app_init: Application information:
+I (1036) app_init: Project name:     mark6_feather_player_bench
+I (1042) app_init: App version:      mark6-a9afaff-dirty
+I (1047) app_init: Compile time:     Sep 27 2026 22:00:27
+I (1052) app_init: ELF file SHA256:  a4387b366...
+I (1057) app_init: ESP-IDF:          8c750b08
+I (1061) efuse_init: Min chip rev:     v0.0
+I (1065) efuse_init: Max chip rev:     v3.99 
+I (1069) efuse_init: Chip rev:         v3.1
+I (1073) heap_init: Initializing. RAM available for dynamic allocation:
+I (1079) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (1084) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (1089) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (1095) heap_init: At 3FFD2760 len 0000D8A0 (54 KiB): DRAM
+I (1100) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (1105) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (1111) heap_init: At 4009E8C4 len 0000173C (5 KiB): IRAM
+I (1117) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (1124) spi_flash: detected chip: generic
+I (1127) spi_flash: flash io: dio
+I (1131) coexist: coex firmware version: 831ec70
+I (1135) main_task: Started on CPU0
+I (1137) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (1145) main_task: Calling app_main()
+I (1399) LCD_BENCH: Identity and capacities matched; LCD/SD control outputs enabled
+I (1422) SD_BENCH: READ_ONLY mount: SCK=14 MOSI=27 MISO=21 CS=25, shared SPI2 4MHz
+I (1466) SD_BENCH: CARD_RESET_DONE before initialization
+I (1466) sdspi_transaction: cmd=52, R1 response: command not supported
+I (1508) sdspi_transaction: cmd=5, R1 response: command not supported
+Name: SD
+Type: SDHC
+Speed: 4.00 MHz (limit: 4.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+I (3938) ALBUM: TRACK index=1/46 file=/sd/HARMONY/Creed/Human Clay/01-01 Are You Ready.mp3 generation=1
+I (5225) DISPLAY: ST7796S SPI2 4MHz 320x480; write completed, visual check required
+W (5230) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs
+I (5267) ALBUM: TRACK index=40/46 file=/sd/HARMONY/Third Eye Blind/Third Eye Blind/01-09 Good For You.mp3 generation=2
+I (5278) BTDM_INIT: BT controller compile version [b992c7d]
+I (5280) ANO: RAW_POSITION=0
+I (5283) BTDM_INIT: Bluetooth MAC: 14:33:5c:99:1a:2a
+I (5287) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+W (5942) BT_BTC: A2DP Enable without AVRC
+I (5954) main_task: Returned from app_main()
+I (6053) player_bt: state=1 connected=0 peer=00:00:00:00:00:00 Reconnecting to last selected receiver. Playback paused.
+I (6626) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=60 max_draw_us=1390135 stack_free_min=9012
+I (6713) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1390135 stack_free_min=9012
+I (7454) player_bt: state=3 connected=0 peer=f4:2b:7d:5a:35:43 Connecting. Playback stays paused.
+W (7455) BT_APPL: reset flags
+I (7662) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=2 max_draw_us=1390135 stack_free_min=9012
+I (10202) ANO: SELECT pressed poll_ms=10 max_poll_ms=341
+W (10217) BT_HCI: hcif conn complete: hdl 0x80, st 0x0
+I (10250) ANO: DEBOUNCED pressed=0x01 poll_ms=48 max_poll_ms=341
+I (10255) ANO: UI_BUTTON action=1 queued=1
+I (10316) ANO: SELECT released poll_ms=19 max_poll_ms=341
+W (10407) BT_APPL: new conn_srvc id:18, app_id:0
+I (10428) player_bt: state=4 connected=1 peer=f4:2b:7d:5a:35:43 Connected. Press Play to resume.
+W (10432) BT_APPL: new conn_srvc id:18, app_id:1
+W (10438) BT_L2CAP: L2CAP - rcvd conn req for unknown PSM: 23
+I (10445) BT_LOG: bta_av_link_role_ok hndl:x41 role:0 conn_audio:x1 bits:1 features:x8400
+
+I (10830) DISPLAY: UI page=1 title=Music selection=0/4 strips=16 max_draw_us=1390135 stack_free_min=9012
+I (11182) DISPLAY: UI page=1 title=Music selection=0/4 strips=2 max_draw_us=1390135 stack_free_min=9012
+I (12709) ANO: SELECT pressed poll_ms=18 max_poll_ms=341
+I (12766) ANO: DEBOUNCED pressed=0x01 poll_ms=17 max_poll_ms=341
+I (12767) ANO: UI_BUTTON action=1 queued=1
+I (12866) ANO: SELECT released poll_ms=23 max_poll_ms=341
+I (13382) DISPLAY: UI page=2 title=Artists selection=0/5 strips=19 max_draw_us=1390135 stack_free_min=8932
+I (14280) ANO: RAW_POSITION=1
+I (14660) DISPLAY: UI page=2 title=Artists selection=1/5 strips=17 max_draw_us=1390135 stack_free_min=8932
+I (14748) DISPLAY: UI page=2 title=Artists selection=1/5 strips=0 max_draw_us=1390135 stack_free_min=8932
+I (14790) ANO: RAW_POSITION=2
+I (15152) DISPLAY: UI page=2 title=Artists selection=2/5 strips=15 max_draw_us=1390135 stack_free_min=8932
+I (15229) ANO: RAW_POSITION=3
+I (15379) ANO: RAW_POSITION=2
+I (15620) DISPLAY: UI page=2 title=Artists selection=3/5 strips=17 max_draw_us=1390135 stack_free_min=8932
+I (15810) ANO: RAW_POSITION=1
+I (15947) ALBUM: PLAYBACK track=9/14 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=372748 callback_us=384 done=0 failed=0 paused=1 connected=1 volume=40
+I (15952) player_bt: worker_stack_free_min=3796
+I (16024) ANO: RAW_POSITION=0
+I (16040) DISPLAY: UI page=2 title=Artists selection=2/5 strips=17 max_draw_us=1390135 stack_free_min=8932
+I (16250) ANO: RAW_POSITION=-1
+I (16442) DISPLAY: UI page=2 title=Artists selection=0/5 strips=17 max_draw_us=1390135 stack_free_min=8932
+I (16593) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1390135 stack_free_min=8932
+I (16763) ANO: RAW_POSITION=-2
+I (16915) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1390135 stack_free_min=8932
+I (24107) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1390135 stack_free_min=8932
+I (25957) ALBUM: PLAYBACK track=9/14 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=372748 callback_us=384 done=0 failed=0 paused=1 connected=1 volume=40
+I (25962) player_bt: worker_stack_free_min=3796
+I (31608) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1390135 stack_free_min=8932
+I (35966) ALBUM: PLAYBACK track=9/14 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=372748 callback_us=384 done=0 failed=0 paused=1 connected=1 volume=40
+I (35971) player_bt: worker_stack_free_min=3796
+I (39107) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1390135 stack_free_min=8932

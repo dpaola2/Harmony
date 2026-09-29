@@ -1,0 +1,516 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Sep 27 2026 16:17:03
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00300000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3ddb4h (253364) map
+I (175) esp_image: segment 1: paddr=0004dddc vaddr=3ff80000 size=00020h (    32) load
+I (176) esp_image: segment 2: paddr=0004de04 vaddr=3ffbdb60 size=02214h (  8724) load
+I (183) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=ccf34h (839476) map
+I (474) esp_image: segment 4: paddr=0011cf5c vaddr=3ffbfd74 size=03e28h ( 15912) load
+I (480) esp_image: segment 5: paddr=00120d8c vaddr=40080000 size=1e8c4h (125124) load
+I (544) boot: Loaded app from partition at offset 0x10000
+I (544) boot: Disabling RNG early entropy source...
+I (554) quad_psram: This chip is ESP32-PICO-V3-02
+I (556) esp_psram: Found 2MB PSRAM device
+I (556) esp_psram: Speed: 40MHz
+I (556) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.
+I (562) cpu_start: Multicore app
+I (1028) esp_psram: SPI SRAM memory test OK
+I (1036) cpu_start: Pro cpu start user code
+I (1036) cpu_start: cpu freq: 240000000 Hz
+I (1036) app_init: Application information:
+I (1036) app_init: Project name:     mark6_feather_player_bench
+I (1042) app_init: App version:      mark7-visual-reference-20260927
+I (1048) app_init: Compile time:     Sep 27 2026 21:51:54
+I (1053) app_init: ELF file SHA256:  8c2d3dc87...
+I (1058) app_init: ESP-IDF:          8c750b08
+I (1062) efuse_init: Min chip rev:     v0.0
+I (1066) efuse_init: Max chip rev:     v3.99 
+I (1070) efuse_init: Chip rev:         v3.1
+I (1074) heap_init: Initializing. RAM available for dynamic allocation:
+I (1080) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM
+I (1085) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM
+I (1090) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM
+I (1096) heap_init: At 3FFD2760 len 0000D8A0 (54 KiB): DRAM
+I (1101) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (1106) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (1112) heap_init: At 4009E8C4 len 0000173C (5 KiB): IRAM
+I (1118) esp_psram: Adding pool of 2048K of PSRAM memory to heap allocator
+I (1125) spi_flash: detected chip: generic
+I (1128) spi_flash: flash io: dio
+I (1132) coexist: coex firmware version: 831ec70
+I (1136) main_task: Started on CPU0
+I (1138) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (1146) main_task: Calling app_main()
+I (1400) LCD_BENCH: Identity and capacities matched; LCD/SD control outputs enabled
+I (1424) SD_BENCH: READ_ONLY mount: SCK=14 MOSI=27 MISO=21 CS=25, shared SPI2 4MHz
+I (1468) SD_BENCH: CARD_RESET_DONE before initialization
+I (1468) sdspi_transaction: cmd=52, R1 response: command not supported
+I (1510) sdspi_transaction: cmd=5, R1 response: command not supported
+Name: SD
+Type: SDHC
+Speed: 4.00 MHz (limit: 4.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+I (3914) ALBUM: TRACK index=1/46 file=/sd/HARMONY/Creed/Human Clay/01-01 Are You Ready.mp3 generation=1
+I (5200) DISPLAY: ST7796S SPI2 4MHz 320x480; write completed, visual check required
+W (5205) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs
+I (5236) ALBUM: TRACK index=1/46 file=/sd/HARMONY/Creed/Human Clay/01-01 Are You Ready.mp3 generation=2
+I (5253) BTDM_INIT: BT controller compile version [b992c7d]
+I (5256) ANO: RAW_POSITION=0
+I (5260) BTDM_INIT: Bluetooth MAC: 14:33:5c:99:1a:2a
+I (5263) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+W (5906) BT_BTC: A2DP Enable without AVRC
+I (5920) main_task: Returned from app_main()
+I (6019) player_bt: state=1 connected=0 peer=00:00:00:00:00:00 Reconnecting to last selected receiver. Playback paused.
+I (6601) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=60 max_draw_us=1392575 stack_free_min=9236
+I (6680) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (7420) player_bt: state=3 connected=0 peer=f4:2b:7d:5a:35:43 Connecting. Playback stays paused.
+W (7421) BT_APPL: reset flags
+I (7609) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (7641) ANO: RAW_POSITION=1
+I (7768) ANO: RAW_POSITION=2
+I (7926) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (8198) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (8442) ANO: SELECT pressed poll_ms=24 max_poll_ms=361
+I (8491) ANO: DEBOUNCED pressed=0x01 poll_ms=24 max_poll_ms=361
+I (8492) ANO: UI_BUTTON action=1 queued=1
+I (8545) ANO: SELECT released poll_ms=27 max_poll_ms=361
+I (9000) DISPLAY: UI page=6 title=Bluetooth selection=0/3 strips=29 max_draw_us=1392575 stack_free_min=8932
+I (9368) ANO: SELECT pressed poll_ms=24 max_poll_ms=361
+I (9416) ANO: DEBOUNCED pressed=0x01 poll_ms=24 max_poll_ms=361
+I (9417) ANO: UI_BUTTON action=1 queued=1
+I (9470) ANO: SELECT released poll_ms=26 max_poll_ms=361
+I (9752) DISPLAY: UI page=11 title=Saved devices selection=0/1 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (9922) ANO: SELECT pressed poll_ms=24 max_poll_ms=361
+I (9971) ANO: DEBOUNCED pressed=0x01 poll_ms=24 max_poll_ms=361
+I (9972) ANO: UI_BUTTON action=1 queued=1
+I (9998) ANO: SELECT released poll_ms=27 max_poll_ms=361
+I (10384) DISPLAY: UI page=13 title=Device selection=0/3 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (10775) ANO: SELECT pressed poll_ms=24 max_poll_ms=361
+I (10825) ANO: DEBOUNCED pressed=0x01 poll_ms=25 max_poll_ms=361
+I (10826) ANO: UI_BUTTON action=1 queued=1
+I (10826) player_bt: command=1 peer=f4:2b:7d:5a:35:43
+W (10829) BT_BTC: btc_av_state_opening_handler : unhandled event:BTC_AV_DISCONNECT_REQ_EVT
+
+I (10830) player_bt: state=5 connected=0 peer=f4:2b:7d:5a:35:43 Disconnecting...
+I (10879) ANO: SELECT released poll_ms=26 max_poll_ms=361
+I (10900) DISPLAY: UI page=13 title=Device selection=0/3 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (11122) DISPLAY: UI page=13 title=Device selection=0/3 strips=4 max_draw_us=1392575 stack_free_min=8932
+W (12550) BT_SDP: SDP - Rcvd conn cnf with error: 0x4  CID 0x40
+
+W (12551) BT_HCI: hcif conn complete: hdl 0xfff, st 0x4
+W (12552) BT_BTC: BTA_AV_OPEN_EVT::FAILED status: 2
+
+I (12555) player_bt: state=3 connected=0 peer=f4:2b:7d:5a:35:43 Connecting. Playback stays paused.
+I (12764) DISPLAY: UI page=13 title=Device selection=0/3 strips=4 max_draw_us=1392575 stack_free_min=8932
+W (13147) BT_HCI: hcif conn complete: hdl 0x80, st 0x0
+W (13306) BT_APPL: new conn_srvc id:18, app_id:0
+I (13326) player_bt: state=4 connected=1 peer=f4:2b:7d:5a:35:43 Connected. Press Play to resume.
+W (13331) BT_APPL: new conn_srvc id:18, app_id:1
+W (13337) BT_L2CAP: L2CAP - rcvd conn req for unknown PSM: 23
+I (13344) BT_LOG: bta_av_link_role_ok hndl:x41 role:0 conn_audio:x1 bits:1 features:x8400
+
+I (13672) DISPLAY: UI page=13 title=Device selection=0/3 strips=4 max_draw_us=1392575 stack_free_min=8932
+I (14806) DISPLAY: UI page=13 title=Device selection=0/3 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (15672) ANO: UP pressed poll_ms=32 max_poll_ms=361
+I (15730) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=361
+I (15732) ANO: UI_BUTTON action=2 queued=1
+I (15762) ANO: UP released poll_ms=31 max_poll_ms=361
+I (15947) ALBUM: PLAYBACK track=1/11 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=380 done=0 failed=0 paused=1 connected=1
+I (15951) player_bt: worker_stack_free_min=3792
+I (16304) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (16329) DISPLAY: UI page=11 title=Saved devices selection=0/1 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (16362) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=361
+I (16363) ANO: UI_BUTTON action=2 queued=1
+I (16424) ANO: UP released poll_ms=30 max_poll_ms=361
+I (16883) DISPLAY: UI page=6 title=Bluetooth selection=0/3 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (17022) ANO: UP pressed poll_ms=30 max_poll_ms=361
+I (17080) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=361
+I (17082) ANO: UI_BUTTON action=2 queued=1
+I (17113) ANO: UP released poll_ms=33 max_poll_ms=361
+I (17770) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=29 max_draw_us=1392575 stack_free_min=8932
+I (18282) ANO: RAW_POSITION=1
+I (18638) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (18700) ANO: RAW_POSITION=0
+I (19072) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (19093) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (19150) ANO: DEBOUNCED pressed=0x01 poll_ms=28 max_poll_ms=361
+I (19152) ANO: UI_BUTTON action=1 queued=1
+I (19183) ANO: SELECT released poll_ms=33 max_poll_ms=361
+I (19692) DISPLAY: UI page=1 title=Music selection=0/4 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (19902) ANO: SELECT pressed poll_ms=32 max_poll_ms=361
+I (19960) ANO: SELECT released poll_ms=28 max_poll_ms=361
+I (23022) ANO: RAW_POSITION=1
+I (23391) DISPLAY: UI page=1 title=Music selection=1/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (23530) ANO: RAW_POSITION=2
+I (23804) ANO: RAW_POSITION=1
+I (23873) DISPLAY: UI page=1 title=Music selection=2/4 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (24231) DISPLAY: UI page=1 title=Music selection=1/4 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (24342) ANO: RAW_POSITION=0
+I (24405) ANO: RAW_POSITION=-1
+I (24711) DISPLAY: UI page=1 title=Music selection=0/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (24824) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (24851) DISPLAY: UI page=1 title=Music selection=0/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (24882) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (24883) ANO: UI_BUTTON action=1 queued=1
+I (24944) ANO: SELECT released poll_ms=30 max_poll_ms=361
+I (25461) DISPLAY: UI page=2 title=Artists selection=0/5 strips=19 max_draw_us=1392575 stack_free_min=8932
+I (25747) DISPLAY: UI page=2 title=Artists selection=0/5 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (25957) ALBUM: PLAYBACK track=1/11 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=857 done=0 failed=0 paused=1 connected=1
+I (25961) player_bt: worker_stack_free_min=3792
+I (26352) ANO: RAW_POSITION=0
+I (26721) DISPLAY: UI page=2 title=Artists selection=1/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (26772) ANO: RAW_POSITION=1
+I (27044) ANO: RAW_POSITION=2
+I (27141) DISPLAY: UI page=2 title=Artists selection=2/5 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (27520) DISPLAY: UI page=2 title=Artists selection=3/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (27730) ANO: RAW_POSITION=3
+I (28088) DISPLAY: UI page=2 title=Artists selection=4/5 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (28152) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (28182) ANO: RAW_POSITION=4
+I (28213) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=361
+I (28214) ANO: UI_BUTTON action=1 queued=1
+I (28274) ANO: SELECT released poll_ms=30 max_poll_ms=361
+I (28314) DISPLAY: UI page=2 title=Artists selection=4/5 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (29019) DISPLAY: UI page=3 title=Albums selection=0/1 strips=31 max_draw_us=1392575 stack_free_min=8932
+I (29412) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (29472) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (29473) ANO: UI_BUTTON action=1 queued=1
+I (29504) ANO: SELECT released poll_ms=31 max_poll_ms=361
+I (29804) DISPLAY: UI page=4 title=Unknown album selection=0/1 strips=6 max_draw_us=1392575 stack_free_min=8932
+I (30672) ANO: UP pressed poll_ms=30 max_poll_ms=361
+I (30732) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=361
+I (30733) ANO: UI_BUTTON action=2 queued=1
+I (30764) ANO: UP released poll_ms=31 max_poll_ms=361
+I (30914) ANO: UP pressed poll_ms=28 max_poll_ms=361
+I (30971) ANO: DEBOUNCED pressed=0x02 poll_ms=28 max_poll_ms=361
+I (30974) ANO: UI_BUTTON action=2 queued=1
+I (31034) ANO: UP released poll_ms=30 max_poll_ms=361
+I (31066) DISPLAY: UI page=3 title=Albums selection=0/1 strips=6 max_draw_us=1392575 stack_free_min=8932
+I (31809) DISPLAY: UI page=2 title=Artists selection=4/5 strips=31 max_draw_us=1392575 stack_free_min=8932
+I (32591) ANO: RAW_POSITION=3
+I (32744) ANO: RAW_POSITION=2
+I (32949) DISPLAY: UI page=2 title=Artists selection=3/5 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (33340) DISPLAY: UI page=2 title=Artists selection=2/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (33612) ANO: RAW_POSITION=1
+I (33764) ANO: RAW_POSITION=0
+I (33951) DISPLAY: UI page=2 title=Artists selection=1/5 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (34274) ANO: SELECT pressed poll_ms=29 max_poll_ms=361
+I (34330) DISPLAY: UI page=2 title=Artists selection=0/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (34334) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (34336) ANO: UI_BUTTON action=1 queued=1
+I (34366) ANO: SELECT released poll_ms=34 max_poll_ms=361
+I (34941) DISPLAY: UI page=3 title=Albums selection=0/1 strips=24 max_draw_us=1392575 stack_free_min=8932
+I (35232) ANO: SELECT pressed poll_ms=31 max_poll_ms=361
+I (35292) ANO: SELECT released poll_ms=30 max_poll_ms=361
+I (35965) ALBUM: PLAYBACK track=1/11 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=857 done=0 failed=0 paused=1 connected=1
+I (35969) player_bt: worker_stack_free_min=3792
+I (36402) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (36462) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (36463) ANO: UI_BUTTON action=1 queued=1
+I (36494) ANO: SELECT released poll_ms=31 max_poll_ms=361
+I (37252) DISPLAY: UI page=4 title=Human Clay selection=0/11 strips=34 max_draw_us=1392575 stack_free_min=8932
+I (37510) ANO: RAW_POSITION=1
+I (37694) ANO: RAW_POSITION=2
+I (37881) DISPLAY: UI page=4 title=Human Clay selection=1/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (38241) DISPLAY: UI page=4 title=Human Clay selection=2/11 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (38292) ANO: RAW_POSITION=3
+I (38651) ANO: RAW_POSITION=4
+I (38678) DISPLAY: UI page=4 title=Human Clay selection=3/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (39051) DISPLAY: UI page=4 title=Human Clay selection=4/11 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (39102) ANO: RAW_POSITION=5
+I (39472) DISPLAY: UI page=4 title=Human Clay selection=5/11 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (39493) ANO: RAW_POSITION=6
+I (40101) DISPLAY: UI page=4 title=Human Clay selection=6/11 strips=19 max_draw_us=1392575 stack_free_min=8932
+I (40736) DISPLAY: UI page=4 title=Human Clay selection=6/11 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (41321) ANO: RAW_POSITION=7
+I (41684) ANO: RAW_POSITION=8
+I (41979) DISPLAY: UI page=4 title=Human Clay selection=7/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (42254) ANO: RAW_POSITION=9
+I (42639) DISPLAY: UI page=4 title=Human Clay selection=8/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (42884) ANO: RAW_POSITION=10
+I (43091) ANO: RAW_POSITION=11
+I (43300) DISPLAY: UI page=4 title=Human Clay selection=9/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (43487) ANO: RAW_POSITION=12
+I (43664) ANO: RAW_POSITION=13
+I (43934) ANO: RAW_POSITION=14
+I (43958) DISPLAY: UI page=4 title=Human Clay selection=10/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (44093) DISPLAY: UI page=4 title=Human Clay selection=10/11 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (44352) ANO: RAW_POSITION=15
+I (44470) DISPLAY: UI page=4 title=Human Clay selection=10/11 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (44742) ANO: RAW_POSITION=16
+I (44859) DISPLAY: UI page=4 title=Human Clay selection=10/11 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (44864) ANO: RAW_POSITION=15
+I (44984) ANO: RAW_POSITION=14
+I (45104) ANO: RAW_POSITION=13
+I (45194) ANO: RAW_POSITION=12
+I (45251) DISPLAY: UI page=4 title=Human Clay selection=9/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (45254) ANO: RAW_POSITION=11
+I (45283) ANO: RAW_POSITION=10
+I (45404) ANO: RAW_POSITION=9
+I (45651) DISPLAY: UI page=4 title=Human Clay selection=5/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (45973) ALBUM: PLAYBACK track=1/11 frames=0 total=0 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=857 done=0 failed=0 paused=1 connected=1
+I (45977) player_bt: worker_stack_free_min=3792
+I (46002) ANO: RAW_POSITION=8
+I (46093) ANO: RAW_POSITION=7
+I (46154) ANO: RAW_POSITION=6
+I (46214) ANO: RAW_POSITION=5
+I (46301) ANO: RAW_POSITION=4
+I (46330) DISPLAY: UI page=4 title=Human Clay selection=3/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (46394) ANO: RAW_POSITION=3
+I (46427) ANO: RAW_POSITION=2
+I (46486) ANO: RAW_POSITION=1
+I (46546) ANO: RAW_POSITION=0
+I (46989) DISPLAY: UI page=4 title=Human Clay selection=0/11 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (47124) DISPLAY: UI page=4 title=Human Clay selection=0/11 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (48160) ANO: RAW_POSITION=1
+I (48531) DISPLAY: UI page=4 title=Human Clay selection=1/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (48672) ANO: RAW_POSITION=2
+I (49041) DISPLAY: UI page=4 title=Human Clay selection=2/11 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (49242) ANO: RAW_POSITION=3
+I (49629) DISPLAY: UI page=4 title=Human Clay selection=3/11 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (49932) ANO: RAW_POSITION=4
+I (50290) DISPLAY: UI page=4 title=Human Clay selection=4/11 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (50442) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (50502) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=361
+I (50503) ANO: UI_BUTTON action=1 queued=1
+I (50536) ANO: SELECT released poll_ms=34 max_poll_ms=361
+I (50547) ALBUM: TRACK index=5/46 file=/sd/HARMONY/Creed/Human Clay/01-05 Wrong Way.mp3 generation=3
+I (51551) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=44 max_draw_us=1392575 stack_free_min=8932
+I (51893) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (52250) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (53023) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (53114) ANO: SELECT pressed poll_ms=28 max_poll_ms=361
+I (53174) ANO: DEBOUNCED pressed=0x01 poll_ms=27 max_poll_ms=361
+I (53175) ANO: UI_BUTTON action=1 queued=1
+I (53265) ANO: SELECT released poll_ms=28 max_poll_ms=361
+I (53512) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=4 max_draw_us=1392575 stack_free_min=8932
+I (53890) ANO: SELECT pressed poll_ms=28 max_poll_ms=361
+I (53952) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (53953) ANO: UI_BUTTON action=1 queued=1
+I (53987) ANO: SELECT released poll_ms=34 max_poll_ms=361
+I (54294) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=4 max_draw_us=1392575 stack_free_min=8932
+I (54771) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (55785) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (55992) ALBUM: PLAYBACK track=5/11 frames=200960 total=200960 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=1586 done=0 failed=0 paused=0 connected=1
+I (55997) player_bt: worker_stack_free_min=3792
+I (56781) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (57798) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (58149) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (58790) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (59781) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (60798) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (61455) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (61518) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=361
+I (61520) ANO: UI_BUTTON action=2 queued=1
+I (61576) ANO: UP released poll_ms=29 max_poll_ms=361
+I (61790) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (62144) ANO: UP pressed poll_ms=29 max_poll_ms=361
+I (62206) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=361
+I (62207) ANO: UI_BUTTON action=2 queued=1
+I (62264) ANO: UP released poll_ms=29 max_poll_ms=361
+I (62831) DISPLAY: UI page=4 title=Human Clay selection=4/11 strips=44 max_draw_us=1392575 stack_free_min=8932
+I (63762) DISPLAY: UI page=3 title=Albums selection=0/1 strips=41 max_draw_us=1392575 stack_free_min=8932
+I (63913) ANO: UP pressed poll_ms=29 max_poll_ms=361
+I (63974) ANO: DEBOUNCED pressed=0x02 poll_ms=32 max_poll_ms=361
+I (63975) ANO: UI_BUTTON action=2 queued=1
+I (64004) ANO: UP released poll_ms=30 max_poll_ms=361
+I (64734) DISPLAY: UI page=2 title=Artists selection=0/5 strips=24 max_draw_us=1392575 stack_free_min=8932
+I (65354) ANO: RAW_POSITION=5
+I (65564) ANO: RAW_POSITION=6
+I (65785) DISPLAY: UI page=2 title=Artists selection=1/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (66012) ALBUM: PLAYBACK track=5/11 frames=642816 total=642816 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=1586 done=0 failed=0 paused=0 connected=1
+I (66017) player_bt: worker_stack_free_min=3792
+I (66174) DISPLAY: UI page=2 title=Artists selection=2/5 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (67574) ANO: RAW_POSITION=7
+I (68006) DISPLAY: UI page=2 title=Artists selection=3/5 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (68923) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (68985) ANO: DEBOUNCED pressed=0x01 poll_ms=29 max_poll_ms=361
+I (68986) ANO: UI_BUTTON action=1 queued=1
+I (69046) ANO: SELECT released poll_ms=33 max_poll_ms=361
+I (69763) DISPLAY: UI page=3 title=Albums selection=0/1 strips=31 max_draw_us=1392575 stack_free_min=8932
+I (70066) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (70124) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (70125) ANO: UI_BUTTON action=1 queued=1
+I (70186) ANO: SELECT released poll_ms=30 max_poll_ms=361
+I (71031) DISPLAY: UI page=4 title=Third Eye Blind selection=0/14 strips=34 max_draw_us=1392575 stack_free_min=8932
+I (71293) ANO: RAW_POSITION=8
+I (71566) ANO: RAW_POSITION=9
+I (71686) ANO: RAW_POSITION=10
+I (71753) DISPLAY: UI page=4 title=Third Eye Blind selection=1/14 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (71894) ANO: RAW_POSITION=11
+I (72106) ANO: RAW_POSITION=12
+I (72191) DISPLAY: UI page=4 title=Third Eye Blind selection=3/14 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (72643) DISPLAY: UI page=4 title=Third Eye Blind selection=5/14 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (72644) ANO: RAW_POSITION=13
+I (73362) DISPLAY: UI page=4 title=Third Eye Blind selection=6/14 strips=20 max_draw_us=1392575 stack_free_min=8932
+I (73934) ANO: RAW_POSITION=14
+I (74682) DISPLAY: UI page=4 title=Third Eye Blind selection=7/14 strips=21 max_draw_us=1392575 stack_free_min=8932
+I (75580) DISPLAY: UI page=4 title=Third Eye Blind selection=7/14 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (75854) ANO: SELECT pressed poll_ms=28 max_poll_ms=361
+I (75913) ANO: DEBOUNCED pressed=0x01 poll_ms=28 max_poll_ms=361
+I (75915) ANO: UI_BUTTON action=1 queued=1
+I (75947) ANO: SELECT released poll_ms=33 max_poll_ms=361
+I (75971) ALBUM: TRACK index=39/46 file=/sd/HARMONY/Third Eye Blind/Third Eye Blind/01-08 Burning Man.mp3 generation=4
+I (76029) ALBUM: PLAYBACK track=8/14 frames=0 total=1080704 queued=0 underrun=0 contention=0 max_decode_us=427023 callback_us=1586 done=0 failed=0 paused=0 connected=1
+I (76035) player_bt: worker_stack_free_min=3792
+I (77027) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=44 max_draw_us=1392575 stack_free_min=8932
+I (77363) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (77720) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (78440) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (79461) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (80445) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (81440) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (82461) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (83450) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (84445) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (85461) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (86061) ALBUM: PLAYBACK track=8/14 frames=439168 total=1519872 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (86066) player_bt: worker_stack_free_min=3792
+I (86451) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (87439) DISPLAY: UI page=5 title=Now Playing selection=0/0 strips=3 max_draw_us=1392575 stack_free_min=8932
+I (87673) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (87733) ANO: DEBOUNCED pressed=0x02 poll_ms=26 max_poll_ms=361
+I (87735) ANO: UI_BUTTON action=2 queued=1
+I (87795) ANO: UP released poll_ms=31 max_poll_ms=361
+I (88575) ANO: UP pressed poll_ms=29 max_poll_ms=361
+I (88635) ANO: DEBOUNCED pressed=0x02 poll_ms=29 max_poll_ms=361
+I (88636) ANO: UI_BUTTON action=2 queued=1
+I (88694) ANO: UP released poll_ms=30 max_poll_ms=361
+I (88782) DISPLAY: UI page=4 title=Third Eye Blind selection=7/14 strips=44 max_draw_us=1392575 stack_free_min=8932
+I (89741) DISPLAY: UI page=3 title=Albums selection=0/1 strips=41 max_draw_us=1392575 stack_free_min=8932
+I (90044) ANO: UP pressed poll_ms=30 max_poll_ms=361
+I (90104) ANO: DEBOUNCED pressed=0x02 poll_ms=31 max_poll_ms=361
+I (90105) ANO: UI_BUTTON action=2 queued=1
+I (90135) ANO: UP released poll_ms=30 max_poll_ms=361
+I (90973) DISPLAY: UI page=2 title=Artists selection=3/5 strips=31 max_draw_us=1392575 stack_free_min=8932
+I (91154) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (91213) ANO: DEBOUNCED pressed=0x02 poll_ms=28 max_poll_ms=361
+I (91215) ANO: UI_BUTTON action=2 queued=1
+I (91278) ANO: UP released poll_ms=33 max_poll_ms=361
+I (91993) DISPLAY: UI page=1 title=Music selection=0/4 strips=28 max_draw_us=1392575 stack_free_min=8932
+I (92170) DISPLAY: UI page=1 title=Music selection=0/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (92504) ANO: UP pressed poll_ms=29 max_poll_ms=361
+I (92563) ANO: DEBOUNCED pressed=0x02 poll_ms=30 max_poll_ms=361
+I (92565) ANO: UI_BUTTON action=2 queued=1
+I (92597) ANO: UP released poll_ms=33 max_poll_ms=361
+I (93225) DISPLAY: UI page=0 title=Harmony selection=0/4 strips=16 max_draw_us=1392575 stack_free_min=8932
+I (93374) ANO: RAW_POSITION=15
+I (93556) ANO: RAW_POSITION=16
+I (93822) DISPLAY: UI page=0 title=Harmony selection=1/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (93976) ANO: RAW_POSITION=17
+I (94224) DISPLAY: UI page=0 title=Harmony selection=2/4 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (94246) ANO: RAW_POSITION=18
+I (94644) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (94664) ANO: SELECT pressed poll_ms=30 max_poll_ms=361
+I (94730) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (94731) ANO: UI_BUTTON action=1 queued=1
+I (94758) ANO: SELECT released poll_ms=29 max_poll_ms=361
+I (94816) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (95664) DISPLAY: UI page=7 title=Settings selection=0/3 strips=33 max_draw_us=1392575 stack_free_min=8932
+I (96088) ALBUM: PLAYBACK track=8/14 frames=881408 total=1962112 queued=130048 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (96094) player_bt: worker_stack_free_min=3792
+I (98234) ANO: RAW_POSITION=19
+I (98682) DISPLAY: UI page=7 title=Settings selection=1/3 strips=17 max_draw_us=1392575 stack_free_min=8932
+I (98834) ANO: RAW_POSITION=20
+I (99016) ANO: RAW_POSITION=21
+I (99249) DISPLAY: UI page=7 title=Settings selection=2/3 strips=15 max_draw_us=1392575 stack_free_min=8932
+I (99408) DISPLAY: UI page=7 title=Settings selection=2/3 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (99554) ANO: SELECT pressed poll_ms=31 max_poll_ms=361
+I (99615) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=361
+I (99616) ANO: UI_BUTTON action=1 queued=1
+I (99645) ANO: SELECT released poll_ms=29 max_poll_ms=361
+I (99985) DISPLAY: UI page=7 title=Settings selection=2/3 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (102046) ANO: SELECT pressed poll_ms=32 max_poll_ms=361
+I (102104) ANO: DEBOUNCED pressed=0x01 poll_ms=31 max_poll_ms=361
+I (102105) ANO: UI_BUTTON action=1 queued=1
+I (102136) ANO: SELECT released poll_ms=32 max_poll_ms=361
+I (102469) DISPLAY: UI page=7 title=Settings selection=2/3 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (102853) ANO: SELECT pressed poll_ms=31 max_poll_ms=361
+I (102913) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (102915) ANO: UI_BUTTON action=1 queued=1
+I (102944) ANO: SELECT released poll_ms=30 max_poll_ms=361
+I (103310) DISPLAY: UI page=7 title=Settings selection=2/3 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (103726) ANO: SELECT pressed poll_ms=33 max_poll_ms=361
+I (103784) ANO: DEBOUNCED pressed=0x01 poll_ms=30 max_poll_ms=361
+I (103785) ANO: UI_BUTTON action=1 queued=1
+I (103816) ANO: SELECT released poll_ms=32 max_poll_ms=361
+I (104155) DISPLAY: UI page=7 title=Settings selection=2/3 strips=2 max_draw_us=1392575 stack_free_min=8932
+I (105132) DISPLAY: UI page=7 title=Settings selection=2/3 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (106106) ALBUM: PLAYBACK track=8/14 frames=1322880 total=2403584 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (106111) player_bt: worker_stack_free_min=3792
+I (107024) ANO: UP pressed poll_ms=28 max_poll_ms=361
+I (107083) ANO: UP released poll_ms=29 max_poll_ms=361
+I (107355) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (107414) ANO: DEBOUNCED pressed=0x02 poll_ms=32 max_poll_ms=361
+I (107415) ANO: UI_BUTTON action=2 queued=1
+I (107508) ANO: UP released poll_ms=30 max_poll_ms=361
+I (107568) ANO: UP pressed poll_ms=31 max_poll_ms=361
+I (107683) ANO: UP released poll_ms=27 max_poll_ms=361
+I (108263) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=33 max_draw_us=1392575 stack_free_min=8932
+I (113470) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (116129) ALBUM: PLAYBACK track=8/14 frames=1765248 total=2845952 queued=127488 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (116135) player_bt: worker_stack_free_min=3792
+I (120969) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (126150) ALBUM: PLAYBACK track=8/14 frames=2207232 total=3287936 queued=129024 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (126156) player_bt: worker_stack_free_min=3792
+I (128469) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (135972) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (136171) ALBUM: PLAYBACK track=8/14 frames=2649600 total=3730304 queued=126464 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (136177) player_bt: worker_stack_free_min=3792
+I (143469) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (146189) ALBUM: PLAYBACK track=8/14 frames=3090944 total=4171648 queued=129536 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (146195) player_bt: worker_stack_free_min=3792
+I (150969) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (156209) ALBUM: PLAYBACK track=8/14 frames=3532672 total=4613376 queued=128512 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (156215) player_bt: worker_stack_free_min=3792
+I (158471) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (165970) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (166229) ALBUM: PLAYBACK track=8/14 frames=3974528 total=5055232 queued=128512 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (166235) player_bt: worker_stack_free_min=3792
+I (173471) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (176248) ALBUM: PLAYBACK track=8/14 frames=4416000 total=5496704 queued=130048 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (176254) player_bt: worker_stack_free_min=3792
+I (180970) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (186270) ALBUM: PLAYBACK track=8/14 frames=4858496 total=5939200 queued=128000 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (186276) player_bt: worker_stack_free_min=3792
+I (188469) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (195969) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (196299) ALBUM: PLAYBACK track=8/14 frames=5300736 total=6381440 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (196304) player_bt: worker_stack_free_min=3792
+I (203469) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (206319) ALBUM: PLAYBACK track=8/14 frames=5742592 total=6823296 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (206324) player_bt: worker_stack_free_min=3792
+I (210970) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (216343) ALBUM: PLAYBACK track=8/14 frames=6184448 total=7265152 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (216349) player_bt: worker_stack_free_min=3792
+I (218469) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (225970) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (226362) ALBUM: PLAYBACK track=8/14 frames=6626304 total=7707008 queued=129024 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (226367) player_bt: worker_stack_free_min=3792
+I (233470) DISPLAY: UI page=0 title=Harmony selection=3/4 strips=0 max_draw_us=1392575 stack_free_min=8932
+I (236382) ALBUM: PLAYBACK track=8/14 frames=7068160 total=8148864 queued=131072 underrun=0 contention=0 max_decode_us=427023 callback_us=2004 done=0 failed=0 paused=0 connected=1
+I (236387) player_bt: worker_stack_free_min=3792

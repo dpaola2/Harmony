@@ -11,6 +11,9 @@
 #include <inttypes.h>
 #include "audio_player.h"
 #include "player_display.h"
+#ifdef HARMONY_PLAYER_UI
+#include "player_bluetooth.h"
+#endif
 #include <stdatomic.h>
 #include <strings.h>
 #include "freertos/FreeRTOS.h"
@@ -33,6 +36,7 @@
 #define BT_AV_TAG             "BT_AV"
 #define BT_RC_CT_TAG          "RC_CT"
 
+#ifndef HARMONY_PLAYER_UI
 /* device name */
 #define LOCAL_DEVICE_NAME     "Harmony Mark-6"
 
@@ -780,6 +784,8 @@ static void bt_av_hdl_avrc_ct_evt(uint16_t event, void *p_param)
  * MAIN ENTRY POINT
  ********************************/
 
+#endif /* legacy fixed-peer bench Bluetooth */
+
 #include "carrier_board.h"
 #include "carrier_controls.h"
 #include "bench_display.h"
@@ -796,11 +802,26 @@ void app_main(void)
         ESP_LOGI(BT_AV_TAG, "Display-only write result: %s; visual check required", esp_err_to_name(err));
         return;
     }
+    /* Preferences and Bluetooth bonds share NVS; do not erase them on recovery. */
+    esp_err_t ret = nvs_flash_init();
+#ifdef HARMONY_PLAYER_UI
+    if (ret != ESP_OK)
+        ESP_LOGE(BT_AV_TAG, "NVS unavailable (%s); preferences cannot be saved", esp_err_to_name(ret));
+    if (!audio_player_prepare())
+        ESP_LOGE(BT_AV_TAG, "Library unavailable; starting recovery UI");
+    audio_player_set_paused(true);
+#else
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
     ESP_LOGI(BT_AV_TAG, "MARK6_FEATHER_ALBUM target=%s playlist=HARMONY/ALBUM.M3U", remote_device_name);
     if (!audio_player_prepare()) {
         ESP_LOGE(BT_AV_TAG, "Audio preparation failed; Bluetooth will remain off");
         return;
     }
+#endif
     if (!player_display_start()) {
         audio_player_stop();
         ESP_LOGE(BT_AV_TAG, "Display preparation failed; integration test not started");
@@ -810,15 +831,6 @@ void app_main(void)
     if (carrier_controls_start() != ESP_OK)
         ESP_LOGW(BT_AV_TAG, "ANO controls unavailable; continuing audio/display bench");
 #endif
-    char bda_str[18] = {0};
-    /* initialize NVS — it is used to store PHY calibration data */
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_ERROR_CHECK(nvs_flash_erase());
-        ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK(ret);
-
     /*
      * This example only uses the functions of Classical Bluetooth.
      * So release the controller memory for Bluetooth Low Energy.
@@ -864,8 +876,14 @@ void app_main(void)
     esp_bt_pin_code_t pin_code;
     esp_bt_gap_set_pin(pin_type, 0, pin_code);
 
+    #ifdef HARMONY_PLAYER_UI
+    if (!player_bluetooth_init())
+        ESP_LOGE(BT_AV_TAG, "Bluetooth manager failed to start; UI remains available");
+    #else
+    char bda_str[18] = {0};
     ESP_LOGI(BT_AV_TAG, "Own address:[%s]", bda2str((uint8_t *)esp_bt_dev_get_address(), bda_str, sizeof(bda_str)));
     bt_app_task_start_up();
     /* Bluetooth device name, connection mode and profile set up */
     bt_app_work_dispatch(bt_av_hdl_stack_evt, BT_APP_STACK_UP_EVT, NULL, 0, NULL);
+    #endif
 }

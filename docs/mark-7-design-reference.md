@@ -27,3 +27,9 @@ Run `python3 -m platforms.pc.ui_server` and open `http://127.0.0.1:8766` when th
 - [Full Mark-6 UI requirements](Harmony-player-ui-requirements.md), Complete Mark-6 player UI (HARMONY-18), under Harmony Mark-6: Bluetooth bench player (HARMONY-17).
 
 All adopted UI functionality remains in Mark-6. This reference reserves the physical visual direction for Mark-7; it does not move unfinished Mark-6 features to a later version.
+
+Later September 27, Dave proposed proving battery operation on Mark-6 and reusing the electronics in a compact Mark-7 for walks and car use. See the [lessons and proposed sequence](mark-6-lessons-and-portable-next-step.md). This supersedes treating a fresh electronics design as necessary; exact layout and power qualification remain open.
+
+## Adopted portable scope: September 28
+
+[Mark-7 portable scope](mark-7-portable-scope.md) now defines the build. Reuse the current mechanical wheel first. Capacitive sensing remains a preserved option. Internal SD access through a removable cover is sufficient. Omit the integrated speaker and DAC.

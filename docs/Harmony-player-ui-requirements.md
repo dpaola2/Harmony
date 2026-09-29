@@ -1,17 +1,21 @@
 # Harmony player UI requirements
-Date: 2026-09-27
-Status: accepted Mark-6 scope; implementation incomplete
+Date: 2026-09-28
+Status: implemented for bench validation; hardware acceptance incomplete
 Tracking: Complete Mark-6 player UI (HARMONY-18), under Harmony Mark-6: Bluetooth bench player (HARMONY-17)
 
 Build the first usable interface around music browsing, playback, volume, and Bluetooth device management. The verified temporary bench can support UI development while carrier qualification continues.
 
-Dave requested these features after confirming clean audio, the display, pause/resume, track selection, and previous/next controls. On September 27, Dave requested the full requirements for Mark-6. The remaining implementation is tracked in HARMONY-18. Mark-7 preserves the desktop visual direction for future hardware; it does not defer this UI scope.
+Dave requested these features after confirming clean audio, the display, pause/resume, track selection, and previous/next controls. On September 27, Dave requested the full requirements for Mark-6. Implementation and remaining acceptance are tracked in HARMONY-18. Mark-7 preserves the desktop visual direction for future hardware; it does not defer this UI scope.
+
+## September 28 handoff
+
+Implementation carries into Build Mark-7 portable Bluetooth player (HARMONY-19). Hardware expansion of Mark-6 stops; the software requirements remain. Both native builds and host verifier suites pass. The [bench record](../hardware/mark-6/feather-complete-ui-bench-20260927/README.md) separates two uploaded builds from the later source checkpoint. Automatic remote-name lookup is built and tested but not flashed. An open device-detail subtitle may retain a copied MAC until reopened. Full menu, audible volume/mute, full-album and second-receiver acceptance remain incomplete.
 
 ## Existing requirements and implementation
 
 The historical library plan specifies Artists → Albums → Tracks, metadata fallbacks, and ordered tracks. The Python simulator implements that hierarchy and a 0–100 volume state. Settings remains a placeholder.
 
-The current native ESP-IDF firmware implements artist/album/song navigation, album queues, selection restoration, playback controls and Now Playing. It uses folder/filename metadata and a playlist capped at 64 tracks, fixed -24 dB attenuation, and one configured receiver. Bluetooth and Settings remain explanatory placeholders. The browser prototype simulates additional features; those are not proof of device implementation.
+The native ESP-IDF firmware now implements music browsing, volume, Bluetooth management, settings and device preferences. The first complete build is undergoing bench validation. Host checks establish behavior under mocks; receiver compatibility, physical controls and endurance need hardware evidence. The browser remains a separate simulated design reference.
 
 Sources: [library plan](gameplans/CS5.5.md), [navigation plan](gameplans/NAV.md), [volume plan](gameplans/CS5.6.md), [Python app](../core/player_app.py), and [native player](../firmware/mark-6/feather-carrier/README.md).
 
@@ -33,7 +37,7 @@ Settings
   Display timeout
 ```
 
-Artist browsing is the first implementation. Albums, Songs, and existing M3U playlists follow. Playlist editing and text search are deferred.
+Artist, album, song and existing M3U playlist browsing are implemented for bench validation. Playlist editing and text search are deferred.
 
 ## Required controls
 
@@ -93,16 +97,18 @@ Preferences belong in device storage; the music card stays read-only. Library sc
 
 ## Implementation status, September 27
 
-| Area | On the Feather | Remaining for Mark-6 |
+| Area | Implemented in native firmware | Acceptance remaining |
 | --- | --- | --- |
-| Music | Artists, Albums, album songs and album playback queues | All Songs, M3U playlists, metadata-first index, disc/track order, long-name access and an explicit library capacity beyond 64 entries |
-| Now Playing | Title, artist, album, elapsed time and trial-library duration/progress | Adjustable volume, live receiver information and duration discovery for general files |
-| Controls/rendering | Wheel navigation, center select, back, pause and skip; incremental highlight redraw | Continue responsiveness checks as all menus are added |
-| Volume | Fixed quiet -24 dB attenuation | 0–100 digital gain, mute, startup ceiling and persistence |
-| Bluetooth | SoundCore 2 bench connection | Saved/discovered lists, explicit pairing, cancel/errors, switching, disconnect, confirmed Forget and paused reconnect |
-| Settings | Placeholder | Shuffle, repeat off/all/one and display timeout |
-| Persistence/recovery | Bench startup automatically plays | Saved preferences/selection, paused cold boot, usable storage/file/connection recovery |
-| Acceptance | Dave reports corrected UI is “much better”; short bench capture has zero underrun/contention bytes | Second receiver, restart/reconnect and full-album use with finished menus |
+| Music | Artists, Albums, Songs, M3U playlists; metadata/fallback; ordered album queues; 512-track explicit capacity | Check the trial card and broader metadata/library fixtures on device |
+| Now Playing | Track metadata, elapsed/known duration, volume and live receiver name | Visual/listening confirmation with the complete build |
+| Controls/rendering | Navigation/playback, cached lists, incremental highlight redraw and slow long-label scrolling | Responsiveness under final menu/scan load |
+| Volume | 0–100 digital gain, mute, 10 ms ramp; default/startup ceiling 40 (-24.08 dB) | Audible sweep/mute and persisted restart on hardware |
+| Bluetooth | Saved/found lists, explicit pairing, switching, disconnect, confirmed Forget, cancel/errors and paused last-selected reconnect | Actual discovery, second receiver, forgetting and drop/reconnect |
+| Settings | Shuffle, repeat off/all/one, display timeout with wake-only first input | Physical behavior and restart persistence |
+| Persistence/recovery | NVS preferences and last song; paused cold boot; storage/file/connection recovery messages | Power-cycle, missing-card and unreadable-file device checks |
+| Endurance | Host regression/sanitizer checks and native builds | Full-album playback while using finished menus |
+
+Current limits: Just Works and legacy PIN 1234 pairing; custom PIN/passkey input is not implemented. Restart restores the last song within its album, not elapsed position or the prior playlist queue. Unknown durations show elapsed only. Displayed metadata and library sizes are bounded; see the [bench README](../firmware/mark-6/feather-player-bench/README.md). The first input after display timeout wakes only. Settings save after roughly 2–4 quiet seconds. Missing-card recovery requires inserting the card and restarting.
 
 Album art, seeking, gapless playback, text search, playlist editing and additional codecs remain outside this first UI release. The physical carrier and battery qualification have separate acceptance criteria.
 

@@ -11,11 +11,14 @@ with tempfile.TemporaryDirectory(prefix='harmony-ui-') as directory:
              '-Wno-unused-parameter', '-fsanitize=address,undefined', '-pthread',
              '-I' + str(P / 'main'), '-I' + str(tmp), '-I' + str(T / 'audio_mock')]
     exe = tmp / 'ui'
-    subprocess.run(flags + [str(T / 'test_player_ui.c'), str(P / 'main/player_ui.c'), '-o', str(exe)], check=True)
+    subprocess.run(flags + [str(T / 'test_player_ui.c'), str(P / 'main/player_ui.c'), str(P / 'main/player_prefs.c'), str(P / 'main/album.c'), str(P / 'main/album_metadata.c'), '-o', str(exe)], check=True)
     subprocess.run([str(exe)], check=True)
     render = tmp / 'render'
     subprocess.run(flags + [str(T / 'test_ui_render.c'), str(P / 'main/ui_render.c'), '-o', str(render)], check=True)
     subprocess.run([str(render)], check=True)
+    bluetooth = tmp / 'bluetooth'
+    subprocess.run(flags + [str(T / 'test_player_bluetooth.c'), '-o', str(bluetooth)], check=True)
+    subprocess.run([str(bluetooth)], check=True)
     for name in ['freertos/FreeRTOS.h', 'freertos/task.h', 'freertos/semphr.h',
                  'esp_heap_caps.h', 'esp_log.h', 'esp_timer.h', 'bench_storage.h']:
         f = tmp / name
@@ -23,6 +26,6 @@ with tempfile.TemporaryDirectory(prefix='harmony-ui-') as directory:
         f.write_text('#include "runtime.h"\n')
     exe = tmp / 'queue'
     subprocess.run(flags + [str(T / 'test_audio_queue_runtime.c'),
-        str(P / 'main/audio_player.c'), str(P / 'main/playback.c'), str(P / 'main/album.c'),
+        str(P / 'main/audio_player.c'), str(P / 'main/playback.c'), str(P / 'main/album.c'), str(P / 'main/album_metadata.c'),
         '-o', str(exe)], check=True)
     subprocess.run([str(exe)], check=True)

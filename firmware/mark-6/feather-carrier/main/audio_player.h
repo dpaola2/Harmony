@@ -15,10 +15,15 @@ void audio_player_activate(void);
 const album_t *audio_player_library(void);
 bool audio_player_play_queue(const unsigned *tracks, unsigned count, unsigned start);
 void audio_player_toggle_pause(void);
+void audio_player_set_paused(bool paused);
+void audio_player_set_volume(unsigned volume);
+unsigned audio_player_volume(void);
+enum { AUDIO_REPEAT_OFF, AUDIO_REPEAT_ALL, AUDIO_REPEAT_ONE };
+void audio_player_set_modes(bool shuffle, unsigned repeat);
 typedef struct {
     uint32_t consumed_frames, generation;
-    unsigned track, selection, count, queue_position, queue_count;
-    bool finished, stopped, failed, paused, connected, buffering;
+    unsigned track, selection, count, queue_position, queue_count, volume, repeat;
+    bool finished, stopped, failed, paused, connected, buffering, shuffle;
     char title[ALBUM_TITLE_MAX], selected_title[ALBUM_TITLE_MAX];
 } audio_player_snapshot_t;
 audio_player_snapshot_t audio_player_snapshot(void);

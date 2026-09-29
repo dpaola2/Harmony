@@ -16,11 +16,11 @@ int main(int argc,char **argv)
     v.page=PLAYER_UI_NOW_PLAYING;ui_render(frame,&v,318);
     if(argc>1){FILE *file=fopen(argv[1],"wb");assert(file);fprintf(file,"P6\n320 480\n255\n");
         for(int i=0;i<320*480;i++){unsigned c=frame[i];unsigned char rgb[]={((c>>11)&31)*255/31,((c>>5)&63)*255/63,(c&31)*255/31};fwrite(rgb,1,3,file);}fclose(file);}
-    for(unsigned page=0;page<=PLAYER_UI_SETTINGS;page++){
+    for(unsigned page=0;page<=PLAYER_UI_BT_FORGET;page++){
         v.page=page;v.row_count=6;v.total_count=64;v.first=58;v.selected=63;
         for(unsigned i=0;i<6;i++){memset(v.rows[i].label,'W',sizeof(v.rows[i].label)-1);strcpy(v.rows[i].detail,"UTF-8 fallback: café");}
         ui_render(frame,&v,0);assert(guard[0]==0x1234&&guard[320*480+1]==0x5678);
-        strcpy(v.notice,"Volume uses the speaker buttons during this first UI test.");ui_render(frame,&v,1);
+        strcpy(v.notice,"Cannot connect. Try again or find another receiver.");ui_render(frame,&v,1);
     }
     uint16_t *expected=calloc(320*480,sizeof(*expected));assert(expected);
     v.page=PLAYER_UI_SONGS;v.notice[0]=0;v.first=0;v.total_count=6;v.selected=0;
@@ -32,6 +32,10 @@ int main(int argc,char **argv)
     }
     player_ui_view_t changed=v;changed.first=1;assert(!ui_render_selection(frame,&changed,&v));
     changed=v;changed.rows[0].playing=!v.rows[0].playing;assert(!ui_render_selection(frame,&changed,&v));
+    changed=v;changed.audio.volume++;assert(!ui_render_selection(frame,&changed,&v));
+    changed=v;strcpy(changed.receiver,"Other receiver");assert(!ui_render_selection(frame,&changed,&v));
+    for(unsigned step=0;step<150;step++){v.marquee_step=step;ui_render(frame,&v,0);}
+    assert(ui_render_has_long_text(&v));
     free(expected);
     assert(guard[0]==0x1234&&guard[320*480+1]==0x5678);free(guard);
     puts("PASS actual renderer: all pages, long names, Unicode fallback, unknown duration, frame bounds");

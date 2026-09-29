@@ -24,9 +24,17 @@ static void draw_task(void *arg)
     esp_err_t err = ESP_OK;
     uint32_t max_draw_us = 0;
     unsigned updates = 0;
+    bool backlight = true;
     while (err == ESP_OK) {
+        player_ui_tick((uint32_t)(esp_timer_get_time()/1000));
         player_ui_update();
         player_ui_view_t view = player_ui_view();
+        if (!ui_render_has_long_text(&view)) view.marquee_step = 0;
+        if (backlight == view.display_asleep) {
+            bench_display_backlight(!view.display_asleep);
+            backlight = !view.display_asleep;
+        }
+        if (view.display_asleep) { vTaskDelay(pdMS_TO_TICKS(20)); continue; }
         /* Only elapsed whole seconds affect the pixels. Static menus must not
          * continually rasterize into PSRAM and delay physical input polling. */
         view.audio.consumed_frames = view.page == PLAYER_UI_NOW_PLAYING ?
@@ -34,7 +42,7 @@ static void draw_task(void *arg)
         bool changed = first || memcmp(&view, &drawn_view, sizeof(view));
         const album_t *library = audio_player_library();
         unsigned duration = library && view.audio.track < library->count ?
-            trial_duration(library->tracks[view.audio.track].path) : 0;
+            (library->tracks[view.audio.track].duration_seconds ? library->tracks[view.audio.track].duration_seconds : trial_duration(library->tracks[view.audio.track].path)) : 0;
         int64_t start = esp_timer_get_time();
         if (changed && (first || !ui_render_selection(frame, &view, &drawn_view)))
             ui_render(frame, &view, duration);
@@ -58,7 +66,7 @@ static void draw_task(void *arg)
                 max_draw_us, (unsigned)uxTaskGetStackHighWaterMark(NULL));
         first = false;
         drawn_view = view;
-        if (view.audio.stopped) break;
+        /* Keep recovery/navigation usable even if the audio engine stopped. */
         vTaskDelay(pdMS_TO_TICKS(20));
     }
     if (err != ESP_OK) {
@@ -71,6 +79,7 @@ static void draw_task(void *arg)
 bool player_display_start(void)
 {
     esp_err_t err = bench_display_init();
+    if (err != ESP_OK) err = bench_display_init_without_storage();
     if (err != ESP_OK) {
         ESP_LOGE("DISPLAY", "Initialization failed: %s", esp_err_to_name(err));
         return false;
@@ -79,7 +88,7 @@ bool player_display_start(void)
     previous = heap_caps_malloc(FRAME_WORDS*sizeof(*previous), MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
     if (!frame || !previous) { free(frame); free(previous); frame = previous = NULL; return false; }
     player_ui_init(); /* Before controls task starts producing input. */
-    if (xTaskCreatePinnedToCore(draw_task, "player_display", 8192, NULL, 1, NULL, 0) != pdPASS) {
+    if (xTaskCreatePinnedToCore(draw_task, "player_display", 16384, NULL, 1, NULL, 0) != pdPASS) {
         free(frame); free(previous); frame = previous = NULL; return false;
     }
     return true;

@@ -1,0 +1,2 @@
+PASS album: ordered BOM/CRLF M3U, 512-track bound, empty/invalid/traversal rejection
+PASS library: metadata, fallbacks, ordered safe M3U, capacities, Unicode, malformed tags, missing/empty storage; album_t=284244 bytes

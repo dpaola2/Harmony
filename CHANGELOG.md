@@ -2,7 +2,23 @@
 
 Human-readable changes are recorded here alongside Git commits and linked WCP work items. This log starts September 27, 2026; earlier history remains in Git and the dated hardware evidence directories. No numbered firmware release has been declared.
 
+## 2026-09-28
+
+- Adopted [Mark-7 portable scope](docs/mark-7-portable-scope.md), tracked by Build Mark-7 portable Bluetooth player (HARMONY-19). Reuse the Feather, LCD/SD, ANO controls and one battery; use secured perfboard wiring. Internal SD access is sufficient. Speaker and DAC are excluded.
+- Recorded inventory, adapter/heat-shrink purchase, charger compatibility questions, power control and measured-runtime requirements. No battery connection, charging or Mark-7 print occurred.
+- Added asynchronous Bluetooth remote-name lookup for existing bonds. Fourteen policy scenarios pass. The final source checkpoint builds for bench and carrier; all four host verifier suites pass without native compiler warnings.
+- Preserved [uploaded-versus-built evidence](hardware/mark-6/feather-complete-ui-bench-20260927/README.md), rollback details and a separately hashed unflashed checkpoint binary. The latest name change is not yet on the device. Open device-detail subtitle refresh and physical acceptance remain.
+
 ## 2026-09-27
+
+### Complete UI implementation (HARMONY-18)
+
+- Added real native volume control with mute and a short gain ramp, shuffle, repeat, display timeout and device-stored preferences. Startup and reconnect remain paused; initial volume is capped at the prior quiet level.
+- Replaced Bluetooth placeholders with saved devices, discovery, explicit pairing, switching, cancel/errors, disconnect and confirmed Forget. Reconnect targets only the last selected receiver.
+- Added Songs and M3U playlists, read-only metadata indexing with explicit 512-track capacity, disc/track ordering and known duration extraction.
+- Added missing/empty storage and track-error recovery, long-label scrolling, and cached list indices to avoid repeated sorting during drawing.
+- Added sanitized host coverage for audio modes/gain, Bluetooth event policy, library bounds/malformed tags, menu actions and wake-only input. Both native targets build without compiler warnings. Physical validation is tracked separately in the [complete UI bench record](hardware/mark-6/feather-complete-ui-bench-20260927/).
+- Preserved the previously accepted firmware for rollback. Custom Bluetooth PIN entry, full-album endurance and second-receiver compatibility remain open.
 
 ### Added
 
@@ -20,7 +36,7 @@ Human-readable changes are recorded here alongside Git commits and linked WCP wo
 - Fixed missed center selection by raising input scheduling priority and avoiding unnecessary screen redraws. Corrected bench capture recorded 12 accepted center presses and zero audio underrun/contention bytes; Dave reports “much better!” (`b433aff`).
 - Native UI validation: existing carrier checks, UI/render/audio queue tests with ASan/UBSan, board/display checks, two native builds without compiler warnings, and verified application flash checksum. See [bench evidence](hardware/mark-6/feather-ui-bench-20260927/).
 
-### Remaining
+### Earlier first-UI limits (superseded by complete implementation above)
 
 - Adjustable volume, real Bluetooth device management, Songs/Playlists and metadata indexing, settings, persistence, recovery and full-album/reconnect acceptance. See [requirements and status](docs/Harmony-player-ui-requirements.md).
 - The native player still uses fixed -24 dB attenuation and the SoundCore 2 receiver. Bluetooth/Settings screens are placeholders. Browser behavior is simulated.

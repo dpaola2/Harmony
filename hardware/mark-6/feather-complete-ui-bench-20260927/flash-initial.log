@@ -1,0 +1,62 @@
+esptool.py v4.12.0
+Serial port /dev/cu.usbserial-5B1E0643571
+Connecting....
+Chip is ESP32-PICO-V3-02 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, Embedded Flash, Embedded PSRAM, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 14:33:5c:99:1a:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00010000 to 0x0013ffff...
+Compressed 1242752 bytes to 712916...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001fc6b... (4 %)
+Writing at 0x0002ee3c... (6 %)
+Writing at 0x0003a989... (9 %)
+Writing at 0x00042078... (11 %)
+Writing at 0x00049dfd... (13 %)
+Writing at 0x000535b9... (15 %)
+Writing at 0x000593ad... (18 %)
+Writing at 0x0005fb32... (20 %)
+Writing at 0x0006588d... (22 %)
+Writing at 0x0006bba6... (25 %)
+Writing at 0x00071992... (27 %)
+Writing at 0x0007783b... (29 %)
+Writing at 0x0007db15... (31 %)
+Writing at 0x00084ca7... (34 %)
+Writing at 0x0008ae89... (36 %)
+Writing at 0x00091560... (38 %)
+Writing at 0x00097b83... (40 %)
+Writing at 0x0009e582... (43 %)
+Writing at 0x000a47e1... (45 %)
+Writing at 0x000aac98... (47 %)
+Writing at 0x000b12d2... (50 %)
+Writing at 0x000b7a0a... (52 %)
+Writing at 0x000bdd92... (54 %)
+Writing at 0x000c416b... (56 %)
+Writing at 0x000ca417... (59 %)
+Writing at 0x000d0303... (61 %)
+Writing at 0x000d5ec6... (63 %)
+Writing at 0x000db61b... (65 %)
+Writing at 0x000e1a17... (68 %)
+Writing at 0x000e7bc4... (70 %)
+Writing at 0x000edae8... (72 %)
+Writing at 0x000f34a3... (75 %)
+Writing at 0x000f9004... (77 %)
+Writing at 0x000fea5d... (79 %)
+Writing at 0x00105705... (81 %)
+Writing at 0x0010edbb... (84 %)
+Writing at 0x001159c6... (86 %)
+Writing at 0x0011c2cf... (88 %)
+Writing at 0x00124966... (90 %)
+Writing at 0x0012ab6a... (93 %)
+Writing at 0x00130249... (95 %)
+Writing at 0x00135b82... (97 %)
+Writing at 0x0013c0d4... (100 %)
+Wrote 1242752 bytes (712916 compressed) at 0x00010000 in 68.7 seconds (effective 144.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

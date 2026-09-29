@@ -107,7 +107,13 @@ static void controls_task(void *unused)
         first = false;
         previous_position = position;
         previous_buttons = buttons;
+#ifdef HARMONY_PLAYER_UI
+        /* At a 30 ms poll interval a normal 50–60 ms click could miss the
+         * existing 40 ms debounce window. Poll faster without weakening it. */
+        vTaskDelay(pdMS_TO_TICKS(5));
+#else
         vTaskDelay(pdMS_TO_TICKS(20));
+#endif
     }
     i2c_master_bus_rm_device(device);
     i2c_del_master_bus(bus);

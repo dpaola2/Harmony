@@ -55,6 +55,21 @@ static void text(uint16_t *f,const ui_font_t *font,int x,int y,int maxw,const ch
     while(*s){unsigned c=ascii(&s);int a=advance(font,c);if(x+a>right)break;glyph(f,font,x,y,c,color);x+=a;}
     if(clip)for(int i=0;i<3;i++){glyph(f,font,x,y,'.',color);x+=advance(font,'.');}
 }
+static void moving_text(uint16_t *f,const ui_font_t *font,int x,int y,int maxw,const char *value,uint16_t color,uint32_t step)
+{
+    if (!step || width(font,value)<=maxw) { text(f,font,x,y,maxw,value,color); return; }
+    /* Rotate at codepoint boundaries and include a pause-sized gap. */
+    char label[ALBUM_TITLE_MAX+8];
+    snprintf(label,sizeof(label),"%s   ",value);
+    unsigned count=0;const char *p=label;
+    while(*p){ascii(&p);count++;}
+    unsigned skip=count?step%count:0;p=label;
+    while(skip--&&*p)ascii(&p);
+    char rotated[ALBUM_TITLE_MAX+8];
+    size_t tail=strlen(p),head=(size_t)(p-label);
+    memcpy(rotated,p,tail);memcpy(rotated+tail,label,head);rotated[tail+head]=0;
+    text(f,font,x,y,maxw,rotated,color);
+}
 static void song_title(uint16_t *f,const char *title)
 {
     char first[ALBUM_TITLE_MAX];snprintf(first,sizeof(first),"%s",title);
@@ -71,7 +86,7 @@ static void song_title(uint16_t *f,const char *title)
 }
 static const char *status(const audio_player_snapshot_t *a)
 {
-    return a->failed?"TRACK ERROR":a->stopped?"STOPPED":!a->connected?"CONNECTING":
+    return a->failed?"TRACK ERROR":a->stopped?"STOPPED":!a->connected?"NO RECEIVER":
         a->finished?"FINISHED":a->paused?"PAUSED":a->buffering?"BUFFERING":"PLAYING";
 }
 static void list_row(uint16_t *f,const player_ui_view_t *v,unsigned i)
@@ -79,15 +94,16 @@ static void list_row(uint16_t *f,const player_ui_view_t *v,unsigned i)
     int y=124+(int)i*52;bool selected=v->selected==v->first+i;
     uint16_t fg=selected?BG:INK,detail=selected?PALE:MUTED;
     rect(f,0,y,320,52,selected?SELECT:BG);
-    text(f,&ui_font_16,16,y+7,267,v->rows[i].label,fg);
-    text(f,&ui_font_12,16,y+29,267,v->rows[i].detail,detail);
+    moving_text(f,&ui_font_16,16,y+7,267,v->rows[i].label,fg,selected?v->marquee_step:0);
+    moving_text(f,&ui_font_12,16,y+29,267,v->rows[i].detail,detail,selected?v->marquee_step:0);
     text(f,&ui_font_20,293,y+12,24,v->rows[i].playing?"*":">",fg);
 }
 bool ui_render_selection(uint16_t *f,const player_ui_view_t *v,const player_ui_view_t *old)
 {
     if(!f||!v||!old||v->page==PLAYER_UI_NOW_PLAYING||v->page!=old->page||
        v->first!=old->first||v->row_count!=old->row_count||v->total_count!=old->total_count||
-       v->audio.connected!=old->audio.connected||strcmp(v->title,old->title)||
+       v->audio.connected!=old->audio.connected||v->audio.volume!=old->audio.volume||
+       v->marquee_step!=old->marquee_step||strcmp(v->receiver,old->receiver)||strcmp(v->title,old->title)||
        strcmp(v->subtitle,old->subtitle)||strcmp(v->notice,old->notice)||
        memcmp(v->rows,old->rows,sizeof(v->rows))) return false;
     for(unsigned i=0;i<v->row_count&&i<PLAYER_UI_ROWS;i++)
@@ -103,19 +119,21 @@ void ui_render(uint16_t *f,const player_ui_view_t *v,unsigned duration)
 {
     if(!f||!v)return;
     rect(f,0,0,320,480,BG);rect(f,0,0,320,30,PALE);
-    text(f,&ui_font_12,12,8,180,v->audio.connected?"SoundCore 2":"Connecting speaker",INK);
-    text(f,&ui_font_12,222,8,88,"QUIET -24dB",INK);
-    text(f,&ui_font_12,16,49,288,v->subtitle,MUTED);
-    text(f,&ui_font_26,16,71,288,v->title,INK);
+    text(f,&ui_font_12,12,8,205,v->receiver,INK);
+    char volume[24];snprintf(volume,sizeof(volume),"VOL %u",v->audio.volume);
+    text(f,&ui_font_12,238,8,78,volume,INK);
+    moving_text(f,&ui_font_12,16,49,288,v->subtitle,MUTED,v->marquee_step);
+    moving_text(f,&ui_font_26,16,71,288,v->title,INK,v->marquee_step);
     if(v->page==PLAYER_UI_NOW_PLAYING){
         for(int y=145;y<275;y++)for(int x=95;x<225;x++){
             int dx=x-160,dy=y-210,d=dx*dx+dy*dy;
             if(d<=4096)f[y*320+x]=d<625?RGB(183,195,148):(d/160)%2?RGB(41,57,43):RGB(53,71,53);
         }
         text(f,&ui_font_12,140,204,42,v->audio.paused?"PAUSE":"PLAY",SELECT);
-        song_title(f,v->track_title);
-        text(f,&ui_font_16,20,350,280,v->track_artist,MUTED);
-        text(f,&ui_font_16,20,373,280,v->track_album,MUTED);
+        if(v->marquee_step && width(&ui_font_20,v->track_title)>280) moving_text(f,&ui_font_20,20,294,280,v->track_title,INK,v->marquee_step);
+        else song_title(f,v->track_title);
+        moving_text(f,&ui_font_16,20,350,280,v->track_artist,MUTED,v->marquee_step);
+        moving_text(f,&ui_font_16,20,373,280,v->track_album,MUTED,v->marquee_step);
         unsigned seconds=v->audio.consumed_frames/44100;
         rect(f,20,411,280,3,PALE);
         if(duration)rect(f,20,411,(int)(280ULL*(seconds>duration?duration:seconds)/duration),3,SELECT);
@@ -132,5 +150,14 @@ void ui_render(uint16_t *f,const player_ui_view_t *v,unsigned duration)
         char b[24];snprintf(b,sizeof(b),"%u/%u",v->total_count?v->selected+1:0,v->total_count);text(f,&ui_font_12,266,454,48,b,MUTED);
     }
     rect(f,0,445,320,1,PALE);
-    if(v->notice[0]){rect(f,0,445,320,35,PALE);text(f,&ui_font_12,12,455,296,v->notice,INK);}
+    if(v->notice[0]){rect(f,0,445,320,35,PALE);moving_text(f,&ui_font_12,12,455,296,v->notice,INK,v->marquee_step);}
+}
+
+bool ui_render_has_long_text(const player_ui_view_t *v)
+{
+    if(width(&ui_font_12,v->notice)>296)return true;
+    if(width(&ui_font_26,v->title)>288||width(&ui_font_12,v->subtitle)>288)return true;
+    if(v->page==PLAYER_UI_NOW_PLAYING)return width(&ui_font_20,v->track_title)>280||width(&ui_font_16,v->track_artist)>280||width(&ui_font_16,v->track_album)>280;
+    unsigned at=v->selected-v->first;
+    return at<v->row_count&&(width(&ui_font_16,v->rows[at].label)>267||width(&ui_font_12,v->rows[at].detail)>267);
 }

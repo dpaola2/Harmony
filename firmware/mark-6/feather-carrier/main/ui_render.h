@@ -6,3 +6,5 @@ void ui_render(uint16_t *frame, const player_ui_view_t *view, unsigned duration)
 /* Fast list selection path; false requires a complete render. */
 bool ui_render_selection(uint16_t *frame, const player_ui_view_t *view,
                          const player_ui_view_t *previous);
+
+bool ui_render_has_long_text(const player_ui_view_t *view);

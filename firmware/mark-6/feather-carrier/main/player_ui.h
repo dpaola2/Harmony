@@ -6,7 +6,9 @@
 
 typedef enum {
     PLAYER_UI_ROOT, PLAYER_UI_MUSIC, PLAYER_UI_ARTISTS, PLAYER_UI_ALBUMS,
-    PLAYER_UI_SONGS, PLAYER_UI_NOW_PLAYING, PLAYER_UI_BLUETOOTH, PLAYER_UI_SETTINGS
+    PLAYER_UI_SONGS, PLAYER_UI_NOW_PLAYING, PLAYER_UI_BLUETOOTH, PLAYER_UI_SETTINGS,
+    PLAYER_UI_ALL_SONGS, PLAYER_UI_PLAYLISTS, PLAYER_UI_PLAYLIST_SONGS,
+    PLAYER_UI_BT_SAVED, PLAYER_UI_BT_FOUND, PLAYER_UI_BT_DEVICE, PLAYER_UI_BT_FORGET
 } player_ui_page_t;
 typedef enum {
     PLAYER_UI_SCROLL, PLAYER_UI_SELECT, PLAYER_UI_BACK, PLAYER_UI_PLAY_PAUSE,
@@ -22,7 +24,9 @@ typedef struct {
     player_ui_row_t rows[PLAYER_UI_ROWS];
     unsigned row_count, total_count, selected, first;
     char track_title[ALBUM_TITLE_MAX], track_artist[ALBUM_TITLE_MAX], track_album[ALBUM_TITLE_MAX];
-    char notice[96];
+    char notice[128], receiver[64];
+    uint32_t marquee_step;
+    bool display_asleep;
     audio_player_snapshot_t audio;
     uint32_t revision;
 } player_ui_view_t;
@@ -32,3 +36,6 @@ void player_ui_init(void);
 bool player_ui_input(player_ui_input_t input, int delta);
 void player_ui_update(void);
 player_ui_view_t player_ui_view(void);
+
+/* Monotonic clock supplied by the display owner; first input wakes only. */
+void player_ui_tick(uint32_t now_ms);

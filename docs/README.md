@@ -14,7 +14,13 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 - [Technical basis](Harmony-2026-technical-basis.md): options, architecture, sourcing limits, and acceptance criteria.
 - [Printable case](../enclosure/harmony-r1/README.md): Tangara-based fit prototype for the Bambu A1.
 
+## Current Mark-7 scope
+
+- [Portable build scope](mark-7-portable-scope.md): adopted September 28 reuse, internal SD access, perfboard assembly, power work and acceptance.
+
 ## Current player UI
+
+- [Mark-6 lessons and portable next step](mark-6-lessons-and-portable-next-step.md): battery proof, carrier tradeoffs and proposed Mark-7 purpose.
 
 - [Changelog](../CHANGELOG.md): dated implementation, fixes and validation.
 - [Mark-7 visual reference](mark-7-design-reference.md): frozen desktop appearance and capacitive-wheel/battery design direction.

@@ -76,5 +76,46 @@ int main(void)
     size_t n=playback_read(&p,out,sizeof(out));
     for(size_t j=0;j<n;j+=4) {uint32_t v;memcpy(&v,out+j,4);assert(v==read++);}
     playback_tick(&p); assert(p.finished && read==written);
+    /* Repeat-one only restarts natural EOF; manual skips remain effective. */
+    playback_init(&p,buffer,sizeof(buffer),3); p.connected=true; p.repeat=2;
+    first=p.generation; playback_end(&p,first,false); playback_tick(&p);
+    assert(p.track==0 && p.generation!=first && !p.finished);
+    playback_step(&p,1); assert(p.track==1);
+    p.repeat=1; playback_step(&p,-2); assert(p.track==2);
+    first=p.generation; playback_end(&p,first,false); playback_tick(&p);
+    assert(p.track==0 && p.generation!=first && !p.finished);
+    p.repeat=0; playback_step(&p,INT_MAX);
+    playback_end(&p,p.generation,false); playback_tick(&p); assert(p.finished);
+
+    /* Gain endpoints, monotonic curve, click-limiting ramp and exact mute. */
+    assert(playback_volume_gain(0)==0 && playback_volume_gain(40)==4096);
+    assert(playback_volume_gain(100)==65536 && playback_volume_gain(999)==65536);
+    for(unsigned v=1;v<=100;++v) assert(playback_volume_gain(v)>=playback_volume_gain(v-1));
+    playback_gain_t gain; playback_gain_init(&gain,40);
+    int16_t samples[2*500];
+    for(unsigned i=0;i<500;++i){samples[2*i]=32767;samples[2*i+1]=-32768;}
+    playback_gain_apply(&gain,(uint8_t*)samples,sizeof(samples),100);
+    int previous_sample=2047;
+    for(unsigned i=0;i<500;++i){
+        assert(samples[2*i]>=previous_sample && samples[2*i]-previous_sample<=71);
+        assert(samples[2*i]>=0 && samples[2*i+1]<=0);
+        previous_sample=samples[2*i];
+    }
+    assert(samples[880]==32767 && samples[881]==-32768 && !gain.remaining);
+    for(unsigned i=0;i<1000;++i)samples[i]=32767;
+    playback_gain_apply(&gain,(uint8_t*)samples,sizeof(samples),0);
+    previous_sample=32767;
+    for(unsigned i=0;i<500;++i){
+        assert(samples[2*i]<=previous_sample && previous_sample-samples[2*i]<=75);
+        assert(samples[2*i]==samples[2*i+1]);previous_sample=samples[2*i];
+    }
+    assert(!samples[880] && !samples[999] && !gain.current);
+    /* A mid-ramp reversal starts from current gain, never jumps to old target. */
+    memset(samples,0,sizeof(samples));
+    playback_gain_apply(&gain,(uint8_t*)samples,40,100);
+    int gain_before=gain.current;
+    playback_gain_apply(&gain,(uint8_t*)samples,4,0);
+    assert(gain.current<=gain_before && gain_before-gain.current<151);
+
     puts("PASS playback: 100000 randomized transfers, exact EOF drain, stale skip rejection, pause/reconnect, error/replay and album boundaries");
 }

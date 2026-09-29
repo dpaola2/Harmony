@@ -1,0 +1,6 @@
+PASS playback: 100000 randomized transfers, exact EOF drain, stale skip rejection, pause/reconnect, error/replay and album boundaries
+PASS actual audio tasks: concurrent producer/callback, skip flush, quiet gain, pause/disconnect, exact three-track sample counts, format failure and unmount
+PASS actual audio queue: validation, global indices, clamped skips, pause retention, reordered decoder output, exact samples and stop at selected queue end
+PASS UI audio: paused boot/reconnect, exact quiet gain, immediate queued-PCM ramp/mute, clamped volume, shuffle duplicate membership, preserved start/generation and mode validation
+PASS UI audio: unavailable library retains visible error and silent controls without decoder
+PASS UI audio: pre-lock allocation failure is reported failed/stopped/paused and silent

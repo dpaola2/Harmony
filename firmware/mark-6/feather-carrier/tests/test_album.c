@@ -31,5 +31,5 @@ int main(void)
     const char hidden[]="good.mp3\0bad.wav\n";
     fwrite(hidden,1,sizeof(hidden)-1,f);rewind(f);
     assert(!album_parse(f,&album));fclose(f);
-    puts("PASS album: ordered BOM/CRLF M3U, 64-track bound, empty/invalid/traversal rejection");
+    puts("PASS album: ordered BOM/CRLF M3U, 512-track bound, empty/invalid/traversal rejection");
 }
