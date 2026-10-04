@@ -2,7 +2,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "audio_player.h"
+#ifndef PLAYER_UI_ROWS
 #define PLAYER_UI_ROWS 6
+#endif
 
 typedef enum {
     PLAYER_UI_ROOT, PLAYER_UI_MUSIC, PLAYER_UI_ARTISTS, PLAYER_UI_ALBUMS,

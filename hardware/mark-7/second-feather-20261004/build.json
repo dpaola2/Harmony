@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-04",
+  "status": "PASS native build for identified second Feather; not flashed",
+  "app_bytes": 288496,
+  "app_sha256": "4fe216011e9b42b6f82dd853b159175691f784ebbafc7d6de3d1aeb22ac287c9",
+  "sdkconfig_sha256": "4edf9a7b714dcf86cce1d79aa2a12673e38ae5fb3d1e6804e3401035f15256dc",
+  "base_mac": "14:33:5c:98:58:88",
+  "display_only": true,
+  "wheel_input": false,
+  "flashed": false
+}

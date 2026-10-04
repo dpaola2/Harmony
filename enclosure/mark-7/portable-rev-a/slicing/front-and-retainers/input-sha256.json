@@ -1,0 +1,14 @@
+{
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-front.stl": {
+    "quantity": 1,
+    "sha256": "8544e4f23338b7dc2724701adbdd3af0d2752addbf9a90c4ae377180355d0d34"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-display-retainer-left.stl": {
+    "quantity": 2,
+    "sha256": "f52179c0cde7268549d85871e4808121d1cc5fa17dfc7dec715806575741a4d6"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-display-retainer-right.stl": {
+    "quantity": 2,
+    "sha256": "a8630268f5366405c1981f8d945c581b2cad334ab29d1712488c81bc36748338"
+  }
+}

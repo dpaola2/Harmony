@@ -1,0 +1,14 @@
+menu "Harmony Mark-7 pocket player"
+    config CARRIER_EXPECTED_MAC
+        string "Second Feather Wi-Fi station MAC (leave blank until identified)"
+        default ""
+    config CARRIER_DISPLAY_ONLY
+        bool "Display test pattern only (no storage, controls or Bluetooth)"
+        default n
+    config MARK7_WHEEL_INPUT
+        bool "Experimental Photo wheel input capture"
+        default n
+        help
+            GPIO edge capture of the wheel-master protocol. Electrical fit and
+            timing under Bluetooth load still require bench qualification.
+endmenu

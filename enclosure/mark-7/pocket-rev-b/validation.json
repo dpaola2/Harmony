@@ -1,0 +1,78 @@
+{
+  "status": "Unpowered layout/hand-fit prototype; wheel and screen openings provisional; no production mounts",
+  "case_mm": [
+    64.0,
+    105.0,
+    26.0
+  ],
+  "outer_edge_chamfer_mm": 1.0,
+  "corner_radius_mm": 5.0,
+  "checks": {
+    "battery/display-envelope": 0.0,
+    "battery/feather-header-envelope": 0.0,
+    "battery/wheel-reservation": 0.0,
+    "battery/tray": 0.0,
+    "battery/front": 0.0,
+    "display-envelope/feather-header-envelope": 0.0,
+    "display-envelope/wheel-reservation": 0.0,
+    "display-envelope/tray": 0.0,
+    "display-envelope/front": 0.0,
+    "feather-header-envelope/wheel-reservation": 0.0,
+    "feather-header-envelope/tray": 0.0,
+    "feather-header-envelope/front": 0.0,
+    "wheel-reservation/tray": 0.0,
+    "wheel-reservation/front": 0.0,
+    "adapter-reservation/battery": 0.0,
+    "adapter-reservation/display-envelope": 0.0,
+    "adapter-reservation/feather-header-envelope": 0.0,
+    "adapter-reservation/wheel-reservation": 0.0,
+    "adapter-reservation/tray": 0.0,
+    "adapter-reservation/front": 0.0,
+    "front/tray": 0.0
+  },
+  "parts": {
+    "tray": {
+      "mm": [
+        64.0,
+        105.0,
+        24.0
+      ],
+      "watertight": true,
+      "single_body": true
+    },
+    "front": {
+      "mm": [
+        64.0,
+        105.0,
+        2.000000000000006
+      ],
+      "watertight": true,
+      "single_body": true
+    },
+    "screen-coupon": {
+      "mm": [
+        50.0,
+        40.0,
+        2.0
+      ],
+      "watertight": true,
+      "single_body": true
+    }
+  },
+  "unverified": [
+    "Wheel/bracket diameter, depth and mounting geometry",
+    "Adapter outline and ribbon bend radius",
+    "Header extension is assumed 7.4 mm",
+    "Screen opening registration requires physical alignment",
+    "No USB opening, closure screws, or final module retention yet"
+  ],
+  "clearances_mm": {
+    "feather_to_display": 2.049102201456737,
+    "battery_to_wheel": 7.800000000000001
+  },
+  "sources_sha256": {
+    "enclosure/mark-7/pocket-rev-b/reference/4311-display.step": "80019f5ddc6301c0648360c8ad18083b08007f0323ef5937f0d72361e9dade70",
+    "hardware/mark-6/carrier-rev-a/reference/5400 ESP32 Feather V2.step": "03d772cce4cf21e474096da40b22c31896babd4643d98557aa730d3fff8074cc",
+    "enclosure/mark-7/pocket-rev-b/parameters.json": "16879442ccf2d77ce06d693f943a309bd57cf075a8bb82ede6fd226a7bd64fb5"
+  }
+}

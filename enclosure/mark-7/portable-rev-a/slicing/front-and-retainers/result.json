@@ -1,0 +1,114 @@
+{
+    "error_string": "Success.",
+    "export_time": 412,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 178,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 279.0655517578125,
+                "Custom": 367.64068603515625,
+                "Flush": 25.0,
+                "Gap infill": 114.5030746459961,
+                "Inner wall": 227.66494750976563,
+                "Internal solid infill": 562.8475952148438,
+                "Outer wall": 279.0426025390625,
+                "Top surface": 239.11264038085938,
+                "Travel": 406.71405029296875,
+                "Undefined": 389.8229064941406
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 16.826566696166992,
+                    "total_used_g": 16.826566696166992
+                }
+            ],
+            "generate_support_material_time": 32,
+            "id": 1,
+            "infill_time": 100,
+            "layer_filament_change": 0,
+            "main_predication": 2083.856689453125,
+            "make_perimeters_time": 215,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 13.199999809265137,
+                        "width": 74.0,
+                        "x": 97.87957000732422,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 79,
+                    "name": "harmony-m7-a-front.stl",
+                    "triangle_count": 9088
+                },
+                {
+                    "bbox": {
+                        "depth": 15.210565567016602,
+                        "height": 3.9000000953674316,
+                        "width": 5.571349620819092,
+                        "x": 90.78646850585938,
+                        "y": 127.94761657714844,
+                        "z": 0.0
+                    },
+                    "id": 90,
+                    "name": "harmony-m7-a-display-retainer-left.stl_1",
+                    "triangle_count": 1696
+                },
+                {
+                    "bbox": {
+                        "depth": 15.210573196411133,
+                        "height": 3.9000000953674316,
+                        "width": 5.571347236633301,
+                        "x": 90.78646087646484,
+                        "y": 144.9578094482422,
+                        "z": 0.0
+                    },
+                    "id": 101,
+                    "name": "harmony-m7-a-display-retainer-left.stl_2",
+                    "triangle_count": 1696
+                },
+                {
+                    "bbox": {
+                        "depth": 15.189924240112305,
+                        "height": 3.9000000953674316,
+                        "width": 5.571681022644043,
+                        "x": 90.7862777709961,
+                        "y": 110.95822143554688,
+                        "z": 0.0
+                    },
+                    "id": 112,
+                    "name": "harmony-m7-a-display-retainer-right.stl_1",
+                    "triangle_count": 1588
+                },
+                {
+                    "bbox": {
+                        "depth": 15.189926147460938,
+                        "height": 3.9000000953674316,
+                        "width": 5.571683883666992,
+                        "x": 84.02637481689453,
+                        "y": 124.58367919921875,
+                        "z": 0.0
+                    },
+                    "id": 123,
+                    "name": "harmony-m7-a-display-retainer-right.stl_2",
+                    "triangle_count": 1588
+                }
+            ],
+            "sliced_time": 988,
+            "sliced_time_with_cache": 581,
+            "total_predication": 2484.606201171875,
+            "triangle_count": 15656,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

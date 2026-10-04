@@ -16,6 +16,11 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 
 ## Current Mark-7 scope
 
+- [Pocket fit enclosure](../enclosure/mark-7/pocket-rev-b/README.md): 105 × 64 × 26 mm parametric shell, fit-only STL/3MF files and unresolved mounts. Supersedes portable revision A.
+- [Mark-7 native firmware](../firmware/mark-7/pocket-player/README.md): separate second-Feather build, ST7789 display, compact UI, experimental wheel input and bench pin map.
+
+- [Power and sleep design](mark-7-power-and-sleep.md): October 3 Adafruit battery selection, direct USB-C charging and wheel-button wake without a manual switch.
+
 - [Portable build scope](mark-7-portable-scope.md): adopted September 28 reuse, internal SD access, perfboard assembly, power work and acceptance.
 
 ## Current player UI

@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-04T17:25:44.714775+00:00",
+  "board_context": "Spare Adafruit Feather ESP32 V2; Dave reports Mark-6 unplugged and this board connected alone without peripherals",
+  "port": "/dev/cu.usbserial-5B1E0646811",
+  "tool": "esptool 4.12.0 from pinned ESP-IDF environment",
+  "commands": [
+    "read_mac",
+    "--no-stub flash_id"
+  ],
+  "chip": "ESP32-PICO-V3-02",
+  "revision": "v3.1",
+  "base_mac": "14:33:5c:98:58:88",
+  "demo_board_mac": "14:33:5c:99:1a:28",
+  "flash_detected_mb": 8,
+  "flash_manufacturer_hex": "20",
+  "flash_device_hex": "4017",
+  "crystal_mhz": 40,
+  "embedded_psram_reported": true,
+  "psram_capacity_tested": false,
+  "psram_memory_test_run": false,
+  "flash_written": false,
+  "efuses_written": false,
+  "end_state": "Hard reset via RTS after read-only flash identification",
+  "scope": "Identity and flash capacity; no runtime or peripheral qualification"
+}

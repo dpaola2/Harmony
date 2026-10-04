@@ -1,0 +1,104 @@
+{
+    "error_string": "Success.",
+    "export_time": 970,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 67,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 439.58056640625,
+                "Bridge": 6.376283645629883,
+                "Custom": 367.81488037109375,
+                "Flush": 25.0,
+                "Gap infill": 203.80215454101563,
+                "Inner wall": 1276.352294921875,
+                "Internal solid infill": 1486.4293212890625,
+                "Outer wall": 1252.51123046875,
+                "Overhang wall": 1.2984026670455933,
+                "Sparse infill": 5.103976249694824,
+                "Top surface": 414.2406921386719,
+                "Travel": 1312.9166259765625,
+                "Undefined": 1295.8463134765625
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 69.53482055664063,
+                    "total_used_g": 69.53482055664063
+                }
+            ],
+            "generate_support_material_time": 203,
+            "id": 1,
+            "infill_time": 443,
+            "layer_filament_change": 0,
+            "main_predication": 6372.95654296875,
+            "make_perimeters_time": 1282,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 178.0,
+                        "height": 26.399999618530273,
+                        "width": 74.0,
+                        "x": 124.29998779296875,
+                        "y": 39.0,
+                        "z": 0.0
+                    },
+                    "id": 74,
+                    "name": "harmony-m7-a-tray.stl",
+                    "triangle_count": 21244
+                },
+                {
+                    "bbox": {
+                        "depth": 67.39999389648438,
+                        "height": 1.600000023841858,
+                        "width": 64.5999984741211,
+                        "x": 57.70001983642578,
+                        "y": 149.60000610351563,
+                        "z": 0.0
+                    },
+                    "id": 85,
+                    "name": "harmony-m7-a-battery-cover.stl",
+                    "triangle_count": 4412
+                },
+                {
+                    "bbox": {
+                        "depth": 9.100000381469727,
+                        "height": 1.600000023841858,
+                        "width": 6.199996471405029,
+                        "x": 116.10001373291016,
+                        "y": 125.10363006591797,
+                        "z": 0.0
+                    },
+                    "id": 96,
+                    "name": "harmony-m7-a-perfboard-clamp-left.stl",
+                    "triangle_count": 648
+                },
+                {
+                    "bbox": {
+                        "depth": 9.099997520446777,
+                        "height": 1.600000023841858,
+                        "width": 6.2000017166137695,
+                        "x": 116.0999984741211,
+                        "y": 136.20361328125,
+                        "z": 0.0
+                    },
+                    "id": 107,
+                    "name": "harmony-m7-a-perfboard-clamp-right.stl",
+                    "triangle_count": 648
+                }
+            ],
+            "sliced_time": 2926,
+            "sliced_time_with_cache": 810,
+            "total_predication": 6773.701171875,
+            "triangle_count": 26952,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 4
+}

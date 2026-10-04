@@ -1,0 +1,30 @@
+{
+  "tool": "Bambu Studio 02.08.02.61",
+  "machine": "Bambu Lab A1 0.4 nozzle",
+  "filament": "Bambu PLA Basic",
+  "bed": "Textured PEI Plate",
+  "status": "Offline sliced and paths reviewed; no printer job sent",
+  "plates": {
+    "tray-and-mounts": {
+      "objects": 4,
+      "minutes": 112.9,
+      "grams": 69.53,
+      "slice_warning_message": "",
+      "layers": 132,
+      "project_sha256": "653076d0e6d477b7b2e2700bae8b558bc8b32b5818b93074abcb4f6f5895cd1e"
+    },
+    "front-and-retainers": {
+      "objects": 5,
+      "minutes": 41.4,
+      "grams": 16.83,
+      "slice_warning_message": "",
+      "layers": 66,
+      "project_sha256": "c2e1bba20e1b260afcd0dc78692a8b8abf08ed86a79660ff80bd947ce5b1c41b"
+    }
+  },
+  "limits": [
+    "Estimates depend on the configured PLA and plate; confirm loaded material before printing",
+    "CAD and slice checks do not establish physical fit or bridge quality",
+    "CLI notes missing filament color and an unused tree-support default; support is disabled"
+  ]
+}

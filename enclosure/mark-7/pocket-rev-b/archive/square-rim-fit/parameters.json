@@ -1,0 +1,12 @@
+{
+  "width": 64.0, "length": 105.0, "depth": 26.0,
+  "wall": 1.6, "front_thickness": 2.0, "corner_radius": 5.0,
+  "battery": [50.5, 62.5, 8.1], "battery_origin": [6.75, 5.0, 2.1],
+  "display_origin_xy": [2.4725, 64.0],
+  "feather_origin_xy": [6.0, 77.0], "feather_pcb_z": 9.5,
+  "header_extension_below_pcb": 7.4,
+  "wheel_center": [32.0, 32.0], "wheel_opening_diameter": 42.0,
+  "wheel_reserved_diameter": 48.0, "wheel_reserved_depth": 6.0,
+  "screen_opening": [11.0, 66.0, 42.0, 32.0],
+  "status": "Unpowered layout/hand-fit prototype; wheel and screen openings provisional; no production mounts"
+}

@@ -1,6 +1,9 @@
 /* Bluetooth commands and callbacks are serialized by one worker. The policy
  * below is also exercised on the host; ESP-IDF bindings follow the policy. */
 #include "player_bluetooth.h"
+#ifndef HARMONY_DEVICE_NAME
+#define HARMONY_DEVICE_NAME "Harmony Mark-6"
+#endif
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -616,7 +619,7 @@ bool player_bluetooth_init(void) {
     }
     reconcile_bonds();
     esp_err_t err = esp_bt_gap_register_callback(gap_callback);
-    if (err == ESP_OK) err = esp_bt_gap_set_device_name("Harmony Mark-6");
+    if (err == ESP_OK) err = esp_bt_gap_set_device_name(HARMONY_DEVICE_NAME);
     if (err == ESP_OK) err = esp_bt_gap_set_scan_mode(ESP_BT_NON_CONNECTABLE, ESP_BT_NON_DISCOVERABLE);
     if (err == ESP_OK) err = esp_a2d_register_callback(a2dp_callback);
     if (err == ESP_OK) err = esp_a2d_source_register_data_callback(pcm_callback);

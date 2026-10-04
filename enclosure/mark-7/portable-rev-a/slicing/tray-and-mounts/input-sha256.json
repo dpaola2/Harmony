@@ -1,0 +1,18 @@
+{
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-tray.stl": {
+    "quantity": 1,
+    "sha256": "55ddda5c61fc21e35b193358bb428640f5488e333cd7350523297c2e1a47b31e"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-battery-cover.stl": {
+    "quantity": 1,
+    "sha256": "50401819e479b98787a10b056c080e23ca75e831293b8485483c7857467aba25"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-perfboard-clamp-left.stl": {
+    "quantity": 1,
+    "sha256": "bb3f286976f6869b9e722ef3febc063910850784f6d83e4fe870bcc6ec2c7790"
+  },
+  "/Users/dave/projects/Harmony2/enclosure/mark-7/portable-rev-a/print/harmony-m7-a-perfboard-clamp-right.stl": {
+    "quantity": 1,
+    "sha256": "cc6b25057b1b6b87ecb4c94f3e323d426ae3745a06e6e646cf9b52dac08b7960"
+  }
+}

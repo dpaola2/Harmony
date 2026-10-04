@@ -43,3 +43,16 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "hardware/mark-7/inventory-20260928/IMG_7727.HEIC" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-7/inventory-20260928/IMG_7730.HEIC" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-6/feather-complete-ui-bench-20260927/checkpoint-not-flashed.bin" filter=lfs diff=lfs merge=lfs -text
+
+# Mark-7 portable fit assembly and vendor-derived review meshes.
+"enclosure/mark-7/portable-rev-a/cad/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/portable-rev-a/preview/ano.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/portable-rev-a/preview/display.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/portable-rev-a/preview/feather.stl" filter=lfs diff=lfs merge=lfs -text
+
+# Mark-7 pocket vendor geometry and assembly.
+"enclosure/mark-7/pocket-rev-b/cad/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/pocket-rev-b/preview/display.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/pocket-rev-b/preview/feather.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/pocket-rev-b/reference/4311-display.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/pocket-rev-b/reference/4311-eyespi.brd" filter=lfs diff=lfs merge=lfs -text
