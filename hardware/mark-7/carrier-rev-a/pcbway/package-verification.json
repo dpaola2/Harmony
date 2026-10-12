@@ -1,0 +1,27 @@
+{
+  "status": "Quote package; physical fit pending; do not release fabrication",
+  "board_sha256": "7f8a9c94490696df0df1f8e09578458066cf2a807522dcd7c5c1abe2acdb3693",
+  "zip_sha256": "18e9ef11e972a2aa4e29927e6a18c9562567c25150d9ab07b0e21e0332fcf254",
+  "outline_centerline_mm": [
+    53.5,
+    28.3
+  ],
+  "gerber_outline_stroke_bounds_mm": [
+    53.55,
+    28.35
+  ],
+  "plated_holes": 41,
+  "nonplated_holes": 8,
+  "files": {
+    "harmony-mark7-carrier-B_Cu.gbl": "7a4d01bebb69a2d823ec59a49ac4c6019d2dbeb6bd8e417b1523832fccea2953",
+    "harmony-mark7-carrier-B_Mask.gbs": "ebdb61179dc9ab36f49606352ae19e25a5f51f6d389dec7de37cc0cb40c3aa1d",
+    "harmony-mark7-carrier-B_Silkscreen.gbo": "5eeaa475c5070eb3cc47c875dd7a9c45ff1a5dcfd798350044fb501a68fda8a6",
+    "harmony-mark7-carrier-Edge_Cuts.gm1": "98623b9673dd1011cd686f81ae015fbbfc1d123a1f57f030f6a06c7efecadf02",
+    "harmony-mark7-carrier-F_Cu.gtl": "9896dc11e2639853cf912136f36f798324aca3d7170d1090a311fd8a6dd999dd",
+    "harmony-mark7-carrier-F_Mask.gts": "c8cab3ab5f4cebd9fce76f5297e22ccc2f9a7919287e666f4cf6060974092518",
+    "harmony-mark7-carrier-F_Silkscreen.gto": "f0f60dae0ea83fa957df0dc04943af3f5dbcfc4042894cc26047b22c9395c784",
+    "harmony-mark7-carrier-NPTH.drl": "7daeaf3e9e3965ef7734534630e25ba90945c5ffd7bfcd2ee849f66a97df6728",
+    "harmony-mark7-carrier-PTH.drl": "097f3dbb003a71d4541f9c31f4ea92e700695cf032c848da32c5947fef1dbf02",
+    "harmony-mark7-carrier-job.gbrjob": "dc3872f09822c43f5e59e8e8e4e0be8d40c23ee8ee1bd195e744c387c01f21cb"
+  }
+}

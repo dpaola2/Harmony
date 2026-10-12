@@ -16,6 +16,11 @@ This repo keeps a small set of living docs, each with a clear purpose. Use this 
 
 ## Current Mark-7 scope
 
+- [Removable Feather carrier](../hardware/mark-7/carrier-rev-a/README.md): October 11 custom PCB, revised rear tray, and unpowered fit kit. Supersedes the perfboard assembly direction.
+
+- [Harmony Sync](harmony-sync.md): Swinsian-to-SD incremental MP3 sync and player database generation.
+- [Music database](music-database.md): paged catalog format, firmware access and validation limits.
+
 - [Pocket fit enclosure](../enclosure/mark-7/pocket-rev-b/README.md): 105 × 64 × 26 mm parametric shell, fit-only STL/3MF files and unresolved mounts. Supersedes portable revision A.
 - [Mark-7 native firmware](../firmware/mark-7/pocket-player/README.md): separate second-Feather build, ST7789 display, compact UI, experimental wheel input and bench pin map.
 

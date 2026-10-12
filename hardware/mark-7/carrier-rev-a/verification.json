@@ -1,0 +1,21 @@
+{
+  "status": "CAD electrical verification passes; not a manufacturing release",
+  "header_positions_checked": 28,
+  "matched_net_pads": 24,
+  "drc_violations": 0,
+  "unconnected": 0,
+  "erc_violations": 0,
+  "firmware_gpio_routes_checked": 8,
+  "footprints": 22,
+  "layers": 2,
+  "limits": [
+    "Physical socket/header fit pending",
+    "Signal integrity and RF range not qualified",
+    "Unpowered dummy test required before PCB purchase"
+  ],
+  "sha256": {
+    "harmony-mark7-carrier.kicad_pcb": "7f8a9c94490696df0df1f8e09578458066cf2a807522dcd7c5c1abe2acdb3693",
+    "harmony-mark7-carrier.kicad_sch": "c4745bace8d80b1e8384d383feab0766b2c807f3b1d708d7ecab7b641b4365e1",
+    "netlist.xml": "aed94bd2c4f66ddf52121cf06d4c2c6372c92ba21e3247e86b576e0dd61f7bc6"
+  }
+}

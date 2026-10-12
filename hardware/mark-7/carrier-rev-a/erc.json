@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-11T08:35:26-0400",
+    "kicad_version": "8.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/dfd6a663-abf8-59e1-ac4e-cd2714c49f0f",
+            "violations": []
+        }
+    ],
+    "source": "harmony-mark7-carrier.kicad_sch"
+}

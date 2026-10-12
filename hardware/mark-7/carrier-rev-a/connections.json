@@ -1,0 +1,319 @@
+{
+  "components": [
+    {
+      "ref": "J1",
+      "symbol": "JP1",
+      "value": "Feather JP1 socket",
+      "nets": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "MISO",
+        "5": null,
+        "6": null,
+        "7": "LITE",
+        "8": null,
+        "9": null,
+        "10": "ANO_INT",
+        "11": "SD_CS",
+        "12": "TFT_CS",
+        "13": "GND",
+        "14": null,
+        "15": "3V3",
+        "16": null
+      },
+      "footprint": "Harmony:Feather_JP1",
+      "mpn": "SSW-116-01-G-S",
+      "note": "Top-facing socket; vendor pin numbering, no mirroring"
+    },
+    {
+      "ref": "J2",
+      "symbol": "JP3",
+      "value": "Feather JP3 socket",
+      "nets": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": "MOSI",
+        "7": "DC",
+        "8": null,
+        "9": "TFT_RST",
+        "10": "SCK",
+        "11": null,
+        "12": null
+      },
+      "footprint": "Harmony:Feather_JP3",
+      "mpn": "SSW-112-01-G-S",
+      "note": "Top-facing socket; vendor pin numbering, no mirroring"
+    },
+    {
+      "ref": "P1",
+      "symbol": "Wire",
+      "value": "VIN",
+      "nets": {
+        "1": "3V3"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P2",
+      "symbol": "Wire",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P3",
+      "symbol": "Wire",
+      "value": "TFT_CS",
+      "nets": {
+        "1": "TFT_CS"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P4",
+      "symbol": "Wire",
+      "value": "SD_CS",
+      "nets": {
+        "1": "SD_CS"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P5",
+      "symbol": "Wire",
+      "value": "LITE",
+      "nets": {
+        "1": "LITE"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P6",
+      "symbol": "Wire",
+      "value": "MISO",
+      "nets": {
+        "1": "MISO"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P7",
+      "symbol": "Wire",
+      "value": "MOSI",
+      "nets": {
+        "1": "MOSI"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P8",
+      "symbol": "Wire",
+      "value": "DC",
+      "nets": {
+        "1": "DC"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P9",
+      "symbol": "Wire",
+      "value": "RST",
+      "nets": {
+        "1": "TFT_RST"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P10",
+      "symbol": "Wire",
+      "value": "SCK",
+      "nets": {
+        "1": "SCK"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "P11",
+      "symbol": "Wire",
+      "value": "ANO_INT",
+      "nets": {
+        "1": "ANO_INT"
+      },
+      "footprint": "Harmony:WirePad",
+      "mpn": "",
+      "note": "Solder insulated faceplate wire here; P11 optional ANO INT"
+    },
+    {
+      "ref": "R1",
+      "symbol": "R",
+      "value": "10k optional wake",
+      "nets": {
+        "1": "3V3",
+        "2": "ANO_INT"
+      },
+      "footprint": "Harmony:R_Axial_P7.62",
+      "mpn": "",
+      "note": "Optional through-hole 10k pull-up for ANO INT; existing QT cable carries power/I2C"
+    }
+  ],
+  "wires": [
+    {
+      "ref": "P1",
+      "label": "VIN",
+      "net": "3V3",
+      "header": "JP1",
+      "pin": 15,
+      "gpio": null,
+      "xy": [
+        49.005488370848504,
+        94.5
+      ]
+    },
+    {
+      "ref": "P2",
+      "label": "GND",
+      "net": "GND",
+      "header": "JP1",
+      "pin": 13,
+      "gpio": null,
+      "xy": [
+        43.925488370848505,
+        94.5
+      ]
+    },
+    {
+      "ref": "P3",
+      "label": "TFT_CS",
+      "net": "TFT_CS",
+      "header": "JP1",
+      "pin": 12,
+      "gpio": 26,
+      "xy": [
+        41.385488370848506,
+        94.5
+      ]
+    },
+    {
+      "ref": "P4",
+      "label": "SD_CS",
+      "net": "SD_CS",
+      "header": "JP1",
+      "pin": 11,
+      "gpio": 25,
+      "xy": [
+        38.8454883708485,
+        94.5
+      ]
+    },
+    {
+      "ref": "P5",
+      "label": "LITE",
+      "net": "LITE",
+      "header": "JP1",
+      "pin": 7,
+      "gpio": 4,
+      "xy": [
+        28.685488370848503,
+        94.5
+      ]
+    },
+    {
+      "ref": "P6",
+      "label": "MISO",
+      "net": "MISO",
+      "header": "JP1",
+      "pin": 4,
+      "gpio": 21,
+      "xy": [
+        21.065488370848506,
+        94.5
+      ]
+    },
+    {
+      "ref": "P7",
+      "label": "MOSI",
+      "net": "MOSI",
+      "header": "JP3",
+      "pin": 6,
+      "gpio": 27,
+      "xy": [
+        28.685488370848503,
+        74.5
+      ]
+    },
+    {
+      "ref": "P8",
+      "label": "DC",
+      "net": "DC",
+      "header": "JP3",
+      "pin": 7,
+      "gpio": 33,
+      "xy": [
+        26.145488370848504,
+        74.5
+      ]
+    },
+    {
+      "ref": "P9",
+      "label": "RST",
+      "net": "TFT_RST",
+      "header": "JP3",
+      "pin": 9,
+      "gpio": 32,
+      "xy": [
+        21.065488370848506,
+        74.5
+      ]
+    },
+    {
+      "ref": "P10",
+      "label": "SCK",
+      "net": "SCK",
+      "header": "JP3",
+      "pin": 10,
+      "gpio": 14,
+      "xy": [
+        18.525488370848507,
+        74.5
+      ]
+    },
+    {
+      "ref": "P11",
+      "label": "ANO_INT",
+      "net": "ANO_INT",
+      "header": "JP1",
+      "pin": 10,
+      "gpio": 34,
+      "xy": [
+        36.30548837084851,
+        94.5
+      ]
+    }
+  ]
+}

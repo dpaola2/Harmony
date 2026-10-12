@@ -1,0 +1,107 @@
+{
+  "sliced": false,
+  "objects": 8,
+  "parts": {
+    "mount-test-base-0": {
+      "extents_mm": [
+        56.0,
+        30.0,
+        3.299999952316284
+      ],
+      "watertight": true,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    "carrier-dummy-1": {
+      "extents_mm": [
+        53.5,
+        28.300003051757812,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "xy": [
+        65,
+        0
+      ]
+    },
+    "JP1-dummy-2": {
+      "extents_mm": [
+        41.14999961853027,
+        2.4099960327148438,
+        8.510000228881836
+      ],
+      "watertight": true,
+      "xy": [
+        0,
+        38
+      ]
+    },
+    "JP3-dummy-3": {
+      "extents_mm": [
+        30.989999771118164,
+        2.4099960327148438,
+        8.510000228881836
+      ],
+      "watertight": true,
+      "xy": [
+        0,
+        48
+      ]
+    },
+    "screw-spacer-2mm-4": {
+      "extents_mm": [
+        4.0,
+        3.9987566471099854,
+        2.0
+      ],
+      "watertight": true,
+      "xy": [
+        65,
+        38
+      ]
+    },
+    "screw-spacer-2mm-5": {
+      "extents_mm": [
+        4.0,
+        3.9987566471099854,
+        2.0
+      ],
+      "watertight": true,
+      "xy": [
+        73,
+        38
+      ]
+    },
+    "screw-spacer-2mm-6": {
+      "extents_mm": [
+        4.0,
+        3.9987566471099854,
+        2.0
+      ],
+      "watertight": true,
+      "xy": [
+        81,
+        38
+      ]
+    },
+    "screw-spacer-2mm-7": {
+      "extents_mm": [
+        4.0,
+        3.9987566471099854,
+        2.0
+      ],
+      "watertight": true,
+      "xy": [
+        89,
+        38
+      ]
+    }
+  },
+  "plate_mm": [
+    118.5,
+    50.409996032714844,
+    8.510000228881836
+  ]
+}

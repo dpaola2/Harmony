@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/dave/projects/Harmony2/hardware/mark-7/carrier-rev-a/harmony-mark7-carrier.kicad_sch</source>
+    <date>2026-10-11T08:35:26-0400</date>
+    <tool>Eeschema 8.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Harmony Mark-7 passive carrier</title>
+        <company/>
+        <rev>A-FIT-REVIEW</rev>
+        <date>2026-10-11</date>
+        <source>harmony-mark7-carrier.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>Feather JP1 socket</value>
+      <footprint>Harmony:Feather_JP1</footprint>
+      <fields>
+        <field name="MPN">SSW-116-01-G-S</field>
+        <field name="Footprint">Harmony:Feather_JP1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="JP1" description=""/>
+      <property name="MPN" value="SSW-116-01-G-S"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ca1eb520-c48d-5645-aed8-91f9dca87157</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Feather JP3 socket</value>
+      <footprint>Harmony:Feather_JP3</footprint>
+      <fields>
+        <field name="MPN">SSW-112-01-G-S</field>
+        <field name="Footprint">Harmony:Feather_JP3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="JP3" description=""/>
+      <property name="MPN" value="SSW-112-01-G-S"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f1a0d368-0465-5ab0-a4e9-de7e63266913</tstamps>
+    </comp>
+    <comp ref="P1">
+      <value>VIN</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c55d4b9e-3b08-511d-afe6-12587c7359ff</tstamps>
+    </comp>
+    <comp ref="P2">
+      <value>GND</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>14adbbd6-ad33-546f-b90a-4b1b677d9530</tstamps>
+    </comp>
+    <comp ref="P3">
+      <value>TFT_CS</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf30aa5b-6685-58f8-acd9-7b58bcda0750</tstamps>
+    </comp>
+    <comp ref="P4">
+      <value>SD_CS</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf7d90ec-73af-5d46-ae89-a19894338875</tstamps>
+    </comp>
+    <comp ref="P5">
+      <value>LITE</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4a32df59-4afe-5420-be97-538ffa7f48c9</tstamps>
+    </comp>
+    <comp ref="P6">
+      <value>MISO</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7bdc911d-ff1f-55e9-ac16-7eb3d8c99020</tstamps>
+    </comp>
+    <comp ref="P7">
+      <value>MOSI</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>10c434ae-e01f-5d4c-9260-90374ed31edc</tstamps>
+    </comp>
+    <comp ref="P8">
+      <value>DC</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>547bb269-ec6e-55c1-ab76-5e8b3aedeb4a</tstamps>
+    </comp>
+    <comp ref="P9">
+      <value>RST</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6bf50d13-5ae9-5ab7-8828-1acef1fbdc4a</tstamps>
+    </comp>
+    <comp ref="P10">
+      <value>SCK</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3e5a75b2-df86-5a8d-81dd-23a267c8d24f</tstamps>
+    </comp>
+    <comp ref="P11">
+      <value>ANO_INT</value>
+      <footprint>Harmony:WirePad</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:WirePad</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="Wire" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>863e7717-c251-5c7e-ae05-4da2bc2c7f5b</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>10k optional wake</value>
+      <footprint>Harmony:R_Axial_P7.62</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony:R_Axial_P7.62</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony" part="R" description=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark7-carrier.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d77d609-0f52-5758-be57-5301544f0c84</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Harmony" part="JP1">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">JP1</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="I37" type="passive"/>
+        <pin num="2" name="TX/IO8" type="passive"/>
+        <pin num="3" name="RX/IO7" type="passive"/>
+        <pin num="4" name="MISO" type="passive"/>
+        <pin num="5" name="MOSI" type="passive"/>
+        <pin num="6" name="SCK" type="passive"/>
+        <pin num="7" name="A5_IO4" type="passive"/>
+        <pin num="8" name="A4_I36" type="passive"/>
+        <pin num="9" name="A3_I39" type="passive"/>
+        <pin num="10" name="A2_I34" type="passive"/>
+        <pin num="11" name="A1_DAC1" type="passive"/>
+        <pin num="12" name="A0_DAC2" type="passive"/>
+        <pin num="13" name="GND" type="passive"/>
+        <pin num="14" name="NC" type="passive"/>
+        <pin num="15" name="3.3V" type="passive"/>
+        <pin num="16" name="!RESET" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="JP3">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">JP3</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VBAT" type="passive"/>
+        <pin num="2" name="EN" type="passive"/>
+        <pin num="3" name="VBUS" type="passive"/>
+        <pin num="4" name="IO13_A12" type="passive"/>
+        <pin num="5" name="IO12_A11" type="passive"/>
+        <pin num="6" name="IO27_A10" type="passive"/>
+        <pin num="7" name="IO33_A9" type="passive"/>
+        <pin num="8" name="IO15_A8" type="passive"/>
+        <pin num="9" name="IO32_A7" type="passive"/>
+        <pin num="10" name="IO14_A6" type="passive"/>
+        <pin num="11" name="SCL" type="passive"/>
+        <pin num="12" name="SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="R">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony" part="Wire">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Wire</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="WIRE" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Harmony">
+      <uri>/Users/dave/projects/Harmony2/hardware/mark-7/carrier-rev-a/Harmony.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/3V3">
+      <node ref="J1" pin="15" pinfunction="3.3V" pintype="passive"/>
+      <node ref="P1" pin="1" pinfunction="WIRE" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="/ANO_INT">
+      <node ref="J1" pin="10" pinfunction="A2_I34" pintype="passive"/>
+      <node ref="P11" pin="1" pinfunction="WIRE" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="/DC">
+      <node ref="J2" pin="7" pinfunction="IO33_A9" pintype="passive"/>
+      <node ref="P8" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="4" name="/GND">
+      <node ref="J1" pin="13" pinfunction="GND" pintype="passive"/>
+      <node ref="P2" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="5" name="/LITE">
+      <node ref="J1" pin="7" pinfunction="A5_IO4" pintype="passive"/>
+      <node ref="P5" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="6" name="/MISO">
+      <node ref="J1" pin="4" pinfunction="MISO" pintype="passive"/>
+      <node ref="P6" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="7" name="/MOSI">
+      <node ref="J2" pin="6" pinfunction="IO27_A10" pintype="passive"/>
+      <node ref="P7" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="8" name="/SCK">
+      <node ref="J2" pin="10" pinfunction="IO14_A6" pintype="passive"/>
+      <node ref="P10" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="9" name="/SD_CS">
+      <node ref="J1" pin="11" pinfunction="A1_DAC1" pintype="passive"/>
+      <node ref="P4" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="10" name="/TFT_CS">
+      <node ref="J1" pin="12" pinfunction="A0_DAC2" pintype="passive"/>
+      <node ref="P3" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="11" name="/TFT_RST">
+      <node ref="J2" pin="9" pinfunction="IO32_A7" pintype="passive"/>
+      <node ref="P9" pin="1" pinfunction="WIRE" pintype="passive"/>
+    </net>
+    <net code="12" name="unconnected-(J1-!RESET-Pad16)">
+      <node ref="J1" pin="16" pinfunction="!RESET" pintype="passive+no_connect"/>
+    </net>
+    <net code="13" name="unconnected-(J1-A3_I39-Pad9)">
+      <node ref="J1" pin="9" pinfunction="A3_I39" pintype="passive+no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(J1-A4_I36-Pad8)">
+      <node ref="J1" pin="8" pinfunction="A4_I36" pintype="passive+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(J1-I37-Pad1)">
+      <node ref="J1" pin="1" pinfunction="I37" pintype="passive+no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(J1-MOSI-Pad5)">
+      <node ref="J1" pin="5" pinfunction="MOSI" pintype="passive+no_connect"/>
+    </net>
+    <net code="17" name="unconnected-(J1-NC-Pad14)">
+      <node ref="J1" pin="14" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="18" name="unconnected-(J1-RX{slash}IO7-Pad3)">
+      <node ref="J1" pin="3" pinfunction="RX/IO7" pintype="passive+no_connect"/>
+    </net>
+    <net code="19" name="unconnected-(J1-SCK-Pad6)">
+      <node ref="J1" pin="6" pinfunction="SCK" pintype="passive+no_connect"/>
+    </net>
+    <net code="20" name="unconnected-(J1-TX{slash}IO8-Pad2)">
+      <node ref="J1" pin="2" pinfunction="TX/IO8" pintype="passive+no_connect"/>
+    </net>
+    <net code="21" name="unconnected-(J2-EN-Pad2)">
+      <node ref="J2" pin="2" pinfunction="EN" pintype="passive+no_connect"/>
+    </net>
+    <net code="22" name="unconnected-(J2-IO12_A11-Pad5)">
+      <node ref="J2" pin="5" pinfunction="IO12_A11" pintype="passive+no_connect"/>
+    </net>
+    <net code="23" name="unconnected-(J2-IO13_A12-Pad4)">
+      <node ref="J2" pin="4" pinfunction="IO13_A12" pintype="passive+no_connect"/>
+    </net>
+    <net code="24" name="unconnected-(J2-IO15_A8-Pad8)">
+      <node ref="J2" pin="8" pinfunction="IO15_A8" pintype="passive+no_connect"/>
+    </net>
+    <net code="25" name="unconnected-(J2-SCL-Pad11)">
+      <node ref="J2" pin="11" pinfunction="SCL" pintype="passive+no_connect"/>
+    </net>
+    <net code="26" name="unconnected-(J2-SDA-Pad12)">
+      <node ref="J2" pin="12" pinfunction="SDA" pintype="passive+no_connect"/>
+    </net>
+    <net code="27" name="unconnected-(J2-VBAT-Pad1)">
+      <node ref="J2" pin="1" pinfunction="VBAT" pintype="passive+no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(J2-VBUS-Pad3)">
+      <node ref="J2" pin="3" pinfunction="VBUS" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

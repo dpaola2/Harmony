@@ -1,0 +1,25 @@
+{
+  "as_of": "2026-10-11",
+  "status": "Saved to PCBWay cart; Subject to audit",
+  "url": "https://member.pcbway.com/Order/CartList?upId=6137732",
+  "quantity": 5,
+  "board_usd": 5,
+  "shipping_usd": 26.55,
+  "total_usd": 31.55,
+  "shipping": "DHL, displayed estimate 2-4 business days",
+  "taxes_duties": "Excluded by website notice",
+  "detected_layers": 2,
+  "detected_mm": [
+    53.5,
+    28.3
+  ],
+  "selected_min_hole_quote_tier": "0.3 mm or larger (site retained conservative tier)",
+  "actual_min_finished_hole_mm": 0.8,
+  "fit_test": "pending",
+  "paid": false,
+  "fabrication_released": false,
+  "cart_saved": true,
+  "existing_cart_items": 2,
+  "product_number": "W1170583AS1Y7",
+  "acknowledgment": "Accepted after explicit user confirmation on 2026-10-11"
+}

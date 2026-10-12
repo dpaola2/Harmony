@@ -1,0 +1,25 @@
+{
+  "status": "FIT REVIEW ONLY",
+  "case_mm": [
+    64,
+    105,
+    34
+  ],
+  "carrier_bottom_z": -4.7,
+  "carrier_top_z": -3.1,
+  "socket_height": 8.51,
+  "male_spacer_assumed": 2.54,
+  "feather_bottom_z": 7.95,
+  "feather_shift_mm": 6.45,
+  "tail_floor_clearance_mm": 0.66,
+  "collision_volumes_mm3": {},
+  "checks": 168,
+  "limitations": [
+    "Header body and insertion length must be measured on actual Feather",
+    "JST/QT connector envelopes remain approximate",
+    "Wire bends and strain relief must be physically fitted",
+    "Antenna cutout clears vendor antenna rectangle only, not full RF clearance halo",
+    "Feather retained by sockets; insertion/removal loads and shake retention untested",
+    "Revised rear tray needed; old faceplate closure issues remain"
+  ]
+}

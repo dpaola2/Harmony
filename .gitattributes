@@ -56,3 +56,11 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "enclosure/mark-7/pocket-rev-b/preview/feather.stl" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-7/pocket-rev-b/reference/4311-display.step" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-7/pocket-rev-b/reference/4311-eyespi.brd" filter=lfs diff=lfs merge=lfs -text
+
+# October 11 Mark-7 carrier review artifacts.
+"hardware/mark-7/carrier-rev-a/mechanical/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/carrier-rev-a/mechanical/carrier-dummy.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/carrier-rev-a/mechanical/carrier.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/carrier-rev-a/mechanical/feather.step" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/carrier-rev-a/mechanical/feather.stl" filter=lfs diff=lfs merge=lfs -text
+"hardware/mark-7/carrier-rev-a/print/carrier-dummy.stl" filter=lfs diff=lfs merge=lfs -text
