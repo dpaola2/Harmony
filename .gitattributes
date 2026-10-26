@@ -64,3 +64,23 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "hardware/mark-7/carrier-rev-a/mechanical/feather.step" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-7/carrier-rev-a/mechanical/feather.stl" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-7/carrier-rev-a/print/carrier-dummy.stl" filter=lfs diff=lfs merge=lfs -text
+
+# October 25 matched shell review assets.
+"enclosure/mark-7/shell-rev-d/cad/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/ano.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/carrier.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/display.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/feather.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/front.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/preview/tray.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/print/mark7-shell-d-front.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-d/print/mark7-shell-d-tray.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/cad/assembly.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/ano.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/carrier.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/display.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/feather.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/front.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/preview/tray.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/print/mark7-shell-e-front.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-7/shell-rev-e/print/mark7-shell-e-tray.stl" filter=lfs diff=lfs merge=lfs -text

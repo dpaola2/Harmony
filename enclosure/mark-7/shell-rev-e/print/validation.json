@@ -1,0 +1,142 @@
+{
+  "purpose": "Unpowered physical fit trial; not sliced",
+  "parts": {
+    "front": {
+      "extents_mm": [
+        64.0,
+        105.0,
+        25.399999618530273
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": -4.6480525345973865e-16,
+      "sha256": "eaf75eba6001e482e0dca36410c7f40b1993f7f51f8fcf0cf674004d71b9ca69"
+    },
+    "tray": {
+      "extents_mm": [
+        63.9999999,
+        105.0,
+        31.9999999
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 1.0000000116860974e-07,
+      "sha256": "f78d14fc7dee647661304c9b8e318514469974b27efe3ec121934384adb37fb1"
+    },
+    "battery-cover": {
+      "extents_mm": [
+        60.29999923706027,
+        65.5999984741211,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "63d90524faa53a3d659875810c8cb9458017016fb0133924387a8474b5301f5e"
+    },
+    "closure-column-coupon": {
+      "extents_mm": [
+        12.0,
+        12.0,
+        25.399999618530273
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "32d8d2a0d8eac8d3567e1091671a08f0407c9458d0858bcf3fac4606512fbac3"
+    },
+    "closure-coupon-tab": {
+      "extents_mm": [
+        12.0,
+        12.0,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "3f6e406607baee7e386c2c7eca3084790bed806eaaa7a0ee75940be414478d96"
+    },
+    "port-fit": {
+      "extents_mm": [
+        15.999999899999999,
+        26.0,
+        27.9999999
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 1.0000000116860974e-07,
+      "sha256": "cc110bbafbfa22567dc0c85999e3662de6c61d772f975655bcf54cbe1534b521"
+    },
+    "screen-pilot-coupon": {
+      "extents_mm": [
+        12.0,
+        12.0,
+        5.0
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "a262983ec6e1eae204eb6508f723eb8433af2a9854f0f538e88963f421a8df15"
+    },
+    "screen-coupon-tab": {
+      "extents_mm": [
+        12.0,
+        12.0,
+        1.5700000524520874
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "240d08aab40dac8b9e960536729f003c921d8ad9c7d85e7ea9b8bfeaa79839dc"
+    },
+    "screen-coupon-spacer": {
+      "extents_mm": [
+        4.199999809265137,
+        4.19869477825705,
+        1.399999976158142
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "ed08fee3ac91e05ed44a36c85d532defc638465f5fb8321b2fd166d0acc43b91"
+    },
+    "carrier-spacer": {
+      "extents_mm": [
+        4.0,
+        3.9987568067735992,
+        2.0
+      ],
+      "watertight": true,
+      "single_solid": true,
+      "bed_z": 0.0,
+      "sha256": "24076e75afdb3bcce3c8ef0d52916508d1e204919e0e72f0b1b20799f7aeea8f"
+    }
+  },
+  "plates": {
+    "fit-checks": {
+      "objects": 10,
+      "extents_mm": [
+        64.19999970926514,
+        39.99937844276428,
+        28.0
+      ],
+      "roundtrip_objects": 10,
+      "sliced": false
+    },
+    "shell-kit": {
+      "objects": 3,
+      "extents_mm": [
+        208.29999923706055,
+        105.0,
+        32.0
+      ],
+      "roundtrip_objects": 3,
+      "sliced": false
+    }
+  },
+  "source_step_sha256": {
+    "front": "72c62341deb4a2e1587be222b3434d933675857a693b023f60fc8abb54b2b939",
+    "tray": "a545e11026fd491e6c0d7aca341617d110a19b54ce5af346755d4c54e09da703",
+    "battery-cover": "632e171ab05b1eccdb8b5b53dd4df99037e03149bcec67bc25b7171c1c6f8280"
+  }
+}
