@@ -1,0 +1,396 @@
+{
+  "status": "UNPOWERED FIT CANDIDATE; not released for powered assembly",
+  "enclosure_mm": {
+    "width": 112.0,
+    "depth": 94.0,
+    "front_height": 28.0,
+    "rear_height": 64.0,
+    "face_length": 100.65783625729296,
+    "angle_degrees": 20.955776730632184
+  },
+  "sources": {
+    "lcd_step_bounds_mm": [
+      92.4468163653,
+      61.0111907716,
+      10.55048
+    ],
+    "lcd_active_area_mm": [
+      73.4468,
+      48.97
+    ],
+    "mpr121_outline_mm": [
+      33.02,
+      19.177
+    ],
+    "carrier_mm": [
+      53.5,
+      28.3,
+      1.6
+    ],
+    "user_measured_carrier_stack_mm": 19.77,
+    "reserved_stack_mm": 20.27
+  },
+  "print_parts": {
+    "carrier-spacer-1": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "ff1a056fd723e5396d9b78fe4744d9df1531c9567b4e1dc83409371f5ee62027"
+    },
+    "carrier-spacer-2": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "ff1a056fd723e5396d9b78fe4744d9df1531c9567b4e1dc83409371f5ee62027"
+    },
+    "carrier-spacer-3": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "ff1a056fd723e5396d9b78fe4744d9df1531c9567b4e1dc83409371f5ee62027"
+    },
+    "carrier-spacer-4": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "ff1a056fd723e5396d9b78fe4744d9df1531c9567b4e1dc83409371f5ee62027"
+    },
+    "battery-cover": {
+      "extents_mm": [
+        63.69919607369229,
+        64.49999989999998,
+        1.599999965634197
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "f04015485c37297aa1c11c7000a9c4d55271bc3ea1270d71f82a9fecde0a019c"
+    },
+    "touch-board-spacer-1": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "9f98acc0cc9afcfa870c429378840d5fff23294500ebdf709582fbfb8f9d7878"
+    },
+    "touch-board-spacer-2": {
+      "extents_mm": [
+        4.399999822606333,
+        4.398632238386199,
+        1.99999996565748
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "9f98acc0cc9afcfa870c429378840d5fff23294500ebdf709582fbfb8f9d7878"
+    },
+    "lcd-clip-1": {
+      "extents_mm": [
+        8.399999618530273,
+        6.0,
+        1.6000000238418544
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 3.538589827921509e-15,
+      "sha256": "9cd5f660c024dadecbfe72c6495dcc966c60ab3ed245ed598fa25622cbf7bd35"
+    },
+    "lcd-clip-spacer-1": {
+      "extents_mm": [
+        4.400000095367432,
+        4.398632511263713,
+        1.9999999999999964
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "3376207899de4a148531d380dae3e8f9c89f63fc82f3832466d8d43474914c1c"
+    },
+    "lcd-clip-2": {
+      "extents_mm": [
+        8.399999618530273,
+        6.0,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": -1.4123761543485675e-17,
+      "sha256": "92fe5532e38194c29c4f1c6edcf4b0ca266a82220f4218aea467eef05161cf14"
+    },
+    "lcd-clip-spacer-2": {
+      "extents_mm": [
+        4.400000095367432,
+        4.398632511263713,
+        2.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "68d327731ab59c875a2f9fefd4224c9038b86cba5a6091f3241c7d2e7ba0c08a"
+    },
+    "lcd-clip-3": {
+      "extents_mm": [
+        8.399999618530273,
+        6.0,
+        1.6000000238418544
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 3.538589827921509e-15,
+      "sha256": "073c84786d26e661d794074ddee549a89be0028d02b62e83e0d0f536faf842f1"
+    },
+    "lcd-clip-spacer-3": {
+      "extents_mm": [
+        4.400000095367429,
+        4.398632511263713,
+        1.9999999999999964
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "3376207899de4a148531d380dae3e8f9c89f63fc82f3832466d8d43474914c1c"
+    },
+    "lcd-clip-4": {
+      "extents_mm": [
+        8.399999618530273,
+        6.0,
+        1.600000023841858
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": -1.4123761543485675e-17,
+      "sha256": "919837b8ae082555a2d054a5d902cdcebb09a6d236e1569ca8eaf0bb5d3e043e"
+    },
+    "lcd-clip-spacer-4": {
+      "extents_mm": [
+        4.400000095367429,
+        4.398632511263713,
+        2.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "68d327731ab59c875a2f9fefd4224c9038b86cba5a6091f3241c7d2e7ba0c08a"
+    },
+    "cable-clamp-1": {
+      "extents_mm": [
+        8.999999899999992,
+        7.999999899999992,
+        2.9999999791616574
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "5a80b2f80450f9f150eddb93ed4c3df970ecb448ec315e61fe0608e8bf5a6ad7"
+    },
+    "cable-clamp-2": {
+      "extents_mm": [
+        8.999999899999985,
+        7.999999899999985,
+        2.9999999791616574
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "5a80b2f80450f9f150eddb93ed4c3df970ecb448ec315e61fe0608e8bf5a6ad7"
+    },
+    "base-tray": {
+      "extents_mm": [
+        111.99999989999995,
+        93.99999989999995,
+        61.537094016210915
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "7b7fc65f5247e9b4dcd8c36b73a693a520805b1079f1586213875636776ac342"
+    },
+    "sloped-face": {
+      "extents_mm": [
+        112.0,
+        100.6578369140625,
+        3.700000047683716
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "65f3b7716232a1c1b8879e065463fda597703775071db8fc916d66bc811b0b2c"
+    },
+    "touch-coupon-0p8mm": {
+      "extents_mm": [
+        96.0,
+        26.0,
+        3.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "2955ec1226520c61f5b927dc2eb86ab88c1eba02365e27aeb49e67252d5b15ad"
+    },
+    "touch-coupon-1p2mm": {
+      "extents_mm": [
+        96.0,
+        26.0,
+        3.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "0a41b0e53cb71f1d61959cc6c05ae867ccb2cc0f470c9d6d6bdfe9ecfa39c104"
+    },
+    "touch-coupon-1p6mm": {
+      "extents_mm": [
+        96.0,
+        26.0,
+        3.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "d2711b3f84bab30ea551b0f8cdeb425b4363fa6b60556ace8a0858a9856cbbae"
+    },
+    "fastener-coupon": {
+      "extents_mm": [
+        20.0,
+        14.0,
+        14.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "88d1025afcb430f23c57aaee9f6fa31b1b485d463d358b3646d7edbd99c95aa5"
+    },
+    "dummy-battery-envelope": {
+      "extents_mm": [
+        50.5,
+        62.5,
+        8.100000381469727
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "af5169ae68e803269670c0a0bd08e3d9b01a3d921891c2c25783155b686dbc40"
+    },
+    "dummy-feather-and-sockets-envelope": {
+      "extents_mm": [
+        28.299999237060547,
+        53.5,
+        18.670000076293945
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "6bb7adafc3a16cbf8fc5cc7fb0b604df5cb1aa7c71217662e1f5bf1abfe02301"
+    },
+    "dummy-mpr121-populated-reserve": {
+      "extents_mm": [
+        33.02000045776367,
+        19.177000045776367,
+        5.0
+      ],
+      "watertight": true,
+      "solids": 1,
+      "bed_z": 0.0,
+      "sha256": "a93992b6be762a40b017f9a1db0f349209de41daba03267cdffa988940b58272"
+    }
+  },
+  "intersections": [],
+  "plates": {
+    "01-touch-tests": {
+      "objects": 4,
+      "extent_mm": [
+        130.0,
+        94.0,
+        14.0
+      ],
+      "roundtrip_ok": true,
+      "sliced": false
+    },
+    "02-shell-fit": {
+      "objects": 2,
+      "extent_mm": [
+        237.0,
+        100.6578369140625,
+        61.537094016210915
+      ],
+      "roundtrip_ok": true,
+      "sliced": false
+    },
+    "03-internals": {
+      "objects": 17,
+      "extent_mm": [
+        224.4991941510234,
+        80.49999979999997,
+        2.9999999791616574
+      ],
+      "roundtrip_ok": true,
+      "sliced": false
+    },
+    "04-dummies": {
+      "objects": 3,
+      "extent_mm": [
+        131.81999969482422,
+        62.5,
+        18.670000076293945
+      ],
+      "roundtrip_ok": true,
+      "sliced": false
+    }
+  },
+  "minimum_distances_mm": [
+    {
+      "a": "waveshare-vendor-module",
+      "b": "feather-and-sockets-envelope",
+      "distance": 5.153
+    },
+    {
+      "a": "waveshare-vendor-module",
+      "b": "battery-cover",
+      "distance": 15.723
+    },
+    {
+      "a": "waveshare-vendor-module",
+      "b": "mpr121-populated-reserve",
+      "distance": 23.772
+    },
+    {
+      "a": "feather-and-sockets-envelope",
+      "b": "sloped-face",
+      "distance": 12.197
+    },
+    {
+      "a": "mpr121-populated-reserve",
+      "b": "sloped-face",
+      "distance": 14.316
+    }
+  ],
+  "scope_notes": [
+    "Reference board envelopes have mounting reliefs; actual populated components and cables require physical inspection.",
+    "Intersections exclude copper electrodes and closure hardware; positive clearance is not a manufacturing tolerance proof.",
+    "All dimensions are in mm; 3MF files are unsliced."
+  ]
+}

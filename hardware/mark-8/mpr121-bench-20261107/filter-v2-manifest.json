@@ -1,0 +1,15 @@
+{
+  "app_sha256": "f4c232a3ead95af9e81945b2b69f865cb8246b6cb3db1c5a08031dbbe38396db",
+  "flash_offset": "0x10000",
+  "target_mac": "14:33:5c:99:1a:28",
+  "falling_baseline": {
+    "NHD": 1,
+    "NCL": 32,
+    "FDL": 16
+  },
+  "thresholds": {
+    "touch": 12,
+    "release": 6
+  },
+  "physical_test": "pending"
+}

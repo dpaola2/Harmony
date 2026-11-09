@@ -1,0 +1,24 @@
+/*!
+ *  @file Adafruit_MPR121.h
+ *
+ *  This is a library for the MPR121 12-Channel Capacitive Sensor
+ *
+ *  Designed specifically to work with the MPR121 board.
+ *
+ *  Pick one up today in the adafruit shop!
+ *  ------> https://www.adafruit.com/product/1982
+ *
+ *  These sensors use I2C to communicate, 2+ pins are required to interface
+ *
+ *  Adafruit invests time and resources providing this open source code,
+ *  please support Adafruit andopen-source hardware by purchasing products
+ *  from Adafruit!
+ *
+ *  Limor Fried/Ladyada (Adafruit Industries).
+ *
+ *  BSD license, all text above must be included in any redistribution
+ */
+
+Register defaults are adapted from Adafruit_MPR121.cpp.
+Source: https://github.com/adafruit/Adafruit_MPR121
+Retrieved November 7, 2026.

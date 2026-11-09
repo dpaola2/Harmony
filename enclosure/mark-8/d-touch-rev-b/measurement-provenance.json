@@ -1,0 +1,20 @@
+{
+  "as_of": "2026-11-07",
+  "user_reported": {
+    "socket_PCB_to_wire_exit_mm": 18,
+    "USB_body_width_mm": 10.17,
+    "USB_body_thickness_mm": 4.45,
+    "USB_body_length_mm": 14.45,
+    "USB_exposed_tip_mm": 6.86
+  },
+  "sources": [
+    {
+      "path": "/Users/dave/projects/Harmony2/hardware/mark-7/carrier-rev-a/mechanical/feather.step",
+      "sha256": "2dadaed241d45efd0b38864996aca1769d0d53ce5960128ad7f880e708523388"
+    },
+    {
+      "path": "/Users/dave/projects/Harmony2/hardware/mark-6/carrier-rev-a/reference/feather-v2-header-pins.json",
+      "sha256": "107eb0a4add75f6a8a3e51880d9a9ad742885548a7c1eccd265e100d4efe2bfa"
+    }
+  ]
+}

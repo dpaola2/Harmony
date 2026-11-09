@@ -84,3 +84,13 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "enclosure/mark-7/shell-rev-e/preview/tray.stl" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-7/shell-rev-e/print/mark7-shell-e-front.stl" filter=lfs diff=lfs merge=lfs -text
 "enclosure/mark-7/shell-rev-e/print/mark7-shell-e-tray.stl" filter=lfs diff=lfs merge=lfs -text
+
+# Mark-8 checkpoint assets.
+"enclosure/mark-8/d-touch-rev-a/cad/waveshare-vendor-module.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-a/preview/waveshare-vendor-module.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-a/reference/waveshare-vendor-original.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-b/cad/feather-vendor-board.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-b/cad/waveshare-vendor-module.step" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-b/preview/feather-vendor-board.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-b/preview/waveshare-vendor-module.stl" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/d-touch-rev-b/clip-fit-tests/IMG_8246-gap-evidence.HEIC" filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,463 @@
+{
+  "status": "CAD REVIEW; PHYSICAL DRY FIT STILL REQUIRED",
+  "dimensions_mm": {
+    "case": [
+      112,
+      94,
+      44,
+      80
+    ],
+    "PCB_underside_z": 29,
+    "socket_drop_measured": 18,
+    "socket_exit_z": 11,
+    "wire_bend_reserve_lowest_z": 5.5,
+    "floor_top_z": 2.4,
+    "wire_floor_gap": 3.1,
+    "usb_opening": [
+      15,
+      13
+    ],
+    "usb_body_measured": [
+      10.17,
+      14.45,
+      4.45
+    ],
+    "usb_metal_length_measured": 6.86,
+    "usb_side_margin_each": 2.415,
+    "usb_bottom_margin": 3.975,
+    "usb_top_margin": 4.575
+  },
+  "checks": [
+    {
+      "a": "feather-vendor-board",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 0.0
+    },
+    {
+      "a": "feather-vendor-board",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 14.641
+    },
+    {
+      "a": "feather-vendor-board",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 18.622
+    },
+    {
+      "a": "usb-plug-body",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 2.415
+    },
+    {
+      "a": "usb-plug-body",
+      "b": "sloped-face",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 39.353
+    },
+    {
+      "a": "battery-plug-reserve",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 3.314
+    },
+    {
+      "a": "battery-plug-reserve",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 17.624
+    },
+    {
+      "a": "qt-plug-reserve",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 17.794
+    },
+    {
+      "a": "qt-plug-reserve",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true,
+      "distance_mm": 18.363
+    },
+    {
+      "a": "display-socket-01",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-01",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-01",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-01",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-01",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-01",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-02",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-02",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-02",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-02",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-02",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-02",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-03",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-03",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-03",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-03",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-03",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-03",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-04",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-04",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-04",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-04",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-04",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-04",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-05",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-05",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-05",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-05",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-05",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-05",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-06",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-06",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-06",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-06",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-06",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-06",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-07",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-07",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-07",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-07",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-07",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-07",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-08",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-08",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-08",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-08",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-08",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-08",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-09",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-09",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-09",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-09",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-09",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-09",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-10",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-10",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "display-socket-10",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-10",
+      "b": "base-tray",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-10",
+      "b": "battery-cover",
+      "intersection_mm3": 0.0,
+      "pass": true
+    },
+    {
+      "a": "wire-bend-reserve-10",
+      "b": "waveshare-vendor-module",
+      "intersection_mm3": 0.0,
+      "pass": true
+    }
+  ],
+  "unqualified": [
+    "Display harness length, white mating plug and exact wire paths are not measured.",
+    "Battery and QT mating-plug shapes are inherited envelopes, not new user measurements.",
+    "Socket width reserve 3.2 mm and 5.5 mm wire-bend allowance are design assumptions.",
+    "Battery cushioning material and pouch retention require physical rehearsal.",
+    "USB insertion force, PCB flex, printed tolerances and lid closure require disconnected physical dry fit."
+  ],
+  "passed": true
+}

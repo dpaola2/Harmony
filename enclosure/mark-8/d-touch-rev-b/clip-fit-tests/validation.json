@@ -1,0 +1,57 @@
+{
+  "lcd-clip-step-1.0mm-1-notch": {
+    "step_mm": 1.0,
+    "notches": 1,
+    "extents_mm": [
+      8.399999618530273,
+      6.0,
+      2.5999999046325684
+    ],
+    "watertight": true,
+    "single_solid": true,
+    "screw_hole_diameter_mm": 2.4,
+    "body_thickness_mm": 1.6,
+    "tip_contact_area_mm": [
+      2,
+      6
+    ],
+    "boss_to_step_clearance_mm": 0.8
+  },
+  "lcd-clip-step-1.5mm-2-notch": {
+    "step_mm": 1.5,
+    "notches": 2,
+    "extents_mm": [
+      8.399999618530273,
+      6.0,
+      3.0999999046325684
+    ],
+    "watertight": true,
+    "single_solid": true,
+    "screw_hole_diameter_mm": 2.4,
+    "body_thickness_mm": 1.6,
+    "tip_contact_area_mm": [
+      2,
+      6
+    ],
+    "boss_to_step_clearance_mm": 0.8
+  },
+  "lcd-clip-step-2.0mm-3-notch": {
+    "step_mm": 2.0,
+    "notches": 3,
+    "extents_mm": [
+      8.399999618530273,
+      6.0,
+      3.5999999046325684
+    ],
+    "watertight": true,
+    "single_solid": true,
+    "screw_hole_diameter_mm": 2.4,
+    "body_thickness_mm": 1.6,
+    "tip_contact_area_mm": [
+      2,
+      6
+    ],
+    "boss_to_step_clearance_mm": 0.8
+  },
+  "qualification": "Geometry checked only. User reported 1\u20132 mm physical gap. Test gently on an intact boss. No installed preload or actual contact surface qualification."
+}

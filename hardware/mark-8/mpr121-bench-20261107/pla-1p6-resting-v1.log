@@ -1,0 +1,186 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Nov  7 2026 14:53:03
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ba54h ( 47700) map
+I (105) esp_image: segment 1: paddr=0001ba7c vaddr=3ff80000 size=00020h (    32) load
+I (105) esp_image: segment 2: paddr=0001baa4 vaddr=3ffb0000 size=02498h (  9368) load
+I (113) esp_image: segment 3: paddr=0001df44 vaddr=40080000 size=020d4h (  8404) load
+I (120) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1690ch ( 92428) map
+I (156) esp_image: segment 5: paddr=00036934 vaddr=400820d4 size=0c498h ( 50328) load
+I (183) boot: Loaded app from partition at offset 0x10000
+I (183) boot: Disabling RNG early entropy source...
+I (193) cpu_start: Multicore app
+I (201) cpu_start: Pro cpu start user code
+I (201) cpu_start: cpu freq: 160000000 Hz
+I (202) app_init: Application information:
+I (202) app_init: Project name:     harmony_mpr121_bench
+I (207) app_init: App version:      d-touch-bench-20261107
+I (212) app_init: Compile time:     Nov  7 2026 14:52:52
+I (217) app_init: ELF file SHA256:  d088afb5f...
+I (221) app_init: ESP-IDF:          8c750b08
+I (225) efuse_init: Min chip rev:     v0.0
+I (229) efuse_init: Max chip rev:     v3.99 
+I (233) efuse_init: Chip rev:         v3.1
+I (237) heap_init: Initializing. RAM available for dynamic allocation:
+I (243) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (248) heap_init: At 3FFB2D70 len 0002D290 (180 KiB): DRAM
+I (253) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (259) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (264) heap_init: At 4008E56C len 00011A94 (70 KiB): IRAM
+I (271) spi_flash: detected chip: generic
+I (273) spi_flash: flash io: dio
+W (276) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+I (287) main_task: Started on CPU0
+I (290) main_task: Calling app_main()
+TOUCH_BENCH spare=14:33:5c:99:1a:28 QT_PWR=2 SDA=22 SCL=20
+PASS: MPR121 responds at 0x5A; reset and configuration verified. 12 electrodes enabled; touch=12 release=6.
+SAMPLE mask=0x000 E0=0/320/d320 E1=0/384/d384 E2=0/384/d384 E3=0/416/d416 E4=0/416/d416
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/404/d-7 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=330/328/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/328/d-4 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=330/328/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/328/d-4 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/328/d-4 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+I (30) boot: ESP-IDF 8c750b08 2nd stage bootloader
+I (30) boot: compile time Nov  7 2026 14:53:03
+I (30) boot: Multicore bootloader
+I (31) boot: chip revision: v3.1
+I (34) boot.esp32: SPI Speed      : 40MHz
+I (38) boot.esp32: SPI Mode       : DIO
+I (42) boot.esp32: SPI Flash Size : 8MB
+I (45) boot: Enabling RNG early entropy source...
+I (50) boot: Partition Table:
+I (52) boot: ## Label            Usage          Type ST Offset   Length
+I (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (72) boot:  2 factory          factory app      00 00 00010000 00100000
+I (78) boot: End of partition table
+I (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ba54h ( 47700) map
+I (105) esp_image: segment 1: paddr=0001ba7c vaddr=3ff80000 size=00020h (    32) load
+I (105) esp_image: segment 2: paddr=0001baa4 vaddr=3ffb0000 size=02498h (  9368) load
+I (113) esp_image: segment 3: paddr=0001df44 vaddr=40080000 size=020d4h (  8404) load
+I (120) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1690ch ( 92428) map
+I (156) esp_image: segment 5: paddr=00036934 vaddr=400820d4 size=0c498h ( 50328) load
+I (183) boot: Loaded app from partition at offset 0x10000
+I (183) boot: Disabling RNG early entropy source...
+I (193) cpu_start: Multicore app
+I (201) cpu_start: Pro cpu start user code
+I (201) cpu_start: cpu freq: 160000000 Hz
+I (202) app_init: Application information:
+I (202) app_init: Project name:     harmony_mpr121_bench
+I (207) app_init: App version:      d-touch-bench-20261107
+I (212) app_init: Compile time:     Nov  7 2026 14:52:52
+I (217) app_init: ELF file SHA256:  d088afb5f...
+I (221) app_init: ESP-IDF:          8c750b08
+I (225) efuse_init: Min chip rev:     v0.0
+I (229) efuse_init: Max chip rev:     v3.99 
+I (233) efuse_init: Chip rev:         v3.1
+I (237) heap_init: Initializing. RAM available for dynamic allocation:
+I (243) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (248) heap_init: At 3FFB2D70 len 0002D290 (180 KiB): DRAM
+I (253) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (259) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (264) heap_init: At 4008E56C len 00011A94 (70 KiB): IRAM
+I (271) spi_flash: detected chip: generic
+I (273) spi_flash: flash io: dio
+W (276) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`
+I (287) main_task: Started on CPU0
+I (290) main_task: Calling app_main()
+TOUCH_BENCH spare=14:33:5c:99:1a:28 QT_PWR=2 SDA=22 SCL=20
+PASS: MPR121 responds at 0x5A; reset and configuration verified. 12 electrodes enabled; touch=12 release=6.
+SAMPLE mask=0x000 E0=0/320/d320 E1=0/384/d384 E2=0/384/d384 E3=0/416/d416 E4=0/416/d416
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/404/d-7 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=287/284/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=330/292/d-38 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=324/316/d-8 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 TOUCH
+SAMPLE mask=0x001 E0=283/308/d25 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 RELEASE
+SAMPLE mask=0x000 E0=330/316/d-14 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=286/284/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=287/280/d-7 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=326/308/d-18 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 TOUCH
+SAMPLE mask=0x001 E0=286/312/d26 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 RELEASE
+SAMPLE mask=0x000 E0=330/328/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 TOUCH
+SAMPLE mask=0x001 E0=287/316/d29 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 RELEASE
+SAMPLE mask=0x000 E0=331/328/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 TOUCH
+SAMPLE mask=0x001 E0=287/320/d33 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+E0 RELEASE
+SAMPLE mask=0x000 E0=330/328/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=335/332/d-3 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=334/332/d-2 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=332/332/d0 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4
+SAMPLE mask=0x000 E0=333/332/d-1 E1=398/396/d-2 E2=411/408/d-3 E3=420/416/d-4 E4=420/416/d-4

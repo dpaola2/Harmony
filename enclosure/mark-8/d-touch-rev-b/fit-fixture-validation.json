@@ -1,0 +1,13 @@
+{
+  "valid_solid": true,
+  "watertight": true,
+  "solids": 1,
+  "dimensions_mm": [
+    38.0,
+    57.0,
+    40.0
+  ],
+  "same_mount_and_usb_geometry_as_final_tray": true,
+  "purpose": "Disconnected physical USB and 18 mm socket rehearsal before the full tray. No display or battery validation.",
+  "sha256": "156d07580e1f6de9177ff8a9be7dd0d3994ad8638258866bcf0f9c2a99a6e2b5"
+}

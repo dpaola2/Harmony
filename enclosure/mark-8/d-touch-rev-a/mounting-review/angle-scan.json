@@ -1,0 +1,21 @@
+{
+  "status": "preliminary conservative envelope scan; no cradle released",
+  "assumptions": [
+    "Socket width 2.54 mm unmeasured",
+    "5 mm straight extension represents bend allowance, not actual wire routing",
+    "USB cable body unmeasured",
+    "No JST/QT cable or tray-post collision validation yet"
+  ],
+  "candidates": [
+    {
+      "angle": 17,
+      "usb_center_z": 18.0,
+      "board_floor_gap": 0.881,
+      "socket_and_5mm_bend_display_gap": 1.57,
+      "usb_shell_z": [
+        15.992,
+        20.008
+      ]
+    }
+  ]
+}
