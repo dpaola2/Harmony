@@ -1,0 +1,3295 @@
+{
+ "coordinate_system": "Device coordinates in mm (SPEC 1): origin at the body-outline centre on the front face, +X right seen from the front, +Y toward the screen, +Z out of the front face. KiCad origin of the device origin: (150.0, 70.0); device_x = -(kicad_x - x0), device_y = -(kicad_y - y0).",
+ "board": {
+  "outline": [
+   [
+    -26.2,
+    -10.0
+   ],
+   [
+    -26.287,
+    -10.004
+   ],
+   [
+    -26.374,
+    -10.015
+   ],
+   [
+    -26.459,
+    -10.034
+   ],
+   [
+    -26.542,
+    -10.06
+   ],
+   [
+    -26.623,
+    -10.094
+   ],
+   [
+    -26.7,
+    -10.134
+   ],
+   [
+    -26.774,
+    -10.181
+   ],
+   [
+    -26.843,
+    -10.234
+   ],
+   [
+    -26.907,
+    -10.293
+   ],
+   [
+    -26.966,
+    -10.357
+   ],
+   [
+    -27.019,
+    -10.426
+   ],
+   [
+    -27.066,
+    -10.5
+   ],
+   [
+    -27.106,
+    -10.577
+   ],
+   [
+    -27.14,
+    -10.658
+   ],
+   [
+    -27.166,
+    -10.741
+   ],
+   [
+    -27.185,
+    -10.826
+   ],
+   [
+    -27.196,
+    -10.913
+   ],
+   [
+    -27.2,
+    -11.0
+   ],
+   [
+    -27.2,
+    -45.68
+   ],
+   [
+    -27.061,
+    -45.466
+   ],
+   [
+    -26.903,
+    -45.264
+   ],
+   [
+    -26.729,
+    -45.078
+   ],
+   [
+    -26.538,
+    -44.907
+   ],
+   [
+    -26.333,
+    -44.754
+   ],
+   [
+    -26.116,
+    -44.619
+   ],
+   [
+    -25.888,
+    -44.504
+   ],
+   [
+    -25.65,
+    -44.41
+   ],
+   [
+    -25.405,
+    -44.337
+   ],
+   [
+    -25.154,
+    -44.286
+   ],
+   [
+    -24.9,
+    -44.257
+   ],
+   [
+    -24.645,
+    -44.251
+   ],
+   [
+    -24.389,
+    -44.267
+   ],
+   [
+    -24.137,
+    -44.305
+   ],
+   [
+    -23.888,
+    -44.366
+   ],
+   [
+    -23.646,
+    -44.448
+   ],
+   [
+    -23.412,
+    -44.552
+   ],
+   [
+    -23.188,
+    -44.675
+   ],
+   [
+    -22.976,
+    -44.818
+   ],
+   [
+    -22.777,
+    -44.979
+   ],
+   [
+    -22.594,
+    -45.157
+   ],
+   [
+    -22.426,
+    -45.35
+   ],
+   [
+    -22.276,
+    -45.557
+   ],
+   [
+    -22.146,
+    -45.777
+   ],
+   [
+    -22.035,
+    -46.007
+   ],
+   [
+    -21.944,
+    -46.246
+   ],
+   [
+    -21.875,
+    -46.493
+   ],
+   [
+    -21.828,
+    -46.744
+   ],
+   [
+    -21.804,
+    -46.999
+   ],
+   [
+    -21.802,
+    -47.254
+   ],
+   [
+    -21.822,
+    -47.509
+   ],
+   [
+    -21.865,
+    -47.761
+   ],
+   [
+    -21.93,
+    -48.009
+   ],
+   [
+    -22.017,
+    -48.249
+   ],
+   [
+    -22.124,
+    -48.481
+   ],
+   [
+    -22.251,
+    -48.703
+   ],
+   [
+    -22.397,
+    -48.913
+   ],
+   [
+    -22.562,
+    -49.109
+   ],
+   [
+    -22.742,
+    -49.29
+   ],
+   [
+    -22.939,
+    -49.454
+   ],
+   [
+    -23.148,
+    -49.6
+   ],
+   [
+    23.148,
+    -49.6
+   ],
+   [
+    22.939,
+    -49.454
+   ],
+   [
+    22.742,
+    -49.29
+   ],
+   [
+    22.562,
+    -49.109
+   ],
+   [
+    22.397,
+    -48.913
+   ],
+   [
+    22.251,
+    -48.703
+   ],
+   [
+    22.124,
+    -48.481
+   ],
+   [
+    22.017,
+    -48.249
+   ],
+   [
+    21.93,
+    -48.009
+   ],
+   [
+    21.865,
+    -47.761
+   ],
+   [
+    21.822,
+    -47.509
+   ],
+   [
+    21.802,
+    -47.254
+   ],
+   [
+    21.804,
+    -46.999
+   ],
+   [
+    21.828,
+    -46.744
+   ],
+   [
+    21.875,
+    -46.493
+   ],
+   [
+    21.944,
+    -46.246
+   ],
+   [
+    22.035,
+    -46.007
+   ],
+   [
+    22.146,
+    -45.777
+   ],
+   [
+    22.276,
+    -45.557
+   ],
+   [
+    22.426,
+    -45.35
+   ],
+   [
+    22.594,
+    -45.157
+   ],
+   [
+    22.777,
+    -44.979
+   ],
+   [
+    22.976,
+    -44.818
+   ],
+   [
+    23.188,
+    -44.675
+   ],
+   [
+    23.412,
+    -44.552
+   ],
+   [
+    23.646,
+    -44.448
+   ],
+   [
+    23.888,
+    -44.366
+   ],
+   [
+    24.137,
+    -44.305
+   ],
+   [
+    24.389,
+    -44.267
+   ],
+   [
+    24.645,
+    -44.251
+   ],
+   [
+    24.9,
+    -44.257
+   ],
+   [
+    25.154,
+    -44.286
+   ],
+   [
+    25.405,
+    -44.337
+   ],
+   [
+    25.65,
+    -44.41
+   ],
+   [
+    25.888,
+    -44.504
+   ],
+   [
+    26.116,
+    -44.619
+   ],
+   [
+    26.333,
+    -44.754
+   ],
+   [
+    26.538,
+    -44.907
+   ],
+   [
+    26.729,
+    -45.078
+   ],
+   [
+    26.903,
+    -45.264
+   ],
+   [
+    27.061,
+    -45.466
+   ],
+   [
+    27.2,
+    -45.68
+   ],
+   [
+    27.2,
+    -11.0
+   ],
+   [
+    27.196,
+    -10.913
+   ],
+   [
+    27.185,
+    -10.826
+   ],
+   [
+    27.166,
+    -10.741
+   ],
+   [
+    27.14,
+    -10.658
+   ],
+   [
+    27.106,
+    -10.577
+   ],
+   [
+    27.066,
+    -10.5
+   ],
+   [
+    27.019,
+    -10.426
+   ],
+   [
+    26.966,
+    -10.357
+   ],
+   [
+    26.907,
+    -10.293
+   ],
+   [
+    26.843,
+    -10.234
+   ],
+   [
+    26.774,
+    -10.181
+   ],
+   [
+    26.7,
+    -10.134
+   ],
+   [
+    26.623,
+    -10.094
+   ],
+   [
+    26.542,
+    -10.06
+   ],
+   [
+    26.459,
+    -10.034
+   ],
+   [
+    26.374,
+    -10.015
+   ],
+   [
+    26.287,
+    -10.004
+   ],
+   [
+    26.2,
+    -10.0
+   ]
+  ],
+  "thickness": 0.8,
+  "z_touch_side": -1.0,
+  "z_component_side": -1.8,
+  "layers": "L1 parts, L2 GND (25% hatch under the wheel), L3 power/routing, L4 electrodes + GND",
+  "boss_clearance": 2.9,
+  "bosses": [
+   [
+    -24.7,
+    -47.15
+   ],
+   [
+    24.7,
+    -47.15
+   ]
+  ]
+ },
+ "wheel": {
+  "centre": [
+   0.0,
+   -27.75
+  ],
+  "disc_diameter": 34.0,
+  "ring_r": [
+   7.8,
+   16.6
+  ],
+  "centre_r": 7.0,
+  "sectors": "ELE1 at 12 o'clock seen from the front, then clockwise",
+  "l4_ground_clear_r": 17.6
+ },
+ "fpc_zones": {
+  "dive": [
+   [
+    -14.0,
+    19.0
+   ],
+   [
+    -10.0,
+    -7.8
+   ]
+  ],
+  "run": [
+   [
+    [
+     -13.7,
+     18.5
+    ],
+    [
+     -18.8,
+     -10.0
+    ]
+   ],
+   [
+    [
+     -13.7,
+     -6.7
+    ],
+    [
+     -44.0,
+     -18.6
+    ]
+   ],
+   [
+    [
+     -13.5,
+     27.2
+    ],
+    [
+     -47.0,
+     -37.0
+    ]
+   ]
+  ],
+  "ramp": [
+   [
+    -2.2,
+    15.8
+   ],
+   [
+    -42.0,
+    -36.0
+   ]
+  ]
+ },
+ "usb_c": {
+  "ref": "J1",
+  "part": "HRO TYPE-C-31-M-12 (LCSC C165948)",
+  "mating_direction": [
+   0,
+   -1
+  ],
+  "mating_face_y": -50.4,
+  "centre_x": 0.0,
+  "z_centre_line": -3.46,
+  "z_centre_line_datasheet": -3.43,
+  "shell_outer": {
+   "width_x": 8.94,
+   "height_z": 3.26,
+   "x": [
+    -4.47,
+    4.47
+   ],
+   "z": [
+    -1.8,
+    -5.06
+   ]
+  },
+  "receptacle_opening": {
+   "width_x": 8.34,
+   "height_z": 2.56,
+   "z": [
+    -2.16,
+    -4.76
+   ]
+  },
+  "body_y_range": [
+   -50.4,
+   -43.05
+  ],
+  "overhang_past_board_edge": 0.8,
+  "note": "Opening z from the STEP on the receptacle axis; datasheet opening 8.34 x 2.56 inside an 8.94 x 3.26 shell."
+ },
+ "microsd": {
+  "ref": "J3",
+  "part": "Hirose DM3AT-SF-PEJM5 push-push (LCSC C114218)",
+  "card_entry_direction": [
+   0,
+   -1
+  ],
+  "card_entry_face_y": -49.095,
+  "card_centre_line_x": -13.7,
+  "card_width": 11.0,
+  "card_slot_x_range": [
+   -19.2,
+   -8.2
+  ],
+  "card_slot_z_range": [
+   -3.681,
+   -2.6
+  ],
+  "card_plane_z": -3.141,
+  "connector_height": 1.68,
+  "body_x_range": [
+   -21.045,
+   -7.195
+  ],
+  "body_y_range": [
+   -49.095,
+   -33.135
+  ],
+  "eject_stroke_beyond_body": 5.6,
+  "note": "Card centre line 3.2 mm from contact 1 (Hirose DM3AT drawing). Slot z range = free gap in the STEP 0.3 mm inside the front face on the card centre line. Push-push: an ejected card stands 5.6 mm proud of the connector front face (lock 17.55, eject 21.55 from the rear)."
+ },
+ "side_button": {
+  "ref": "SW1",
+  "part": "Alps SKRTLAE010 side push (LCSC C110293)",
+  "actuator_axis": [
+   1,
+   0
+  ],
+  "actuator_tip": [
+   27.46,
+   -15.6,
+   -3.5
+  ],
+  "actuator_diameter": 2.0,
+  "actuator_centre_height_above_board": 1.7,
+  "body_front_x": 26.46,
+  "travel": 0.2,
+  "operating_force_N": 1.6,
+  "body_y_range": [
+   -17.902,
+   -13.302
+  ],
+  "height": 3.3,
+  "note": "Actuator centre 1.7 above the board and 2.0 diameter per the Alps drawing; tip x from the STEP."
+ },
+ "screen_connector": {
+  "ref": "J2",
+  "part": "Hirose FH35C-15S-0.3SHW(50) (LCSC C2889267)",
+  "slot_facing": [
+   1,
+   0
+  ],
+  "slot_mouth_x": -2.238,
+  "slot_centre_line_y": -39.0,
+  "slot_width_y": 4.5,
+  "pin1": {
+   "x": -2.47,
+   "y": -41.1,
+   "end": "-Y"
+  },
+  "pin15": {
+   "x": -2.47,
+   "y": -36.9,
+   "end": "+Y"
+  },
+  "fpc_entry_z": -2.2,
+  "connector_height": 0.9,
+  "actuator": "flip lock on the -X (rear) side, opens upward about 90 deg",
+  "ramp_zone": {
+   "x": [
+    -2.238,
+    15.762
+   ],
+   "y": [
+    -42.0,
+    -36.0
+   ],
+   "max_part_height": 0.6
+  },
+  "body_x_range": [
+   -6.438,
+   -2.238
+  ],
+  "body_y_range": [
+   -42.053,
+   -35.952
+  ],
+  "note": "Contacts are dual sided. FPC tail 4.80 wide, 0.20 thick; pin n at y_c - 2.4 + 0.3 n."
+ },
+ "antenna": {
+  "ref": "U1",
+  "part": "ESP32-PICO-MINI-02-N8R2 (LCSC C2980306)",
+  "antenna_end_x": 27.2,
+  "module_x_range": [
+   10.6,
+   27.2
+  ],
+  "module_y_range": [
+   -35.9,
+   -22.7
+  ],
+  "module_centre_y": -29.3,
+  "module_height": 2.4,
+  "antenna_region": {
+   "x": [
+    21.8,
+    27.2
+   ],
+   "y": [
+    -35.9,
+    -22.7
+   ]
+  },
+  "copper_keepout_all_layers": {
+   "x": [
+    21.8,
+    27.2
+   ],
+   "y": [
+    -37.9,
+    -21.8
+   ]
+  },
+  "enclosure_advice": "No metal, screws, inserts or ribs thicker than the wall within the keep-out and 5 mm beyond the +X wall."
+ },
+ "battery_connector": {
+  "ref": "J4",
+  "part": "JST PH 2.0 side entry S2B-PH-SM4-TB type (LCSC C54582899)",
+  "cable_entry_direction": [
+   0,
+   1
+  ],
+  "entry_face_y": -10.53,
+  "body_x_range": [
+   -24.95,
+   -17.05
+  ],
+  "body_y_range": [
+   -19.13,
+   -10.53
+  ],
+  "height": 5.501,
+  "z_range": [
+   -7.301,
+   -1.8
+  ],
+  "pin_minus": [
+   -22.0,
+   -17.86
+  ],
+  "pin_plus": [
+   -20.0,
+   -17.86
+  ],
+  "note": "Silkscreen + beside pin 2 and - beside pin 1. Plug enters from +Y and the cable leaves toward the battery."
+ },
+ "buzzer": {
+  "ref": "BZ1",
+  "part": "MLT-5020 magnetic (LCSC C94598)",
+  "centre": [
+   -3.6,
+   -21.6
+  ],
+  "body_x_range": [
+   -6.26,
+   -1.06
+  ],
+  "body_y_range": [
+   -24.243,
+   -18.967
+  ],
+  "height": 2.01,
+  "top_z": -3.81,
+  "grille_advice": "Back-plate grille centred here, about 4 mm diameter."
+ },
+ "charge_led": {
+  "ref": "LED1",
+  "part": "KT-0603R red (LCSC C2286)",
+  "centre": [
+   -5.9,
+   -48.0
+  ],
+  "top_z": -2.5,
+  "light_hole_diameter": 1.0
+ },
+ "motor_pads": {
+  "pads": {
+   "M+": [
+    -22.2,
+    -40.9
+   ],
+   "M-": [
+    -22.2,
+    -43.2
+   ]
+  },
+  "pad_size": [
+   1.5,
+   2.0
+  ],
+  "motor": "LCM1027A2445F 10 x 2.7 coin (optional, LCSC C2759984), hand-soldered"
+ },
+ "boot_reset_buttons": {
+  "SW2": {
+   "centre": [
+    20.2,
+    -13.5
+   ],
+   "height": 1.95,
+   "function": "BOOT"
+  },
+  "SW3": {
+   "centre": [
+    20.2,
+    -19.6
+   ],
+   "height": 1.95,
+   "function": "RESET"
+  }
+ },
+ "test_pads": {
+  "3V3": [
+   -15.4,
+   -11.4
+  ],
+  "I2C_SCL": [
+   14.7,
+   -15.4
+  ],
+  "VSYS": [
+   -15.4,
+   -13.6
+  ],
+  "VBAT": [
+   -15.4,
+   -15.8
+  ],
+  "GND": [
+   -15.4,
+   -18.0
+  ],
+  "U0TXD": [
+   17.0,
+   -48.5
+  ],
+  "U0RXD": [
+   19.2,
+   -48.5
+  ],
+  "GPIO7": [
+   14.8,
+   -21.0
+  ],
+  "GPIO8": [
+   16.9,
+   -21.0
+  ],
+  "I2C_SDA": [
+   12.5,
+   -15.4
+  ]
+ },
+ "locating_holes": [
+  {
+   "ref": "H1",
+   "centre": [
+    -12.0,
+    -11.4
+   ],
+   "diameter": 1.6,
+   "note": "NPTH; front skin pin about 1.5 diameter"
+  },
+  {
+   "ref": "H2",
+   "centre": [
+    24.6,
+    -40.6
+   ],
+   "diameter": 1.6,
+   "note": "NPTH; front skin pin about 1.5 diameter"
+  }
+ ],
+ "press_pads": [
+  {
+   "ref": "PP1",
+   "centre": [
+    -24.9,
+    -33.0
+   ],
+   "diameter": 4.0
+  },
+  {
+   "ref": "PP2",
+   "centre": [
+    -3.6,
+    -30.7
+   ],
+   "diameter": 4.0
+  },
+  {
+   "ref": "PP3",
+   "centre": [
+    6.2,
+    -31.0
+   ],
+   "diameter": 4.0
+  },
+  {
+   "ref": "PP4",
+   "centre": [
+    6.8,
+    -21.4
+   ],
+   "diameter": 4.0
+  }
+ ],
+ "touch_side_protrusions": {
+  "items": [
+   {
+    "ref": "J1",
+    "pad": "1",
+    "centre": [
+     -4.33,
+     -43.76
+    ],
+    "x": [
+     -4.93,
+     -3.73
+    ],
+    "y": [
+     -44.76,
+     -42.76
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "2",
+    "centre": [
+     -4.33,
+     -47.94
+    ],
+    "x": [
+     -4.93,
+     -3.73
+    ],
+    "y": [
+     -48.84,
+     -47.04
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "3",
+    "centre": [
+     4.33,
+     -47.94
+    ],
+    "x": [
+     3.73,
+     4.93
+    ],
+    "y": [
+     -48.84,
+     -47.04
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "4",
+    "centre": [
+     4.33,
+     -43.76
+    ],
+    "x": [
+     3.73,
+     4.93
+    ],
+    "y": [
+     -44.76,
+     -42.76
+    ]
+   }
+  ],
+  "max_height_above_L4": 0.4,
+  "advice": "Shell legs are soldered through a 0.8 board; solder and leg ends can stand up to about 0.4 above L4 (z = -1.0). Give the front skin a 0.5 deep relief, 0.5 larger than each pad, at these positions."
+ },
+ "parts": [
+  {
+   "ref": "BZ1",
+   "value": "MLT-5020",
+   "centre": [
+    -3.6,
+    -21.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -6.26,
+    -1.06
+   ],
+   "y": [
+    -24.243,
+    -18.967
+   ],
+   "z": [
+    -3.81,
+    -1.8
+   ],
+   "height": 2.01,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C1",
+   "value": "10uF",
+   "centre": [
+    6.9,
+    -48.5
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    5.9,
+    7.9
+   ],
+   "y": [
+    -49.125,
+    -47.875
+   ],
+   "z": [
+    -3.05,
+    -1.8
+   ],
+   "height": 1.25,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C10",
+   "value": "1uF",
+   "centre": [
+    -22.3,
+    -28.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -22.55,
+    -22.05
+   ],
+   "y": [
+    -29.1,
+    -28.1
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C11",
+   "value": "1uF",
+   "centre": [
+    -22.3,
+    -30.8
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -22.55,
+    -22.05
+   ],
+   "y": [
+    -31.3,
+    -30.3
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C12",
+   "value": "1uF",
+   "centre": [
+    -17.7,
+    -31.2
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -17.95,
+    -17.45
+   ],
+   "y": [
+    -31.7,
+    -30.7
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C13",
+   "value": "100nF",
+   "centre": [
+    -2.2,
+    -26.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -2.45,
+    -1.95
+   ],
+   "y": [
+    -27.1,
+    -26.1
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C14",
+   "value": "100nF",
+   "centre": [
+    2.2,
+    -24.9
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    1.7,
+    2.7
+   ],
+   "y": [
+    -25.15,
+    -24.65
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C15",
+   "value": "1uF",
+   "centre": [
+    -25.9,
+    -42.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -26.4,
+    -25.4
+   ],
+   "y": [
+    -42.85,
+    -42.35
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C16",
+   "value": "100nF",
+   "centre": [
+    -23.9,
+    -42.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -24.4,
+    -23.4
+   ],
+   "y": [
+    -42.85,
+    -42.35
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C17",
+   "value": "1uF",
+   "centre": [
+    -22.6,
+    -38.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -22.85,
+    -22.35
+   ],
+   "y": [
+    -38.9,
+    -37.9
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C18",
+   "value": "100nF",
+   "centre": [
+    -11.9,
+    -26.4
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    -12.4,
+    -11.4
+   ],
+   "y": [
+    -26.65,
+    -26.15
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C19",
+   "value": "10uF",
+   "centre": [
+    -1.2,
+    -33.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -2.0,
+    -0.4
+   ],
+   "y": [
+    -34.0,
+    -33.2
+   ],
+   "z": [
+    -2.6,
+    -1.8
+   ],
+   "height": 0.8,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C2",
+   "value": "100nF",
+   "centre": [
+    10.0,
+    -42.65
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    9.5,
+    10.5
+   ],
+   "y": [
+    -42.9,
+    -42.4
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C20",
+   "value": "100nF",
+   "centre": [
+    -0.9,
+    -35.25
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -1.4,
+    -0.4
+   ],
+   "y": [
+    -35.5,
+    -35.0
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C21",
+   "value": "10uF",
+   "centre": [
+    -12.8,
+    -31.0
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -13.2,
+    -12.4
+   ],
+   "y": [
+    -31.8,
+    -30.2
+   ],
+   "z": [
+    -2.6,
+    -1.8
+   ],
+   "height": 0.8,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C22",
+   "value": "100nF",
+   "centre": [
+    -14.2,
+    -31.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -14.45,
+    -13.95
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C23",
+   "value": "100nF",
+   "centre": [
+    22.6,
+    -15.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    22.35,
+    22.85
+   ],
+   "y": [
+    -15.9,
+    -14.9
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C24",
+   "value": "100nF",
+   "centre": [
+    20.1,
+    -39.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    19.85,
+    20.35
+   ],
+   "y": [
+    -39.8,
+    -38.8
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C25",
+   "value": "100nF",
+   "centre": [
+    14.7,
+    -42.7
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    14.2,
+    15.2
+   ],
+   "y": [
+    -42.95,
+    -42.45
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C3",
+   "value": "100nF",
+   "centre": [
+    8.0,
+    -42.75
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    7.5,
+    8.5
+   ],
+   "y": [
+    -43.0,
+    -42.5
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C4",
+   "value": "1uF",
+   "centre": [
+    16.5,
+    -39.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    16.25,
+    16.75
+   ],
+   "y": [
+    -39.8,
+    -38.8
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C5",
+   "value": "22uF",
+   "centre": [
+    18.6,
+    -37.0
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    17.8,
+    19.4
+   ],
+   "y": [
+    -37.4,
+    -36.6
+   ],
+   "z": [
+    -2.6,
+    -1.8
+   ],
+   "height": 0.8,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C6",
+   "value": "100nF",
+   "centre": [
+    20.9,
+    -37.0
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    20.65,
+    21.15
+   ],
+   "y": [
+    -37.5,
+    -36.5
+   ],
+   "z": [
+    -2.3,
+    -1.8
+   ],
+   "height": 0.5,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "C7",
+   "value": "4.7uF",
+   "centre": [
+    -25.4,
+    -25.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -25.8,
+    -25.0
+   ],
+   "y": [
+    -26.2,
+    -24.6
+   ],
+   "z": [
+    -2.6,
+    -1.8
+   ],
+   "height": 0.8,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C8",
+   "value": "10uF",
+   "centre": [
+    -15.6,
+    -21.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -16.0,
+    -15.2
+   ],
+   "y": [
+    -22.2,
+    -20.6
+   ],
+   "z": [
+    -2.6,
+    -1.8
+   ],
+   "height": 0.8,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "C9",
+   "value": "22uF",
+   "centre": [
+    -19.8,
+    -28.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -20.8,
+    -18.8
+   ],
+   "y": [
+    -29.225,
+    -27.975
+   ],
+   "z": [
+    -3.05,
+    -1.8
+   ],
+   "height": 1.25,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "D1",
+   "value": "B5819W SL",
+   "centre": [
+    -15.6,
+    -27.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -17.525,
+    -13.675
+   ],
+   "y": [
+    -28.45,
+    -26.75
+   ],
+   "z": [
+    -3.25,
+    -1.8
+   ],
+   "height": 1.45,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "D2",
+   "value": "B5819W SL",
+   "centre": [
+    2.12,
+    -20.3
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    0.195,
+    4.045
+   ],
+   "y": [
+    -21.15,
+    -19.45
+   ],
+   "z": [
+    -3.25,
+    -1.8
+   ],
+   "height": 1.45,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "J1",
+   "value": "TYPE-C-31-M-12",
+   "centre": [
+    0.0,
+    -45.47
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -4.47,
+    4.47
+   ],
+   "y": [
+    -50.4,
+    -42.5
+   ],
+   "z": [
+    -5.051,
+    -1.8
+   ],
+   "height": 3.251,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "J2",
+   "value": "FH35C-15S-0.3SHW(50)",
+   "centre": [
+    -3.91,
+    -39.0
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -6.438,
+    -2.238
+   ],
+   "y": [
+    -42.053,
+    -35.952
+   ],
+   "z": [
+    -2.705,
+    -1.8
+   ],
+   "height": 0.905,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "J3",
+   "value": "DM3AT-SF-PEJM5",
+   "centre": [
+    -14.05,
+    -40.79
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -21.045,
+    -7.195
+   ],
+   "y": [
+    -49.095,
+    -33.135
+   ],
+   "z": [
+    -3.691,
+    -1.8
+   ],
+   "height": 1.891,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "J4",
+   "value": "S2B-PH-SM4-TB",
+   "centre": [
+    -21.0,
+    -14.93
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    -24.95,
+    -17.05
+   ],
+   "y": [
+    -19.13,
+    -10.53
+   ],
+   "z": [
+    -7.301,
+    -1.8
+   ],
+   "height": 5.501,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "LED1",
+   "value": "Red",
+   "centre": [
+    -5.9,
+    -48.0
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -6.3,
+    -5.49
+   ],
+   "y": [
+    -48.81,
+    -47.19
+   ],
+   "z": [
+    -2.5,
+    -1.8
+   ],
+   "height": 0.7,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "Q1",
+   "value": "UMH3N",
+   "centre": [
+    16.6,
+    -45.4
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    15.55,
+    17.65
+   ],
+   "y": [
+    -46.4,
+    -44.4
+   ],
+   "z": [
+    -2.8,
+    -1.8
+   ],
+   "height": 1.0,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "Q2",
+   "value": "AO3401A",
+   "centre": [
+    -19.8,
+    -21.9
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -21.053,
+    -18.547
+   ],
+   "y": [
+    -23.35,
+    -20.45
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "Q3",
+   "value": "AO3401A",
+   "centre": [
+    -19.8,
+    -25.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -21.053,
+    -18.547
+   ],
+   "y": [
+    -27.05,
+    -24.15
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "Q4",
+   "value": "AO3401A",
+   "centre": [
+    -11.9,
+    -21.2
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -13.153,
+    -10.647
+   ],
+   "y": [
+    -22.65,
+    -19.75
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "Q5",
+   "value": "AO3400A",
+   "centre": [
+    8.7,
+    -34.7
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    7.25,
+    10.15
+   ],
+   "y": [
+    -35.953,
+    -33.447
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "Q6",
+   "value": "AO3400A",
+   "centre": [
+    7.2,
+    -25.3
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    5.947,
+    8.453
+   ],
+   "y": [
+    -26.75,
+    -23.85
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R1",
+   "value": "5.1k",
+   "centre": [
+    10.5,
+    -48.9
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    10.0,
+    11.0
+   ],
+   "y": [
+    -49.15,
+    -48.65
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R10",
+   "value": "75k",
+   "centre": [
+    3.6,
+    -27.4
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    3.2,
+    4.0
+   ],
+   "y": [
+    -28.2,
+    -26.6
+   ],
+   "z": [
+    -2.25,
+    -1.8
+   ],
+   "height": 0.45,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R11",
+   "value": "10k",
+   "centre": [
+    -2.4,
+    -25.0
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -2.9,
+    -1.9
+   ],
+   "y": [
+    -25.25,
+    -24.75
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R12",
+   "value": "10k",
+   "centre": [
+    -22.6,
+    -36.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -22.85,
+    -22.35
+   ],
+   "y": [
+    -36.9,
+    -35.9
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R13",
+   "value": "100k",
+   "centre": [
+    -11.9,
+    -23.8
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -12.4,
+    -11.4
+   ],
+   "y": [
+    -24.05,
+    -23.55
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R14",
+   "value": "10k",
+   "centre": [
+    -11.9,
+    -25.1
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -12.4,
+    -11.4
+   ],
+   "y": [
+    -25.35,
+    -24.85
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R15",
+   "value": "100R",
+   "centre": [
+    9.9,
+    -37.5
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    9.65,
+    10.15
+   ],
+   "y": [
+    -38.0,
+    -37.0
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC ramp zone",
+   "limit": 0.6,
+   "ok": true
+  },
+  {
+   "ref": "R16",
+   "value": "100k",
+   "centre": [
+    10.9,
+    -37.5
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    10.65,
+    11.15
+   ],
+   "y": [
+    -38.0,
+    -37.0
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC ramp zone",
+   "limit": 0.6,
+   "ok": true
+  },
+  {
+   "ref": "R17",
+   "value": "10R",
+   "centre": [
+    -8.6,
+    -26.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -9.4,
+    -7.8
+   ],
+   "y": [
+    -28.0,
+    -24.8
+   ],
+   "z": [
+    -2.35,
+    -1.8
+   ],
+   "height": 0.55,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R18",
+   "value": "33R",
+   "centre": [
+    2.2,
+    -22.5
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    1.2,
+    3.2
+   ],
+   "y": [
+    -23.1,
+    -21.9
+   ],
+   "z": [
+    -2.25,
+    -1.8
+   ],
+   "height": 0.45,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R19",
+   "value": "100R",
+   "centre": [
+    9.6,
+    -25.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    9.35,
+    9.85
+   ],
+   "y": [
+    -26.1,
+    -25.1
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R2",
+   "value": "5.1k",
+   "centre": [
+    -5.9,
+    -43.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -6.15,
+    -5.65
+   ],
+   "y": [
+    -44.1,
+    -43.1
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R20",
+   "value": "100k",
+   "centre": [
+    7.2,
+    -27.6
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    6.7,
+    7.7
+   ],
+   "y": [
+    -27.85,
+    -27.35
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R21",
+   "value": "10k",
+   "centre": [
+    -11.2,
+    -31.3
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -11.45,
+    -10.95
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R22",
+   "value": "10k",
+   "centre": [
+    -15.3,
+    -31.3
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -15.55,
+    -15.05
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R23",
+   "value": "10k",
+   "centre": [
+    -10.1,
+    -31.3
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -10.35,
+    -9.85
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R24",
+   "value": "10k",
+   "centre": [
+    -16.4,
+    -31.3
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -16.65,
+    -16.15
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R25",
+   "value": "100k",
+   "centre": [
+    -9.0,
+    -31.3
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    -9.25,
+    -8.75
+   ],
+   "y": [
+    -31.8,
+    -30.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R26",
+   "value": "100k",
+   "centre": [
+    22.6,
+    -13.2
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    22.35,
+    22.85
+   ],
+   "y": [
+    -13.7,
+    -12.7
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R27",
+   "value": "1M",
+   "centre": [
+    17.7,
+    -39.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    17.45,
+    17.95
+   ],
+   "y": [
+    -39.8,
+    -38.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R28",
+   "value": "1M",
+   "centre": [
+    18.9,
+    -39.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    18.65,
+    19.15
+   ],
+   "y": [
+    -39.8,
+    -38.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R29",
+   "value": "100k",
+   "centre": [
+    21.3,
+    -39.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    21.05,
+    21.55
+   ],
+   "y": [
+    -39.8,
+    -38.8
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R3",
+   "value": "1k",
+   "centre": [
+    18.6,
+    -46.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    18.35,
+    18.85
+   ],
+   "y": [
+    -46.9,
+    -45.9
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R30",
+   "value": "150k",
+   "centre": [
+    19.6,
+    -41.4
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    18.8,
+    20.4
+   ],
+   "y": [
+    -41.8,
+    -41.0
+   ],
+   "z": [
+    -2.25,
+    -1.8
+   ],
+   "height": 0.45,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R31",
+   "value": "4.7k",
+   "centre": [
+    24.4,
+    -19.3
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    23.9,
+    24.9
+   ],
+   "y": [
+    -19.55,
+    -19.05
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R32",
+   "value": "4.7k",
+   "centre": [
+    24.4,
+    -20.5
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    23.9,
+    24.9
+   ],
+   "y": [
+    -20.75,
+    -20.25
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R4",
+   "value": "1k",
+   "centre": [
+    19.75,
+    -46.4
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    19.5,
+    20.0
+   ],
+   "y": [
+    -46.9,
+    -45.9
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R5",
+   "value": "10k",
+   "centre": [
+    16.5,
+    -37.2
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    16.25,
+    16.75
+   ],
+   "y": [
+    -37.7,
+    -36.7
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R6",
+   "value": "10k",
+   "centre": [
+    12.6,
+    -20.2
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    12.1,
+    13.1
+   ],
+   "y": [
+    -20.45,
+    -19.95
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R7",
+   "value": "2.7k",
+   "centre": [
+    -23.0,
+    -25.4
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -23.4,
+    -22.6
+   ],
+   "y": [
+    -26.2,
+    -24.6
+   ],
+   "z": [
+    -2.25,
+    -1.8
+   ],
+   "height": 0.45,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "R8",
+   "value": "1k",
+   "centre": [
+    -5.9,
+    -45.7
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -6.15,
+    -5.65
+   ],
+   "y": [
+    -46.2,
+    -45.2
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "R9",
+   "value": "100k",
+   "centre": [
+    -17.2,
+    -23.9
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    -17.45,
+    -16.95
+   ],
+   "y": [
+    -24.4,
+    -23.4
+   ],
+   "z": [
+    -2.15,
+    -1.8
+   ],
+   "height": 0.35,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "SW1",
+   "value": "SIDE",
+   "centre": [
+    25.48,
+    -15.6
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    23.9,
+    27.46
+   ],
+   "y": [
+    -17.902,
+    -13.302
+   ],
+   "z": [
+    -5.1,
+    -1.8
+   ],
+   "height": 3.3,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "SW2",
+   "value": "BOOT",
+   "centre": [
+    20.2,
+    -13.5
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    18.75,
+    21.65
+   ],
+   "y": [
+    -15.9,
+    -11.1
+   ],
+   "z": [
+    -3.75,
+    -1.8
+   ],
+   "height": 1.95,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "SW3",
+   "value": "RESET",
+   "centre": [
+    20.2,
+    -19.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    18.75,
+    21.65
+   ],
+   "y": [
+    -22.0,
+    -17.2
+   ],
+   "z": [
+    -3.75,
+    -1.8
+   ],
+   "height": 1.95,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U1",
+   "value": "ESP32-PICO-MINI-02-N8R2",
+   "centre": [
+    16.2,
+    -29.3
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    10.6,
+    27.2
+   ],
+   "y": [
+    -35.9,
+    -22.7
+   ],
+   "z": [
+    -4.21,
+    -1.8
+   ],
+   "height": 2.41,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U2",
+   "value": "CH9102F",
+   "centre": [
+    11.9,
+    -45.6
+   ],
+   "kicad_angle": 90.0,
+   "x": [
+    9.89,
+    13.91
+   ],
+   "y": [
+    -47.61,
+    -43.59
+   ],
+   "z": [
+    -2.62,
+    -1.8
+   ],
+   "height": 0.82,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  },
+  {
+   "ref": "U3",
+   "value": "MCP73831T-2ACI/OT",
+   "centre": [
+    -24.6,
+    -21.9
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -26.05,
+    -23.15
+   ],
+   "y": [
+    -23.406,
+    -20.394
+   ],
+   "z": [
+    -3.051,
+    -1.8
+   ],
+   "height": 1.251,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U4",
+   "value": "RT9080-33GJ5",
+   "centre": [
+    -24.6,
+    -29.0
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -26.05,
+    -23.15
+   ],
+   "y": [
+    -30.403,
+    -27.597
+   ],
+   "z": [
+    -2.851,
+    -1.8
+   ],
+   "height": 1.051,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U5",
+   "value": "MAX17048G+T10",
+   "centre": [
+    -19.8,
+    -31.2
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -20.8,
+    -18.8
+   ],
+   "y": [
+    -32.21,
+    -30.19
+   ],
+   "z": [
+    -2.58,
+    -1.8
+   ],
+   "height": 0.78,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U6",
+   "value": "MPR121QR2",
+   "centre": [
+    0.6,
+    -27.4
+   ],
+   "kicad_angle": 180.0,
+   "x": [
+    -0.9,
+    2.1
+   ],
+   "y": [
+    -28.9,
+    -25.9
+   ],
+   "z": [
+    -2.365,
+    -1.8
+   ],
+   "height": 0.565,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U7",
+   "value": "DRV2605LDGSR",
+   "centre": [
+    -25.2,
+    -38.7
+   ],
+   "kicad_angle": 0.0,
+   "x": [
+    -26.7,
+    -23.7
+   ],
+   "y": [
+    -41.206,
+    -36.194
+   ],
+   "z": [
+    -3.051,
+    -1.8
+   ],
+   "height": 1.251,
+   "zone": "general",
+   "limit": 5.6,
+   "ok": true
+  },
+  {
+   "ref": "U8",
+   "value": "USBLC6-2SC6",
+   "centre": [
+    7.0,
+    -45.6
+   ],
+   "kicad_angle": 270.0,
+   "x": [
+    5.594,
+    8.406
+   ],
+   "y": [
+    -47.05,
+    -44.15
+   ],
+   "z": [
+    -3.451,
+    -1.8
+   ],
+   "height": 1.651,
+   "zone": "FPC run zone",
+   "limit": 4.9,
+   "ok": true
+  }
+ ],
+ "tallest_part": "J4",
+ "lowest_component_z": -7.301,
+ "verification": {
+  "status": "PASS",
+  "failures": [],
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "drc_errors": 0,
+  "drc_warnings": 32,
+  "unconnected": 0,
+  "drc_warning_types": [
+   "silk_edge_clearance",
+   "silk_over_copper",
+   "silk_overlap"
+  ],
+  "netlist_pads_checked": 366,
+  "electrode_gaps": {
+   "1-2": 0.4,
+   "2-3": 0.4,
+   "3-4": 0.4,
+   "4-5": 0.4,
+   "5-6": 0.4,
+   "6-7": 0.4,
+   "7-8": 0.4,
+   "8-1": 0.4
+  },
+  "sector_centroid_angles": {
+   "1": 89.739,
+   "2": 44.739,
+   "3": -0.261,
+   "4": -45.261,
+   "5": -90.261,
+   "6": -135.261,
+   "7": 179.739,
+   "8": 134.739
+  },
+  "l2_hatch_copper_fraction": 0.356,
+  "power_net_min_width": {
+   "VBUS": 0.2,
+   "VSYS": 0.2,
+   "VBAT": 0.25,
+   "BAT_P": 0.4,
+   "3V3": 0.15,
+   "3V3_PERIPH": 0.3,
+   "LCD_LEDA": 0.3,
+   "LCD_LEDK": 0.2
+  },
+  "power_net_length_below_0p4": {
+   "VBUS": 63.826,
+   "VSYS": 3.86,
+   "VBAT": 1.31,
+   "BAT_P": 0,
+   "3V3": 6.867,
+   "3V3_PERIPH": 14.54,
+   "LCD_LEDA": 2.907,
+   "LCD_LEDK": 0.6
+  },
+  "power_net_narrow_away_from_pins": {
+   "VSYS": 0,
+   "VBAT": 0,
+   "3V3": 0,
+   "LCD_LEDA": 0,
+   "LCD_LEDK": 0
+  },
+  "usb_track_length": {
+   "USB_DP": 15.899,
+   "USB_DN": 14.906
+  },
+  "track_segments": 1220,
+  "vias": 272,
+  "vias_in_wheel_by_net": {
+   "3V3": 5,
+   "3V3_PERIPH": 7,
+   "BZ_GATE": 3,
+   "ELE2": 1,
+   "ELE8": 2,
+   "GND": 31,
+   "I2C_SCL": 2,
+   "I2C_SDA": 2,
+   "LCD_CS": 2,
+   "LCD_DC": 6,
+   "LCD_LEDA": 2,
+   "LCD_RST": 2,
+   "LCD_TE": 4,
+   "PERIPH_EN_N": 4,
+   "SD_CD": 2,
+   "SD_CS": 10,
+   "TOUCH_IRQ": 2,
+   "VBAT": 3,
+   "VBUS": 6,
+   "VSYS": 3
+  },
+  "l3_nets_above_electrodes": [
+   "3V3",
+   "3V3_PERIPH",
+   "BZ_GATE",
+   "CHG_STAT",
+   "ELE2",
+   "ELE8",
+   "I2C_SCL",
+   "I2C_SDA",
+   "LCD_CS",
+   "LCD_DC",
+   "LCD_LEDA",
+   "LCD_RST",
+   "LCD_TE",
+   "PERIPH_EN_N",
+   "SD_CD",
+   "SD_CS",
+   "SIDE_BTN",
+   "TOUCH_IRQ",
+   "VBAT",
+   "VBAT_SENSE",
+   "VBUS",
+   "VSYS"
+  ],
+  "l3_track_in_disc_mm": {
+   "3V3": [
+    41.227,
+    45.246
+   ],
+   "3V3_PERIPH": [
+    28.142,
+    28.142
+   ],
+   "BZ_GATE": [
+    4.073,
+    4.073
+   ],
+   "CHG_STAT": [
+    0.0,
+    4.727
+   ],
+   "ELE2": [
+    12.782,
+    12.782
+   ],
+   "ELE8": [
+    18.374,
+    18.374
+   ],
+   "I2C_SCL": [
+    7.026,
+    7.026
+   ],
+   "I2C_SDA": [
+    34.517,
+    36.308
+   ],
+   "LCD_CS": [
+    11.844,
+    11.844
+   ],
+   "LCD_DC": [
+    23.06,
+    23.06
+   ],
+   "LCD_LEDA": [
+    11.907,
+    11.907
+   ],
+   "LCD_RST": [
+    15.381,
+    15.381
+   ],
+   "LCD_TE": [
+    22.898,
+    22.898
+   ],
+   "PERIPH_EN_N": [
+    12.386,
+    12.386
+   ],
+   "SD_CD": [
+    7.785,
+    7.785
+   ],
+   "SD_CS": [
+    12.207,
+    12.744
+   ],
+   "SIDE_BTN": [
+    10.793,
+    13.556
+   ],
+   "TOUCH_IRQ": [
+    23.885,
+    23.885
+   ],
+   "VBAT": [
+    20.281,
+    21.319
+   ],
+   "VBAT_SENSE": [
+    0.0,
+    0.253
+   ],
+   "VBUS": [
+    40.927,
+    42.53
+   ],
+   "VSYS": [
+    23.497,
+    23.633
+   ]
+  },
+  "disc_edge_crossings": {},
+  "vbus_main_paths": {
+   "J1_to_D1": {
+    "widest": 0.2,
+    "narrow_mm": {
+     "L1 0.20": 9.575,
+     "L1 0.30": 22.662,
+     "L3 0.30": 13.88
+    }
+   },
+   "J1_to_U3_VIN": {
+    "widest": 0.2,
+    "narrow_mm": {
+     "L1 0.20": 9.575,
+     "L1 0.30": 22.662,
+     "L3 0.30": 13.88
+    }
+   }
+  },
+  "sha256": {
+   "harmony-mark8-slab.kicad_pcb": "c0e475cb78ee24fcab084dbe1da4520aa57a643ba532c60eec6f3aa1bf1c25a3",
+   "harmony-mark8-slab.kicad_sch": "675e3ac1c41c99edf1fa21b1a9c54dc3d6d48955e4e5162bed1d489fe08b9d51",
+   "netlist.xml": "cef984f2c35747eeeec6262f00653eea2460624b3a3017a6d43bf1f887172e02"
+  }
+ }
+}

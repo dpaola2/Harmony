@@ -1,0 +1,39 @@
+{
+ "outline_x": 58.6,
+ "outline_y": 103.5,
+ "thickness": 9.5,
+ "z_range": [
+  -9.5,
+  0.0
+ ],
+ "active_area_from_step": [
+  -24.481,
+  24.479,
+  -1.512,
+  47.448
+ ],
+ "active_area_spec": [
+  -24.48,
+  24.48,
+  -1.51,
+  47.45
+ ],
+ "window_measured_at_z-0.7": [
+  -24.777,
+  24.777,
+  -1.807,
+  47.748
+ ],
+ "aa_centre": [
+  -0.001,
+  22.968
+ ],
+ "window_centre": [
+  0.0,
+  22.97
+ ],
+ "centre_offset": [
+  0.001,
+  0.002
+ ]
+}

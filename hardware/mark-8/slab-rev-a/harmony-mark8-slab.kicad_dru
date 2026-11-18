@@ -1,0 +1,18 @@
+(version 1)
+# Board rules from SPEC 6: 0.127 minimum space everywhere (net classes route at 0.13), 0.2 hole clearance.
+# The board-level floors in the project are lower only so the vendor land patterns below can pass.
+(rule "board minimum space"
+  (constraint clearance (min 0.127mm)))
+(rule "board hole clearance"
+  (constraint hole_clearance (min 0.2mm)))
+# Vendor land patterns with pad gaps below 0.127 (JLCPCB 4-layer minimum space is 0.09).
+(rule "J1 USB-C vendor land pattern"
+  (condition "A.memberOfFootprint('J1') && B.memberOfFootprint('J1')")
+  (constraint clearance (min 0.09mm)))
+(rule "U6 MPR121 0.4 mm pitch land pattern"
+  (condition "A.memberOfFootprint('U6') && B.memberOfFootprint('U6')")
+  (constraint clearance (min 0.12mm)))
+# SKRTLAE010 guide-boss holes sit 0.07 mm from the switch's own pads (Alps land pattern).
+(rule "SW1 vendor guide-boss holes"
+  (condition "A.memberOfFootprint('SW1') && B.memberOfFootprint('SW1')")
+  (constraint hole_clearance (min 0.0mm)))

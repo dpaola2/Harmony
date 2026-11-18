@@ -1,0 +1,516 @@
+{
+ "checked": "2026-11-17T14:51:30",
+ "parts": {
+  "C110293": {
+   "refs": [
+    "SW1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "SKRTLAE010",
+   "brand": "ALPSALPINE",
+   "library_type": "expand",
+   "stock": 30848,
+   "package": "SMD,4.5x3.4mm",
+   "unit_price_usd": 0.1437
+  },
+  "C114218": {
+   "refs": [
+    "J3"
+   ],
+   "qty_per_board": 1,
+   "mpn": "DM3AT-SF-PEJM5",
+   "brand": "HRS(Hirose)",
+   "library_type": "expand",
+   "stock": 14403,
+   "package": "SMD",
+   "unit_price_usd": 1.3925
+  },
+  "C11702": {
+   "refs": [
+    "R3",
+    "R4",
+    "R8"
+   ],
+   "qty_per_board": 3,
+   "mpn": "0402WGF1001TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 30684887,
+   "package": "0402",
+   "unit_price_usd": 0.0013
+  },
+  "C13167": {
+   "refs": [
+    "R7"
+   ],
+   "qty_per_board": 1,
+   "mpn": "0603WAF2701T5E",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 724046,
+   "package": "0603",
+   "unit_price_usd": 0.0032
+  },
+  "C15127": {
+   "refs": [
+    "Q4",
+    "Q2",
+    "Q3"
+   ],
+   "qty_per_board": 3,
+   "mpn": "AO3401A",
+   "brand": "Alpha & Omega Semicon",
+   "library_type": "base",
+   "stock": 1430690,
+   "package": "SOT-23",
+   "unit_price_usd": 0.0815
+  },
+  "C1525": {
+   "refs": [
+    "C2",
+    "C3",
+    "C25",
+    "C20",
+    "C18",
+    "C22",
+    "C6",
+    "C24",
+    "C13",
+    "C14",
+    "C16",
+    "C23"
+   ],
+   "qty_per_board": 12,
+   "mpn": "CL05B104KO5NNNC",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 35750977,
+   "package": "0402",
+   "unit_price_usd": 0.0024
+  },
+  "C15850": {
+   "refs": [
+    "C1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "CL21A106KAYNNNE",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 9019373,
+   "package": "0805",
+   "unit_price_usd": 0.0312
+  },
+  "C165948": {
+   "refs": [
+    "J1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "TYPE-C-31-M-12",
+   "brand": "Korean Hroparts Elec",
+   "library_type": "expand",
+   "stock": 511881,
+   "package": "SMD",
+   "unit_price_usd": 0.1871
+  },
+  "C17634": {
+   "refs": [
+    "R18"
+   ],
+   "qty_per_board": 1,
+   "mpn": "0805W8F330JT5E",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 1112403,
+   "package": "0805",
+   "unit_price_usd": 0.0046
+  },
+  "C17903": {
+   "refs": [
+    "R17"
+   ],
+   "qty_per_board": 1,
+   "mpn": "1206W4F100JT5E",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 1331047,
+   "package": "1206",
+   "unit_price_usd": 0.0061
+  },
+  "C19666": {
+   "refs": [
+    "C7"
+   ],
+   "qty_per_board": 1,
+   "mpn": "CL10A475KO8NNNC",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 3366971,
+   "package": "0603",
+   "unit_price_usd": 0.015
+  },
+  "C19702": {
+   "refs": [
+    "C19",
+    "C21",
+    "C8"
+   ],
+   "qty_per_board": 3,
+   "mpn": "CL10A106KP8NNNC",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 11070715,
+   "package": "0603",
+   "unit_price_usd": 0.0233
+  },
+  "C20917": {
+   "refs": [
+    "Q5",
+    "Q6"
+   ],
+   "qty_per_board": 2,
+   "mpn": "AO3400A",
+   "brand": "Alpha & Omega Semicon",
+   "library_type": "base",
+   "stock": 1176984,
+   "package": "SOT-23",
+   "unit_price_usd": 0.079
+  },
+  "C22807": {
+   "refs": [
+    "R30"
+   ],
+   "qty_per_board": 1,
+   "mpn": "0603WAF1503T5E",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 901537,
+   "package": "0603",
+   "unit_price_usd": 0.0017
+  },
+  "C2286": {
+   "refs": [
+    "LED1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "KT-0603R",
+   "brand": "Hubei KENTO Elec",
+   "library_type": "base",
+   "stock": 8694155,
+   "package": "0603",
+   "unit_price_usd": 0.0077
+  },
+  "C23242": {
+   "refs": [
+    "R10"
+   ],
+   "qty_per_board": 1,
+   "mpn": "0603WAF7502T5E",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 674349,
+   "package": "0603",
+   "unit_price_usd": 0.0021
+  },
+  "C25076": {
+   "refs": [
+    "R15",
+    "R19"
+   ],
+   "qty_per_board": 2,
+   "mpn": "0402WGF1000TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 10449791,
+   "package": "0402",
+   "unit_price_usd": 0.0012
+  },
+  "C25741": {
+   "refs": [
+    "R16",
+    "R13",
+    "R25",
+    "R29",
+    "R9",
+    "R20",
+    "R26"
+   ],
+   "qty_per_board": 7,
+   "mpn": "0402WGF1003TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 9760008,
+   "package": "0402",
+   "unit_price_usd": 0.0009
+  },
+  "C25744": {
+   "refs": [
+    "R14",
+    "R21",
+    "R22",
+    "R23",
+    "R24",
+    "R5",
+    "R6",
+    "R11",
+    "R12"
+   ],
+   "qty_per_board": 9,
+   "mpn": "0402WGF1002TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 26231207,
+   "package": "0402",
+   "unit_price_usd": 0.0015
+  },
+  "C25900": {
+   "refs": [
+    "R31",
+    "R32"
+   ],
+   "qty_per_board": 2,
+   "mpn": "0402WGF4701TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 13115874,
+   "package": "0402",
+   "unit_price_usd": 0.0017
+  },
+  "C25905": {
+   "refs": [
+    "R1",
+    "R2"
+   ],
+   "qty_per_board": 2,
+   "mpn": "0402WGF5101TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 4476513,
+   "package": "0402",
+   "unit_price_usd": 0.0014
+  },
+  "C26083": {
+   "refs": [
+    "R27",
+    "R28"
+   ],
+   "qty_per_board": 2,
+   "mpn": "0402WGF1004TCE",
+   "brand": "UNI-ROYAL(Uniroyal Elec)",
+   "library_type": "base",
+   "stock": 2905916,
+   "package": "0402",
+   "unit_price_usd": 0.0011
+  },
+  "C2682616": {
+   "refs": [
+    "U5"
+   ],
+   "qty_per_board": 1,
+   "mpn": "MAX17048G+T10",
+   "brand": "Analog Devices Inc./Maxim Integrated",
+   "library_type": "expand",
+   "stock": 25968,
+   "package": "DFN-8-EP(2x2)",
+   "unit_price_usd": 1.9462
+  },
+  "C2858418": {
+   "refs": [
+    "U2"
+   ],
+   "qty_per_board": 1,
+   "mpn": "CH9102F",
+   "brand": "WCH(Jiangsu Qin Heng)",
+   "library_type": "expand",
+   "stock": 14274,
+   "package": "QFN-24-EP(4x4)",
+   "unit_price_usd": 1.2418
+  },
+  "C2889267": {
+   "refs": [
+    "J2"
+   ],
+   "qty_per_board": 1,
+   "mpn": "FH35C-15S-0.3SHW(50)",
+   "brand": "HRS(Hirose)",
+   "library_type": "expand",
+   "stock": 32459,
+   "package": "SMD,P=0.3mm,Surface Mount\uff0cRight Angle",
+   "unit_price_usd": 0.3115
+  },
+  "C2980306": {
+   "refs": [
+    "U1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "ESP32-PICO-MINI-02-N8R2",
+   "brand": "Espressif Systems",
+   "library_type": "expand",
+   "stock": 892,
+   "package": "SMD-53P,16.6x13.2mm",
+   "unit_price_usd": 5.6107
+  },
+  "C424093": {
+   "refs": [
+    "U3"
+   ],
+   "qty_per_board": 1,
+   "mpn": "MCP73831T-2ACI/OT",
+   "brand": "Microchip Tech",
+   "library_type": "expand",
+   "stock": 8401,
+   "package": "SOT-23-5",
+   "unit_price_usd": 0.7913
+  },
+  "C45783": {
+   "refs": [
+    "C9"
+   ],
+   "qty_per_board": 1,
+   "mpn": "CL21A226MAQNNNE",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 3830882,
+   "package": "0805",
+   "unit_price_usd": 0.1085
+  },
+  "C527464": {
+   "refs": [
+    "U7"
+   ],
+   "qty_per_board": 1,
+   "mpn": "DRV2605LDGSR",
+   "brand": "Texas Instruments",
+   "library_type": "expand",
+   "stock": 7602,
+   "package": "VSSOP-10-0.5mm",
+   "unit_price_usd": 1.2336
+  },
+  "C52923": {
+   "refs": [
+    "C4",
+    "C10",
+    "C11",
+    "C12",
+    "C15",
+    "C17"
+   ],
+   "qty_per_board": 6,
+   "mpn": "CL05A105KA5NQNC",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 9281336,
+   "package": "0402",
+   "unit_price_usd": 0.0055
+  },
+  "C54582899": {
+   "refs": [
+    "J4"
+   ],
+   "qty_per_board": 1,
+   "mpn": "XY-S2B-PH-SM4-TB",
+   "brand": "XYECONN",
+   "library_type": "expand",
+   "stock": 2946,
+   "package": "SMD,P=2mm,Surface Mount\uff0cRight Angle",
+   "unit_price_usd": 0.0469
+  },
+  "C59461": {
+   "refs": [
+    "C5"
+   ],
+   "qty_per_board": 1,
+   "mpn": "CL10A226MQ8NRNC",
+   "brand": "Samsung Electro-Mechanics",
+   "library_type": "base",
+   "stock": 6048034,
+   "package": "0603",
+   "unit_price_usd": 0.0222
+  },
+  "C62892": {
+   "refs": [
+    "Q1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "UMH3N",
+   "brand": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+   "library_type": "expand",
+   "stock": 43493,
+   "package": "SOT-363",
+   "unit_price_usd": 0.0498
+  },
+  "C720477": {
+   "refs": [
+    "SW2",
+    "SW3"
+   ],
+   "qty_per_board": 2,
+   "mpn": "TS-1088-AR02016",
+   "brand": "XUNPU",
+   "library_type": "base",
+   "stock": 852648,
+   "package": "SMD,4x3mm",
+   "unit_price_usd": 0.0517
+  },
+  "C7519": {
+   "refs": [
+    "U8"
+   ],
+   "qty_per_board": 1,
+   "mpn": "USBLC6-2SC6",
+   "brand": "STMicroelectronics",
+   "library_type": "expand",
+   "stock": 37686,
+   "package": "SOT-23-6L",
+   "unit_price_usd": 0.1571
+  },
+  "C841192": {
+   "refs": [
+    "U4"
+   ],
+   "qty_per_board": 1,
+   "mpn": "RT9080-33GJ5",
+   "brand": "Richtek Tech",
+   "library_type": "expand",
+   "stock": 26824,
+   "package": "TSOT-23-5",
+   "unit_price_usd": 0.1198
+  },
+  "C8598": {
+   "refs": [
+    "D1",
+    "D2"
+   ],
+   "qty_per_board": 2,
+   "mpn": "B5819W SL",
+   "brand": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+   "library_type": "base",
+   "stock": 719076,
+   "package": "SOD-123",
+   "unit_price_usd": 0.0256
+  },
+  "C91322": {
+   "refs": [
+    "U6"
+   ],
+   "qty_per_board": 1,
+   "mpn": "MPR121QR2",
+   "brand": "NXP Semicon",
+   "library_type": "expand",
+   "stock": 1014,
+   "package": "QFN-20(3x3)",
+   "unit_price_usd": 2.6931
+  },
+  "C94598": {
+   "refs": [
+    "BZ1"
+   ],
+   "qty_per_board": 1,
+   "mpn": "MLT-5020",
+   "brand": "Jiangsu Huaneng Elec",
+   "library_type": "expand",
+   "stock": 128701,
+   "package": "SMD,5x5mm",
+   "unit_price_usd": 0.3943
+  }
+ }
+}

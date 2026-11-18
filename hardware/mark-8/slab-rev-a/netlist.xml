@@ -1,0 +1,2810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/dave/projects/Harmony2/hardware/mark-8/slab-rev-a/harmony-mark8-slab.kicad_sch</source>
+    <date>2026-11-17T20:10:18-0500</date>
+    <tool>Eeschema 8.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Harmony Mark-8 slab</title>
+        <company>Harmony</company>
+        <rev>A</rev>
+        <date>2026-11-17</date>
+        <source>harmony-mark8-slab.kicad_sch</source>
+        <comment number="1" value="Generated from design.py"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="BZ1">
+      <value>MLT-5020</value>
+      <footprint>Harmony8:Buzzer_MLT-5020</footprint>
+      <fields>
+        <field name="LCSC">C94598</field>
+        <field name="MPN">Huawha MLT-5020</field>
+        <field name="Footprint">Harmony8:Buzzer_MLT-5020</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="BUZZER" description=""/>
+      <property name="LCSC" value="C94598"/>
+      <property name="MPN" value="Huawha MLT-5020"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5da91875-aa9d-590d-a797-427255edb359</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>10uF</value>
+      <footprint>Harmony8:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="LCSC">C15850</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C15850"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db58d129-a068-565e-9abd-b42d3bd92f63</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ca99143-f2d2-5a43-b8d8-4414566691c3</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>321e38e6-fae4-579d-b4a1-3323edd21c66</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1261db72-3ab1-56e3-8ce5-9ce13754ef0c</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>22uF</value>
+      <footprint>Harmony8:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C59461</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C59461"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b4ae2de0-4994-51fb-9c19-8cb914ace68a</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d1709f4-aee1-58ed-85d0-05926db6c2c2</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>4.7uF</value>
+      <footprint>Harmony8:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19666</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C19666"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4bb4dcef-d152-5e94-a4f8-f41013b39815</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>10uF</value>
+      <footprint>Harmony8:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C19702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5e998f62-c52c-5561-b1a3-cbb86dd90c4b</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>22uF</value>
+      <footprint>Harmony8:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="LCSC">C45783</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C45783"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fcc45dbf-f9e8-50ba-9030-9874ba5f1309</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08b91254-fd0d-549d-9729-a0978295463f</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>22ef8bc5-6954-566d-912b-ecb15219c117</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5094d096-5777-5456-b7b0-0deab7daecbb</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8d2e83d0-19dd-5cf8-b0a1-abb1143c5111</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cabc8682-ca8b-51bb-b671-993df57fec9c</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e4019ee7-1115-5e90-a172-d626c33c052b</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cb8b5942-bc67-5166-8fe9-2e61903e6c8b</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>1uF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C52923</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C52923"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e5556543-a2eb-5c8a-964e-cc80b02daabb</tstamps>
+    </comp>
+    <comp ref="C18">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c4b095f6-24cd-55c5-ac05-16de94f0a035</tstamps>
+    </comp>
+    <comp ref="C19">
+      <value>10uF</value>
+      <footprint>Harmony8:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C19702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>af818605-bcc3-521a-8ce2-f15ee7eb8740</tstamps>
+    </comp>
+    <comp ref="C20">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f686c1d-4439-5908-98b7-9689959192b9</tstamps>
+    </comp>
+    <comp ref="C21">
+      <value>10uF</value>
+      <footprint>Harmony8:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C19702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6fcfe873-6ac5-51a0-ba14-cb1b97d8c474</tstamps>
+    </comp>
+    <comp ref="C22">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1bc57ee4-38d2-5971-88d1-84c11764cf71</tstamps>
+    </comp>
+    <comp ref="C23">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dec1b109-9f37-59fb-b765-13a3063624c2</tstamps>
+    </comp>
+    <comp ref="C24">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>20285410-72d1-519d-accb-3767d1dc16b2</tstamps>
+    </comp>
+    <comp ref="C25">
+      <value>100nF</value>
+      <footprint>Harmony8:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="C" description=""/>
+      <property name="LCSC" value="C1525"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b1dd2b1-d6dc-5d8f-9dfe-cb53ffaafcab</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>B5819W SL</value>
+      <footprint>Harmony8:SOD-123_B5819W</footprint>
+      <fields>
+        <field name="LCSC">C8598</field>
+        <field name="MPN">CJ B5819W SL</field>
+        <field name="Footprint">Harmony8:SOD-123_B5819W</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="D" description=""/>
+      <property name="LCSC" value="C8598"/>
+      <property name="MPN" value="CJ B5819W SL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>78c2e583-8f46-5af3-8fe4-1c57a51d10e3</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>B5819W SL</value>
+      <footprint>Harmony8:SOD-123_B5819W</footprint>
+      <fields>
+        <field name="LCSC">C8598</field>
+        <field name="MPN">CJ B5819W SL</field>
+        <field name="Footprint">Harmony8:SOD-123_B5819W</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="D" description=""/>
+      <property name="LCSC" value="C8598"/>
+      <property name="MPN" value="CJ B5819W SL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>392a22ef-4962-58b4-bb58-c1dd5ad28182</tstamps>
+    </comp>
+    <comp ref="E1">
+      <value>Touch wheel</value>
+      <footprint>Harmony8:TouchWheel</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TouchWheel</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="WHEEL" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>21c7961d-59eb-59df-af15-f219bf396e34</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>TYPE-C-31-M-12</value>
+      <footprint>Harmony8:USB-C_HRO_TYPE-C-31-M-12</footprint>
+      <fields>
+        <field name="LCSC">C165948</field>
+        <field name="MPN">HRO TYPE-C-31-M-12</field>
+        <field name="Footprint">Harmony8:USB-C_HRO_TYPE-C-31-M-12</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="USB_C" description=""/>
+      <property name="LCSC" value="C165948"/>
+      <property name="MPN" value="HRO TYPE-C-31-M-12"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e0ad8a77-2777-5bfe-a83f-f53c2b526962</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>FH35C-15S-0.3SHW(50)</value>
+      <footprint>Harmony8:FH35C-15S-0.3SHW</footprint>
+      <fields>
+        <field name="LCSC">C2889267</field>
+        <field name="MPN">Hirose FH35C-15S-0.3SHW(50)</field>
+        <field name="Footprint">Harmony8:FH35C-15S-0.3SHW</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="FPC15" description=""/>
+      <property name="LCSC" value="C2889267"/>
+      <property name="MPN" value="Hirose FH35C-15S-0.3SHW(50)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d1c25431-074e-5f15-89f9-6d5135d824cf</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>DM3AT-SF-PEJM5</value>
+      <footprint>Harmony8:DM3AT-SF-PEJM5</footprint>
+      <fields>
+        <field name="LCSC">C114218</field>
+        <field name="MPN">Hirose DM3AT-SF-PEJM5</field>
+        <field name="Footprint">Harmony8:DM3AT-SF-PEJM5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="MICROSD" description=""/>
+      <property name="LCSC" value="C114218"/>
+      <property name="MPN" value="Hirose DM3AT-SF-PEJM5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a0f78c88-555a-582f-a41b-38d51e6447a5</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>S2B-PH-SM4-TB</value>
+      <footprint>Harmony8:JST_PH_S2B-PH-SM4-TB</footprint>
+      <fields>
+        <field name="LCSC">C54582899</field>
+        <field name="MPN">XYECONN XY-S2B-PH-SM4-TB (JST PH 2.0 side entry)</field>
+        <field name="Footprint">Harmony8:JST_PH_S2B-PH-SM4-TB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="BATT" description=""/>
+      <property name="LCSC" value="C54582899"/>
+      <property name="MPN" value="XYECONN XY-S2B-PH-SM4-TB (JST PH 2.0 side entry)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59622c2a-72de-5c11-9b37-a631fcc53e5d</tstamps>
+    </comp>
+    <comp ref="LED1">
+      <value>Red</value>
+      <footprint>Harmony8:LED_0603_EasyEDA</footprint>
+      <fields>
+        <field name="LCSC">C2286</field>
+        <field name="MPN">KENTO KT-0603R</field>
+        <field name="Footprint">Harmony8:LED_0603_EasyEDA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="LED" description=""/>
+      <property name="LCSC" value="C2286"/>
+      <property name="MPN" value="KENTO KT-0603R"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da913c59-b4bc-5ed3-981a-59c6b5a07565</tstamps>
+    </comp>
+    <comp ref="M1">
+      <value>M+</value>
+      <footprint>Harmony8:MotorPad_2.0x1.5</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:MotorPad_2.0x1.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="PAD" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f90bc942-d0ea-5e15-b01a-b2ff754fa835</tstamps>
+    </comp>
+    <comp ref="M2">
+      <value>M-</value>
+      <footprint>Harmony8:MotorPad_2.0x1.5</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:MotorPad_2.0x1.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="PAD" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59339420-6e06-5059-b28d-41297a6ba700</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>UMH3N</value>
+      <footprint>Harmony8:SOT-363</footprint>
+      <fields>
+        <field name="LCSC">C62892</field>
+        <field name="MPN">UMH3N dual DTC143T</field>
+        <field name="Footprint">Harmony8:SOT-363</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="UMH3N" description=""/>
+      <property name="LCSC" value="C62892"/>
+      <property name="MPN" value="UMH3N dual DTC143T"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c714690c-704e-51c1-903e-7163ffa33352</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>AO3401A</value>
+      <footprint>Harmony8:SOT-23_AO3401A</footprint>
+      <fields>
+        <field name="LCSC">C15127</field>
+        <field name="MPN">AOS AO3401A</field>
+        <field name="Footprint">Harmony8:SOT-23_AO3401A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="PMOS" description=""/>
+      <property name="LCSC" value="C15127"/>
+      <property name="MPN" value="AOS AO3401A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>63f19691-4b3e-59b6-a4e5-f179cd9b5f37</tstamps>
+    </comp>
+    <comp ref="Q3">
+      <value>AO3401A</value>
+      <footprint>Harmony8:SOT-23_AO3401A</footprint>
+      <fields>
+        <field name="LCSC">C15127</field>
+        <field name="MPN">AOS AO3401A</field>
+        <field name="Footprint">Harmony8:SOT-23_AO3401A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="PMOS" description=""/>
+      <property name="LCSC" value="C15127"/>
+      <property name="MPN" value="AOS AO3401A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ade4e3b3-a037-5a0e-8019-ec168c270297</tstamps>
+    </comp>
+    <comp ref="Q4">
+      <value>AO3401A</value>
+      <footprint>Harmony8:SOT-23_AO3401A</footprint>
+      <fields>
+        <field name="LCSC">C15127</field>
+        <field name="MPN">AOS AO3401A</field>
+        <field name="Footprint">Harmony8:SOT-23_AO3401A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="PMOS" description=""/>
+      <property name="LCSC" value="C15127"/>
+      <property name="MPN" value="AOS AO3401A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9eb21432-565b-50ff-bbb9-6cbdcc8084a8</tstamps>
+    </comp>
+    <comp ref="Q5">
+      <value>AO3400A</value>
+      <footprint>Harmony8:SOT-23_AO3400A</footprint>
+      <fields>
+        <field name="LCSC">C20917</field>
+        <field name="MPN">AOS AO3400A</field>
+        <field name="Footprint">Harmony8:SOT-23_AO3400A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="NMOS" description=""/>
+      <property name="LCSC" value="C20917"/>
+      <property name="MPN" value="AOS AO3400A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fadc1adf-9ef8-5d3c-8539-86c929479d5b</tstamps>
+    </comp>
+    <comp ref="Q6">
+      <value>AO3400A</value>
+      <footprint>Harmony8:SOT-23_AO3400A</footprint>
+      <fields>
+        <field name="LCSC">C20917</field>
+        <field name="MPN">AOS AO3400A</field>
+        <field name="Footprint">Harmony8:SOT-23_AO3400A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="NMOS" description=""/>
+      <property name="LCSC" value="C20917"/>
+      <property name="MPN" value="AOS AO3400A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>92556d67-91cf-5a4a-9bac-cd51dae496cf</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>5.1k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25905</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25905"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>30764c4f-5c3e-53ea-b92c-8d1454302e5b</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>5.1k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25905</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25905"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5013c884-197e-5f86-8970-0f93ad0a488c</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C11702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C11702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>557c901d-e1db-5766-8daa-96ea75edea34</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>1k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C11702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C11702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8c512456-1496-5cf4-9972-e2f1c9e958c6</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ca34642d-531e-5375-9c4f-6efd3e8cae4d</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>04d07190-e1a2-5c07-b2a3-b39e8c741afd</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>2.7k</value>
+      <footprint>Harmony8:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C13167</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C13167"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5eb7d3f0-cbc1-5262-b954-afa6f1e600be</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>1k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C11702</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C11702"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>83b919d0-08ee-5b0d-9e05-1ffe2aac9947</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7733ae6-1fcb-5b7a-b927-27ad2ed4ff4f</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>75k</value>
+      <footprint>Harmony8:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C23242</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C23242"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c5a26dec-13ef-5395-9ff7-cf9f3809d286</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>68202a7d-e8e0-5aca-baf7-5fddf1f5860f</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c0678dfc-5c0f-50e6-a824-8085d75f31d5</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>29b09c1e-c946-5952-9199-c14019758185</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8acb40d7-e6d3-5683-8f99-3be69ee6d5e3</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>100R</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25076</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25076"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>36626eba-6875-577e-9a9c-70d62df3f7b0</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8cbcadd8-b727-5da1-a436-801ac6b0d6e2</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>10R</value>
+      <footprint>Harmony8:R_1206_3216Metric</footprint>
+      <fields>
+        <field name="LCSC">C17903</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C17903"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ccce5fd-cf8c-5884-8532-820bea1575c4</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>33R</value>
+      <footprint>Harmony8:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="LCSC">C17634</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C17634"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d5b15a1d-78e7-5f66-9bd2-916d1ea79f51</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>100R</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25076</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25076"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3adf7382-2bbf-5089-82a5-0f16ad6995c4</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8882901c-4b0d-57a8-8dc2-d16ff6b749c3</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7d975656-5b34-5aff-b97e-04e08c0b1c45</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a16d2b7c-0fe0-5462-b97f-c261ec84cd55</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59ea0cde-518e-5c9a-a3a4-553301508e08</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>10k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25744"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>477456e3-3dac-52d9-8c21-349dd4a5357e</tstamps>
+    </comp>
+    <comp ref="R25">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ea551e98-9325-5166-add0-97d0d2870bd0</tstamps>
+    </comp>
+    <comp ref="R26">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad9d3607-e5e1-59ed-b3c0-5e867762a41e</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>1M</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C26083</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C26083"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a0e85291-aab6-5434-941c-68227254f5a6</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>1M</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C26083</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C26083"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>01289787-1fd8-54f2-9f28-559e8d3b3c06</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>100k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25741"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05b5e0c1-501b-599d-8f1b-90f6208946a6</tstamps>
+    </comp>
+    <comp ref="R30">
+      <value>150k</value>
+      <footprint>Harmony8:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C22807</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C22807"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94e525d3-2f7f-5e70-92ab-840fa6735ac2</tstamps>
+    </comp>
+    <comp ref="R31">
+      <value>4.7k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25900"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da42cabd-7725-59e4-b9eb-a42f3f854bbf</tstamps>
+    </comp>
+    <comp ref="R32">
+      <value>4.7k</value>
+      <footprint>Harmony8:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="R" description=""/>
+      <property name="LCSC" value="C25900"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>795f83c5-2ccd-5ed7-83f3-81cdb7123496</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>SIDE</value>
+      <footprint>Harmony8:SW_SKRTLAE010</footprint>
+      <fields>
+        <field name="LCSC">C110293</field>
+        <field name="MPN">Alps SKRTLAE010</field>
+        <field name="Footprint">Harmony8:SW_SKRTLAE010</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="SW3" description=""/>
+      <property name="LCSC" value="C110293"/>
+      <property name="MPN" value="Alps SKRTLAE010"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9fb76c45-5e1d-5f5b-a110-780e52bfdea5</tstamps>
+    </comp>
+    <comp ref="SW2">
+      <value>BOOT</value>
+      <footprint>Harmony8:SW_TS-1088</footprint>
+      <fields>
+        <field name="LCSC">C720477</field>
+        <field name="MPN">XKB TS-1088-AR02016</field>
+        <field name="Footprint">Harmony8:SW_TS-1088</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="SW" description=""/>
+      <property name="LCSC" value="C720477"/>
+      <property name="MPN" value="XKB TS-1088-AR02016"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>face03e0-dc54-5887-a50c-b94e27b0b53f</tstamps>
+    </comp>
+    <comp ref="SW3">
+      <value>RESET</value>
+      <footprint>Harmony8:SW_TS-1088</footprint>
+      <fields>
+        <field name="LCSC">C720477</field>
+        <field name="MPN">XKB TS-1088-AR02016</field>
+        <field name="Footprint">Harmony8:SW_TS-1088</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="SW" description=""/>
+      <property name="LCSC" value="C720477"/>
+      <property name="MPN" value="XKB TS-1088-AR02016"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>84cc12c7-5a99-5d82-95e3-fdc501ea78f4</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>3V3</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ddcf7f02-967d-5aaf-96ef-a88e1bab07cc</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>VSYS</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>61ec500a-77bb-5922-bd5f-c966c29fd9c4</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>VBAT</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2d955f68-1cdd-553e-85dc-205e53bb9404</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>GND</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>37eee5e7-f965-522c-a7a9-1dfa2ebcbcdc</tstamps>
+    </comp>
+    <comp ref="TP5">
+      <value>U0TXD</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ef659a5-c92a-52e1-9462-b36c908aac77</tstamps>
+    </comp>
+    <comp ref="TP6">
+      <value>U0RXD</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>df132234-d1ad-561c-8f63-c0fd498df608</tstamps>
+    </comp>
+    <comp ref="TP7">
+      <value>GPIO7</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>91aaef9e-1c4b-57b0-846a-d29ce60494b8</tstamps>
+    </comp>
+    <comp ref="TP8">
+      <value>GPIO8</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>239c16bc-92fb-5772-a552-2fd50ba68214</tstamps>
+    </comp>
+    <comp ref="TP9">
+      <value>I2C_SDA</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>83103062-9d2d-5159-bdd0-567fbf02cafb</tstamps>
+    </comp>
+    <comp ref="TP10">
+      <value>I2C_SCL</value>
+      <footprint>Harmony8:TestPoint_Pad_D1.0mm</footprint>
+      <fields>
+        <field name="LCSC"/>
+        <field name="MPN"/>
+        <field name="Footprint">Harmony8:TestPoint_Pad_D1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="TP" description=""/>
+      <property name="LCSC" value=""/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9bca7e78-b058-5338-b727-dedc6d63b656</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>ESP32-PICO-MINI-02-N8R2</value>
+      <footprint>Harmony8:ESP32-PICO-MINI-02</footprint>
+      <fields>
+        <field name="LCSC">C2980306</field>
+        <field name="MPN">Espressif ESP32-PICO-MINI-02-N8R2</field>
+        <field name="Footprint">Harmony8:ESP32-PICO-MINI-02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="ESP32_PICO_MINI_02" description=""/>
+      <property name="LCSC" value="C2980306"/>
+      <property name="MPN" value="Espressif ESP32-PICO-MINI-02-N8R2"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46a17d39-e5ea-5571-8bcf-93be3763f9f6</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>CH9102F</value>
+      <footprint>Harmony8:QFN-24_4x4_P0.5_EP2.5</footprint>
+      <fields>
+        <field name="LCSC">C2858418</field>
+        <field name="MPN">WCH CH9102F</field>
+        <field name="Footprint">Harmony8:QFN-24_4x4_P0.5_EP2.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="CH9102F" description=""/>
+      <property name="LCSC" value="C2858418"/>
+      <property name="MPN" value="WCH CH9102F"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d719cb42-3d24-5216-825c-e6e96c098512</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>MCP73831T-2ACI/OT</value>
+      <footprint>Harmony8:SOT-23-5_MCP73831</footprint>
+      <fields>
+        <field name="LCSC">C424093</field>
+        <field name="MPN">Microchip MCP73831T-2ACI/OT</field>
+        <field name="Footprint">Harmony8:SOT-23-5_MCP73831</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="MCP73831" description=""/>
+      <property name="LCSC" value="C424093"/>
+      <property name="MPN" value="Microchip MCP73831T-2ACI/OT"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>929bbd30-bd49-52fa-8496-3aad70a4d47e</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>RT9080-33GJ5</value>
+      <footprint>Harmony8:TSOT-23-5_RT9080</footprint>
+      <fields>
+        <field name="LCSC">C841192</field>
+        <field name="MPN">Richtek RT9080-33GJ5</field>
+        <field name="Footprint">Harmony8:TSOT-23-5_RT9080</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="RT9080" description=""/>
+      <property name="LCSC" value="C841192"/>
+      <property name="MPN" value="Richtek RT9080-33GJ5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57709273-2dd2-593a-a38e-42bc92931315</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>MAX17048G+T10</value>
+      <footprint>Harmony8:TDFN-8_2x2_P0.5_EP</footprint>
+      <fields>
+        <field name="LCSC">C2682616</field>
+        <field name="MPN">Analog MAX17048G+T10</field>
+        <field name="Footprint">Harmony8:TDFN-8_2x2_P0.5_EP</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="MAX17048" description=""/>
+      <property name="LCSC" value="C2682616"/>
+      <property name="MPN" value="Analog MAX17048G+T10"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d69029d4-73b3-5708-9f08-5eac767d23a8</tstamps>
+    </comp>
+    <comp ref="U6">
+      <value>MPR121QR2</value>
+      <footprint>Harmony8:QFN-20_3x3_P0.4</footprint>
+      <fields>
+        <field name="LCSC">C91322</field>
+        <field name="MPN">NXP MPR121QR2</field>
+        <field name="Footprint">Harmony8:QFN-20_3x3_P0.4</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="MPR121" description=""/>
+      <property name="LCSC" value="C91322"/>
+      <property name="MPN" value="NXP MPR121QR2"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>162239b5-28df-59d2-8fe0-f2b1489b2b8b</tstamps>
+    </comp>
+    <comp ref="U7">
+      <value>DRV2605LDGSR</value>
+      <footprint>Harmony8:VSSOP-10_DRV2605L</footprint>
+      <fields>
+        <field name="LCSC">C527464</field>
+        <field name="MPN">TI DRV2605LDGSR</field>
+        <field name="Footprint">Harmony8:VSSOP-10_DRV2605L</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="DRV2605L" description=""/>
+      <property name="LCSC" value="C527464"/>
+      <property name="MPN" value="TI DRV2605LDGSR"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42f38166-8064-510b-a360-c44224fec3d7</tstamps>
+    </comp>
+    <comp ref="U8">
+      <value>USBLC6-2SC6</value>
+      <footprint>Harmony8:SOT-23-6</footprint>
+      <fields>
+        <field name="LCSC">C7519</field>
+        <field name="MPN">STMicro USBLC6-2SC6</field>
+        <field name="Footprint">Harmony8:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Harmony8" part="USBLC6" description=""/>
+      <property name="LCSC" value="C7519"/>
+      <property name="MPN" value="STMicro USBLC6-2SC6"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="harmony-mark8-slab.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d72c0829-fcd1-5e84-8726-e6409cd72204</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Harmony8" part="BATT">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">BATT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="passive"/>
+        <pin num="2" name="+" type="passive"/>
+        <pin num="3" name="MOUNT" type="passive"/>
+        <pin num="4" name="MOUNT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="BUZZER">
+      <fields>
+        <field name="Reference">BZ</field>
+        <field name="Value">BUZZER</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+        <pin num="3" name="NC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="CH9102F">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CH9102F</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="RI" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="UD+" type="passive"/>
+        <pin num="4" name="UD-" type="passive"/>
+        <pin num="5" name="VIO" type="passive"/>
+        <pin num="6" name="V3" type="passive"/>
+        <pin num="7" name="VDD5" type="passive"/>
+        <pin num="8" name="VBUS" type="passive"/>
+        <pin num="9" name="RST" type="passive"/>
+        <pin num="10" name="ACT" type="passive"/>
+        <pin num="11" name="GPIO3" type="passive"/>
+        <pin num="12" name="GPIO2" type="passive"/>
+        <pin num="13" name="GPIO1" type="passive"/>
+        <pin num="14" name="GPIO0" type="passive"/>
+        <pin num="15" name="SUSP#" type="passive"/>
+        <pin num="16" name="GPIO4" type="passive"/>
+        <pin num="17" name="SUSP" type="passive"/>
+        <pin num="18" name="CTS" type="passive"/>
+        <pin num="19" name="RTS" type="passive"/>
+        <pin num="20" name="RXD" type="passive"/>
+        <pin num="21" name="TXD" type="passive"/>
+        <pin num="22" name="DSR" type="passive"/>
+        <pin num="23" name="DTR" type="passive"/>
+        <pin num="24" name="DCD" type="passive"/>
+        <pin num="25" name="EP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="D">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="DRV2605L">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DRV2605L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="REG" type="passive"/>
+        <pin num="2" name="SCL" type="passive"/>
+        <pin num="3" name="SDA" type="passive"/>
+        <pin num="4" name="IN/TRIG" type="passive"/>
+        <pin num="5" name="EN" type="passive"/>
+        <pin num="6" name="VDD/NC" type="passive"/>
+        <pin num="7" name="OUT+" type="passive"/>
+        <pin num="8" name="GND" type="passive"/>
+        <pin num="9" name="OUT-" type="passive"/>
+        <pin num="10" name="VDD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="ESP32_PICO_MINI_02">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32_PICO_MINI_02</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="3V3" type="passive"/>
+        <pin num="4" name="I36" type="passive"/>
+        <pin num="5" name="I37" type="passive"/>
+        <pin num="6" name="I38" type="passive"/>
+        <pin num="7" name="I39" type="passive"/>
+        <pin num="8" name="EN" type="passive"/>
+        <pin num="9" name="I34" type="passive"/>
+        <pin num="10" name="I35" type="passive"/>
+        <pin num="11" name="GND" type="passive"/>
+        <pin num="12" name="IO32" type="passive"/>
+        <pin num="13" name="IO33" type="passive"/>
+        <pin num="14" name="GND" type="passive"/>
+        <pin num="15" name="IO25" type="passive"/>
+        <pin num="16" name="IO26" type="passive"/>
+        <pin num="17" name="IO27" type="passive"/>
+        <pin num="18" name="IO14" type="passive"/>
+        <pin num="19" name="IO12" type="passive"/>
+        <pin num="20" name="IO13" type="passive"/>
+        <pin num="21" name="IO15" type="passive"/>
+        <pin num="22" name="IO2" type="passive"/>
+        <pin num="23" name="IO0" type="passive"/>
+        <pin num="24" name="IO4" type="passive"/>
+        <pin num="25" name="NC" type="passive"/>
+        <pin num="26" name="IO20" type="passive"/>
+        <pin num="27" name="IO7" type="passive"/>
+        <pin num="28" name="IO8" type="passive"/>
+        <pin num="29" name="IO5" type="passive"/>
+        <pin num="30" name="RXD0/IO3" type="passive"/>
+        <pin num="31" name="TXD0/IO1" type="passive"/>
+        <pin num="32" name="NC" type="passive"/>
+        <pin num="33" name="IO19" type="passive"/>
+        <pin num="34" name="IO22" type="passive"/>
+        <pin num="35" name="IO21" type="passive"/>
+        <pin num="36" name="GND" type="passive"/>
+        <pin num="37" name="GND" type="passive"/>
+        <pin num="38" name="GND" type="passive"/>
+        <pin num="39" name="GND" type="passive"/>
+        <pin num="40" name="GND" type="passive"/>
+        <pin num="41" name="GND" type="passive"/>
+        <pin num="42" name="GND" type="passive"/>
+        <pin num="43" name="GND" type="passive"/>
+        <pin num="44" name="GND" type="passive"/>
+        <pin num="45" name="GND" type="passive"/>
+        <pin num="46" name="GND" type="passive"/>
+        <pin num="47" name="GND" type="passive"/>
+        <pin num="48" name="GND" type="passive"/>
+        <pin num="49" name="GND" type="passive"/>
+        <pin num="50" name="GND" type="passive"/>
+        <pin num="51" name="GND" type="passive"/>
+        <pin num="52" name="GND" type="passive"/>
+        <pin num="53" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="FPC15">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">FPC15</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="LEDK" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="FMARK" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+        <pin num="5" name="SCLK" type="passive"/>
+        <pin num="6" name="RS" type="passive"/>
+        <pin num="7" name="CS" type="passive"/>
+        <pin num="8" name="RESET" type="passive"/>
+        <pin num="9" name="IOVCC" type="passive"/>
+        <pin num="10" name="VCC" type="passive"/>
+        <pin num="11" name="VCC" type="passive"/>
+        <pin num="12" name="GND" type="passive"/>
+        <pin num="13" name="GND" type="passive"/>
+        <pin num="14" name="LEDA" type="passive"/>
+        <pin num="15" name="LEDA" type="passive"/>
+        <pin num="16" name="MOUNT" type="passive"/>
+        <pin num="17" name="MOUNT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="LED">
+      <fields>
+        <field name="Reference">LED</field>
+        <field name="Value">LED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="MAX17048">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MAX17048</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CTG" type="passive"/>
+        <pin num="2" name="CELL" type="passive"/>
+        <pin num="3" name="VDD" type="passive"/>
+        <pin num="4" name="GND" type="passive"/>
+        <pin num="5" name="ALRT" type="passive"/>
+        <pin num="6" name="QSTRT" type="passive"/>
+        <pin num="7" name="SCL" type="passive"/>
+        <pin num="8" name="SDA" type="passive"/>
+        <pin num="9" name="EP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="MCP73831">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP73831</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="STAT" type="passive"/>
+        <pin num="2" name="VSS" type="passive"/>
+        <pin num="3" name="VBAT" type="passive"/>
+        <pin num="4" name="VDD" type="passive"/>
+        <pin num="5" name="PROG" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="MICROSD">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MICROSD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="DAT2" type="passive"/>
+        <pin num="2" name="DAT3/CS" type="passive"/>
+        <pin num="3" name="CMD" type="passive"/>
+        <pin num="4" name="VDD" type="passive"/>
+        <pin num="5" name="CLK" type="passive"/>
+        <pin num="6" name="VSS" type="passive"/>
+        <pin num="7" name="DAT0" type="passive"/>
+        <pin num="8" name="DAT1" type="passive"/>
+        <pin num="9" name="CD_B" type="passive"/>
+        <pin num="10" name="SHELL" type="passive"/>
+        <pin num="11" name="CD_A" type="passive"/>
+        <pin num="12" name="SHELL" type="passive"/>
+        <pin num="13" name="SHELL" type="passive"/>
+        <pin num="14" name="SHELL" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="MPR121">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MPR121</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IRQ" type="passive"/>
+        <pin num="2" name="SCL" type="passive"/>
+        <pin num="3" name="SDA" type="passive"/>
+        <pin num="4" name="ADDR" type="passive"/>
+        <pin num="5" name="VREG" type="passive"/>
+        <pin num="6" name="VSS" type="passive"/>
+        <pin num="7" name="REXT" type="passive"/>
+        <pin num="8" name="ELE0" type="passive"/>
+        <pin num="9" name="ELE1" type="passive"/>
+        <pin num="10" name="ELE2" type="passive"/>
+        <pin num="11" name="ELE3" type="passive"/>
+        <pin num="12" name="ELE4" type="passive"/>
+        <pin num="13" name="ELE5" type="passive"/>
+        <pin num="14" name="ELE6" type="passive"/>
+        <pin num="15" name="ELE7" type="passive"/>
+        <pin num="16" name="ELE8" type="passive"/>
+        <pin num="17" name="ELE9" type="passive"/>
+        <pin num="18" name="ELE10" type="passive"/>
+        <pin num="19" name="ELE11" type="passive"/>
+        <pin num="20" name="VDD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="NMOS">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">NMOS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="PAD">
+      <fields>
+        <field name="Reference">M</field>
+        <field name="Value">PAD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="PMOS">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">PMOS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="R">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="RT9080">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">RT9080</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="EN" type="passive"/>
+        <pin num="4" name="NC" type="passive"/>
+        <pin num="5" name="VOUT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="SW">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="SW3">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW3</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NO1" type="passive"/>
+        <pin num="2" name="COM" type="passive"/>
+        <pin num="3" name="NO2" type="passive"/>
+        <pin num="4" name="MOUNT" type="passive"/>
+        <pin num="5" name="MOUNT" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="TP">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TP</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="UMH3N">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">UMH3N</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="E1" type="passive"/>
+        <pin num="2" name="B1" type="passive"/>
+        <pin num="3" name="C2" type="passive"/>
+        <pin num="4" name="E2" type="passive"/>
+        <pin num="5" name="B2" type="passive"/>
+        <pin num="6" name="C1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="USBLC6">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">USBLC6</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="I/O1" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="I/O2" type="passive"/>
+        <pin num="4" name="I/O2" type="passive"/>
+        <pin num="5" name="VBUS" type="passive"/>
+        <pin num="6" name="I/O1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="USB_C">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB_C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SHIELD" type="passive"/>
+        <pin num="2" name="SHIELD" type="passive"/>
+        <pin num="3" name="SHIELD" type="passive"/>
+        <pin num="4" name="SHIELD" type="passive"/>
+        <pin num="A1B12" name="GND" type="passive"/>
+        <pin num="A4B9" name="VBUS" type="passive"/>
+        <pin num="A5" name="CC1" type="passive"/>
+        <pin num="A6" name="D+" type="passive"/>
+        <pin num="A7" name="D-" type="passive"/>
+        <pin num="A8" name="SBU1" type="passive"/>
+        <pin num="B1A12" name="GND" type="passive"/>
+        <pin num="B4A9" name="VBUS" type="passive"/>
+        <pin num="B5" name="CC2" type="passive"/>
+        <pin num="B6" name="D+" type="passive"/>
+        <pin num="B7" name="D-" type="passive"/>
+        <pin num="B8" name="SBU2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Harmony8" part="WHEEL">
+      <fields>
+        <field name="Reference">E</field>
+        <field name="Value">WHEEL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SECTOR1" type="passive"/>
+        <pin num="2" name="SECTOR2" type="passive"/>
+        <pin num="3" name="SECTOR3" type="passive"/>
+        <pin num="4" name="SECTOR4" type="passive"/>
+        <pin num="5" name="SECTOR5" type="passive"/>
+        <pin num="6" name="SECTOR6" type="passive"/>
+        <pin num="7" name="SECTOR7" type="passive"/>
+        <pin num="8" name="SECTOR8" type="passive"/>
+        <pin num="C" name="CENTRE" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Harmony8">
+      <uri>/Users/dave/projects/Harmony2/hardware/mark-8/slab-rev-a/lib/Harmony8.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/3V3">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="Q4" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="R31" pin="1" pintype="passive"/>
+      <node ref="R32" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="3V3" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="VIO" pintype="passive"/>
+      <node ref="U4" pin="5" pinfunction="VOUT" pintype="passive"/>
+      <node ref="U6" pin="20" pinfunction="VDD" pintype="passive"/>
+      <node ref="U6" pin="4" pinfunction="ADDR" pintype="passive"/>
+    </net>
+    <net code="2" name="/3V3_PERIPH">
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="J2" pin="10" pinfunction="VCC" pintype="passive"/>
+      <node ref="J2" pin="11" pinfunction="VCC" pintype="passive"/>
+      <node ref="J2" pin="9" pinfunction="IOVCC" pintype="passive"/>
+      <node ref="J3" pin="4" pinfunction="VDD" pintype="passive"/>
+      <node ref="Q4" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+    </net>
+    <net code="3" name="/BAT_P">
+      <node ref="J4" pin="2" pinfunction="+" pintype="passive"/>
+      <node ref="Q2" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="4" name="/BL_GATE">
+      <node ref="Q5" pin="1" pinfunction="G" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="/BOOT">
+      <node ref="Q1" pin="3" pinfunction="C2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="23" pinfunction="IO0" pintype="passive"/>
+    </net>
+    <net code="6" name="/BUZZER">
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="IO2" pintype="passive"/>
+    </net>
+    <net code="7" name="/BZ_GATE">
+      <node ref="Q6" pin="1" pinfunction="G" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+    </net>
+    <net code="8" name="/BZ_N">
+      <node ref="BZ1" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="Q6" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="9" name="/BZ_P">
+      <node ref="BZ1" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="/CC1">
+      <node ref="J1" pin="A5" pinfunction="CC1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="11" name="/CC2">
+      <node ref="J1" pin="B5" pinfunction="CC2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="12" name="/CHG_PROG">
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="PROG" pintype="passive"/>
+    </net>
+    <net code="13" name="/CHG_STAT">
+      <node ref="LED1" pin="2" pinfunction="K" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="STAT" pintype="passive"/>
+    </net>
+    <net code="14" name="/DTR">
+      <node ref="Q1" pin="2" pinfunction="B1" pintype="passive"/>
+      <node ref="Q1" pin="4" pinfunction="E2" pintype="passive"/>
+      <node ref="U2" pin="23" pinfunction="DTR" pintype="passive"/>
+    </net>
+    <net code="15" name="/ELE0">
+      <node ref="E1" pin="C" pinfunction="CENTRE" pintype="passive"/>
+      <node ref="U6" pin="8" pinfunction="ELE0" pintype="passive"/>
+    </net>
+    <net code="16" name="/ELE1">
+      <node ref="E1" pin="1" pinfunction="SECTOR1" pintype="passive"/>
+      <node ref="U6" pin="9" pinfunction="ELE1" pintype="passive"/>
+    </net>
+    <net code="17" name="/ELE2">
+      <node ref="E1" pin="2" pinfunction="SECTOR2" pintype="passive"/>
+      <node ref="U6" pin="10" pinfunction="ELE2" pintype="passive"/>
+    </net>
+    <net code="18" name="/ELE3">
+      <node ref="E1" pin="3" pinfunction="SECTOR3" pintype="passive"/>
+      <node ref="U6" pin="11" pinfunction="ELE3" pintype="passive"/>
+    </net>
+    <net code="19" name="/ELE4">
+      <node ref="E1" pin="4" pinfunction="SECTOR4" pintype="passive"/>
+      <node ref="U6" pin="12" pinfunction="ELE4" pintype="passive"/>
+    </net>
+    <net code="20" name="/ELE5">
+      <node ref="E1" pin="5" pinfunction="SECTOR5" pintype="passive"/>
+      <node ref="U6" pin="13" pinfunction="ELE5" pintype="passive"/>
+    </net>
+    <net code="21" name="/ELE6">
+      <node ref="E1" pin="6" pinfunction="SECTOR6" pintype="passive"/>
+      <node ref="U6" pin="14" pinfunction="ELE6" pintype="passive"/>
+    </net>
+    <net code="22" name="/ELE7">
+      <node ref="E1" pin="7" pinfunction="SECTOR7" pintype="passive"/>
+      <node ref="U6" pin="15" pinfunction="ELE7" pintype="passive"/>
+    </net>
+    <net code="23" name="/ELE8">
+      <node ref="E1" pin="8" pinfunction="SECTOR8" pintype="passive"/>
+      <node ref="U6" pin="16" pinfunction="ELE8" pintype="passive"/>
+    </net>
+    <net code="24" name="/ESP_EN">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="Q1" pin="6" pinfunction="C1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="SW3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="EN" pintype="passive"/>
+    </net>
+    <net code="25" name="/GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="3" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="4" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J1" pin="A1B12" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="B1A12" pinfunction="GND" pintype="passive"/>
+      <node ref="J2" pin="12" pinfunction="GND" pintype="passive"/>
+      <node ref="J2" pin="13" pinfunction="GND" pintype="passive"/>
+      <node ref="J2" pin="16" pinfunction="MOUNT" pintype="passive"/>
+      <node ref="J2" pin="17" pinfunction="MOUNT" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J3" pin="10" pinfunction="SHELL" pintype="passive"/>
+      <node ref="J3" pin="12" pinfunction="SHELL" pintype="passive"/>
+      <node ref="J3" pin="13" pinfunction="SHELL" pintype="passive"/>
+      <node ref="J3" pin="14" pinfunction="SHELL" pintype="passive"/>
+      <node ref="J3" pin="6" pinfunction="VSS" pintype="passive"/>
+      <node ref="J3" pin="9" pinfunction="CD_B" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="-" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="G" pintype="passive"/>
+      <node ref="Q5" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q6" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="NO1" pintype="passive"/>
+      <node ref="SW1" pin="3" pinfunction="NO2" pintype="passive"/>
+      <node ref="SW1" pin="4" pinfunction="MOUNT" pintype="passive"/>
+      <node ref="SW1" pin="5" pinfunction="MOUNT" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="36" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="37" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="38" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="40" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="41" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="42" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="43" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="44" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="45" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="46" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="47" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="48" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="49" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="50" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="51" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="52" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="53" pinfunction="GND" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="U2" pin="25" pinfunction="EP" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="VSS" pintype="passive"/>
+      <node ref="U4" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="U5" pin="1" pinfunction="CTG" pintype="passive"/>
+      <node ref="U5" pin="4" pinfunction="GND" pintype="passive"/>
+      <node ref="U5" pin="6" pinfunction="QSTRT" pintype="passive"/>
+      <node ref="U5" pin="9" pinfunction="EP" pintype="passive"/>
+      <node ref="U6" pin="6" pinfunction="VSS" pintype="passive"/>
+      <node ref="U7" pin="4" pinfunction="IN/TRIG" pintype="passive"/>
+      <node ref="U7" pin="8" pinfunction="GND" pintype="passive"/>
+      <node ref="U8" pin="2" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="26" name="/GPIO7">
+      <node ref="TP7" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="27" pinfunction="IO7" pintype="passive"/>
+    </net>
+    <net code="27" name="/GPIO8">
+      <node ref="TP8" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="28" pinfunction="IO8" pintype="passive"/>
+    </net>
+    <net code="28" name="/HAPTIC_EN">
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="U7" pin="5" pinfunction="EN" pintype="passive"/>
+    </net>
+    <net code="29" name="/HAPTIC_REG">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="U7" pin="1" pinfunction="REG" pintype="passive"/>
+    </net>
+    <net code="30" name="/I2C_SCL">
+      <node ref="R32" pin="2" pintype="passive"/>
+      <node ref="TP10" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="26" pinfunction="IO20" pintype="passive"/>
+      <node ref="U5" pin="7" pinfunction="SCL" pintype="passive"/>
+      <node ref="U6" pin="2" pinfunction="SCL" pintype="passive"/>
+      <node ref="U7" pin="2" pinfunction="SCL" pintype="passive"/>
+    </net>
+    <net code="31" name="/I2C_SDA">
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="34" pinfunction="IO22" pintype="passive"/>
+      <node ref="U5" pin="8" pinfunction="SDA" pintype="passive"/>
+      <node ref="U6" pin="3" pinfunction="SDA" pintype="passive"/>
+      <node ref="U7" pin="3" pinfunction="SDA" pintype="passive"/>
+    </net>
+    <net code="32" name="/LCD_BL">
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="IO4" pintype="passive"/>
+    </net>
+    <net code="33" name="/LCD_CS">
+      <node ref="J2" pin="7" pinfunction="CS" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="IO26" pintype="passive"/>
+    </net>
+    <net code="34" name="/LCD_DC">
+      <node ref="J2" pin="6" pinfunction="RS" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="IO33" pintype="passive"/>
+    </net>
+    <net code="35" name="/LCD_LEDA">
+      <node ref="J2" pin="14" pinfunction="LEDA" pintype="passive"/>
+      <node ref="J2" pin="15" pinfunction="LEDA" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+    </net>
+    <net code="36" name="/LCD_LEDK">
+      <node ref="J2" pin="1" pinfunction="LEDK" pintype="passive"/>
+      <node ref="Q5" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="37" name="/LCD_MOSI">
+      <node ref="J2" pin="4" pinfunction="SDA" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="IO27" pintype="passive"/>
+    </net>
+    <net code="38" name="/LCD_RST">
+      <node ref="J2" pin="8" pinfunction="RESET" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="IO32" pintype="passive"/>
+    </net>
+    <net code="39" name="/LCD_SCK">
+      <node ref="J2" pin="5" pinfunction="SCLK" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="IO14" pintype="passive"/>
+    </net>
+    <net code="40" name="/LCD_TE">
+      <node ref="J2" pin="3" pinfunction="FMARK" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="I39" pintype="passive"/>
+    </net>
+    <net code="41" name="/LED_A">
+      <node ref="LED1" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="42" name="/MOTOR_N">
+      <node ref="M2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U7" pin="9" pinfunction="OUT-" pintype="passive"/>
+    </net>
+    <net code="43" name="/MOTOR_P">
+      <node ref="M1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U7" pin="7" pinfunction="OUT+" pintype="passive"/>
+    </net>
+    <net code="44" name="/MPR_REXT">
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="U6" pin="7" pinfunction="REXT" pintype="passive"/>
+    </net>
+    <net code="45" name="/MPR_VREG">
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="U6" pin="5" pinfunction="VREG" pintype="passive"/>
+    </net>
+    <net code="46" name="/PERIPH_EN_N">
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="IO13" pintype="passive"/>
+    </net>
+    <net code="47" name="/PERIPH_GATE">
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="Q4" pin="1" pinfunction="G" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="48" name="/RTS">
+      <node ref="Q1" pin="1" pinfunction="E1" pintype="passive"/>
+      <node ref="Q1" pin="5" pinfunction="B2" pintype="passive"/>
+      <node ref="U2" pin="19" pinfunction="RTS" pintype="passive"/>
+    </net>
+    <net code="49" name="/SD_CD">
+      <node ref="J3" pin="11" pinfunction="CD_A" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="IO15" pintype="passive"/>
+    </net>
+    <net code="50" name="/SD_CS">
+      <node ref="J3" pin="2" pinfunction="DAT3/CS" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="IO25" pintype="passive"/>
+    </net>
+    <net code="51" name="/SD_DAT1">
+      <node ref="J3" pin="8" pinfunction="DAT1" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+    </net>
+    <net code="52" name="/SD_DAT2">
+      <node ref="J3" pin="1" pinfunction="DAT2" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
+    </net>
+    <net code="53" name="/SD_MISO">
+      <node ref="J3" pin="7" pinfunction="DAT0" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="U1" pin="35" pinfunction="IO21" pintype="passive"/>
+    </net>
+    <net code="54" name="/SD_MOSI">
+      <node ref="J3" pin="3" pinfunction="CMD" pintype="passive"/>
+      <node ref="U1" pin="33" pinfunction="IO19" pintype="passive"/>
+    </net>
+    <net code="55" name="/SD_SCK">
+      <node ref="J3" pin="5" pinfunction="CLK" pintype="passive"/>
+      <node ref="U1" pin="29" pinfunction="IO5" pintype="passive"/>
+    </net>
+    <net code="56" name="/SIDE_BTN">
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="COM" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="I38" pintype="passive"/>
+    </net>
+    <net code="57" name="/TOUCH_IRQ">
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="I34" pintype="passive"/>
+      <node ref="U6" pin="1" pinfunction="IRQ" pintype="passive"/>
+    </net>
+    <net code="58" name="/U0RXD">
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="TP6" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="30" pinfunction="RXD0/IO3" pintype="passive"/>
+    </net>
+    <net code="59" name="/U0TXD">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="TP5" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="31" pinfunction="TXD0/IO1" pintype="passive"/>
+    </net>
+    <net code="60" name="/U2_RXD">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U2" pin="20" pinfunction="RXD" pintype="passive"/>
+    </net>
+    <net code="61" name="/U2_TXD">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U2" pin="21" pinfunction="TXD" pintype="passive"/>
+    </net>
+    <net code="62" name="/U2_V3">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="V3" pintype="passive"/>
+    </net>
+    <net code="63" name="/USB_DN">
+      <node ref="J1" pin="A7" pinfunction="D-" pintype="passive"/>
+      <node ref="J1" pin="B7" pinfunction="D-" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="UD-" pintype="passive"/>
+      <node ref="U8" pin="1" pinfunction="I/O1" pintype="passive"/>
+      <node ref="U8" pin="6" pinfunction="I/O1" pintype="passive"/>
+    </net>
+    <net code="64" name="/USB_DP">
+      <node ref="J1" pin="A6" pinfunction="D+" pintype="passive"/>
+      <node ref="J1" pin="B6" pinfunction="D+" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="UD+" pintype="passive"/>
+      <node ref="U8" pin="3" pinfunction="I/O2" pintype="passive"/>
+      <node ref="U8" pin="4" pinfunction="I/O2" pintype="passive"/>
+    </net>
+    <net code="65" name="/VBAT">
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q3" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="VBAT" pintype="passive"/>
+      <node ref="U5" pin="2" pinfunction="CELL" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="VDD" pintype="passive"/>
+    </net>
+    <net code="66" name="/VBAT_SENSE">
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="R28" pin="1" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="I35" pintype="passive"/>
+    </net>
+    <net code="67" name="/VBUS">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J1" pin="A4B9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="B4A9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="Q3" pin="1" pinfunction="G" pintype="passive"/>
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="VDD5" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="VBUS" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="VDD" pintype="passive"/>
+      <node ref="U8" pin="5" pinfunction="VBUS" pintype="passive"/>
+    </net>
+    <net code="68" name="/VBUS_SENSE">
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="I36" pintype="passive"/>
+    </net>
+    <net code="69" name="/VSYS">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q3" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U4" pin="1" pinfunction="VIN" pintype="passive"/>
+      <node ref="U4" pin="3" pinfunction="EN" pintype="passive"/>
+      <node ref="U7" pin="10" pinfunction="VDD" pintype="passive"/>
+      <node ref="U7" pin="6" pinfunction="VDD/NC" pintype="passive"/>
+    </net>
+    <net code="70" name="unconnected-(BZ1-NC-Pad3)">
+      <node ref="BZ1" pin="3" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="71" name="unconnected-(J1-SBU1-PadA8)">
+      <node ref="J1" pin="A8" pinfunction="SBU1" pintype="passive+no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(J1-SBU2-PadB8)">
+      <node ref="J1" pin="B8" pinfunction="SBU2" pintype="passive+no_connect"/>
+    </net>
+    <net code="73" name="unconnected-(J4-MOUNT-Pad3)">
+      <node ref="J4" pin="3" pinfunction="MOUNT" pintype="passive+no_connect"/>
+    </net>
+    <net code="74" name="unconnected-(J4-MOUNT-Pad4)">
+      <node ref="J4" pin="4" pinfunction="MOUNT" pintype="passive+no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(U1-I37-Pad5)">
+      <node ref="U1" pin="5" pinfunction="I37" pintype="passive+no_connect"/>
+    </net>
+    <net code="76" name="unconnected-(U1-IO12-Pad19)">
+      <node ref="U1" pin="19" pinfunction="IO12" pintype="passive+no_connect"/>
+    </net>
+    <net code="77" name="unconnected-(U1-NC-Pad25)">
+      <node ref="U1" pin="25" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="78" name="unconnected-(U1-NC-Pad32)">
+      <node ref="U1" pin="32" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="79" name="unconnected-(U2-ACT-Pad10)">
+      <node ref="U2" pin="10" pinfunction="ACT" pintype="passive+no_connect"/>
+    </net>
+    <net code="80" name="unconnected-(U2-CTS-Pad18)">
+      <node ref="U2" pin="18" pinfunction="CTS" pintype="passive+no_connect"/>
+    </net>
+    <net code="81" name="unconnected-(U2-DCD-Pad24)">
+      <node ref="U2" pin="24" pinfunction="DCD" pintype="passive+no_connect"/>
+    </net>
+    <net code="82" name="unconnected-(U2-DSR-Pad22)">
+      <node ref="U2" pin="22" pinfunction="DSR" pintype="passive+no_connect"/>
+    </net>
+    <net code="83" name="unconnected-(U2-GPIO0-Pad14)">
+      <node ref="U2" pin="14" pinfunction="GPIO0" pintype="passive+no_connect"/>
+    </net>
+    <net code="84" name="unconnected-(U2-GPIO1-Pad13)">
+      <node ref="U2" pin="13" pinfunction="GPIO1" pintype="passive+no_connect"/>
+    </net>
+    <net code="85" name="unconnected-(U2-GPIO2-Pad12)">
+      <node ref="U2" pin="12" pinfunction="GPIO2" pintype="passive+no_connect"/>
+    </net>
+    <net code="86" name="unconnected-(U2-GPIO3-Pad11)">
+      <node ref="U2" pin="11" pinfunction="GPIO3" pintype="passive+no_connect"/>
+    </net>
+    <net code="87" name="unconnected-(U2-GPIO4-Pad16)">
+      <node ref="U2" pin="16" pinfunction="GPIO4" pintype="passive+no_connect"/>
+    </net>
+    <net code="88" name="unconnected-(U2-RI-Pad1)">
+      <node ref="U2" pin="1" pinfunction="RI" pintype="passive+no_connect"/>
+    </net>
+    <net code="89" name="unconnected-(U2-RST-Pad9)">
+      <node ref="U2" pin="9" pinfunction="RST" pintype="passive+no_connect"/>
+    </net>
+    <net code="90" name="unconnected-(U2-SUSP#-Pad15)">
+      <node ref="U2" pin="15" pinfunction="SUSP#" pintype="passive+no_connect"/>
+    </net>
+    <net code="91" name="unconnected-(U2-SUSP-Pad17)">
+      <node ref="U2" pin="17" pinfunction="SUSP" pintype="passive+no_connect"/>
+    </net>
+    <net code="92" name="unconnected-(U4-NC-Pad4)">
+      <node ref="U4" pin="4" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="93" name="unconnected-(U5-ALRT-Pad5)">
+      <node ref="U5" pin="5" pinfunction="ALRT" pintype="passive+no_connect"/>
+    </net>
+    <net code="94" name="unconnected-(U6-ELE9-Pad17)">
+      <node ref="U6" pin="17" pinfunction="ELE9" pintype="passive+no_connect"/>
+    </net>
+    <net code="95" name="unconnected-(U6-ELE10-Pad18)">
+      <node ref="U6" pin="18" pinfunction="ELE10" pintype="passive+no_connect"/>
+    </net>
+    <net code="96" name="unconnected-(U6-ELE11-Pad19)">
+      <node ref="U6" pin="19" pinfunction="ELE11" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

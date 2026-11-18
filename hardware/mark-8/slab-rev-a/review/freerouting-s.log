@@ -1,0 +1,45 @@
+2026-11-17 18:56:35.446 INFO   Freerouting v2.4.1 (build-date: 2026-09-03)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @481a15ff (file:/Users/dave/projects/Harmony2/firmware/toolchains/freerouting/freerouting-2.4.1.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-11-17 18:56:38.176 INFO   [036551\626218] Loading board file 'routing-s.dsn'...
+2026-11-17 18:56:38.185 INFO   New version available: v2.5.0
+2026-11-17 18:56:39.283 INFO   [036551\626218] Job '036551\626218' started at 2026-11-17T23:56:39.283645Z.
+2026-11-17 18:56:39.859 INFO   [036551\626218] Fanout stage started on board 'e9f76451ee7927d39e02da105db982e1' with 94 of 353 SMD pins needing fanout (8 already connected, 251 netless).
+2026-11-17 18:56:45.486 INFO   [036551\626218] Fanout pass #1 on board '47b39ae790636a6b26991122debf082b' completed in 5.46 seconds with 26 SMD pins fanouted, 48 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-17 18:56:48.601 INFO   [036551\626218] Fanout pass #2 on board '47b39ae790636a6b26991122debf082b' completed in 2.99 seconds with 0 SMD pins fanouted, 52 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-17 18:56:48.736 INFO   [036551\626218] Fanout stage completed: started with 102 total SMD pins, completed in 8.79 seconds, escaped pins: 62/102 (60.8%), using 2.21 total CPU seconds, 3.76 GB total allocated, and 254.8 MB peak heap usage.
+2026-11-17 18:56:48.812 INFO   [036551\626218] Auto-routing stage started on board '47b39ae790636a6b26991122debf082b' for 30 unrouted items.
+2026-11-17 18:57:17.914 INFO   [036551\626218] Auto-routing pass #1 on board '47b39ae790636a6b26991122debf082b' was completed in 27.78 seconds with score 0.00 (13 unrouted and 448 violations), using 12.71 CPU seconds and the job allocated 35.40 GB of memory so far.
+2026-11-17 18:57:39.799 INFO   [036551\626218] Auto-routing pass #2 on board '10d09ea5d321034237bb59103c47fe15' was completed in 20.93 seconds with score 0.00 (9 unrouted and 448 violations), using 23.84 CPU seconds and the job allocated 62.89 GB of memory so far.
+2026-11-17 18:57:59.296 INFO   [036551\626218] Auto-routing pass #3 on board '1ea92d86d54631a12495339a688c58d4' was completed in 18.57 seconds with score 0.00 (6 unrouted and 448 violations), using 34.36 CPU seconds and the job allocated 87.57 GB of memory so far.
+2026-11-17 18:58:15.624 INFO   [036551\626218] Auto-routing pass #4 on board '8ded0288310dbc5a0313daa7f7f91a42' was completed in 15.67 seconds with score 0.00 (5 unrouted and 448 violations), using 44.75 CPU seconds and the job allocated 111.27 GB of memory so far.
+2026-11-17 18:58:28.962 INFO   [036551\626218] Auto-routing pass #5 on board '9d8098220f5f4a247a0716878d9744ce' was completed in 12.54 seconds with score 0.00 (4 unrouted and 448 violations), using 53.73 CPU seconds and the job allocated 131.38 GB of memory so far.
+2026-11-17 18:58:42.826 INFO   [036551\626218] Auto-routing pass #6 on board 'db43d99a53034b96c7a99265eb8ad726' was completed in 13.17 seconds with score 0.00 (3 unrouted and 448 violations), using 61.96 CPU seconds and the job allocated 150.80 GB of memory so far.
+2026-11-17 18:58:56.024 INFO   [036551\626218] Auto-routing pass #7 on board '67d804d25ac6a25fcb7d8ab362215f4a' was completed in 12.45 seconds with score 0.00 (3 unrouted and 448 violations), using 70.90 CPU seconds and the job allocated 170.54 GB of memory so far.
+2026-11-17 18:59:11.075 INFO   [036551\626218] Auto-routing pass #8 on board '4b188792c7e4dd9d30b9870665d42705' was completed in 14.24 seconds with score 0.00 (3 unrouted and 448 violations), using 80.71 CPU seconds and the job allocated 191.95 GB of memory so far.
+2026-11-17 18:59:28.364 INFO   [036551\626218] Auto-routing pass #9 on board '26c83225b77de4935e3aa78c8366b358' was completed in 16.50 seconds with score 0.00 (3 unrouted and 448 violations), using 92.60 CPU seconds and the job allocated 215.44 GB of memory so far.
+2026-11-17 18:59:43.766 INFO   [036551\626218] Auto-routing pass #10 on board '21e525f6e3361f75e293da51f986fc98' was completed in 14.52 seconds with score 0.00 (3 unrouted and 448 violations), using 102.39 CPU seconds and the job allocated 233.83 GB of memory so far.
+2026-11-17 19:00:04.540 INFO   [036551\626218] Auto-routing pass #11 on board 'cc9d424854a8e8749b810edc18a685c4' was completed in 19.78 seconds with score 0.00 (4 unrouted and 448 violations), using 115.81 CPU seconds and the job allocated 255.96 GB of memory so far.
+2026-11-17 19:00:24.068 INFO   [036551\626218] Auto-routing pass #12 on board '7aefd0dcf833c923f2c8ea701423f077' was completed in 18.03 seconds with score 0.00 (3 unrouted and 448 violations), using 129.58 CPU seconds and the job allocated 278.78 GB of memory so far.
+2026-11-17 19:00:46.389 INFO   [036551\626218] Auto-routing pass #13 on board 'ad19dae20f8ca71f6c40dd85ef13807e' was completed in 21.26 seconds with score 0.00 (2 unrouted and 448 violations), using 143.95 CPU seconds and the job allocated 302.44 GB of memory so far.
+2026-11-17 19:01:02.728 INFO   [036551\626218] Auto-routing pass #14 on board '2f80a05c4907f6df4f72e9c2c2f3dc54' was completed in 15.43 seconds with score 0.00 (3 unrouted and 448 violations), using 155.79 CPU seconds and the job allocated 322.41 GB of memory so far.
+2026-11-17 19:01:22.162 INFO   [036551\626218] Auto-routing pass #15 on board 'd5728b189ed4d6e3284c7bf13cd7aacc' was completed in 18.51 seconds with score 0.00 (3 unrouted and 448 violations), using 168.91 CPU seconds and the job allocated 344.98 GB of memory so far.
+2026-11-17 19:01:39.762 INFO   [036551\626218] Auto-routing pass #16 on board 'a210e2468813fc12da86624072861cc1' was completed in 16.58 seconds with score 0.00 (2 unrouted and 448 violations), using 182.47 CPU seconds and the job allocated 367.67 GB of memory so far.
+2026-11-17 19:01:54.970 INFO   [036551\626218] Auto-routing pass #17 on board '58ecd3cccc4b7c154a690663513f1947' was completed in 14.18 seconds with score 0.00 (2 unrouted and 448 violations), using 193.19 CPU seconds and the job allocated 385.99 GB of memory so far.
+2026-11-17 19:02:08.867 INFO   [036551\626218] Auto-routing pass #18 on board '58ecd3cccc4b7c154a690663513f1947' was completed in 13.39 seconds with score 0.00 (2 unrouted and 448 violations), using 203.73 CPU seconds and the job allocated 404.44 GB of memory so far.
+2026-11-17 19:02:09.030 INFO   [036551\626218] The router's best score (0.00) has not improved by more than 0.5 points since pass #8. Stopping the auto-router after 18 passes (3 items still unconnected).
+The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+  Net 'GND' (1 unrouted connection):
+    - conductionarea  ->  conductionarea
+  Net 'ELE2' (1 unrouted connection):
+    - via  ->  conductionarea
+2026-11-17 19:02:09.885 INFO   [036551\626218] Auto-routing stage completed: started with 55 unrouted nets, completed in 330.11 seconds, final score: 0.00 (2 unrouted and 448 violations), using 204.50 total CPU seconds, 405.48 GB total allocated, and 906.7 MB peak heap usage.
+2026-11-17 19:02:10.312 INFO   [036551\626218] Optimization stage started on board '58ecd3cccc4b7c154a690663513f1947' with score 0.00 (2 unrouted and 448 violations).
+2026-11-17 19:02:33.594 INFO   [036551\626218] Stopping optimization pass #1 early after 50 consecutive items could not be improved.
+2026-11-17 19:02:34.061 INFO   [036551\626218] Optimizer pass #1 on board '67a56f7c38e77992161a6f3dfd587467' was completed in 22.38 seconds with the score of 0.00 (2 unrouted and 448 violations).
+2026-11-17 19:02:34.488 INFO   [036551\626218] Stopping optimizer because the improvement in this pass (0.0000%) is below the threshold (1.00%).
+2026-11-17 19:02:34.943 INFO   [036551\626218] Optimization stage completed: started with score 0.00 (2 unrouted and 448 violations), completed in 24.18 seconds, final score: 0.00 (2 unrouted and 448 violations), using 17.58 total CPU seconds, 37.13 GB total allocated, and 731.1 MB peak heap usage.
+2026-11-17 19:02:34.989 INFO   [036551\626218] Job '036551\626218' finished with state: COMPLETED (elapsed: 5 minutes 55.70 seconds, finished at UTC: 2026-11-18T00:02:34.981059Z).
+2026-11-17 19:02:35.013 INFO   Saving output file '/private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/work/sA1/s_e.ses' (SES)...
+2026-11-17 19:02:35.024 INFO   Successfully saved output file '/private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/work/sA1/s_e.ses' (28594 bytes).

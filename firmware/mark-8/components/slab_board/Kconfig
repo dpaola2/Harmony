@@ -1,0 +1,188 @@
+menu "Harmony Mark-8 slab board"
+
+    config SLAB_EXPECTED_MAC
+        string "Wi-Fi station MAC of the slab board (blank accepts any slab board)"
+        default ""
+        help
+            The firmware already refuses boards that are not an ESP32-PICO-V3-02
+            with 8 MB flash and 2 MB PSRAM. Set this after the first boot to lock
+            the image to one board, for example "e8:31:cd:12:34:56".
+
+    config SLAB_LCD_SPI_HZ
+        int "Screen SPI clock (Hz)"
+        range 1000000 80000000
+        default 40000000
+        help
+            40 MHz sends a full 320 x 320 RGB565 frame in about 41 ms. The DLC
+            sheet gives a 66 ns minimum write cycle (15 MHz); 40 MHz is common
+            practice for this controller family. Use 26666666 or 20000000 if
+            the bring-up picture shows noise.
+
+    config SLAB_LCD_MADCTL
+        hex "ST7365P MADCTL (0x36) value"
+        default 0x48
+        help
+            0x48 is the vendor value (MX, BGR). The bring-up arrow must point to
+            the top edge of the screen (away from the wheel). 0x88 flips both
+            axes (rotates 180 degrees); toggle 0x08 if red and blue swap.
+
+    config SLAB_LCD_COL_OFFSET
+        int "Screen column offset"
+        range 0 160
+        default 0
+
+    config SLAB_LCD_ROW_OFFSET
+        int "Screen row offset"
+        range 0 160
+        default 0
+
+    config SLAB_SD_SPI_KHZ
+        int "microSD SPI clock (kHz)"
+        range 400 26666
+        default 20000
+        help
+            The card lines are 77 to 88 mm long. Start at 20 MHz and raise the
+            clock only after the bring-up reads stay clean. The card pins go
+            through the GPIO matrix, where IDF allows full-duplex SPI up to
+            about 26.7 MHz; 26666 is the only faster setting.
+
+    config SLAB_I2C_HZ
+        int "I2C clock (Hz)"
+        range 10000 400000
+        default 100000
+        help
+            4.7k pull-ups with three parts on the bus. 100 kHz keeps rise times
+            inside the standard-mode limit; a full wheel read then takes about
+            4 ms of the 16 ms gap between touch measurements.
+
+    config SLAB_BL_PWM_HZ
+        int "Backlight PWM frequency (Hz), 0 = bring-up result"
+        range 0 40000
+        default 0
+        help
+            0 uses the quietest frequency the bring-up noise table saved in NVS.
+            Without a saved value the player uses SLAB_BL_FALLBACK_HZ.
+
+    config SLAB_BL_FALLBACK_HZ
+        int "Backlight PWM frequency when nothing is saved (Hz)"
+        range 500 40000
+        default 20000
+
+    config SLAB_BL_BRIGHTNESS_PCT
+        int "Backlight brightness (percent of the current at a 3.7 V cell)"
+        range 5 150
+        default 80
+
+    config SLAB_TOUCH_THRESHOLD
+        int "MPR121 touch threshold when nothing is saved"
+        range 2 255
+        default 12
+
+    config SLAB_RELEASE_THRESHOLD
+        int "MPR121 release threshold when nothing is saved"
+        range 1 254
+        default 6
+
+    config SLAB_TOUCH_USE_SAVED
+        bool "Use the touch thresholds the bring-up saved"
+        default y
+
+    config SLAB_TOUCH_SLOW_FALLING_BASELINE
+        bool "Use the bench filter v2 falling baseline (NHDF 1, NCLF 32, FDLF 16)"
+        default n
+        help
+            The hardware README gives the AN3944 values (NHDF 5, NCLF 1, FDLF 0)
+            and they are the default. The November 7 bench through 1.6 mm PLA
+            missed long holds with them; set this if long holds on the wheel
+            drop out.
+
+    config SLAB_WHEEL_STEP_DEG
+        int "Wheel scroll step (degrees)"
+        range 5 90
+        default 15
+
+    config SLAB_WHEEL_START_DEG
+        int "Movement before the first scroll step (degrees)"
+        range 5 90
+        default 20
+
+    config SLAB_WHEEL_TAP_MAX_MS
+        int "Longest tap (ms)"
+        range 100 2000
+        default 400
+
+    config SLAB_WHEEL_TAP_MAX_DEG
+        int "Most movement in a tap (degrees)"
+        range 1 45
+        default 12
+
+    config SLAB_WHEEL_HOLD_MS
+        int "Touch held still for this long is a hold (ms)"
+        range 300 5000
+        default 700
+
+    config SLAB_WHEEL_ZONE_HALF_DEG
+        int "Half width of each labelled tap zone (degrees)"
+        range 20 45
+        default 40
+
+    config SLAB_WHEEL_REVERSE
+        bool "Reverse the scroll direction"
+        default n
+
+    config SLAB_WHEEL_TRACKING_READS
+        bool "Extra wheel reads between TOUCH_IRQ edges while touched"
+        default n
+        help
+            Off follows the hardware README exactly: the MPR121 is read only
+            after TOUCH_IRQ falls (a touch status change). The wheel position
+            then updates about 16 times per turn. On adds reads at the middle of
+            each 16 ms measurement gap, timed from the last IRQ, for at most
+            SLAB_WHEEL_TRACKING_PERIODS periods. Try it only after the noise
+            table shows it does not add touch noise.
+
+    config SLAB_WHEEL_TRACKING_PERIODS
+        int "Tracking reads after each IRQ"
+        depends on SLAB_WHEEL_TRACKING_READS
+        range 1 16
+        default 6
+
+    config SLAB_SLEEP_TOUCH_WAKE
+        bool "Wake from deep sleep on a wheel touch"
+        default y
+        help
+            On: the MPR121 keeps scanning slowly in sleep (estimated 6 to 10 uA
+            at 64 ms). Off: the MPR121 stops (about 3 uA) and only the side
+            button wakes the player.
+
+    config SLAB_SLEEP_TOUCH_ESI_MS
+        int "Touch scan interval in deep sleep (ms: 16, 32, 64 or 128)"
+        depends on SLAB_SLEEP_TOUCH_WAKE
+        range 16 128
+        default 64
+
+    config SLAB_MOTOR_FITTED
+        bool "Vibration motor fitted on M+ and M-"
+        default n
+
+    config SLAB_CLICK_HZ
+        int "Buzzer click frequency (Hz)"
+        range 500 8000
+        default 4000
+
+    config SLAB_CLICK_DUTY_PCT
+        int "Buzzer click duty (percent, sets loudness)"
+        range 0 50
+        default 50
+
+    config SLAB_CLICK_SCROLL_US
+        int "Click length per scroll step (us)"
+        range 0 10000
+        default 1500
+
+    config SLAB_CLICK_TAP_US
+        int "Click length per tap (us)"
+        range 0 10000
+        default 5000
+
+endmenu

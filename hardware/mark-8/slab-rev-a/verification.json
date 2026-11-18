@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "drc_errors": 0,
+  "drc_warnings": 32,
+  "unconnected": 0,
+  "drc_warning_types": [
+    "silk_edge_clearance",
+    "silk_over_copper",
+    "silk_overlap"
+  ],
+  "netlist_pads_checked": 366,
+  "electrode_gaps": {
+    "1-2": 0.4,
+    "2-3": 0.4,
+    "3-4": 0.4,
+    "4-5": 0.4,
+    "5-6": 0.4,
+    "6-7": 0.4,
+    "7-8": 0.4,
+    "8-1": 0.4
+  },
+  "sector_centroid_angles": {
+    "1": 89.739,
+    "2": 44.739,
+    "3": -0.261,
+    "4": -45.261,
+    "5": -90.261,
+    "6": -135.261,
+    "7": 179.739,
+    "8": 134.739
+  },
+  "l2_hatch_copper_fraction": 0.356,
+  "power_net_min_width": {
+    "VBUS": 0.2,
+    "VSYS": 0.2,
+    "VBAT": 0.25,
+    "BAT_P": 0.4,
+    "3V3": 0.15,
+    "3V3_PERIPH": 0.3,
+    "LCD_LEDA": 0.3,
+    "LCD_LEDK": 0.2
+  },
+  "power_net_length_below_0p4": {
+    "VBUS": 63.826,
+    "VSYS": 3.86,
+    "VBAT": 1.31,
+    "BAT_P": 0,
+    "3V3": 6.867,
+    "3V3_PERIPH": 14.54,
+    "LCD_LEDA": 2.907,
+    "LCD_LEDK": 0.6
+  },
+  "power_net_narrow_away_from_pins": {
+    "VSYS": 0,
+    "VBAT": 0,
+    "3V3": 0,
+    "LCD_LEDA": 0,
+    "LCD_LEDK": 0
+  },
+  "usb_track_length": {
+    "USB_DP": 15.899,
+    "USB_DN": 14.906
+  },
+  "track_segments": 1220,
+  "vias": 272,
+  "vias_in_wheel_by_net": {
+    "3V3": 5,
+    "3V3_PERIPH": 7,
+    "BZ_GATE": 3,
+    "ELE2": 1,
+    "ELE8": 2,
+    "GND": 31,
+    "I2C_SCL": 2,
+    "I2C_SDA": 2,
+    "LCD_CS": 2,
+    "LCD_DC": 6,
+    "LCD_LEDA": 2,
+    "LCD_RST": 2,
+    "LCD_TE": 4,
+    "PERIPH_EN_N": 4,
+    "SD_CD": 2,
+    "SD_CS": 10,
+    "TOUCH_IRQ": 2,
+    "VBAT": 3,
+    "VBUS": 6,
+    "VSYS": 3
+  },
+  "l3_nets_above_electrodes": [
+    "3V3",
+    "3V3_PERIPH",
+    "BZ_GATE",
+    "CHG_STAT",
+    "ELE2",
+    "ELE8",
+    "I2C_SCL",
+    "I2C_SDA",
+    "LCD_CS",
+    "LCD_DC",
+    "LCD_LEDA",
+    "LCD_RST",
+    "LCD_TE",
+    "PERIPH_EN_N",
+    "SD_CD",
+    "SD_CS",
+    "SIDE_BTN",
+    "TOUCH_IRQ",
+    "VBAT",
+    "VBAT_SENSE",
+    "VBUS",
+    "VSYS"
+  ],
+  "l3_track_in_disc_mm": {
+    "3V3": [
+      41.227,
+      45.246
+    ],
+    "3V3_PERIPH": [
+      28.142,
+      28.142
+    ],
+    "BZ_GATE": [
+      4.073,
+      4.073
+    ],
+    "CHG_STAT": [
+      0.0,
+      4.727
+    ],
+    "ELE2": [
+      12.782,
+      12.782
+    ],
+    "ELE8": [
+      18.374,
+      18.374
+    ],
+    "I2C_SCL": [
+      7.026,
+      7.026
+    ],
+    "I2C_SDA": [
+      34.517,
+      36.308
+    ],
+    "LCD_CS": [
+      11.844,
+      11.844
+    ],
+    "LCD_DC": [
+      23.06,
+      23.06
+    ],
+    "LCD_LEDA": [
+      11.907,
+      11.907
+    ],
+    "LCD_RST": [
+      15.381,
+      15.381
+    ],
+    "LCD_TE": [
+      22.898,
+      22.898
+    ],
+    "PERIPH_EN_N": [
+      12.386,
+      12.386
+    ],
+    "SD_CD": [
+      7.785,
+      7.785
+    ],
+    "SD_CS": [
+      12.207,
+      12.744
+    ],
+    "SIDE_BTN": [
+      10.793,
+      13.556
+    ],
+    "TOUCH_IRQ": [
+      23.885,
+      23.885
+    ],
+    "VBAT": [
+      20.281,
+      21.319
+    ],
+    "VBAT_SENSE": [
+      0.0,
+      0.253
+    ],
+    "VBUS": [
+      40.927,
+      42.53
+    ],
+    "VSYS": [
+      23.497,
+      23.633
+    ]
+  },
+  "disc_edge_crossings": {},
+  "vbus_main_paths": {
+    "J1_to_D1": {
+      "widest": 0.2,
+      "narrow_mm": {
+        "L1 0.20": 9.575,
+        "L1 0.30": 22.662,
+        "L3 0.30": 13.88
+      }
+    },
+    "J1_to_U3_VIN": {
+      "widest": 0.2,
+      "narrow_mm": {
+        "L1 0.20": 9.575,
+        "L1 0.30": 22.662,
+        "L3 0.30": 13.88
+      }
+    }
+  },
+  "sha256": {
+    "harmony-mark8-slab.kicad_pcb": "c0e475cb78ee24fcab084dbe1da4520aa57a643ba532c60eec6f3aa1bf1c25a3",
+    "harmony-mark8-slab.kicad_sch": "675e3ac1c41c99edf1fa21b1a9c54dc3d6d48955e4e5162bed1d489fe08b9d51",
+    "netlist.xml": "cef984f2c35747eeeec6262f00653eea2460624b3a3017a6d43bf1f887172e02"
+  }
+}

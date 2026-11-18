@@ -1,0 +1,14 @@
+menu "Harmony Mark-8 slab bring-up"
+    config SLAB_NOISE_SAMPLES
+        int "Touch-noise samples per case (one every 208 ms)"
+        range 8 200
+        default 24
+    config SLAB_PROMPT_SECONDS
+        int "Seconds to wait for the side button at a prompt"
+        range 5 120
+        default 20
+    config SLAB_WAKE_TIMEOUT_S
+        int "Seconds before a deep sleep test gives up (timer wake)"
+        range 10 600
+        default 60
+endmenu

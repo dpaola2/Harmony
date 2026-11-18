@@ -1,0 +1,24 @@
+{
+ "device_bbox": {
+  "x": [
+   -27.2,
+   27.46
+  ],
+  "y": [
+   -50.4,
+   -10.0
+  ],
+  "z": [
+   -7.351,
+   -1.0
+  ]
+ },
+ "checks": {
+  "usb_c_front_y_step": -50.4,
+  "usb_c_front_y_interface": -50.4,
+  "lowest_z_step": -7.351,
+  "lowest_z_interface": -7.301,
+  "touch_side_z_step_max": -1.0
+ },
+ "status": "PASS"
+}

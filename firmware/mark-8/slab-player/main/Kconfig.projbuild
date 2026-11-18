@@ -1,0 +1,17 @@
+menu "Harmony Mark-8 slab player"
+    config EXAMPLE_SSP_ENABLED
+        bool "Secure Simple Pairing"
+        depends on BT_CLASSIC_ENABLED
+        default y
+        help
+            This enables the Secure Simple Pairing. If disabled, Bluedroid
+            supports Legacy Pairing only.
+    config SLAB_IDLE_SLEEP_MIN
+        int "Deep sleep after this many minutes without input while not playing (0 = never)"
+        range 0 240
+        default 10
+    config SLAB_SIDE_LONG_PRESS_MS
+        int "Side-button press that puts the player to sleep (ms)"
+        range 500 10000
+        default 1500
+endmenu

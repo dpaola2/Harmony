@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-17T20:10:18-0500",
+    "kicad_version": "8.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/8a837b8d-0027-5059-b8a5-7256dcfb172d",
+            "violations": []
+        }
+    ],
+    "source": "harmony-mark8-slab.kicad_sch"
+}

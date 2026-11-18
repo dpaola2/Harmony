@@ -1,0 +1,26 @@
+{
+ "bom_lines": 39,
+ "placements": 82,
+ "basic_lines": 24,
+ "extended_lines": 15,
+ "gerber_files": [
+  "harmony-mark8-slab-B_Cu.gbl",
+  "harmony-mark8-slab-B_Mask.gbs",
+  "harmony-mark8-slab-B_Silkscreen.gbo",
+  "harmony-mark8-slab-Edge_Cuts.gm1",
+  "harmony-mark8-slab-F_Cu.gtl",
+  "harmony-mark8-slab-F_Mask.gts",
+  "harmony-mark8-slab-F_Paste.gtp",
+  "harmony-mark8-slab-F_Silkscreen.gto",
+  "harmony-mark8-slab-In1_Cu.g2",
+  "harmony-mark8-slab-In2_Cu.g3",
+  "harmony-mark8-slab-NPTH-drl_map.gbr",
+  "harmony-mark8-slab-NPTH.drl",
+  "harmony-mark8-slab-PTH-drl_map.gbr",
+  "harmony-mark8-slab-PTH.drl",
+  "harmony-mark8-slab-job.gbrjob"
+ ],
+ "zip": "harmony-mark8-slab-gerbers.zip",
+ "zip_sha256": "7d3a07dfa5eb11b400d554c5d5baba1f78b6fb60b8411ee964c21eb33a62f5cb",
+ "board_sha256": "c0e475cb78ee24fcab084dbe1da4520aa57a643ba532c60eec6f3aa1bf1c25a3"
+}

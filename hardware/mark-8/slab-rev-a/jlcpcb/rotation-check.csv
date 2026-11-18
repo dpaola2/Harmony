@@ -1,0 +1,83 @@
+Designator,Footprint,Source,KiCad angle,CPL rotation,Offset applied,Check in JLC preview
+BZ1,Buzzer_MLT-5020,EasyEDA/JLC footprint,0,0,0,+ pad to BZ_P
+C1,C_0805_2012Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C10,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C11,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C12,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+C13,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C14,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),180,180,0,
+C15,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C16,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C17,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C18,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),180,180,0,
+C19,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C2,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),180,180,0,
+C20,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C21,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C22,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C23,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C24,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C25,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),180,180,0,
+C3,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C4,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C5,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+C6,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C7,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C8,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+C9,C_0805_2012Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+D1,SOD-123_B5819W,EasyEDA/JLC footprint,0,0,0,diode: cathode band to VSYS
+D2,SOD-123_B5819W,EasyEDA/JLC footprint,0,0,0,diode: cathode band to BZ_P
+J1,USB-C_HRO_TYPE-C-31-M-12,EasyEDA/JLC footprint,0,0,0,USB-C: origin at the pad row; body extends 4.9 toward the board edge. Opening must face the edge
+J2,FH35C-15S-0.3SHW,EasyEDA/JLC footprint,270,270,0,FPC: slot must face the ramp (device +X = KiCad -X); pin 1 at the KiCad lower (+Y) end
+J3,DM3AT-SF-PEJM5,EasyEDA/JLC footprint,0,0,0,microSD: card slot must face the bottom board edge
+J4,JST_PH_S2B-PH-SM4-TB,EasyEDA/JLC footprint,180,180,0,JST PH: cable entry must face the top board edge; origin is not the body centre
+LED1,LED_0603_EasyEDA,EasyEDA/JLC footprint,90,90,0,LED: cathode (pin 2) toward CHG_STAT
+Q1,SOT-363,EasyEDA/JLC footprint,0,0,0,SOT-363: pin 1 dot
+Q2,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
+Q3,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
+Q4,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
+Q5,SOT-23_AO3400A,EasyEDA/JLC footprint,90,90,0,
+Q6,SOT-23_AO3400A,EasyEDA/JLC footprint,0,0,0,
+R1,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R10,R_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R11,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R12,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R13,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R14,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R15,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R16,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R17,R_1206_3216Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R18,R_0805_2012Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R19,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R2,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R20,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R21,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R22,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R23,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R24,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R25,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R26,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R27,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R28,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R29,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R3,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R30,R_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R31,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R32,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R4,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
+R5,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R6,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R7,R_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R8,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+R9,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
+SW1,SW_SKRTLAE010,EasyEDA/JLC footprint,270,270,0,side switch: actuator must overhang the right (device +X) board edge
+SW2,SW_TS-1088,EasyEDA/JLC footprint,90,90,0,
+SW3,SW_TS-1088,EasyEDA/JLC footprint,90,90,0,
+U1,ESP32-PICO-MINI-02,EasyEDA/JLC footprint,90,90,0,"module: footprint origin is the pad-field centre, 2.7 mm from the module centre toward the pins"
+U2,QFN-24_4x4_P0.5_EP2.5,EasyEDA/JLC footprint,90,90,0,QFN-24: pin 1 dot
+U3,SOT-23-5_MCP73831,EasyEDA/JLC footprint,0,0,0,
+U4,TSOT-23-5_RT9080,EasyEDA/JLC footprint,0,0,0,
+U5,TDFN-8_2x2_P0.5_EP,EasyEDA/JLC footprint,0,0,0,TDFN-8: pin 1 dot
+U6,QFN-20_3x3_P0.4,EasyEDA/JLC footprint,180,180,0,QFN-20: pin 1 dot
+U7,VSSOP-10_DRV2605L,EasyEDA/JLC footprint,0,0,0,VSSOP-10: pin 1 dot
+U8,SOT-23-6,EasyEDA/JLC footprint,270,270,0,

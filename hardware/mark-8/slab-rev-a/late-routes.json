@@ -1,0 +1,203 @@
+{
+ "note": "Late hand routes: connections the routers could not finish. CC1 to R1 was found by maze.py with all routed copper rippable and frozen here; DTR and U2_TXD leave the CH9102F bottom row through one via each, placed by hand so that neither blocks the other or RTS. late_routes.py adds them right after build_pcb.py, before any router runs.",
+ "tracks": [
+  {
+   "net": "CC1",
+   "layer": "F.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     11.01,
+     -48.9
+    ],
+    [
+     11.7,
+     -48.95
+    ]
+   ]
+  },
+  {
+   "net": "CC1",
+   "layer": "In2.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     11.7,
+     -48.95
+    ],
+    [
+     8.2,
+     -48.45
+    ],
+    [
+     4.45,
+     -45.8
+    ],
+    [
+     2.25,
+     -45.0
+    ],
+    [
+     1.25,
+     -45.0
+    ]
+   ]
+  },
+  {
+   "net": "DTR",
+   "layer": "F.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     11.15,
+     -47.55
+    ],
+    [
+     11.15,
+     -48.17
+    ]
+   ]
+  },
+  {
+   "net": "DTR",
+   "layer": "In2.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     11.15,
+     -48.17
+    ],
+    [
+     11.5,
+     -47.82
+    ],
+    [
+     13.45,
+     -47.82
+    ],
+    [
+     14.65,
+     -46.62
+    ],
+    [
+     14.65,
+     -46.0
+    ]
+   ]
+  },
+  {
+   "net": "U2_TXD",
+   "layer": "F.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     12.15,
+     -47.55
+    ],
+    [
+     12.15,
+     -48.4
+    ],
+    [
+     12.3,
+     -48.55
+    ]
+   ]
+  },
+  {
+   "net": "U2_TXD",
+   "layer": "In2.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     12.3,
+     -48.55
+    ],
+    [
+     14.4,
+     -48.55
+    ],
+    [
+     15.23,
+     -47.72
+    ],
+    [
+     15.23,
+     -43.67
+    ]
+   ]
+  },
+  {
+   "net": "U2_TXD",
+   "layer": "F.Cu",
+   "width": 0.15,
+   "pts": [
+    [
+     15.23,
+     -43.67
+    ],
+    [
+     20.39,
+     -43.67
+    ],
+    [
+     20.88,
+     -44.16
+    ],
+    [
+     20.88,
+     -44.69
+    ],
+    [
+     20.24,
+     -45.33
+    ],
+    [
+     19.75,
+     -45.82
+    ],
+    [
+     19.75,
+     -45.89
+    ]
+   ]
+  }
+ ],
+ "vias": [
+  {
+   "net": "CC1",
+   "pos": [
+    11.7,
+    -48.95
+   ]
+  },
+  {
+   "net": "DTR",
+   "pos": [
+    11.15,
+    -48.17
+   ]
+  },
+  {
+   "net": "DTR",
+   "pos": [
+    14.65,
+    -46.0
+   ]
+  },
+  {
+   "net": "U2_TXD",
+   "pos": [
+    12.3,
+    -48.55
+   ]
+  },
+  {
+   "net": "U2_TXD",
+   "pos": [
+    15.23,
+    -43.67
+   ]
+  }
+ ]
+}

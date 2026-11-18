@@ -1,0 +1,5 @@
+# KiCad local view settings
+*.kicad_prl
+# easyeda2kicad import cache; import_lcsc.sh rebuilds it, make_lib.py copies the used models to lib/Harmony8.3dshapes
+lib/easyeda/lcsc.3dshapes/
+__pycache__/
