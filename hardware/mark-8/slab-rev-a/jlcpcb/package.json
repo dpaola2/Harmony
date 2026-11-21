@@ -8,26 +8,25 @@
    68.4,
    53.6
   ],
-  "routed_slots": 4,
+  "routed_slots": 3,
   "tabs": [
    [
-    "top",
-    -11.0
-   ],
-   [
-    "top",
-    0.0
-   ],
-   [
-    "top",
-    10.0
-   ],
-   [
     "left",
-    -15.5
+    -15.5,
+    4.8
+   ],
+   [
+    "top",
+    24.1,
+    4.0
+   ],
+   [
+    "right",
+    -43.0,
+    4.8
    ]
   ],
-  "mouse_bites": 20,
+  "mouse_bites": 14,
   "fiducials": [
    [
     -22.0,
@@ -72,6 +71,6 @@
   "harmony-mark8-slab-job.gbrjob"
  ],
  "zip": "harmony-mark8-slab-gerbers.zip",
- "zip_sha256": "fcdaec8ce8161cae6cdac574b996b1b3d360a7e1f47928b7c7f22f19ccedbbf7",
- "board_sha256": "958136703c3b4123f1d4253c61b2864f4506921f004b90df7c66cf880d26baca"
+ "zip_sha256": "0f76352ca79251c7c5ddf97af224e1335b8077bdd132983f25fa80f667e54cc7",
+ "board_sha256": "d87f6c574a621d2a9b79aec3c337326304c5fb5bd007b780092c4741a59ce56d"
 }

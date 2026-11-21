@@ -177,6 +177,10 @@ def C(ref, value, fp, a, b, pos, rot, block):
 
 
 GND = 'GND'
+# The four GND vias in U2's exposed pad, offsets from the pad centre (build_pcb.py places them; make_lib.py keeps
+# the exposed-pad paste windows 0.1 mm off their lands, 2026-11-21 change review USBC-4). Symmetric, so the
+# device and footprint frames agree.
+U2_EP_VIAS = ((-0.6, -0.6), (0.6, -0.6), (-0.6, 0.6), (0.6, 0.6))
 
 # ---- USB-C, ESD, USB-serial, auto-reset (bottom right) ----
 usb = {'A1B12': GND, 'B1A12': GND, 'A4B9': 'VBUS', 'B4A9': 'VBUS', 'A5': 'CC1', 'B5': 'CC2',
@@ -455,7 +459,8 @@ DISC_L3_ACCEPTED = {'I2C_SDA': (36.31, 2), 'LCD_DC': (23.06, 6), 'LCD_TE': (22.9
 # VBUS from J1 to D1 and to U3 VIN (step C): accepted with a 0.2 mm bottleneck. The caps are the
 # measured length of track narrower than 0.4 mm on the path with the least such track, by layer and width,
 # after widening in place (no L3 track at 0.2 mm is left on these paths). Pin neck-downs are not counted.
-VBUS_PATH_ACCEPTED = {'min_width': 0.2, 'max_mm': {'L1 0.20': 9.58, 'L1 0.30': 22.67, 'L3 0.30': 13.89}}
+# L1 0.30 was 22.67 until the 2026-11-21 change review (REG-2): the antenna re-route brought it to 21.37.
+VBUS_PATH_ACCEPTED = {'min_width': 0.2, 'max_mm': {'L1 0.20': 9.58, 'L1 0.30': 21.37, 'L3 0.30': 13.89}}
 DISC_L3_FORBIDDEN = ['I2C_SDA', 'I2C_SCL', 'LCD_DC', 'LCD_CS', 'LCD_TE', 'SD_CS', 'BZ_GATE', 'LCD_SCK',
                      'LCD_MOSI', 'SD_SCK', 'SD_MOSI', 'SD_MISO', 'LCD_BL', 'LCD_LEDK']
 
@@ -464,14 +469,21 @@ POWER_NETS = ['VBUS', 'VSYS', 'VBAT', 'BAT_P', '3V3', '3V3_PERIPH', 'LCD_LEDA', 
 
 # --- JLCPCB assembly panel (2026-11-21 review, CC-1) -------------------------------------------------------
 # package_jlc.py puts the board in its own 1 x 1 frame for the Gerbers: 5 mm rails on all four sides, a
-# 2 mm routed gap, and mouse-bite tabs only on the top and left edges (no part overhangs them; the bottom
-# edge carries J1 and J3, the right edge SW1 and the antenna). Tabs keep clear of the parts that sit within
-# 1 mm of an edge (J4, U7, C15, C7). The board outline that goes into the case does not change.
+# 2 mm routed gap and three mouse-bite tabs. The board outline that goes into the case does not change.
+# Tab places (2026-11-21 change review, FAB-1, FAB-2, FAB-5): none on the top edge from x -14 to +19, where the
+# screen FPC bends over the board edge (SPEC 3.1 dive zone), none on the bottom edge (J1, J3, LED1, R1, C1, TP5,
+# TP6 within 1 mm of it) and none beside the antenna or SW1. The left tab (y -15.5) is 2.1 mm from the J4 pads
+# and clear of U3 and C7. The top tab (x 22.1 to 26.1) is 4.0 mm wide, so it stays 1.2 mm from the SW2 pads and
+# ends before the corner radius. The right tab (y -45.4 to -40.6) is 2.7 mm below the antenna keep-out and
+# 1.8 mm from locating hole H2. So the board hangs at three corners, not from one edge, and no tab is near H1.
+# The holes sit outside the board: after a cut along the hole line, a 0.35 mm nub is left to file flush.
 PANEL = dict(
     gap=2.0, rail=5.0,
-    tabs=[('top', -11.0), ('top', 0.0), ('top', 10.0), ('left', -15.5)],   # edge, device x (top) or y (left)
-    tab_width=4.8, bite_d=0.6, bite_pitch=0.95, bite_n=5,
-    bite_offset=0.35,           # hole centres 0.35 outside the board edge: the holes stop 0.05 short of it
+    # edge, position along it (device x on the top edge, device y on the left and right edges), tab width
+    tabs=[('left', -15.5, 4.8), ('top', 24.1, 4.0), ('right', -43.0, 4.8)],
+    bite_d=0.6, bite_pitch=0.95, bite_end_web=0.2,   # as many holes as fit with at least 0.2 mm at each end
+    bite_offset=0.35,           # hole centres 0.35 outside the board edge: the hole row stops 0.05 short of it,
+                                # so the weakest line (and a cut along the holes) is 0.35 outside the edge
     fiducial_cu=1.0, fiducial_mask=2.0, fiducial_from_edge=3.85,        # JLC: 1 mm copper, 2 mm opening
     tooling_d=2.0, tooling_from_edge=(3.0, 2.5))                       # JLC SMT: 2.0 mm NPTH in the rails
 USB_NETS = ['USB_DP', 'USB_DN']

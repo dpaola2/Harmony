@@ -673,6 +673,89 @@ for ref_ in ('J1', 'U6'):
     gaps_lp[ref_] = r3(best_)
     check(best_ >= 0.127 - 1e-3, '%s pad gap %.3f below 0.127' % (ref_, best_))
 
+
+# (e) J1 pin-in-paste openings (change review REG-1, USBC-3): each paste-only opening over a shell slot keeps
+# 0.15 mm from other-net L1 copper, from every via ring and from every other paste opening.
+def _pad_shape(pd, layer, grow=0):
+    s_ = p.SHAPE_POLY_SET()
+    pd.TransformShapeToPolygon(s_, layer, grow, p.FromMM(0.002))
+    return s_
+
+
+def _ring(s_):
+    """Outline points (mm) of every outline in a polygon set."""
+    return [[(p.ToMM(o_.CPoint(k).x), p.ToMM(o_.CPoint(k).y)) for k in range(o_.PointCount())]
+            for o_ in (s_.Outline(i_) for i_ in range(s_.OutlineCount()))]
+
+
+def _seg_seg(a, b, c, d):
+    def cross(o, u, w):
+        return (u[0] - o[0]) * (w[1] - o[1]) - (u[1] - o[1]) * (w[0] - o[0])
+    if cross(a, b, c) * cross(a, b, d) < 0 and cross(c, d, a) * cross(c, d, b) < 0:
+        return 0.0
+
+    def pt(q, u, w):
+        dx, dy = w[0] - u[0], w[1] - u[1]
+        l2 = dx * dx + dy * dy
+        s = 0.0 if l2 == 0 else max(0.0, min(1.0, ((q[0] - u[0]) * dx + (q[1] - u[1]) * dy) / l2))
+        return math.hypot(q[0] - u[0] - s * dx, q[1] - u[1] - s * dy)
+    return min(pt(a, c, d), pt(b, c, d), pt(c, a, b), pt(d, a, b))
+
+
+def _inside(q, s_):
+    return s_.SquaredDistance(p.VECTOR2I(p.FromMM(q[0]), p.FromMM(q[1]))) == 0
+
+
+def _dist(sa, ob):
+    """Distance from polygon set sa to an obstacle: ('seg', a, z, half width) or ('poly', polygon set)."""
+    if ob[0] == 'seg':
+        _, a, z, hw = ob
+        if _inside(a, sa) or _inside(z, sa):
+            return 0.0
+        return max(0.0, min(_seg_seg(r_[k], r_[k - 1], a, z) for r_ in _ring(sa) for k in range(len(r_))) - hw)
+    rs_a, rs_b = _ring(sa), _ring(ob[1])
+    if any(_inside(q, ob[1]) for r_ in rs_a for q in r_) or any(_inside(q, sa) for r_ in rs_b for q in r_):
+        return 0.0
+    return min(_seg_seg(ra[i], ra[i - 1], rb[j], rb[j - 1]) for ra in rs_a for rb in rs_b
+               for i in range(len(ra)) for j in range(len(rb)))
+
+
+_j1 = fps['J1']
+_aps = [pd for pd in _j1.Pads() if pd.IsOnLayer(p.F_Paste) and not pd.IsOnLayer(p.F_Cu)]
+_slot_at = {(pd.GetPosition().x, pd.GetPosition().y): pd.GetNumber() for pd in _j1.Pads() if pd.GetAttribute() == p.PAD_ATTRIB_PTH}
+check(sorted(_slot_at.get((a_.GetPosition().x, a_.GetPosition().y), '?') for a_ in _aps) == ['1', '2', '3', '4'],
+      'J1 needs one paste opening over each shell slot')
+_win = _j1.GetBoundingBox(); _win.Inflate(p.FromMM(1.0))
+_ap_ids = {a_.m_Uuid.AsString() for a_ in _aps}
+_obst = []
+for f in fps.values():
+    for pd in f.Pads():
+        if pd.m_Uuid.AsString() in _ap_ids or not _win.Intersects(pd.GetBoundingBox()):
+            continue
+        nm_ = '%s.%s' % (f.GetReference(), pd.GetNumber())
+        if pd.IsOnLayer(p.F_Cu) and pd.GetNetname() != GND and pd.GetAttribute() != p.PAD_ATTRIB_NPTH:
+            _obst.append(('copper ' + nm_, ('poly', _pad_shape(pd, p.F_Cu))))
+        if pd.IsOnLayer(p.F_Paste):
+            grow_ = 0 if not pd.IsOnLayer(p.F_Cu) else pd.GetSolderPasteMargin().x
+            _obst.append(('paste ' + (nm_ if pd.GetNumber() else f.GetReference() + ' opening'),
+                          ('poly', _pad_shape(pd, p.F_Paste, grow_))))
+for t_ in tracks + vias:
+    via_ = isinstance(t_, p.PCB_VIA)
+    if (via_ or (t_.GetLayer() == p.F_Cu and t_.GetNetname() != GND)) and _win.Intersects(t_.GetBoundingBox()):
+        a_, z_ = (t_.GetPosition(), t_.GetPosition()) if via_ else (t_.GetStart(), t_.GetEnd())
+        _obst.append(('%s %s' % ('via' if via_ else 'track', t_.GetNetname()),
+                      ('seg', (p.ToMM(a_.x), p.ToMM(a_.y)), (p.ToMM(z_.x), p.ToMM(z_.y)), p.ToMM(t_.GetWidth()) / 2)))
+for z_ in b.Zones():
+    if not z_.GetIsRuleArea() and z_.IsOnLayer(p.F_Cu) and z_.GetNetname() != GND:
+        _obst.append(('zone ' + z_.GetNetname(), ('poly', z_.GetFilledPolysList(p.F_Cu))))
+j1_paste = {}
+for a_ in _aps:
+    sa_ = _pad_shape(a_, p.F_Paste)
+    d_, what_ = min((_dist(sa_, ob_), w_) for w_, ob_ in _obst)
+    num_ = _slot_at.get((a_.GetPosition().x, a_.GetPosition().y), '?')
+    j1_paste['pad ' + num_] = dict(area_mm2=r3(abs(sa_.Outline(0).Area()) / 1e12), nearest=what_, distance=r3(d_))
+    check(d_ >= 0.15 - 1e-3, 'J1 pad %s paste opening %.3f from %s (needs 0.15)' % (num_, d_, what_))
+
 # --- 5. ERC / DRC results -------------------------------------------------------------------------
 drc = json.loads((HERE / 'drc.json').read_text())
 erc = json.loads((HERE / 'erc.json').read_text())
@@ -693,7 +776,7 @@ summary = dict(
     power_net_min_width=power_min, power_net_length_below_0p4=narrow, power_net_narrow_away_from_pins=narrow_free, usb_track_length=usb_len,
     track_segments=len(tracks), vias=len(vias),
     vias_in_wheel_by_net={n: in_wheel_vias.count(n) for n in sorted(set(in_wheel_vias))},
-    no_copper_areas=no_copper, via_mask=via_plug, land_pattern_min_gap=gaps_lp,
+    no_copper_areas=no_copper, via_mask=via_plug, land_pattern_min_gap=gaps_lp, j1_paste_clearance=j1_paste,
     l3_nets_above_electrodes=l3_in, l3_track_in_disc_mm=l3_disc, disc_edge_crossings=edge_cross, vbus_main_paths=vbus_paths,
     sha256={f: hashlib.sha256((HERE / f).read_bytes()).hexdigest() for f in [NAME + '.kicad_pcb', NAME + '.kicad_sch', 'netlist.xml']})
 iface = dict(

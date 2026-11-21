@@ -11,6 +11,7 @@ MODEL_FIX holds the KiCad model rotation and offset that put each STEP body on i
 value was found by slicing the STEP at the board plane and matching legs to pads (rotation and
 offset), then cross-checked against the vendor drawing (README, "3D model alignment").
 """
+import math
 import shutil
 import pcbnew as p
 import wx
@@ -111,36 +112,163 @@ def fix_custom_pads(fp, src, name):
         STROKE_FIXED.setdefault(name, []).append((pad.GetNumber(), width))
 
 
+# --- paste-only openings (2026-11-21 change review: REG-1, USBC-2, USBC-3, USBC-4) ---------------------------
+# KiCad's paste margin is one number for both axes and is centred on the pad, so the openings that are not
+# centred or not rectangles are drawn as aperture pads: pads with no number and no copper, on F.Paste only.
+# The copper pad under each one loses its own F.Paste layer.
+def _sps(pts):
+    s = p.SHAPE_POLY_SET(); s.NewOutline()
+    for x, y in pts:
+        s.Append(p.FromMM(x), p.FromMM(y))
+    return s
+
+
+def _arc(cx, cy, r, a0, a1, n, outside):
+    """Points on an arc from angle a0 to a1 (radians). outside=True puts the vertices on radius r / cos(step / 2),
+    so the chords never come closer than r to the centre (for keep-outs); False keeps them on r (for openings)."""
+    step = (a1 - a0) / n
+    rr = r / math.cos(step / 2) if outside else r
+    return [(cx + rr * math.cos(a0 + step * k), cy + rr * math.sin(a0 + step * k)) for k in range(n + 1)]
+
+
+def _stadium(cx, cy, w, l, n=32):
+    """Opening: a slot pad shape (w across, l along y), vertices on the true outline."""
+    r, h = w / 2, l / 2 - w / 2
+    return _arc(cx, cy + h, r, 0, math.pi, n, False) + _arc(cx, cy - h, r, math.pi, 2 * math.pi, n, False)
+
+
+def _keepout(a, z, r, n=16):
+    """Keep-out: everything within r of the segment a-z (a circle when a == z), never undercut."""
+    t = math.atan2(z[1] - a[1], z[0] - a[0])
+    return (_arc(z[0], z[1], r, t - math.pi / 2, t + math.pi / 2, n, True) +
+            _arc(a[0], a[1], r, t + math.pi / 2, t + 3 * math.pi / 2, n, True))
+
+
+def _box_keepout(x0, x1, y0, y1, r, n=8):
+    """Keep-out: everything within r of the rectangle, never undercut."""
+    pts = []
+    for cx, cy, a in ((x1, y1, 0), (x0, y1, math.pi / 2), (x0, y0, math.pi), (x1, y0, 1.5 * math.pi)):
+        pts += _arc(cx, cy, r, a, a + math.pi / 2, n, True)
+    return pts
+
+
+def add_aperture(fp, centre, outline):
+    """Paste-only pad at centre (footprint mm) whose opening is the polygon outline (footprint mm)."""
+    ap = p.PAD(fp)
+    ap.SetNumber('')
+    ap.SetAttribute(p.PAD_ATTRIB_SMD)
+    ap.SetShape(p.PAD_SHAPE_CUSTOM)
+    ap.SetAnchorPadShape(p.PAD_SHAPE_CIRCLE)
+    ap.SetSize(v(0.1, 0.1))                  # anchor, inside every opening here
+    ls = p.LSET(); ls.AddLayer(p.F_Paste); ap.SetLayerSet(ls)
+    ap.SetPosition(v(*centre))
+    ap.AddPrimitivePoly(_sps([(x - centre[0], y - centre[1]) for x, y in outline]), 0, True)
+    fp.Add(ap)
+
+
+def add_aperture_rect(fp, centre, w, h):
+    ap = p.PAD(fp)
+    ap.SetNumber('')
+    ap.SetAttribute(p.PAD_ATTRIB_SMD)
+    ap.SetShape(p.PAD_SHAPE_RECT)
+    ap.SetSize(v(w, h))
+    ls = p.LSET(); ls.AddLayer(p.F_Paste); ap.SetLayerSet(ls)
+    ap.SetPosition(v(*centre))
+    fp.Add(ap)
+
+
+def no_paste(pad):
+    ls = pad.GetLayerSet(); ls.RemoveLayer(p.F_Paste); pad.SetLayerSet(ls)
+    pad.SetLocalSolderPasteMargin(0); pad.SetLocalSolderPasteMarginRatio(0)
+
+
+def clipped_opening(shape, keepouts):
+    """shape minus every keep-out polygon; the largest piece (the one over the pad) as a point list."""
+    s = _sps(shape)
+    for k in keepouts:
+        s.BooleanSubtract(_sps(k), p.SHAPE_POLY_SET.PM_STRICTLY_SIMPLE)
+    best = max((s.Outline(i) for i in range(s.OutlineCount())), key=lambda o: abs(o.Area()))
+    return [(p.ToMM(best.CPoint(k).x), p.ToMM(best.CPoint(k).y)) for k in range(best.PointCount())]
+
+
+# J1 pin-in-paste (FP-1, REG-1, USBC-3). Each shell-slot opening is the pad grown by 0.25 mm, cut back to stay
+# PASTE_CLEAR (0.15 plus 0.01 for rounding) from the other-net copper and the via rings next to it and from J1's
+# own signal-pad openings. The copper below comes from the routed board, in J1 footprint mm (J1 sits at rotation 0,
+# so device x = -x and device y = -45.47 - y). verify.py measures the result against the board (j1_paste_clearance),
+# so a re-route that brings copper closer fails there.
+J1_PASTE_MARGIN, PASTE_CLEAR = 0.25, 0.16
+J1_PASTE_NEAR = [
+    # (what, end a, end b, half width): segments, or circles when a == b
+    ('LCD_MOSI on L1 beside pad 1', (5.2548, -1.0465), (2.8766, 1.3317), 0.075),
+    ('LCD_MOSI on L1 beside pad 1', (5.2548, -3.4070), (5.2548, -1.0465), 0.075),
+    ('CC2 via below pad 1', (4.9862, -0.1218), (4.9862, -0.1218), 0.25),
+    ('CHG_STAT via above pad 2 (tented)', (5.1128, 1.4570), (5.1128, 1.4570), 0.25),
+    ('VBUS via above pad 2 (tented)', (3.4782, 1.4968), (3.4782, 1.4968), 0.25),
+    ('VBUS on L1 into that via', (3.4783, 1.3150), (3.4783, 1.4968), 0.2),
+    ('VBUS on L1 from that via', (3.4783, 1.3150), (4.0533, 0.7400), 0.2),
+    ('CHG_STAT on L1 beside pad 2', (5.2933, 2.2942), (5.2933, 1.6375), 0.075),
+]
+
+
 def fix_land_pattern(fp, name):
     if name == 'USB-C_HRO_TYPE-C-31-M-12':
         # Shell legs (review FP-1, L2): HRO's recommended layout (C165948.pdf) has 0.60 wide plated slots,
         # 1.70 long beside the contact row and 1.40 long near the board edge, in 0.90 wide pads 2.00 / 1.70 long.
         # The real legs are about 0.30 thick, 1.10 (rear) and 0.80 (front) wide (HRO side view), so they keep
-        # 0.15 per side across the slot and 0.30 per end along it. Pin-in-paste: each pad gets a paste opening
-        # 0.25 larger than the pad all round, printed over the slot, so the legs solder in the reflow pass.
-        for pad in fp.Pads():
+        # 0.15 per side across the slot and 0.30 per end along it. Pin-in-paste: each slot gets a paste opening
+        # printed over it, up to 0.25 larger than the pad (J1_PASTE_NEAR), so the legs solder in the reflow pass.
+        sig = [pd for pd in fp.Pads() if pd.GetAttribute() == p.PAD_ATTRIB_SMD and pd.IsOnLayer(p.F_Paste)]
+        near = [_keepout(a, z, r + PASTE_CLEAR) for what, a, z, r in J1_PASTE_NEAR]
+        for pd in sig:
+            c, s_ = pd.GetPosition(), pd.GetSize()
+            x, y, w, h = p.ToMM(c.x), p.ToMM(c.y), p.ToMM(s_.x), p.ToMM(s_.y)
+            near.append(_box_keepout(x - w / 2, x + w / 2, y - h / 2, y + h / 2, PASTE_CLEAR))
+        for pad in list(fp.Pads()):
             if pad.GetNumber() in ('1', '4', '2', '3'):
                 rear = pad.GetNumber() in ('1', '4')
                 pad.SetSize(v(0.9, 2.0 if rear else 1.7))
                 pad.SetDrillShape(p.PAD_DRILL_SHAPE_OBLONG)
                 pad.SetDrillSize(v(0.6, 1.7 if rear else 1.4))
-                ls = pad.GetLayerSet(); ls.AddLayer(p.F_Paste); pad.SetLayerSet(ls)
-                pad.SetLocalSolderPasteMargin(p.FromMM(0.25))
+                no_paste(pad)
+                cx, cy = p.ToMM(pad.GetPosition().x), p.ToMM(pad.GetPosition().y)
+                m = J1_PASTE_MARGIN
+                add_aperture(fp, (cx, cy), clipped_opening(_stadium(cx, cy, 0.9 + 2 * m, (2.0 if rear else 1.7) + 2 * m), near))
     if name == 'FH35C-15S-0.3SHW':
-        # Hirose EDC3-338903-01 recommended stencil (t = 0.1): contact openings 0.23 wide, 0.70 long on the
-        # contact-1 row (0.8 pads) and 0.55 long on the contact-2 row (0.65 pads); fitting openings 0.30 x 0.70
-        # (0.4 x 0.95 pads). Margin m plus ratio r per side: 0.3 -> 0.23, 0.8 -> 0.70, 0.65 -> 0.56 (review FP-3).
-        for pad in fp.Pads():
-            if pad.GetNumber() in ('16', '17'):
-                pad.SetLocalSolderPasteMargin(p.FromMM(0.0045)); pad.SetLocalSolderPasteMarginRatio(-0.1364)
+        # Hirose EDC3-338903-01 sheet 1, "Recommended stencil pattern (t = 0.1)", measured on the 400 ppi scan
+        # (157.5 px/mm from the 0.6 pitch): contact-1 row (0.8 pads) 0.23 x 0.65, contact-2 row (0.65 pads)
+        # 0.23 x 0.55, each flush with its pad's outer edge, so the pull-back is on the inner side and the rows
+        # are 2.40 apart (0.55 + 2.40 + 0.65 = 3.6, the pad pattern's outer span). Fittings (0.4 x 0.95 pads):
+        # 0.30 x 0.70, flush with the pad's outer end and its contact-1 side, as drawn (review FP-3, USBC-2).
+        for pad in list(fp.Pads()):
+            num = pad.GetNumber()
+            if not num:
+                continue
+            x, y = p.ToMM(pad.GetPosition().x), p.ToMM(pad.GetPosition().y)
+            w, h = p.ToMM(pad.GetSize().x), p.ToMM(pad.GetSize().y)
+            no_paste(pad)
+            sy = 1 if y > 0 else -1                          # +1: contact-1 row side of the footprint
+            if num in ('16', '17'):
+                sx = 1 if x > 0 else -1
+                add_aperture_rect(fp, (x + sx * (w / 2 - 0.15), y + h / 2 - 0.35), 0.30, 0.70)
             else:
-                pad.SetLocalSolderPasteMargin(p.FromMM(-0.026)); pad.SetLocalSolderPasteMarginRatio(-0.03)
+                ln = 0.65 if sy > 0 else 0.55
+                add_aperture_rect(fp, (x, y + sy * (h / 2 - ln / 2)), 0.23, ln)
     if name == 'QFN-24_4x4_P0.5_EP2.5':
-        # CH9102F exposed pad: 2.0 x 2.0 paste opening, 64 percent of the 2.5 x 2.5 pad (review FP-10), so the
-        # QFN does not float on the paste; the four open GND vias stay inside the opening.
+        # CH9102F exposed pad (USBC-4): nine windows on a 3 x 3 grid with 0.2 mm webs through the four GND vias
+        # (U2_EP_VIAS), each window at least 0.1 mm off a via land (0.5 mm) and 0.1 mm inside the 2.5 mm pad:
+        # about 47 percent of the pad. The webs hold the stencil over each via, so no paste prints on the open
+        # barrels.
         for pad in fp.Pads():
             if pad.GetNumber() == '25':
-                pad.SetLocalSolderPasteMargin(p.FromMM(-0.25))
+                no_paste(pad)
+        lim, web = 1.15, 0.2
+        o = abs(U2_EP_VIAS[0][0])
+        cuts = [_keepout(q, q, 0.25 + 0.1 + 0.01) for q in U2_EP_VIAS]
+        spans = [(-lim, -o - web / 2), (-o + web / 2, o - web / 2), (o + web / 2, lim)]
+        for x0, x1 in spans:
+            for y0, y1 in spans:
+                win = clipped_opening([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], cuts)
+                add_aperture(fp, ((x0 + x1) / 2, (y0 + y1) / 2), win)
 
 
 def set_model(fp, step, rot, off):
@@ -163,6 +291,8 @@ def add_courtyard(fp, margin=0.12):
             xs += [b.GetLeft(), b.GetRight()]; ys += [b.GetTop(), b.GetBottom()]
             g.SetLayer(p.Cmts_User)
     for pad in fp.Pads():
+        if not any(pad.IsOnLayer(L) for L in (p.F_Cu, p.B_Cu)):
+            continue                     # paste-only openings do not set the courtyard
         b = pad.GetBoundingBox()
         xs += [b.GetLeft(), b.GetRight()]; ys += [b.GetTop(), b.GetBottom()]
     o = fp.GetPosition()

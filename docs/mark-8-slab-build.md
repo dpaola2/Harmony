@@ -74,9 +74,15 @@ If the fold does not fit, tell the assistant. If the fix changes the back plate,
 
 ## 5. Cut the board out of its frame
 
-The board arrives in a frame of rails, held by four mouse-bite tabs (three on the top edge, one on the left edge, seen from the front). Cut every tab with flush cutters, close to the board edge, then file the stub flush. Never snap a tab off: bending the 0.8 mm board can crack a capacitor near the edge or lift a pad of the battery connector. The edge must be flush, because the case has only 0.5 mm of clearance at the side walls.
+The board arrives in a frame of rails, held by three mouse-bite tabs. Seen from the front, they are on the left edge near the top (next to the battery connector), on the top edge near the right corner, and low on the right edge. The row of holes in each tab sits 0.35 mm outside the board edge, so a cut there leaves a small nub on the board.
 
-Before the first USB plug-in, measure VBUS to GND with a meter at C1 (it must not read as a short), and check that the four USB-C shell legs are soldered from both sides.
+1. Hold the board, not the frame. Cut the left tab first, then the other two.
+2. Cut each tab with flush cutters along the hole line.
+3. File each nub flush with the board edge (up to 0.35 mm, with half-hole bumps), then deburr the edge. A straight edge must lie flat along it.
+
+Never snap a tab off: bending the 0.8 mm board can crack a capacitor near the edge or lift a pad of the battery connector. The edge must be flush, because the case has only 0.5 mm of clearance at the side walls.
+
+Before the first USB plug-in, check the USB-C receptacle J1. Its four shell legs pass with a top-side fillet around each leg. Look for solder beads next to J1 pads 1, 2 and 4. Measure VBUS, CHG_STAT, LCD_MOSI and USB_DN to GND with a meter before the first plug-in; none may read as a short. Probe VBUS at C1, CHG_STAT at the LED1 cathode (pad 2), USB_DN at U8 pin 6, and LCD_MOSI at J2 pin 4 with a fine probe.
 
 ## 6. Assemble with the back open
 

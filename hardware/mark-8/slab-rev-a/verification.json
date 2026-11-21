@@ -268,6 +268,28 @@
     "J1": 0.2,
     "U6": 0.188
   },
+  "j1_paste_clearance": {
+    "pad 4": {
+      "area_mm2": 3.057,
+      "nearest": "paste J1.A1B12",
+      "distance": 0.16
+    },
+    "pad 3": {
+      "area_mm2": 2.657,
+      "nearest": "via LCD_MOSI",
+      "distance": 0.248
+    },
+    "pad 1": {
+      "area_mm2": 2.908,
+      "nearest": "paste J1.B1A12",
+      "distance": 0.16
+    },
+    "pad 2": {
+      "area_mm2": 2.597,
+      "nearest": "via VBUS",
+      "distance": 0.16
+    }
+  },
   "l3_nets_above_electrodes": [
     "3V3",
     "3V3_PERIPH",
@@ -374,8 +396,8 @@
       0.253
     ],
     "VBUS": [
-      40.832,
-      42.435
+      40.812,
+      42.415
     ],
     "VSYS": [
       23.497,
@@ -402,8 +424,8 @@
     }
   },
   "sha256": {
-    "harmony-mark8-slab.kicad_pcb": "958136703c3b4123f1d4253c61b2864f4506921f004b90df7c66cf880d26baca",
+    "harmony-mark8-slab.kicad_pcb": "d87f6c574a621d2a9b79aec3c337326304c5fb5bd007b780092c4741a59ce56d",
     "harmony-mark8-slab.kicad_sch": "6f6b6cdf0935f9232b8097d296ca7fea4022cbe8c2cff4414a2d693b9db1dd82",
-    "netlist.xml": "e6f5c8623ceb82e88733dec0cc60e483554178e379bd627b18b23988464573e4"
+    "netlist.xml": "e990b1653a457b41e5b4594cda0d9a1fa497415beebfa61c3f37ebd8f859e55a"
   }
 }

@@ -2,10 +2,11 @@
 
 Run with KiCad's bundled Python after verify.py passes:
   panel             -> the verified board inside its own 1 x 1 assembly frame (design.PANEL, review CC-1):
-                       5 mm rails, 2 mm routed gap, mouse-bite tabs on the top and left edges, three
-                       fiducials and four 2.0 mm tooling holes in the rails. Only the Gerbers and drill files
-                       come from the panel; the board, its STEP and mechanical-interface.json stay the bare
-                       board, so the outline that goes into the case does not change.
+                       5 mm rails, 2 mm routed gap, three mouse-bite tabs (left edge, right end of the top
+                       edge, right edge below the antenna), three fiducials and four 2.0 mm tooling holes.
+                       Only the Gerbers and drill files come from the panel; the board, its STEP and
+                       mechanical-interface.json stay the bare board, so the outline that goes into the case
+                       does not change.
   gerbers/ + drill  -> jlcpcb/harmony-mark8-slab-gerbers.zip (Protel names, no X2, mask subtracted, no drill maps)
   BOM               -> jlcpcb/bom.csv  (Comment, Designator, Footprint, LCSC Part #)
   CPL               -> jlcpcb/cpl.csv  (Designator, Mid X, Mid Y, Layer, Rotation)
@@ -92,15 +93,20 @@ def build_panel():
     ix0, ix1, iy0, iy1 = x0 - g, x1 + g, y0 - g, y1 + g          # inner edge of the frame
     ox0, ox1, oy0, oy1 = ix0 - r, ix1 + r, iy0 - r, iy1 + r      # outer edge of the panel
     solid = sps_of(board_outline())
-    w = P['tab_width'] / 2
     bites = []
-    for edge, c in P['tabs']:
+    for edge, c, width in P['tabs']:
+        w = width / 2
+        n = int((width - 2 * P['bite_end_web'] - P['bite_d']) / P['bite_pitch'] + 1e-9) + 1   # holes in this tab
+        row = [c + (k - (n - 1) / 2) * P['bite_pitch'] for k in range(n)]
         if edge == 'top':
             solid.BooleanAdd(sps_of(rect(c - w, c + w, y1 - 0.1, iy1 + 0.1)), p.SHAPE_POLY_SET.PM_FAST)
-            bites += [(c + (k - (P['bite_n'] - 1) / 2) * P['bite_pitch'], y1 + P['bite_offset']) for k in range(P['bite_n'])]
+            bites += [(q, y1 + P['bite_offset']) for q in row]
         elif edge == 'left':
             solid.BooleanAdd(sps_of(rect(ix0 - 0.1, x0 + 0.1, c - w, c + w)), p.SHAPE_POLY_SET.PM_FAST)
-            bites += [(x0 - P['bite_offset'], c + (k - (P['bite_n'] - 1) / 2) * P['bite_pitch']) for k in range(P['bite_n'])]
+            bites += [(x0 - P['bite_offset'], q) for q in row]
+        elif edge == 'right':
+            solid.BooleanAdd(sps_of(rect(x1 - 0.1, ix1 + 0.1, c - w, c + w)), p.SHAPE_POLY_SET.PM_FAST)
+            bites += [(x1 + P['bite_offset'], q) for q in row]
         else:
             raise ValueError(edge)
     slots = sps_of(rect(ix0, ix1, iy0, iy1))
@@ -162,6 +168,14 @@ svg.unlink()
 for f in GER.iterdir():                 # the panel file names its outputs after itself
     if f.name.startswith(NAME + '-panel'):
         f.rename(GER / f.name.replace(NAME + '-panel', NAME))
+# the job file lists the Gerbers by name: give it the new names, and the finish ORDER.md asks for (review FAB-4)
+job_path = GER / (NAME + '-job.gbrjob')
+job = json.loads(job_path.read_text())
+for fa in job.get('FilesAttributes', []):
+    fa['Path'] = fa['Path'].replace(NAME + '-panel', NAME)
+job['GeneralSpecs']['ProjectId']['Name'] = NAME
+job['GeneralSpecs']['Finish'] = 'ENIG'
+job_path.write_text(json.dumps(job, indent=2) + '\n')
 PANEL_PCB.unlink()
 for src_, dst_ in _side:
     dst_.unlink()

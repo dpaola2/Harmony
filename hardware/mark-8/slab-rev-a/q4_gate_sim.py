@@ -39,7 +39,7 @@ NET = dict(R13=2.2e3, R14=1.0e3, R34=4.7e3, C18=1.0e-6, C26=100e-9)
 
 # --- device and board models --------------------------------------------------------------------
 VREG, R_LDO, I_LIM = 3.3, 0.055, 0.61
-C_LDO = 5.0e-6            # C11 10 uF 0603 at U4 (about 5 uF effective at 3.3 V) plus the small 3V3 caps
+C_LDO = 1.3e-6            # C11 4.7 uF 10 V X5R 0402 at U4 (CL05A475MP5NRNC): about 1.3 to 2.2 uF at 3.3 V; the low end
 R_U1, C_U1, I_ESP = 0.22, 9e-6, 0.25
 CISS, CRSS = 645e-12, 55e-12
 NUT = 1.5 * 0.02585       # n * kT/q

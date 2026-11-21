@@ -9,7 +9,7 @@
  "assumptions": {
   "ldo_current_limit_A": 0.61,
   "esp32_load_A": 0.25,
-  "c11_effective_uF": 5.0,
+  "c11_effective_uF": 1.3,
   "c5_effective_uF": 9.0,
   "track_U4_to_U1_ohm": 0.22,
   "gpio_low_ohm": 30.0

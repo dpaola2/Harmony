@@ -13,6 +13,7 @@ moved or are new are computed from the placed pads, like build_pcb.py does.
   CONN-1   J3 hatched areas: VBAT leaves bar C (L1 bridge moved above it), SD_CD leaves strip B, the SD_CS,
            3V3_PERIPH and VBUS vias leave column A.
   PWR-1    Q4 gate network: PERIPH_DIV node, R34 and C26 (also in build_pcb.py).
+  USBC-1   (change review of the same day) the L3 VBUS run above J1's pad 1 slot moves 0.06 mm away from it.
 """
 import math
 import pcbnew as p
@@ -86,6 +87,8 @@ REMOVE_TRACKS = [
     # PWR-1: the old single gate node (Q4 gate, R13, R14, C18)
     ('PERIPH_GATE', 'F', (-13.05, -22.15), (-12.41, -22.79)), ('PERIPH_GATE', 'F', (-12.41, -22.79), (-12.41, -23.8)),
     ('PERIPH_GATE', 'F', (-12.41, -25.1), (-12.38, -26.4)),
+    # USBC-1 (change review): the L3 VBUS run above J1's pad 1 slot (0.28 mm from the hole) and the diagonal into it
+    ('VBUS', 'L3', (-0.86, -44.7489), (-3.1806, -42.4283)), ('VBUS', 'L3', (-3.1806, -42.4283), (-5.0979, -42.4283)),
 ]
 REMOVE_VIAS = [('3V3', (21.8125, -17.6789)), ('I2C_SDA', (22.4689, -19.3)), ('VBUS', (22.8, -20.0)),
                ('ESP_EN', (21.4678, -20.9583)), ('GND', (26.45, -18.5)), ('GND', (8.7, -45.6)), ('DTR', (11.15, -48.17)),
@@ -125,7 +128,8 @@ ADD_TRACKS = [
     ('3V3_PERIPH', 'F', [(-6.0067, -38.4), (-6.55, -38.6)], 0.4),
     ('3V3_PERIPH', 'L3', [(-6.55, -38.6), (-9.15, -35.95)], 0.4),
     ('VBUS', 'F', [(-6.55, -40.75), (-6.4, -41.3)], 0.4),
-    ('VBUS', 'L3', [(-5.0979, -42.4283), (-6.55, -40.75)], 0.4),
+    # USBC-1 (change review): the L3 VBUS run above J1's pad 1 slot 0.06 mm higher, 0.34 mm from the hole
+    ('VBUS', 'L3', [(-0.86, -44.7489), (-3.2406, -42.3683), (-5.0979, -42.3683), (-6.55, -40.75)], 0.4),
     ('GND', 'F', [(-7.3, -47.89), (-8.25, -47.75)], 0.25),
 ]
 ADD_VIAS = [('I2C_SDA', (19.75, -20.7)), ('I2C_SDA', (18.0, -18.21)), ('VBUS', (21.45, -19.9)),

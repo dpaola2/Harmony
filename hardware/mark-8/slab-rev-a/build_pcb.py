@@ -441,7 +441,7 @@ for pad in fps['U1'].Pads():
 
 # CH9102F exposed pad: four vias in the pad (like U1's) and its GND pin 2 joined to it.
 u2ep, u22 = P('U2', '25'), P('U2', '2')
-for dx_, dy_ in ((-0.6, -0.6), (0.6, -0.6), (-0.6, 0.6), (0.6, 0.6)):
+for dx_, dy_ in U2_EP_VIAS:
     via(GND, (u2ep[0] + dx_, u2ep[1] + dy_))
 track(GND, [u22, (u2ep[0] - 0.9, u22[1])], 0.25)
 
@@ -587,6 +587,11 @@ DRU = '''(version 1)
   (constraint hole_clearance (min 0.2mm)))
 # The J1 (0.09) and U6 (0.12) pad-gap exceptions were removed on 2026-11-21: they came from EasyEDA's 0.1 mm
 # pad stroke (review L1, FP-2), which make_lib.py now strips. J1 and U6 pads now keep 0.18 mm or more.
+# J1 shell slots (0.6 wide in 0.9 pads, HRO's 0.15 ring): JLC asks for 0.3 mm from a plated hole to inner-layer
+# copper. 0.32 on every layer gives the zone fills (ELE5 on L4) a small margin over it (change review USBC-1).
+(rule "J1 shell slots: 0.32 mm hole to copper"
+  (condition "A.memberOfFootprint('J1') && A.isPlated()")
+  (constraint hole_clearance (min 0.32mm)))
 # Hirose DM3AT hatched area A under J3 (card-detect column): only SD_CD and GND track (README, CONN-1).
 (rule "J3 hatched area A: SD_CD and GND track only"
   (condition "A.intersectsArea('J3_NO_TRACE_A') && A.NetName != 'SD_CD' && A.NetName != 'GND'")

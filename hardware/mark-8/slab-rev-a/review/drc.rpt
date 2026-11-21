@@ -1,5 +1,5 @@
 ** Drc report for harmony-mark8-slab.kicad_pcb **
-** Created on 2026-11-21T11:22:08-0500 **
+** Created on 2026-11-21T13:28:41-0500 **
 
 ** Found 32 DRC violations **
 [silk_edge_clearance]: Silkscreen clipped by board edge
@@ -18,26 +18,6 @@
     Rule: board setup constraints silk; warning
     @(122.8000 mm, 115.6803 mm): Segment on Edge.Cuts
     @(122.8000 mm, 105.9000 mm): Circle on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
-    @(155.2000 mm, 119.4000 mm): Segment on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
-    @(155.5000 mm, 119.7000 mm): Segment on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
-    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(122.8000 mm, 115.6803 mm): Segment on Edge.Cuts
-    @(122.5600 mm, 84.6000 mm): Segment on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(122.8000 mm, 115.6803 mm): Segment on Edge.Cuts
-    @(123.4000 mm, 86.6000 mm): Segment on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
@@ -60,70 +40,90 @@
     @(156.7400 mm, 119.5000 mm): Segment on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
-    @(171.8223 mm, 117.5093 mm): Segment on Edge.Cuts
+    @(171.8755 mm, 116.4928 mm): Segment on Edge.Cuts
     @(171.7300 mm, 119.5000 mm): Segment on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
+    @(155.2000 mm, 119.4000 mm): Segment on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
+    @(155.5000 mm, 119.7000 mm): Segment on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(173.1484 mm, 119.6000 mm): Segment on Edge.Cuts
+    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(122.8000 mm, 115.6803 mm): Segment on Edge.Cuts
+    @(122.5600 mm, 84.6000 mm): Segment on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(122.8000 mm, 115.6803 mm): Segment on Edge.Cuts
+    @(123.4000 mm, 86.6000 mm): Segment on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(173.5000 mm, 110.6000 mm): PCB Text 'M+' on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
+    @(169.0500 mm, 102.6300 mm): Circle on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
     @(154.3600 mm, 93.0000 mm): Footprint Text '-' of BZ1
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(169.0500 mm, 102.6300 mm): Circle on F.Silkscreen
+    @(171.7300 mm, 119.5000 mm): Segment on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(155.2000 mm, 116.5300 mm): Segment on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(155.5000 mm, 117.2000 mm): Circle on F.Silkscreen
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(171.7300 mm, 119.5000 mm): Segment on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
     @(164.0000 mm, 111.5000 mm): PCB Text 'JLCJLCJLCJLC' on F.Silkscreen
     @(157.9500 mm, 119.0900 mm): Polygon on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
-    @(156.6100 mm, 119.5000 mm): Segment on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
     @(156.7400 mm, 119.5000 mm): Segment on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
     @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
-    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(156.6000 mm, 119.4000 mm): Segment on F.Silkscreen
-    @(156.6100 mm, 119.5000 mm): Segment on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(156.6000 mm, 119.4000 mm): Segment on F.Silkscreen
     @(156.7400 mm, 119.5000 mm): Segment on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
     @(156.6000 mm, 119.4000 mm): Segment on F.Silkscreen
-    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(156.6000 mm, 116.5300 mm): Segment on F.Silkscreen
-    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(151.4000 mm, 111.3000 mm): PCB Text '1' on F.Silkscreen
-    @(151.6500 mm, 111.1500 mm): Circle on F.Silkscreen
+    @(173.5000 mm, 110.6000 mm): PCB Text 'M+' on F.Silkscreen
+    @(173.6800 mm, 110.6800 mm): Circle on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
     @(155.2000 mm, 116.5300 mm): Segment on F.Silkscreen
     @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(173.6800 mm, 110.6800 mm): Circle on F.Silkscreen
-    @(173.5000 mm, 110.6000 mm): PCB Text 'M+' on F.Silkscreen
+    @(151.6500 mm, 111.1500 mm): Circle on F.Silkscreen
+    @(151.4000 mm, 111.3000 mm): PCB Text '1' on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.6000 mm, 116.5300 mm): Segment on F.Silkscreen
+    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.6100 mm, 119.5000 mm): Segment on F.Silkscreen
+    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.6100 mm, 119.5000 mm): Segment on F.Silkscreen
+    @(156.6000 mm, 119.4000 mm): Segment on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.3000 mm, 119.7000 mm): Segment on F.Silkscreen
+    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.6000 mm, 119.4000 mm): Segment on F.Silkscreen
+    @(156.6100 mm, 103.2400 mm): Segment on F.Silkscreen
 
 ** Found 0 unconnected pads **
 

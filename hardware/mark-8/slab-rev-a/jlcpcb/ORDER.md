@@ -1,6 +1,6 @@
 # JLCPCB order: Harmony Mark-8 slab, revision A
 
-`verify.py` passes (ERC 0, DRC 0 errors, 0 unconnected). The board has the fixes of the 2026-11-21 pre-order review (README, "Review dispositions, November 21"). The board comes from step C of the touch-wheel re-route: the checked routing from before the touch review, with eight slow switching nets on L3 behind the electrodes and a 0.2 mm VBUS bottleneck as accepted exceptions (README, "Touch-wheel re-route"). The firmware must follow README, "Firmware for the touch wheel", and the firmware changes in README, "Review dispositions".
+`verify.py` passes (ERC 0, DRC 0 errors, 0 unconnected). The board has the fixes of the 2026-11-21 pre-order review and of the change review that checked them (README, "Review dispositions, November 21" and its "Change review" table). The board comes from step C of the touch-wheel re-route: the checked routing from before the touch review, with eight slow switching nets on L3 behind the electrodes and a 0.2 mm VBUS bottleneck as accepted exceptions (README, "Touch-wheel re-route"). The firmware must follow README, "Firmware for the touch wheel", and the firmware changes in README, "Review dispositions".
 
 Upload the files in this folder to JLCPCB and choose the settings below. Nothing has been uploaded or ordered.
 
@@ -8,7 +8,7 @@ Upload the files in this folder to JLCPCB and choose the settings below. Nothing
 
 | Step | File |
 | --- | --- |
-| PCB (Gerber) | `harmony-mark8-slab-gerbers.zip` (10 Gerber layers with Protel names, PTH and NPTH Excellon drill files). The outline is the board in its own frame: 5 mm rails, mouse-bite tabs, three fiducials and four tooling holes. |
+| PCB (Gerber) | `harmony-mark8-slab-gerbers.zip` (10 Gerber layers with Protel names, PTH and NPTH Excellon drill files). The outline is the board in its own frame: 5 mm rails, three mouse-bite tabs, three fiducials and four tooling holes. |
 | Assembly: BOM | `bom.csv` (Comment, Designator, Footprint, LCSC Part #) |
 | Assembly: CPL | `cpl.csv` (Designator, Mid X, Mid Y, Layer, Rotation) |
 
@@ -25,7 +25,7 @@ Upload the files in this folder to JLCPCB and choose the settings below. Nothing
 | Product type | Industrial/Consumer electronics | |
 | Different design | 1 | |
 | Delivery format | Panel by Customer, 1 x 1 | the Gerbers hold one board with its own rails (review CC-1) |
-| Edge rails / fiducials | Added by customer | 5 mm rails on all four sides, three 1 mm fiducials with 2 mm openings, four 2.0 mm NPTH tooling holes. Do not let JLC add more rails |
+| Edge rails / fiducials | Added by customer | 5 mm rails on all four sides, three 1 mm fiducials with 2 mm openings, four 2.0 mm NPTH tooling holes. The frame is under JLC's 70 x 70 mm, so JLC may add its own rails outside it. JLC must not cut or change our three tabs and must ship the boards in the frame (remark 3) |
 | PCB thickness | 0.8 mm | SPEC 6 |
 | PCB color | Green (recommended) or black | green: JLC's smallest solder-mask dam is 0.10 mm on green and 0.13 mm on black; the smallest pad gap on this board is 0.19 mm, so both work |
 | Silkscreen | White | |
@@ -58,11 +58,15 @@ Order remark (paste it into the remark field):
 
 > 1. Vias closer than 0.35 mm to pads may be tented instead of plugged.
 > 2. J1 (C165948, USB-C): please solder the 4 shell legs. The paste layer has pin-in-paste openings over the 4 plated slots.
-> 3. The edge rails, fiducials and tooling holes are in our Gerbers (1 x 1 panel by customer). Please do not add rails and do not remove the rails after assembly.
+> 3. Our Gerbers hold a 1 x 1 frame with rails, fiducials and tooling holes. If your line needs larger rails, add them outside our frame. Please do not cut or change our 3 tabs, and ship the boards in the frame.
 
 After upload JLC matches all 40 BOM lines by LCSC number. Expected result: 40 lines matched, 0 unmatched. The test pads TP1 to TP10, the motor pads M1 and M2, the touch wheel connection pads E1, the locating holes, the press-pad marks, the fiducials, the mouse bites and the tooling holes are not parts and are not in the BOM or CPL.
 
-Stencil: JLC cuts it from `F_Paste`. Three openings differ from plain 1:1 pads on purpose. J1's four shell slots have openings 0.25 mm larger than the pad all round (pin-in-paste, review FP-1). J2's openings follow Hirose's recommended stencil (0.23 wide, 0.70 / 0.56 long, fittings 0.30 x 0.70; review FP-3). U2's exposed pad prints 2.0 x 2.0 on its 2.5 x 2.5 pad (review FP-10). Hirose's J2 pattern assumes a 0.10 mm stencil; if the order page offers a stencil thickness, choose 0.10 mm.
+Stencil: JLC cuts it from `F_Paste` and usually chooses its thickness for PCBA (0.10 or 0.12 mm). If the order page offers a thickness, choose 0.10 mm: Hirose's J2 pattern assumes it. Three parts have openings that are not plain 1:1 pads, on purpose:
+
+- J1: an opening over each of the four shell slots (pin-in-paste, review FP-1), up to 0.25 mm larger than the pad and cut back to stay 0.15 mm from other copper, vias and openings (change review REG-1). It fills about 30 to 32 percent of each slot at 0.10 mm and 36 to 39 percent at 0.12 mm: a top-side fillet around each leg.
+- J2: Hirose's recommended stencil (review FP-3, change review USBC-2): 0.23 x 0.65 on the contact-1 row and 0.23 x 0.55 on the contact-2 row, each flush with its pad's outer edge, the rows 2.40 apart; fittings 0.30 x 0.70 at the pad's outer corner.
+- U2: the 2.5 x 2.5 exposed pad prints through nine windows, 47 percent of the pad, that keep 0.1 mm off its four GND vias (change review USBC-4).
 
 ## Extended parts
 
@@ -90,11 +94,22 @@ What the review fixes change: the two new BOM lines are basic parts (no fee, und
 
 ## Check before paying
 
-1. In the placement preview, check the parts flagged in `rotation-check.csv`: J1 opening toward the bottom edge, J2 slot toward the empty ramp area with pin 1 at its lower end in JLC's view, J3 card slot toward the bottom edge, J4 cable entry toward the top edge, SW1 actuator over the right edge, U1 antenna over the right edge, the pin-1 dots of U2, U3, U4, U5, U6, U7, U8 and Q1, the single pin 3 (drain) side of Q2 to Q6, the LED1 cathode and both diodes.
-2. In JLC's DFM result, expect: vias within 0.35 mm of pads that cannot be plugged (remark 1), the open vias in the U1 and U2 thermal pads, the SW1 guide-boss holes 0.07 mm from the SW1 pads (Alps' own land pattern), and silkscreen clipped at the board edge. The USB-C and MPR121 pad gaps are 0.20 and 0.19 mm now, so JLC should not flag them. Anything else, stop and look.
-3. In the Gerber viewer, check the frame: rails on all four sides, a routed gap round the board, tabs only on the top edge (three) and the left edge (one) in device terms (JLC's viewer shows the component side, so device left is on the right), the three fiducials and the four corner holes.
+1. In the placement preview, check the parts flagged in `rotation-check.csv`: J1 opening toward the bottom edge, J2 slot toward the empty ramp area with pin 1 at its lower end in JLC's view, J3 card slot toward the bottom edge, J4 cable entry toward the top edge, SW1 actuator and U1 antenna over the device right edge (the left edge in JLC's view), the pin-1 dots of U2, U3, U4, U5, U6, U7, U8 and Q1, the single pin 3 (drain) side of Q2 to Q6, the LED1 cathode and both diodes.
+2. In JLC's DFM result, expect: vias within 0.35 mm of pads that cannot be plugged (remark 1), the open vias in the U1 and U2 thermal pads, the SW1 guide-boss holes 0.07 mm from the SW1 pads (Alps' own land pattern), J1's 0.15 mm slot rings (HRO's own land pattern; the slots keep 0.32 mm to other copper on every layer), and silkscreen clipped at the board edge. The USB-C and MPR121 pad gaps are 0.20 and 0.19 mm now, so JLC should not flag them. Anything else, stop and look.
+3. In the Gerber viewer, check the frame: rails on all four sides, a routed gap round the board, three tabs, the three fiducials and the four corner holes. In device terms the tabs are on the left edge near the top, on the top edge near the right corner, and low on the right edge. JLC's viewer shows the component side, so device left is on the right.
 4. Stock of U1 and U6 on the order day.
 
 ## When the boards arrive
 
-Each board sits in its frame on four mouse-bite tabs. Cut every tab with flush cutters, as close to the board edge as the cutter allows, then file the stub flush with the board edge. Never snap a tab off: bending the 0.8 mm board can crack an MLCC near the edge or lift a J4 pad. The board must be flush all round, because the case has only 0.5 mm of clearance at the side walls.
+Each board sits in its frame on three mouse-bite tabs: on the left edge near the top (next to J4), on the top edge near the right corner, and low on the right edge (device terms, seen from the front). The row of holes in each tab sits 0.35 mm outside the board edge, so a cut there leaves a small nub on the board.
+
+1. Hold the board, not the frame. Cut the left tab first, then the other two.
+2. Cut each tab with flush cutters along the hole line.
+3. File each nub flush with the board edge (up to 0.35 mm, with half-hole bumps), then deburr the edge. A straight edge must lie flat along it.
+
+Never snap a tab off: bending the 0.8 mm board can crack an MLCC near the edge or lift a J4 pad. The board must be flush all round, because the case has only 0.5 mm of clearance at the side walls.
+
+## Before the first power-up
+
+- J1 shell legs: they pass with a top-side fillet around each leg. Look for solder beads next to J1 pads 1, 2 and 4. Measure VBUS, CHG_STAT, LCD_MOSI and USB_DN to GND before the first plug-in; none may read as a short.
+- Battery polarity: J4 pin 2 is +. Q2 blocks a reversed pack only on battery power. With USB plugged in, a reversed pack is slowly discharged (about 37 mA) and the charge LED stays on. Check the pack with a meter before you connect it.
