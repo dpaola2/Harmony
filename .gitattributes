@@ -144,3 +144,5 @@ hardware/procurement/assembly-quote-r2/programming/*.LC_COLLATE filter=lfs diff=
 "hardware/mark-8/slab-rev-a/reference/DLC-T2.7DDS1.step" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-8/slab-rev-a/reference/esp32-pico-mini-02-datasheet-v1.8.pdf" filter=lfs diff=lfs merge=lfs -text
 "hardware/mark-8/slab-rev-a/review/schematic.pdf" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/slab-rev-a/print/mark8-slab-p2s.3mf" filter=lfs diff=lfs merge=lfs -text
+"enclosure/mark-8/slab-rev-a/print/mark8-slab-p2s.gcode.3mf" filter=lfs diff=lfs merge=lfs -text

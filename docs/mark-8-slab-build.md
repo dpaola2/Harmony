@@ -9,7 +9,7 @@ Work in this order. Each step links to the document that has the details.
 | 1 | Order 5 boards, 2 assembled, from JLCPCB | [ORDER.md](../hardware/mark-8/slab-rev-a/jlcpcb/ORDER.md) |
 | 2 | Buy the screen, the battery, inserts and screws | "Parts to buy" below |
 | 3 | Print the case and the wheel disc | [PRINTING.md](../enclosure/mark-8/slab-rev-a/PRINTING.md) |
-| 4 | Dry-fit the screen cable | "Before you print the back plate" below |
+| 4 | Dry-fit the screen cable | "Dry-fit the screen cable" below |
 | 5 | Assemble up to step 13 with the back open | [ASSEMBLY.md](../enclosure/mark-8/slab-rev-a/ASSEMBLY.md) |
 | 6 | Flash the bring-up test, then the player | [firmware README, section 2](../firmware/mark-8/README.md) |
 | 7 | Close the back plate | ASSEMBLY.md step 15 |
@@ -45,24 +45,26 @@ You also need a microSD card (FAT32) with the Harmony music folder, a USB-C cabl
 
 ## 3. Print
 
-The Bambu A1 prints everything without supports. Use two plates:
+The Bambu P2S prints all four parts on one plate, without supports. The AMS changes between the two colours. Open `print/mark8-slab-p2s.3mf` in Bambu Studio:
 
-- `print/case-colour-plate.3mf`: the front shell, the back plate and the button cap, in the case colour.
-- `print/wheel-disc.3mf`: the wheel disc, in black. It needs its own plate because there is no AMS.
+- Filament 1, Bambu PLA Basic Jade White: the front shell, the back plate and the button cap.
+- Filament 2, Bambu PLA Basic Black: the wheel disc.
+
+In the print dialog, map filament 1 to the AMS slot with Jade White and filament 2 to the slot with Black. The plate takes about 54 minutes and uses 20.6 g of Jade White and 1.9 g of Black. PRINTING.md has the steps and the settings.
 
 After the print, check:
 
 - the two thin top corners of the screen pocket
 - the two shelves at the top screw posts, for sag
 
-## 4. Before you print the back plate
+## 4. Dry-fit the screen cable
 
-The screen cable fold comes from the vendor's 3D model, not from a real screen. When the screen arrives, dry-fit it with the board in the printed front shell, before you print the back plate:
+The back plate prints with the other parts in step 3. The screen cable fold comes from the vendor's 3D model, not from a real screen. When the screen arrives, dry-fit it with the board in the printed front shell:
 
 1. Fold the cable 25.2 mm from the contact end.
 2. Make one soft loop for the extra 7 mm.
 
-If the fold does not fit, tell the assistant before you print the back plate. Also try the thickest USB-C cable you have in the port.
+If the fold does not fit, tell the assistant. If the fix changes the back plate, reprint the back plate alone (PRINTING.md, "Reprint the back plate"). Also try the thickest USB-C cable you have in the port.
 
 ## 5. Assemble with the back open
 
