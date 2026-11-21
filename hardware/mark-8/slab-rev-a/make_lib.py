@@ -69,6 +69,80 @@ def tidy(fp, name):
     # SWIG wrappers in KiCad 8.0.9, and the comment layer is not fabricated.
 
 
+# --- land-pattern fixes from the 2026-11-21 pre-order review (README, "Review dispositions") ------------
+import re as _re
+
+
+def raw_custom_polys(src_name):
+    """Pad number -> (polygon points, stroke width) of every custom pad in the EasyEDA source file.
+    easyeda2kicad keeps EasyEDA's 0.1 mm outline stroke on custom pads; KiCad adds half of it on every side,
+    so the copper, mask and paste come out 0.1 mm wider than the maker's land pattern (review L1, FP-2, FP-8)."""
+    txt = (EASY / 'lcsc.pretty' / (src_name + '.kicad_mod')).read_text()
+    out = {}
+    for m in _re.finditer(r'\(pad (\S+) smd custom .*?\(gr_poly\s*\(pts (.*?)\)\s*\(width ([\d.]+)\)', txt, _re.S):
+        pts = [(float(a), float(b)) for a, b in _re.findall(r'\(xy ([-\d.]+) ([-\d.]+)\)', m.group(2))]
+        out[m.group(1)] = (pts, float(m.group(3)))
+    return out
+
+
+STROKE_FIXED = {}   # footprint -> [(pad, stroke removed)], reported at the end
+
+
+def fix_custom_pads(fp, src, name):
+    """Redraw every custom pad from its polygon with no stroke, so the copper is the drawn land pattern."""
+    polys = raw_custom_polys(src)
+    for pad in fp.Pads():
+        if pad.GetShape() != p.PAD_SHAPE_CUSTOM or pad.GetNumber() not in polys:
+            continue
+        pts, width = polys[pad.GetNumber()]
+        xs, ys = [x for x, y in pts], [y for x, y in pts]
+        if name == 'USB-C_HRO_TYPE-C-31-M-12':
+            # the four VBUS/GND pads are plain rectangles: HRO "4-0.60" wide, 1.30 long like the EasyEDA pattern
+            pad.DeletePrimitivesList()
+            pad.SetShape(p.PAD_SHAPE_RECT)
+            pad.SetSize(v(round(max(xs) - min(xs), 2), round(max(ys) - min(ys), 2)))
+            pad.SetOffset(v(0, 0))
+        else:
+            sps = p.SHAPE_POLY_SET(); sps.NewOutline()
+            for x, y in pts:
+                sps.Append(p.FromMM(x), p.FromMM(y))
+            pad.DeletePrimitivesList()
+            pad.AddPrimitivePoly(sps, 0, True)
+        STROKE_FIXED.setdefault(name, []).append((pad.GetNumber(), width))
+
+
+def fix_land_pattern(fp, name):
+    if name == 'USB-C_HRO_TYPE-C-31-M-12':
+        # Shell legs (review FP-1, L2): HRO's recommended layout (C165948.pdf) has 0.60 wide plated slots,
+        # 1.70 long beside the contact row and 1.40 long near the board edge, in 0.90 wide pads 2.00 / 1.70 long.
+        # The real legs are about 0.30 thick, 1.10 (rear) and 0.80 (front) wide (HRO side view), so they keep
+        # 0.15 per side across the slot and 0.30 per end along it. Pin-in-paste: each pad gets a paste opening
+        # 0.25 larger than the pad all round, printed over the slot, so the legs solder in the reflow pass.
+        for pad in fp.Pads():
+            if pad.GetNumber() in ('1', '4', '2', '3'):
+                rear = pad.GetNumber() in ('1', '4')
+                pad.SetSize(v(0.9, 2.0 if rear else 1.7))
+                pad.SetDrillShape(p.PAD_DRILL_SHAPE_OBLONG)
+                pad.SetDrillSize(v(0.6, 1.7 if rear else 1.4))
+                ls = pad.GetLayerSet(); ls.AddLayer(p.F_Paste); pad.SetLayerSet(ls)
+                pad.SetLocalSolderPasteMargin(p.FromMM(0.25))
+    if name == 'FH35C-15S-0.3SHW':
+        # Hirose EDC3-338903-01 recommended stencil (t = 0.1): contact openings 0.23 wide, 0.70 long on the
+        # contact-1 row (0.8 pads) and 0.55 long on the contact-2 row (0.65 pads); fitting openings 0.30 x 0.70
+        # (0.4 x 0.95 pads). Margin m plus ratio r per side: 0.3 -> 0.23, 0.8 -> 0.70, 0.65 -> 0.56 (review FP-3).
+        for pad in fp.Pads():
+            if pad.GetNumber() in ('16', '17'):
+                pad.SetLocalSolderPasteMargin(p.FromMM(0.0045)); pad.SetLocalSolderPasteMarginRatio(-0.1364)
+            else:
+                pad.SetLocalSolderPasteMargin(p.FromMM(-0.026)); pad.SetLocalSolderPasteMarginRatio(-0.03)
+    if name == 'QFN-24_4x4_P0.5_EP2.5':
+        # CH9102F exposed pad: 2.0 x 2.0 paste opening, 64 percent of the 2.5 x 2.5 pad (review FP-10), so the
+        # QFN does not float on the paste; the four open GND vias stay inside the opening.
+        for pad in fp.Pads():
+            if pad.GetNumber() == '25':
+                pad.SetLocalSolderPasteMargin(p.FromMM(-0.25))
+
+
 def set_model(fp, step, rot, off):
     fp.Models().clear()
     m = p.FP_3DMODEL()
@@ -110,6 +184,8 @@ for src, (name, step, rot, off) in MODEL_FIX.items():
             ls = p.LSET.AllCuMask(); ls.AddLayer(p.F_Mask); ls.AddLayer(p.B_Mask)
             pad.SetLayerSet(ls)
     fp.SetAttributes(p.FP_SMD)
+    fix_custom_pads(fp, src, name)
+    fix_land_pattern(fp, name)
     add_courtyard(fp, 0.05 if name in ('USB-C_HRO_TYPE-C-31-M-12', 'FH35C-15S-0.3SHW') else 0.12)
     set_model(fp, step, rot, off)
     src_step = EASY / 'lcsc.3dshapes' / (step + '.step')
@@ -186,3 +262,5 @@ io.FootprintSave(str(PRETTY), fp)
     '(fp_lib_table\n  (version 7)\n  (lib (name "%s")(type "KiCad")(uri "${KIPRJMOD}/lib/%s.pretty")(options "")(descr "Mark-8 slab footprints"))\n)\n'
     % (LIBNAME, LIBNAME))
 print('library:', len(list(PRETTY.glob('*.kicad_mod'))), 'footprints,', len(list(SHAPES.glob('*.step'))), 'STEP models')
+for nm, pads in sorted(STROKE_FIXED.items()):
+    print('custom pads redrawn without the EasyEDA stroke:', nm, ' '.join('%s(%.2f)' % pw for pw in pads))

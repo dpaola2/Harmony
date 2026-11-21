@@ -174,6 +174,7 @@ iface['antenna'] = dict(
     module_x_range=mb['x'], module_y_range=mb['y'], module_centre_y=origin('U1')[1], module_height=2.4,
     antenna_region=dict(x=list(ANTENNA_REGION[0]), y=[r3(mb['y'][0]), r3(mb['y'][1])]),
     copper_keepout_all_layers=dict(x=list(ANTENNA_KEEPOUT[0]), y=list(ANTENNA_KEEPOUT[1])),
+    open_end_copper_clearance=r3(ANTENNA_KEEPOUT[1][1] - mb['y'][1]), feed_end_copper_clearance=r3(mb['y'][0] - ANTENNA_KEEPOUT[1][0]),
     enclosure_advice='No metal, screws, inserts or ribs thicker than the wall within the keep-out and 5 mm beyond the +X wall.')
 # battery connector
 g = GEOM['JST_PH_S2B-PH-SM4-TB']
@@ -565,6 +566,113 @@ for k_, e_ in vbus_paths.items():
     else:
         check(e_['widest'] >= 0.399, 'VBUS %s: the widest path narrows to %.2f mm away from the pins' % (k_, e_['widest']))
 
+# --- 4b. checks added by the 2026-11-21 pre-order review ------------------------------------------------
+# (a) design.py and the schematic netlist agree pin for pin (the board is checked against netlist.xml above).
+dmis = []
+for prt in PARTS:
+    for num, net in prt['pins'].items():
+        if pin_net.get((prt['ref'], num), '') != (net or ''):
+            dmis.append((prt['ref'], num, pin_net.get((prt['ref'], num)), net))
+check(not dmis, 'netlist.xml differs from design.py: %s' % dmis[:10])
+
+
+def rect_dist(pt, rect):
+    (x0, x1), (y0, y1) = rect
+    return math.hypot(max(x0 - pt[0], 0, pt[0] - x1), max(y0 - pt[1], 0, pt[1] - y1))
+
+
+def copper_in_rect(rect, layer=p.F_Cu):
+    """Tracks and vias that overlap the device rect on the layer, and whether a zone fill reaches into it."""
+    hits = []
+    for t in tracks:
+        if t.GetLayer() != layer:
+            continue
+        a, z = dev(t.GetStart()), dev(t.GetEnd()); hw = p.ToMM(t.GetWidth()) / 2
+        if any(rect_dist((a[0] + (z[0] - a[0]) * k / 60, a[1] + (z[1] - a[1]) * k / 60), rect) < hw - 1e-3 for k in range(61)):
+            hits.append(('track', t.GetNetname()))
+    for v_ in vias:
+        if rect_dist(dev(v_.GetPosition()), rect) < p.ToMM(v_.GetWidth()) / 2 - 1e-3:
+            hits.append(('via', v_.GetNetname()))
+    (x0, x1), (y0, y1) = rect
+    for z in b.Zones():
+        if z.GetIsRuleArea() or not z.IsOnLayer(layer):
+            continue
+        nx, ny = max(2, int((x1 - x0) / 0.05)), max(2, int((y1 - y0) / 0.05))
+        if any(z.HitTestFilledArea(layer, p.VECTOR2I(*[p.FromMM(c) for c in to_kicad(x0 + 0.02 + (x1 - x0 - 0.04) * i / nx,
+                                                                                          y0 + 0.02 + (y1 - y0 - 0.04) * j / ny)]))
+               for i in range(nx + 1) for j in range(ny + 1)):
+            hits.append(('zone', z.GetZoneName()))
+    return hits
+
+
+# (b) makers' no-copper areas: Hirose DM3AT hatched areas under J3, Alps SKRTLAE010 area under SW1 (CONN-1, L5)
+no_copper = {}
+_j3o, _j3r = origin('J3'), angle('J3')
+for k_, ((x0_, x1_), (y0_, y1_)) in sorted(J3_NO_TRACE_LOCAL.items()):
+    c_ = [local_to_device(_j3o, _j3r, q) for q in ((x0_, y0_), (x1_, y1_))]
+    rect_ = ((min(c_[0][0], c_[1][0]), max(c_[0][0], c_[1][0])), (min(c_[0][1], c_[1][1]), max(c_[0][1], c_[1][1])))
+    hits_ = copper_in_rect(rect_)
+    bad_ = [h for h in hits_ if not (k_ == 'A' and h[0] == 'track' and h[1] in J3_NO_TRACE_A_NETS)]
+    no_copper['J3_' + k_] = dict(rect=[[r3(x) for x in rect_[0]], [r3(y) for y in rect_[1]]],
+                                 copper=sorted(set('%s %s' % h for h in hits_)))
+    check(not bad_, 'copper in the J3 hatched area %s: %s' % (k_, sorted(set(bad_))))
+hits_ = copper_in_rect(SW1_NO_COPPER)
+no_copper['SW1'] = dict(rect=[list(SW1_NO_COPPER[0]), list(SW1_NO_COPPER[1])], copper=sorted(set('%s %s' % h for h in hits_)))
+check(not hits_, 'copper in the SW1 prohibited area: %s' % sorted(set(hits_)))
+
+# (c) vias against the L1 solder-mask openings of pads (L3, L4): no via within 0.1 of another net's opening,
+# and the only vias in a pad opening are the thermal-pad vias of U1 and U2.
+openings = []
+for f in fps.values():
+    for pd in f.Pads():
+        if pd.IsOnLayer(p.F_Mask):
+            sps_ = p.SHAPE_POLY_SET()
+            pd.TransformShapeToPolygon(sps_, p.F_Mask, pd.GetSolderMaskExpansion(), p.FromMM(0.002))
+            openings.append((f.GetReference() + '.' + pd.GetNumber(), pd.GetNetname(), sps_))
+via_mask = []
+for v_ in vias:
+    c_ = v_.GetPosition(); rr_ = p.ToMM(v_.GetWidth()) / 2
+    for name_, net_, sps_ in openings:
+        d_ = -1.0 if sps_.Contains(c_) else math.sqrt(sps_.SquaredDistance(c_)) / 1e6 - rr_
+        via_mask.append((d_, v_.GetNetname(), name_, net_, [r3(x) for x in dev(c_)]))
+other = [x for x in via_mask if x[1] != x[3]]
+in_pad = sorted(set((x[2], tuple(x[4])) for x in via_mask if x[0] < 0))
+worst_other = min(other, key=lambda x: x[0])
+check(worst_other[0] >= 0.1, 'via %s at %s is %.3f from the %s opening (%s)' % (worst_other[1], worst_other[4], worst_other[0],
+                                                                              worst_other[2], worst_other[3]))
+check({n_.split('.')[0] for n_, q_ in in_pad} <= {'U1', 'U2'}, 'vias in pad openings outside U1/U2: %s' % in_pad)
+per_via = {}
+for d_, vn_, pn_, pnet_, q_ in via_mask:
+    k_ = tuple(q_)
+    if k_ not in per_via or d_ < per_via[k_]:
+        per_via[k_] = d_
+via_plug = dict(in_pad=[('%s' % n_, list(q_)) for n_, q_ in in_pad],
+                closest_other_net=dict(distance=r3(worst_other[0]), via=worst_other[1], pad=worst_other[2], at=worst_other[4]),
+                closer_than_0p35_to_an_opening=sum(1 for d_ in per_via.values() if d_ < 0.35), total=len(per_via))
+
+# (d) land-pattern gaps inside J1 and U6 (review L1, FP-2, FP-8): no 0.09 / 0.12 exceptions any more
+gaps_lp = {}
+for ref_ in ('J1', 'U6'):
+    pads_ = [pd for pd in fps[ref_].Pads() if pd.IsOnLayer(p.F_Cu) and pd.GetAttribute() == p.PAD_ATTRIB_SMD]
+    best_ = 99.0
+
+    def _cu(pd):
+        sps_ = p.SHAPE_POLY_SET()
+        pd.TransformShapeToPolygon(sps_, p.F_Cu, 0, p.FromMM(0.002))
+        return sps_
+    for i_, pa in enumerate(pads_):
+        sa = _cu(pa)
+        for pb in pads_[i_ + 1:]:
+            sb = _cu(pb)
+            # distance between the two pad outlines (outline vertices of each against the other shape)
+            o_ = sa.Outline(0)
+            d_ = min(math.sqrt(sb.SquaredDistance(o_.CPoint(k))) for k in range(o_.PointCount())) / 1e6
+            o2 = sb.Outline(0)
+            d_ = min(d_, min(math.sqrt(sa.SquaredDistance(o2.CPoint(k))) for k in range(o2.PointCount())) / 1e6)
+            best_ = min(best_, d_)
+    gaps_lp[ref_] = r3(best_)
+    check(best_ >= 0.127 - 1e-3, '%s pad gap %.3f below 0.127' % (ref_, best_))
+
 # --- 5. ERC / DRC results -------------------------------------------------------------------------
 drc = json.loads((HERE / 'drc.json').read_text())
 erc = json.loads((HERE / 'erc.json').read_text())
@@ -585,6 +693,7 @@ summary = dict(
     power_net_min_width=power_min, power_net_length_below_0p4=narrow, power_net_narrow_away_from_pins=narrow_free, usb_track_length=usb_len,
     track_segments=len(tracks), vias=len(vias),
     vias_in_wheel_by_net={n: in_wheel_vias.count(n) for n in sorted(set(in_wheel_vias))},
+    no_copper_areas=no_copper, via_mask=via_plug, land_pattern_min_gap=gaps_lp,
     l3_nets_above_electrodes=l3_in, l3_track_in_disc_mm=l3_disc, disc_edge_crossings=edge_cross, vbus_main_paths=vbus_paths,
     sha256={f: hashlib.sha256((HERE / f).read_bytes()).hexdigest() for f in [NAME + '.kicad_pcb', NAME + '.kicad_sch', 'netlist.xml']})
 iface = dict(

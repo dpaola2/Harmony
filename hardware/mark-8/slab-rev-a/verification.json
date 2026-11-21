@@ -11,7 +11,7 @@
     "silk_over_copper",
     "silk_overlap"
   ],
-  "netlist_pads_checked": 366,
+  "netlist_pads_checked": 370,
   "electrode_gaps": {
     "1-2": 0.4,
     "2-3": 0.4,
@@ -32,24 +32,24 @@
     "7": 179.739,
     "8": 134.739
   },
-  "l2_hatch_copper_fraction": 0.356,
+  "l2_hatch_copper_fraction": 0.357,
   "power_net_min_width": {
     "VBUS": 0.2,
     "VSYS": 0.2,
     "VBAT": 0.25,
     "BAT_P": 0.4,
     "3V3": 0.15,
-    "3V3_PERIPH": 0.3,
+    "3V3_PERIPH": 0.25,
     "LCD_LEDA": 0.3,
     "LCD_LEDK": 0.2
   },
   "power_net_length_below_0p4": {
-    "VBUS": 63.826,
+    "VBUS": 62.53,
     "VSYS": 3.86,
     "VBAT": 1.31,
     "BAT_P": 0,
     "3V3": 6.867,
-    "3V3_PERIPH": 14.54,
+    "3V3_PERIPH": 15.181,
     "LCD_LEDA": 2.907,
     "LCD_LEDK": 0.6
   },
@@ -64,11 +64,11 @@
     "USB_DP": 15.899,
     "USB_DN": 14.906
   },
-  "track_segments": 1220,
-  "vias": 272,
+  "track_segments": 1233,
+  "vias": 274,
   "vias_in_wheel_by_net": {
     "3V3": 5,
-    "3V3_PERIPH": 7,
+    "3V3_PERIPH": 8,
     "BZ_GATE": 3,
     "ELE2": 1,
     "ELE8": 2,
@@ -87,6 +87,186 @@
     "VBAT": 3,
     "VBUS": 6,
     "VSYS": 3
+  },
+  "no_copper_areas": {
+    "J3_A": {
+      "rect": [
+        [
+          -7.68,
+          -6.88
+        ],
+        [
+          -41.76,
+          -33.67
+        ]
+      ],
+      "copper": [
+        "track GND",
+        "track SD_CD"
+      ]
+    },
+    "J3_B": {
+      "rect": [
+        [
+          -8.74,
+          -8.03
+        ],
+        [
+          -47.13,
+          -39.55
+        ]
+      ],
+      "copper": []
+    },
+    "J3_C": {
+      "rect": [
+        [
+          -17.4,
+          -8.68
+        ],
+        [
+          -39.84,
+          -38.24
+        ]
+      ],
+      "copper": []
+    },
+    "J3_D": {
+      "rect": [
+        [
+          -19.48,
+          -17.02
+        ],
+        [
+          -49.29,
+          -47.89
+        ]
+      ],
+      "copper": []
+    },
+    "SW1": {
+      "rect": [
+        [
+          25.7,
+          26.9
+        ],
+        [
+          -16.6,
+          -14.6
+        ]
+      ],
+      "copper": []
+    }
+  },
+  "via_mask": {
+    "in_pad": [
+      [
+        "U1.49",
+        [
+          14.22,
+          -31.28
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          14.22,
+          -29.3
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          14.22,
+          -27.32
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          16.2,
+          -31.28
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          16.2,
+          -29.3
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          16.2,
+          -27.32
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          18.18,
+          -31.28
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          18.18,
+          -29.3
+        ]
+      ],
+      [
+        "U1.49",
+        [
+          18.18,
+          -27.32
+        ]
+      ],
+      [
+        "U2.25",
+        [
+          11.3,
+          -46.2
+        ]
+      ],
+      [
+        "U2.25",
+        [
+          11.3,
+          -45.0
+        ]
+      ],
+      [
+        "U2.25",
+        [
+          12.5,
+          -46.2
+        ]
+      ],
+      [
+        "U2.25",
+        [
+          12.5,
+          -45.0
+        ]
+      ]
+    ],
+    "closest_other_net": {
+      "distance": 0.133,
+      "via": "HAPTIC_EN",
+      "pad": "U7.10",
+      "at": [
+        -23.667,
+        -35.835
+      ]
+    },
+    "closer_than_0p35_to_an_opening": 166,
+    "total": 274
+  },
+  "land_pattern_min_gap": {
+    "J1": 0.2,
+    "U6": 0.188
   },
   "l3_nets_above_electrodes": [
     "3V3",
@@ -118,8 +298,8 @@
       45.246
     ],
     "3V3_PERIPH": [
-      28.142,
-      28.142
+      28.195,
+      28.195
     ],
     "BZ_GATE": [
       4.073,
@@ -174,8 +354,8 @@
       7.785
     ],
     "SD_CS": [
-      12.207,
-      12.744
+      12.577,
+      13.114
     ],
     "SIDE_BTN": [
       10.793,
@@ -186,16 +366,16 @@
       23.885
     ],
     "VBAT": [
-      20.281,
-      21.319
+      25.648,
+      26.685
     ],
     "VBAT_SENSE": [
       0.0,
       0.253
     ],
     "VBUS": [
-      40.927,
-      42.53
+      40.832,
+      42.435
     ],
     "VSYS": [
       23.497,
@@ -208,7 +388,7 @@
       "widest": 0.2,
       "narrow_mm": {
         "L1 0.20": 9.575,
-        "L1 0.30": 22.662,
+        "L1 0.30": 21.366,
         "L3 0.30": 13.88
       }
     },
@@ -216,14 +396,14 @@
       "widest": 0.2,
       "narrow_mm": {
         "L1 0.20": 9.575,
-        "L1 0.30": 22.662,
+        "L1 0.30": 21.366,
         "L3 0.30": 13.88
       }
     }
   },
   "sha256": {
-    "harmony-mark8-slab.kicad_pcb": "c0e475cb78ee24fcab084dbe1da4520aa57a643ba532c60eec6f3aa1bf1c25a3",
-    "harmony-mark8-slab.kicad_sch": "675e3ac1c41c99edf1fa21b1a9c54dc3d6d48955e4e5162bed1d489fe08b9d51",
-    "netlist.xml": "cef984f2c35747eeeec6262f00653eea2460624b3a3017a6d43bf1f887172e02"
+    "harmony-mark8-slab.kicad_pcb": "958136703c3b4123f1d4253c61b2864f4506921f004b90df7c66cf880d26baca",
+    "harmony-mark8-slab.kicad_sch": "6f6b6cdf0935f9232b8097d296ca7fea4022cbe8c2cff4414a2d693b9db1dd82",
+    "netlist.xml": "e6f5c8623ceb82e88733dec0cc60e483554178e379bd627b18b23988464573e4"
   }
 }

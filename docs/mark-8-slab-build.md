@@ -10,25 +10,31 @@ Work in this order. Each step links to the document that has the details.
 | 2 | Buy the screen, the battery, inserts and screws | "Parts to buy" below |
 | 3 | Print the case and the wheel disc | [PRINTING.md](../enclosure/mark-8/slab-rev-a/PRINTING.md) |
 | 4 | Dry-fit the screen cable | "Dry-fit the screen cable" below |
-| 5 | Assemble up to step 13 with the back open | [ASSEMBLY.md](../enclosure/mark-8/slab-rev-a/ASSEMBLY.md) |
-| 6 | Flash the bring-up test, then the player | [firmware README, section 2](../firmware/mark-8/README.md) |
-| 7 | Close the back plate | ASSEMBLY.md step 15 |
+| 5 | Cut the board out of its frame | "Cut the board out of its frame" below |
+| 6 | Assemble up to step 13 with the back open | [ASSEMBLY.md](../enclosure/mark-8/slab-rev-a/ASSEMBLY.md) |
+| 7 | Flash the bring-up test, then the player | [firmware README, section 2](../firmware/mark-8/README.md) |
+| 8 | Close the back plate | ASSEMBLY.md step 15 |
+
+The board README has a "Review dispositions, November 21" table. It lists the firmware changes and the bring-up checks that the pre-order review asked for.
 
 ## 1. Order the board
 
 Upload three files from `hardware/mark-8/slab-rev-a/jlcpcb/`: the Gerber zip, `bom.csv` and `cpl.csv`. ORDER.md has every form setting. The settings that matter most:
 
 - 4 layers, 0.8 mm thick, ENIG.
+- Delivery format Panel by Customer (1 x 1), edge rails and fiducials added by customer: the Gerbers already hold the board in its own frame.
+- Via covering Plugged (JLC does not offer Tented on 4 layers).
 - Standard PCBA (Economic assembly does not take this board).
 - Top side only, 2 assembled (or 5).
+- Paste the three-line order remark from ORDER.md.
 
-Expect 39 of 39 BOM lines matched and 15 extended parts. The estimate is about $135 to $145 before shipping and tax for 2 assembled boards. JLC's quote page gives the real price.
+Expect 40 of 40 BOM lines matched and 15 extended parts. JLC quoted $185.82 before shipping for this design on November 21, before the review fixes; expect about $186 to $200 now. JLC's quote page gives the real price.
 
 On the order day, do these checks:
 
-1. Check the stock of U1, the ESP32-PICO-MINI-02-N8R2. It is NRND, and only 892 were in stock on November 17. If it is gone, the board cannot be built as drawn.
+1. Check the stock of U1 (ESP32-PICO-MINI-02-N8R2, NRND, 1021 on November 21) and U6 (MPR121QR2, 668 on November 21). If either is gone, the board cannot be built as drawn.
 2. In JLC's placement preview, check the parts that `rotation-check.csv` lists.
-3. In JLC's DFM result, 0.09 mm pad gaps inside the USB-C and MPR121 footprints are expected.
+3. In JLC's DFM result, expect a comment on vias that cannot be plugged; ORDER.md lists the expected comments.
 
 ## 2. Parts to buy
 
@@ -66,11 +72,17 @@ The back plate prints with the other parts in step 3. The screen cable fold come
 
 If the fold does not fit, tell the assistant. If the fix changes the back plate, reprint the back plate alone (PRINTING.md, "Reprint the back plate"). Also try the thickest USB-C cable you have in the port.
 
-## 5. Assemble with the back open
+## 5. Cut the board out of its frame
 
-Follow ASSEMBLY.md steps 1 to 13. Check the battery polarity with a meter before you connect it (step 11). For the first power-up, leave the battery out.
+The board arrives in a frame of rails, held by four mouse-bite tabs (three on the top edge, one on the left edge, seen from the front). Cut every tab with flush cutters, close to the board edge, then file the stub flush. Never snap a tab off: bending the 0.8 mm board can crack a capacitor near the edge or lift a pad of the battery connector. The edge must be flush, because the case has only 0.5 mm of clearance at the side walls.
 
-## 6. Flash and test
+Before the first USB plug-in, measure VBUS to GND with a meter at C1 (it must not read as a short), and check that the four USB-C shell legs are soldered from both sides.
+
+## 6. Assemble with the back open
+
+Follow ASSEMBLY.md steps 1 to 13. Check the battery polarity with a meter before you connect it (step 11). With USB unplugged, the board blocks a reversed pack. With USB connected, a reversed pack is slowly discharged (about 37 mA) and the charge LED stays on, so never leave a reversed pack on USB. For the first power-up, leave the battery out.
+
+## 7. Flash and test
 
 Section 2 of the firmware README has the full procedure. In short:
 
@@ -87,7 +99,7 @@ Section 2 of the firmware README has the full procedure. In short:
 
 The bring-up measures the touch noise with the backlight at 100% duty and at three PWM frequencies. It saves the quietest setting and the touch thresholds, and the player uses them. Keep your hands off the wheel during that part (about 45 s).
 
-## 7. Close it
+## 8. Close it
 
 Do ASSEMBLY.md step 15. Tighten the four M2 x 4 screws in a cross pattern until each head sits in its counterbore, and no more.
 
@@ -101,6 +113,7 @@ These are design estimates. The first board and the first print will show if the
 - The 40 MHz screen clock. The screen data sheet gives 15 MHz. If the picture shows noise, lower `CONFIG_SLAB_LCD_SPI_HZ`.
 - Screen orientation, colour order and memory offsets. The bring-up screen shows each of them.
 - Card reads at 20 MHz over the long card traces.
+- Bluetooth range in the closed case. The antenna has 4.5 mm of copper-free board beyond its open end; Espressif asks for more. Test A2DP with the player in a pocket.
 - Audio dropouts while you scroll.
 - Sleep current. The firmware README gives estimates only.
 - How far a thick USB-C plug goes into the port.

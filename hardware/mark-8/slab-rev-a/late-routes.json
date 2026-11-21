@@ -1,5 +1,5 @@
 {
- "note": "Late hand routes: connections the routers could not finish. CC1 to R1 was found by maze.py with all routed copper rippable and frozen here; DTR and U2_TXD leave the CH9102F bottom row through one via each, placed by hand so that neither blocks the other or RTS. late_routes.py adds them right after build_pcb.py, before any router runs.",
+ "note": "Late hand routes: connections the routers could not finish. CC1 to R1 was found by maze.py with all routed copper rippable and frozen here; DTR and U2_TXD leave the CH9102F bottom row through one via each, placed by hand so that neither blocks the other or RTS. late_routes.py adds them right after build_pcb.py, before any router runs. On 2026-11-21 the DTR via moved to (11.6, -48.3), 0.26 mm clear of the U2 pin 23 opening (review L4).",
  "tracks": [
   {
    "net": "CC1",
@@ -54,7 +54,15 @@
     ],
     [
      11.15,
-     -48.17
+     -48.05
+    ],
+    [
+     11.4,
+     -48.3
+    ],
+    [
+     11.6,
+     -48.3
     ]
    ]
   },
@@ -64,8 +72,8 @@
    "width": 0.15,
    "pts": [
     [
-     11.15,
-     -48.17
+     11.6,
+     -48.3
     ],
     [
      11.5,
@@ -174,8 +182,8 @@
   {
    "net": "DTR",
    "pos": [
-    11.15,
-    -48.17
+    11.6,
+    -48.3
    ]
   },
   {

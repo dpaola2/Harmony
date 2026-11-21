@@ -1,8 +1,61 @@
 {
- "bom_lines": 39,
- "placements": 82,
- "basic_lines": 24,
+ "bom_lines": 40,
+ "placements": 84,
+ "basic_lines": 25,
  "extended_lines": 15,
+ "panel": {
+  "size_mm": [
+   68.4,
+   53.6
+  ],
+  "routed_slots": 4,
+  "tabs": [
+   [
+    "top",
+    -11.0
+   ],
+   [
+    "top",
+    0.0
+   ],
+   [
+    "top",
+    10.0
+   ],
+   [
+    "left",
+    -15.5
+   ]
+  ],
+  "mouse_bites": 20,
+  "fiducials": [
+   [
+    -22.0,
+    -6.85
+   ],
+   [
+    22.0,
+    -6.85
+   ],
+   [
+    -22.0,
+    -52.75
+   ]
+  ],
+  "tooling_holes": 4,
+  "drc_error_items": [],
+  "drc": {
+   "errors": [],
+   "error_count": 0,
+   "warning_types": [
+    "lib_footprint_issues",
+    "silk_edge_clearance",
+    "silk_over_copper",
+    "silk_overlap"
+   ],
+   "unconnected": 0
+  }
+ },
  "gerber_files": [
   "harmony-mark8-slab-B_Cu.gbl",
   "harmony-mark8-slab-B_Mask.gbs",
@@ -14,13 +67,11 @@
   "harmony-mark8-slab-F_Silkscreen.gto",
   "harmony-mark8-slab-In1_Cu.g2",
   "harmony-mark8-slab-In2_Cu.g3",
-  "harmony-mark8-slab-NPTH-drl_map.gbr",
   "harmony-mark8-slab-NPTH.drl",
-  "harmony-mark8-slab-PTH-drl_map.gbr",
   "harmony-mark8-slab-PTH.drl",
   "harmony-mark8-slab-job.gbrjob"
  ],
  "zip": "harmony-mark8-slab-gerbers.zip",
- "zip_sha256": "7d3a07dfa5eb11b400d554c5d5baba1f78b6fb60b8411ee964c21eb33a62f5cb",
- "board_sha256": "c0e475cb78ee24fcab084dbe1da4520aa57a643ba532c60eec6f3aa1bf1c25a3"
+ "zip_sha256": "fcdaec8ce8161cae6cdac574b996b1b3d360a7e1f47928b7c7f22f19ccedbbf7",
+ "board_sha256": "958136703c3b4123f1d4253c61b2864f4506921f004b90df7c66cf880d26baca"
 }

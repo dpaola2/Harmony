@@ -5,17 +5,17 @@
       "Application": "Pcbnew",
       "Version": "8.0.9"
     },
-    "CreationDate": "2026-11-17T20:15:32-05:00"
+    "CreationDate": "2026-11-21T11:23:07-05:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "harmony-mark8-slab",
+      "Name": "harmony-mark8-slab-panel",
       "GUID": "6861726d-6f6e-4792-9d6d-61726b382d73",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 54.45,
-      "Y": 39.65
+      "X": 68.45,
+      "Y": 53.65
     },
     "LayerNumber": 4,
     "BoardThickness": 0.8,
@@ -43,52 +43,52 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "harmony-mark8-slab-F_Cu.gtl",
+      "Path": "harmony-mark8-slab-panel-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-In1_Cu.g2",
+      "Path": "harmony-mark8-slab-panel-In1_Cu.g2",
       "FileFunction": "Copper,L2,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-In2_Cu.g3",
+      "Path": "harmony-mark8-slab-panel-In2_Cu.g3",
       "FileFunction": "Copper,L3,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-B_Cu.gbl",
+      "Path": "harmony-mark8-slab-panel-B_Cu.gbl",
       "FileFunction": "Copper,L4,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-F_Paste.gtp",
+      "Path": "harmony-mark8-slab-panel-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-F_Silkscreen.gto",
+      "Path": "harmony-mark8-slab-panel-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-B_Silkscreen.gbo",
+      "Path": "harmony-mark8-slab-panel-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "harmony-mark8-slab-F_Mask.gts",
+      "Path": "harmony-mark8-slab-panel-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "harmony-mark8-slab-B_Mask.gbs",
+      "Path": "harmony-mark8-slab-panel-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "harmony-mark8-slab-Edge_Cuts.gm1",
+      "Path": "harmony-mark8-slab-panel-Edge_Cuts.gm1",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }

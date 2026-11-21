@@ -32,6 +32,7 @@ $PY late_routes.py 2>&1 | quiet                     # late hand routes, fixed be
 if [ "$ROUTE" = "0" ]; then
   $PY finish_pcb.py 2>&1 | quiet                    # L1 and L3 ground pours
   $PY routing_snapshot.py restore 2>&1 | quiet
+  $PY review_fixes.py 2>&1 | quiet                  # layout fixes of the 2026-11-21 pre-order review
 else
   if [ "$ROUTE" = "1" ] || [ ! -f routing-p.ses ]; then
     ./route.sh

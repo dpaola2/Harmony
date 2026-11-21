@@ -206,6 +206,13 @@ for num, pts in electrode_polygons().items():
     z.SetPadConnection(p.ZONE_CONNECTION_FULL)
 rule_area('ANTENNA_KEEPOUT', ALLCU, rect_pts(*ANTENNA_KEEPOUT), tracks=True, vias=True, pour=True,
           footprints=False, pads=True)
+# Makers' no-copper areas under J3 (Hirose DM3AT note 3) and SW1 (Alps SKRTLAE010), on L1 (review CONN-1, L5).
+_j3 = part_by_ref('J3')
+for _k, ((_x0, _x1), (_y0, _y1)) in sorted(J3_NO_TRACE_LOCAL.items()):
+    _pts = [local_to_device(_j3['pos'], _j3['rot'], q) for q in ((_x0, _y0), (_x1, _y0), (_x1, _y1), (_x0, _y1))]
+    # area A allows SD_CD and GND track (custom rule in the .kicad_dru); the others allow no track at all
+    rule_area('J3_NO_TRACE_' + _k, [p.F_Cu], _pts, tracks=(_k != 'A'), vias=True, pour=True)
+rule_area('SW1_NO_COPPER', [p.F_Cu], rect_pts(*SW1_NO_COPPER), tracks=True, vias=True, pour=True)
 
 
 # --- documentation drawings on User.Drawings (device-frame zones, mirrored like the board) ----
@@ -279,8 +286,10 @@ track('USB_DP', [dp_v1, (dp_v1[0], dp_v2[1]), dp_v2], 0.2, p.In2_Cu)
 via('USB_DP', dp_v2)
 track('USB_DP', [dp_v2, (dp_v2[0] + 0.5, u8['4'][1]), u8['4']], 0.2)
 track('USB_DP', [u8['3'], (u8['3'][0] + 0.45, u8['3'][1]), (u8['3'][0] + 1.15, u2dp[1]), u2dp], 0.2)
-gv = (u8['2'][0] + 0.55, u8['2'][1])
-track(GND, [u8['2'], gv], 0.25); via(GND, gv)
+# U8 pin 2 (its only GND) drops to L2 under the package body, 0.4 mm clear of the pad (review L3: the via
+# used to sit on the pad edge and could starve the joint); the USB pair leaves no room on the pad's +X side.
+gk, gv = (u8['2'][0] - 0.85, u8['2'][1] - 0.1), (u8['2'][0] - 1.15, u8['2'][1] - 0.4)
+track(GND, [(u8['2'][0], u8['2'][1] - 0.1), gk, gv], 0.25); via(GND, gv)
 # CC pins and VBUS leave from the front ends; vias sit just outside the wheel keep-out.
 c = P('J1', 'A5')
 track('CC1', [c, (c[0], -45.0)], 0.2); via('CC1', (c[0], -45.0))
@@ -329,7 +338,7 @@ jt = (j34[0], j34[1] + 0.94)
 track('3V3_PERIPH', [j34, jt, c221], 0.4)
 track('3V3_PERIPH', [jt, c211], 0.4)
 # the J3 supply node reaches the pull-up bus through a via on its stem and a short L3 link
-jv = (jt[0], jt[1] - 0.1)
+jv = (jt[0], jt[1] + 0.05)       # 0.14 clear of the J3 pin 4 opening (review L3); it used to touch it
 via('3V3_PERIPH', jv)
 track('3V3_PERIPH', [jv, (jv[0], bus[0][1])], 0.3, p.In2_Cu)
 
@@ -393,9 +402,18 @@ track('I2C_SCL', [u57, sclv], 0.15); via('I2C_SCL', sclv)
 j215, j214 = P('J2', '15'), P('J2', '14')            # the two LEDA pins joined under the connector body
 track('LCD_LEDA', [j215, (j215[0] - 0.6, j215[1]), (j214[0] + 0.6, j214[1]), j214], 0.3)
 
-# --- Q4 gate node: Q4 gate, R13, R14 and C18 share one column, joined before routing --------------
+# --- Q4 gate network (review PWR-1, ESP32-2; q4_gate_sim.py) ------------------------------------
+# R13 and R14 meet at PERIPH_DIV in the old gate column; R34 and C26 sit left of it. PERIPH_GATE runs from
+# the Q4 gate down the left side to R34, C26 and round under R14 to C18; C26's drain side drops to the
+# 3V3_PERIPH L3 run through one via. All of it is L1 except that via (DC nets, allowed inside the wheel).
 g1, g13, g14, g18 = P('Q4', '1'), P('R13', '2'), P('R14', '2'), P('C18', '1')
-track('PERIPH_GATE', [g1, (g13[0], g1[1] - 0.64), g13, g14, g18], 0.25)
+d34, g34, g26, p26 = P('R34', '1'), P('R34', '2'), P('C26', '1'), P('C26', '2')
+track('PERIPH_DIV', [g13, g14], 0.25)
+track('PERIPH_DIV', [(g13[0], d34[1]), d34], 0.25)
+track('PERIPH_GATE', [g1, (g1[0], g1[1] - 0.6), (g34[0], g1[1] - 0.6 - (g1[0] - g34[0])), g34, g26], 0.25)
+track('PERIPH_GATE', [g26, (d34[0] + 0.04, g26[1]), (g18[0] - 0.62, g18[1] + 0.65), g18], 0.25)
+v26 = (-13.6, -26.4)
+track('3V3_PERIPH', [p26, v26], 0.25); via('3V3_PERIPH', v26)
 
 # --- DRV2605L: its two VDD pins (6 and 10) joined just outside the pin row, over pins 7 to 9 ------
 u7a, u7b = P('U7', '6'), P('U7', '10')
@@ -461,6 +479,11 @@ def _sd(q, a_, c_):
     return _m.hypot(q[0] - a_[0] - u * dx, q[1] - a_[1] - u * dy)
 
 
+_NO_VIA_BOXES = []
+for _k, ((_x0, _x1), (_y0, _y1)) in J3_NO_TRACE_LOCAL.items():
+    _c = [local_to_device(_j3['pos'], _j3['rot'], q) for q in ((_x0, _y0), (_x1, _y1))]
+    _NO_VIA_BOXES.append((min(_c[0][0], _c[1][0]), min(_c[0][1], _c[1][1]), max(_c[0][0], _c[1][0]), max(_c[0][1], _c[1][1])))
+_NO_VIA_BOXES.append((SW1_NO_COPPER[0][0], SW1_NO_COPPER[1][0], SW1_NO_COPPER[0][1], SW1_NO_COPPER[1][1]))
 _pads = [(f.GetReference(), pd.GetNumber(), pd.GetNetname(), _box(pd), pd.GetAttribute() != p.PAD_ATTRIB_SMD)
          for f in b.GetFootprints() for pd in f.Pads() if pd.IsOnLayer(p.F_Cu)]
 _tracks = [(a_, z_, w_ / 2, n_, l_ == p.F_Cu) for n_, a_, z_, w_, l_ in HAND_SEG]
@@ -479,6 +502,9 @@ def _via_ok(q):
     (ax0, ax1), (ay0, ay1) = ANTENNA_KEEPOUT
     if ax0 - 0.4 <= q[0] <= ax1 + 0.4 and ay0 - 0.4 <= q[1] <= ay1 + 0.4:
         return False
+    for _bx in _NO_VIA_BOXES:             # J3 hatched areas and the SW1 prohibited area
+        if _bx[0] - 0.3 <= q[0] <= _bx[2] + 0.3 and _bx[1] - 0.3 <= q[1] <= _bx[3] + 0.3:
+            return False
     for r_, n_, net_, bx_, th_ in _pads:
         if _bd(bx_, q) < 0.25 + (0.15 if net_ == GND else 0.2):
             return False
@@ -559,13 +585,12 @@ DRU = '''(version 1)
   (constraint clearance (min 0.127mm)))
 (rule "board hole clearance"
   (constraint hole_clearance (min 0.2mm)))
-# Vendor land patterns with pad gaps below 0.127 (JLCPCB 4-layer minimum space is 0.09).
-(rule "J1 USB-C vendor land pattern"
-  (condition "A.memberOfFootprint('J1') && B.memberOfFootprint('J1')")
-  (constraint clearance (min 0.09mm)))
-(rule "U6 MPR121 0.4 mm pitch land pattern"
-  (condition "A.memberOfFootprint('U6') && B.memberOfFootprint('U6')")
-  (constraint clearance (min 0.12mm)))
+# The J1 (0.09) and U6 (0.12) pad-gap exceptions were removed on 2026-11-21: they came from EasyEDA's 0.1 mm
+# pad stroke (review L1, FP-2), which make_lib.py now strips. J1 and U6 pads now keep 0.18 mm or more.
+# Hirose DM3AT hatched area A under J3 (card-detect column): only SD_CD and GND track (README, CONN-1).
+(rule "J3 hatched area A: SD_CD and GND track only"
+  (condition "A.intersectsArea('J3_NO_TRACE_A') && A.NetName != 'SD_CD' && A.NetName != 'GND'")
+  (constraint disallow track))
 # SKRTLAE010 guide-boss holes sit 0.07 mm from the switch's own pads (Alps land pattern).
 (rule "SW1 vendor guide-boss holes"
   (condition "A.memberOfFootprint('SW1') && B.memberOfFootprint('SW1')")

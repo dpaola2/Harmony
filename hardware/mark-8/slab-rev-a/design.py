@@ -117,7 +117,22 @@ RAMP_ZONE = ((J2_XC, J2_XC + 18.0), (J2_YC - 3.0, J2_YC + 3.0))
 # Antenna: U1 antenna end on the right edge. Copper keep-out on every layer.
 U1_ORIGIN = (16.2, -29.3)      # pad-centre origin of the EasyEDA footprint, KiCad 90 deg
 ANTENNA_REGION = ((21.8, 27.2), (U1_ORIGIN[1] - 6.6, U1_ORIGIN[1] + 6.6))
-ANTENNA_KEEPOUT = ((21.8, 27.2), (U1_ORIGIN[1] - 8.6, U1_ORIGIN[1] + 7.5))
+# 2 mm beyond the feed end (-Y) and, since the 2026-11-21 review (ESP32-1), 4.5 mm beyond the open end
+# (+Y) up to 0.1 mm short of the SW1 GND guide pad: the inverted-F antenna's open end is its high-field end.
+ANTENNA_KEEPOUT = ((21.8, 27.2), (U1_ORIGIN[1] - 8.6, -18.2))
+
+# Copper keep-outs under parts, from the makers' land patterns (2026-11-21 review, CONN-1/FP-4 and L5).
+# Hirose DM3AT drawing (C114218 p.3) note 3, hatched "No conductive traces" areas, in J3 footprint-local mm
+# (KiCad frame, J3 at 0 deg): the union of the two reviewers' scaled readings, except area D's outer edge (the
+# 900 dpi reading, so J3 pin 13's GND via stays outside). Area A (the card-detect column
+# between pads 10, 11 and 12) may keep SD_CD and GND track: the detect spring above it is SD_CD or GND, so a
+# worn mask there cannot short another net (custom DRC rule in build_pcb.py).
+J3_NO_TRACE_LOCAL = {'A': ((-7.17, -6.37), (-7.12, 0.97)), 'B': ((-6.02, -5.31), (-1.24, 6.34)),
+                     'C': ((-5.37, 3.35), (-2.55, -0.95)), 'D': ((2.97, 5.43), (7.10, 8.50))}
+J3_NO_TRACE_A_NETS = ['SD_CD', 'GND']
+# Alps SKRTLAE010 drawing (C110293 p.3): "prohibited area of copper tracks", 2.0 x 1.2 between the rear
+# mounting pads 4 and 5 (device coordinates).
+SW1_NO_COPPER = ((25.7, 26.9), (-16.6, -14.6))
 
 # Height limits from the component surface (SPEC 6)
 H_GENERAL, H_RUN, H_RAMP = 5.6, 4.9, 0.6
@@ -139,9 +154,9 @@ R1206 = 'R_1206_3216Metric'
 # LCSC numbers for JLC basic passives (checked 2026-11-17, see jlcpcb/stock.json)
 RES = {('5.1k', R0402): 'C25905', ('1k', R0402): 'C11702', ('10k', R0402): 'C25744',
        ('100k', R0402): 'C25741', ('100R', R0402): 'C25076', ('1M', R0402): 'C26083',
-       ('4.7k', R0402): 'C25900', ('2.7k', R0603): 'C13167', ('75k', R0603): 'C23242',
+       ('4.7k', R0402): 'C25900', ('2.2k', R0402): 'C25879', ('2.7k', R0603): 'C13167', ('75k', R0603): 'C23242',
        ('150k', R0603): 'C22807', ('33R', R0805): 'C17634', ('10R', R1206): 'C17903'}
-CAP = {('100nF', C0402): 'C1525', ('1uF', C0402): 'C52923', ('4.7uF', C0603): 'C19666',
+CAP = {('100nF', C0402): 'C1525', ('1uF', C0402): 'C52923', ('4.7uF', C0402): 'C23733', ('4.7uF', C0603): 'C19666',
        ('10uF', C0603): 'C19702', ('22uF', C0603): 'C59461', ('10uF', C0805): 'C15850',
        ('22uF', C0805): 'C45783'}
 
@@ -209,9 +224,15 @@ R('R16', '100k', R0402, 'BL_GATE', GND, (4.0, -35.2), 90, 'screen')
 R('R17', '10R', R1206, 'VSYS', 'LCD_LEDA', (-10.0, -22.5), 90, 'screen')
 part('Q4', 'PMOS', 'AO3401A', 'SOT-23_AO3401A', 'C15127', {'1': 'PERIPH_GATE', '2': '3V3', '3': '3V3_PERIPH'},
      (-11.8, -16.6), 0, 'screen', mpn='AOS AO3401A')
-R('R13', '100k', R0402, '3V3', 'PERIPH_GATE', (-14.4, -15.0), 0, 'screen')
-R('R14', '10k', R0402, 'PERIPH_EN_N', 'PERIPH_GATE', (-14.4, -16.4), 0, 'screen')
-C('C18', '100nF', C0402, 'PERIPH_GATE', '3V3', (-14.4, -17.8), 0, 'screen')
+# Q4 gate network (2026-11-21 review, PWR-1 and ESP32-2; q4_gate_sim.py): R13/R14 divide 3V3 against GPIO13.
+# Driven low, the divider puts about 1 V on the gate (Q4 fully on); left at the ESP32's 30 to 80 k internal
+# pull-down after reset, it holds VGS at -0.09 to -0.22 V (Q4 off). R34 into C26 (gate to drain) sets the
+# turn-on ramp (Miller), C18 (gate to source) keeps Q4 off while 3V3 itself powers up.
+R('R13', '2.2k', R0402, '3V3', 'PERIPH_DIV', (-14.4, -15.0), 0, 'screen')
+R('R14', '1k', R0402, 'PERIPH_EN_N', 'PERIPH_DIV', (-14.4, -16.4), 0, 'screen')
+R('R34', '4.7k', R0402, 'PERIPH_DIV', 'PERIPH_GATE', (-14.4, -16.4), 0, 'screen')
+C('C18', '1uF', C0402, 'PERIPH_GATE', '3V3', (-14.4, -17.8), 0, 'screen')
+C('C26', '100nF', C0402, 'PERIPH_GATE', '3V3_PERIPH', (-14.4, -17.8), 0, 'screen')
 
 # ---- microSD (bottom left) ----
 sd = {'1': 'SD_DAT2', '2': 'SD_CS', '3': 'SD_MOSI', '4': '3V3_PERIPH', '5': 'SD_SCK', '6': GND,
@@ -225,7 +246,7 @@ R('R21', '10k', R0402, '3V3_PERIPH', 'SD_MISO', (-13.6, -31.6), 0, 'storage')
 R('R22', '10k', R0402, '3V3_PERIPH', 'SD_CS', (-13.6, -30.4), 0, 'storage')
 R('R23', '10k', R0402, '3V3_PERIPH', 'SD_DAT1', (-11.3, -30.4), 0, 'storage')
 R('R24', '10k', R0402, '3V3_PERIPH', 'SD_DAT2', (-11.3, -29.2), 0, 'storage')
-R('R25', '100k', R0402, '3V3', 'SD_CD', (-13.6, -29.2), 0, 'storage')
+R('R25', '1M', R0402, '3V3', 'SD_CD', (-13.6, -29.2), 0, 'storage')     # 1M since 2026-11-21 (PWR-11): 3.3 uA with a card in
 
 # ---- Processor ----
 esp = {str(n): GND for n in [1, 2, 11, 14] + list(range(36, 54))}
@@ -247,7 +268,7 @@ part('SW2', 'SW', 'BOOT', 'SW_TS-1088', 'C720477', {'1': 'BOOT', '2': GND}, (20.
 part('SW3', 'SW', 'RESET', 'SW_TS-1088', 'C720477', {'1': 'ESP_EN', '2': GND}, (16.8, -13.4), 90, 'mcu',
      mpn='XKB TS-1088-AR02016')
 R('R29', '100k', R0402, 'VBUS', 'VBUS_SENSE', (20.6, -40.0), 0, 'mcu')
-R('R30', '150k', R0603, 'VBUS_SENSE', GND, (20.4, -41.6), 0, 'mcu')
+R('R30', '75k', R0603, 'VBUS_SENSE', GND, (20.4, -41.6), 0, 'mcu')   # 5.25 V -> 2.25 V at GPIO36 (BN-2); ratio 75/175
 R('R27', '1M', R0402, 'VBAT', 'VBAT_SENSE', (15.6, -37.9), 90, 'mcu')
 R('R28', '1M', R0402, 'VBAT_SENSE', GND, (16.8, -40.5), 0, 'mcu')
 C('C24', '100nF', C0402, 'VBAT_SENSE', GND, (16.8, -39.4), 0, 'mcu')
@@ -268,7 +289,7 @@ C('C7', '4.7uF', C0603, 'VBUS', GND, (-24.5, -21.8), 90, 'power')
 R('R7', '2.7k', R0603, 'CHG_PROG', GND, (-18.6, -21.4), 90, 'power')
 part('Q3', 'PMOS', 'AO3401A', 'SOT-23_AO3401A', 'C15127', {'1': 'VBUS', '2': 'VSYS', '3': 'VBAT'},
      (-17.6, -25.4), 270, 'power', mpn='AOS AO3401A')
-R('R9', '100k', R0402, 'VBUS', GND, (-20.4, -25.0), 90, 'power')
+R('R9', '10k', R0402, 'VBUS', GND, (-20.4, -25.0), 90, 'power')     # 10k since 2026-11-21 (PWR-5): VBUS bleeds in tens of ms
 part('D1', 'D', 'B5819W SL', 'SOD-123_B5819W', 'C8598', {'1': 'VSYS', '2': 'VBUS'},
      (-21.0, -27.6), 180, 'power', mpn='CJ B5819W SL')
 C('C9', '22uF', C0805, 'VSYS', GND, (-25.6, -26.4), 90, 'power')
@@ -276,7 +297,7 @@ part('U4', 'RT9080', 'RT9080-33GJ5', 'TSOT-23-5_RT9080', 'C841192',
      {'1': 'VSYS', '2': GND, '3': 'VSYS', '4': None, '5': '3V3'}, (-19.0, -31.4), 180, 'power',
      mpn='Richtek RT9080-33GJ5')
 C('C10', '1uF', C0402, 'VSYS', GND, (-16.6, -31.6), 90, 'power')
-C('C11', '1uF', C0402, '3V3', GND, (-21.6, -31.6), 90, 'power')
+C('C11', '4.7uF', C0402, '3V3', GND, (-21.6, -31.6), 90, 'power')   # about 2 uF effective at 3.3 V (PWR-7)
 part('U5', 'MAX17048', 'MAX17048G+T10', 'TDFN-8_2x2_P0.5_EP', 'C2682616',
      {'1': GND, '2': 'VBAT', '3': 'VBAT', '4': GND, '5': None, '6': GND, '7': 'I2C_SCL', '8': 'I2C_SDA',
       '9': GND}, (-25.0, -33.4), 90, 'power', mpn='Analog MAX17048G+T10')
@@ -360,7 +381,11 @@ PLACE = {
     'R30': (19.6, -41.4, 0), 'R6': (12.6, -20.2, 0),
     # top right: side button, buzzer driver, I2C pull-ups
     'SW1': (25.48, -15.6, 270), 'SW2': (20.2, -13.5, 90), 'SW3': (20.2, -19.6, 90),
-    'R26': (22.6, -13.2, 90), 'C23': (22.6, -15.4, 90), 'R31': (24.4, -19.3, 0), 'R32': (24.4, -20.5, 0),
+    'R26': (22.6, -13.2, 90), 'C23': (22.6, -15.4, 90),
+    # I2C pull-ups moved out of the antenna's open-end clearance (2026-11-21, ESP32-1): R31 to the free top strip
+    # (SDA through a via onto the L3 SDA run, 3V3 from the L1 3V3 track), R32 above the SCL track below the
+    # SPI buses (3V3 through a via onto the L3 3V3 run, outside the electrodes)
+    'R31': (15.5, -12.1, 0), 'R32': (13.3, -18.6, 0),
     # behind the wheel (L1 only; GND through stitching vias)
     'BZ1': (-3.6, -21.6, 0), 'D2': (2.12, -20.3, 0), 'R18': (2.2, -22.5, 0), 'Q6': (7.2, -25.3, 0), 'R19': (9.6, -25.6, 90), 'R20': (7.2, -27.6, 0),
     'C14': (2.2, -24.9, 180), 'U6': (0.6, -27.4, 180), 'C13': (-2.2, -26.6, 90),
@@ -368,6 +393,7 @@ PLACE = {
     'R16': (10.9, -37.5, 90), 'C19': (-1.2, -33.6, 0), 'C20': (-0.9, -35.25, 0),
     # FPC leg area (parts up to 4.9 tall allowed)
     'Q4': (-11.9, -21.2, 0), 'R13': (-11.9, -23.8, 0), 'R14': (-11.9, -25.1, 0), 'C18': (-11.9, -26.4, 180),
+    'R34': (-13.85, -24.3, 0), 'C26': (-14.36, -25.7, 270),
     'R17': (-8.6, -26.4, 90),
     # microSD pull-ups and decoupling, one row above the J3 contacts
     # Pull-ups turned so the signal pin faces its J3 contact and the supply pin faces away; each supply pin
@@ -398,9 +424,11 @@ for _p in PARTS:
 # layer). Inside the electrode disc plus 0.5 mm (WHEEL_KEEPOUT_R) only these nets may run on L3 or
 # place vias: supplies, DC levels and lines that are static while the MPR121 scans (straps, reset,
 # enables, card detect, the side button, the touch interrupt, the charge status, sense dividers).
-DISC_L3_NETS = ['GND', 'VBUS', 'VSYS', 'VBAT', 'BAT_P', '3V3', '3V3_PERIPH', 'LCD_LEDA', 'LCD_RST',
-                'PERIPH_EN_N', 'PERIPH_GATE', 'SD_CD', 'SIDE_BTN', 'TOUCH_IRQ', 'BOOT', 'ESP_EN', 'CHG_STAT',
-                'VBAT_SENSE', 'VBUS_SENSE']
+# LCD_LEDA is not on this list: it swings 1.2 to 2.2 V at the backlight PWM rate (review PERIPH-1), so it is an
+# accepted exception in DISC_L3_ACCEPTED below.
+DISC_L3_NETS = ['GND', 'VBUS', 'VSYS', 'VBAT', 'BAT_P', '3V3', '3V3_PERIPH', 'LCD_RST',
+                'PERIPH_EN_N', 'PERIPH_DIV', 'PERIPH_GATE', 'SD_CD', 'SIDE_BTN', 'TOUCH_IRQ', 'BOOT', 'ESP_EN',
+                'CHG_STAT', 'VBAT_SENSE', 'VBUS_SENSE']
 # The electrode lines may use L3 too (SPEC 6: "route the electrode traces on L3 or L1"); a via on an
 # electrode line is one more connection point of that line.
 WHEEL_TOLERANT_NETS = DISC_L3_NETS + ['ELE%d' % i for i in range(9)]
@@ -420,8 +448,10 @@ DISC_EDGE_CROSS_MAX_MM = 3.0
 # their L3 track and vias inside r 17.1 as accepted exceptions. Each cap is the measured value of that
 # routing (L3 mm inside r 17.1, vias centred inside r 17.1), so a later re-route can only lower it;
 # verify.py fails on any increase and on any other listed net on L3 there.
-DISC_L3_ACCEPTED = {'I2C_SDA': (36.31, 2), 'LCD_DC': (23.06, 6), 'LCD_TE': (22.90, 4), 'SD_CS': (12.75, 10),
-                    'LCD_CS': (11.85, 2), 'I2C_SCL': (7.03, 2), 'BZ_GATE': (4.08, 3)}
+# SD_CS was 12.75 mm until 2026-11-21: moving its via out of the J3 card-detect column (review CONN-1) lengthens its
+# L3 hop under ELE6 by 0.37 mm (README, "Decisions"). LCD_LEDA joined on the same day (review PERIPH-1).
+DISC_L3_ACCEPTED = {'I2C_SDA': (36.31, 2), 'LCD_DC': (23.06, 6), 'LCD_TE': (22.90, 4), 'SD_CS': (13.12, 10),
+                    'LCD_CS': (11.85, 2), 'I2C_SCL': (7.03, 2), 'BZ_GATE': (4.08, 3), 'LCD_LEDA': (11.92, 2)}
 # VBUS from J1 to D1 and to U3 VIN (step C): accepted with a 0.2 mm bottleneck. The caps are the
 # measured length of track narrower than 0.4 mm on the path with the least such track, by layer and width,
 # after widening in place (no L3 track at 0.2 mm is left on these paths). Pin neck-downs are not counted.
@@ -431,6 +461,19 @@ DISC_L3_FORBIDDEN = ['I2C_SDA', 'I2C_SCL', 'LCD_DC', 'LCD_CS', 'LCD_TE', 'SD_CS'
 
 # Nets with a wider class
 POWER_NETS = ['VBUS', 'VSYS', 'VBAT', 'BAT_P', '3V3', '3V3_PERIPH', 'LCD_LEDA', 'LCD_LEDK', GND]
+
+# --- JLCPCB assembly panel (2026-11-21 review, CC-1) -------------------------------------------------------
+# package_jlc.py puts the board in its own 1 x 1 frame for the Gerbers: 5 mm rails on all four sides, a
+# 2 mm routed gap, and mouse-bite tabs only on the top and left edges (no part overhangs them; the bottom
+# edge carries J1 and J3, the right edge SW1 and the antenna). Tabs keep clear of the parts that sit within
+# 1 mm of an edge (J4, U7, C15, C7). The board outline that goes into the case does not change.
+PANEL = dict(
+    gap=2.0, rail=5.0,
+    tabs=[('top', -11.0), ('top', 0.0), ('top', 10.0), ('left', -15.5)],   # edge, device x (top) or y (left)
+    tab_width=4.8, bite_d=0.6, bite_pitch=0.95, bite_n=5,
+    bite_offset=0.35,           # hole centres 0.35 outside the board edge: the holes stop 0.05 short of it
+    fiducial_cu=1.0, fiducial_mask=2.0, fiducial_from_edge=3.85,        # JLC: 1 mm copper, 2 mm opening
+    tooling_d=2.0, tooling_from_edge=(3.0, 2.5))                       # JLC SMT: 2.0 mm NPTH in the rails
 USB_NETS = ['USB_DP', 'USB_DN']
 
 

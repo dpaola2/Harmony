@@ -18,6 +18,7 @@ C22,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 C23,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 C24,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 C25,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),180,180,0,
+C26,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
 C3,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
 C4,C_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 C5,C_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
@@ -33,11 +34,11 @@ J3,DM3AT-SF-PEJM5,EasyEDA/JLC footprint,0,0,0,microSD: card slot must face the b
 J4,JST_PH_S2B-PH-SM4-TB,EasyEDA/JLC footprint,180,180,0,JST PH: cable entry must face the top board edge; origin is not the body centre
 LED1,LED_0603_EasyEDA,EasyEDA/JLC footprint,90,90,0,LED: cathode (pin 2) toward CHG_STAT
 Q1,SOT-363,EasyEDA/JLC footprint,0,0,0,SOT-363: pin 1 dot
-Q2,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
-Q3,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
-Q4,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,
-Q5,SOT-23_AO3400A,EasyEDA/JLC footprint,90,90,0,
-Q6,SOT-23_AO3400A,EasyEDA/JLC footprint,0,0,0,
+Q2,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,SOT-23: single pin 3 (drain) on the side the footprint shows
+Q3,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,SOT-23: single pin 3 (drain)
+Q4,SOT-23_AO3401A,EasyEDA/JLC footprint,0,0,0,SOT-23: single pin 3 (drain)
+Q5,SOT-23_AO3400A,EasyEDA/JLC footprint,90,90,0,SOT-23: single pin 3 (drain)
+Q6,SOT-23_AO3400A,EasyEDA/JLC footprint,0,0,0,SOT-23: single pin 3 (drain)
 R1,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
 R10,R_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
 R11,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
@@ -64,6 +65,7 @@ R3,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 R30,R_0603_1608Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
 R31,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
 R32,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
+R34,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
 R4,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),270,270,0,
 R5,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),90,90,0,
 R6,R_0402_1005Metric,KiCad library R/C (pad 1 on -X like JLC),0,0,0,
@@ -75,9 +77,9 @@ SW2,SW_TS-1088,EasyEDA/JLC footprint,90,90,0,
 SW3,SW_TS-1088,EasyEDA/JLC footprint,90,90,0,
 U1,ESP32-PICO-MINI-02,EasyEDA/JLC footprint,90,90,0,"module: footprint origin is the pad-field centre, 2.7 mm from the module centre toward the pins"
 U2,QFN-24_4x4_P0.5_EP2.5,EasyEDA/JLC footprint,90,90,0,QFN-24: pin 1 dot
-U3,SOT-23-5_MCP73831,EasyEDA/JLC footprint,0,0,0,
-U4,TSOT-23-5_RT9080,EasyEDA/JLC footprint,0,0,0,
+U3,SOT-23-5_MCP73831,EasyEDA/JLC footprint,0,0,0,SOT-23-5: pin 1 mark (STAT); pins 4 (VDD) and 3 (VBAT) on opposite sides
+U4,TSOT-23-5_RT9080,EasyEDA/JLC footprint,0,0,0,TSOT-23-5: pin 1 mark (VIN); a 180 degree error puts VSYS on VOUT
 U5,TDFN-8_2x2_P0.5_EP,EasyEDA/JLC footprint,0,0,0,TDFN-8: pin 1 dot
 U6,QFN-20_3x3_P0.4,EasyEDA/JLC footprint,180,180,0,QFN-20: pin 1 dot
 U7,VSSOP-10_DRV2605L,EasyEDA/JLC footprint,0,0,0,VSSOP-10: pin 1 dot
-U8,SOT-23-6,EasyEDA/JLC footprint,270,270,0,
+U8,SOT-23-6,EasyEDA/JLC footprint,270,270,0,SOT-23-6: pin 1 mark; pin 5 is VBUS and pin 2 GND

@@ -1,0 +1,469 @@
+[
+ {
+  "area": "ANT",
+  "review": {
+   "area": "ANT: antenna keep-out extension and the re-routes it forced (R31/R32 move, I2C_SDA, VBUS, ESP_EN, SW1 pad 5, ground continuity)",
+   "verdict": "Clean. I found nothing wrong, incomplete or newly broken in this area. The keep-out is free of copper on all four layers in both the board file and the Gerbers that will be ordered, and the moved and re-routed copper is connected and passes all rules. The board has 4.5 mm of clearance beyond the open end where Espressif asks for 15 mm. That shortfall is known and accepted for rev B, and the planned range test at bring-up covers it.",
+   "findings": [
+    {
+     "id": "ANT-1",
+     "severity": "note",
+     "title": "The 4.5 mm open-end clearance holds only straight beyond the antenna. Ground beside the module still comes within about 0.9 mm of the open-end tip (unchanged, and matches Espressif Fig. 25)",
+     "evidence": "Fig. 11 top view of the datasheet (v1.8, scaled at 54.5 px/mm) puts the last meander bar, the open end, at about device y -23.64 to -23.06 and x 22.47 to 26.89, with its free tip near (22.47, -23.35), close to the module body. Straight up from there, in x 21.81 to 27.2, the first copper on L1, L2, L3 and L4 is at y -18.2. That is 4.50 mm from the module edge (y -22.7) and 4.86 mm from the bar. Before the change it was y -21.8 (0.90 and 1.26 mm). Beside the module (x 21.8 and below, y above -22.7) the L1, L2 and L4 GND pours and the L3 VBUS track (x 21.4 to 21.8) start at the corner (21.8, -22.7). That is 0.93 mm from the tip, and the same in the old board. HDG Fig. 25 also continues the base board beside the module body at the antenna/body line, so this is not a defect. The README line 'ground now starts 4.5 mm beyond the antenna's open end' is true only for the antenna's own column. Scripts: scratchpad/review-a1/ANT/ana2.py, gerb.py.",
+     "fix": "No change for rev A. Keep the planned A2DP range test through a body at bring-up, and read the result against this geometry: 4.5 mm in the antenna column, about 0.9 mm diagonally to the ground beside the module. The README could say 'in the antenna's own column' so the 4.5 mm is not read as a radius."
+    }
+   ],
+   "checked": [
+    "Keep-out rule area in the board: ANTENNA_KEEPOUT covers device x 21.8 to 27.2, y -37.9 to -18.2 (KiCad 122.8 to 128.2, 88.2 to 107.9). It is on F.Cu, In1.Cu, In2.Cu and B.Cu and forbids tracks, vias, pads and pour. design.py, mechanical-interface.json (open_end_copper_clearance 4.5) and SPEC/README all agree.",
+    "Copper in the keep-out, board file: I used ConvertBrdLayerToPolygonalContours per layer, plus every track, via, pad, zone fill and copper graphic, and found 0.00000 mm2 on all four layers. Old board, same box: 15 to 18 mm2 per layer.",
+    "Copper in the keep-out, Gerbers: I parsed jlcpcb/gerbers/*_Cu.* (the panel export, same KiCad frame) with gerbonara. With the keep-out shrunk by 10 um, the copper is 0.000000 mm2 on F_Cu, In1_Cu, In2_Cu and B_Cu. The only overlap is an arc-rounding sliver of 1.8e-5 mm2 at the boundary. Near U1, SW1, R31 and R32 the Gerber copper matches the board copper (symmetric difference below 0.002 mm2 per piece). The zip contents are byte-identical to the gerbers/ folder. The board sha256 958136...baca matches verification.json and package.json.",
+    "Drill files: no PTH or NPTH hole inside the keep-out. The nearest are the VBUS via at (21.45, -19.9) (edge 0.1 mm from x 21.8), the BOOT via at (21.34, -18.38), and the SW1 guide-boss NPTH at (25.4, -17.72), whose 0.9 mm hole ends 0.03 mm above y -18.2 and has no copper.",
+    "Fresh fill: I refilled a scratch copy that has the project file. The fill is identical to the saved one on all four layers (symmetric difference 0.0000 mm2). kicad-cli DRC on that copy gives 0 errors and 0 unconnected, only the known silkscreen and library warnings, and no dangling track or via in the area.",
+    "Antenna orientation: U1 pad 1 is at (20.2, -35.2), pads 36 to 48 run along x 21.1, and pin 35 and pads 36/50 are at the +Y end. With the datasheet v1.8 Fig. 3, 11 and 14, this puts the feed at -Y (y -35.9) and the open end at +Y (y -22.7). The footprint diff in lib/ is UUID-only.",
+    "R31 is now at (15.5, -12.1): pad 1 is 3V3, pad 2 is I2C_SDA. R32 is at (13.3, -18.6): pad 1 is 3V3, pad 2 is I2C_SCL. Both are 4.7k C25900 and match netlist.xml: SDA to U1.34, U5.8, U6.3, U7.3 and TP9; SCL to U1.26, U5.7, U6.2, U7.2 and TP10. Both are outside the keep-out.",
+    "R31/R32 connections: R31's 3V3 lands on the L1 3V3 track at y -13.6297. R31's SDA goes through a via at (14.99, -12.9) and T-joins the L3 SDA run at (14.99, -13.112), mid-segment of (14.04 to 17.92, -13.112). R32's 3V3 via at (14.0, -17.8) sits on the L3 3V3 track at x 14.0747 (0.075 off centre, inside the 0.2 half-width). R32's SCL meets the existing SCL track at (12.876, -19.3281). No dangling ends in x 8 to 27.2, y -26 to -10.",
+    "R31/R32 clearances: at least 0.127 to other nets (board rule 0.127). R32 pad 1 is 0.333 from SCL, and the R32 3V3 via is 0.189 from SD_SCK on L1 and 0.200 from the SD_MOSI via on L3. R31 is 1.78 mm from the top edge. CPL has R31 at (134.5, -82.1) and R32 at (136.7, -88.6). F_Paste and F_Mask have openings at the new pads and none at the old ones.",
+    "I2C_SDA: the old path from (19.68, -22.09) to (17.92, -13.11) was 12.0 mm on L3 plus a 1.42 mm L1 stub to the old R31. The new path is L3 1.42, L1 3.22 and L3 5.13 mm. Net SDA is about 2.7 mm shorter with 2 more vias (now 3 vias added, 1 removed). All new SDA copper is at r 19.9 or more from the wheel centre, so L3 SDA inside r 17.1 stays 36.30 mm (cap 36.31) with 2 vias (cap 2).",
+    "I2C_SCL: the 10.4 mm L1 branch to the old R32 is removed and a 0.73 mm L1 stub to the new R32 is added. L3 SCL inside r 17.1 stays 7.03 mm (cap 7.03). L1 SCL inside the electrode ring grows 0.73 mm (L1 is allowed for SCL).",
+    "VBUS: widths unchanged (L1 0.30 mm, L3 0.40 mm, one 0.3/0.5 via at the layer change, as before). The L1 0.3 mm length on the main path fell from 22.66 to 21.37 mm (verification.json vbus_main_paths, under the VBUS_PATH_ACCEPTED caps). The L3 segment at x 21.6 runs along the keep-out edge like the existing VBUS run (0.0 mm, accepted before). L3 VBUS inside r 17.1 went from 42.53 to 42.44 mm.",
+    "ESP_EN: total length went from 2.59 to 2.00 mm. The via is now at (20.75, -20.75), 0.165 from SW3 pad 1 (same net). The SDA via at (19.75, -20.7) is 0.215 from SW3 pad 1 (ESP_EN), above the 0.10 via_mask limit. Via-to-via gaps are 0.50 and 0.60 mm, and hole-to-hole is at least 0.7 mm.",
+    "New copper behind the touch electrodes: no new L3 copper inside r 17.1 on any capped net. The R32 3V3 via is centred at r 17.18 (pad reaches r 16.93), 0.326 mm from ELE2 on L4 and 0.17 from the L4 GND ring. ELE2's fill area is unchanged (77.3701 mm2), and 3V3 is a DISC_L3_NETS net. More than 100 non-electrode vias already sit closer to the electrodes.",
+    "SW1: pad 5 (GND, y -18.1 to -16.8) is 0.1 mm outside the keep-out. Its old GND via at (26.45, -18.5) is gone. It is now joined to pad 3 by a 0.2 mm L1 track at y -16.9 and is also inside the L1_GND fill. That L1 piece (24.8 mm2) has GND vias at (20.2, -18.47), (21.876, -14.726) and (24.05, -17.599). Pads 1 and 4 are in the top L1 piece with 3 vias. The track is 0.27 mm from the guide-boss hole (hole rule 0.2), 0.2 mm below the Alps prohibited area (y -16.6), and 0.65 mm from the board edge.",
+    "Ground continuity: L2_GND_SOLID and L4_GND are still one polygon each and keep no neck under 0.25 mm near the open-end corner (x 17 to 27.2, y -24 to -16). The L2 fill under the module and at the feed end is unchanged except antipads. The L1 GND pour near SW3 is now split into three pieces of 113, 61 and 25 mm2, each with 3 or more stitching vias, so there are no floating islands. The 9 GND stitching vias along the module's antenna side (x 20.1 to 20.3, y -38.1 to -24.3) are unchanged. The only GND via removed is SW1 pad 5's, which sat inside the new keep-out.",
+    "Source files: hand-routes.json and late-routes.json have no points inside the new keep-out. build_pcb.py's GND fan-out also skips the keep-out with a 0.4 mm margin. rebuild.sh restores the routing snapshot and then applies review_fixes.py, so the ordered board is the snapshot plus the listed fixes ('removed 36 tracks and 13 vias, re-netted 1, added 49 tracks and 15 vias'). Wording nit: README and design.py call SW1 pad 5 the 'GND guide pad'. The guide boss is the NPTH at (25.4, -17.72), and pad 5 is the copper that sets the y -18.2 limit."
+   ]
+  },
+  "verify": {
+   "area": "ANT: antenna keep-out extension and the re-routes it forced (R31/R32 move, I2C_SDA, VBUS, ESP_EN, SW1 pad 5, ground continuity)",
+   "verdicts": [
+    {
+     "id": "ANT-1",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "The geometry holds, and it is a wording nit, not a defect. I rendered datasheet v1.8 Fig. 11 (p.42) at 600 dpi, which gives 54.5 px/mm. The feed and short legs are on the pin-1 side (top-view left). Fig. 3 and the footprint put that side at device -Y. The open-end bar is the right-hand vertical bar. It sits 0.42 to 0.92 mm inside the module's +Y edge, which is device y -23.12 to -23.62, and runs from x 26.89 down to a free tip at about x 22.39 (the reviewer read 22.47). The bottom view is mirrored the same way, so the open end is at +Y and the extension is on the correct end. My pcbnew dump of the ordered board (sha256 958136...baca) shows the first copper in the antenna column (x 21.82 to 27.2) at y -18.2 on L1, L2, L3 and L4. That is 4.50 mm beyond the module edge. In the HEAD board it is 0.90 mm. One refinement: the nearest base-board copper to the tip is 0.59 mm away, at (21.80, -23.37), directly beside the tip on all four layers. On L1, L2 and L4 that copper is the GND under the module body, and on L3 it is the old VBUS track at x 21.4 to 21.8. Neither changed. The module's own ground starts at the same x 21.8 line, and Espressif wants base-board ground under the body. So the reviewer's 0.93 mm to the corner (21.8, -22.7) is a subset of a design-inherent fact. Changing the README to say 'in the antenna's own column' is optional."
+    }
+   ],
+   "missed": []
+  }
+ },
+ {
+  "area": "USBC",
+  "review": {
+   "area": "USBC: the J1 USB-C footprint and the other footprint pad changes (J1, U6, J2, U2, the .kicad_dru exceptions)",
+   "verdict": "The J1, U6 and .kicad_dru changes are correct, and DRC still shows 0 errors without the deleted exceptions. Nothing in this area stops the order. Two minor items are worth fixing before paying: the new J1 slots bring the hole-to-copper distances just below JLC's figures on L3 and L4, and the J2 stencil openings differ from Hirose's drawing even though README and ORDER.md say they follow it.",
+   "findings": [
+    {
+     "id": "USBC-1",
+     "severity": "minor",
+     "title": "The new J1 slot geometry puts the hole edges below JLC's PTH hole-to-copper figures on L3 and L4, and the annular ring is now at JLC's 0.15 mm minimum",
+     "evidence": "Measured on a copy of the board (my script: scratchpad/review-a1/USBC/tools/j1check.py), comparing the new board with HEAD. (1) J1 pad 1 at KiCad (154.33, 113.76) has a 0.6 x 1.7 slot. Its end is now 0.282 mm from the In2 (L3) VBUS track, which runs from (153.18, 112.428) to (155.10, 112.428) and is 0.4 mm wide. With the old 0.8 x 1.5 slot the distance was 0.382 mm. JLC's inner-layer rule for a PTH pad hole to copper is 0.3 mm: review L13 quotes it, and the morning review confirmed it on jlcpcb.com. (2) J1 pads 1 and 4 on B.Cu: the slot hole is 0.277 mm from the ELECTRODE_5 fill (0.127 mm zone clearance plus the 0.15 mm ring). It was 0.328 mm. This morning's layout check used 0.28 mm for outer layers. (3) The annular ring is (0.9-0.6)/2 = 0.15 mm across and (2.0-1.7)/2 or (1.7-1.4)/2 = 0.15 mm at the ends. That is JLC's minimum (0.20 recommended, review L13). The old ring was 0.20 mm. KiCad DRC passes only because the board-wide hole_clearance rule is 0.2 mm, which is the via value. Every other J1 slot-to-other-net distance is 0.36 mm or more on F.Cu and 0.30 mm or more on the inner layers.",
+     "fix": "Before ordering, give J1 pads 1-4 a local clearance of 0.18 mm (pad property). ELE5 then refills with the hole about 0.33 mm away. Move the L3 VBUS segment at y 112.428 by 0.02 mm or more away from the slot (for example to y 112.40). Better still, add a .kicad_dru rule with hole_clearance min 0.3 mm for J1's plated pads, then refill and rerun DRC. If you change nothing, expect a JLC DFM comment on the slot clearances. ORDER.md item 2 does not list one."
+    },
+    {
+     "id": "USBC-2",
+     "severity": "minor",
+     "title": "The J2 FH35C paste openings do not follow Hirose's stencil, but README Decision 12 and ORDER.md say they do: the contact-1 row is 0.70 long instead of 0.65, and every opening is centred on its pad instead of aligned to the pad's outer edge",
+     "evidence": "Hirose EDC3-338903-01 sheet 1, 'Recommended stencil pattern (t=0.1)'. I rendered it at 600 dpi and measured 237.5 px/mm from the 0.6 pitch. Contact-2 row openings are 0.55 +-0.02 long. The gap between the rows is 2.4 +-0.02. Contact-1 row openings are 0.65 +-0.02 long (measured 0.644 mm). The three add up to 3.6. Both rows' openings share the pad's outer edge, so the paste is pulled back from the inner side. The '0.7 +-0.02' in that drawing is the fitting opening (0.7 x 0.3, located 0.2 and 0.9 from the outer edges), not the contact-1 length. The morning verifier and the fixing agent both misread it. Gerber F_Paste as built (J2 at rot 270): pins 1,3..15 are D22 R0.700x0.230 centred at x 152.47, spanning 152.12-152.82. Hirose's opening spans 152.07-152.72, so the paste reaches 0.10 mm further toward the inner side and the contact bend. Pins 2..14 are D23 R0.559x0.230 at x 155.35, spanning 155.07-155.63, against Hirose's 155.125-155.675 (0.055 mm further inward). The paste gap between the rows is 2.25 mm against 2.40 +-0.02. The fittings (D24 0.70 x 0.30) are centred on the 0.4 x 0.95 pads, about 0.125 mm and 0.05 mm away from Hirose's edge-aligned position. The width, which drove FP-3's bridge risk, is right at 0.23. Contact-1 aperture area is 0.161 mm2 against Hirose's 0.150 (+8 percent). Wrong statements: README Decision 12 ('reproduces Hirose's openings (0.23 x 0.70 and 0.23 x 0.56)') and ORDER.md Stencil paragraph ('0.23 wide, 0.70 / 0.56 long').",
+     "fix": "In make_lib.py fix_land_pattern, take F.Paste off J2 pads 1-17 and add paste-only SMD rect pads (layer F.Paste only) at Hirose's positions. Contact-1 row: 0.23 x 0.65, centre 0.075 mm toward the pad's outer edge (board -x). Contact-2 row: 0.23 x 0.55, centre 0.05 mm toward the outer edge (board +x). Fittings: 0.30 x 0.70, aligned to the fitting pad's outer corner. Rebuild the paste Gerber and correct Decision 12 and ORDER.md. If you keep the current pattern, correct the documents to say it is 'centred, contact-1 0.70 long' and accept the small extra inward paste."
+    },
+    {
+     "id": "USBC-3",
+     "severity": "note",
+     "title": "J1 pin-in-paste fills only about a third of each slot: expect a top fillet, not solder on both sides; the overprint sits 0.29 mm from U8 pin 6 (USB_DN)",
+     "evidence": "The F_Paste openings exist and are correct: D53 O1.400x2.500 at Gerber (145.67, -113.76) and (154.33, -113.76), and D54 O1.400x2.200 at (145.67, -117.94) and (154.33, -117.94). PTH.drl has T3 C0.600 with G85 slots X145.67/154.33 Y-113.21..-114.31 (1.7 long) and Y-117.54..-118.34 (1.4 long). Volume, front slot: the 3.08 mm2 opening with a 0.12 mm stencil prints 0.37 mm3 of paste, about 0.19 mm3 of metal (SAC305 at 88.5 wt% is about 51 vol%). The free barrel is the 0.943 mm2 slot area minus the 0.30 x 1.10 leg, times 0.8 mm: 0.49 mm3. That is about 38 percent fill, and about 31 percent with the 0.10 mm stencil that ORDER.md asks for (for J2). The rear slot gives 38 / 32 percent. README Decision 11 also says about 40 percent and a top fillet, but the FP-1 bring-up line says 'check the legs are soldered from both sides', which will fail on most good boards. Neighbours: the J1 pad 4 overprint is 0.287 mm from the U8 pin 6 (USB_DN) paste at (144.15, -114.65). The pad 1 and pad 4 openings leave a 0.13 mm stencil web to the A1B12 and B1A12 GND openings (same net).",
+     "fix": "No layout change needed. Change the bring-up step to: legs pass with a top-side fillet around each leg. At bring-up, look for solder beads between J1 pad 4 and U8, and measure USB_DN (U8 pin 6) to GND before the first plug-in. If you want full fills, ask JLC in the remark to hand-touch the legs from the bottom."
+    },
+    {
+     "id": "USBC-4",
+     "severity": "note",
+     "title": "U2 exposed-pad paste is 64 percent as claimed, but the 2.0 x 2.0 opening prints straight over all four open in-pad GND vias",
+     "evidence": "Gerber F_Paste has R2.000x2.000 at (138.1, -115.6). U2 pad 25 is 2.5 x 2.5 at KiCad (138.1, 115.6) with solder_paste_margin -0.25. The GND vias (0.5 land, 0.3 drill) sit at (137.5/138.7, 115.0/116.2). Their lands reach 0.35-0.85 mm from the centre, all inside the +-1.0 opening. JLC cannot ink-plug vias in a pad opening (review L3/FP-7), so these are open on top and mask-tented on L4. The four barrels (about 4 x 0.057 = 0.23 mm3) can take about as much solder as the opening prints (4.0 mm2 x 0.12 x 0.51 = 0.24 mm3, or 0.20 at 0.10 mm). Expect voids or a thin EP joint. The WCH datasheet (C2858418.txt line 59) calls the EP GND 'optional but recommended', so this cannot stop the CH9102F working.",
+     "fix": "Optional: accept it as is. Or change the EP paste to openings that keep off the via lands (for example a cross of five squares of about 0.5 x 0.5). Or order Epoxy Filled & Capped. At bring-up, check that U2 sits flat and that all 24 pins are wetted."
+    }
+   ],
+   "checked": [
+    "J1 against the HRO drawing C165948.pdf, rendered and measured at 600 dpi (101.9 px/mm): signal pads 8 x 0.30 at 0.50 pitch (A5/B5 +-1.75 to B7/A6 +-0.25); power pads 0.60 wide at +-2.4 and +-3.2, now plain 0.6 x 1.3 rects; GND-VBUS and VBUS-SBU2 gaps 0.200 mm (pcbnew polygon distances); NPTH 0.6 at +-2.9 (HRO 5.78 span, post 0.50); slots 0.6 x 1.7 (pads 1/4, beside the contacts) and 0.6 x 1.4 (pads 2/3, near the edge) in 0.9 x 2.0 / 0.9 x 1.7 pads at +-4.33, 4.18 apart; these match HRO's 0.60/0.90, 1.70/2.00, 1.40/1.70, 8.65 and 4.18",
+    "Real shell legs from the HRO side and front views: 1.10 wide (contact end) and 0.80 wide (edge end), about 0.32 thick, 8.64 and 4.17 spacing. They fit the 1.7 and 1.4 slots with 0.30 per end and about 0.14 to 0.15 per side; the plating tolerance still leaves about 0.1 per side",
+    "Slot length-to-width ratios 2.83 and 2.33 meet JLC's 2:1 rule; 0.6 width is above JLC's plated-slot minimum; slots come out as G85 in PTH.drl T3 C0.600 with the right endpoints; NPTH J1 pegs unchanged at (147.1/152.9, -114.26)",
+    "Pin-in-paste openings present in F_Paste.gtp at all four slots with the intended pad + 0.25 mm size; the J1 instance in the board has F.Paste and solder_paste_margin 0.25 on pads 1-4",
+    "F_Mask and B_Mask openings on the J1 shell pads are 0.9 x 2.0 and 0.9 x 1.7; F_Cu, In1, In2 and B_Cu carry the new pad flashes; J1 signal and power pad mask and paste openings are 1:1",
+    "The gerber zip is byte-identical to jlcpcb/gerbers (13 files); the drl_map files are gone",
+    "Board pad-by-pad comparison, HEAD against new (376 pads): only J1, U6 corners, J2 paste margins, U2.25 paste margin, the new R34/C26 and the expected R31/R32 moves and R13/R14 renets changed. No other pad size, shape, mask or paste changed. All 376 placed pads match lib/Harmony8.pretty. The other library diffs are UUID-only, plus a reordering of the BZ1 +/- silk texts at the same positions",
+    "Only J1 and U6 had custom pads; the new F_Paste, F_Cu and F_Mask FreePoly macros for U6 are pure outlines with no stroke",
+    "U6 MPR121: corner pads now 0.224 x 0.825 with the inner-corner chamfer; minimum pad gap 0.188 (pins 1-2, 4-5, 6-7 and so on), corner-to-corner 0.251, regular gaps 0.200; mask expansion 0, so the mask webs are the same and above JLC's 0.10 (green) and 0.13 (black)",
+    "J2 paste sizes: 0.230 x 0.700 (contact 1), 0.230 x 0.559 (contact 2), 0.300 x 0.700 (fittings), oriented correctly at rot 270 (see USBC-2 for the length and position against Hirose)",
+    "U2 exposed-pad paste is 2.0 x 2.0 = 64 percent of the 2.5 x 2.5 pad",
+    "kicad-cli 8.0.9 DRC on a scratch copy with the new .kicad_dru: 0 errors, 0 unconnected, 32 silkscreen warnings (plus library-path warnings caused only by the copy). The deleted J1 (0.09) and U6 (0.12) exceptions are not needed; the board-wide 0.127 rule passes",
+    "The paste openings near J1 keep at least 0.42 mm from other-net paste, except the 0.287 mm to U8 pin 6 (USBC-3); J1 copper-to-other-net distances improved or stayed at least 0.127 on every layer; the J1 body still clears the frame rail by 0.92 mm"
+   ]
+  },
+  "verify": {
+   "area": "USBC (skeptic pass): J1 USB-C footprint, U6 corner pads, J2 and U2 paste, deleted .kicad_dru exceptions. Scratch: /private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/review-a1/USBC-verify/ (probe-new/drc.json, probe-old/drc.json, tools/pads.py, tools/gflash.py, tools/h2h.py, img/land600.png, img/fh_stencil.png, regen/)",
+   "verdicts": [
+    {
+     "id": "USBC-1",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "The numbers reproduce, but two of the cited rules have no source in the files.\n\nMethod: I ran kicad-cli 8.0.9 DRC on scratch copies of HEAD and of the new board, with an added J1-only hole_clearance probe of 0.45 split into inner and outer layers, plus an annular_width probe.\n\nNew against HEAD:\n- In2.Cu VBUS segment at (153.181,112.428), length 1.917, to the pad 1 slot: 0.2817 (HEAD 0.3817).\n- B.Cu ELE5 zone to pads 1 and 4: 0.2775 (HEAD 0.3275).\n- F.Cu LCD_MOSI to pad 1: 0.3592 (HEAD 0.4006).\n- In2 CC2 to pad 1: 0.365. This one is new.\n- Annular width is 0.150 on all four slots (HEAD 0.20).\n- Hole-to-hole from the J1 slots is at least 0.544 (CHG_STAT via at 155.113,116.927).\n\nThe 0.3 mm inner PTH hole-to-copper figure is quoted in review L13. The review JSON (line 1486) says it was confirmed on jlcpcb.com. So the L3 VBUS track is 0.018 below it. That is a regression the slot change brought in, and ORDER.md item 2 does not predict it.\n\nCorrections:\n- The 0.15 ring is exactly HRO's own recommended 0.90 pad / 0.60 slot. Neither the review .md nor the .json has any annular-ring figure, so 'JLC minimum, 0.20 recommended, review L13' is unsupported.\n- The '0.28 mm outer' figure is also not traceable in the files.\n- The fixing agent accepted the same kind of case (E1 holes 0.277 from inner copper, L13) as 'at most a DFM note'.\n\nSo the likely outcome is a DFM query or a small JLC adjustment, not a failed board. Minor, because the fix is a 0.02 mm nudge of one L3 segment, or a local pad clearance."
+    },
+    {
+     "id": "USBC-2",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "I read Hirose EDC3-338903-01 (C2889267.pdf p.1) myself at 600 dpi, using 113.3 px/mm from the (3.6) dimension.\n\nHirose's stencil openings:\n- Contact-2 row: 0.556 long.\n- Gap between rows: 2.38.\n- Contact-1 row: 0.66 long.\n- The '0.7 +-0.02' dimension sits beside the fitting, next to its '0.2 +-0.02' offset, so 0.7 is the fitting opening length. The fitting opening is 0.71 x 0.30.\n- Every bold opening is drawn flush with its pad's outer edge, so the pull-back is on the inner side.\n\nF_Paste.gtp as built:\n- D22 R0.700x0.230 at x 152.47, spanning 152.12 to 152.82.\n- D23 R0.559x0.230 at x 155.35, spanning 155.07 to 155.63.\n- D24 R0.6998x0.2999 centred at (152.75, 106.24) and (152.75, 111.76).\n\nHirose positions in board coordinates:\n- Contact-1: 152.07 to 152.72.\n- Contact-2: 155.125 to 155.675.\n- Fittings: x 152.275 to 152.975 and y 106.04 to 106.34 (mirrored at 111.76).\n\nThe paste gap between rows is 2.25 against 2.40. The paste margin (-0.026, -3 percent per axis) explains the 0.70 length.\n\nREADME Decision 12 (line 370) and ORDER.md line 65 claim conformance, and that claim is false. The width of 0.23, which drove FP-3, is right, and contact-1 area is only 8 percent high. So the functional risk is small: the paste sits 0.05 to 0.10 mm further toward the contact heel. Minor, not major, because the main defect is the false document claim."
+    },
+    {
+     "id": "USBC-3",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "Openings:\n- F_Paste.gtp has D53 O1.400x2.500 at (145.67, 113.76) and (154.33, 113.76).\n- It has D54 O1.400x2.200 at (145.67, 117.94) and (154.33, 117.94).\n- PTH.drl has T3 C0.600 with G85 slots from Y-113.21 to -114.31 and from -117.54 to -118.34.\n- I regenerated the drill file and F.Paste from my copy of the board. PTH.drl is identical apart from the date. The F.Paste flash list (349 flashes) is identical to the shipped file, and the zip matches the gerbers folder byte for byte.\n\nFill:\n- Front slot: the 3.08 mm2 opening at 0.12 mm gives about 0.185 mm3 of metal into a 0.49 mm3 free barrel (0.943 minus the 0.33 leg, times 0.8). That is 38 percent, or 31 percent at 0.10 mm.\n- Rear slot: 2.66 mm2 against 0.42 mm3, so 39 or 32 percent.\n\nThe U8 pin 6 (USB_DN) paste at (144.15, 114.65), 1.072 x 0.532, is 0.287 from the pad 4 obround end. The web to the A1B12 and B1A12 openings is 0.13 (same net).\n\nREADME line 395 says to check the legs are 'soldered from both sides'. Decision 11 (about 40 percent, top fillet) contradicts it. Decision 11 also assumes a 0.12 stencil while ORDER.md asks for 0.10.\n\nCaveat: if JLC hand-solders the legs as the order remark asks, two-sided joints are possible. The bring-up wording should accept either."
+    },
+    {
+     "id": "USBC-4",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "F_Paste.gtp has D49 R2.000x2.000 at (138.1, 115.6).\n\nThe four GND vias (0.5 land, 0.3 drill) at (137.5/138.7, 115.0/116.2) reach at most 0.85 from the centre, so all of them are inside the +-1.0 opening. They are identical in HEAD, where they sat under 2.5 x 2.5 paste. B.Mask has no via openings, so they are tented underneath.\n\nThe CH9102 datasheet (C2858418.txt, the note under the package table) calls the EP (pin 0) GND 'optional but recommended'. Pin 2 (GND) is routed.\n\nOne correction: the barrels are tented underneath, so trapped air limits wicking. The claim that the barrels 'can take about as much solder as the opening prints' is an upper bound. The likely effect is some voiding, not a failure. Note is right."
+    }
+   ],
+   "missed": [
+    {
+     "title": "J1 signal and power pads are not HRO's length or position, but README L1 calls them 'HRO's 0.60 x 1.30' (pre-existing, harmless, wording only)",
+     "severity": "note",
+     "evidence": "HRO C165948.pdf 'Recommend P.C.B layout', measured at 600 dpi (102 px/mm from the 8.65 span): the pads run from 0.50 to 1.64 mm from the NPTH centre line, so they are 1.14 long. The footprint has the NPTH at y -1.21 and the 12 pads centred at y -2.47, 1.30 long, so they run from 0.61 to 1.91 from the NPTH line. They are 0.11 mm shorter on the heel side and 0.27 mm longer at the toe. This is EasyEDA's geometry and is identical in HEAD. The real tails end about 1.47 to 1.49 from the NPTH line (bottom view 6.28 from front face to pegs, top view 7.35 body plus 0.40 tail), so both patterns land the tails, and the longer toe is harmless. The widths, pitch and the 0.20 gaps match HRO. No layout change is needed. README line 396 (L1 disposition) should drop 'HRO's' for the 1.30 length."
+    }
+   ]
+  }
+ },
+ {
+  "area": "Q4",
+  "review": {
+   "area": "Q4 peripheral-power switch (AO3401A, R13/R14/R34/C18/C26, GPIO13) plus the value swaps R30, C11, R9, R25",
+   "verdict": "Ready to order. I found no blocker, major or minor problem in the Q4 change or the four value swaps. The schematic, netlist, PCB, BOM, CPL and Gerbers agree, and my own simulation supports the off-at-reset, ramp, inrush and 3V3-dip claims within a few percent. Two documented firmware constants still have their old values (Q4-1), and both must change before the first rev-A board runs firmware.",
+   "findings": [
+    {
+     "id": "Q4-1",
+     "severity": "note",
+     "title": "Firmware still has the old ramp and VBUS-divider constants, and both are wrong for this board",
+     "evidence": "firmware/mark-8/components/slab_board/include/slab_power_seq.h:27 SLAB_PERIPH_RAMP_MS 5 (comment: 'R14 10k, C18 100 nF, about 1 ms'). slab_pins.h:40 SLAB_VBUS_DIVIDER_X1000 1667 ('100k / 150k'). With R30 at 75k, a 5.0 V VBUS puts 2.143 V on GPIO36. The firmware then computes 2143 x 1.667 = 3572 mV, which is below SLAB_VBUS_PRESENT_MV 4300, so USB is never seen as present. With the new gate network my 288-corner sweep puts 3V3_PERIPH at 0.5 V only 2.1 to 8.9 ms after GPIO13 goes low (4.3 ms for a typical part). slab_periph_on() drives SD_CS high after 5 ms, which is usually into a card with no power. tests/test_power.c:143 also asserts the old divider (5001). README 'Firmware changes this revision needs' items 1 and 2 list both changes, but they are not made yet.",
+     "fix": "Before you flash any firmware (slab-bringup included) on a rev-A board, set SLAB_PERIPH_RAMP_MS to 20 (my worst t90 is 12.7 ms on a cold, high-Vth part, so 20 ms leaves margin) and SLAB_VBUS_DIVIDER_X1000 to 2333. Fix the header comment and test_power.c."
+    },
+    {
+     "id": "Q4-2",
+     "severity": "note",
+     "title": "The Q4 off-state margin at reset depends on the ESP32 pull-down, which the datasheet gives only as 45k typical",
+     "evidence": "With 3V3 at +-2 % and R13/R14 at 1 %, VSG after reset release is 0.090 V at 80k, 0.155 V at 45k and 0.225 V at 30k. That holds Q4 off: my EKV model gives 0.23 uA at 25 C for a part at the -0.5 V minimum threshold. A hot part (Vth 0.425 V at 55 C) leaks 2.5 uA and one at 85 C (Vth 0.35 V) leaks 18 uA. If the real pull-down is stronger than assumed, VSG is 0.32 V at 20k (2.7 uA at 25 C) and 0.41 V at 15k (26 uA). At 15k and 85 C my sim lets 3V3_PERIPH float to about 1.0 V in download mode. esp32_datasheet_en.txt line 3107: RPD 45 kOhm typ, no min or max.",
+     "fix": "No change for rev A. On the first board, hold it in download mode and measure 3V3 minus PERIPH_GATE (expect 0.25 V or less) and 3V3_PERIPH (expect under 0.1 V)."
+    },
+    {
+     "id": "Q4-3",
+     "severity": "note",
+     "title": "Q4 now runs at VGS -2.2 V, below the lowest RDS(on) test point in the datasheet",
+     "evidence": "With GPIO13 low, the divider gives VG = 3.3 x 1.03/3.23 = 1.05 V, so VSG = 2.22 to 2.24 V (sim). At 3V3 = 3.0 V it is 2.04 V. AO3401A (C15127 p.2) specifies RDS(on) at -10, -4.5 and -2.5 V only (85 mOhm max at -2.5 V). Fig. 5 rises steeply below -2.5 V. The old network drove the gate to 0 V (VGS -3.3 V). A square-law fit to Fig. 1 (K about 5 A/V2) gives about 0.05 to 0.2 Ohm for a max-Vth part. That is at most about 40 mV of drop at a 200 mA card peak, which is harmless.",
+     "fix": "No change for rev A. At bring-up, measure the drop from 3V3 to 3V3_PERIPH during an SD write burst (expect under 50 mV)."
+    },
+    {
+     "id": "Q4-4",
+     "severity": "note",
+     "title": "Some numbers in q4_gate_sim.py and the README are slightly off (conclusions still hold)",
+     "evidence": "q4_gate_sim.py sets C_LDO = 5.0e-6 with the comment 'C11 10 uF 0603 at U4 (about 5 uF effective)'. The board's C11 is 4.7 uF 0402 CL05A475MP5NRNC, about 1.3 to 2.2 uF at 3.3 V. My re-simulation with 1.3 uF reaches the same result: the LDO peaks at 421 mA, below the 610 mA minimum limit. README Power says 'VGS stays above -0.3 V' while 3V3 powers up. With C18 at -15 % and C26 at +10 %, my sim reaches -0.372 V. That is still below the 0.5 V minimum threshold, and the rail stays at 0.036 V or less at 25 C. README says '3V3 at U1 never falls below 3.22 V', but that is only the static drop at a 3.300 V set point. With the RT9080 at -2 % it is 3.156 V. At VSYS 3.45 V (0.88 Ohm dropout) the static level is 3.086 V and the turn-on dips it to 3.031 V. The turn-on itself costs 10 mV or less (55 mV or less in dropout). README firmware change 3 says Q4 turns off 'a few milliseconds after reset release'. My sim gives 5.8 to 21.4 ms after a reset pulse.",
+     "fix": "Correct the C_LDO value and comment. In the README, give power-up VSG as up to -0.37 V. Say the 3.22 V figure assumes a nominal set point and a full battery. Change the turn-off-after-reset delay to 'up to about 20 ms'."
+    },
+    {
+     "id": "Q4-5",
+     "severity": "note",
+     "title": "VBUS_SENSE has no ADC filter capacitor (this was already true before the R30 change)",
+     "evidence": "In the netlist, /VBUS_SENSE connects only R29 pin 2, R30 pin 1 and U1 pin 4 (I36). VBAT_SENSE has C24 100 nF. Espressif HDG section 1.3.11: 'Please add a 0.1 uF filter capacitor between ESP pins and ground when using the ADC function'. The source impedance is now 100k||75k = 42.9 kOhm (it was 60 kOhm), so the change makes this better, not worse. Pin voltage: 2.14 V at 5.0 V, 2.25 V at 5.25 V, 2.36 V at 5.5 V, all below the 2.45 V calibrated limit and the 3.6 V pin limit.",
+     "fix": "Rev A: average several ADC samples in firmware. Rev B: add 100 nF 0402 from GPIO36 to GND."
+    }
+   ],
+   "checked": [
+    "Netlist re-derived from netlist.xml and from a fresh kicad-cli export of the .kicad_sch (identical, ERC 0). Q4 pin 1 G = PERIPH_GATE, pin 2 S = 3V3, pin 3 D = 3V3_PERIPH. R13 2.2k pin 1 3V3, pin 2 PERIPH_DIV. R14 1k pin 1 PERIPH_EN_N (U1 pin 20 IO13), pin 2 PERIPH_DIV. R34 4.7k pin 1 PERIPH_DIV, pin 2 PERIPH_GATE. C18 1 uF pin 1 PERIPH_GATE, pin 2 3V3 (gate-source). C26 100 nF pin 1 PERIPH_GATE, pin 2 3V3_PERIPH (gate-drain). The PCB pad nets match all of these.",
+    "3V3_PERIPH load from the netlist and BOM: C19 and C21 10 uF 0603 CL10A106KP8NNNC, C20 and C22 100 nF, J2 VCC/IOVCC, J3 VDD, and pull-ups R21 to R24. That is 20.2 uF nominal; I modelled it with 50 % DC-bias derating at 3.3 V plus 0 to 10 uF for the screen and card.",
+    "My own DAE simulation (review-a1/Q4/sim/q4_review_sim.py; turn_on_sweep.json; more.json), 288 turn-on corners. 3V3_PERIPH reaches 90 % 2.84 to 11.1 ms after GPIO13 goes low (12.7 ms on a cold Vth 1.4 V part), with a 10-90 % rise of 0.82 to 3.69 ms. The SD-spec ramp from 0.5 V to 2.7 V takes 0.66 to 3.77 ms, inside the 0.1 to 35 ms window (SD Physical Layer v3.01 6.4.1.3), and it is monotonic. Q4 peaks at 170 mA. The RT9080 peaks at 421 mA, below its 610 mA minimum limit, so it never limits. 3V3 at U1 dips 9 mV or less at VSYS 3.6 to 4.2 V.",
+    "Power-up with GPIO13 floating (EN low), 3V3 ramp from current-limited to 5 ms: VSG peaks at 0.30 V (nominal) and 0.37 V (tolerance corner). 3V3_PERIPH stays at 0.036 V or less at 25 C and 0.11 V or less at 85 C. During reset, R13 plus R34 hold VSG at 0.",
+    "Turn-off: Q4 conducts under 10 uA 4.0 to 14.0 ms after GPIO13 goes high. VSG does not rebound, so C26 causes no glitch, and 3V3 is undisturbed. The rail falls below 0.5 V in 4 to 15 ms with a 20 to 100 mA load, or 70 to 111 ms with only the SD pull-ups (lines driven low) or a 2 mA card. Nothing actively discharges it. In deep sleep GPIO13 is RTC-held high (slab_board_prepare_deep_sleep), so VSG = 0 and R13/R14 draw no current.",
+    "GPIO13 drive: 1.03 mA steady and 1.30 mA peak while low, 0.26 mA peak while switching high. The pin stays at 0.030 to 0.039 V when low and 3.22 to 3.23 V when high. Through C26 the pin sees about 3 % of a 3V3_PERIPH transient, and nothing outside 0 to 3V3 in normal operation. Only on total power loss with Q4 on does C18 pull the gate to -2.2 V, putting the unpowered pin near its ESD clamp at sub-mA. The old network did the same.",
+    "GPIO13 (MTCK) is not a strapping pin. Reset state per the reviewer's datasheet citations: no pull during reset, wpd after release. Wake from deep sleep: release_holds() is followed at once by driving GPIO13 high, and the 6 ms gate RC rides through the gap.",
+    "Placement: R34 at (163.85, 94.3) and C26 at (164.36, 95.7, 270 deg) on F.Cu use the standard Harmony8 0402 footprints (only UUIDs changed versus HEAD). The courtyards do not overlap (R34-C26 gap 0.02 mm, R13-R34 0.09 mm, C26-D1 about 0.03 mm). R34 pad 2 and C26 pad 1 are 0.32 mm apart on the same net. kicad-cli DRC on a copy: 0 copper errors, 0 unconnected, only silkscreen warnings outside this area, no dangling tracks. PERIPH_DIV and PERIPH_GATE are 0.25 mm F.Cu only. The C26 drain via at (163.6, 96.4) lands on the existing 3V3_PERIPH L3 run, is tented in F_Mask and is present in the PTH drill file. It opens a 0.377 mm-radius hole in ELECTRODE_7 like the 7 earlier 3V3_PERIPH vias, which DISC_L3_NETS allows.",
+    "Mechanical: R34 is 0.35 mm tall in the FPC run zone (limit 4.9) and C26 is 0.5 mm in the general zone (limit 5.6), per mechanical-interface.json. Neither is near the dive or ramp zones, J3 areas A to D, the SW1 no-copper area or the antenna keep-out.",
+    "BOM/CPL/stock lines: R13 2.2k C25879 (0402WGF2201TCE), R14 1k C11702, R34 4.7k C25900, C18 1uF C52923 (CL05A105KA5NQNC), C26 100nF C1525 (CL05B104KO5NNNC X7R 16 V), C11 4.7uF C23733 (CL05A475MP5NRNC 10 V X5R), R30 75k C23242 (0603WAF7502T5E), R9 10k C25744, R25 1M C26083. All are basic parts and match the schematic values, the PCB footprint LCSC fields and the CPL (R34 and C26 rows present). The BOM has 40 lines and 84 placements, matching ORDER.md and package.json. The Gerber zip is byte-identical to gerbers/ and contains the R34/C26 pads in Cu, paste and mask.",
+    "R30 75k: VBUS x 75/175 gives 2.14 / 2.25 / 2.36 V at 5.0 / 5.25 / 5.5 V. ADC1 calibrated limit 2.45 V reached at 5.72 V. Source impedance 42.9 kOhm. The deviation is listed in README.",
+    "C11 4.7 uF 0402 X5R 10 V on 3V3 at U4 pin 5, in the same position and footprint as before. Estimated 1.3 to 2.2 uF effective at 3.3 V (tolerance -20 %, X5R), above the RT9080's 1 uF effective minimum (DS9080-05 pp.10-11). There is no upper ESR or capacitance limit, and my sim with 1.3 uF shows no current-limit event.",
+    "R9 10k: 0.5 mA and 2.8 mW at 5.25 V. On battery, D1 leakage lifts VBUS to only about 0.06 to 0.15 V, so Q3 is more fully on. VBUS_SENSE is unaffected.",
+    "R25 1M on SD_CD (GPIO15 / MTDO strap). The DM3AT detect switch is normally open with 1000 MOhm minimum insulation (100 MOhm after humidity); ESP32 IIH is 50 nA max. The high level stays at 3.2 V or more and the low level is about 0 V, against VIH 2.475 V and VIL 0.825 V. Firmware configures GPIO15 as an input with pulls off, so R25 sets the level. MPR121 coupling onto the L3 SD_CD trace is about 0.1 V, well inside the margins. The MTDO strap still sees the internal pull-up at reset."
+   ]
+  },
+  "verify": {
+   "area": "Q4 peripheral-power switch (AO3401A Q4, R13 2.2k, R14 1k, new R34 4.7k, C18 1 uF, new C26 100 nF, GPIO13) and the value swaps R30 75k, C11 4.7 uF, R9 10k, R25 1M. Skeptic pass for review-a1. Scripts and outputs are in /private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/review-a1/Q4-verify/ (sim.py, run_on.py, sim_out_on.json, sim_out_off.json, sim_out_pu.json, sim_out_rst.json, par/drc.json, pads.py, near.py, via.py). Result: I could not refute any of the reviewer's five notes, and I found no blocker, major or minor problem in this area. I found one note the reviewer missed. Checked independently: (1) Topology. My kicad-cli netlist export of a copy of the .kicad_sch matches netlist.xml except for the library path. Q4: G = PERIPH_GATE, S = 3V3, D = 3V3_PERIPH. R13: 3V3 to PERIPH_DIV. R14: PERIPH_EN_N (U1 pin 20, IO13 in the module datasheet v1.8 pin table) to PERIPH_DIV. R34: PERIPH_DIV to PERIPH_GATE. C18: PERIPH_GATE to 3V3 (gate to source). C26: PERIPH_GATE to 3V3_PERIPH (gate to drain). (2) PCB. The pad nets match. DRC on a copy with --schematic-parity gives 0 errors and 0 unconnected. The 199 parity entries are only the missing '/' prefix on net names and 5 NC pads, with no value or footprint mismatch. courtyards_overlap is set to error and passes. Exact courtyard gaps: R34 to C26 0.03 mm, C26 to D1 0.055 mm, R34 to R13/R14 0.10 mm. The closest pads (R34.2 to C26.1, 0.32 mm) are on the same net. The new 3V3_PERIPH via at (163.6, 96.4) is 0.26 mm from the VSYS track, lands on the existing In2 3V3_PERIPH run and is tented on both sides (no B_Mask or F_Mask opening in the Gerbers). R34 and C26 have pads in F_Cu, F_Mask and F_Paste. They are outside all rule areas (antenna, J3 A to D, SW1). Mechanical heights: R34 0.35 mm in the FPC run zone (limit 4.9), C26 0.5 mm in the general zone (limit 5.6). Both are far from the dive and ramp zones. (3) BOM, CPL and stock.json: R13 C25879 0402WGF2201TCE, R34 C25900, C26 C1525 CL05B104KO5NNNC, C18 C52923, C11 C23733 CL05A475MP5NRNC, R30 C23242 0603WAF7502T5E, R9 C25744, R25 C26083. All are basic parts and match the schematic. The CPL has R34 and C26 rows. (4) My own DAE simulation (EKV PMOS, Vth set at the datasheet 250 uA point, -3 mV/K, DC-bias-dependent C18, C26, C11, C5, C19 and C21, RT9080 with 610 mA limit and 0.88 ohm dropout, 250 mA ESP32 load). Turn-on, 120 corners: t90 2.5 to 11.7 ms. 0.5 to 2.7 V ramp 0.69 to 3.5 ms, monotonic. Q4 peak 165 mA including a 100 mA load. 3V3 at U1 at least 3.222 V against 3.231 V static, so the turn-on costs 9 mV or less. On-state VSG 2.23 V. Drop across Q4 up to 22 mV at 100 mA. At VSYS 3.45 V and a -2 % set point, U1 stays at 3.06 V or more. Power-up with GPIO13 floating: VSG peaks at 0.25 to 0.34 V and the drain stays at 0.05 V or less, mostly C26 coupling. Turn-off: Q4 conducts under 10 uA 3 to 21 ms after GPIO13 goes high, with no VSG rebound and no 3V3 overshoot. (5) R30: 2.14 / 2.25 / 2.36 V at 5.0 / 5.25 / 5.5 V. (6) C11: about 1.4 to 2.2 uF effective, above the RT9080's 1 uF minimum (C841192 lines 129 to 132 and 651). (7) R9 and R25: the reviewer's numbers check. The DM3 detect switch has gold contacts, 1000 MOhm insulation initially and 100 MOhm after humidity.",
+   "verdicts": [
+    {
+     "id": "Q4-1",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "Verified in the firmware tree. firmware/mark-8/components/slab_board/include/slab_power_seq.h:27 has '#define SLAB_PERIPH_RAMP_MS 5', with the comment 'R14 10k, C18 100 nF, about 1 ms'. slab_pins.h:40 has 'SLAB_VBUS_DIVIDER_X1000 1667 /* 100k / 150k */'. tests/test_power.c:143 asserts 5001. slab_power_seq.c drives SD_CS high right after the delay. slab_analog_math.c:9 returns present when vbus_mv >= 4300. With 75k: 5.0 x 75/175 = 2.143 V, and x 1.667 gives 3572 mV, below 4300, so USB is never seen as present and slab_vsys_estimate_mv falls back to VBAT. My sim puts t90 at 2.5 to 11.7 ms, so 5 ms is often too short and 20 ms is enough. README 'Firmware changes this revision needs' items 1 and 2 document both changes. This is firmware work, not a board defect, so it stays a note. It must be done before any rev-A board runs firmware."
+    },
+    {
+     "id": "Q4-2",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "The ESP32 datasheet (esp32_datasheet_en.txt line 3107) gives RPD 45 kOhm typical only. Line 3631 adds 'drive strength of the internal pull-up (wpu) and pull-down (wpd) is ~75 uA', which is about I_wpd x R13 = 0.165 V of VSG. My reset-release sim (sim_out_rst.json) gives the following leakage. At 25 C, min-Vth part: 0.0075 to 0.29 uA at 45k and 0.06 to 1.1 uA at 30k (n 1.3 to 2.0). At 55 C: 1.4 to 8.6 uA at 30k. At 85 C: 4 to 16 uA at 45k and 20 to 48 uA at 30k. With 15k or a 150 uA sink at 25 C: 1.6 to 34 uA. This is in line with the reviewer. Typical parts (Vth 0.9 V) are below 1 nA. Q4 is effectively off, and the old network was fully on here, so the change is strictly better. One caveat on the reviewer's bring-up fix: '3V3_PERIPH under 0.1 V in download mode' is a valid Q4 test only with the screen and card removed (see the missed item). Measuring 3V3 minus PERIPH_GATE is the robust check."
+    },
+    {
+     "id": "Q4-3",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "The divider gives VG = 3.3 x (1k + 30R) / (2.2k + 1k + 30R) = 1.05 V, and my sim gives on-state VSG 2.23 V (2.14 V at VSYS 3.45 V with a -2 % set point). The AO3401A (C15127 p.2) specifies RDS(on) only at -10, -4.5 and -2.5 V (85 mOhm max at -2.5 V). With Kp fitted to those points (about 12 A/V2, swept 6 to 25), a cold max-Vth part drops up to 22 mV at 100 mA in my sweep, about 0.2 ohm. At 200 mA that is about 40 mV. This is harmless, and a bring-up measurement is enough."
+    },
+    {
+     "id": "Q4-4",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "q4_gate_sim.py:42 has 'C_LDO = 5.0e-6  # C11 10 uF 0603 at U4', but the board's C11 is 4.7 uF 0402 C23733. The result does not change: in my sim the LDO peaks at about 415 mA (250 mA ESP32 plus 165 mA Q4), never reaching 610 mA. README 'never falls below 3.22 V' is the static drop 3.3 - 0.25 x (0.055 + 0.22) = 3.231 V, while the turn-on itself costs only 9 mV or less. With a -2 % set point and VSYS 3.45 V my sim gives 3.06 V. README 'VGS stays above -0.3 V' while powering up: my sim gives -0.285 V nominal and -0.34 V with C18 -10 % and C26 +10 %. The reviewer's -0.37 V uses C18 -15 %. README 'a few milliseconds after reset release': analytically tau is about 7 ms and VSG falls below Vth 3.5 to 17 ms later. Also, README 'Q4 stops conducting 3.5 to 10.6 ms' becomes up to about 21 ms at 85 C in my turn-off sweep. These are documentation inaccuracies only."
+    },
+    {
+     "id": "Q4-5",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "In the netlist, /VBUS_SENSE is only R29.2, R30.1 and U1.4 (I36), with no capacitor. /VBAT_SENSE has C24 100 nF. hdg.txt line 767: 'Please add a 0.1 uF filter capacitor between ESP pins and ground when using the ADC function'. The source impedance is now 100k || 75k = 42.9k (it was 60k), so the change improves this. Pin voltages: 2.14 / 2.25 / 2.36 V at 5.0 / 5.25 / 5.5 V, all under the 2.45 V calibrated limit, which is reached at 5.72 V. Unpowered-pin injection on a 3V3 ramp is under 40 uA (it was about 50 uA). This was already true before the change; averaging samples in firmware is enough for rev A."
+    }
+   ],
+   "missed": [
+    {
+     "title": "With Q4 now off at reset, the GPIO5 and GPIO14 reset pull-ups feed the unpowered microSD card and screen through their input clamps during boot and download mode. The rail is not 'off', and the bring-up check '3V3_PERIPH under 0.1 V in download mode' will fail on a good board",
+     "severity": "note",
+     "evidence": "netlist.xml: /SD_SCK = J3 pin 5 CLK and U1 pin 29 (IO5). /LCD_SCK = J2 pin 5 SCLK and U1 pin 18 (IO14). The ESP32 IO_MUX table (esp32_datasheet_en.txt line 4035, chip pin 34 GPIO5) gives 'oe=0, ie=1, wpu' at reset and after reset. Line 4006 (pin 17 MTMS = GPIO14) gives 'oe=0, ie=0' at reset and 'oe=0, ie=1, wpu' after reset. Line 3631: the wpu is about 75 uA. Before the fix, GPIO13's pull-down turned Q4 on at reset, so these pull-ups drove powered parts. Now Q4 is off from reset release until slab_board_init() runs: ROM, bootloader, the PSRAM test and app start, and indefinitely in download mode. During that time two 45k pull-ups source up to about 70 uA each into the CLK and SCLK pins of an unpowered card and screen. This is the case SD Physical Layer v3.01 section 6.4.2 warns about ('DAT, CMD, and CLK should be disconnected or driven to logical 0 ... to avoid ... operating current drawn through the signal lines'), and README firmware note 1 / SPEC 5.3 forbid it in firmware. The current is far too small to damage anything. But 3V3_PERIPH can sit at an intermediate level (roughly 1 to 2.5 V, depending on the card and the screen's low-voltage draw), so README Power bullet 2 ('Q4 stays off ... also in download mode') must not be read as 'the rail is off'. The reviewer's Q4-2 bring-up expectation for 3V3_PERIPH is also invalid unless the screen and card are removed. No hardware change for rev A: the CC-2 firmware item (wait until the GPIO25 reading of the rail is below 0.4 V before turning Q4 on) already covers the card's power-cycle requirement. At bring-up, judge Q4 by 3V3 minus PERIPH_GATE (0.25 V or less), or measure 3V3_PERIPH with J2 and J3 empty."
+    }
+   ]
+  }
+ },
+ {
+  "area": "FAB",
+  "review": {
+   "area": "FAB: the JLCPCB fabrication and assembly package (frame, Gerbers, drills, CPL, BOM, ORDER.md, build guide)",
+   "verdict": "Ready to order, with three cheap fixes first. The CPL and Gerbers use the same origin, the BOM and rotations are consistent, and the case-facing outline is identical to HEAD, so nothing blocks the build. Before paying, move the device x -11 tab off locating hole H1 (FAB-2), either fix the mouse-bite offset or correct the instructions for it (FAB-1), and reword order remark 3 (FAB-3).",
+   "findings": [
+    {
+     "id": "FAB-1",
+     "severity": "minor",
+     "title": "Mouse-bite holes sit outside the board, so the break line is 0.35 mm out, not at the board edge as README Decision 10 says",
+     "evidence": "NPTH.drl, tool T1 (0.600 mm): the top rows are at X138.10-141.90, 148.10-151.90 and 159.10-162.90, all at Y-79.65, and the left row is at X177.55, Y-83.60 to -87.40. The board edge (Edge_Cuts unchanged from HEAD) is at Y-80.00 and X177.20. Measured with tabs.py: hole centres 0.350 mm outside the edge, hole edge 0.050 mm short of it, 0.95 pitch, 0.35 mm web between holes, 4.40 mm hole span in a 4.80 mm tab (design.py PANEL bite_offset=0.35). The weakest section is the line through the hole centres: 4 webs x 0.35 plus 2 x 0.2 end webs = 1.8 mm of material, against 4.8 mm of solid FR-4 at the board edge. A break therefore runs 0.35 mm outside the edge and leaves nubs. A flush cut at the edge has no help from the holes: it goes through 4.8 mm of solid FR-4 plus the router-radius fillets in the slot corners. README Decision 10 says 'the holes stop 0.05 mm short of it and the break line is the board edge'. That is not true. All three top tabs (device x -13.4..-8.6, -2.4..2.4 and 7.6..12.4) are inside the SPEC 3.1 FPC dive zone (x -14..+19, y -7.8..-10.0, 'no board'), where the screen FPC bends over the top edge. The left tab is on a side wall that has 0.5 mm of clearance to the case.",
+     "fix": "Choose one. (a) Set bite_offset to about -0.1 to -0.25 so the hole row sits on or just inside the board edge. Then pull the GND pours on L1 to L4 back to about 0.6 mm behind each tab; they are the only copper near the tabs, at 0.30 mm, and no track or via is within 1 mm of any tab. Rebuild with package_jlc.py. (b) Keep the geometry and correct README Decision 10, ORDER.md 'When the boards arrive' and docs/mark-8-slab-build.md section 5: cut along the hole line, file the 0.35 mm nub and the corner fillets flush, and deburr. The three top-edge stubs must be smooth because the FPC bends over that edge."
+    },
+    {
+     "id": "FAB-2",
+     "severity": "minor",
+     "title": "The top tab at device x -11 is right over locating hole H1, whose wall is only 0.6 mm from the board edge",
+     "evidence": "NPTH.drl, tool T3 (1.600 mm) at X162.0 Y-81.4 is H1, at device (-12.0, -11.4). Its edge is 0.60 mm from the top board edge (Y-80.00). Its x span, KiCad 161.2..162.8, lies wholly inside the tab root at KiCad x 158.6..163.4 (device -13.4..-8.6). tabclear.py measures H1's hole 0.600 mm and its courtyard 0.152 mm from that tab edge. So the 0.6 mm FR-4 strip between H1 and the edge is exactly where the tab is cut or flexed. A flush-cutter crack there opens H1 to the edge. H1 is the hole that locates the board on the front-skin pin (mechanical-interface.json locating_holes). The design.py PANEL comment checks the tabs against J4, U7, C15 and C7 only. H1 is the only part within 1 mm of the edge that falls under a tab.",
+     "fix": "Move that tab to about device x -7 (span -9.4..-4.6). That keeps it 1.8 mm clear of H1. There the wheel disc is 2.3 mm below the edge, only GND pour edges come within 1 mm (0.30 mm away, as at the other tabs), and no part is within 1 mm of the edge. Change design.py PANEL tabs ('top', -11.0) and rerun package_jlc.py. The tab stays inside the FPC dive zone, as in FAB-1."
+    },
+    {
+     "id": "FAB-3",
+     "severity": "minor",
+     "title": "The frame is still under JLC's 70 x 70 mm threshold, so remark 3 ('do not add rails') may conflict with JLC's own rail rule",
+     "evidence": "jlcpcb/package.json panel size_mm is [68.4, 53.6], under 70 mm on both axes. This morning's review (review/2026-11-21-preorder-review.md line 320, CC-1 verifier) quotes JLC's PCBA terms: 'for board dimension smaller than 70mm x 70mm or missed edge rail on standard PCBA service, JLCPCB will select a suitable production method for edge rail'. ORDER.md (PCB form) says 'Do not let JLC add more rails', and remark 3 says 'Please do not add rails'. If JLC's line needs a bigger carrier, the result is an engineering hold or question, or JLC adds rails anyway against the remark. Neither damages the board, but either can cost a day. I could not re-read JLC's page, because browsing JLC is not allowed.",
+     "fix": "Reword remark 3 to allow extra rails outside the frame: 'If your line needs larger rails, add them outside our frame. Do not cut or change the four tabs inside it, and do not remove the rails after assembly.' Make the same change in the ORDER.md PCB-form row. The other option is to widen the rails until the frame is at least 70 mm: X +0.8 mm per side, Y +8.2 mm per side."
+    },
+    {
+     "id": "FAB-4",
+     "severity": "note",
+     "title": "The gbrjob in the zip names files that are not in the zip, and its finish and inner copper disagree with ORDER.md",
+     "evidence": "harmony-mark8-slab-job.gbrjob, FilesAttributes: every Path is 'harmony-mark8-slab-panel-*' (for example harmony-mark8-slab-panel-F_Cu.gtl). package_jlc.py renames the exported files to 'harmony-mark8-slab-*' and does not rewrite the job file. Every Gerber header also says TF.ProjectId 'harmony-mark8-slab-panel'. The gbrjob gives Finish 'None' and inner copper 0.035 mm, against ENIG and 0.5 oz in ORDER.md. Its stack-up is correct: 4 copper layers, BoardThickness 0.8, 4 x 0.035 + 3 x 0.2133 + 2 x 0.01 = 0.80 mm. JLC identifies layers by their Protel extensions and normally ignores the job file, so this is very likely harmless.",
+     "fix": "In package_jlc.py, rewrite the Path values in the gbrjob after the rename, or leave the gbrjob out of the zip."
+    },
+    {
+     "id": "FAB-5",
+     "severity": "note",
+     "title": "The board hangs from one edge: three top tabs plus one left tab 5.5 mm below the top; the bottom and right edges are free",
+     "evidence": "package.json tabs: top -11, 0, 10 and left -15.5. The bottom edge (J1, J3) and the right edge (U1, SW1) have no tabs, so the board is a 39.6 mm cantilever from its top edge. A beam estimate for 0.8 mm FR-4 (E about 20 GPa, b 54.4 mm): an unsupported 2 N press at J1 or J3 deflects the free edge about 0.9 mm. JLC normally supports the board from below during printing and placement, so this is not expected to fail. It is also the most likely reason for a DFM comment about the frame. In handling, all the bending load goes to the top tabs (see FAB-2).",
+     "fix": "No layout change is needed for revision A. In the build guide, add a cut order: hold the board, cut the left tab first, then the two outer top tabs, then the middle one. That way the board never hangs from the single left tab next to J4. If JLC's DFM asks about the tab layout, the answer is that the bottom and right edges carry J1, J3, SW1 and U1."
+    },
+    {
+     "id": "FAB-6",
+     "severity": "note",
+     "title": "Stencil thickness: ORDER.md says to choose 0.10 mm, but the J1 pin-in-paste fill in README Decision 11 assumes 0.12 mm",
+     "evidence": "README Decision 11: 'A 0.12 mm stencil then fills roughly 40 percent of each slot'. ORDER.md Stencil paragraph: 'if the order page offers a stencil thickness, choose 0.10 mm' (for J2). The F_Paste apertures at J1's slots are O 1.40x2.50 and O 1.40x2.20. At 0.10 mm they print one sixth less paste, which by the same estimate is about 31 to 33 percent slot fill. JLC PCBA usually picks the stencil itself.",
+     "fix": "Make the two documents agree. Either state the J1 fill at 0.10 mm or drop the 0.10 mm advice. At bring-up, check the J1 shell-leg fillets from both sides (this check is already in the FP-1 disposition)."
+    }
+   ],
+   "checked": [
+    "Edge_Cuts Gerber (parsed; scripts in /private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/review-a1/FAB/): 146 segments, every endpoint shared by exactly 2 segments, 5 closed loops. These are the frame, X115.8..184.2 x Y-126.6..-73.0 (68.4 x 53.6), and 4 routed slots of 343.3, 38.0, 12.4 and 10.4 mm2. The routed gap is 2.0 mm (wider at the notches and the rounded corners). There are 4 tabs, each 4.80 x 2.00 mm.",
+    "Board outline is unchanged from HEAD. The board Edge.Cuts items in the .kicad_pcb are identical to HEAD (122 items, exact to the nanometre; edge bbox 122.775..177.225 x 79.975..119.625). The HEAD outline lies on the new slot boundaries everywhere except the 4 x 4.796 mm tab roots, and no slot area falls inside the board (0.000 mm2). The mechanical-interface.json 'board' outline is identical to HEAD. The PCB solid in jlcpcb/harmony-mark8-slab.step has the same bbox at HEAD and now (122.8..177.2, -119.6..-80.0, 0..0.8); its volume is 1675.04 mm3 now against 1674.75 at HEAD, a difference from via and hole changes. review/step-check.json device bbox is unchanged, and the device STEP holds no frame.",
+    "Mouse bites: 20 NPTH holes of 0.6 mm, 5 per tab at 0.95 pitch, 0.2 mm webs to the slot ends, 0.05 mm short of the board edge (see FAB-1).",
+    "Tab clearance: no track or via within 1 mm of any tab edge. The nearest copper on L1, L2, L3 and L4 is GND pour at 0.30 mm; at the x 0 tab, L1, L3 and L4 are 1.06 mm away. J4 pads are 2.10 mm and U3 pads 2.66 mm from the left tab, and U7, C15 and C7 are far from every tab. Of the parts within 1 mm of the edge (J4, U3, U4, LED1, C15, TP1, SW1, J1, R1, M2, TP5, TP6, SW2, C1, J3, U7, U1, PP1, H1), only H1 is under a tab (FAB-2). No silkscreen or paste lies on any tab.",
+    "Fiducials: a 1.0 mm F_Cu flash and a 2.0 mm F_Mask opening at Gerber (128.0, -76.85), (172.0, -76.85) and (172.0, -122.75), that is device (22, -6.85), (-22, -6.85) and (-22, -52.75). Each is 3.85 mm from the outer frame edge, with its opening 0.15 mm from the slot. There is no paste, silkscreen or other copper near them. No 180 degree rotation or mirror maps the set onto itself, so it is asymmetric.",
+    "Tooling holes: four 2.0 mm NPTH (NPTH.drl T4) at X118.8 and X181.2, Y-75.5 and Y-124.1. That is 3.0 mm from the short edges and 2.5 mm from the long edges, with no copper and mask openings on both sides. I could not compare them with JLC's tooling-hole page, because browsing JLC is not allowed.",
+    "Rails: no copper on any of the 4 layers, no paste and no silkscreen in the rails; they hold only the fiducials and the tooling holes.",
+    "CPL and Gerber origin: the Gerbers and drills are absolute KiCad coordinates with Y negated (no aux origin, same export flags as HEAD), and the CPL uses the same frame. All 84 CPL positions equal the board footprint positions to 1 um. All 349 SMD pads have an F_Cu flash at exactly the pad position, and all 349 paste pads are covered in F_Paste. Every flash on F_Cu, In1, In2, B_Cu and F_Paste belongs to a current pad, via or fiducial, so no stale geometry is left. Samples: U1 CPL (133.8, -99.3) with its pad 1 flashed at (129.8, -105.2); J2 (153.91, -109.0) with pad 1 at (152.47, -111.1); C26 (164.36, -95.7) with pad 1 at (164.36, -95.22); R31 at its new position (134.5, -82.1) with pad 1 at (133.99, -82.1).",
+    "Rotations: for all 84 parts, cpl.csv rotation equals the board orientation mod 360, and equals both 'KiCad angle' and 'CPL rotation' in rotation-check.csv. Footprint origins and pad offsets are unchanged from HEAD; only J1's pad sizes changed. The new rows C26 and R34, and the moved R31 and R32, are standard R/C footprints.",
+    "BOM: 40 lines and 84 designators, each listed once. Every value, footprint and LCSC number matches netlist.xml. The 13 exclude_from_bom parts (E1, M1, M2, TP1-TP10) and the board-only H1, H2 and PP1-PP4 are absent, and nothing is marked DNP. stock.json gives 15 extended and 25 basic lines. The new C25879 (0402WGF2201TCE, 2.2k, 0402) and C23733 (CL05A475MP5NRNC, 4.7 uF, 0402) are basic parts, and the 150k line is gone.",
+    "Zip: its 13 files are byte-identical to gerbers/, and the zip sha256 matches package.json. It holds the 4 copper layers (.gtl .g2 .g3 .gbl), .gts and .gbs, .gtp, .gto and .gbo, .gm1, PTH.drl and NPTH.drl, and no drill maps. The board sha256 in package.json equals verification.json and the current file.",
+    "ORDER.md against the files: the dimensions, panel 1 x 1, rails, fiducials and tooling holes by customer, PCB qty 5, PCBA qty 2 (or 5), 0.8 mm and 4 layers agree. 'Plugged' fits the Gerbers: no via has a B_Mask opening, and the only 13 F_Mask via openings are the U1 and U2 thermal-pad vias. Vias are 0.3 drill and 0.5 pad. The smallest copper gap between different nets is 0.188 mm (U6), the SW1 guide holes are 0.08 mm from the SW1 pads, and no mask opening spans two nets, all as stated. The JLCJLCJLCJLC text is on F.SilkS at (164, 111.5) under J3. The 40/40 match, 15 extended parts and the stock figures (U6 668, U1 1021, J4 2378, U3 4193, the rest over 8000) match stock.json.",
+    "docs/mark-8-slab-build.md agrees with ORDER.md: panel by customer, Plugged, top side, 2 (or 5) boards, the three-line remark, 40 lines and 15 extended parts, the stock numbers, and the tab locations as seen from the front."
+   ]
+  },
+  "verify": {
+   "area": "FAB: the JLCPCB fabrication and assembly package (frame, Gerbers, drills, CPL, BOM, ORDER.md, build guide). Skeptic pass; scripts and outputs in /private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/review-a1/FAB-verify/ (g.py, edge.py, cpl.py, bom.py, cuext.py, tabparts.py, dump.py)",
+   "verdicts": [
+    {
+     "id": "FAB-1",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "My own measurements agree with the reviewer. In NPTH.drl, T1 0.600 holes sit at Y-79.65 (the top board edge is Y-80.00) and at X177.55 (the side edge is X177.20). So the hole centres are 0.35 mm outside the board, the hole edges stop 0.05 mm short of it, and the line through the hole centres keeps 1.8 mm of the 4.8 mm tab (4.8 - 5 x 0.6). Edge_Cuts parses to 5 closed loops, and the area check (inner frame minus slots minus the HEAD board = 38.40 mm2 = 4 x 4.8 x 2.0) shows the tabs are exactly 4.8 x 2.0. README Decision 10 (line 368) and the design.py PANEL comment (line 474) say 'the break line is the board edge'. That is wrong: the weakest line is 0.35 mm outside the edge. All three top tabs are inside the SPEC 3.1 dive zone (x -14..+19, 'no board'). I narrow the fix. ORDER.md 'When the boards arrive' and docs/mark-8-slab-build.md section 5 already say to flush-cut as close to the board edge as possible and then file flush. That is the right handling for this geometry, and the reviewer's option (b), 'cut along the hole line', is not better. Only the README Decision 10 sentence and the design.py comment need correcting. Option (a), moving the holes inward, would also need the 0.30 mm pours pulled back and a rebuild, which is not worth it before this order. Minor, because the only cost is filing work on 4 tabs per board."
+    },
+    {
+     "id": "FAB-2",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "H1 is a 1.6 mm NPTH (NPTH.drl T3 at X162.0 Y-81.4, KiCad (162.0, 81.4), device (-12.0, -11.4)). Its pad bbox is x 161.2..162.8, y 80.6..82.2, so the FR-4 strip between it and the top edge (y 80.0) is 0.60 mm wide. The x -11 tab root spans KiCad x 158.6..163.4, so H1 lies wholly under the tab. From the pcbnew dump, its pad is 0.600 mm and its courtyard 0.152 mm from the tab root. The nearest mouse-bite hole (161.95, 79.65) is 0.65 mm edge to edge from H1. A flush cut at y 80.0 therefore bears on that 0.6 mm strip. mechanical-interface.json locating_holes confirms H1 locates on the front-skin pin. The design.py PANEL comment (lines 468-469) checks only J4, U7, C15 and C7. I checked the reviewer's alternative position (device x -7, KiCad 154.6..159.4): H1 is 1.90 mm from it (courtyard 1.37), and no other footprint pad or courtyard is within 3 mm. Cheap to fix (design.py tabs, then rerun package_jlc.py). Minor, because a crack turns H1 into an open slot and H2 still locates."
+    },
+    {
+     "id": "FAB-3",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "package.json panel size_mm is [68.4, 53.6], and the Edge_Cuts outer loop measures 68.400 x 53.600, under 70 mm on both axes. This morning's review (line 320) quotes JLC's PCBA terms: 'for board dimension smaller than 70mm x 70mm or missed edge rail ... JLCPCB will select a suitable production method for edge rail'. The two conditions are joined by 'or', so meeting the rail condition does not by itself exempt this frame. Remark 3 in ORDER.md says 'Please do not add rails', and the PCB-form row says 'Do not let JLC add more rails'. That can conflict with JLC's process and cause an engineering question or hold. I cannot confirm JLC's current practice, because browsing JLC is not allowed. The likely cost is a delay, not a damaged board. The reviewer's widening figures (X +0.8 mm per side, Y +8.2 mm per side) are arithmetically right. Rewording the remark is the cheaper fix."
+    },
+    {
+     "id": "FAB-4",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "In the gbrjob from the zip, all 10 FilesAttributes Paths read 'harmony-mark8-slab-panel-*', but the zip holds 'harmony-mark8-slab-*'. Diffed against HEAD, this mismatch is new: HEAD's Paths matched its files. It comes from the rename loop in package_jlc.py, which does not rewrite the job file. All 10 Gerber headers carry TF.ProjectId harmony-mark8-slab-panel. Finish 'None' and inner copper 0.035 were already there at HEAD. The stack-up is right: LayerNumber 4, BoardThickness 0.8, and 4 x 0.035 + 3 x 0.2133 + 2 x 0.01 = 0.800. As far as I know, JLC identifies layers by their Protel extensions and ignores the job file, so this is a cleanup note."
+    },
+    {
+     "id": "FAB-5",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "The tabs are at device top x -11, 0 and +10, and on the left edge at y -15.5, which is 5.5 mm below the top edge (BOARD_Y top -10.0). The bottom edge (J1, J3) and the right edge (SW1, U1) are free. I reproduced the beam figure: for 2 N at 39.6 mm with E 20 GPa and I = 54.4 x 0.8^3 / 12 = 2.32 mm4, delta = PL^3 / 3EI = 0.89 mm, before adding tab compliance. Self-weight sag in reflow is negligible: about 6 g with E halved above Tg gives under 0.05 mm, including tab rotation. It only matters if the board is pressed without support underneath, and JLC supports boards from below in printing (the quote includes an assembly fixture). A note is right, and adding the cut order to the build guide is sensible."
+    },
+    {
+     "id": "FAB-6",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "README line 369 (Decision 11) says 'A 0.12 mm stencil then fills roughly 40 percent of each slot'. ORDER.md's Stencil paragraph says 'if the order page offers a stencil thickness, choose 0.10 mm'. F_Paste flashes at J1's shell slots are O 1.40x2.50 (at 145.67/154.33, -113.76) and O 1.40x2.20 (at -117.94). Those are the 0.9x2.0 and 0.9x1.7 pads plus 0.25 mm all round, as stated. Paste volume scales with thickness, so 0.10 mm prints 1/6 less. The two documents disagree. JLC PCBA usually picks the stencil itself, so this is documentation plus the existing bring-up check of the J1 leg fillets."
+    }
+   ],
+   "missed": [
+    {
+     "title": "ORDER.md 'Check before paying' item 1 still says SW1 and the U1 antenna are 'over the right edge', but JLC's preview shows them on the left",
+     "severity": "note",
+     "evidence": "ORDER.md item 3 (new) says JLC's viewer shows the component side, so device left is on the right. Item 1, carried over from HEAD, says 'SW1 actuator over the right edge, U1 antenna over the right edge' without naming the frame. In the component-side view JLC shows (and review/render-panel.png), SW1 (CPL 124.52, -85.60) and the U1 antenna area (KiCad x 123 to 131) are on the left edge. rotation-check.csv is explicit ('right (device +X)'), but item 1 is not. Someone following item 1 in the placement preview could think SW1 and U1 are mirrored. Fix: write 'device right edge, the left edge in JLC's view' in item 1. J1, J3 and J4 (top or bottom) are unaffected, because device y is not mirrored in that view."
+    }
+   ]
+  }
+ },
+ {
+  "area": "REG",
+  "review": {
+   "area": "REG: regression sweep of the 2026-11-21 review fixes (parts, netlist, copper, J3 and SW1 keep-outs, touch wheel, README dispositions, mechanical-interface.json)",
+   "verdict": "My area is ready to order. I found no blockers and no majors: every copper, net and part change matches review_fixes.py and the README. The one minor item is new with the J1 pin-in-paste fix (paste opening over an LCD_MOSI track) and is cheap to fix before ordering. The other items are notes. The fixing agent's summary was not passed to me (the task contained the literal {AGENT_SUMMARY}), so I judged the claims in the README dispositions, the Decisions and the review_fixes.py docstring.",
+   "findings": [
+    {
+     "id": "REG-1",
+     "severity": "minor",
+     "title": "J1 pin-in-paste opening on shell pad 1 prints paste over the LCD_MOSI track; other openings sit close to other-net copper",
+     "evidence": "F_Paste.gtp: D53 = O 1.400x2.500 flashed at X154.33 Y-113.76 (J1 pad 1, device (-4.33,-43.76)). D54 = O 1.4x2.2 on pads 2 and 3. Board: pad 1 is now a 0.9x2.0 oval. The F.Cu LCD_MOSI track (155.2548,114.4235)-(152.8766,116.8017), w 0.15, is 0.209 mm copper-to-copper from that pad, so the 0.25 mm overprint covers the whole mask web and 0.04 mm of the track edge (0.013 mm2 of track copper under the opening). The overlap is centred at KiCad (154.81,114.79), device (-4.81,-44.79). Other openings: pad 4 is 0.287 mm from U8 pin 6 (USB_DN, exposed pad) and pad 2 is 0.127 mm from a VBUS track. HEAD had no paste on these pads (F.Paste was added in this change). Separately, Decision 11's figure of about 40 percent slot fill assumes a 0.12 mm stencil, but ORDER.md asks for 0.10 mm, which gives about 33 percent. Measured with scratchpad/review-a1/REG/scripts/pip.py and pip2.py.",
+     "fix": "Before ordering: cut the overprint to about 0.10 mm, or give pad 1 a custom paste shape that stops 0.15 mm short of LCD_MOSI. Another option is to move that LCD_MOSI segment about 0.15 mm away. If you keep it as is: at bring-up, look for solder beads beside J1 pads 1 and 4, and measure LCD_MOSI to GND and USB_DN to GND before first power. The order remark asking JLC to solder the legs stays the main plan for the shell legs."
+    },
+    {
+     "id": "REG-2",
+     "severity": "note",
+     "title": "README disposition PWR-2 says ORDER.md was updated, but it was not; VBUS cap text overstates the guard",
+     "evidence": "README.md line 400 (PWR-2) says: 'README, ORDER.md and the build guide now say that Q2 blocks a reversed pack only on battery power'. Searching jlcpcb/ORDER.md for 'revers', 'polarity' or '37 mA' finds nothing. README 'Check before paying' item 5 and docs/mark-8-slab-build.md:83 do have the text. Also, the README VBUS section says VBUS_PATH_ACCEPTED 'holds these numbers as caps' (L1 0.3 mm = 21.37), but design.py:458 still caps 'L1 0.30' at 22.67. A 1.3 mm regrowth would therefore pass verify.py.",
+     "fix": "Add one line on reversed-pack behaviour to ORDER.md (or correct the PWR-2 row). Optionally lower the 'L1 0.30' cap to 21.37."
+    },
+    {
+     "id": "REG-3",
+     "severity": "note",
+     "title": "VBAT behind ELE6 tripled (DC net, inside the rules); one new 3V3_PERIPH via through ELE7",
+     "evidence": "L3 track under electrode copper, HEAD to now: ELE6 VBAT 2.37 to 7.74 mm (0.4 mm wide; the new L3 run is device (-13.2,-37.7) to (-11.35,-39.55) to (-8.6,-39.55)), SD_CS 1.47 to 1.84, 3V3_PERIPH 6.33 to 6.54, VBUS 0.92 to 1.05. The ELE6 total of non-touch L3 goes from 18.83 to 24.91 mm. ELE7 drops from 34.19 to 33.28 and the other electrodes are unchanged. Inside r 17.1: VBAT 21.32 to 26.69 (no cap: DC net), SD_CS 12.74 to 13.114 (cap raised 12.75 to 13.12 by Decision 8), and every other DISC_L3_ACCEPTED net is unchanged and at or under its cap. The C26 via (3V3_PERIPH, device (-13.6,-26.4)) adds a hole in ELE7 (0.128 mm to the electrode and to the L2 hatch). This adds about 1 pF of baseline to ELE6, and on battery VBAT carries tens of mV of backlight-PWM load ripple. Script: scripts/wheel.py.",
+     "fix": "No change needed for revision A. At bring-up, include ELE6 in the noise log on battery with the backlight PWM running, and give ELE6 its own threshold if it is noisier than its neighbours."
+    },
+    {
+     "id": "REG-4",
+     "severity": "note",
+     "title": "J3: three relocated vias are only 0.07 to 0.08 mm outside hatched column A; VBAT now runs under the contact-spring field",
+     "evidence": "These vias sit beside rule area J3_NO_TRACE_A (KiCad x 156.88..157.68): SD_CS via at KiCad (158.0,104.4) has its ring 0.07 mm right of A and is under the socket body; 3V3_PERIPH (156.55,108.6) and VBUS (156.55,110.75) are 0.08 mm left of A. The two reviewers said their scaled readings of the Hirose drawing are good to about \u00b10.06 to \u00b10.2 mm. The new VBAT L1 segment (166.75,107.65)-(163.2,107.7), w 0.4, and its via at (163.2,107.7) lie in the non-hatched band under the 8 contact springs, 0.34 and 0.29 mm from bar C (y 108.24). That band already carried SD_*, CHG_STAT and 3V3 copper at HEAD. All of this is under plugged vias or mask, and Hirose allows traces there.",
+     "fix": "Accept for revision A (plugged vias, under mask). In revision B, move these three vias about 0.2 mm further from column A and keep VBAT out of the J3 footprint altogether."
+    },
+    {
+     "id": "REG-5",
+     "severity": "note",
+     "title": "Case checks not re-run after the board change (no geometry impact found)",
+     "evidence": "The enclosure/mark-8/slab-rev-a check outputs predate the 11:22 board and STEP. params.py reads only board, wheel, touch_side_protrusions, usb_c, microsd, side_button, locating_holes, press_pads, buzzer, charge_led and screen_connector from mechanical-interface.json. It does not read antenna, part values or verification. sources.py uses parts[] only to match STEP children to references, and checks.py uses them for clearance checks. New or moved parts: R31 (15.5,-12.1), R32 (13.3,-18.6), R34 (-13.85,-24.3), C26 (-14.36,-25.7), all 0.35 to 0.5 tall. The nearest press post is PP4 (6.8,-21.4), 7.1 mm from R32, and the post base radius is 2.2 mm.",
+     "fix": "Re-run the enclosure checks.py once against the new board-device-coords.step (its cache key changes with the STEP) to confirm press_posts_vs_parts and fpc_vs_board_parts. No case geometry change is needed: the J1 reliefs are 0.15 mm per side larger than needed, which is the safe direction."
+    },
+    {
+     "id": "REG-6",
+     "severity": "note",
+     "title": "Unrelated Mark-7 edits are in the same uncommitted working tree",
+     "evidence": "git diff HEAD also shows docs/mark-7-portable-scope.md, docs/mark-7-power-and-sleep.md and enclosure/mark-7/pocket-rev-b/README.md ('October 9 amendment' text about the ANO transfer). None of these belong to the Mark-8 review fix.",
+     "fix": "When committing the Mark-8 fix, stage only hardware/mark-8/slab-rev-a and docs/mark-8-slab-build.md. Leave the Mark-7 edits to their owner."
+    }
+   ],
+   "checked": [
+    "Footprints, HEAD 101 vs working 103 (scripts/dump.py, cmp_fp.py, padpoly.py). The only changes: R31 moved (24.4,-19.3) to (15.5,-12.1) and R32 (24.4,-20.5) to (13.3,-18.6); R34 4.7k and C26 100nF added; values C11 1u to 4.7u (C23733), C18 100n to 1u, R9 100k to 10k, R13 100k to 2.2k (C25879), R14 10k to 1k, R25 100k to 1M, R30 150k to 75k; J1 power pads 0.7x1.4 to 0.6x1.3 (stroke removed); J1 shell pads 1.2 to 0.9 wide with slots 0.6x1.7 and 0.6x1.4 (HRO drawing C165948: 0.90x2.00 and 0.90x1.70 pads) and paste +0.25; U6 eight corner pads 0.324 to 0.224 wide; J2 paste 0.23x0.70 and 0.23x0.559, fittings 0.30x0.70; U2 EP paste 2.0x2.0. No rotation or layer change and no unexplained part change. The board outline is identical (122 Edge.Cuts items). Library: the only other non-uuid change is the swap of the Buzzer silk +/- text order, with no board effect.",
+    "Netlist HEAD vs working: one new net PERIPH_DIV (R13.2, R14.2, R34.1); PERIPH_GATE loses R13.2/R14.2 and gains R34.2/C26.1; 3V3_PERIPH gains C26.2. All explained. Q4 pins G/S/D = PERIPH_GATE/3V3/3V3_PERIPH, C18 gate to source, C26 gate to drain. DRC with --schematic-parity on a copy: all 199 parity items are only the '/' net-name prefix, none real.",
+    "Copper diff, exact match by net/layer/endpoints/width: 37 segments removed and 50 added (36 + 49 plus the one re-netted segment), 13 vias removed and 15 added. This is exactly the review_fixes.py lists; nothing else changed. Per-net minimum width dropped only for GND 0.25 to 0.20 (SW1 pad 5 to pad 3 link) and 3V3_PERIPH 0.30 to 0.25 (C26 stub), both harmless. Track/via totals 1233/274 match verification.json.",
+    "kicad-cli DRC on a copy: 0 errors, 0 unconnected (32 silk warnings plus library-path warnings from the copy). Refilling every zone on a copy changes no fill area, so the saved fills are current. Gerber zip = gerbers folder, and the board sha256 matches package.json and verification.json.",
+    "Via vs other-net pad openings (mask = pad, pad_to_mask_clearance 0), F and B sides: closest is 0.133 mm (HAPTIC_EN via to U7.10, unchanged). The new DTR via is 0.150 mm from U2.22 (unconnected) and 0.256 from U2.23. Only the 9 U1.49 and 4 U2.25 thermal vias are in a pad; the U8 pin 2 GND via is now 0.378 mm from the U8.2 and U8.5 pads; the J3 pin 4 via is 0.14 mm off its pad. 166 of 274 vias are within 0.35 mm of an opening, as ORDER.md says.",
+    "Custom DRC rule 'J3 hatched area A' (KiCad 8 syntax, intersectsArea plus NetName plus disallow track): tested by injecting copper into a copy. A 3V3 track in A is flagged by that rule and an SD_CD track in A is not. An LCD_CS track in C, a VBAT via in A and a GND track in SW1_NO_COPPER are each flagged by their keep-out.",
+    "J3 F.Cu copper per hatched area: A holds SD_CD track (2.60 mm of centreline) and the pad-10 GND stub, B empty, C empty, D empty with the 900 dpi bounds (reviewer 1's wider D only reaches the GND via at (169.75,118.34), GND under the GND shell). HEAD had VBAT across C/B and SD_CS, 3V3_PERIPH and VBUS vias in A. The new SD_CD route runs at x 157.855 in the 0.35 mm corridor between A and B. Rule-area rectangles equal design.J3_NO_TRACE_LOCAL plus the J3 placement.",
+    "SW1: Alps C110293 p.3 'Prohibitted area of copper tracks' is 2 x 1.2 mm between the mounting pads; the rule area is KiCad x 123.1..124.3, y 84.6..86.6 on F.Cu only. L1 inside it: no copper. L2/L3/L4: the GND pours fill it (inner and back layers cannot touch the switch). The new GND link at y 86.9 is 0.2 mm from the area and 0.27 mm from the guide-boss hole.",
+    "Antenna keep-out: no track, via, pad or pour copper on any of the four layers in device x 21.8..27.2, y -37.9..-18.2; SW1 pad 5 stops 0.1 mm short. The new VBUS, ESP_EN and I2C_SDA vias are all at x 21.7 or less.",
+    "Touch wheel: the per-net L3 length inside r 16.6 and r 17.1 reproduces verification.json. Every DISC_L3_ACCEPTED net is at or under its cap; via counts are unchanged except 3V3_PERIPH 7 to 8. Electrode fill areas change only ELE5 +0.42 mm2 (smaller J1 shell pads), ELE6 +0.19 and ELE7 -0.45 (new via). The new I2C_SDA and 3V3 L3 copper for R31/R32 lies outside r 17.1 (closest is the 3V3 via at r 17.18).",
+    "README 'Review dispositions': all 84 review IDs (ESP32/FP/BN/PWR/PERIPH/CONN/MECH/FW-HW/CC plus L1..L13) have exactly one row, and every severity and uncertain/accepted/refuted tag matches the review. Fixed rows checked in the files: ESP32-1, FP-1/L12 (paste plus remark), L1/FP-2/FP-8 (gaps 0.20 / 0.188), BN-2/ESP32-4/PWR-12/FW-HW-5 (R30), PWR-1/ESP32-2/FW-HW-1 (network present as stated), PWR-5 (R9), PWR-7/FP-6 (C11), PWR-11 (R25), PERIPH-1 (LCD_LEDA cap 11.92/2 against 11.91 measured), CONN-1/FP-4, FP-3, FP-10, FP-11 (rotation-check rows added for U3, U4, U8, Q2..Q6), L2 (drill G85 slots 1.7/1.4), L3, L4, L5, L13 (drill maps gone from the zip), CC-1 (frame in the Gerbers, ORDER.md), BN-4/BN-5 (SPEC diff). The only mis-stated row is PWR-2 (REG-2).",
+    "mechanical-interface.json changed fields: antenna.copper_keepout_all_layers.y (-21.8 to -18.2) plus new feed_end/open_end clearance fields; parts R31 and R32 centre/x/y with zone general to FPC run zone (limit 5.6 to 4.9); new parts R34 (FPC run zone, 0.35 tall) and C26 (general, 0.5 tall); values of C11, C18, R9, R13, R14, R25, R30; touch_side_protrusions J1 x and y (pads 0.9 wide, pads 2 and 3 1.7 long); the verification block. The case uses none of the antenna, value or verification fields, so nothing beyond R31, R32, R34, C26 and the J1 shell pads reaches the case.",
+    "BOM/CPL: 40 lines and 84 placements. Every LCSC number, value, position and rotation matches the board, including R34, C26, R31 and R32. CPL coordinates share the panel Gerbers' absolute frame (Edge_Cuts 115.8..184.2 x 73..126.6, board unchanged inside it). The new LCSC parts in stock.json: C25879 0402WGF2201TCE, C23733 CL05A475MP5NRNC.",
+    "Firmware check for the stronger divider: slab_board.c holds GPIO13 high with pulls disabled (rtc_gpio_hold_en) in deep sleep, so R13 2.2k draws no sleep current.",
+    "Scripts and outputs are in /private/tmp/claude-501/-Users-dave-projects-assistant/7e2488f2-c1f8-48ea-8311-4ecfb642e182/scratchpad/review-a1/REG/ (scripts/, head.json, work.json, geomH.json, geomW.json, wheel.json, drc_work.json, drutest/, parity/). Nothing under /Users/dave/projects/Harmony2 was modified."
+   ]
+  },
+  "verify": {
+   "area": "REG: regression sweep of the 2026-11-21 review fixes (skeptic pass on REG-1 to REG-6)",
+   "verdicts": [
+    {
+     "id": "REG-1",
+     "verdict": "confirmed",
+     "severity": "minor",
+     "reasoning": "I measured this with my own pcbnew dump of the work board (REG-verify/gW.json, j1paste.py, j1b.py), and the geometry holds. J1 pad 1 is a 0.90 x 2.00 oval at KiCad (154.33,113.76) with paste margin +0.25, so the opening is 1.40 x 2.50. F_Paste.gtp has D53 = O 1.4x2.5 flashed at X154.33 Y-113.76 and D54 = O 1.4x2.2 on pads 2 and 3. HEAD had no F.Paste on these pads. The LCD_MOSI segment (155.2548,114.4235)-(152.8766,116.8017), w 0.15, is 0.209 mm copper-to-copper from pad 1. The opening covers 0.0129 mm2 of that track. The pad 4 opening is 0.287 mm from U8.6 (USB_DN, exposed pad), and the pad 2 opening is 0.127 mm from the VBUS 0.4 mm track. One correction: LCD_MOSI is under solder mask, so paste printed over it cannot connect to it. Paste on mask pulls back to the pad when it melts. The reviewer did not list the more relevant neighbours: the pad 2 opening is 0.044 mm from the ring of the CHG_STAT via at (155.11,116.93) and 0.077 mm from the VBUS via at (153.48,116.97). Both vias are within 0.35 mm of J1 pad 2's copper, so JLC tents them instead of plugging them. If a tent fails, molten paste sits about 0.14 to 0.18 mm from an open barrel, and VBUS or CHG_STAT could short to the GND shell. Decision 11 assumes a 0.12 mm stencil, but ORDER.md line 65 asks for 0.10 mm. My estimate is about 38 to 45 percent slot fill at 0.12 and 31 to 37 percent at 0.10. The chance of a fault is low, a meter finds it before first power, and it can be reworked, so minor is right. A smaller or custom paste opening on the pad 2 side costs little."
+    },
+    {
+     "id": "REG-2",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "README line 400 (PWR-2) says 'README, ORDER.md and the build guide now say...'. A grep of jlcpcb/ORDER.md for revers, polarity, 37 mA or Q2 finds only the rotation-check line 93, so ORDER.md has no reversed-pack text. README 'Check before paying' item 5 (line 323) and docs/mark-8-slab-build.md line 83 do have it. design.py:458 still caps 'L1 0.30' at 22.67 (the line is unchanged since HEAD), while README line 205 says the caps hold the measured numbers and the measured value is 21.37 (verification.json vbus_main_paths 21.366). A regrowth of up to 1.3 mm would therefore still pass. Both are documentation or guard slack. Neither affects the board."
+    },
+    {
+     "id": "REG-3",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "My own computation (wheel2.py: L3 non-GND, non-ELE track length inside each L4 electrode's filled zone) reproduces the reviewer's numbers exactly. Under ELE6: VBAT 2.37 to 7.74, SD_CS 1.47 to 1.84, 3V3_PERIPH 6.33 to 6.54, VBUS 0.92 to 1.05. The ELE6 total goes from 18.83 to 24.91, ELE7 from 34.19 to 33.28 and ELE5 from 44.00 to 43.97 mm. Inside r 17.1: VBAT 21.321 to 26.687 and SD_CS 12.744 to 13.114 (cap 13.12). Every DISC_L3_ACCEPTED net is at or under its cap, with unchanged via counts. 3V3_PERIPH vias inside the disc go from 7 to 8 (the C26 via at device (-13.6,-26.4)). Electrode area changes are ELE5 +0.423, ELE6 +0.189 and ELE7 -0.451 mm2. The new VBAT via at device (-13.2,-37.7) sits at r 16.53, inside the ELE6 ring, but it replaces the old VBAT via at r 14.6, so the VBAT via count inside the disc is unchanged. VBAT is a DC net that is allowed there. The extra 5.4 mm of 0.4 mm track adds roughly 0.4 to 1 pF, depending on the L3-to-L4 dielectric. A bring-up noise check is the right response."
+    },
+    {
+     "id": "REG-4",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "The rule-area rectangles are A 156.88..157.68 x 103.67..111.76, B 158.03..158.74 x 109.55..117.13, C 158.68..167.40 x 108.24..109.84 and D 167.02..169.48 x 117.89..119.29. These are the union of the two review readings, as Decision 9 says. Measured: the SD_CS via at (158.0,104.4) is 0.07 mm from A, and the 3V3_PERIPH via (156.55,108.6) and VBUS via (156.55,110.75) are each 0.08 mm from A. The reviewer missed a fourth via near A: an SD_CS via at (156.55,105.0), 0.08 mm from A, unchanged since HEAD. The re-routed SD_CD run at x 157.855, w 0.15, is only 0.10 mm from both A and B, inside the \u00b10.06 to \u00b10.2 mm reading tolerance. Hirose's drawing (C114218 p.3) hatches only bar C in the band under the contact springs, at 4.4 MAX to 6 MIN below the contact-pad edge. The new VBAT run (KiCad y 107.65 to 107.7, w 0.4) and its via are 3.6 to 4.1 mm below that edge, 0.34 and 0.29 mm clear of C, so Hirose allows them. F.Cu copper in the band between the contact row and bar C was, at HEAD, VBAT 2.60 mm and 1 via; it is now 3.55 mm and 2 vias. The other nets there are unchanged. F.Cu in the areas now: A holds 2.60 mm of SD_CD and 0.42 mm of the pad-10 GND stub; B, C and D are empty. I tested the custom rule by adding copper to copies and running kicad-cli DRC. A 3V3 track in A and a VBAT track overlapping A by 0.045 mm are both flagged by 'J3 hatched area A'. SD_CD and GND tracks in A are not flagged. An L3 track under A is not flagged (correct, F.Cu only). Vias in A, and tracks in B, C or SW1_NO_COPPER, are flagged by their keep-outs. Board net names have no '/' prefix, so the NetName conditions match."
+    },
+    {
+     "id": "REG-5",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "enclosure/mark-8/slab-rev-a/.cache/board and checks/ date from Nov 17, and board-device-coords.step from Nov 21 11:22. Of the case scripts, only params.py (board, wheel, touch_side_protrusions, usb_c, microsd, side_button, locating_holes, press_pads, buzzer, charge_led, screen_connector) and sources.py (parts[], used to match STEP children) read mechanical-interface.json. None reads antenna, values or verification. My field diff of mechanical-interface.json matches the reviewer's list. R31 and R32 moved and changed zone to 'FPC run zone' (limit 4.9; parts 0.35 tall). R34 and C26 were added. The J1 touch-side items narrowed from 1.2 to 0.9 wide (pads 2 and 3 from 1.8 to 1.7 long), so the existing case reliefs are larger than needed. The nearest press posts are PP4, 7.08 mm from R32 and 12.73 mm from R31, and PP2, about 12 mm from R34 and C26. No case geometry change is needed. Re-running checks.py against the new STEP is a reasonable confirmation."
+    },
+    {
+     "id": "REG-6",
+     "verdict": "confirmed",
+     "severity": "note",
+     "reasoning": "git status shows docs/mark-7-portable-scope.md, docs/mark-7-power-and-sleep.md and enclosure/mark-7/pocket-rev-b/README.md modified. Their file times are Oct 9 2026, well before HEAD (Nov 21 10:14), and the content is the 'October 9 amendment' about the ANO transfer. They are unrelated to the Mark-8 fix. Commit only the Mark-8 paths (hardware/mark-8/slab-rev-a and docs/mark-8-slab-build.md)."
+    }
+   ],
+   "missed": [
+    {
+     "title": "Two tented vias sit 0.04 to 0.08 mm from J1 pad 2's new pin-in-paste opening (adds to REG-1)",
+     "severity": "note",
+     "evidence": "Work board, j1paste.py: the J1 pad 2 opening is a 1.40 x 2.20 oval at KiCad (154.33,117.94). The ring of the CHG_STAT via at (155.1128,116.927) is 0.044 mm from it, and the ring of the VBUS via at (153.4782,116.9668) is 0.077 mm from it. Both rings are 0.29 to 0.33 mm from J1 pad 2's copper, which is under the 0.35 mm limit, so JLC tents these vias instead of ink-plugging them (ORDER.md remark 1). HEAD had no paste on J1. This is the more relevant neighbour of the overprint than the LCD_MOSI track, which is under intact mask. At bring-up, measure VBUS to GND and CHG_STAT to GND before first power. The build guide already asks for the VBUS check."
+    }
+   ]
+  }
+ }
+]

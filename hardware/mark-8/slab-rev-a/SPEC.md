@@ -92,7 +92,7 @@ The electrodes are copper on the board's touch side, directly behind the 1.0 mm 
 | Ref | Block | Part | LCSC | Notes |
 | --- | --- | --- | --- | --- |
 | U1 | Processor | ESP32-PICO-MINI-02-N8R2 | C2980306 | Same module as the Feather ESP32 V2: 8 MB flash, 2 MB PSRAM, PCB antenna. NRND but 892 in stock |
-| U2 | USB to serial | CH9102F | C2858418 | As on the Feather V2. Power it from VBUS so it draws nothing on battery. 1 k series resistors on TXD and RXD |
+| U2 | USB to serial | CH9102F | C2858418 | As on the Feather V2. VDD5 and VBUS from USB VBUS, VIO from 3V3 (WCH's dual-supply scheme), so it draws nothing on battery. 1 k series resistors on TXD and RXD |
 | Q1 | Auto-reset | UMH3N (dual pre-biased NPN) | C62892 | Standard DTR/RTS to EN/IO0 circuit |
 | U3 | Charger | MCP73831T-2ACI/OT | C424093 | PROG 2.7 k (about 370 mA). STAT drives a red LED from VBUS |
 | U4 | 3.3 V regulator | RT9080-33GJ5 | C841192 | 600 mA, 2 uA quiescent. EN tied to VSYS |
@@ -123,7 +123,7 @@ Use JLC basic parts for every resistor and capacitor where a basic part exists. 
 - VBUS (USB 5 V) feeds the charger, CH9102F and, through D1, VSYS.
 - The battery connects through Q2 to VBAT. Q3 connects VBAT to VSYS when VBUS is absent.
 - VSYS feeds U4 (3V3), the backlight resistor, the buzzer and U7.
-- 3V3 feeds U1, U5, U6 and Q4. Q4 makes 3V3_PERIPH for the screen (VCC and IOVCC) and the microSD card.
+- 3V3 feeds U1, U6 and Q4 (and the I2C pull-ups). U5 is powered from VBAT (CELL and VDD, see 5.1). Q4 makes 3V3_PERIPH for the screen (VCC and IOVCC) and the microSD card.
 - Bulk capacitance: 10 uF on VBUS, 10 uF on VBAT, 22 uF on VSYS, 22 uF and 100 nF at U1's 3V3 pin, 10 uF and 100 nF on 3V3_PERIPH at the screen connector and at the card socket.
 - Deep sleep target: below 100 uA total with the screen and card off (Q4 off), U6 in stop mode, U7 in standby and U2 unpowered.
 
