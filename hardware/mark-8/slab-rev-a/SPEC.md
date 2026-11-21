@@ -22,15 +22,15 @@ The board is assembled with its components facing the back plate (see section 6)
 | Item | Value |
 | --- | --- |
 | Outline | 58.6 (X) by 103.5 (Y), plan corner radius 6.5 |
-| Thickness T | 9.5 (printed revision A). A later aluminum version targets about 8.4 |
+| Thickness T | 9.5 (printed revision A). Built as 9.6 since November 21: at 0.2 mm layers the case printed 9.6 anyway (see the case README). A later aluminum version targets about 8.4 |
 | Edge round | 1.0 on the front and back edges |
 | Side wall | 1.6 |
 | Front skin | 1.0 (z 0 to -1.0) |
-| Back plate | 1.2 thick, its inner face at z = -8.3 |
+| Back plate | 1.2 thick, its inner face at z = -8.3 (-8.4 as built) |
 | Closure | 4 x M2 screws through the back plate into M2 heat-set inserts in corner bosses at (+-24.7, +-47.15) |
 | Material | PLA or PETG on a Bambu A1 (no AMS) |
 
-Interior: x from -27.7 to +27.7, y from -50.15 to +50.15, z from -1.0 to -8.3.
+Interior: x from -27.7 to +27.7, y from -50.15 to +50.15, z from -1.0 to -8.3 (-8.4 as built).
 
 ## 3. Screen
 
@@ -53,9 +53,9 @@ FPC pinout: 1 LEDK, 2 GND, 3 FMARK (tearing effect), 4 SDA (MOSI), 5 SCLK, 6 RS 
 
 Laid flat in the screen plane, the FPC leaves the screen's bottom edge and forms an L. In device coordinates (screen in its final position):
 
-- Bonded wide section: x from -13.2 to +14.7 (+18.0 where a small part sits at x +15.5 to +17.7), from the screen edge at y = -7.84 down to y = -18.6. The band just below the screen edge is the "single area", designed for bending.
-- Vertical leg: x from -13.2 to -7.2, from y = -18.6 down to y = -45.1.
-- Tail: y from -46.0 to -50.8 (4.8 wide), from x = -13.0 to the tip at x = +43.93. Contacts at x +41.4 to +43.6. Pin 1 is at the -Y edge of the tail, pin 15 at the +Y edge. The contacts face +Z.
+- Bonded wide section: x from -13.2 to +14.7 (+18.0 where a small part sits at x +15.5 to +17.7; the FPC beside that part reaches +18.72 in the STEP), from the screen edge at y = -7.84 down to y = -18.6 (-18.69 in the STEP). The band just below the screen edge is the "single area", designed for bending.
+- Vertical leg: x from -13.2 to -7.2 (-7.07 in the STEP), from y = -18.6 (-18.69 in the STEP) down to y = -45.1.
+- Tail: y from -46.0 to -50.8 (4.8 wide), from x = -13.0 (-12.50 in the STEP) to the tip at x = +43.93. Contacts at x +41.4 to +43.6. Pin 1 is at the -Y edge of the tail, pin 15 at the +Y edge. The contacts face +Z.
 
 The flat tail ends 16 mm outside the right wall, so the FPC is routed as follows:
 
@@ -101,12 +101,12 @@ The electrodes are copper on the board's touch side, directly behind the 1.0 mm 
 | U7 | Haptic driver | DRV2605LDGSR | C527464 | I2C 0x5A (fixed). VDD = VSYS. EN to 3V3 through 10 k. IN/TRIG to GND. Output to two motor pads |
 | U8 | USB ESD | USBLC6-2SC6 | C7519 or C2827654 | On D+, D- and VBUS |
 | J1 | USB-C | HRO TYPE-C-31-M-12 | C165948 | 16-pin USB 2.0. CC1 and CC2 each 5.1 k to GND |
-| J2 | Screen connector | Hirose FH35C-15S-0.3SHW(50) | C2889267 | 0.3 pitch, 0.88 tall, dual contact, accepts 0.2 FPC |
-| J3 | microSD | Hirose DM3AT-SF-PEJM5 | C114218 | Push-push, card detect switch, 1.68 tall |
+| J2 | Screen connector | Hirose FH35C-15S-0.3SHW(50) | C2889267 | 0.3 pitch, 0.88 tall (0.90 in the board STEP), dual contact, accepts 0.2 FPC |
+| J3 | microSD | Hirose DM3AT-SF-PEJM5 | C114218 | Push-push, card detect switch, 1.68 tall (Hirose drawing; the vendor 3D model is 1.89, review MECH-5) |
 | J4 | Battery | JST PH 2-pin side entry, S2B-PH-SM4-TB or the XYECONN clone | C54582899 | About 5.5 tall. Silkscreen + and - plainly |
 | SW1 | Side button | Alps SKRTLAE010 (side push) | C110293 | Actuator points +X through the right wall |
 | SW2, SW3 | BOOT, RESET | TS-1088-AR02016 | C720477 | On the component side, reachable with the back plate off |
-| BZ1 | Click buzzer | MLT-5020 (5 x 5 x 2.5, 4 kHz, magnetic) | C94598 | VSYS through 33 ohm, low-side N-MOSFET, flyback diode |
+| BZ1 | Click buzzer | MLT-5020 (5 x 5 x 2.5; 5.20 x 5.28 x 2.01 in the board STEP; 4 kHz, magnetic) | C94598 | VSYS through 33 ohm, low-side N-MOSFET, flyback diode |
 | Q2 | Battery reverse protection | AO3401A | C15127 | P-MOSFET: drain to the battery + pin, source to VBAT, gate to GND |
 | Q3 | Load sharing | AO3401A | C15127 | Drain to VBAT, source to VSYS, gate to VBUS with 100 k to GND |
 | D1 | VBUS to VSYS | B5819W SL | C8598 | |

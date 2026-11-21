@@ -23,10 +23,12 @@ def screen_parts(screen):
 
 
 def battery(size, name):
+    """Pack stuck on the foam on the screen back (ASSEMBLY step 13), so the
+    back plate and its ribs are checked against it."""
     w, l, t = size
-    z0 = P.SPLIT_Z
+    z1 = P.BAT_TOP_Z - P.BAT_FOAM
     y0 = P.BAT_POCKET_Y0
-    return box(-w / 2, w / 2, y0, y0 + l, z0, z0 + t)
+    return box(-w / 2, w / 2, y0, y0 + l, z1 - t, z1)
 
 
 def max_pack_thickness():
@@ -66,8 +68,10 @@ def battery_plug():
     """JST PHR-2 housing in J4 (estimated from the J4 model cavity) and its
     two wires running into the cable bay."""
     plug = box(-23.2, -18.7, -10.53, -8.03, -6.9, -2.4)
-    wires = union(cq.Solid.makeCylinder(0.5, 4.4, cq.Vector(-21.45, -8.04, -4.65), cq.Vector(0, 1, 0)),
-                  cq.Solid.makeCylinder(0.5, 4.4, cq.Vector(-20.45, -8.04, -4.65), cq.Vector(0, 1, 0)))
+    # The wires stop 0.1 short of the pack's near edge (the leads leave the pack there).
+    n = (P.BAT_POCKET_Y0 - 0.1) - (-8.04)
+    wires = union(cq.Solid.makeCylinder(0.5, n, cq.Vector(-21.45, -8.04, -4.65), cq.Vector(0, 1, 0)),
+                  cq.Solid.makeCylinder(0.5, n, cq.Vector(-20.45, -8.04, -4.65), cq.Vector(0, 1, 0)))
     return plug, wires
 
 

@@ -61,6 +61,12 @@ def front_shell():
     lips = [box(-P.X_IN - 0.05, -14.5, pocket_y0 - 0.8, pocket_y0, P.SCR_LIP_Z, -P.SKIN + 0.01),
             box(19.5, P.X_IN + 0.05, pocket_y0 - 0.8, pocket_y0, P.SCR_LIP_Z, -P.SKIN + 0.01)]
     shell = union(shell, band, *lips)
+    # The screen's top corners lie outside the walls' R3.9 inner corners, so the
+    # pocket is also cut into the walls there (about 1.0 of wall is left inside
+    # the R5.5 outer corner). Without this cut the walls reached 0.56 into both
+    # top corners of the screen (diagram, November 21).
+    shell = cut(shell, rrect_xy(0, (pocket_y0 + pocket_y1) / 2, 2 * (P.SCR_X + c), pocket_y1 - pocket_y0,
+                                P.SCR_POCKET_R, P.SCR_Z0, -P.SKIN))
 
     # Corner bosses with heat-set insert holes.
     feats = []
@@ -93,7 +99,8 @@ def front_shell():
     # Reliefs for the USB-C shell legs on the touch side.
     tools += leg_reliefs()
     # USB-C: opening through the wall plus the overmold pocket.
-    tools.append(rrect_xz(0, P.USB_ZC, P.USB_OPEN_W, P.USB_OPEN_H, P.USB_OPEN_R, -53, -49.9))
+    uz0, uz1 = P.USB_OPEN_Z[1], P.USB_OPEN_Z[0]
+    tools.append(rrect_xz(0, (uz0 + uz1) / 2, P.USB_OPEN_W, uz1 - uz0, P.USB_OPEN_R, -53, -49.9))
     ztop = 3.0   # corner rounds of the tool sit above the part
     tools.append(rrect_xz(0, (P.USB_POCKET_ZBOT + ztop) / 2, P.USB_POCKET_W, ztop - P.USB_POCKET_ZBOT,
                           P.USB_POCKET_R, -53, -P.Y_OUT + P.USB_POCKET_DEPTH))
@@ -307,7 +314,9 @@ def back_plate():
         adds += [cyl_z(px, py, P.POST_BASE_D / 2, z1 - 0.01, P.POST_CONE_Z),
                  cone_z(px, py, P.POST_BASE_D / 2, P.POST_TIP_D / 2, P.POST_CONE_Z, P.POST_NECK_Z),
                  cyl_z(px, py, P.POST_TIP_D / 2, P.POST_NECK_Z, P.POST_TIP_Z)]
-    # Battery ribs for a 404050 pack (40 x 50), with the cable bay below y -3.5.
+    # Battery ribs: two side ribs for a 40 wide pack and two low ribs that keep
+    # the pack out of the cable bay below y -4.0. No top rib: the lip stops a
+    # pack up to 53 long (diagram, November 21: a 52 pack hit the old top rib).
     bw, bl, _ = P.BAT_404050
     gx = bw / 2 + P.RIB_GAP
     yb0 = P.BAT_POCKET_Y0
@@ -315,7 +324,6 @@ def back_plate():
     zr = z1 + P.RIB_H
     adds += [box(-gx - P.RIB_W, -gx, yb0 + 5, yb1 - 6, z1 - 0.01, zr),
              box(gx, gx + P.RIB_W, yb0 + 5, yb1 - 6, z1 - 0.01, zr),
-             box(-12, 12, yb1 + P.RIB_GAP, yb1 + P.RIB_GAP + P.RIB_W, z1 - 0.01, zr),
              box(-16, -6, yb0 - P.RIB_GAP - P.RIB_W, yb0 - P.RIB_GAP, z1 - 0.01, zr),
              box(6, 16, yb0 - P.RIB_GAP - P.RIB_W, yb0 - P.RIB_GAP, z1 - 0.01, zr)]
     # Charge LED light tube: 2.3 base, 1.9 neck beside J1 and J3, chamfered tip (MECH-2).

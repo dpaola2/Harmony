@@ -1,0 +1,80 @@
+[
+ {
+  "id": "NEW-PRINT-001",
+  "doc": "enclosure/mark-8/slab-rev-a/PRINTING.md",
+  "line": 103,
+  "quote": "the shell rim 8.4, the boss faces 7.8, the post tips 8.0, the screw pads 1.8, the LED tube 6.6",
+  "subject": "printed heights of the fit-setting features above each part's bed",
+  "values": [
+   8.4,
+   7.8,
+   8.0,
+   1.8,
+   6.6
+  ],
+  "unit": "mm",
+  "tolerance": null,
+  "category": "print_geometry",
+  "measurable": true
+ },
+ {
+  "id": "NEW-PRINT-002",
+  "doc": "enclosure/mark-8/slab-rev-a/PRINTING.md",
+  "line": 103,
+  "quote": "and the USB-C opening 1.6 to 5.4",
+  "subject": "USB-C opening depth range from the front face",
+  "values": [
+   1.6,
+   5.4
+  ],
+  "unit": "mm",
+  "tolerance": null,
+  "category": "usb_c",
+  "measurable": true
+ },
+ {
+  "id": "NEW-PRINT-003",
+  "doc": "enclosure/mark-8/slab-rev-a/PRINTING.md",
+  "line": 103,
+  "quote": "That is why the case is 9.6 thick",
+  "subject": "case thickness",
+  "values": [
+   9.6
+  ],
+  "unit": "mm",
+  "tolerance": null,
+  "category": "body",
+  "measurable": true
+ },
+ {
+  "id": "NEW-ASSY-001",
+  "doc": "enclosure/mark-8/slab-rev-a/ASSEMBLY.md",
+  "line": 83,
+  "quote": "its near edge 4 mm from the lower edge of the screen (anywhere from 3.6 to 5 mm",
+  "subject": "battery near edge from the screen's lower edge: nominal and allowed window",
+  "values": [
+   4.0,
+   3.6,
+   5.0
+  ],
+  "unit": "mm",
+  "tolerance": null,
+  "category": "battery_foam",
+  "measurable": true
+ },
+ {
+  "id": "NEW-README-001",
+  "doc": "enclosure/mark-8/slab-rev-a/README.md",
+  "line": 167,
+  "quote": "| back plate | board PCB | 5.655 | ok | press posts on PP1 to PP4, 0.2 planned interference each |",
+  "subject": "post to board overlap volume and planned press",
+  "values": [
+   5.655,
+   0.2
+  ],
+  "unit": "mm",
+  "tolerance": null,
+  "category": "press_posts_pins",
+  "measurable": true
+ }
+]

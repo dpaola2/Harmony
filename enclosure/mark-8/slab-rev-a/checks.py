@@ -11,19 +11,19 @@ import params as P
 from geom import box
 
 TOL_VOL = 0.001
+FACE_TOL = 0.01   # mm3 a "face contact" pair may share (boolean noise)
 
 # Pairs that touch or overlap on purpose: (pattern a, pattern b, reason).
 INTENDED = [
     ("board PCB", "front shell", "board touch side lies on the skin (face contact)"),
     ("board PCB", "wheel disc", "disc back face lies on L4 (face contact)"),
-    ("board PCB", "back plate", "press posts on PP1 to PP4, 0.1 planned interference each"),
+    ("board PCB", "back plate", "press posts on PP1 to PP4, 0.2 planned interference each"),
     ("FPC tail", "board J2", "FPC end inserted 1.3 into the J2 slot"),
     ("insert *", "front shell", "heat-set knurl 3.2 OD in the 3.0 hole, melts in"),
     ("screw *", "insert *", "screw thread in the insert"),
     ("screw *", "back plate", "head seats in the counterbore"),
     ("screen body", "front shell", "screen front rim on the skin (face contact)"),
     ("screen FPC bonded end", "FPC leg and wide section", "same FPC, cut at the screen edge"),
-    ("battery 404050", "back plate", "pack rests on the back plate (face contact)"),
     ("motor", "back plate", "motor glued in its seat on the back plate"),
     ("battery wires", "battery plug PHR-2", "same cable"),
     ("battery plug PHR-2", "board J4", "plug mated in J4 (face contact at the J4 face)"),
@@ -85,9 +85,14 @@ def interference(solids, extra=()):
             STATS["pairs_checked"] += 1
             if vol is None or vol > TOL_VOL or intended(na, nb):
                 why = intended(na, nb)
+                ok = bool(why) or (vol is not None and vol <= TOL_VOL)
+                # A face contact has no volume. Before November 21 the screen
+                # sat 1.42 mm3 into the walls under this label (diagram check).
+                if why and "face contact" in why and (vol is None or vol > FACE_TOL):
+                    ok = False
                 rows.append({"a": na, "b": nb, "volume_mm3": None if vol is None else round(vol, 4),
                              "intended": why, "error": err,
-                             "status": "ok" if (why or (vol is not None and vol <= TOL_VOL)) else "FAIL"})
+                             "status": "ok" if ok else "FAIL"})
     # reference solids against everything (reported, not part of the build)
     ref_rows = []
     for name, shape in extra:
@@ -96,7 +101,8 @@ def interference(solids, extra=()):
         for na, ga, sa, ba in items:
             if ga == "battery" or _bb_gap(bb, ba) > 0:
                 continue
-            if name.startswith("battery") and na in ("back plate",):
+            # The largest-pack envelopes ignore the ribs on purpose; real packs do not.
+            if name.startswith(("battery largest", "battery SPEC")) and na in ("back plate",):
                 continue
             vol, err = common_volume(shape, sa)
             if vol and vol > TOL_VOL:
@@ -148,7 +154,8 @@ def clearances(solids):
         bosses.append(_dist(bat, boss))
     out["battery_vs_top_bosses"] = bosses
     out["battery_vs_back_plate_ribs_xy"] = round(P.RIB_GAP, 3)
-    out["battery_vs_screen_back"] = round(P.SCR_Z0 - (P.SPLIT_Z + P.BAT_404050[2]), 3)
+    out["battery_vs_back_plate"] = round(P.BAT_TOP_Z - P.BAT_FOAM - P.BAT_404050[2] - P.SPLIT_Z, 3)
+    out["battery_vs_back_plate_solid"] = _dist(bat, by["back plate"])
     out["battery_vs_foam"] = _dist(bat, by["battery foam"])
     out["battery_foam_thickness"] = P.BAT_FOAM
     out["battery_plug_vs_screen"] = _dist(by["battery plug PHR-2"], by["screen body"])

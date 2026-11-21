@@ -223,8 +223,8 @@ The accepted L3 lines sit 0.1 mm behind the electrodes. Firmware keeps their edg
 | --- | --- |
 | USB-C J1 | mating face y -50.4 (SPEC -50.4 +-0.2), centre x 0, opening z -2.16 to -4.76, z centre line -3.46 (datasheet -3.43) |
 | microSD J3 | card enters along -Y at y -49.09; slot x -19.2 to -8.2, slot z -3.68 to -2.6 (card plane z -3.14); eject stroke 5.6 beyond the body |
-| Side button SW1 | actuator tip (27.46, -15.6, -3.5), axis +X, 2.0 dia, 0.2 travel |
-| Screen connector J2 | slot faces +X; mouth x_c -2.24; slot centre line y_c -39; pin 1 at (-2.47, -41.1), the -Y end; FPC entry z -2.2 |
+| Side button SW1 | actuator tip (27.46, -15.6, -3.5), axis +X, 2.0 dia (1.94 across in the board STEP), 0.2 travel |
+| Screen connector J2 | slot faces +X; mouth x_c -2.24; slot centre line y_c -39; pin 1 at (-2.47, -41.1), the -Y end; FPC entry z -2.2 (slot centre -2.33 in the board STEP) |
 | Ramp zone | x -2.24 to 15.76, y -42 to -36, parts at most 0.6 tall |
 | Antenna U1 | antenna end x 27.2; module x 10.6 to 27.2, y -35.9 to -22.7; copper keep-out x 21.8 to 27.2, y -37.9 to -18.2 (2.0 beyond the feed end, 4.5 beyond the open end) |
 | Battery J4 | cable enters along +Y at y -10.53; body x -24.95 to -17.05, y -19.13 to -10.53; top z -7.3 |
@@ -235,9 +235,11 @@ The accepted L3 lines sit 0.1 mm behind the electrodes. Firmware keeps their edg
 | Press pads | PP1 (-24.9, -33); PP2 (-3.6, -30.7); PP3 (6.2, -31); PP4 (6.8, -21.4) |
 | Lowest part | J4, z -7.3 (limit -7.4 for 5.6 above the board) |
 
+The board STEP that KiCad exports seats every part on its copper, so each part sits 0.04 to 0.05 further back (more negative z) than the values above. The case was measured against the STEP in the exploded diagram check of November 21 (`enclosure/mark-8/slab-rev-a/diagram/`).
+
 Changes on 2026-11-21 for the case check: R31 moved from (24.4, -19.3) to (15.5, -12.1) and R32 from (24.4, -20.5) to (13.3, -18.6), both 0402, 0.35 tall, now in the FPC run zone (limit 4.9). New parts: R34 (-13.85, -24.3), 0402, 0.35 tall, FPC run zone; C26 (-14.36, -25.7), 0402, 0.5 tall, general zone. The J1 shell-leg pads are 0.9 wide instead of 1.2 (`touch_side_protrusions`), so the front-skin reliefs derived from the old pads are 0.15 larger than needed on each side. No other part moved or changed height; the outline is unchanged.
 
-Heights: the tallest part is J4 at 5.5 above the component surface (z = -7.3). The tallest part under the FPC run zone is J1 at 3.25 (limit 4.9). Inside the ramp zone there are only R15 and R16 (0402, 0.35 tall, limit 0.6) and flat copper. `verify.py` checks every part against its zone limit.
+Heights (from the JSON; the board STEP puts each part 0.04 to 0.05 lower): the tallest part is J4 at 5.5 above the component surface (z = -7.3). The tallest part under the FPC run zone is J1 at 3.25 (limit 4.9). Inside the ramp zone there are only R15 and R16 (0402, 0.35 tall, limit 0.6) and flat copper. `verify.py` checks every part against its zone limit.
 
 ## Rebuild
 

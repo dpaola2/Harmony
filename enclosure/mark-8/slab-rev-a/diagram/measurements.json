@@ -1,0 +1,6668 @@
+{
+ "levels": {
+  "plate_in": -8.4,
+  "back": -9.6,
+  "rim": -8.4,
+  "boss_face": -7.8,
+  "front": 0.0,
+  "pack_model_code": "404050"
+ },
+ "sources": {
+  "printed_step_vs_assembly": {
+   "front shell": {
+    "volume_step": 6666.509,
+    "volume_assembly": 6666.509,
+    "bbox_max_diff": 0.0
+   },
+   "back plate": {
+    "volume_step": 7664.589,
+    "volume_assembly": 7664.589,
+    "bbox_max_diff": 0.0
+   },
+   "wheel disc": {
+    "volume_step": 957.75,
+    "volume_assembly": 957.75,
+    "bbox_max_diff": 0.0
+   },
+   "button cap": {
+    "volume_step": 30.507,
+    "volume_assembly": 30.507,
+    "bbox_max_diff": 0.0
+   }
+  },
+  "board_step_vs_assembly": {
+   "board_step_solids": 85,
+   "matched_by_kicad_pads": 85,
+   "assembly_board_solids": 85,
+   "assembly_names_that_differ": []
+  },
+  "screen_vendor_vs_assembly": {
+   "translation": [
+    -2387.51,
+    -1780.07,
+    -1.0
+   ],
+   "outline_centre_device": [
+    -0.001,
+    20.903
+   ],
+   "front_face_z": -1.0,
+   "back_face_z": -3.15
+  }
+ },
+ "parts": [
+  {
+   "key": "front_shell",
+   "label": "Front shell",
+   "item": 1,
+   "material": "PLA, printed (Jade White)",
+   "solids": 1,
+   "bbox": [
+    -29.3,
+    29.3,
+    -51.75,
+    51.75,
+    -8.4,
+    0.0
+   ],
+   "size": [
+    58.6,
+    103.5,
+    8.4
+   ]
+  },
+  {
+   "key": "wheel_disc",
+   "label": "Wheel disc",
+   "item": 2,
+   "material": "PLA, printed (Black)",
+   "solids": 1,
+   "bbox": [
+    -18.5,
+    18.5,
+    -46.25,
+    -9.25,
+    -1.0,
+    0.0
+   ],
+   "size": [
+    37.0,
+    37.0,
+    1.0
+   ]
+  },
+  {
+   "key": "button_cap",
+   "label": "Side button cap",
+   "item": 3,
+   "material": "PLA, printed (Jade White)",
+   "solids": 1,
+   "bbox": [
+    27.1,
+    29.8,
+    -19.0,
+    -12.2,
+    -4.8,
+    -2.2
+   ],
+   "size": [
+    2.7,
+    6.8,
+    2.6
+   ]
+  },
+  {
+   "key": "screen",
+   "label": "Screen DLC-T2.7DDS#1",
+   "item": 5,
+   "material": "Glass, polarizers, metal frame",
+   "solids": 6,
+   "bbox": [
+    -26.681,
+    26.679,
+    -7.842,
+    49.648,
+    -3.15,
+    -1.0
+   ],
+   "size": [
+    53.36,
+    57.49,
+    2.15
+   ]
+  },
+  {
+   "key": "foam",
+   "label": "Foam tape 35 x 45 (on the screen back)",
+   "item": 8,
+   "material": "Double-sided foam, 0.5 modelled",
+   "solids": 1,
+   "bbox": [
+    -17.5,
+    17.5,
+    -1.5,
+    43.5,
+    -3.65,
+    -3.15
+   ],
+   "size": [
+    35.0,
+    45.0,
+    0.5
+   ]
+  },
+  {
+   "key": "fpc",
+   "label": "Screen FPC, routed and folded",
+   "item": 6,
+   "material": "Polyimide flex (part of the screen)",
+   "solids": 3,
+   "bbox": [
+    -13.216,
+    18.617,
+    -41.4,
+    -7.84,
+    -8.68,
+    -1.415
+   ],
+   "size": [
+    31.83,
+    33.56,
+    7.26
+   ]
+  },
+  {
+   "key": "board",
+   "label": "Main board, assembled",
+   "item": 7,
+   "material": "FR-4 0.8 with parts",
+   "solids": 89,
+   "bbox": [
+    -27.2,
+    27.46,
+    -50.4,
+    -10.0,
+    -7.351,
+    -0.6
+   ],
+   "size": [
+    54.66,
+    40.4,
+    6.75
+   ],
+   "size_bare": [
+    54.4,
+    39.6,
+    0.8
+   ]
+  },
+  {
+   "key": "battery",
+   "label": "LiPo pack with JST PHR-2 plug (case model)",
+   "item": 8,
+   "material": "Pouch cell, plug, wires",
+   "solids": 3,
+   "bbox": [
+    -23.2,
+    20.0,
+    -10.53,
+    46.0,
+    -7.65,
+    -2.4
+   ],
+   "size": [
+    43.2,
+    56.53,
+    5.25
+   ],
+   "size_pack": [
+    40.0,
+    50.0,
+    4.0
+   ]
+  },
+  {
+   "key": "motor",
+   "label": "Vibration motor 10 x 2.7 (optional)",
+   "item": 9,
+   "material": "Steel can",
+   "solids": 1,
+   "bbox": [
+    -25.0,
+    -15.0,
+    -44.5,
+    -34.5,
+    -8.68,
+    -5.98
+   ],
+   "size": [
+    10.0,
+    10.0,
+    2.7
+   ]
+  },
+  {
+   "key": "inserts",
+   "label": "Heat-set inserts M2 x 3 (4)",
+   "item": 4,
+   "material": "Brass",
+   "solids": 4,
+   "bbox": [
+    -26.3,
+    26.3,
+    -48.75,
+    48.75,
+    -7.8,
+    -4.8
+   ],
+   "size": [
+    52.6,
+    97.5,
+    3.0
+   ],
+   "size_each": [
+    3.2,
+    3.2,
+    3.0
+   ]
+  },
+  {
+   "key": "back_plate",
+   "label": "Back plate",
+   "item": 10,
+   "material": "PLA, printed (Jade White)",
+   "solids": 1,
+   "bbox": [
+    -29.3,
+    29.3,
+    -51.75,
+    51.75,
+    -9.6,
+    -1.6
+   ],
+   "size": [
+    58.6,
+    103.5,
+    8.0
+   ]
+  },
+  {
+   "key": "screws",
+   "label": "Screws M2 x 4 button head (4)",
+   "item": 11,
+   "material": "Steel",
+   "solids": 4,
+   "bbox": [
+    -26.45,
+    26.45,
+    -48.9,
+    48.9,
+    -9.6,
+    -4.5
+   ],
+   "size": [
+    52.9,
+    97.8,
+    5.1
+   ],
+   "size_each": [
+    3.5,
+    3.5,
+    5.1
+   ]
+  }
+ ],
+ "board": {
+  "pcb_bbox": [
+   -27.2,
+   27.2,
+   -49.6,
+   -10.0,
+   -1.8,
+   -1.0
+  ],
+  "pcb_size": [
+   54.4,
+   39.6,
+   0.8
+  ],
+  "outline_max_deviation_from_json": 0.0006,
+  "outline_points_step": 123,
+  "locating_holes": [
+   {
+    "ref": "H1",
+    "json_centre": [
+     -12.0,
+     -11.4
+    ],
+    "json_d": 1.6,
+    "step_d_x": 1.6,
+    "step_d_y": 1.6,
+    "step_centre": [
+     -12.0,
+     -11.4
+    ]
+   },
+   {
+    "ref": "H2",
+    "json_centre": [
+     24.6,
+     -40.6
+    ],
+    "json_d": 1.6,
+    "step_d_x": 1.6,
+    "step_d_y": 1.6,
+    "step_centre": [
+     24.6,
+     -40.6
+    ]
+   }
+  ],
+  "parts_compared": 84,
+  "parts_xy_max_diff": 0.0,
+  "top_z_diff_range": [
+   -0.05,
+   -0.0498
+  ],
+  "board_face_z_diff_range": [
+   -0.0538,
+   -0.04
+  ],
+  "body_height_diff_range": [
+   -0.004,
+   0.01
+  ],
+  "changed_parts": {
+   "R31": {
+    "step_centre": [
+     15.5,
+     -12.1
+    ],
+    "kicad_centre": [
+     15.5,
+     -12.1
+    ],
+    "json_centre": [
+     15.5,
+     -12.1
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "body_height_step": 0.35
+   },
+   "R32": {
+    "step_centre": [
+     13.3,
+     -18.6
+    ],
+    "kicad_centre": [
+     13.3,
+     -18.6
+    ],
+    "json_centre": [
+     13.3,
+     -18.6
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "body_height_step": 0.35
+   },
+   "R34": {
+    "step_centre": [
+     -13.85,
+     -24.3
+    ],
+    "kicad_centre": [
+     -13.85,
+     -24.3
+    ],
+    "json_centre": [
+     -13.85,
+     -24.3
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "body_height_step": 0.35
+   },
+   "C26": {
+    "step_centre": [
+     -14.36,
+     -25.7
+    ],
+    "kicad_centre": [
+     -14.36,
+     -25.7
+    ],
+    "json_centre": [
+     -14.36,
+     -25.7
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "body_height_step": 0.5
+   }
+  },
+  "kicad_extra": {
+   "PP1": [
+    -24.9,
+    -33.0
+   ],
+   "PP2": [
+    -3.6,
+    -30.7
+   ],
+   "PP3": [
+    6.2,
+    -31.0
+   ],
+   "PP4": [
+    6.8,
+    -21.4
+   ],
+   "H1": [
+    -12.0,
+    -11.4
+   ],
+   "H2": [
+    24.6,
+    -40.6
+   ]
+  },
+  "j1_shell_pads_kicad": [
+   [
+    -4.78,
+    -3.88,
+    -44.76,
+    -42.76,
+    0.9,
+    2.0
+   ],
+   [
+    -4.78,
+    -3.88,
+    -48.79,
+    -47.09,
+    0.9,
+    1.7
+   ],
+   [
+    3.88,
+    4.78,
+    -48.79,
+    -47.09,
+    0.9,
+    1.7
+   ],
+   [
+    3.88,
+    4.78,
+    -44.76,
+    -42.76,
+    0.9,
+    2.0
+   ]
+  ],
+  "j1_protrusions_json": [
+   {
+    "ref": "J1",
+    "pad": "1",
+    "centre": [
+     -4.33,
+     -43.76
+    ],
+    "x": [
+     -4.78,
+     -3.88
+    ],
+    "y": [
+     -44.76,
+     -42.76
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "2",
+    "centre": [
+     -4.33,
+     -47.94
+    ],
+    "x": [
+     -4.78,
+     -3.88
+    ],
+    "y": [
+     -48.79,
+     -47.09
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "3",
+    "centre": [
+     4.33,
+     -47.94
+    ],
+    "x": [
+     3.88,
+     4.78
+    ],
+    "y": [
+     -48.79,
+     -47.09
+    ]
+   },
+   {
+    "ref": "J1",
+    "pad": "4",
+    "centre": [
+     4.33,
+     -43.76
+    ],
+    "x": [
+     3.88,
+     4.78
+    ],
+    "y": [
+     -44.76,
+     -42.76
+    ]
+   }
+  ],
+  "rows": [
+   {
+    "ref": "J2",
+    "json_x": [
+     -6.438,
+     -2.238
+    ],
+    "json_y": [
+     -42.053,
+     -35.952
+    ],
+    "json_z": [
+     -2.705,
+     -1.8
+    ],
+    "json_height": 0.905,
+    "step_x": [
+     -6.438,
+     -2.238
+    ],
+    "step_y": [
+     -42.053,
+     -35.952
+    ],
+    "step_z": [
+     -2.755,
+     -1.854
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.955,
+    "kicad_centre": [
+     -3.91,
+     -39.0
+    ],
+    "json_centre": [
+     -3.91,
+     -39.0
+    ]
+   },
+   {
+    "ref": "C21",
+    "json_x": [
+     -13.2,
+     -12.4
+    ],
+    "json_y": [
+     -31.8,
+     -30.2
+    ],
+    "json_z": [
+     -2.6,
+     -1.8
+    ],
+    "json_height": 0.8,
+    "step_x": [
+     -13.2,
+     -12.4
+    ],
+    "step_y": [
+     -31.8,
+     -30.2
+    ],
+    "step_z": [
+     -2.65,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.85,
+    "kicad_centre": [
+     -12.8,
+     -31.0
+    ],
+    "json_centre": [
+     -12.8,
+     -31.0
+    ]
+   },
+   {
+    "ref": "C8",
+    "json_x": [
+     -16.0,
+     -15.2
+    ],
+    "json_y": [
+     -22.2,
+     -20.6
+    ],
+    "json_z": [
+     -2.6,
+     -1.8
+    ],
+    "json_height": 0.8,
+    "step_x": [
+     -16.0,
+     -15.2
+    ],
+    "step_y": [
+     -22.2,
+     -20.6
+    ],
+    "step_z": [
+     -2.65,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.85,
+    "kicad_centre": [
+     -15.6,
+     -21.4
+    ],
+    "json_centre": [
+     -15.6,
+     -21.4
+    ]
+   },
+   {
+    "ref": "R32",
+    "json_x": [
+     12.8,
+     13.8
+    ],
+    "json_y": [
+     -18.85,
+     -18.35
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     12.8,
+     13.8
+    ],
+    "step_y": [
+     -18.85,
+     -18.35
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     13.3,
+     -18.6
+    ],
+    "json_centre": [
+     13.3,
+     -18.6
+    ]
+   },
+   {
+    "ref": "C20",
+    "json_x": [
+     -1.4,
+     -0.4
+    ],
+    "json_y": [
+     -35.5,
+     -35.0
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -1.4,
+     -0.4
+    ],
+    "step_y": [
+     -35.5,
+     -35.0
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -0.9,
+     -35.25
+    ],
+    "json_centre": [
+     -0.9,
+     -35.25
+    ]
+   },
+   {
+    "ref": "R2",
+    "json_x": [
+     -6.15,
+     -5.65
+    ],
+    "json_y": [
+     -44.1,
+     -43.1
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -6.15,
+     -5.65
+    ],
+    "step_y": [
+     -44.1,
+     -43.1
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -5.9,
+     -43.6
+    ],
+    "json_centre": [
+     -5.9,
+     -43.6
+    ]
+   },
+   {
+    "ref": "C18",
+    "json_x": [
+     -12.4,
+     -11.4
+    ],
+    "json_y": [
+     -26.65,
+     -26.15
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -12.4,
+     -11.4
+    ],
+    "step_y": [
+     -26.65,
+     -26.15
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -11.9,
+     -26.4
+    ],
+    "json_centre": [
+     -11.9,
+     -26.4
+    ]
+   },
+   {
+    "ref": "J4",
+    "json_x": [
+     -24.95,
+     -17.05
+    ],
+    "json_y": [
+     -19.13,
+     -10.53
+    ],
+    "json_z": [
+     -7.301,
+     -1.8
+    ],
+    "json_height": 5.501,
+    "step_x": [
+     -24.95,
+     -17.05
+    ],
+    "step_y": [
+     -19.13,
+     -10.53
+    ],
+    "step_z": [
+     -7.351,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 5.551,
+    "kicad_centre": [
+     -21.0,
+     -14.93
+    ],
+    "json_centre": [
+     -21.0,
+     -14.93
+    ]
+   },
+   {
+    "ref": "R12",
+    "json_x": [
+     -22.85,
+     -22.35
+    ],
+    "json_y": [
+     -36.9,
+     -35.9
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -22.85,
+     -22.35
+    ],
+    "step_y": [
+     -36.9,
+     -35.9
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -22.6,
+     -36.4
+    ],
+    "json_centre": [
+     -22.6,
+     -36.4
+    ]
+   },
+   {
+    "ref": "R24",
+    "json_x": [
+     -16.65,
+     -16.15
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -16.65,
+     -16.15
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -16.4,
+     -31.3
+    ],
+    "json_centre": [
+     -16.4,
+     -31.3
+    ]
+   },
+   {
+    "ref": "R4",
+    "json_x": [
+     19.5,
+     20.0
+    ],
+    "json_y": [
+     -46.9,
+     -45.9
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     19.5,
+     20.0
+    ],
+    "step_y": [
+     -46.9,
+     -45.9
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     19.75,
+     -46.4
+    ],
+    "json_centre": [
+     19.75,
+     -46.4
+    ]
+   },
+   {
+    "ref": "C13",
+    "json_x": [
+     -2.45,
+     -1.95
+    ],
+    "json_y": [
+     -27.1,
+     -26.1
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -2.45,
+     -1.95
+    ],
+    "step_y": [
+     -27.1,
+     -26.1
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -2.2,
+     -26.6
+    ],
+    "json_centre": [
+     -2.2,
+     -26.6
+    ]
+   },
+   {
+    "ref": "C17",
+    "json_x": [
+     -22.85,
+     -22.35
+    ],
+    "json_y": [
+     -38.9,
+     -37.9
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -22.85,
+     -22.35
+    ],
+    "step_y": [
+     -38.9,
+     -37.9
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -22.6,
+     -38.4
+    ],
+    "json_centre": [
+     -22.6,
+     -38.4
+    ]
+   },
+   {
+    "ref": "R25",
+    "json_x": [
+     -9.25,
+     -8.75
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -9.25,
+     -8.75
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -9.0,
+     -31.3
+    ],
+    "json_centre": [
+     -9.0,
+     -31.3
+    ]
+   },
+   {
+    "ref": "R22",
+    "json_x": [
+     -15.55,
+     -15.05
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -15.55,
+     -15.05
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -15.3,
+     -31.3
+    ],
+    "json_centre": [
+     -15.3,
+     -31.3
+    ]
+   },
+   {
+    "ref": "R18",
+    "json_x": [
+     1.2,
+     3.2
+    ],
+    "json_y": [
+     -23.1,
+     -21.9
+    ],
+    "json_z": [
+     -2.25,
+     -1.8
+    ],
+    "json_height": 0.45,
+    "step_x": [
+     1.2,
+     3.2
+    ],
+    "step_y": [
+     -23.1,
+     -21.9
+    ],
+    "step_z": [
+     -2.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.5,
+    "kicad_centre": [
+     2.2,
+     -22.5
+    ],
+    "json_centre": [
+     2.2,
+     -22.5
+    ]
+   },
+   {
+    "ref": "R13",
+    "json_x": [
+     -12.4,
+     -11.4
+    ],
+    "json_y": [
+     -24.05,
+     -23.55
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -12.4,
+     -11.4
+    ],
+    "step_y": [
+     -24.05,
+     -23.55
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -11.9,
+     -23.8
+    ],
+    "json_centre": [
+     -11.9,
+     -23.8
+    ]
+   },
+   {
+    "ref": "C11",
+    "json_x": [
+     -22.55,
+     -22.05
+    ],
+    "json_y": [
+     -31.3,
+     -30.3
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -22.55,
+     -22.05
+    ],
+    "step_y": [
+     -31.3,
+     -30.3
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -22.3,
+     -30.8
+    ],
+    "json_centre": [
+     -22.3,
+     -30.8
+    ]
+   },
+   {
+    "ref": "R29",
+    "json_x": [
+     21.05,
+     21.55
+    ],
+    "json_y": [
+     -39.8,
+     -38.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     21.05,
+     21.55
+    ],
+    "step_y": [
+     -39.8,
+     -38.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     21.3,
+     -39.3
+    ],
+    "json_centre": [
+     21.3,
+     -39.3
+    ]
+   },
+   {
+    "ref": "U6",
+    "json_x": [
+     -0.9,
+     2.1
+    ],
+    "json_y": [
+     -28.9,
+     -25.9
+    ],
+    "json_z": [
+     -2.365,
+     -1.8
+    ],
+    "json_height": 0.565,
+    "step_x": [
+     -0.9,
+     2.1
+    ],
+    "step_y": [
+     -28.9,
+     -25.9
+    ],
+    "step_z": [
+     -2.415,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.615,
+    "kicad_centre": [
+     0.6,
+     -27.4
+    ],
+    "json_centre": [
+     0.6,
+     -27.4
+    ]
+   },
+   {
+    "ref": "C25",
+    "json_x": [
+     14.2,
+     15.2
+    ],
+    "json_y": [
+     -42.95,
+     -42.45
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     14.2,
+     15.2
+    ],
+    "step_y": [
+     -42.95,
+     -42.45
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     14.7,
+     -42.7
+    ],
+    "json_centre": [
+     14.7,
+     -42.7
+    ]
+   },
+   {
+    "ref": "SW2",
+    "json_x": [
+     18.75,
+     21.65
+    ],
+    "json_y": [
+     -15.9,
+     -11.1
+    ],
+    "json_z": [
+     -3.75,
+     -1.8
+    ],
+    "json_height": 1.95,
+    "step_x": [
+     18.75,
+     21.65
+    ],
+    "step_y": [
+     -15.9,
+     -11.1
+    ],
+    "step_z": [
+     -3.8,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 2.0,
+    "kicad_centre": [
+     20.2,
+     -13.5
+    ],
+    "json_centre": [
+     20.2,
+     -13.5
+    ]
+   },
+   {
+    "ref": "R5",
+    "json_x": [
+     16.25,
+     16.75
+    ],
+    "json_y": [
+     -37.7,
+     -36.7
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     16.25,
+     16.75
+    ],
+    "step_y": [
+     -37.7,
+     -36.7
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     16.5,
+     -37.2
+    ],
+    "json_centre": [
+     16.5,
+     -37.2
+    ]
+   },
+   {
+    "ref": "R34",
+    "json_x": [
+     -14.35,
+     -13.35
+    ],
+    "json_y": [
+     -24.55,
+     -24.05
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -14.35,
+     -13.35
+    ],
+    "step_y": [
+     -24.55,
+     -24.05
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -13.85,
+     -24.3
+    ],
+    "json_centre": [
+     -13.85,
+     -24.3
+    ]
+   },
+   {
+    "ref": "R19",
+    "json_x": [
+     9.35,
+     9.85
+    ],
+    "json_y": [
+     -26.1,
+     -25.1
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     9.35,
+     9.85
+    ],
+    "step_y": [
+     -26.1,
+     -25.1
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     9.6,
+     -25.6
+    ],
+    "json_centre": [
+     9.6,
+     -25.6
+    ]
+   },
+   {
+    "ref": "C9",
+    "json_x": [
+     -20.8,
+     -18.8
+    ],
+    "json_y": [
+     -29.225,
+     -27.975
+    ],
+    "json_z": [
+     -3.05,
+     -1.8
+    ],
+    "json_height": 1.25,
+    "step_x": [
+     -20.8,
+     -18.8
+    ],
+    "step_y": [
+     -29.225,
+     -27.975
+    ],
+    "step_z": [
+     -3.1,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.3,
+    "kicad_centre": [
+     -19.8,
+     -28.6
+    ],
+    "json_centre": [
+     -19.8,
+     -28.6
+    ]
+   },
+   {
+    "ref": "C7",
+    "json_x": [
+     -25.8,
+     -25.0
+    ],
+    "json_y": [
+     -26.2,
+     -24.6
+    ],
+    "json_z": [
+     -2.6,
+     -1.8
+    ],
+    "json_height": 0.8,
+    "step_x": [
+     -25.8,
+     -25.0
+    ],
+    "step_y": [
+     -26.2,
+     -24.6
+    ],
+    "step_z": [
+     -2.65,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.85,
+    "kicad_centre": [
+     -25.4,
+     -25.4
+    ],
+    "json_centre": [
+     -25.4,
+     -25.4
+    ]
+   },
+   {
+    "ref": "R27",
+    "json_x": [
+     17.45,
+     17.95
+    ],
+    "json_y": [
+     -39.8,
+     -38.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     17.45,
+     17.95
+    ],
+    "step_y": [
+     -39.8,
+     -38.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     17.7,
+     -39.3
+    ],
+    "json_centre": [
+     17.7,
+     -39.3
+    ]
+   },
+   {
+    "ref": "R17",
+    "json_x": [
+     -9.4,
+     -7.8
+    ],
+    "json_y": [
+     -28.0,
+     -24.8
+    ],
+    "json_z": [
+     -2.35,
+     -1.8
+    ],
+    "json_height": 0.55,
+    "step_x": [
+     -9.4,
+     -7.8
+    ],
+    "step_y": [
+     -28.0,
+     -24.8
+    ],
+    "step_z": [
+     -2.4,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.6,
+    "kicad_centre": [
+     -8.6,
+     -26.4
+    ],
+    "json_centre": [
+     -8.6,
+     -26.4
+    ]
+   },
+   {
+    "ref": "R10",
+    "json_x": [
+     3.2,
+     4.0
+    ],
+    "json_y": [
+     -28.2,
+     -26.6
+    ],
+    "json_z": [
+     -2.25,
+     -1.8
+    ],
+    "json_height": 0.45,
+    "step_x": [
+     3.2,
+     4.0
+    ],
+    "step_y": [
+     -28.2,
+     -26.6
+    ],
+    "step_z": [
+     -2.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.5,
+    "kicad_centre": [
+     3.6,
+     -27.4
+    ],
+    "json_centre": [
+     3.6,
+     -27.4
+    ]
+   },
+   {
+    "ref": "R14",
+    "json_x": [
+     -12.4,
+     -11.4
+    ],
+    "json_y": [
+     -25.35,
+     -24.85
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -12.4,
+     -11.4
+    ],
+    "step_y": [
+     -25.35,
+     -24.85
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -11.9,
+     -25.1
+    ],
+    "json_centre": [
+     -11.9,
+     -25.1
+    ]
+   },
+   {
+    "ref": "U3",
+    "json_x": [
+     -26.05,
+     -23.15
+    ],
+    "json_y": [
+     -23.406,
+     -20.394
+    ],
+    "json_z": [
+     -3.051,
+     -1.8
+    ],
+    "json_height": 1.251,
+    "step_x": [
+     -26.05,
+     -23.15
+    ],
+    "step_y": [
+     -23.406,
+     -20.394
+    ],
+    "step_z": [
+     -3.101,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.301,
+    "kicad_centre": [
+     -24.6,
+     -21.9
+    ],
+    "json_centre": [
+     -24.6,
+     -21.9
+    ]
+   },
+   {
+    "ref": "U1",
+    "json_x": [
+     10.6,
+     27.2
+    ],
+    "json_y": [
+     -35.9,
+     -22.7
+    ],
+    "json_z": [
+     -4.21,
+     -1.8
+    ],
+    "json_height": 2.41,
+    "step_x": [
+     10.6,
+     27.2
+    ],
+    "step_y": [
+     -35.9,
+     -22.7
+    ],
+    "step_z": [
+     -4.26,
+     -1.84
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 2.46,
+    "kicad_centre": [
+     16.2,
+     -29.3
+    ],
+    "json_centre": [
+     16.2,
+     -29.3
+    ]
+   },
+   {
+    "ref": "C15",
+    "json_x": [
+     -26.4,
+     -25.4
+    ],
+    "json_y": [
+     -42.85,
+     -42.35
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -26.4,
+     -25.4
+    ],
+    "step_y": [
+     -42.85,
+     -42.35
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -25.9,
+     -42.6
+    ],
+    "json_centre": [
+     -25.9,
+     -42.6
+    ]
+   },
+   {
+    "ref": "R9",
+    "json_x": [
+     -17.45,
+     -16.95
+    ],
+    "json_y": [
+     -24.4,
+     -23.4
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -17.45,
+     -16.95
+    ],
+    "step_y": [
+     -24.4,
+     -23.4
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -17.2,
+     -23.9
+    ],
+    "json_centre": [
+     -17.2,
+     -23.9
+    ]
+   },
+   {
+    "ref": "U5",
+    "json_x": [
+     -20.8,
+     -18.8
+    ],
+    "json_y": [
+     -32.21,
+     -30.19
+    ],
+    "json_z": [
+     -2.58,
+     -1.8
+    ],
+    "json_height": 0.78,
+    "step_x": [
+     -20.8,
+     -18.8
+    ],
+    "step_y": [
+     -32.21,
+     -30.19
+    ],
+    "step_z": [
+     -2.63,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.83,
+    "kicad_centre": [
+     -19.8,
+     -31.2
+    ],
+    "json_centre": [
+     -19.8,
+     -31.2
+    ]
+   },
+   {
+    "ref": "BZ1",
+    "json_x": [
+     -6.26,
+     -1.06
+    ],
+    "json_y": [
+     -24.243,
+     -18.967
+    ],
+    "json_z": [
+     -3.81,
+     -1.8
+    ],
+    "json_height": 2.01,
+    "step_x": [
+     -6.26,
+     -1.06
+    ],
+    "step_y": [
+     -24.243,
+     -18.967
+    ],
+    "step_z": [
+     -3.86,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 2.06,
+    "kicad_centre": [
+     -3.6,
+     -21.6
+    ],
+    "json_centre": [
+     -3.6,
+     -21.6
+    ]
+   },
+   {
+    "ref": "C5",
+    "json_x": [
+     17.8,
+     19.4
+    ],
+    "json_y": [
+     -37.4,
+     -36.6
+    ],
+    "json_z": [
+     -2.6,
+     -1.8
+    ],
+    "json_height": 0.8,
+    "step_x": [
+     17.8,
+     19.4
+    ],
+    "step_y": [
+     -37.4,
+     -36.6
+    ],
+    "step_z": [
+     -2.65,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.85,
+    "kicad_centre": [
+     18.6,
+     -37.0
+    ],
+    "json_centre": [
+     18.6,
+     -37.0
+    ]
+   },
+   {
+    "ref": "Q2",
+    "json_x": [
+     -21.053,
+     -18.547
+    ],
+    "json_y": [
+     -23.35,
+     -20.45
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     -21.053,
+     -18.547
+    ],
+    "step_y": [
+     -23.35,
+     -20.45
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     -19.8,
+     -21.9
+    ],
+    "json_centre": [
+     -19.8,
+     -21.9
+    ]
+   },
+   {
+    "ref": "J1",
+    "json_x": [
+     -4.47,
+     4.47
+    ],
+    "json_y": [
+     -50.4,
+     -42.5
+    ],
+    "json_z": [
+     -5.051,
+     -1.8
+    ],
+    "json_height": 3.251,
+    "step_x": [
+     -4.47,
+     4.47
+    ],
+    "step_y": [
+     -50.4,
+     -42.5
+    ],
+    "step_z": [
+     -5.101,
+     -1.0
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 3.301,
+    "kicad_centre": [
+     0.0,
+     -45.47
+    ],
+    "json_centre": [
+     0.0,
+     -45.47
+    ]
+   },
+   {
+    "ref": "J3",
+    "json_x": [
+     -21.045,
+     -7.195
+    ],
+    "json_y": [
+     -49.095,
+     -33.135
+    ],
+    "json_z": [
+     -3.691,
+     -1.8
+    ],
+    "json_height": 1.891,
+    "step_x": [
+     -21.045,
+     -7.195
+    ],
+    "step_y": [
+     -49.095,
+     -33.135
+    ],
+    "step_z": [
+     -3.741,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.941,
+    "kicad_centre": [
+     -14.05,
+     -40.79
+    ],
+    "json_centre": [
+     -14.05,
+     -40.79
+    ]
+   },
+   {
+    "ref": "LED1",
+    "json_x": [
+     -6.3,
+     -5.49
+    ],
+    "json_y": [
+     -48.81,
+     -47.19
+    ],
+    "json_z": [
+     -2.5,
+     -1.8
+    ],
+    "json_height": 0.7,
+    "step_x": [
+     -6.3,
+     -5.49
+    ],
+    "step_y": [
+     -48.81,
+     -47.19
+    ],
+    "step_z": [
+     -2.55,
+     -1.84
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.75,
+    "kicad_centre": [
+     -5.9,
+     -48.0
+    ],
+    "json_centre": [
+     -5.9,
+     -48.0
+    ]
+   },
+   {
+    "ref": "C19",
+    "json_x": [
+     -2.0,
+     -0.4
+    ],
+    "json_y": [
+     -34.0,
+     -33.2
+    ],
+    "json_z": [
+     -2.6,
+     -1.8
+    ],
+    "json_height": 0.8,
+    "step_x": [
+     -2.0,
+     -0.4
+    ],
+    "step_y": [
+     -34.0,
+     -33.2
+    ],
+    "step_z": [
+     -2.65,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.85,
+    "kicad_centre": [
+     -1.2,
+     -33.6
+    ],
+    "json_centre": [
+     -1.2,
+     -33.6
+    ]
+   },
+   {
+    "ref": "SW1",
+    "json_x": [
+     23.9,
+     27.46
+    ],
+    "json_y": [
+     -17.902,
+     -13.302
+    ],
+    "json_z": [
+     -5.1,
+     -1.8
+    ],
+    "json_height": 3.3,
+    "step_x": [
+     23.9,
+     27.46
+    ],
+    "step_y": [
+     -17.902,
+     -13.302
+    ],
+    "step_z": [
+     -5.15,
+     -1.35
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 3.35,
+    "kicad_centre": [
+     25.48,
+     -15.6
+    ],
+    "json_centre": [
+     25.48,
+     -15.6
+    ]
+   },
+   {
+    "ref": "R3",
+    "json_x": [
+     18.35,
+     18.85
+    ],
+    "json_y": [
+     -46.9,
+     -45.9
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     18.35,
+     18.85
+    ],
+    "step_y": [
+     -46.9,
+     -45.9
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     18.6,
+     -46.4
+    ],
+    "json_centre": [
+     18.6,
+     -46.4
+    ]
+   },
+   {
+    "ref": "R16",
+    "json_x": [
+     10.65,
+     11.15
+    ],
+    "json_y": [
+     -38.0,
+     -37.0
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     10.65,
+     11.15
+    ],
+    "step_y": [
+     -38.0,
+     -37.0
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     10.9,
+     -37.5
+    ],
+    "json_centre": [
+     10.9,
+     -37.5
+    ]
+   },
+   {
+    "ref": "U2",
+    "json_x": [
+     9.89,
+     13.91
+    ],
+    "json_y": [
+     -47.61,
+     -43.59
+    ],
+    "json_z": [
+     -2.62,
+     -1.8
+    ],
+    "json_height": 0.82,
+    "step_x": [
+     9.89,
+     13.91
+    ],
+    "step_y": [
+     -47.61,
+     -43.59
+    ],
+    "step_z": [
+     -2.67,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.87,
+    "kicad_centre": [
+     11.9,
+     -45.6
+    ],
+    "json_centre": [
+     11.9,
+     -45.6
+    ]
+   },
+   {
+    "ref": "Q6",
+    "json_x": [
+     5.947,
+     8.453
+    ],
+    "json_y": [
+     -26.75,
+     -23.85
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     5.947,
+     8.453
+    ],
+    "step_y": [
+     -26.75,
+     -23.85
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     7.2,
+     -25.3
+    ],
+    "json_centre": [
+     7.2,
+     -25.3
+    ]
+   },
+   {
+    "ref": "C1",
+    "json_x": [
+     5.9,
+     7.9
+    ],
+    "json_y": [
+     -49.125,
+     -47.875
+    ],
+    "json_z": [
+     -3.05,
+     -1.8
+    ],
+    "json_height": 1.25,
+    "step_x": [
+     5.9,
+     7.9
+    ],
+    "step_y": [
+     -49.125,
+     -47.875
+    ],
+    "step_z": [
+     -3.1,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.3,
+    "kicad_centre": [
+     6.9,
+     -48.5
+    ],
+    "json_centre": [
+     6.9,
+     -48.5
+    ]
+   },
+   {
+    "ref": "R26",
+    "json_x": [
+     22.35,
+     22.85
+    ],
+    "json_y": [
+     -13.7,
+     -12.7
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     22.35,
+     22.85
+    ],
+    "step_y": [
+     -13.7,
+     -12.7
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     22.6,
+     -13.2
+    ],
+    "json_centre": [
+     22.6,
+     -13.2
+    ]
+   },
+   {
+    "ref": "R8",
+    "json_x": [
+     -6.15,
+     -5.65
+    ],
+    "json_y": [
+     -46.2,
+     -45.2
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -6.15,
+     -5.65
+    ],
+    "step_y": [
+     -46.2,
+     -45.2
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -5.9,
+     -45.7
+    ],
+    "json_centre": [
+     -5.9,
+     -45.7
+    ]
+   },
+   {
+    "ref": "D2",
+    "json_x": [
+     0.195,
+     4.045
+    ],
+    "json_y": [
+     -21.15,
+     -19.45
+    ],
+    "json_z": [
+     -3.25,
+     -1.8
+    ],
+    "json_height": 1.45,
+    "step_x": [
+     0.195,
+     4.045
+    ],
+    "step_y": [
+     -21.15,
+     -19.45
+    ],
+    "step_z": [
+     -3.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.5,
+    "kicad_centre": [
+     2.12,
+     -20.3
+    ],
+    "json_centre": [
+     2.12,
+     -20.3
+    ]
+   },
+   {
+    "ref": "C26",
+    "json_x": [
+     -14.61,
+     -14.11
+    ],
+    "json_y": [
+     -26.2,
+     -25.2
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -14.61,
+     -14.11
+    ],
+    "step_y": [
+     -26.2,
+     -25.2
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -14.36,
+     -25.7
+    ],
+    "json_centre": [
+     -14.36,
+     -25.7
+    ]
+   },
+   {
+    "ref": "C16",
+    "json_x": [
+     -24.4,
+     -23.4
+    ],
+    "json_y": [
+     -42.85,
+     -42.35
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -24.4,
+     -23.4
+    ],
+    "step_y": [
+     -42.85,
+     -42.35
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -23.9,
+     -42.6
+    ],
+    "json_centre": [
+     -23.9,
+     -42.6
+    ]
+   },
+   {
+    "ref": "C23",
+    "json_x": [
+     22.35,
+     22.85
+    ],
+    "json_y": [
+     -15.9,
+     -14.9
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     22.35,
+     22.85
+    ],
+    "step_y": [
+     -15.9,
+     -14.9
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     22.6,
+     -15.4
+    ],
+    "json_centre": [
+     22.6,
+     -15.4
+    ]
+   },
+   {
+    "ref": "Q4",
+    "json_x": [
+     -13.153,
+     -10.647
+    ],
+    "json_y": [
+     -22.65,
+     -19.75
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     -13.153,
+     -10.647
+    ],
+    "step_y": [
+     -22.65,
+     -19.75
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     -11.9,
+     -21.2
+    ],
+    "json_centre": [
+     -11.9,
+     -21.2
+    ]
+   },
+   {
+    "ref": "R15",
+    "json_x": [
+     9.65,
+     10.15
+    ],
+    "json_y": [
+     -38.0,
+     -37.0
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     9.65,
+     10.15
+    ],
+    "step_y": [
+     -38.0,
+     -37.0
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     9.9,
+     -37.5
+    ],
+    "json_centre": [
+     9.9,
+     -37.5
+    ]
+   },
+   {
+    "ref": "C6",
+    "json_x": [
+     20.65,
+     21.15
+    ],
+    "json_y": [
+     -37.5,
+     -36.5
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     20.65,
+     21.15
+    ],
+    "step_y": [
+     -37.5,
+     -36.5
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     20.9,
+     -37.0
+    ],
+    "json_centre": [
+     20.9,
+     -37.0
+    ]
+   },
+   {
+    "ref": "C4",
+    "json_x": [
+     16.25,
+     16.75
+    ],
+    "json_y": [
+     -39.8,
+     -38.8
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     16.25,
+     16.75
+    ],
+    "step_y": [
+     -39.8,
+     -38.8
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     16.5,
+     -39.3
+    ],
+    "json_centre": [
+     16.5,
+     -39.3
+    ]
+   },
+   {
+    "ref": "Q3",
+    "json_x": [
+     -21.053,
+     -18.547
+    ],
+    "json_y": [
+     -27.05,
+     -24.15
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     -21.053,
+     -18.547
+    ],
+    "step_y": [
+     -27.05,
+     -24.15
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     -19.8,
+     -25.6
+    ],
+    "json_centre": [
+     -19.8,
+     -25.6
+    ]
+   },
+   {
+    "ref": "U7",
+    "json_x": [
+     -26.7,
+     -23.7
+    ],
+    "json_y": [
+     -41.206,
+     -36.194
+    ],
+    "json_z": [
+     -3.051,
+     -1.8
+    ],
+    "json_height": 1.251,
+    "step_x": [
+     -26.7,
+     -23.7
+    ],
+    "step_y": [
+     -41.206,
+     -36.194
+    ],
+    "step_z": [
+     -3.101,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.301,
+    "kicad_centre": [
+     -25.2,
+     -38.7
+    ],
+    "json_centre": [
+     -25.2,
+     -38.7
+    ]
+   },
+   {
+    "ref": "U8",
+    "json_x": [
+     5.594,
+     8.406
+    ],
+    "json_y": [
+     -47.05,
+     -44.15
+    ],
+    "json_z": [
+     -3.451,
+     -1.8
+    ],
+    "json_height": 1.651,
+    "step_x": [
+     5.594,
+     8.406
+    ],
+    "step_y": [
+     -47.05,
+     -44.15
+    ],
+    "step_z": [
+     -3.501,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.701,
+    "kicad_centre": [
+     7.0,
+     -45.6
+    ],
+    "json_centre": [
+     7.0,
+     -45.6
+    ]
+   },
+   {
+    "ref": "R31",
+    "json_x": [
+     15.0,
+     16.0
+    ],
+    "json_y": [
+     -12.35,
+     -11.85
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     15.0,
+     16.0
+    ],
+    "step_y": [
+     -12.35,
+     -11.85
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     15.5,
+     -12.1
+    ],
+    "json_centre": [
+     15.5,
+     -12.1
+    ]
+   },
+   {
+    "ref": "C10",
+    "json_x": [
+     -22.55,
+     -22.05
+    ],
+    "json_y": [
+     -29.1,
+     -28.1
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -22.55,
+     -22.05
+    ],
+    "step_y": [
+     -29.1,
+     -28.1
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -22.3,
+     -28.6
+    ],
+    "json_centre": [
+     -22.3,
+     -28.6
+    ]
+   },
+   {
+    "ref": "D1",
+    "json_x": [
+     -17.525,
+     -13.675
+    ],
+    "json_y": [
+     -28.45,
+     -26.75
+    ],
+    "json_z": [
+     -3.25,
+     -1.8
+    ],
+    "json_height": 1.45,
+    "step_x": [
+     -17.525,
+     -13.675
+    ],
+    "step_y": [
+     -28.45,
+     -26.75
+    ],
+    "step_z": [
+     -3.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.5,
+    "kicad_centre": [
+     -15.6,
+     -27.6
+    ],
+    "json_centre": [
+     -15.6,
+     -27.6
+    ]
+   },
+   {
+    "ref": "C24",
+    "json_x": [
+     19.85,
+     20.35
+    ],
+    "json_y": [
+     -39.8,
+     -38.8
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     19.85,
+     20.35
+    ],
+    "step_y": [
+     -39.8,
+     -38.8
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     20.1,
+     -39.3
+    ],
+    "json_centre": [
+     20.1,
+     -39.3
+    ]
+   },
+   {
+    "ref": "C3",
+    "json_x": [
+     7.5,
+     8.5
+    ],
+    "json_y": [
+     -43.0,
+     -42.5
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     7.5,
+     8.5
+    ],
+    "step_y": [
+     -43.0,
+     -42.5
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     8.0,
+     -42.75
+    ],
+    "json_centre": [
+     8.0,
+     -42.75
+    ]
+   },
+   {
+    "ref": "R20",
+    "json_x": [
+     6.7,
+     7.7
+    ],
+    "json_y": [
+     -27.85,
+     -27.35
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     6.7,
+     7.7
+    ],
+    "step_y": [
+     -27.85,
+     -27.35
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     7.2,
+     -27.6
+    ],
+    "json_centre": [
+     7.2,
+     -27.6
+    ]
+   },
+   {
+    "ref": "C2",
+    "json_x": [
+     9.5,
+     10.5
+    ],
+    "json_y": [
+     -42.9,
+     -42.4
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     9.5,
+     10.5
+    ],
+    "step_y": [
+     -42.9,
+     -42.4
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     10.0,
+     -42.65
+    ],
+    "json_centre": [
+     10.0,
+     -42.65
+    ]
+   },
+   {
+    "ref": "R21",
+    "json_x": [
+     -11.45,
+     -10.95
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -11.45,
+     -10.95
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -11.2,
+     -31.3
+    ],
+    "json_centre": [
+     -11.2,
+     -31.3
+    ]
+   },
+   {
+    "ref": "R7",
+    "json_x": [
+     -23.4,
+     -22.6
+    ],
+    "json_y": [
+     -26.2,
+     -24.6
+    ],
+    "json_z": [
+     -2.25,
+     -1.8
+    ],
+    "json_height": 0.45,
+    "step_x": [
+     -23.4,
+     -22.6
+    ],
+    "step_y": [
+     -26.2,
+     -24.6
+    ],
+    "step_z": [
+     -2.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.5,
+    "kicad_centre": [
+     -23.0,
+     -25.4
+    ],
+    "json_centre": [
+     -23.0,
+     -25.4
+    ]
+   },
+   {
+    "ref": "Q1",
+    "json_x": [
+     15.55,
+     17.65
+    ],
+    "json_y": [
+     -46.4,
+     -44.4
+    ],
+    "json_z": [
+     -2.8,
+     -1.8
+    ],
+    "json_height": 1.0,
+    "step_x": [
+     15.55,
+     17.65
+    ],
+    "step_y": [
+     -46.4,
+     -44.4
+    ],
+    "step_z": [
+     -2.85,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.05,
+    "kicad_centre": [
+     16.6,
+     -45.4
+    ],
+    "json_centre": [
+     16.6,
+     -45.4
+    ]
+   },
+   {
+    "ref": "C14",
+    "json_x": [
+     1.7,
+     2.7
+    ],
+    "json_y": [
+     -25.15,
+     -24.65
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     1.7,
+     2.7
+    ],
+    "step_y": [
+     -25.15,
+     -24.65
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     2.2,
+     -24.9
+    ],
+    "json_centre": [
+     2.2,
+     -24.9
+    ]
+   },
+   {
+    "ref": "R11",
+    "json_x": [
+     -2.9,
+     -1.9
+    ],
+    "json_y": [
+     -25.25,
+     -24.75
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -2.9,
+     -1.9
+    ],
+    "step_y": [
+     -25.25,
+     -24.75
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -2.4,
+     -25.0
+    ],
+    "json_centre": [
+     -2.4,
+     -25.0
+    ]
+   },
+   {
+    "ref": "U4",
+    "json_x": [
+     -26.05,
+     -23.15
+    ],
+    "json_y": [
+     -30.403,
+     -27.597
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     -26.05,
+     -23.15
+    ],
+    "step_y": [
+     -30.403,
+     -27.597
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     -24.6,
+     -29.0
+    ],
+    "json_centre": [
+     -24.6,
+     -29.0
+    ]
+   },
+   {
+    "ref": "Q5",
+    "json_x": [
+     7.25,
+     10.15
+    ],
+    "json_y": [
+     -35.953,
+     -33.447
+    ],
+    "json_z": [
+     -2.851,
+     -1.8
+    ],
+    "json_height": 1.051,
+    "step_x": [
+     7.25,
+     10.15
+    ],
+    "step_y": [
+     -35.953,
+     -33.447
+    ],
+    "step_z": [
+     -2.901,
+     -1.851
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 1.101,
+    "kicad_centre": [
+     8.7,
+     -34.7
+    ],
+    "json_centre": [
+     8.7,
+     -34.7
+    ]
+   },
+   {
+    "ref": "R23",
+    "json_x": [
+     -10.35,
+     -9.85
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     -10.35,
+     -9.85
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     -10.1,
+     -31.3
+    ],
+    "json_centre": [
+     -10.1,
+     -31.3
+    ]
+   },
+   {
+    "ref": "R1",
+    "json_x": [
+     10.0,
+     11.0
+    ],
+    "json_y": [
+     -49.15,
+     -48.65
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     10.0,
+     11.0
+    ],
+    "step_y": [
+     -49.15,
+     -48.65
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     10.5,
+     -48.9
+    ],
+    "json_centre": [
+     10.5,
+     -48.9
+    ]
+   },
+   {
+    "ref": "C22",
+    "json_x": [
+     -14.45,
+     -13.95
+    ],
+    "json_y": [
+     -31.8,
+     -30.8
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -14.45,
+     -13.95
+    ],
+    "step_y": [
+     -31.8,
+     -30.8
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -14.2,
+     -31.3
+    ],
+    "json_centre": [
+     -14.2,
+     -31.3
+    ]
+   },
+   {
+    "ref": "C12",
+    "json_x": [
+     -17.95,
+     -17.45
+    ],
+    "json_y": [
+     -31.7,
+     -30.7
+    ],
+    "json_z": [
+     -2.3,
+     -1.8
+    ],
+    "json_height": 0.5,
+    "step_x": [
+     -17.95,
+     -17.45
+    ],
+    "step_y": [
+     -31.7,
+     -30.7
+    ],
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.55,
+    "kicad_centre": [
+     -17.7,
+     -31.2
+    ],
+    "json_centre": [
+     -17.7,
+     -31.2
+    ]
+   },
+   {
+    "ref": "R30",
+    "json_x": [
+     18.8,
+     20.4
+    ],
+    "json_y": [
+     -41.8,
+     -41.0
+    ],
+    "json_z": [
+     -2.25,
+     -1.8
+    ],
+    "json_height": 0.45,
+    "step_x": [
+     18.8,
+     20.4
+    ],
+    "step_y": [
+     -41.8,
+     -41.0
+    ],
+    "step_z": [
+     -2.3,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.5,
+    "kicad_centre": [
+     19.6,
+     -41.4
+    ],
+    "json_centre": [
+     19.6,
+     -41.4
+    ]
+   },
+   {
+    "ref": "SW3",
+    "json_x": [
+     18.75,
+     21.65
+    ],
+    "json_y": [
+     -22.0,
+     -17.2
+    ],
+    "json_z": [
+     -3.75,
+     -1.8
+    ],
+    "json_height": 1.95,
+    "step_x": [
+     18.75,
+     21.65
+    ],
+    "step_y": [
+     -22.0,
+     -17.2
+    ],
+    "step_z": [
+     -3.8,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 2.0,
+    "kicad_centre": [
+     20.2,
+     -19.6
+    ],
+    "json_centre": [
+     20.2,
+     -19.6
+    ]
+   },
+   {
+    "ref": "R6",
+    "json_x": [
+     12.1,
+     13.1
+    ],
+    "json_y": [
+     -20.45,
+     -19.95
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     12.1,
+     13.1
+    ],
+    "step_y": [
+     -20.45,
+     -19.95
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     12.6,
+     -20.2
+    ],
+    "json_centre": [
+     12.6,
+     -20.2
+    ]
+   },
+   {
+    "ref": "R28",
+    "json_x": [
+     18.65,
+     19.15
+    ],
+    "json_y": [
+     -39.8,
+     -38.8
+    ],
+    "json_z": [
+     -2.15,
+     -1.8
+    ],
+    "json_height": 0.35,
+    "step_x": [
+     18.65,
+     19.15
+    ],
+    "step_y": [
+     -39.8,
+     -38.8
+    ],
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "dx": 0.0,
+    "dy": 0.0,
+    "top_z_diff": -0.05,
+    "protrusion_from_board_face_step": 0.4,
+    "kicad_centre": [
+     18.9,
+     -39.3
+    ],
+    "json_centre": [
+     18.9,
+     -39.3
+    ]
+   }
+  ]
+ },
+ "stack": {
+  "front_face_z": 0.0,
+  "back_face_z": -9.6,
+  "total_thickness": 9.6,
+  "outline_x": 58.6,
+  "outline_y": 103.5,
+  "skin": [
+   -1.0,
+   0.0
+  ],
+  "skin_t": 1.0,
+  "shell_rim_z": -8.4,
+  "back_plate": [
+   -9.6,
+   -8.4
+  ],
+  "back_plate_t": 1.2,
+  "disc": [
+   -1.0,
+   0.0
+  ],
+  "disc_t": 1.0,
+  "pcb": [
+   -1.8,
+   -1.0
+  ],
+  "pcb_t": 0.8,
+  "screen": [
+   -3.15,
+   -1.0
+  ],
+  "screen_t": 2.15,
+  "foam": [
+   -3.65,
+   -3.15
+  ],
+  "foam_t": 0.5,
+  "battery": [
+   -7.65,
+   -3.65
+  ],
+  "battery_t": 4.0,
+  "battery_to_foam": 0.0,
+  "plate_to_screen_back": 5.25,
+  "largest_pack_t_0.5_foam_0.1_tol": 4.65,
+  "largest_pack_t_0.2_foam_0.1_tol": 4.95,
+  "lowest_board_part_z": -7.351,
+  "lowest_board_part": "J4",
+  "tallest_part_to_plate": 1.049,
+  "component_space": 6.6,
+  "motor": [
+   -8.68,
+   -5.98
+  ],
+  "fpc_tail_layers": [
+   [
+    -8.68,
+    -8.48
+   ],
+   [
+    -8.08,
+    -7.88
+   ]
+  ]
+ },
+ "usb": {
+  "j1_face_y": -50.4,
+  "j1_shell_z": [
+   -5.1,
+   -1.9
+  ],
+  "j1_shell_h": 3.2,
+  "j1_shell_x": [
+   -4.47,
+   4.47
+  ],
+  "j1_shell_w": 8.94,
+  "j1_receptacle_z": [
+   -4.8,
+   -2.2
+  ],
+  "j1_centre_z": -3.5,
+  "wall_inner_face_y": -50.15,
+  "recess_floor_y": -50.85,
+  "outer_face_y": -51.75,
+  "recess_depth": 0.9,
+  "opening_z": [
+   -5.4,
+   -1.6
+  ],
+  "opening_h": 3.8,
+  "opening_x": [
+   -4.8,
+   4.8
+  ],
+  "opening_w": 9.6,
+  "opening_centre_z": -3.5,
+  "recess_x": [
+   -6.3,
+   6.3
+  ],
+  "recess_w": 12.6,
+  "recess_bottom_z": -6.76,
+  "recess_h_to_centre_line_x2": 6.52,
+  "recess_h_from_design_centre": 6.52,
+  "gap_top": 0.3,
+  "gap_bottom": 0.3,
+  "gap_left": 0.33,
+  "gap_right": 0.33,
+  "j1_to_shell_min": 0.3,
+  "j1_to_shell_at": [
+   -3.47,
+   -50.37,
+   -1.9
+  ],
+  "j1_into_wall": 0.25,
+  "overmold_reach_to_face": 0.45,
+  "legs_modelled": [
+   [
+    -4.78,
+    -3.88,
+    -44.76,
+    -42.76,
+    -1.0,
+    -0.6
+   ],
+   [
+    -4.78,
+    -3.88,
+    -48.79,
+    -47.09,
+    -1.0,
+    -0.6
+   ],
+   [
+    3.88,
+    4.78,
+    -48.79,
+    -47.09,
+    -1.0,
+    -0.6
+   ],
+   [
+    3.88,
+    4.78,
+    -44.76,
+    -42.76,
+    -1.0,
+    -0.6
+   ]
+  ],
+  "leg_reliefs": [
+   {
+    "leg_centre": [
+     -4.33,
+     -43.76
+    ],
+    "skin_over_relief": null,
+    "relief_x": [
+     -9.566,
+     9.566
+    ],
+    "relief_y": [
+     -49.29,
+     -9.61
+    ],
+    "disc_over_leg": [
+     [
+      -0.5,
+      0.0
+     ]
+    ],
+    "leg_to_shell": 0.1,
+    "leg_to_disc": 0.1
+   },
+   {
+    "leg_centre": [
+     -4.33,
+     -47.94
+    ],
+    "skin_over_relief": [
+     -0.5,
+     0.0
+    ],
+    "relief_x": [
+     -5.28,
+     -3.38
+    ],
+    "relief_y": [
+     -49.29,
+     -9.61
+    ],
+    "disc_over_leg": [],
+    "leg_to_shell": 0.1,
+    "leg_to_disc": 1.255
+   },
+   {
+    "leg_centre": [
+     4.33,
+     -47.94
+    ],
+    "skin_over_relief": [
+     -0.5,
+     0.0
+    ],
+    "relief_x": [
+     3.38,
+     5.28
+    ],
+    "relief_y": [
+     -49.29,
+     -9.61
+    ],
+    "disc_over_leg": [],
+    "leg_to_shell": 0.1,
+    "leg_to_disc": 1.255
+   },
+   {
+    "leg_centre": [
+     4.33,
+     -43.76
+    ],
+    "skin_over_relief": null,
+    "relief_x": [
+     -9.566,
+     9.566
+    ],
+    "relief_y": [
+     -49.29,
+     -9.61
+    ],
+    "disc_over_leg": [
+     [
+      -0.5,
+      0.0
+     ]
+    ],
+    "leg_to_shell": 0.1,
+    "leg_to_disc": 0.1
+   }
+  ]
+ },
+ "microsd": {
+  "j3_bbox": [
+   -21.045,
+   -7.195,
+   -49.095,
+   -33.135,
+   -3.741,
+   -1.85
+  ],
+  "j3_entry_y": -49.095,
+  "j3_z_at_entry+0.2": [
+   [
+    -2.64,
+    -2.34
+   ]
+  ],
+  "j3_z_at_entry+1.0": [
+   [
+    -3.74,
+    -3.54
+   ],
+   [
+    -2.64,
+    -2.34
+   ]
+  ],
+  "j3_z_at_entry+3.0": [
+   [
+    -3.74,
+    -3.54
+   ],
+   [
+    -2.64,
+    -1.86
+   ]
+  ],
+  "j3_cover_underside_z": -2.64,
+  "wall_at_card_x_y": [
+   -51.749,
+   -50.15
+  ],
+  "slot_z": [
+   -4.041,
+   -2.241
+  ],
+  "slot_h": 1.8,
+  "slot_x": [
+   -19.4,
+   -8.0
+  ],
+  "slot_w": 11.4,
+  "slot_centre_z": -3.141,
+  "slot_z_at_0.2_layers": [
+   -4.0,
+   -2.2
+  ],
+  "scallop_x": [
+   -20.2,
+   -7.2
+  ],
+  "scallop_floor_y_at_x-20": -50.85,
+  "scallop_depth": 0.9,
+  "wall_behind_scallop": 0.7,
+  "scallop_z_at_floor_x-20": [
+   [
+    -8.4,
+    -5.233
+   ],
+   [
+    -1.049,
+    -0.688
+   ]
+  ],
+  "cards": {
+   "drawing estimate (z -2.38 to -3.38)": {
+    "card_z": [
+     -3.38,
+     -2.38
+    ],
+    "to_shell": 0.139,
+    "overlap_mm3": 0.0,
+    "margin_board_side": 0.139,
+    "margin_back_side": 0.661,
+    "margin_sides": [
+     0.2,
+     0.2
+    ],
+    "to_j3": 0.001,
+    "printed_margin_board_side": 0.18,
+    "printed_margin_back_side": 0.62
+   },
+   "STEP: top face on the J3 cover": {
+    "card_z": [
+     -3.64,
+     -2.64
+    ],
+    "to_shell": 0.2,
+    "overlap_mm3": 0.0,
+    "margin_board_side": 0.399,
+    "margin_back_side": 0.401,
+    "margin_sides": [
+     0.2,
+     0.2
+    ],
+    "to_j3": 0.001,
+    "printed_margin_board_side": 0.44,
+    "printed_margin_back_side": 0.36
+   },
+   "JSON card plane -3.141": {
+    "card_z": [
+     -3.641,
+     -2.641
+    ],
+    "to_shell": 0.2,
+    "overlap_mm3": 0.0,
+    "margin_board_side": 0.4,
+    "margin_back_side": 0.4,
+    "margin_sides": [
+     0.2,
+     0.2
+    ],
+    "to_j3": 0.001,
+    "printed_margin_board_side": 0.441,
+    "printed_margin_back_side": 0.359
+   }
+  }
+ },
+ "led": {
+  "tube_bbox": [
+   -9.0,
+   -2.5,
+   -50.0,
+   -46.85,
+   -8.39,
+   -3.0
+  ],
+  "by_z": {
+   "-7.5": {
+    "outer": [
+     -6.98,
+     -4.68
+    ],
+    "od": 2.3,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.65
+   },
+   "-6.5": {
+    "outer": [
+     -6.98,
+     -4.68
+    ],
+    "od": 2.3,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.65
+   },
+   "-6.0": {
+    "outer": [
+     -6.98,
+     -4.68
+    ],
+    "od": 2.3,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.65
+   },
+   "-5.6": {
+    "outer": [
+     -6.98,
+     -4.68
+    ],
+    "od": 2.3,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.65
+   },
+   "-5.4": {
+    "outer": [
+     -6.78,
+     -4.88
+    ],
+    "od": 1.9,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.45
+   },
+   "-4.0": {
+    "outer": [
+     -6.78,
+     -4.88
+    ],
+    "od": 1.9,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.45
+   },
+   "-3.2": {
+    "outer": [
+     -6.78,
+     -4.88
+    ],
+    "od": 1.9,
+    "hole": [
+     -6.33,
+     -5.33
+    ],
+    "hole_d": 1.0,
+    "wall": 0.45
+   }
+  },
+  "tube_centre_x": -5.83,
+  "base_top_z": -5.5,
+  "tip_z": -3.0,
+  "tip_outer_edge_z": -3.14,
+  "tip_chamfer": 0.14,
+  "led1_bbox": [
+   -6.3,
+   -5.49,
+   -48.81,
+   -47.19,
+   -2.55,
+   -1.84
+  ],
+  "led1_centre_x": -5.895,
+  "led1_top_z": -2.55,
+  "tip_to_led_top_z": -0.45,
+  "hole_offset_from_led_x": 0.065,
+  "hole_open_through": true,
+  "to_LED1": 0.45,
+  "to_LED1_at": [
+   -5.53,
+   -47.48,
+   -3.0
+  ],
+  "to_J1": 0.41,
+  "to_J1_at": [
+   -4.88,
+   -48.0,
+   -3.15
+  ],
+  "to_J3": 0.415,
+  "to_J3_at": [
+   -6.78,
+   -48.0,
+   -3.15
+  ],
+  "to_R8": 1.287,
+  "to_R8_at": [
+   -5.83,
+   -47.1,
+   -3.1
+  ],
+  "to_R2": 3.108,
+  "to_R2_at": [
+   -5.83,
+   -47.05,
+   -3.15
+  ],
+  "to_C1": 9.53,
+  "to_C1_at": [
+   -2.5,
+   -49.2,
+   -7.6
+  ],
+  "j3_j1_gap_x": [
+   -7.195,
+   -4.47,
+   2.725
+  ],
+  "j1_bottom_z": -5.101,
+  "j3_bottom_z": -3.741,
+  "base_top_to_j1_bottom": 0.399
+ },
+ "button": {
+  "cap_bbox": [
+   27.1,
+   29.8,
+   -19.0,
+   -12.2,
+   -4.8,
+   -2.2
+  ],
+  "cap_size": [
+   2.7,
+   6.8,
+   2.6
+  ],
+  "cap_z": [
+   -4.8,
+   -2.2
+  ],
+  "cap_h": 2.6,
+  "head_w": 5.6,
+  "stem_w": 4.0,
+  "ears_w": 6.8,
+  "ears_y": [
+   [
+    -19.0,
+    -18.2
+   ],
+   [
+    -13.0,
+    -12.2
+   ]
+  ],
+  "plunger_x": 27.58,
+  "head_outer_x": 29.8,
+  "head_proud": 0.5,
+  "head_inner_x": 29.1,
+  "flange_mid_x": 27.3,
+  "ear_x": 27.1,
+  "slot_w": 4.3,
+  "slot_h": 2.9,
+  "pocket_w": 6.0,
+  "pocket_floor_x": 28.68,
+  "wall_inner_x": 27.7,
+  "travel_to_stop": 0.42,
+  "sw1_tip_x": 27.46,
+  "rest_gap": 0.12,
+  "past_tip_at_stop": 0.3,
+  "over_travel_vs_0.2": 0.1,
+  "rest_min": 0.12,
+  "flange_to_sw1_at_stop": 0.12,
+  "flange_to_sw1_at_stop_at": [
+   26.88,
+   -14.01,
+   -4.75
+  ],
+  "pressed_overlap_with_static_sw1_mm3": 0.8358,
+  "sw1_body_front_x": 26.61,
+  "cap_to_shell": 0.0,
+  "stem_slot_gap_each_side": 0.15,
+  "stem_slot_gap_z_each": 0.15
+ },
+ "fpc": {
+  "tail_bbox": [
+   -13.216,
+   18.617,
+   -41.4,
+   -36.6,
+   -8.68,
+   -2.1
+  ],
+  "j2_bbox": [
+   -6.438,
+   -2.238,
+   -42.053,
+   -35.952,
+   -2.755,
+   -1.854
+  ],
+  "j2_mouth_x": -2.238,
+  "j2_slot_centre_y": -39.002,
+  "tail_tip_x": -3.538,
+  "insertion": 1.3,
+  "fold_outer_x": 18.617,
+  "tail_y": [
+   -41.4,
+   -36.6
+  ],
+  "tail_w": 4.8,
+  "tail_centre_y": -39.0,
+  "layers_at_x10": [
+   [
+    -8.68,
+    -8.48
+   ],
+   [
+    -8.08,
+    -7.88
+   ]
+  ],
+  "fpc_t": 0.2,
+  "fold_inner_gap": 0.4,
+  "fold_inner_r": 0.2,
+  "tail_z_at_mouth": [
+   [
+    -8.68,
+    -8.48
+   ],
+   [
+    -2.3,
+    -2.1
+   ]
+  ],
+  "j2_z_at_mouth-0.3": [
+   [
+    -2.754,
+    -2.494
+   ],
+   [
+    -2.164,
+    -1.884
+   ]
+  ],
+  "j2_slot_gap_z": [
+   -2.494,
+   -2.164
+  ],
+  "j2_slot_centre_z": -2.329,
+  "tail_centre_z_at_mouth": -2.2,
+  "j2_z_at_mouth-0.1": [],
+  "j2_z_at_mouth-0.6": [
+   [
+    -2.754,
+    -2.494
+   ],
+   [
+    -2.164,
+    -1.884
+   ]
+  ],
+  "j2_z_at_mouth-1.0": [
+   [
+    -2.754,
+    -2.481
+   ],
+   [
+    -2.174,
+    -1.884
+   ]
+  ],
+  "tail_j2_overlap_mm3": 0.4094,
+  "plate_in_channel": [
+   [
+    -9.6,
+    -8.7
+   ]
+  ],
+  "plate_outside_channel": [
+   [
+    -9.6,
+    -8.4
+   ]
+  ],
+  "channel_depth": 0.3,
+  "tail_to_plate": 0.02,
+  "tail_to_pcb": 0.3,
+  "tail_to_pcb_at": [
+   -3.54,
+   -36.6,
+   -2.1
+  ],
+  "leg_bbox": [
+   -13.216,
+   17.924,
+   -41.4,
+   -7.84,
+   -8.68,
+   -1.415
+  ],
+  "leg_top_z_profile_x-10": [
+   [
+    -20.0,
+    -8.18
+   ],
+   [
+    -20.5,
+    -8.18
+   ],
+   [
+    -21.0,
+    -8.18
+   ],
+   [
+    -21.5,
+    -8.18
+   ],
+   [
+    -22.0,
+    -8.18
+   ],
+   [
+    -22.5,
+    -8.18
+   ],
+   [
+    -23.0,
+    -8.18
+   ],
+   [
+    -23.5,
+    -8.18
+   ],
+   [
+    -24.0,
+    -8.087
+   ],
+   [
+    -24.5,
+    -7.759
+   ],
+   [
+    -25.0,
+    -4.228
+   ],
+   [
+    -25.5,
+    -3.885
+   ],
+   [
+    -26.0,
+    -3.758
+   ],
+   [
+    -26.5,
+    -3.793
+   ],
+   [
+    -27.0,
+    -4.004
+   ],
+   [
+    -27.5,
+    -4.512
+   ],
+   [
+    -28.0,
+    -7.945
+   ],
+   [
+    -28.5,
+    -8.152
+   ],
+   [
+    -29.0,
+    -8.18
+   ],
+   [
+    -29.5,
+    -8.18
+   ]
+  ],
+  "loop_top_z": -3.758,
+  "loop_top_y": -26.0,
+  "leg_layer_on_plate_z": [
+   -8.38,
+   -8.18
+  ],
+  "loop_height_above_plate_layer": 4.422,
+  "part_bbox": [
+   15.524,
+   17.724,
+   -14.352,
+   -10.159,
+   -6.779,
+   -3.251
+  ],
+  "wide_section_max_x": 17.924,
+  "tail_centre_line_len_from_volume": 57.13
+ },
+ "bosses": {
+  "bottom_left": {
+   "insert_z": [
+    -7.8,
+    -4.8
+   ],
+   "insert_len": 3.0,
+   "insert_od": 3.2,
+   "insert_id": 2.0,
+   "screw_z": [
+    -9.6,
+    -4.5
+   ],
+   "screw_head_d": 3.5,
+   "screw_head_z": [
+    -9.6,
+    -8.5
+   ],
+   "screw_head_h": 1.1,
+   "screw_len_under_head": 4.0,
+   "shank_d": 2.0,
+   "shell_on_axis": [
+    [
+     -4.2,
+     0.0
+    ]
+   ],
+   "hole_bottom_z": -4.2,
+   "boss_face_z": -7.8,
+   "hole_d": 3.0,
+   "hole_d_at_mouth": 3.56,
+   "boss_outer_x": [
+    -27.4,
+    -26.2
+   ],
+   "boss_wall": 1.2,
+   "hole_depth": 3.6,
+   "knurl_interference_radial": 0.1,
+   "insert_top_vs_boss_face": -0.0,
+   "engagement": 3.0,
+   "tip_past_insert": 0.3,
+   "tip_to_hole_bottom": 0.3,
+   "m2x5_tip_to_hole_bottom": -0.7,
+   "plate_under_head": [
+    -8.5,
+    -7.8
+   ],
+   "plate_under_head_t": 0.7,
+   "counterbore_d": 4.2,
+   "counterbore_depth": 1.1,
+   "clearance_hole_d": 2.4,
+   "plate_pad_top_z": -7.8,
+   "screw_to_shell": 0.3,
+   "head_flush": -0.0
+  },
+  "top_left": {
+   "insert_z": [
+    -7.8,
+    -4.8
+   ],
+   "insert_len": 3.0,
+   "insert_od": 3.2,
+   "insert_id": 2.0,
+   "screw_z": [
+    -9.6,
+    -4.5
+   ],
+   "screw_head_d": 3.5,
+   "screw_head_z": [
+    -9.6,
+    -8.5
+   ],
+   "screw_head_h": 1.1,
+   "screw_len_under_head": 4.0,
+   "shank_d": 2.0,
+   "shell_on_axis": [
+    [
+     -4.2,
+     -3.6
+    ],
+    [
+     -1.0,
+     -0.219
+    ]
+   ],
+   "hole_bottom_z": -4.2,
+   "boss_face_z": -7.8,
+   "hole_d": 3.0,
+   "hole_d_at_mouth": 3.56,
+   "boss_outer_x": [
+    -27.4,
+    -26.2
+   ],
+   "boss_wall": 1.2,
+   "hole_depth": 3.6,
+   "boss_top_z": -3.6,
+   "roof": 0.6,
+   "boss_top_to_screen_back": 0.45,
+   "knurl_interference_radial": 0.1,
+   "insert_top_vs_boss_face": -0.0,
+   "engagement": 3.0,
+   "tip_past_insert": 0.3,
+   "tip_to_hole_bottom": 0.3,
+   "m2x5_tip_to_hole_bottom": -0.7,
+   "plate_under_head": [
+    -8.5,
+    -7.8
+   ],
+   "plate_under_head_t": 0.7,
+   "counterbore_d": 4.2,
+   "counterbore_depth": 1.1,
+   "clearance_hole_d": 2.4,
+   "plate_pad_top_z": -7.8,
+   "screw_to_shell": 0.3,
+   "head_flush": -0.0
+  }
+ },
+ "edges": {
+  "side_gaps": [
+   {
+    "y": -45.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   },
+   {
+    "y": -40.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   },
+   {
+    "y": -30.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   },
+   {
+    "y": -20.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   },
+   {
+    "y": -15.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   },
+   {
+    "y": -12.0,
+    "board_x": [
+     -27.2,
+     27.2
+    ],
+    "left_gap": 0.5,
+    "right_gap": 0.5
+   }
+  ],
+  "bottom_top_gaps": [
+   {
+    "x": -24.0,
+    "board_y": [
+     -44.339,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.204,
+    "bottom_gap_at_z-2.3": 0.204,
+    "top_gap_at_z-1.4": 1.21
+   },
+   {
+    "x": -20.9,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.1,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 1.21
+   },
+   {
+    "x": -15.0,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.55,
+    "bottom_gap_at_z-2.3": null,
+    "top_gap_at_z-1.4": 1.21
+   },
+   {
+    "x": -5.0,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.55,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 59.8
+   },
+   {
+    "x": 0.0,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.55,
+    "bottom_gap_at_z-2.3": null,
+    "top_gap_at_z-1.4": 59.8
+   },
+   {
+    "x": 5.0,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.55,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 59.8
+   },
+   {
+    "x": 13.5,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.1,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 59.8
+   },
+   {
+    "x": 17.0,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.55,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 59.8
+   },
+   {
+    "x": 20.9,
+    "board_y": [
+     -49.6,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.1,
+    "bottom_gap_at_z-2.3": 0.55,
+    "top_gap_at_z-1.4": 1.21
+   },
+   {
+    "x": 23.5,
+    "board_y": [
+     -44.513,
+     -10.0
+    ],
+    "bottom_gap_at_z-1.4": 0.218,
+    "bottom_gap_at_z-2.3": 0.218,
+    "top_gap_at_z-1.4": 1.21
+   }
+  ],
+  "board_to_shell_lateral_min": 0.075,
+  "board_to_shell_lateral_at": [
+   24.6,
+   -41.4,
+   -1.01
+  ],
+  "standoffs": [
+   {
+    "x": -20.9,
+    "x_range": [
+     -21.7,
+     -20.1
+    ],
+    "width": 1.6,
+    "face_y": -49.7,
+    "gap_to_board_edge": 0.1,
+    "z_end": -2.2,
+    "face_y_at_end": -49.99,
+    "chamfer_y": 0.3
+   },
+   {
+    "x": 13.5,
+    "x_range": [
+     12.7,
+     14.3
+    ],
+    "width": 1.6,
+    "face_y": -49.7,
+    "gap_to_board_edge": 0.1,
+    "z_end": -2.2,
+    "face_y_at_end": -49.99,
+    "chamfer_y": 0.3
+   },
+   {
+    "x": 20.9,
+    "x_range": [
+     20.1,
+     21.7
+    ],
+    "width": 1.6,
+    "face_y": -49.7,
+    "gap_to_board_edge": 0.1,
+    "z_end": -2.2,
+    "face_y_at_end": -49.99,
+    "chamfer_y": 0.3
+   }
+  ],
+  "notches": [
+   {
+    "boss_x": -24.7,
+    "notch_r_min": 2.897,
+    "notch_r_max": 2.9,
+    "boss_r_from_ray": 2.7,
+    "gap": 0.197,
+    "pcb_to_boss_region_min": 0.197,
+    "pcb_to_boss_region_at": [
+     -22.88,
+     -44.9,
+     -1.01
+    ]
+   },
+   {
+    "boss_x": 24.7,
+    "notch_r_min": 2.897,
+    "notch_r_max": 2.9,
+    "boss_r_from_ray": 2.7,
+    "gap": 0.197,
+    "pcb_to_boss_region_min": 0.197,
+    "pcb_to_boss_region_at": [
+     22.88,
+     -44.9,
+     -1.79
+    ]
+   }
+  ],
+  "frame_tabs": [
+   {
+    "edge": "left",
+    "range": [
+     -17.9,
+     -13.1
+    ],
+    "board_edge_to_shell": 0.5,
+    "filed_flush_to_shell": 0.49,
+    "nub_0.35_to_shell": 0.15,
+    "nub_to_shell_at": [
+     -27.7,
+     -17.9,
+     -1.8
+    ],
+    "nub_near_parts": [
+     [
+      "back plate",
+      5.8
+     ]
+    ]
+   },
+   {
+    "edge": "top",
+    "range": [
+     22.1,
+     26.1
+    ],
+    "board_edge_to_shell": 1.21,
+    "filed_flush_to_shell": 1.2,
+    "nub_0.35_to_shell": 0.86,
+    "nub_to_shell_at": [
+     22.1,
+     -8.79,
+     -1.8
+    ],
+    "nub_near_parts": [
+     [
+      "screen body",
+      1.808
+     ],
+     [
+      "button cap",
+      2.449
+     ],
+     [
+      "screen TFT glass",
+      2.858
+     ],
+     [
+      "back plate",
+      5.836
+     ]
+    ]
+   },
+   {
+    "edge": "right",
+    "range": [
+     -45.4,
+     -40.6
+    ],
+    "board_edge_to_shell": 0.197,
+    "filed_flush_to_shell": 0.352,
+    "nub_0.35_to_shell": 0.15,
+    "nub_to_shell_at": [
+     27.7,
+     -45.4,
+     -1.8
+    ],
+    "nub_near_parts": [
+     [
+      "screw 2",
+      3.391
+     ],
+     [
+      "back plate",
+      5.8
+     ]
+    ]
+   }
+  ],
+  "board_top_to_screen": 2.158
+ },
+ "screen": {
+  "screen_bbox": [
+   -26.681,
+   26.679,
+   -7.842,
+   49.648,
+   -3.15,
+   -1.0
+  ],
+  "screen_size": [
+   53.36,
+   57.49,
+   2.15
+  ],
+  "screen_centre": [
+   -0.001,
+   20.903
+  ],
+  "pocket_x_at_y20": [
+   -26.83,
+   26.83
+  ],
+  "side_gap_left": 0.149,
+  "side_gap_right": 0.151,
+  "pocket_top_y": 49.8,
+  "top_gap": 0.152,
+  "lip_y": [
+   -8.79,
+   -7.99
+  ],
+  "lip_gap": 0.148,
+  "lip_z": [
+   [
+    -2.1,
+    0.0
+   ]
+  ],
+  "overlap_with_shell_mm3": 0.0,
+  "overlap_pieces": [],
+  "top_corners": [
+   {
+    "corner": [
+     -26.681,
+     49.648
+    ],
+    "wall_into_screen_on_diagonal": 0.0,
+    "corner_clearance": 0.089,
+    "wall_outside_corner_on_diagonal": 0.959,
+    "gap_to_wall_on_diagonal": 0.089,
+    "pocket_top_at_x26.5": 49.8,
+    "pocket_x_at_y49.5": [
+     -26.83,
+     26.83
+    ]
+   },
+   {
+    "corner": [
+     26.679,
+     49.648
+    ],
+    "wall_into_screen_on_diagonal": 0.0,
+    "corner_clearance": 0.09,
+    "wall_outside_corner_on_diagonal": 0.959,
+    "gap_to_wall_on_diagonal": 0.09,
+    "pocket_top_at_x26.5": 49.8,
+    "pocket_x_at_y49.5": [
+     -26.83,
+     26.83
+    ]
+   }
+  ],
+  "corner_wall_measured": 0.959,
+  "shell_material_on_corner_diagonal": [
+   [
+    0.088,
+    1.047
+   ]
+  ],
+  "window_at_z-0.7": [
+   -24.78,
+   24.78,
+   -1.81,
+   47.75
+  ],
+  "window_size": [
+   49.56,
+   49.56
+  ],
+  "window_x_at_front": [
+   -25.17,
+   25.17
+  ],
+  "window_chamfer": 0.39,
+  "polarizer_size": [
+   51.46,
+   51.46
+  ],
+  "active_area": [
+   -24.481,
+   24.479,
+   -1.512,
+   47.448
+  ],
+  "window_margin": [
+   0.299,
+   0.301,
+   0.298,
+   0.302
+  ],
+  "window_centre_offset": [
+   0.001,
+   0.002
+  ],
+  "window_corner_r": 1.5,
+  "screen_back_to_top_boss": 0.45
+ },
+ "wheel": {
+  "disc_bbox": [
+   -18.5,
+   18.5,
+   -46.25,
+   -9.25,
+   -1.0,
+   0.0
+  ],
+  "disc_d": 34.0,
+  "flange_d": 37.0,
+  "flange_z": [
+   -1.0,
+   -0.6
+  ],
+  "flange_t": 0.4,
+  "opening_d": 34.3,
+  "opening_radial_gap": 0.15,
+  "recess_d": 37.3,
+  "recess_radial_gap": 0.15,
+  "skin_over_recess": [
+   [
+    -0.6,
+    0.0
+   ]
+  ],
+  "skin_over_recess_t": 0.6,
+  "disc_centre": [
+   0.0,
+   -27.75
+  ],
+  "disc_t": 1.0,
+  "disc_to_pcb": 0.0,
+  "flange_top_y": -9.25,
+  "flange_past_board_top": 0.75,
+  "key_angle_deg": 45.0,
+  "key_angle_range": [
+   40.5,
+   49.5
+  ],
+  "key_outer_r": 19.548
+ },
+ "battery": {
+  "pack_bbox": [
+   -20.0,
+   20.0,
+   -4.0,
+   46.0,
+   -7.65,
+   -3.65
+  ],
+  "pack_size": [
+   40.0,
+   50.0,
+   4.0
+  ],
+  "foam_bbox": [
+   -17.5,
+   17.5,
+   -1.5,
+   43.5,
+   -3.65,
+   -3.15
+  ],
+  "foam_size": [
+   35.0,
+   45.0,
+   0.5
+  ],
+  "pack_lower_edge_y": -4.0,
+  "cable_bay_from_screen_edge": 3.842,
+  "side_ribs_x": [
+   [
+    -21.1,
+    -20.3
+   ],
+   [
+    20.3,
+    21.1
+   ]
+  ],
+  "side_rib_gap_to_pack": [
+   0.3,
+   0.3
+  ],
+  "rib_top_z": -7.2,
+  "rib_h": 1.2,
+  "pack_bottom_to_plate": 0.75,
+  "top_rib_y": null,
+  "top_rib_gap": null,
+  "pack_to_shell": 2.139,
+  "pack_to_foam": 0.0,
+  "reference_packs": {
+   "52 x 47.65 x 4.55": {
+    "overlaps": {},
+    "back_plate_overlap_mm3 (ribs)": 62.4,
+    "nearest": [
+     "battery foam",
+     0.0
+    ]
+   },
+   "43.4 x 52.4 x 4.55": {
+    "overlaps": {},
+    "back_plate_overlap_mm3 (ribs)": 62.4,
+    "nearest": [
+     "battery foam",
+     0.0
+    ]
+   },
+   "34 x 50 x 4.0 (403450)": {
+    "overlaps": {},
+    "back_plate_overlap_mm3 (ribs)": 0.0,
+    "nearest": [
+     "battery foam",
+     0.0
+    ]
+   },
+   "52 x 54 x 4.8 (SPEC block)": {
+    "overlaps": {
+     "front shell": 103.91,
+     "insert 3": 13.56,
+     "insert 4": 13.56,
+     "screw 3": 12.41,
+     "screw 4": 12.41
+    },
+    "back_plate_overlap_mm3 (ribs)": 258.52,
+    "nearest": [
+     "front shell",
+     0.0
+    ]
+   }
+  },
+  "plug_bbox": [
+   -23.2,
+   -18.7,
+   -10.53,
+   -8.03,
+   -6.9,
+   -2.4
+  ],
+  "plug_to_screen": 0.188,
+  "plug_to_shell": 0.3,
+  "j4_mouth_to_screen_edge": 2.688
+ },
+ "posts_pins": {
+  "posts": [
+   {
+    "ref": "PP1",
+    "centre": [
+     -24.9,
+     -33.0
+    ],
+    "tip_z": -1.6,
+    "tip_d": 3.0,
+    "base_d": 4.4,
+    "interference_with_pcb": 0.2,
+    "overlap_mm3": 1.414,
+    "nearest_parts": [
+     [
+      "U4",
+      1.1
+     ],
+     [
+      "C11",
+      1.4
+     ],
+     [
+      "U7",
+      1.695
+     ]
+    ]
+   },
+   {
+    "ref": "PP2",
+    "centre": [
+     -3.6,
+     -30.7
+    ],
+    "tip_z": -1.6,
+    "tip_d": 3.0,
+    "base_d": 4.4,
+    "interference_with_pcb": 0.2,
+    "overlap_mm3": 1.414,
+    "nearest_parts": [
+     [
+      "C19",
+      1.468
+     ],
+     [
+      "U6",
+      1.745
+     ],
+     [
+      "C13",
+      2.279
+     ]
+    ]
+   },
+   {
+    "ref": "PP3",
+    "centre": [
+     6.2,
+     -31.0
+    ],
+    "tip_z": -1.6,
+    "tip_d": 3.0,
+    "base_d": 4.4,
+    "interference_with_pcb": 0.2,
+    "overlap_mm3": 1.414,
+    "nearest_parts": [
+     [
+      "Q5",
+      1.298
+     ],
+     [
+      "R20",
+      1.689
+     ],
+     [
+      "R10",
+      2.061
+     ]
+    ]
+   },
+   {
+    "ref": "PP4",
+    "centre": [
+     6.8,
+     -21.4
+    ],
+    "tip_z": -1.6,
+    "tip_d": 3.0,
+    "base_d": 4.4,
+    "interference_with_pcb": 0.2,
+    "overlap_mm3": 1.414,
+    "nearest_parts": [
+     [
+      "Q6",
+      0.95
+     ],
+     [
+      "D2",
+      1.366
+     ],
+     [
+      "R18",
+      2.135
+     ]
+    ]
+   }
+  ],
+  "pins": [
+   {
+    "ref": "H1",
+    "pin_d": 1.45,
+    "tip_z": -2.4,
+    "tip_past_component_side": 0.6,
+    "tip_d": 0.79,
+    "hole_d": 1.6,
+    "radial_clearance": 0.075,
+    "pin_to_pcb": 0.075,
+    "nearest_parts": []
+   },
+   {
+    "ref": "H2",
+    "pin_d": 1.45,
+    "tip_z": -2.4,
+    "tip_past_component_side": 0.6,
+    "tip_d": 0.79,
+    "hole_d": 1.6,
+    "radial_clearance": 0.075,
+    "pin_to_pcb": 0.075,
+    "nearest_parts": [
+     [
+      "R29",
+      2.428
+     ]
+    ]
+   }
+  ]
+ },
+ "motor": {
+  "motor_bbox": [
+   -25.0,
+   -15.0,
+   -44.5,
+   -34.5,
+   -8.68,
+   -5.98
+  ],
+  "motor_d": 10.0,
+  "motor_h": 2.7,
+  "centre": [
+   -20.0,
+   -39.5
+  ],
+  "seat_d": 10.4,
+  "seat_floor_z": -8.7,
+  "seat_depth": 0.3,
+  "motor_bottom_vs_seat_floor": 0.02,
+  "nearest_board_parts": [
+   [
+    "J3",
+    2.239
+   ],
+   [
+    "U7",
+    2.879
+   ],
+   [
+    "C17",
+    3.63
+   ]
+  ]
+ },
+ "antenna": {
+  "keepout": {
+   "x": [
+    21.8,
+    27.2
+   ],
+   "y": [
+    -37.9,
+    -18.2
+   ]
+  },
+  "antenna_region": {
+   "x": [
+    21.8,
+    27.2
+   ],
+   "y": [
+    -35.9,
+    -22.7
+   ]
+  },
+  "distances": {
+   "insert 1": {
+    "to_keepout": 45.811,
+    "to_antenna_region": 46.242,
+    "at": [
+     -23.13,
+     -46.84,
+     -4.8
+    ]
+   },
+   "insert 2": {
+    "to_keepout": 7.65,
+    "to_antenna_region": 9.65,
+    "at": [
+     24.7,
+     -45.55,
+     -4.8
+    ]
+   },
+   "insert 3": {
+    "to_keepout": 78.605,
+    "to_antenna_region": 82.312,
+    "at": [
+     -23.77,
+     45.85,
+     -4.8
+    ]
+   },
+   "insert 4": {
+    "to_keepout": 63.75,
+    "to_antenna_region": 68.25,
+    "at": [
+     24.7,
+     45.55,
+     -4.8
+    ]
+   },
+   "screw 1": {
+    "to_keepout": 45.661,
+    "to_antenna_region": 46.092,
+    "at": [
+     -22.98,
+     -46.81,
+     -9.6
+    ]
+   },
+   "screw 2": {
+    "to_keepout": 7.5,
+    "to_antenna_region": 9.5,
+    "at": [
+     24.7,
+     -45.4,
+     -9.6
+    ]
+   },
+   "screw 3": {
+    "to_keepout": 78.455,
+    "to_antenna_region": 82.162,
+    "at": [
+     -23.69,
+     45.72,
+     -9.6
+    ]
+   },
+   "screw 4": {
+    "to_keepout": 63.6,
+    "to_antenna_region": 68.1,
+    "at": [
+     24.7,
+     45.4,
+     -9.6
+    ]
+   },
+   "motor": {
+    "to_keepout": 36.831,
+    "to_antenna_region": 36.955,
+    "at": [
+     -15.0,
+     -39.31,
+     -5.98
+    ]
+   },
+   "battery pack": {
+    "to_keepout": 14.314,
+    "to_antenna_region": 18.786,
+    "at": [
+     20.0,
+     -4.0,
+     -7.65
+    ]
+   },
+   "board SW1": {
+    "to_keepout": 0.298,
+    "to_antenna_region": 4.798,
+    "at": [
+     26.46,
+     -17.9,
+     -2.22
+    ]
+   },
+   "board J4": {
+    "to_keepout": 38.85,
+    "to_antenna_region": 39.118,
+    "at": [
+     -17.05,
+     -18.13,
+     -1.95
+    ]
+   },
+   "board J1": {
+    "to_keepout": 18.101,
+    "to_antenna_region": 18.775,
+    "at": [
+     4.47,
+     -43.12,
+     -4.1
+    ]
+   },
+   "board J3": {
+    "to_keepout": 28.995,
+    "to_antenna_region": 28.995,
+    "at": [
+     -7.2,
+     -37.06,
+     -1.86
+    ]
+   },
+   "board SW3": {
+    "to_keepout": 0.15,
+    "to_antenna_region": 1.14,
+    "at": [
+     21.65,
+     -20.47,
+     -2.7
+    ]
+   },
+   "board SW2": {
+    "to_keepout": 2.47,
+    "to_antenna_region": 6.859,
+    "at": [
+     20.9,
+     -15.9,
+     -1.85
+    ]
+   },
+   "FPC tail": {
+    "to_keepout": 3.183,
+    "to_antenna_region": 3.259,
+    "at": [
+     18.62,
+     -36.6,
+     -8.28
+    ]
+   },
+   "FPC leg and wide section": {
+    "to_keepout": 4.236,
+    "to_antenna_region": 7.321,
+    "at": [
+     17.92,
+     -16.49,
+     -7.84
+    ]
+   },
+   "FPC part": {
+    "to_keepout": 5.605,
+    "to_antenna_region": 9.29,
+    "at": [
+     17.72,
+     -14.35,
+     -6.1
+    ]
+   },
+   "button cap": {
+    "to_keepout": 0.0,
+    "to_antenna_region": 3.7,
+    "at": [
+     27.1,
+     -19.0,
+     -2.2
+    ]
+   }
+  },
+  "front shell_inside_keepout_mm3": 106.38,
+  "front shell_inside_keepout_bbox": [
+   21.8,
+   27.2,
+   -37.9,
+   -18.2,
+   -1.0,
+   0.0
+  ],
+  "back plate_inside_keepout_mm3": 134.75,
+  "back plate_inside_keepout_bbox": [
+   21.8,
+   27.2,
+   -37.9,
+   -18.2,
+   -9.6,
+   -7.6
+  ],
+  "button cap_inside_keepout_mm3": 0.21,
+  "button cap_inside_keepout_bbox": [
+   27.1,
+   27.2,
+   -19.0,
+   -18.2,
+   -4.8,
+   -2.2
+  ],
+  "back_plate_lip_x_at_y-28": [
+   [
+    26.75,
+    27.55
+   ]
+  ],
+  "right_wall_x_at_y-28": [
+   [
+    27.7,
+    29.3
+   ]
+  ]
+ },
+ "walls": {
+  "side_wall": 1.6,
+  "top_wall": 1.6,
+  "skin": 1.0,
+  "back_plate": 1.2,
+  "lip_x": [
+   26.75,
+   27.55
+  ],
+  "lip_w": 0.8,
+  "lip_h": 0.8,
+  "lip_gap_to_wall": 0.15,
+  "skin_over_disc_recess": 0.6,
+  "skin_over_usb_leg_relief": 0.5,
+  "bottom_wall_behind_port_recess": 0.7,
+  "bottom_wall_at_card_scallop": 0.7,
+  "top_boss_roof": 0.6,
+  "plate_under_screw_head": 0.7,
+  "led_tube_neck_wall": 0.45,
+  "led_tube_base_wall": 0.65,
+  "disc_flange": 0.4,
+  "disc_over_leg_pocket": [
+   [
+    -0.5,
+    0.0
+   ]
+  ],
+  "disc_over_leg_pocket_t": 0.5
+ },
+ "print_files": {
+  "stl": {
+   "front shell": {
+    "stl": {
+     "volume": 6666.44,
+     "size": [
+      58.6,
+      103.5,
+      8.4
+     ]
+    },
+    "step": {
+     "volume": 6666.51,
+     "size": [
+      8.4,
+      58.6,
+      103.5
+     ]
+    },
+    "volume_diff_pct": -0.001,
+    "size_diff_max": 0.0
+   },
+   "back plate": {
+    "stl": {
+     "volume": 7664.3,
+     "size": [
+      58.6,
+      103.5,
+      8.0
+     ]
+    },
+    "step": {
+     "volume": 7664.59,
+     "size": [
+      8.0,
+      58.6,
+      103.5
+     ]
+    },
+    "volume_diff_pct": -0.004,
+    "size_diff_max": 0.0
+   },
+   "wheel disc": {
+    "stl": {
+     "volume": 957.39,
+     "size": [
+      36.999,
+      36.999,
+      1.0
+     ]
+    },
+    "step": {
+     "volume": 957.75,
+     "size": [
+      1.0,
+      37.0,
+      37.0
+     ]
+    },
+    "volume_diff_pct": -0.038,
+    "size_diff_max": 0.001
+   },
+   "button cap": {
+    "stl": {
+     "volume": 30.51,
+     "size": [
+      2.7,
+      6.8,
+      2.6
+     ]
+    },
+    "step": {
+     "volume": 30.51,
+     "size": [
+      2.6,
+      2.7,
+      6.8
+     ]
+    },
+    "volume_diff_pct": 0.0,
+    "size_diff_max": 0.0
+   }
+  },
+  "p2s_project": [
+   {
+    "file": "3D/Objects/object_4.model",
+    "id": "7",
+    "name": null,
+    "volume": 30.51,
+    "size": [
+     2.7,
+     6.8,
+     2.6
+    ],
+    "matches": "button cap",
+    "volume_diff_pct": 0.0,
+    "size_diff_max": 0.0
+   },
+   {
+    "file": "3D/Objects/object_3.model",
+    "id": "5",
+    "name": null,
+    "volume": 957.39,
+    "size": [
+     36.999,
+     36.999,
+     1.0
+    ],
+    "matches": "wheel disc",
+    "volume_diff_pct": -0.038,
+    "size_diff_max": 0.001
+   },
+   {
+    "file": "3D/Objects/object_1.model",
+    "id": "1",
+    "name": null,
+    "volume": 6666.44,
+    "size": [
+     58.6,
+     103.5,
+     8.4
+    ],
+    "matches": "front shell",
+    "volume_diff_pct": -0.001,
+    "size_diff_max": 0.0
+   },
+   {
+    "file": "3D/Objects/object_2.model",
+    "id": "3",
+    "name": null,
+    "volume": 7664.3,
+    "size": [
+     58.6,
+     103.5,
+     8.0
+    ],
+    "matches": "back plate",
+    "volume_diff_pct": -0.004,
+    "size_diff_max": 0.0
+   }
+  ]
+ },
+ "extra": {
+  "outer_corner_r": 5.5,
+  "inner_corner_r": 3.9,
+  "corner_wall_on_diagonal": 1.6,
+  "front_edge_round": 0.999,
+  "back_edge_round": 0.999,
+  "interior_x": [
+   -27.7,
+   27.7
+  ],
+  "interior_y": [
+   -50.15,
+   50.15
+  ],
+  "board_top_left_corner_r": 1.0,
+  "board_right_edge_lowest_y_at_x27.19": -45.665,
+  "right_tab_strip_below_tab": 0.265,
+  "grille_slots_x": [
+   [
+    -5.6,
+    -4.8
+   ],
+   [
+    -4.0,
+    -3.2
+   ],
+   [
+    -2.4,
+    -1.6
+   ]
+  ],
+  "grille_slot_w": 0.8,
+  "grille_pitch": 1.6,
+  "grille_overall_w": 4.0,
+  "grille_slot_l": 3.4,
+  "insert_lead_in_depth": 0.3,
+  "insert_lead_in_d_at_face": 3.6,
+  "pin_H1_chamfer": 0.349,
+  "pin_H2_chamfer": 0.349,
+  "led_tip_chamfer_radial": 0.149,
+  "window_chamfer_at_front": 0.4,
+  "pocket_wall_z_at_x27_y20": [
+   [
+    -3.15,
+    0.0
+   ]
+  ],
+  "fpc_loop_y": [
+   -23.55,
+   -28.75
+  ],
+  "fpc_exit_mid_z": -1.515,
+  "fpc_leg_on_plate_z": [
+   -8.38,
+   -8.18
+  ],
+  "fpc_drop": 6.765,
+  "flat_fpc_bbox": [
+   -13.216,
+   43.929,
+   -50.828,
+   -6.042,
+   -1.58,
+   -1.45
+  ],
+  "flat_wide_x_at_y-9": [
+   -13.216,
+   14.724
+  ],
+  "flat_wide_x_at_y-12": [
+   -13.216,
+   18.714
+  ],
+  "flat_leg_x_at_y-30": [
+   -13.216,
+   -7.066
+  ],
+  "flat_wide_y_at_x0": [
+   -18.688,
+   -6.042
+  ],
+  "flat_tail_y_at_x20": [
+   -50.828,
+   -46.028
+  ],
+  "flat_leg_y_at_x-10": [
+   -50.499,
+   -6.042
+  ],
+  "flat_tail_x_at_y-48.4": [
+   -12.504,
+   43.929
+  ],
+  "dive_zone_case_overlap_mm3": {
+   "front shell": 0.0,
+   "back plate": 0.0,
+   "battery pack": 0.0,
+   "battery plug PHR-2": 0.0,
+   "battery wires": 0.0,
+   "motor": 0.0
+  },
+  "tallest_in_run_zones": [
+   [
+    "R32",
+    0.4
+   ],
+   [
+    "J3",
+    1.941
+   ],
+   [
+    "J1",
+    3.301
+   ]
+  ],
+  "tallest_in_ramp_zone": [
+   "R16",
+   0.4
+  ],
+  "tallest_overall": [
+   "J4",
+   5.551
+  ],
+  "j3_opening_x_at_entry+1": [
+   -19.244,
+   -7.695
+  ],
+  "j3_opening_centre_x": -13.469,
+  "sw1_actuator_z_at_x27": [
+   -4.522,
+   -2.578
+  ],
+  "sw1_actuator_d_z": 1.943,
+  "sw1_actuator_d_y": 1.943,
+  "sw1_actuator_centre_z": -3.55,
+  "j1_legs_in_board": [
+   [
+    4.17,
+    4.47,
+    -44.15,
+    -43.1,
+    0.3,
+    1.05
+   ],
+   [
+    -4.47,
+    -4.17,
+    -44.15,
+    -43.1,
+    0.3,
+    1.05
+   ],
+   [
+    -4.47,
+    -4.17,
+    -48.2,
+    -47.4,
+    0.3,
+    0.8
+   ],
+   [
+    4.17,
+    4.47,
+    -48.2,
+    -47.4,
+    0.3,
+    0.8
+   ]
+  ]
+ },
+ "doc_pairs": {
+  "FPC leg and wide section | board SW2": 1.097,
+  "FPC tail | board C20": 1.1,
+  "FPC tail | board J1": 1.101,
+  "FPC leg and wide section | board D1": 1.212,
+  "FPC part | board SW2": 1.238,
+  "FPC leg and wide section | board R17": 1.352,
+  "battery pack | front shell": 2.139,
+  "battery plug PHR-2 | screen body": 0.188,
+  "battery plug PHR-2 | front shell": 0.3,
+  "button cap | board SW1": 0.12,
+  "motor | board J3": 2.239,
+  "FPC | front shell": 0.415,
+  "FPC | back plate": 0.02,
+  "FPC | wheel disc": 0.961,
+  "FPC | motor": 1.784,
+  "FPC | battery pack": 4.346,
+  "FPC | battery plug PHR-2": 5.484,
+  "FPC | board PCB": 0.3,
+  "battery pack | top bosses": 2.139,
+  "standoff_nearest": {
+   "-20.9": [
+    [
+     "J3",
+     0.605
+    ]
+   ],
+   "13.5": [
+    [
+     "R1",
+     1.787
+    ],
+    [
+     "U2",
+     2.09
+    ]
+   ],
+   "20.9": [
+    [
+     "R4",
+     2.802
+    ],
+    [
+     "R3",
+     3.066
+    ]
+   ]
+  },
+  "changed_parts": {
+   "R31": {
+    "nearest_fpc": [
+     "FPC part",
+     1.544
+    ],
+    "nearest_other_behind_board": [
+     "screen body",
+     4.008
+    ],
+    "screen_body": 4.008,
+    "back_plate": 6.2
+   },
+   "R32": {
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     5.598
+    ],
+    "nearest_other_behind_board": [
+     "back plate",
+     5.019
+    ],
+    "screen_body": 10.508,
+    "back_plate": 5.019
+   },
+   "R34": {
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     1.937
+    ],
+    "nearest_other_behind_board": [
+     "back plate",
+     6.2
+    ],
+    "screen_body": 16.208,
+    "back_plate": 6.2
+   },
+   "C26": {
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     1.671
+    ],
+    "nearest_other_behind_board": [
+     "back plate",
+     6.05
+    ],
+    "screen_body": 17.358,
+    "back_plate": 6.05
+   }
+  },
+  "ref wide | top bosses": 0.3,
+  "ref wide | front shell": 0.3,
+  "ref narrow | back plate lip": 0.3,
+  "ref narrow | front shell": 0.3,
+  "top_boss_low_y": 44.45,
+  "top_boss_inner_x": -22.0,
+  "lip_inner_y": 49.2,
+  "lip_inner_x": 26.75
+ },
+ "plug_tilt": {
+  "touch-side bottom edge": {
+   "rows": [
+    {
+     "deg": 0,
+     "to_screen": 0.188,
+     "to_shell": 0.3
+    },
+    {
+     "deg": 0.5,
+     "to_screen": 0.201,
+     "to_shell": 0.656
+    },
+    {
+     "deg": 1,
+     "to_screen": 0.218,
+     "to_shell": 1.012
+    },
+    {
+     "deg": 2,
+     "to_screen": 0.747,
+     "to_shell": 1.725
+    },
+    {
+     "deg": 3,
+     "to_screen": 1.459,
+     "to_shell": 2.437
+    },
+    {
+     "deg": 5,
+     "to_screen": 2.906,
+     "to_shell": 3.861
+    },
+    {
+     "deg": 8,
+     "to_screen": 5.083,
+     "to_shell": 4.5
+    },
+    {
+     "deg": 12,
+     "to_screen": 7.979,
+     "to_shell": 4.963
+    },
+    {
+     "deg": 18,
+     "to_screen": 12.259,
+     "to_shell": 7.504
+    },
+    {
+     "deg": 25,
+     "to_screen": 17.102,
+     "to_shell": 11.314
+    }
+   ],
+   "min_to_screen": 0.188,
+   "min_to_shell": 0.3
+  },
+  "J1 shell front top edge (STEP z -1.9)": {
+   "rows": [
+    {
+     "deg": 0,
+     "to_screen": 0.188,
+     "to_shell": 0.3
+    },
+    {
+     "deg": 0.5,
+     "to_screen": 0.194,
+     "to_shell": 0.663
+    },
+    {
+     "deg": 1,
+     "to_screen": 0.203,
+     "to_shell": 1.026
+    },
+    {
+     "deg": 2,
+     "to_screen": 0.764,
+     "to_shell": 1.752
+    },
+    {
+     "deg": 3,
+     "to_screen": 1.492,
+     "to_shell": 2.478
+    },
+    {
+     "deg": 5,
+     "to_screen": 2.967,
+     "to_shell": 3.927
+    },
+    {
+     "deg": 8,
+     "to_screen": 5.185,
+     "to_shell": 4.5
+    },
+    {
+     "deg": 12,
+     "to_screen": 8.126,
+     "to_shell": 5.044
+    },
+    {
+     "deg": 18,
+     "to_screen": 12.462,
+     "to_shell": 7.739
+    },
+    {
+     "deg": 25,
+     "to_screen": 17.37,
+     "to_shell": 11.703
+    }
+   ],
+   "min_to_screen": 0.188,
+   "min_to_shell": 0.3
+  }
+ },
+ "fpc_wing": {
+  "flat_outline_x_max_by_y": [
+   [
+    -7.9,
+    14.724
+   ],
+   [
+    -8.15,
+    14.724
+   ],
+   [
+    -8.4,
+    14.724
+   ],
+   [
+    -8.65,
+    14.724
+   ],
+   [
+    -8.9,
+    14.724
+   ],
+   [
+    -9.15,
+    14.724
+   ],
+   [
+    -9.4,
+    14.724
+   ],
+   [
+    -9.65,
+    14.724
+   ],
+   [
+    -9.9,
+    14.724
+   ],
+   [
+    -10.15,
+    14.724
+   ],
+   [
+    -10.4,
+    14.724
+   ],
+   [
+    -10.65,
+    14.724
+   ],
+   [
+    -10.9,
+    14.796
+   ],
+   [
+    -11.15,
+    17.848
+   ],
+   [
+    -11.4,
+    18.394
+   ],
+   [
+    -11.65,
+    18.595
+   ],
+   [
+    -11.9,
+    18.694
+   ],
+   [
+    -12.15,
+    18.724
+   ],
+   [
+    -12.4,
+    18.724
+   ],
+   [
+    -12.65,
+    18.724
+   ],
+   [
+    -12.9,
+    18.724
+   ],
+   [
+    -13.15,
+    18.724
+   ],
+   [
+    -13.4,
+    18.724
+   ],
+   [
+    -13.65,
+    18.724
+   ],
+   [
+    -13.9,
+    18.724
+   ],
+   [
+    -14.15,
+    18.724
+   ],
+   [
+    -14.4,
+    18.724
+   ],
+   [
+    -14.65,
+    18.724
+   ],
+   [
+    -14.9,
+    18.724
+   ],
+   [
+    -15.15,
+    18.724
+   ],
+   [
+    -15.4,
+    18.724
+   ],
+   [
+    -15.65,
+    18.724
+   ],
+   [
+    -15.9,
+    18.724
+   ],
+   [
+    -16.15,
+    18.724
+   ],
+   [
+    -16.4,
+    18.724
+   ],
+   [
+    -16.65,
+    18.724
+   ],
+   [
+    -16.9,
+    18.724
+   ],
+   [
+    -17.15,
+    18.724
+   ],
+   [
+    -17.4,
+    18.724
+   ],
+   [
+    -17.65,
+    18.724
+   ],
+   [
+    -17.9,
+    18.701
+   ],
+   [
+    -18.15,
+    18.611
+   ],
+   [
+    -18.4,
+    18.426
+   ],
+   [
+    -18.65,
+    17.996
+   ],
+   [
+    -18.9,
+    -5.174
+   ],
+   [
+    -19.15,
+    -5.666
+   ],
+   [
+    -19.4,
+    -6.006
+   ],
+   [
+    -19.65,
+    -6.268
+   ],
+   [
+    -19.9,
+    -6.475
+   ]
+  ],
+  "flat_wing_x_max": 18.724,
+  "flat_wing_y_range": [
+   -11.9,
+   -17.9
+  ],
+  "model_wing_x_max": 17.924,
+  "missing_width": 0.8,
+  "routed_full_wing_bbox": [
+   17.824,
+   18.724,
+   -16.49,
+   -10.524,
+   -8.001,
+   -3.303
+  ],
+  "full_wing_to_parts": {
+   "back plate": 0.399,
+   "board SW2": 0.564,
+   "front shell": 2.303,
+   "board R31": 2.445,
+   "screen body": 2.699,
+   "board SW3": 4.282
+  },
+  "full_wing_to_keepout_x": 3.076
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "file": "print/mark8-slab-p2s.gcode.3mf",
+ "build_items": [
+  [
+   "2",
+   "1 0 0 0 1 0 0 0 1 75 120 4.20000034"
+  ],
+  [
+   "4",
+   "1 0 0 0 1 0 0 0 1 145 120 4"
+  ],
+  [
+   "6",
+   "1 0 0 0 1 0 0 0 1 210.00004 139.999953 0.5"
+  ],
+  [
+   "8",
+   "1 0 0 0 1 0 0 0 1 210 95 1.29999995"
+  ]
+ ],
+ "segments": 65989,
+ "placements": {
+  "front_shell": {
+   "object": "2",
+   "mesh": "3D/Objects/object_1.model",
+   "item_translation": [
+    75.0,
+    120.0,
+    4.2
+   ],
+   "mesh_height": 8.4,
+   "plate_offset": [
+    75.0,
+    120.0,
+    0.0
+   ]
+  },
+  "back_plate": {
+   "object": "4",
+   "mesh": "3D/Objects/object_2.model",
+   "item_translation": [
+    145.0,
+    120.0,
+    4.0
+   ],
+   "mesh_height": 8.0,
+   "plate_offset": [
+    145.0,
+    120.0,
+    9.6
+   ]
+  },
+  "wheel_disc": {
+   "object": "6",
+   "mesh": "3D/Objects/object_3.model",
+   "item_translation": [
+    210.0,
+    140.0,
+    0.5
+   ],
+   "mesh_height": 1.0,
+   "plate_offset": [
+    210.0,
+    167.751,
+    1.0
+   ]
+  },
+  "button_cap": {
+   "object": "8",
+   "mesh": "3D/Objects/object_4.model",
+   "item_translation": [
+    210.0,
+    95.0,
+    1.3
+   ],
+   "mesh_height": 2.6,
+   "plate_offset": [
+    181.55,
+    110.6,
+    4.8
+   ]
+  }
+ },
+ "top_layer_height": {
+  "shell boss bottom left face": 7.8,
+  "shell boss top left face": 7.8,
+  "shell boss bottom right face": 7.8,
+  "shell boss top right face": 7.8,
+  "shell rim (side wall)": 8.4,
+  "plate post PP1 tip": 8.0,
+  "plate post PP2 tip": 8.0,
+  "plate post PP3 tip": 8.0,
+  "plate post PP4 tip": 8.0,
+  "plate screw pad": 1.8,
+  "plate LED tube tip": 6.6,
+  "shell pin H1 tip": 2.4
+ },
+ "openings": {
+  "USB-C opening (x 0, y -50.5)": {
+   "open_heights": [
+    [
+     1.6,
+     5.4
+    ]
+   ],
+   "device_z": [
+    [
+     -1.6,
+     -5.4
+    ]
+   ]
+  },
+  "card slot (x -13.7, y -50.4)": {
+   "open_heights": [
+    [
+     0.4,
+     0.6
+    ],
+    [
+     2.2,
+     4.0
+    ]
+   ],
+   "device_z": [
+    [
+     -0.4,
+     -0.6
+    ],
+    [
+     -2.2,
+     -4.0
+    ]
+   ]
+  },
+  "button slot (x 28.3, y -15.6)": {
+   "open_heights": [
+    [
+     2.0,
+     5.0
+    ]
+   ],
+   "device_z": [
+    [
+     -2.0,
+     -5.0
+    ]
+   ]
+  }
+ },
+ "design_heights": {
+  "shell boss face": 7.8,
+  "shell rim": 8.4,
+  "plate screw pad": 1.8,
+  "plate post tip": 8.0,
+  "plate LED tube tip": 6.6
+ },
+ "assembled": {
+  "plate_outer_face_z": -9.6,
+  "plate_inner_face_z": -8.4,
+  "shell_rim_z": -8.4,
+  "post_tip_z": -1.6,
+  "post_press_into_board": 0.2,
+  "case_thickness": 9.6,
+  "note": "pads seat on the boss faces; the plate inner face meets the rim at the same time when the two agree",
+  "usb_opening_z": [
+   -1.6,
+   -5.4
+  ],
+  "j1_gap_top": 0.3,
+  "j1_gap_bottom": 0.3
+ }
+}

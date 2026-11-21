@@ -10,15 +10,14 @@ Pairs checked with exact solids: 273 (bounding boxes overlap; board-to-board and
 | front shell | insert 2 | 2.679 | ok | heat-set knurl 3.2 OD in the 3.0 hole, melts in |
 | front shell | insert 3 | 2.679 | ok | heat-set knurl 3.2 OD in the 3.0 hole, melts in |
 | front shell | insert 4 | 2.679 | ok | heat-set knurl 3.2 OD in the 3.0 hole, melts in |
-| front shell | screen body | 1.420 | ok | screen front rim on the skin (face contact) |
+| front shell | screen body | 0.000 | ok | screen front rim on the skin (face contact) |
 | front shell | board PCB | 0.000 | ok | board touch side lies on the skin (face contact) |
 | wheel disc | board PCB | 0.000 | ok | disc back face lies on L4 (face contact) |
 | back plate | screw 1 | 0.000 | ok | head seats in the counterbore |
 | back plate | screw 2 | 0.000 | ok | head seats in the counterbore |
 | back plate | screw 3 | 0.000 | ok | head seats in the counterbore |
 | back plate | screw 4 | 0.000 | ok | head seats in the counterbore |
-| back plate | board PCB | 2.827 | ok | press posts on PP1 to PP4, 0.1 planned interference each |
-| back plate | battery 404050 | 0.000 | ok | pack rests on the back plate (face contact) |
+| back plate | board PCB | 5.655 | ok | press posts on PP1 to PP4, 0.2 planned interference each |
 | back plate | motor | 0.000 | ok | motor glued in its seat on the back plate |
 | screen body | battery foam | 0.000 | ok | foam stuck on the screen back (face contact) |
 | screen FPC bonded end | FPC leg and wide section | 0.000 | ok | same FPC, cut at the screen edge |
@@ -32,28 +31,28 @@ Reference solids (not built, checked against the case):
 
 | Solid | Size (mm) | Fits | Overlaps |
 | --- | --- | --- | --- |
-| battery largest, full width | 52.0 x 47.65 x 4.55 | yes | none |
-| battery largest, narrow | 43.4 x 52.4 x 4.55 | yes | none |
-| battery 403450 | 34.0 x 50.0 x 4.0 | yes | none |
-| battery SPEC 52 x 54 x 4.8 block | 52.0 x 54.0 x 4.8 | NO | front shell 191.633, insert 3 13.561, insert 4 13.561, screw 3 12.252, screw 4 12.252, battery foam 236.25 |
+| battery largest, full width | 52.0 x 48.15 x 4.65 | yes | none |
+| battery largest, narrow | 43.4 x 52.9 x 4.65 | yes | none |
+| battery 403450 | 34.0 x 52.0 x 4.0 | yes | none |
+| battery SPEC 52 x 54 x 4.8 block | 52.0 x 54.0 x 4.8 | NO | front shell 103.906, insert 3 13.561, insert 4 13.561, screw 3 12.409, screw 4 12.409 |
 
 ## Clearances
 
 | Near miss | Clearance (mm) |
 | --- | --- |
-| FPC leg and wide section to SW2 | 1.07 |
+| FPC leg and wide section to SW2 | 1.10 |
 | FPC tail to C20 | 1.10 |
 | FPC tail to J1 | 1.10 |
-| FPC leg and wide section to D1 | 1.16 |
-| FPC part to SW2 | 1.22 |
-| FPC leg and wide section to R17 | 1.23 |
+| FPC leg and wide section to D1 | 1.21 |
+| FPC part to SW2 | 1.24 |
+| FPC leg and wide section to R17 | 1.35 |
 | FPC to the board itself (under J2, at the S-curve top) | 0.30 |
 | FPC to the front shell / back plate / disc | 0.41 / 0.02 (floats 0.02 over the plate in the model) / 0.96 |
-| FPC to the motor / battery / battery plug | 1.78 / 5.10 / 5.48 |
-| 404050 pack to the top bosses | 2.04 |
-| 404050 pack to the front shell (any feature) | 2.04 |
-| 404050 pack to the back plate ribs (each side) | 0.30 |
-| 404050 pack (4.0) to the 0.5 foam on the screen back | 0.65 |
+| FPC to the motor / battery / battery plug | 1.78 / 4.35 / 5.48 |
+| 404050 pack to the top bosses | 2.14 |
+| 404050 pack to the front shell (any feature) | 2.14 |
+| 404050 pack to the back plate side ribs (each side) | 0.30 |
+| 404050 pack (4.0, on 0.5 foam on the screen back) to the back plate | 0.75 (any feature: 0.30) |
 | Battery plug to the screen / to the front shell lips | 0.19 / 0.30 |
 | Button cap to SW1 at rest | 0.12 |
 | Button cap at its stop (0.42 travel): plunger past the actuator rest tip | 0.30 (switch travel 0.2) |
@@ -62,22 +61,22 @@ Reference solids (not built, checked against the case):
 | Press post PP2 to C19 | 1.47 |
 | Press post PP3 to Q5 | 1.30 |
 | Press post PP4 to Q6 | 0.95 |
-| LED light tube to LED1 | 0.35 |
+| LED light tube to LED1 | 0.45 |
 | LED light tube to J1 | 0.41 |
 | LED light tube to J3 | 0.41 |
-| LED light tube to R8 | 1.22 |
+| LED light tube to R8 | 1.29 |
 | Pin H1 in its hole (radial) | 0.075 |
 | Pin H2 in its hole (radial) | 0.075 |
 | USB-C legs to the skin reliefs / to the disc pockets | 0.10 / 0.10 |
-| Motor to the nearest board part | 2.14 |
+| Motor to the nearest board part | 2.24 |
 | Screen back to the top bosses | 0.45 |
 | Bottom wall standoff at x -20.9 to the board edge / to J3 | 0.10 / 0.60 |
 | Bottom wall standoff at x 13.5 to the board edge / to R1 | 0.10 / 1.79 |
 | Bottom wall standoff at x 20.9 to the board edge / to R4 | 0.10 / 2.80 |
-| R31 (15.5, -12.1, FPC run zone) to the FPC part / to the screen body (behind the board) | 1.51 / 4.01 |
-| R32 (13.3, -18.6, FPC run zone) to the FPC leg and wide section / to the back plate (behind the board) | 5.50 / 5.02 |
-| R34 (-13.85, -24.3, FPC run zone) to the FPC leg and wide section / to the back plate (behind the board) | 1.82 / 6.10 |
-| C26 (-14.36, -25.7, general) to the FPC leg and wide section / to the back plate (behind the board) | 1.57 / 5.95 |
+| R31 (15.5, -12.1, FPC run zone) to the FPC part / to the screen body (behind the board) | 1.54 / 4.01 |
+| R32 (13.3, -18.6, FPC run zone) to the FPC leg and wide section / to the back plate (behind the board) | 5.60 / 5.02 |
+| R34 (-13.85, -24.3, FPC run zone) to the FPC leg and wide section / to the back plate (behind the board) | 1.94 / 6.20 |
+| C26 (-14.36, -25.7, general) to the FPC leg and wide section / to the back plate (behind the board) | 1.67 / 6.05 |
 | Frame tab, left edge (-17.9 to -13.1), to the front shell: filed flush / 0.35 nub left | 0.49 / 0.15 |
 | Frame tab, top edge (22.1 to 26.1), to the front shell: filed flush / 0.35 nub left | 1.20 / 0.86 |
 | Frame tab, right edge (-45.4 to -40.6), to the front shell: filed flush / 0.35 nub left | 0.35 / 0.15 |

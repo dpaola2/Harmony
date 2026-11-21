@@ -2,27 +2,27 @@
  "envelope": {
   "wide": [
    52.0,
-   47.65,
-   4.55
+   48.15,
+   4.65
   ],
   "narrow": [
    43.4,
-   52.400000000000006,
-   4.55
+   52.900000000000006,
+   4.65
   ],
-  "t_max": 4.55,
-  "z_space_total": 5.15,
+  "t_max": 4.65,
+  "z_space_total": 5.25,
   "foam": 0.5,
   "screen_tol": 0.1,
-  "z_space": 4.65
+  "z_space": 4.75
  },
  "reference_solids": [
   {
    "solid": "battery largest, full width",
    "size": [
     52.0,
-    47.65,
-    4.55
+    48.15,
+    4.65
    ],
    "overlaps": [],
    "fits": true
@@ -31,8 +31,8 @@
    "solid": "battery largest, narrow",
    "size": [
     43.4,
-    52.4,
-    4.55
+    52.9,
+    4.65
    ],
    "overlaps": [],
    "fits": true
@@ -41,7 +41,7 @@
    "solid": "battery 403450",
    "size": [
     34.0,
-    50.0,
+    52.0,
     4.0
    ],
    "overlaps": [],
@@ -57,7 +57,7 @@
    "overlaps": [
     {
      "with": "front shell",
-     "volume_mm3": 191.633
+     "volume_mm3": 103.906
     },
     {
      "with": "insert 3",
@@ -69,15 +69,11 @@
     },
     {
      "with": "screw 3",
-     "volume_mm3": 12.252
+     "volume_mm3": 12.409
     },
     {
      "with": "screw 4",
-     "volume_mm3": 12.252
-    },
-    {
-     "with": "battery foam",
-     "volume_mm3": 236.25
+     "volume_mm3": 12.409
     }
    ],
    "fits": false

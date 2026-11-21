@@ -41,10 +41,10 @@ On the order day, do these checks:
 | Part | Qty | Source | Note |
 | --- | --- | --- | --- |
 | Screen DLC-T2.7DDS#1 (2.73 in, 320 x 320) | 2 | DigiKey, about $31 each | Small stock and a 12-week factory lead time. Order it first |
-| LiPo cell, 1S, protected, JST PH 2.0 plug, 404050 or 403450 (4.0 mm thick) | 1 | Any | J4 pin 2 is +. Packs come wired both ways. With 0.5 mm foam, a pack can be 4.5 mm thick at most |
+| LiPo cell, 1S, protected, JST PH 2.0 plug, 4.0 mm thick: YDL 403450 (4.0 x 34 x 52, 650 mAh, 50 mm leads) or a 404050 | 1 | YDL Battery for the 403450 | J4 pin 2 is +. Packs come wired both ways. With 0.5 mm foam, a pack can be 4.6 mm thick, 40 mm wide and 53 mm long at most |
 | Heat-set insert M2, 3 mm long, about 3.2 mm OD | 4 | Any | |
 | Screw M2 x 4, button head (ISO 7380) | 4 | Any | Not M2 x 5: it bottoms out in the top bosses |
-| Double-sided foam tape, 0.2 to 0.5 mm thick | 1 piece, 35 x 45 mm | Any | For the battery. Not 1 mm: the pack and the foam share 5.15 mm |
+| Double-sided foam tape, 0.2 to 0.5 mm thick | 1 piece, 35 x 45 mm | Any | For the battery. Not 1 mm: the pack and the foam share 5.25 mm |
 | Vibration motor LCM1027A2445F | 1 | LCSC C2759984 | Optional. You can add it to the JLC order |
 
 You also need a microSD card (FAT32) with the Harmony music folder, a USB-C cable, a multimeter, and a soldering iron for the inserts. The Mark-7 card works as it is. To fill a new card, run `tools/harmony_sync.py` ([harmony-sync.md](harmony-sync.md)). It also writes `HARMONY/library.hdb`, the index the player needs for more than 512 tracks.
@@ -56,7 +56,7 @@ The Bambu P2S prints all four parts on one plate, without supports. The AMS chan
 - Filament 1, Bambu PLA Basic Jade White: the front shell, the back plate and the button cap.
 - Filament 2, Bambu PLA Basic Black: the wheel disc.
 
-In the print dialog, map filament 1 to the AMS slot with Jade White and filament 2 to the slot with Black. The plate takes about 54 minutes and uses 20.5 g of Jade White and 1.9 g of Black (Bambu Studio, 21 November). PRINTING.md has the steps and the settings.
+In the print dialog, map filament 1 to the AMS slot with Jade White and filament 2 to the slot with Black. The plate takes about 55 minutes and uses 20.5 g of Jade White and 1.9 g of Black (Bambu Studio, 21 November, after the diagram check fixes). PRINTING.md has the steps and the settings.
 
 After the print, check:
 
@@ -80,7 +80,7 @@ The board arrives in a frame of rails, held by three mouse-bite tabs. Seen from 
 1. Hold the board, not the frame. Cut the left tab first, then the other two.
 2. Cut each tab with flush cutters along the hole line.
 3. File each nub flush with the board edge (up to 0.35 mm, with half-hole bumps), then deburr the edge. A straight edge must lie flat along it.
-4. File the small fillet the router leaves in each inside corner at the tab ends too. File gently at the lower end of the right tab: the board strip beside the screw notch there is only about 0.2 mm wide.
+4. File the small fillet the router leaves in each inside corner at the tab ends too. File gently at the lower end of the right tab: the board strip beside the screw notch there is only 0.27 mm wide.
 
 Never snap a tab off: bending the 0.8 mm board can crack a capacitor near the edge or lift a pad of the battery connector. The edge must be flush, because the case has only 0.5 mm of clearance at the side walls.
 

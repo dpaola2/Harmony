@@ -17,14 +17,14 @@ The battery plugs into the board before the board goes into the case (steps 6 to
 | 5 | Screen DLC-T2.7DDS#1 | DigiKey | 1 |
 | 6 | Screen FPC (part of the screen; shown folded) | With 5 | - |
 | 7 | Main board, assembled | JLCPCB | 1 |
-| 8 | LiPo pack 404050 (or 403450), 4.0 mm thick, 1S, protected, JST PH 2.0 plug | Bought | 1 |
+| 8 | LiPo pack 403450 (YDL, 4.0 x 34 x 52) or 404050, 1S, protected, JST PH 2.0 plug | Bought | 1 |
 | 9 | Vibration motor LCM1027A2445F (optional) | LCSC C2759984 | 1 |
 | 10 | Back plate | Printed, case colour (`print/back-plate.3mf`) | 1 |
 | 11 | Screw M2 x 4, button head (ISO 7380, head 3.5 x 1.1) | Bought | 4 |
 
 Also: double-sided foam tape 0.2 to 0.5 mm thick (a 35 x 45 piece for the battery), a strip of masking or Kapton tape, and CA glue or foam tape for the motor.
 
-The pack and the foam share 5.15 mm between the screen and the back plate. Use a 4.0 mm pack. With 0.5 mm foam, a pack can be 4.5 mm thick at most. Do not use 1 mm foam: it leaves almost no room for the pack to swell and presses on the back of the screen.
+The pack and the foam share 5.25 mm between the screen and the back plate. Use a 4.0 mm pack. With 0.5 mm foam, a pack can be 4.6 mm thick at most. It can be up to 40 mm wide and 53 mm long. Do not use 1 mm foam: it leaves almost no room for the pack to swell and presses on the back of the screen.
 
 Tools: soldering iron with an M2 heat-set tip (a clean conical tip also works), flush cutters, a fine file, fine tweezers, a plastic spudger or a fingernail, a ruler and a fine marker, a multimeter, a screwdriver for the M2 screws.
 
@@ -80,7 +80,7 @@ Lay the front shell face down on a soft cloth with the USB-C opening toward you.
 
     The radio antenna is the end of the ESP32 module at the left wall, between the side button and the near left corner screw. Metal and the FPC near it shorten the Bluetooth range. The fold of the tail ends about 3 mm short of the antenna area, and the case cannot move it further: the fold position comes from the FPC length. So keep the fold on its 25.2 mm line and keep the loop in the leg, right of the buzzer. Do not push the fold, the loop or any slack toward the left wall.
 
-13. **Lay the battery (8) on the foam.** Peel the top liner off the foam on the back of the screen. Lay the pack on it, cable end toward you, centred left to right, its near edge about 4 mm from the lower edge of the screen. Press it down lightly. Lay the wires in the gap between the pack and the screen edge. Keep them off the FPC.
+13. **Lay the battery (8) on the foam.** Peel the top liner off the foam on the back of the screen. Lay the pack on it, cable end toward you, centred left to right, its near edge 4 mm from the lower edge of the screen (anywhere from 3.6 to 5 mm is good for a 52 mm pack). Measure it with the ruler. Nearer than 3.6 mm, the pack sits on the two low ribs of the back plate; further than 5 mm, a 52 mm pack reaches the lip. Press it down lightly. Lay the wires in the gap between the pack and the screen edge. Keep them off the FPC.
 
 14. **Optional motor (9).** Glue the motor into its round seat on the inside of the back plate (10). Solder the red lead to M+ and the other lead to M- (the two labelled pads on the right part of the board, beside the card socket). Leave about 5 mm of slack so the back plate can open.
 
@@ -88,7 +88,7 @@ Lay the front shell face down on a soft cloth with the USB-C opening toward you.
 
     Measure the Bluetooth range early, with the back open and again after step 16. Stream to headphones with the player in a pocket, walk away and note where the audio drops. If the closed case loses much more range than the open one, tell the assistant before you close more cases.
 
-16. **Close the back plate (10) with the screws (11).** Lower the back plate with its posts down. The four posts land on the four round bare pads of the board. The lip goes inside the walls. Check all round the edge that no wire or FPC is caught. Put in the four M2 x 4 screws. Tighten in a cross pattern until each head sits in its counterbore, then stop. That is about 0.1 Nm: light finger force on a small driver. Do not use M2 x 5 or longer screws: they bottom out in the two bosses under the screen.
+16. **Close the back plate (10) with the screws (11).** Lower the back plate with its posts down. The four posts land on the four round bare pads of the board. The lip goes inside the walls. Check all round the edge that no wire or FPC is caught. Put in the four M2 x 4 screws. Tighten in a cross pattern until each head sits in its counterbore, then stop. That is about 0.1 Nm: light finger force on a small driver. The posts press the board 0.2 mm, so the plate takes a little force to close. If the plate still stands off the rim near a post after the screws are in, take it off and sand that post tip lightly, then try again. Do not use M2 x 5 or longer screws: they bottom out in the two bosses under the screen.
 
 ## Take the board out
 

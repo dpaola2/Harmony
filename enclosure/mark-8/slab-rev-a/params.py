@@ -12,7 +12,12 @@ MI = sources.mech()
 # ---------------------------------------------------------------- body (SPEC 2)
 BODY_W = 58.6
 BODY_H = 103.5
-T = 9.5
+# Every height must be a whole number of 0.2 layers above each part's print
+# bed (front shell: its front face; back plate: its outer face). At T 9.5 the
+# shell rim and boss faces (8.3, 7.7 from the front) printed 0.1 taller, so the
+# printed case was 9.6 and the press posts lost their press (diagram G-code
+# check, November 21). The case is now 9.6 as designed and as printed.
+T = 9.6
 # SPEC 2 says plan corner R6.5. The screen's top corners then sit 0.63 from the
 # outer surface, which leaves no printable wall around a screen pocket. R5.5 is
 # the smallest change that leaves 0.8 at those corners (see README).
@@ -20,7 +25,7 @@ CORNER_R = 5.5
 EDGE_ROUND = 1.0
 WALL = 1.6
 SKIN = 1.0
-SPLIT_Z = -8.3               # back plate inner face, shell rear end
+SPLIT_Z = -8.4               # back plate inner face, shell rear end (8.4 = 42 layers)
 BACK_T = 1.2
 X_OUT = BODY_W / 2           # 29.3
 Y_OUT = BODY_H / 2           # 51.75
@@ -42,12 +47,12 @@ INSERT_L = 3.0
 INSERT_HOLE_D = 3.0          # 0.2 under the knurl OD
 BOSS_D = INSERT_HOLE_D + 2 * 1.2   # 5.4, 1.2 wall
 PAD_H = 0.6                  # screw pad on the back plate inner face
-BOSS_END_Z = SPLIT_Z + PAD_H  # -7.7, shell boss end face = insert face
-INSERT_HOLE_DEPTH = 3.6       # hole bottom at -4.1
+BOSS_END_Z = SPLIT_Z + PAD_H  # -7.8, shell boss end face = insert face
+INSERT_HOLE_DEPTH = 3.6       # hole bottom at -4.2
 TOP_BOSS_TOP_Z = -3.6         # 0.45 below the screen back (-3.15)
 SCREW_HOLE_D = 2.4
 CBORE_D = 4.2
-CBORE_DEPTH = 1.1             # head seat at z -8.4, 0.7 of plastic under the head
+CBORE_DEPTH = 1.1             # head seat at z -8.5, 0.7 of plastic under the head
 
 # ---------------------------------------------------------------- screen (SPEC 3)
 SCR_X = 26.68
@@ -86,7 +91,11 @@ RELIEF_DEPTH = 0.5
 USB = MI["usb_c"]
 USB_ZC = USB["z_centre_line"]           # -3.46
 USB_FACE_Y = USB["mating_face_y"]       # -50.4
-USB_OPEN_W, USB_OPEN_H, USB_OPEN_R = 9.3, 3.6, 1.0
+# Opening z -1.6 to -5.4 (whole layers) and 9.6 wide: 0.3 or more to the J1
+# shell on every side (J1 is z -1.85 to -5.10 and 8.94 wide in the board STEP).
+# At 9.3 x 3.6 on the centre line the bottom gap printed as 0.10 (diagram, November 21).
+USB_OPEN_W, USB_OPEN_R = 9.6, 1.0
+USB_OPEN_Z = (-1.6, -5.4)
 # Overmold pocket: USB Type-C overmold limit 12.35 x 6.5, centred on the plug axis.
 # Its top would cut the 1.0 front edge round and leave a feather edge, so the
 # pocket runs out through the round (a port recess in the bottom edge).
@@ -142,7 +151,10 @@ PIN_CHAMFER = 0.35
 PADS = MI["press_pads"]
 POST_TIP_D = 3.0
 POST_BASE_D = 4.4
-POST_TIP_Z = Z_COMP + 0.1     # -1.7: 0.1 interference with the pad
+# -1.6: 0.2 interference with the pad. At 0.2 layers the press can only be 0.0
+# or 0.2; the tip is 8.0 above the plate's outer face (40 layers).
+POST_TIP_Z = Z_COMP + 0.2
+POST_PRESS = 0.2
 POST_NECK_Z = -4.0
 POST_CONE_Z = -5.0
 
@@ -177,13 +189,17 @@ LED_TUBE_OD = 2.3              # base, from the plate to LED_NECK_Z
 LED_NECK_OD = 1.9
 LED_NECK_Z = -5.5              # 0.44 below the J1 shell
 LED_TIP_CHAMFER = 0.15         # outer edge of the tip, so a misplaced tube slides off J1 or J3
-LED_TUBE_TOP = -2.9            # LED top is -2.5
+LED_TUBE_TOP = -3.0            # LED top is -2.5; 6.6 above the plate's outer face (33 layers)
 MOTOR_C = (-20.0, -39.5)
 MOTOR_D, MOTOR_H = 10.0, 2.7
 MOTOR_POCKET_D, MOTOR_POCKET_DEPTH = 10.4, 0.3   # shallow round seat marks the spot
 
 # ---------------------------------------------------------------- battery
-BAT_POCKET_Y0 = -3.5           # cable bay below this line
+# Pack near edge, 3.84 from the screen's lower edge (ASSEMBLY step 13: about
+# 4 mm). The cable bay is below this line. The two low ribs on the back plate
+# sit 0.3 below it. There is no top rib: a 52 long pack (YDL 403450) ends at
+# y 48.0, 1.2 from the back plate lip (diagram, November 21).
+BAT_POCKET_Y0 = -4.0
 BAT_TOP_Z = -3.15              # screen back
 # MECH-3: 0.2 to 0.5 foam between the pack and the screen back. The model uses
 # the thick end, 0.5. The screen is 2.15 +-0.10 thick (DLC drawing), so the
@@ -193,7 +209,7 @@ SCR_T_TOL = 0.10
 BAT_FOAM_W, BAT_FOAM_L = 35.0, 45.0
 BAT_MAX = (52.0, 54.0, 4.8)
 BAT_404050 = (40.0, 50.0, 4.0)
-BAT_403450 = (34.0, 50.0, 4.0)
+BAT_403450 = (34.0, 52.0, 4.0)   # YDL 403450 as bought: 4.0 x 34 x 52 with its protection board
 RIB_H, RIB_W, RIB_GAP = 1.2, 0.8, 0.3
 
 # ---------------------------------------------------------------- FPC (SPEC 3.1 + STEP)
