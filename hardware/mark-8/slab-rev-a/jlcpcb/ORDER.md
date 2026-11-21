@@ -106,6 +106,7 @@ Each board sits in its frame on three mouse-bite tabs: on the left edge near the
 1. Hold the board, not the frame. Cut the left tab first, then the other two.
 2. Cut each tab with flush cutters along the hole line.
 3. File each nub flush with the board edge (up to 0.35 mm, with half-hole bumps), then deburr the edge. A straight edge must lie flat along it.
+4. File the small fillet the router leaves in each inside corner at the tab ends too. File gently at the lower end of the right tab: the board strip beside the screw notch there is only about 0.2 mm wide.
 
 Never snap a tab off: bending the 0.8 mm board can crack an MLCC near the edge or lift a J4 pad. The board must be flush all round, because the case has only 0.5 mm of clearance at the side walls.
 

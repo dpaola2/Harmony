@@ -755,6 +755,15 @@ for a_ in _aps:
     num_ = _slot_at.get((a_.GetPosition().x, a_.GetPosition().y), '?')
     j1_paste['pad ' + num_] = dict(area_mm2=r3(abs(sa_.Outline(0).Area()) / 1e12), nearest=what_, distance=r3(d_))
     check(d_ >= 0.15 - 1e-3, 'J1 pad %s paste opening %.3f from %s (needs 0.15)' % (num_, d_, what_))
+    # coverage (change-review check, note 3): the opening must cover its whole slot pad and keep its area
+    slot_ = next(pd for pd in _j1.Pads() if pd.GetAttribute() == p.PAD_ATTRIB_PTH and pd.GetNumber() == num_)
+    left_ = _pad_shape(slot_, p.F_Cu)
+    left_.BooleanSubtract(sa_, p.SHAPE_POLY_SET.PM_FAST)
+    uncovered_ = sum(abs(left_.Outline(i).Area()) for i in range(left_.OutlineCount())) / 1e12
+    j1_paste['pad ' + num_]['uncovered_pad_mm2'] = r3(uncovered_)
+    check(uncovered_ < 1e-3, 'J1 pad %s paste opening leaves %.3f mm2 of the slot pad uncovered' % (num_, uncovered_))
+    check(abs(sa_.Outline(0).Area()) / 1e12 >= 2.5, 'J1 pad %s paste opening is only %.3f mm2 (needs 2.5)'
+          % (num_, abs(sa_.Outline(0).Area()) / 1e12))
 
 # --- 5. ERC / DRC results -------------------------------------------------------------------------
 drc = json.loads((HERE / 'drc.json').read_text())

@@ -3389,22 +3389,26 @@
    "pad 4": {
     "area_mm2": 3.057,
     "nearest": "paste J1.A1B12",
-    "distance": 0.16
+    "distance": 0.16,
+    "uncovered_pad_mm2": 0.0
    },
    "pad 3": {
     "area_mm2": 2.657,
     "nearest": "via LCD_MOSI",
-    "distance": 0.248
+    "distance": 0.248,
+    "uncovered_pad_mm2": 0.0
    },
    "pad 1": {
     "area_mm2": 2.908,
     "nearest": "paste J1.B1A12",
-    "distance": 0.16
+    "distance": 0.16,
+    "uncovered_pad_mm2": 0.0
    },
    "pad 2": {
     "area_mm2": 2.597,
     "nearest": "via VBUS",
-    "distance": 0.16
+    "distance": 0.16,
+    "uncovered_pad_mm2": 0.0
    }
   },
   "l3_nets_above_electrodes": [
