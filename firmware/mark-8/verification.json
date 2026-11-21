@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-21",
   "status": "PASS host tests and checks; builds as recorded below; no flash, no hardware qualification",
   "esp_idf": "8c750b088c7cd857d079c0eeb495da199b359461 (5.5, firmware/upstream/tangara-fw/lib/esp-idf)",
   "builds": {
@@ -94,26 +94,10 @@
       }
     }
   },
-  "uncommitted_build_dependencies": [
-    "modified firmware/mark-6/feather-carrier/main/album.c",
-    "modified firmware/mark-6/feather-carrier/main/album.h",
-    "modified firmware/mark-6/feather-carrier/main/audio_player.c",
-    "modified firmware/mark-6/feather-carrier/main/audio_player.h",
-    "modified firmware/mark-6/feather-carrier/main/player_bluetooth.c",
-    "modified firmware/mark-6/feather-carrier/main/player_bluetooth.h",
-    "modified firmware/mark-6/feather-carrier/main/player_prefs.c",
-    "modified firmware/mark-6/feather-carrier/main/player_prefs.h",
-    "modified firmware/mark-6/feather-carrier/main/player_ui.c",
-    "modified firmware/mark-6/feather-carrier/main/player_ui.h"
-  ],
-  "copied_from_uncommitted_working_tree": [
-    "modified firmware/mark-7/pocket-player/main/main.c",
-    "modified firmware/mark-7/pocket-player/main/player_display.c",
-    "modified firmware/mark-7/pocket-player/main/ui_render.c",
-    "untracked firmware/mark-7/pocket-player/main/player_power.c"
-  ],
+  "uncommitted_build_dependencies": [],
+  "copied_from_uncommitted_working_tree": [],
   "source_sha256": {
-    "firmware/mark-8/README.md": "0f6a0afdd4402f13cb16c26eefbf0012bb53e843ad1438e0b3c69cb9a5c80c3a",
+    "firmware/mark-8/README.md": "4a91731316aa2cdda5c30fc5177042f994f55f332890b94ed28a02c7acba06df",
     "firmware/mark-8/components/bench_storage/CMakeLists.txt": "912b49683e50c0dc8079d95ad1f26f658858c5535d4ef606aae6eb626eb42d86",
     "firmware/mark-8/components/bench_storage/bench_storage.c": "39bffc3530a1257017adbc3c0b4234da16c456bec4738d024295c1eb41925380",
     "firmware/mark-8/components/bench_storage/bench_storage.h": "16d42d22755164928f88ae6d09c2de54755cc4499ed97d198691f9f264f614b4",

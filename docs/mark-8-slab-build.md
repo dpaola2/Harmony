@@ -41,7 +41,7 @@ On the order day, do these checks:
 | 1 mm double-sided foam tape | 1 piece, 35 x 45 mm | Any | For the battery |
 | Vibration motor LCM1027A2445F | 1 | LCSC C2759984 | Optional. You can add it to the JLC order |
 
-You also need a microSD card (FAT32) with the Harmony music folder, a USB-C cable, a multimeter, and a soldering iron for the inserts.
+You also need a microSD card (FAT32) with the Harmony music folder, a USB-C cable, a multimeter, and a soldering iron for the inserts. The Mark-7 card works as it is. To fill a new card, run `tools/harmony_sync.py` ([harmony-sync.md](harmony-sync.md)). It also writes `HARMONY/library.hdb`, the index the player needs for more than 512 tracks.
 
 ## 3. Print
 

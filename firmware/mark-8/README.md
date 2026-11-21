@@ -233,9 +233,9 @@ Change options with `bash build.sh menuconfig` in either project ("Harmony Mark-
 - **DRV2605L** runs the ERM in open loop with the chip's default drive voltage (about 3 V). No auto-calibration.
 - **VBUS reading** sits near the top of the ADC range (5.25 V gives 3.15 V at the pin).
 
-## 7. Uncommitted dependencies
+## 7. Shared Mark-6 files
 
-The player compiles these Mark-6 files from the working tree. They hold uncommitted changes from October 9 (the version flashed on Dave's Mark-7). **Commit them before the Mark-8 build is reproducible from git.**
+The player compiles these Mark-6 files directly. Their October 9 changes (the version flashed on Dave's Mark-7) were committed on November 21 in `1053e87`, so both Mark-8 projects build from a clean checkout. A change to these files also changes the Mark-8 player.
 
 - `firmware/mark-6/feather-carrier/main/album.c`, `album.h`
 - `firmware/mark-6/feather-carrier/main/audio_player.c`, `audio_player.h`
@@ -243,9 +243,11 @@ The player compiles these Mark-6 files from the working tree. They hold uncommit
 - `firmware/mark-6/feather-carrier/main/player_prefs.c`, `player_prefs.h`
 - `firmware/mark-6/feather-carrier/main/player_ui.c`, `player_ui.h`
 
-The other Mark-6 files used (`album_metadata.*`, `playback.*`, `player_display.h`, `ui_assets/fonts.h`, `ui_assets/trial_durations.h`, `components/bench_mp3`, `components/minimp3`, `components/bench_display/font8x16.h`) are committed and unchanged.
+The other Mark-6 files used (`album_metadata.*`, `playback.*`, `player_display.h`, `ui_assets/fonts.h`, `ui_assets/trial_durations.h`, `components/bench_mp3`, `components/minimp3`, `components/bench_display/font8x16.h`) did not change.
 
-These Mark-8 files are copies of working-tree files, changed for the slab; they do not depend on the originals at build time, but the originals are where they came from: `firmware/mark-7/pocket-player/main/main.c`, `player_display.c`, `ui_render.c` (uncommitted changes) and `player_power.c` (untracked, never committed), and `firmware/mark-6/feather-player-bench/components/bench_storage/bench_storage.c` (committed). All of `firmware/mark-8/` except `mpr121-bench/` is new and uncommitted. `verification.json` lists the same files with SHA-256 hashes.
+The player reads `HARMONY/library.hdb` on the card when it is present. `tools/build_music_index.py` writes that file, and `tools/harmony_sync.py` copies the library and runs it (see `docs/harmony-sync.md`). Without the file, the player scans folders and stops at 512 tracks.
+
+These Mark-8 files are copies, changed for the slab. They do not use the originals at build time: `firmware/mark-7/pocket-player/main/main.c`, `player_display.c`, `ui_render.c` and `player_power.c`, and `firmware/mark-6/feather-player-bench/components/bench_storage/bench_storage.c`. `verification.json` lists the shared and copied files with SHA-256 hashes. Its two dirty-file lists are empty when the sources are committed.
 
 ## 8. Build and test
 
