@@ -33,3 +33,6 @@ bool player_bluetooth_init(void);
 bool player_bluetooth_command(player_bt_command_t command, const uint8_t address[6]);
 /* Copies bounded state, without exposing callback-owned pointers. <=2ms lock wait. */
 bool player_bluetooth_snapshot(player_bt_snapshot_t *out);
+
+/* Call repeatedly until worker has finished its current event and parked. */
+bool player_bluetooth_shutdown(void);

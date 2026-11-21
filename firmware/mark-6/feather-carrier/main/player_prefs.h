@@ -15,3 +15,6 @@ void player_prefs_init(void);
 player_prefs_t player_prefs_get(void);
 void player_prefs_update(const player_prefs_t *prefs);
 bool player_prefs_available(void);
+
+/* Synchronous durable save, serialized with the background writer. */
+bool player_prefs_flush(void);

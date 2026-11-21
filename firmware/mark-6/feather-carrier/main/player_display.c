@@ -41,8 +41,9 @@ static void draw_task(void *arg)
             (view.audio.consumed_frames / 44100) * 44100 : 0;
         bool changed = first || memcmp(&view, &drawn_view, sizeof(view));
         const album_t *library = audio_player_library();
-        unsigned duration = library && view.audio.track < library->count ?
-            (library->tracks[view.audio.track].duration_seconds ? library->tracks[view.audio.track].duration_seconds : trial_duration(library->tracks[view.audio.track].path)) : 0;
+        album_track_t entry;
+        unsigned duration=album_read_track(library,view.audio.track,&entry)?
+            (entry.duration_seconds?entry.duration_seconds:trial_duration(entry.path)):0;
         int64_t start = esp_timer_get_time();
         if (changed && (first || !ui_render_selection(frame, &view, &drawn_view)))
             ui_render(frame, &view, duration);

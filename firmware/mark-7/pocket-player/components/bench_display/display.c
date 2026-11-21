@@ -27,7 +27,9 @@ static esp_err_t send_bytes(const void *data, size_t len)
 {
     if (!carrier_board_ready()) return ESP_ERR_INVALID_STATE;
     spi_transaction_t t = {.length = len * 8, .tx_buffer = data};
-    return spi_device_transmit(lcd, &t);
+    /* Tiny commands should not each pay an interrupt/task wakeup. Keep long
+     * pixel transfers interrupt driven so Bluetooth can use this core. */
+    return len <= 4 ? spi_device_polling_transmit(lcd, &t) : spi_device_transmit(lcd, &t);
 }
 
 static esp_err_t command(uint8_t cmd, const uint8_t *data, size_t len)
@@ -132,7 +134,7 @@ static esp_err_t display_init(bool existing_bus)
         .sclk_io_num = CARRIER_TFT_SCK, .quadwp_io_num = -1, .quadhd_io_num = -1,
         .max_transfer_sz = sizeof(pixels)};
     if (!existing_bus) TRY(spi_bus_initialize(SPI2_HOST, &bus, SPI_DMA_CH_AUTO));
-    spi_device_interface_config_t dev = {.clock_speed_hz = 4000000, .mode = 0,
+    spi_device_interface_config_t dev = {.clock_speed_hz = 16000000, .mode = 0,
         .spics_io_num = -1, .queue_size = 1};
     TRY(spi_bus_add_device(SPI2_HOST, &dev, &lcd));
     gpio_set_level(RST, 1); vTaskDelay(pdMS_TO_TICKS(100));
@@ -145,7 +147,7 @@ static esp_err_t display_init(bool existing_bus)
     ready = true;
     TRY(bench_display_fill(0, 0, WIDTH, HEIGHT, 0));
     TRY(gpio_set_level(CARRIER_TFT_LITE, 1));
-    ESP_LOGI("DISPLAY", "ST7789 SPI2 4MHz 320x240; write completed, visual check required");
+    ESP_LOGI("DISPLAY", "ST7789 SPI2 16MHz 320x240; write completed, visual check required");
     return ESP_OK;
 }
 
@@ -177,5 +179,14 @@ esp_err_t bench_display_probe(void)
         TRY(bench_display_text(52 + 104*i, 142, labels[i], 0xffff, 0));
     }
     ESP_LOGI("DISPLAY", "DRAW_COMPLETE: no display readback; visual confirmation required");
+    return ESP_OK;
+}
+
+esp_err_t bench_display_sleep(void)
+{
+    TRY(bench_display_backlight(false));
+    TRY(command(0x28, NULL, 0));
+    TRY(command(0x10, NULL, 0));
+    vTaskDelay(pdMS_TO_TICKS(120));
     return ESP_OK;
 }

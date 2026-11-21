@@ -60,7 +60,15 @@ int main(void){
     /* Settings persist, and the first input after timeout wakes without acting. */
     reset();scroll(3);v=select_item();assert(v.page==PLAYER_UI_SETTINGS);select_item();assert(audio.shuffle);scroll(1);select_item();assert(audio.repeat==1);select_item();assert(audio.repeat==2);select_item();assert(audio.repeat==0);scroll(1);select_item();assert(player_prefs_get().timeout_seconds==30);
     player_ui_tick(1000);player_ui_tick(31000);v=player_ui_view();assert(v.display_asleep);v=scroll(-1);assert(!v.display_asleep&&v.selected==2);v=scroll(-1);assert(v.selected==1);
-    reset();for(unsigned i=0;i<31;i++)assert(player_ui_input(PLAYER_UI_SCROLL,1));assert(!player_ui_input(PLAYER_UI_BACK,0));player_ui_update();assert(player_ui_view().selected==3);
+    reset();player_ui_tick(1234);assert(!player_ui_input_pending());for(unsigned i=0;i<31;i++)assert(player_ui_input(PLAYER_UI_SCROLL,1));assert(!player_ui_input(PLAYER_UI_BACK,0));assert(player_ui_input_pending());player_ui_update();assert(!player_ui_input_pending());assert(player_ui_last_input_ms()==1234);assert(player_ui_view().selected==3);
+    /* Sleep is opt-in, does not change timeout, and is consumed once. */
+    reset();scroll(3);v=select_item();assert(v.total_count==3);
+    player_ui_enable_sleep(true);v=player_ui_view();assert(v.total_count==4);
+    scroll(3);v=player_ui_view();assert(!strcmp(v.rows[3].label,"Sleep"));
+    select_item();assert(player_ui_take_sleep_request());assert(!player_ui_take_sleep_request());
+    assert(player_prefs_get().timeout_seconds==0);assert(player_prefs_flush());
+    player_ui_notice("Wake wire not checked");assert(strstr(player_ui_view().notice,"Wake wire"));
+    reset();scroll(3);assert(select_item().total_count==3);
     library.count=0;library.playlist_count=0;library.status=ALBUM_STATUS_EMPTY;reset();assert(strstr(player_ui_view().notice,"restart"));select_item();select_item();assert(player_ui_view().total_count==0);assert(select_item().page==PLAYER_UI_ARTISTS);
     puts("PASS native UI: library queues/Back, volume boundaries, paused restore, real BT intent/Forget, settings, timeout wake, bounded events and storage recovery");
 }

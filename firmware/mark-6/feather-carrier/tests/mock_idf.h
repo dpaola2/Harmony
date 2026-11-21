@@ -36,6 +36,7 @@ size_t esp_psram_get_size(void);
 void vTaskDelay(unsigned ticks);
 esp_err_t spi_bus_initialize(int host, const spi_bus_config_t *cfg, int dma);
 esp_err_t spi_bus_add_device(int host, const spi_device_interface_config_t *cfg, spi_device_handle_t *out);
+esp_err_t spi_device_polling_transmit(spi_device_handle_t dev, spi_transaction_t *t);
 esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t);
 
 #define portMAX_DELAY 0xffffffffU

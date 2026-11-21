@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #define ALBUM_MAX_TRACKS 512
+#define ALBUM_INDEX_MAX_TRACKS 16384
 #define ALBUM_PATH_MAX 192
 #define ALBUM_TITLE_MAX 128
 #define ALBUM_ARTIST_MAX 96
@@ -27,6 +28,7 @@ typedef struct {
     uint16_t track_indices[ALBUM_MAX_TRACKS];
 } album_playlist_t;
 typedef struct {
+    void *database; /* Optional read-only paged catalog; legacy arrays stay bounded. */
     unsigned count;
     album_track_t tracks[ALBUM_MAX_TRACKS];
     unsigned playlist_count;
@@ -46,3 +48,13 @@ bool album_parse(FILE *file, album_t *album);
  * Unsupported files are counted; damaged/unsupported tags use path fallbacks. */
 bool album_load(const char *root, album_t *album);
 const char *album_status_text(album_status_t status);
+
+/* Thread-safe copy-out accessor. No borrowed cache pointers escape. */
+bool album_read_track(const album_t *album, unsigned id, album_track_t *out);
+/* Group labels only, served from RAM when the bounded label cache fits. */
+bool album_read_labels(const album_t *album, unsigned id, album_track_t *out);
+void album_close(album_t *album);
+/* Database queries return track IDs, never materialize all track metadata. */
+typedef enum { ALBUM_QUERY_ARTISTS, ALBUM_QUERY_ALBUMS, ALBUM_QUERY_SONGS, ALBUM_QUERY_ALL } album_query_t;
+unsigned album_query(const album_t *album, album_query_t query, unsigned representative, unsigned *ids, unsigned capacity);
+int album_find_path(const album_t *album, const char *path);

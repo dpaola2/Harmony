@@ -37,6 +37,14 @@ int main(void)
     assert(counts[0] == 20 * MINIMP3_MAX_SAMPLES_PER_FRAME && !counts[1]);
     assert(counts[2] == 20 * MINIMP3_MAX_SAMPLES_PER_FRAME);
     assert(audio_player_snapshot().track == 0); /* No fallthrough to global track 1. */
+    /* A full database queue can be much larger than the legacy metadata array. */
+    unsigned *large=malloc(ALBUM_INDEX_MAX_TRACKS*sizeof(*large));assert(large);
+    for(unsigned i=0;i<ALBUM_INDEX_MAX_TRACKS;i++)large[i]=i%3;
+    assert(audio_player_play_queue(large,ALBUM_INDEX_MAX_TRACKS,ALBUM_INDEX_MAX_TRACKS-1));
+    s=audio_player_snapshot();assert(s.queue_count==ALBUM_INDEX_MAX_TRACKS&&s.track==large[ALBUM_INDEX_MAX_TRACKS-1]);
+    audio_player_set_modes(true,AUDIO_REPEAT_ALL);s=audio_player_snapshot();assert(s.queue_position==0&&s.track==large[ALBUM_INDEX_MAX_TRACKS-1]);
+    audio_player_set_modes(false,AUDIO_REPEAT_OFF);s=audio_player_snapshot();assert(s.queue_position==ALBUM_INDEX_MAX_TRACKS-1);
+    assert(!audio_player_play_queue(large,ALBUM_INDEX_MAX_TRACKS+1,0));free(large);
     audio_player_stop(); pthread_join(task, NULL);
     puts("PASS actual audio queue: validation, global indices, clamped skips, pause retention, reordered decoder output, exact samples and stop at selected queue end");
 }

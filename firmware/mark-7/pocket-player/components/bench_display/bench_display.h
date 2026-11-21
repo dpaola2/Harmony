@@ -17,3 +17,5 @@ esp_err_t bench_display_white_isolation(void);
 /* Fallback when a missing SD card left SPI uninitialized. */
 esp_err_t bench_display_init_without_storage(void);
 esp_err_t bench_display_backlight(bool on);
+
+esp_err_t bench_display_sleep(void);

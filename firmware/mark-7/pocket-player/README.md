@@ -1,10 +1,10 @@
 # Mark-7 pocket player preparation
 
-October 4, 2026 · HARMONY-19 · compile/host-tested, not flashed.
+October 9, 2026 · HARMONY-19 · display-only firmware flashed; Dave confirms the test pattern looks correct.
 
-**Second board identified:** the spare Feather is `14:33:5c:98:58:88`, with 8 MB flash. Local configuration now targets this board in display-only mode; the generic defaults still leave identity blank. See the [board record](../../../hardware/mark-7/second-feather-20261004/README.md). PSRAM runtime testing and peripheral bring-up remain pending.
+**Second board identified:** the spare Feather is `14:33:5c:98:58:88`, with 8 MB flash. Local configuration now targets this board in display-only mode; the generic defaults still leave identity blank. See the [board record](../../../hardware/mark-7/second-feather-20261004/README.md). Boot confirms 2 MB PSRAM and a passing SRAM test. Display-only bring-up is visually confirmed; Read-only SD mounting and a file sample pass; wheel, battery and full playback tests remain pending.
 
-This is a separate ESP-IDF target for another Adafruit Feather ESP32 V2. Dave owns four identical boards and is keeping the complete Mark-6 bench assembled for demos. The Mark-7 target uses Adafruit #4311 in landscape (ST7789, 320 × 240), its microSD slot, a Photo A1099 wheel, and the #328 2500 mAh battery. The compact UI retains the cream/green palette and uses four menu rows. Bluetooth identifies this target as **Harmony Mark-7**.
+This is a separate ESP-IDF target for another Adafruit Feather ESP32 V2. Dave owns four identical boards. On October 9 he authorized transferring the ANO assembly from Mark-6 for the first handheld. The Mark-7 target uses Adafruit #4311 in landscape (ST7789, 320 × 240), its microSD slot, the transferred ANO controls, and the #328 2500 mAh battery. The compact UI retains the cream/green palette and uses four menu rows. Bluetooth identifies this target as **Harmony Mark-7**.
 
 ![Actual framebuffer previews](preview/compact-ui.png)
 
@@ -24,7 +24,7 @@ The script accepts build/configuration actions only and rejects `flash`. The gen
 
 Host tests exercise the packet decoder; four-row library navigation, playback intents and preference handling; every UI page with long text under address/undefined-behavior sanitizers; and the actual ST7789 transport with SPI mocks. Driver tests cover initialization, landscape bounds, RGB565 byte order, backlight sequencing and bus release on failure, with both standalone and shared bus initialization. Existing Mark-6 UI/audio concurrency tests pass. These tests do not establish physical display orientation, SD compatibility, Bluetooth RF performance or wheel timing.
 
-## Proposed second-board wiring
+## Second-board wiring
 
 GPIO numbers below match `components/carrier_board/carrier_pins.h`. Keep Mark-6 assembled. The LCD and SD share SPI2; each has its own chip select. Use the display's 3.3 V-compatible power connection and common ground.
 
@@ -54,3 +54,13 @@ Next physical sequence: identify only the spare Feather; test the display patter
 The ST7789 initialization follows [Adafruit's driver](https://github.com/adafruit/Adafruit-ST7735-Library/blob/master/Adafruit_ST7789.cpp), rotation 1 (MY|MV, RGB), with conservative delays and no offsets for the full 240 × 320 panel. Wheel packet conventions follow [Gigahawk's Photo-wheel research](https://github.com/Gigahawk/clickwheel_reverse_eng). Electrical/timing behavior remains unverified on our hardware.
 
 The target reuses the Mark-6 native library, playback, preferences, Bluetooth and storage implementation. Two compatible shared-source changes allow a configurable row count (Mark-6 remains six) and device name (Mark-6 remains Harmony Mark-6). No Mark-6 firmware or wiring has been replaced.
+
+`MARK7_STORAGE_TEST` selects a read-only SD and shared-display test before Bluetooth bring-up. It takes precedence over display-only mode, lists up to 32 visible entries in each of `/sd` and `/sd/HARMONY`, and reads up to 512 bytes from the first regular file in each directory. It reports mount status on the display. The October 9 test mounted the card and read `HIGHER.MP3` successfully; see [bench evidence](../../../hardware/mark-7/display-bringup-20261009/README.md).
+
+## ANO controls adopted October 9
+
+`MARK7_ANO_INPUT` defaults on and selects the unchanged Mark-6 controls and debounce sources. It excludes experimental Photo-wheel capture. Connect the ANO assembly through the Feather STEMMA QT socket; GPIO2 enables that socket, SDA is GPIO22 and SCL is GPIO20. Display CS remains GPIO26/A0. Rotation stays at Mark-6’s setting of one quarter-turn; verify orientation on the loose assembly. No separate interrupt connection is needed for this polling test. Sleep/wake remains unimplemented.
+
+## October 9 full-library database
+
+The Mac-built `HARMONY/library.hdb` replaces recursive metadata scanning when present. It supports up to 16,384 indexed MP3s with a bounded record cache and PSRAM queues. Use [Harmony Sync](../../../docs/harmony-sync.md) for future card updates; see [database format and preparation](../../../docs/music-database.md). Host tests and native build pass. The image was flashed to the verified spare Feather on October 9; boot reaches the UI with 2 MB PSRAM. SD mounting currently times out, so full-card database tests remain pending. Evidence is in `hardware/mark-7/full-library-20261009/` at the repository root. The legacy 512-track scanner remains for cards without an index.

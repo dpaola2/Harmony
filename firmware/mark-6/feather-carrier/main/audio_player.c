@@ -21,12 +21,14 @@ static SemaphoreHandle_t lock;
 static StaticSemaphore_t lock_storage;
 static playback_t player;
 static album_t *album;
-static unsigned queue_tracks[ALBUM_MAX_TRACKS], queue_original[ALBUM_MAX_TRACKS];
+static unsigned *queue_tracks, *queue_original;
 /* Occurrence indices preserve duplicate entries in user playlists. */
-static unsigned queue_order[ALBUM_MAX_TRACKS];
+static unsigned *queue_order;
 static bool shuffle_enabled;
 static uint32_t shuffle_rng = 0x59734;
 static atomic_uint volume_level = 40;
+static atomic_bool producer_active;
+bool audio_player_shutdown_complete(void) { return !atomic_load(&producer_active); }
 /* The serialized A2DP data callback is the sole owner after prepare. */
 static playback_gain_t output_gain;
 static atomic_uint_least32_t max_decode_us, contention_bytes, max_callback_us;
@@ -61,8 +63,10 @@ static void producer(void *arg)
             generation = requested;
             pending = sent = 0;
             char path[ALBUM_PATH_MAX + 16];
-            snprintf(path, sizeof(path), "/sd/HARMONY/%s", album->tracks[track].path);
-            end = mp3_reader_open(reader, path) != 0;
+            album_track_t entry;
+            bool valid=album_read_track(album,track,&entry);
+            snprintf(path, sizeof(path), "/sd/HARMONY/%s", entry.path);
+            end = !valid || mp3_reader_open(reader, path) != 0;
             ESP_LOGI(TAG, "TRACK index=%u/%u file=%s generation=%"PRIu32,
                      track + 1, album->count, path, generation);
             if (end) {
@@ -97,9 +101,15 @@ cleanup:
     free(reader);
     free(pcm);
     bench_storage_unmount();
+    atomic_store(&producer_active, false);
     vTaskDelete(NULL);
 }
 
+static void *audio_alloc(size_t bytes) {
+    void *p=heap_caps_malloc(bytes,MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    if(p)memset(p,0,bytes);
+    return p;
+}
 bool audio_player_prepare(void)
 {
     if (lock) return false;
@@ -107,9 +117,12 @@ bool audio_player_prepare(void)
 #ifndef HARMONY_PLAYER_UI
     if (!mounted) return false;
 #endif
-    album = heap_caps_malloc(sizeof(*album), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+    album = audio_alloc(sizeof(*album));
     uint8_t *storage = heap_caps_malloc(PCM_BYTES, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
-    if (!album || !storage) goto fail;
+    queue_tracks=audio_alloc(ALBUM_INDEX_MAX_TRACKS*sizeof(unsigned));
+    queue_original=audio_alloc(ALBUM_INDEX_MAX_TRACKS*sizeof(unsigned));
+    queue_order=audio_alloc(ALBUM_INDEX_MAX_TRACKS*sizeof(unsigned));
+    if (!album || !storage || !queue_tracks || !queue_original || !queue_order) goto fail;
     memset(album, 0, sizeof(*album));
 #ifdef HARMONY_PLAYER_UI
     if (!mounted) album->status = ALBUM_STATUS_MISSING;
@@ -148,7 +161,9 @@ bool audio_player_prepare(void)
         return true;
     }
 #endif
+    atomic_store(&producer_active, true);
     if (xTaskCreatePinnedToCore(producer, "mp3_decode", 24576, NULL, 5, NULL, 1) != pdPASS) {
+        atomic_store(&producer_active, false);
         vSemaphoreDelete(lock); lock = NULL; goto fail;
     }
     int64_t deadline = esp_timer_get_time() + 10000000;
@@ -168,6 +183,8 @@ bool audio_player_prepare(void)
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 fail:
+    album_close(album);
+    free(queue_tracks);free(queue_original);free(queue_order);queue_tracks=queue_original=queue_order=NULL;
     free(album); album = NULL;
     free(storage);
     if (mounted) bench_storage_unmount();
@@ -253,7 +270,7 @@ static void order_queue(unsigned anchor, unsigned selected)
 }
 bool audio_player_play_queue(const unsigned *tracks, unsigned count, unsigned start)
 {
-    if (!lock || !tracks || !count || count > ALBUM_MAX_TRACKS || start >= count) return false;
+    if (!lock || !tracks || !count || count > ALBUM_INDEX_MAX_TRACKS || start >= count) return false;
     for (unsigned i = 0; i < count; ++i) if (tracks[i] >= album->count) return false;
     LOCK();
     if (player.stopped) { UNLOCK(); return false; }
@@ -319,6 +336,14 @@ void audio_player_stop(void)
     if (!lock) return;
     LOCK(); player.stopped = true; player.queued = 0; UNLOCK();
 }
+bool audio_player_needs_refill(void)
+{
+    if(!lock)return false;
+    LOCK();
+    bool urgent=player.connected&&!player.paused&&!player.stopped&&!player.failed&&!player.finished&&!player.eof
+        &&player.queued<PCM_BYTES/2;
+    UNLOCK();return urgent;
+}
 audio_player_snapshot_t audio_player_snapshot(void)
 {
     audio_player_snapshot_t s = {.volume = atomic_load(&volume_level)};
@@ -338,11 +363,13 @@ audio_player_snapshot_t audio_player_snapshot(void)
         .failed = player.failed, .paused = player.paused, .connected = player.connected,
         .buffering = player.buffering, .volume = atomic_load(&volume_level),
         .shuffle = shuffle_enabled, .repeat = player.repeat};
-    if (album->count) {
-        strcpy(s.title, album->tracks[queue_tracks[player.track]].title);
-        strcpy(s.selected_title, album->tracks[queue_tracks[player.selection]].title);
-    }
     UNLOCK();
+    /* Catalog access has its own mutex and never holds the audio callback lock. */
+    if (album->count && !s.stopped) {
+        album_track_t entry;
+        if(album_read_track(album,s.track,&entry))strcpy(s.title,entry.title);
+        if(album_read_track(album,s.selection,&entry))strcpy(s.selected_title,entry.title);
+    }
     return s;
 }
 void audio_player_log(void)

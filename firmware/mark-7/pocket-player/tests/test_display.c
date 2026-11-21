@@ -47,7 +47,7 @@ esp_err_t spi_bus_initialize(int host, const spi_bus_config_t *cfg, int dma)
 }
 esp_err_t spi_bus_add_device(int host, const spi_device_interface_config_t *cfg, spi_device_handle_t *out)
 {
-    assert(host == SPI2_HOST && cfg->clock_speed_hz == 4000000 && cfg->spics_io_num == -1);
+    assert(host == SPI2_HOST && cfg->clock_speed_hz == 16000000 && cfg->spics_io_num == -1);
     *out = (void *)1; return ESP_OK;
 }
 esp_err_t spi_device_transmit(spi_device_handle_t dev, spi_transaction_t *t)
@@ -127,6 +127,11 @@ int main(void)
     assert(bench_display_fill(0, 0, 2, 2, 0) == ESP_ERR_TIMEOUT);
     assert(!bus_owned && levels[CARRIER_TFT_CS]);
     write_command_error = false;
+    command_count=0;unsigned sleep_start_ms=delayed_ms;
+    assert(bench_display_sleep()==ESP_OK);
+    assert(command_count==2 && commands[0]==0x28 && commands[1]==0x10);
+    assert(delayed_ms-sleep_start_ms>=120);
+    assert(levels[CARRIER_TFT_LITE]==0 && !bus_owned);
     inject_error = true;
     assert(bench_display_fill(0, 0, 1, 1, 0) == ESP_ERR_TIMEOUT);
     assert(levels[CARRIER_TFT_CS] == 1 && !bus_owned);
@@ -135,3 +140,6 @@ int main(void)
     assert(transactions == before && levels[CARRIER_TFT_CS] == 1);
     puts("PASS actual display driver: full RAM bounds, clipping, RGB565, backlight sequence, error/PG handling");
 }
+
+esp_err_t spi_device_polling_transmit(spi_device_handle_t dev, spi_transaction_t *t)
+{assert(t->length<=32);return spi_device_transmit(dev,t);}

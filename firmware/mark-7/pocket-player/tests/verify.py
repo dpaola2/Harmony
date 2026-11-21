@@ -4,8 +4,10 @@ import subprocess, tempfile
 P=Path(__file__).resolve().parents[1]; SHARED=P.parents[1]/'mark-6/feather-carrier'
 OUT=P/'preview';OUT.mkdir(exist_ok=True)
 with tempfile.TemporaryDirectory(prefix='mark7-tests-') as d:
-    flags=['cc','-std=gnu11','-Wall','-Wextra','-Werror','-Wno-unused-parameter','-fsanitize=address,undefined','-pthread','-DPLAYER_UI_ROWS=4','-I'+str(P/'main'),'-I'+str(SHARED/'main')]
-    groups={'wheel':[P/'tests/test_wheel.c',P/'main/wheel_protocol.c'],
+    flags=['cc','-O2','-std=gnu11','-Wall','-Wextra','-Werror','-Wno-unused-parameter','-fsanitize=address,undefined','-pthread','-DPLAYER_UI_ROWS=4','-I'+str(P/'main'),'-I'+str(SHARED/'main')]
+    groups={'sleep_gate':[P/'tests/test_sleep_gate.c'],
+      'wheel':[P/'tests/test_wheel.c',P/'main/wheel_protocol.c'],
+      'ano_input':[SHARED/'tests/test_input.c',SHARED/'main/input_filter.c'],
       'ui':[P/'tests/test_ui.c',*[SHARED/'main'/f for f in ('player_ui.c','player_prefs.c','album.c','album_metadata.c')]],
       'render':[P/'tests/test_render.c',P/'main/ui_render.c']}
     for name, sources in groups.items():
@@ -19,7 +21,7 @@ with tempfile.TemporaryDirectory(prefix='mark7-tests-') as d:
     for shared in [False, True]:
         exe=tmp/('display-shared' if shared else 'display')
         extra=['-DTEST_SHARED_BUS'] if shared else []
-        subprocess.run(flags+extra+['-I'+str(tmp),'-I'+str(SHARED/'tests'),'-I'+str(SHARED/'components/bench_display'),'-I'+str(P/'components/carrier_board'),'-I'+str(P/'components/bench_display'),str(P/'tests/test_display.c'),str(P/'components/bench_display/display.c'),'-o',str(exe)],check=True)
+        subprocess.run(flags+extra+['-I'+str(tmp),'-I'+str(SHARED/'tests'),'-I'+str(P/'components/bench_display'),'-I'+str(P/'components/carrier_board'),'-I'+str(SHARED/'components/bench_display'),str(P/'tests/test_display.c'),str(P/'components/bench_display/display.c'),'-o',str(exe)],check=True)
         subprocess.run([str(exe)],check=True)
     blocked=subprocess.run(['bash',str(P/'build.sh'),'flash'],capture_output=True,text=True)
     assert blocked.returncode==2 and 'cannot flash hardware' in blocked.stderr

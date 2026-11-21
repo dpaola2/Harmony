@@ -10,6 +10,10 @@
 #include "carrier_board.h"
 #include "carrier_controls.h"
 #include "bench_display.h"
+#include "bench_storage.h"
+#include <dirent.h>
+#include <stdio.h>
+#include <sys/stat.h>
 #define BT_AV_TAG "MARK7"
 #ifndef CONFIG_CARRIER_DISPLAY_ONLY
 #define CONFIG_CARRIER_DISPLAY_ONLY 0
@@ -17,8 +21,50 @@
 void app_main(void)
 {
     if (carrier_board_init() != ESP_OK) return;
+#if CONFIG_MARK7_STORAGE_TEST
+    esp_err_t sd_err = bench_storage_mount();
+    if (sd_err == ESP_OK) {
+        const char *paths[] = {"/sd", "/sd/HARMONY"};
+        for (unsigned i = 0; i < 2; ++i) {
+            DIR *dir = opendir(paths[i]);
+            if (!dir) { ESP_LOGW(BT_AV_TAG, "Cannot list %s", paths[i]); continue; }
+            struct dirent *entry;
+            unsigned count = 0;
+            bool sampled = false;
+            while (count < 32 && (entry = readdir(dir))) {
+                if (entry->d_name[0] == '.') continue;
+                ++count;
+                ESP_LOGI(BT_AV_TAG, "SD_ENTRY %s/%s", paths[i], entry->d_name);
+                char path[512];
+                int n = snprintf(path, sizeof(path), "%s/%s", paths[i], entry->d_name);
+                struct stat st;
+                if (!sampled && n > 0 && n < sizeof(path) && stat(path, &st) == 0 && S_ISREG(st.st_mode)) {
+                    FILE *file = fopen(path, "rb");
+                    if (file) {
+                        unsigned char bytes[512];
+                        size_t got = fread(bytes, 1, sizeof(bytes), file);
+                        ESP_LOGI(BT_AV_TAG, "SD_READ %s bytes=%u error=%d", path, (unsigned)got, ferror(file));
+                        fclose(file);
+                        sampled = true;
+                    } else ESP_LOGE(BT_AV_TAG, "SD_OPEN failed: %s", path);
+                }
+            }
+            closedir(dir);
+        }
+    }
+    esp_err_t lcd_err = sd_err == ESP_OK ? bench_display_init_on_existing_bus() : bench_display_init_without_storage();
+    if (lcd_err == ESP_OK) {
+        lcd_err = bench_display_probe();
+        if (lcd_err == ESP_OK)
+            lcd_err = bench_display_text(8, 180, sd_err == ESP_OK ? "SD CARD MOUNTED" : "SD CARD FAILED", 0xffff, 0);
+    }
+    ESP_LOGI(BT_AV_TAG, "Storage test: SD=%s LCD=%s; Bluetooth remains off", esp_err_to_name(sd_err), esp_err_to_name(lcd_err));
+    return;
+#endif
     if (CONFIG_CARRIER_DISPLAY_ONLY) {
-        esp_err_t err = bench_display_init();
+        /* Player builds alias bench_display_init to the shared SD bus path.
+         * This mode has no storage, so it must initialize SPI itself. */
+        esp_err_t err = bench_display_init_without_storage();
         if (err == ESP_OK) err = bench_display_probe();
         ESP_LOGI(BT_AV_TAG, "Display-only write result: %s; visual check required", esp_err_to_name(err));
         return;
@@ -48,9 +94,9 @@ void app_main(void)
         ESP_LOGE(BT_AV_TAG, "Display preparation failed; integration test not started");
         return;
     }
-#if CONFIG_MARK7_WHEEL_INPUT
+#if CONFIG_MARK7_WHEEL_INPUT || CONFIG_MARK7_ANO_INPUT
     if (carrier_controls_start() != ESP_OK)
-        ESP_LOGW(BT_AV_TAG, "Photo wheel controls unavailable; continuing audio/display bench");
+        ESP_LOGW(BT_AV_TAG, "Controls unavailable; continuing audio/display bench");
 #endif
     /*
      * This example only uses the functions of Classical Bluetooth.

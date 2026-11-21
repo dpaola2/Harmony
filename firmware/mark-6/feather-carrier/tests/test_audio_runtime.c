@@ -13,6 +13,7 @@ static SemaphoreHandle_t test_mutex;
 static atomic_bool held;
 static atomic_bool mounted;
 static atomic_uint fail_track;
+static atomic_bool stall_decoder, decoder_waiting;
 static void (*producer_fn)(void *);
 static void *run(void *arg) {producer_fn(arg);return NULL;}
 SemaphoreHandle_t xSemaphoreCreateMutexStatic(StaticSemaphore_t *p) {assert(!pthread_mutex_init(p,NULL));test_mutex=p;return p;}
@@ -60,6 +61,8 @@ int mp3_reader_open(mp3_reader_t *r,const char *path)
 int mp3_reader_next(mp3_reader_t *r,int16_t *pcm)
 {
     assert(r->opened);
+    while(atomic_load(&stall_decoder)){atomic_store(&decoder_waiting,true);usleep(1000);}
+    atomic_store(&decoder_waiting,false);
     if(atomic_load(&fail_track)==r->track) return -1;
     if(r->frame++==20) return 0;
     for(unsigned i=0;i<MINIMP3_MAX_SAMPLES_PER_FRAME;++i) pcm[i]=(int16_t)(1600*r->track);

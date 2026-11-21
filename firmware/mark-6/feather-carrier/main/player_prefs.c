@@ -6,9 +6,11 @@
 #include "freertos/task.h"
 #include "freertos/semphr.h"
 #include "esp_log.h"
-static StaticSemaphore_t mutex_storage;
+static StaticSemaphore_t mutex_storage, save_storage;
+static SemaphoreHandle_t save_mutex;
 static SemaphoreHandle_t mutex;
 static uint32_t revision, saved_revision;
+static bool committed;
 static bool available;
 #define LOCK() xSemaphoreTake(mutex, portMAX_DELAY)
 #define UNLOCK() xSemaphoreGive(mutex)
@@ -32,19 +34,10 @@ static void save_task(void *unused)
     uint32_t observed = 0;
     for (;;) {
         vTaskDelay(pdMS_TO_TICKS(2000));
-        LOCK(); uint32_t rev = revision; player_prefs_t copy = value; UNLOCK();
+        LOCK(); uint32_t rev = revision; uint32_t saved = saved_revision; UNLOCK();
         /* Save after settings stop changing; avoid a flash write per detent. */
-        if (rev == saved_revision || rev != observed) { observed = rev; continue; }
-        nvs_handle_t handle;
-        esp_err_t err = nvs_open("harmony_ui", NVS_READWRITE, &handle);
-        if (err == ESP_OK) {
-            err = nvs_set_blob(handle, "prefs", &copy, sizeof(copy));
-            if (err == ESP_OK) err = nvs_commit(handle);
-            nvs_close(handle);
-        }
-        LOCK(); available = err == ESP_OK; UNLOCK();
-        if (err == ESP_OK) saved_revision = rev;
-        else ESP_LOGW("PREFS", "Preferences not saved: %s", esp_err_to_name(err));
+        if (rev == saved || rev != observed) { observed = rev; continue; }
+        (void)player_prefs_flush();
     }
 }
 #endif
@@ -53,6 +46,7 @@ void player_prefs_init(void)
 #ifdef ESP_PLATFORM
     if (mutex) return;
     mutex = xSemaphoreCreateMutexStatic(&mutex_storage);
+    save_mutex = xSemaphoreCreateMutexStatic(&save_storage);
     nvs_handle_t handle;
     available = nvs_open("harmony_ui", NVS_READWRITE, &handle) == ESP_OK;
     if (available) {
@@ -81,3 +75,27 @@ void player_prefs_update(const player_prefs_t *p)
     UNLOCK();
 }
 bool player_prefs_available(void) { LOCK(); bool ok = available; UNLOCK(); return ok; }
+
+bool player_prefs_flush(void)
+{
+#ifdef ESP_PLATFORM
+    if (!mutex || !save_mutex) return false;
+    xSemaphoreTake(save_mutex, portMAX_DELAY);
+    LOCK(); uint32_t rev = revision; player_prefs_t copy = value;
+    bool current = committed && saved_revision == rev; UNLOCK();
+    if (current) { xSemaphoreGive(save_mutex); return true; }
+    nvs_handle_t handle;
+    esp_err_t err = nvs_open("harmony_ui", NVS_READWRITE, &handle);
+    if (err == ESP_OK) {
+        err = nvs_set_blob(handle, "prefs", &copy, sizeof(copy));
+        if (err == ESP_OK) err = nvs_commit(handle);
+        nvs_close(handle);
+    }
+    LOCK(); available = err == ESP_OK; if (available) { saved_revision = rev; committed = true; } UNLOCK();
+    xSemaphoreGive(save_mutex);
+    if (err != ESP_OK) ESP_LOGW("PREFS", "Preferences not saved: %s", esp_err_to_name(err));
+    return err == ESP_OK;
+#else
+    return available;
+#endif
+}

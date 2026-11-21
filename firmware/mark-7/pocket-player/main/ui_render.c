@@ -93,7 +93,8 @@ void ui_render(uint16_t *f,const player_ui_view_t *v,unsigned duration)
 {
     if(!f||!v)return;
     rect(f,0,0,320,240,BG);rect(f,0,0,320,21,PALE);
-    text(f,&ui_font_12,8,2,221,v->receiver,INK);
+    text(f,&ui_font_12,8,2,v->battery_mv?160:221,v->receiver,INK);
+    if(v->battery_mv){char volts[16];snprintf(volts,sizeof(volts),"%u.%02uV",v->battery_mv/1000,(v->battery_mv%1000)/10);text(f,&ui_font_12,177,2,64,volts,INK);}
     char b[64];snprintf(b,sizeof(b),"VOL %u",v->audio.volume);
     text(f,&ui_font_12,246,2,70,b,INK);
     moving_text(f,&ui_font_20,10,23,300,v->title,INK,v->marquee_step);

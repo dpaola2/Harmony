@@ -4,6 +4,8 @@
 #include "album.h"
 bool audio_player_prepare(void);
 int32_t audio_player_read(uint8_t *data, int32_t len);
+/* RAM-only check; never touches the catalog or SD card. */
+bool audio_player_needs_refill(void);
 bool audio_player_finished(void);
 void audio_player_stop(void);
 void audio_player_log(void);
@@ -27,3 +29,5 @@ typedef struct {
     char title[ALBUM_TITLE_MAX], selected_title[ALBUM_TITLE_MAX];
 } audio_player_snapshot_t;
 audio_player_snapshot_t audio_player_snapshot(void);
+
+bool audio_player_shutdown_complete(void);

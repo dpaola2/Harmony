@@ -28,6 +28,7 @@ typedef struct {
     char track_title[ALBUM_TITLE_MAX], track_artist[ALBUM_TITLE_MAX], track_album[ALBUM_TITLE_MAX];
     char notice[128], receiver[64];
     uint32_t marquee_step;
+    unsigned battery_mv; /* Zero means unavailable. */
     bool display_asleep;
     audio_player_snapshot_t audio;
     uint32_t revision;
@@ -37,7 +38,15 @@ typedef struct {
 void player_ui_init(void);
 bool player_ui_input(player_ui_input_t input, int delta);
 void player_ui_update(void);
+/* Queue inspection is thread-safe; timestamp is owned by the display task. */
+bool player_ui_input_pending(void);
+uint32_t player_ui_last_input_ms(void);
 player_ui_view_t player_ui_view(void);
 
 /* Monotonic clock supplied by the display owner; first input wakes only. */
 void player_ui_tick(uint32_t now_ms);
+
+/* Optional platform sleep action; disabled until installed by display owner. */
+void player_ui_enable_sleep(bool enabled);
+bool player_ui_take_sleep_request(void);
+void player_ui_notice(const char *message);

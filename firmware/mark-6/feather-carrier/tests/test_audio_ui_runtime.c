@@ -18,6 +18,8 @@ bool album_load(const char *root, album_t *value)
     for(unsigned i=0;i<3;++i){strcpy(value->tracks[i].path,names[i]);strcpy(value->tracks[i].title,names[i]);}
     return true;
 }
+bool album_read_track(const album_t *a,unsigned i,album_track_t *out){memset(out,0,sizeof(*out));if(!a||i>=a->count)return false;*out=a->tracks[i];return true;}
+void album_close(album_t *a){(void)a;}
 const char *album_status_text(album_status_t status) {(void)status;return "Invalid playlist";}
 static void ready(void)
 {
@@ -85,7 +87,24 @@ int main(int argc,char **argv)
     assert(audio_player_snapshot().track==1 && audio_player_snapshot().queue_position==0);
     assert(audio_player_snapshot().repeat==AUDIO_REPEAT_ONE);
     audio_player_set_modes(false,999);assert(audio_player_snapshot().repeat==AUDIO_REPEAT_OFF);
-    ready();audio_player_stop();pthread_join(task,NULL);
+    ready();
+    /* A stalled SD producer must make the display yield; paused/disconnected
+     * playback must never keep the user interface waiting for a refill. */
+    atomic_store(&stall_decoder,true);
+    assert(audio_player_play_queue(queue,4,0));audio_player_set_paused(false);
+    int64_t deadline=esp_timer_get_time()+1000000;
+    while(!atomic_load(&decoder_waiting)&&esp_timer_get_time()<deadline)usleep(1000);
+    assert(atomic_load(&decoder_waiting));
+    for(unsigned i=0;i<150;i++)read_block(samples);
+    assert(audio_player_needs_refill());
+    audio_player_set_paused(true);assert(!audio_player_needs_refill());
+    audio_player_set_paused(false);assert(audio_player_needs_refill());
+    audio_player_connected(false);assert(!audio_player_needs_refill());
+    audio_player_connected(true);assert(!audio_player_needs_refill());
+    atomic_store(&stall_decoder,false);ready();
+    audio_player_set_paused(false);assert(!audio_player_needs_refill());
+    audio_player_stop();assert(!audio_player_needs_refill());pthread_join(task,NULL);
+    puts("PASS display refill signal: stalled producer, pause, reconnect, recovery and stop");
     puts("PASS UI audio: paused boot/reconnect, exact quiet gain, immediate queued-PCM ramp/mute, clamped volume, shuffle duplicate membership, preserved start/generation and mode validation");
     return 0;
 }

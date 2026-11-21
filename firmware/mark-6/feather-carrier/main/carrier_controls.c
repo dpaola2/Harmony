@@ -1,5 +1,17 @@
 /* Assembled Adafruit #6310: pinned seesaw register protocol, debounced actions. */
 #include <inttypes.h>
+#ifdef HARMONY_MARK7_POWER
+#include <stdatomic.h>
+#include "ano_sleep_gate.h"
+#include "sdkconfig.h"
+#include "driver/gpio.h"
+static atomic_int sleep_arm; /* 0 polling, 1 release/clear, 2 parked, -1 fault */
+static atomic_bool wake_verified;
+bool carrier_controls_wake_verified(void) { return atomic_load(&wake_verified); }
+void carrier_controls_arm_sleep(void) { atomic_store(&sleep_arm, 1); }
+int carrier_controls_sleep_state(void) { return atomic_load(&sleep_arm); }
+void carrier_controls_cancel_sleep(void) { atomic_store(&sleep_arm, 0); }
+#endif
 #include "carrier_controls.h"
 #include "carrier_board.h"
 #include "audio_player.h"
@@ -53,7 +65,17 @@ static void controls_task(void *unused)
     bool first = true;
     uint32_t previous_poll_ms = 0, max_poll_gap_ms = 0;
     input_filter_t filter = {0};
+#ifdef HARMONY_MARK7_POWER
+    ano_sleep_gate_t sleep_gate = {0};
+#endif
     while (carrier_board_ready()) {
+#ifdef HARMONY_MARK7_POWER
+        while (atomic_load(&sleep_arm) == 2) vTaskDelay(pdMS_TO_TICKS(10));
+        bool irq_low = false;
+#ifdef CONFIG_MARK7_ANO_IRQ_WAKE
+        irq_low = gpio_get_level(GPIO_NUM_34) == 0;
+#endif
+#endif
         uint32_t position, buttons;
         esp_err_t err = read_register(0x11, 0x30, &position);
         if (err == ESP_OK) err = read_register(0x01, 0x04, &buttons);
@@ -70,7 +92,25 @@ static void controls_task(void *unused)
         if (events.pressed)
             ESP_LOGI("ANO", "DEBOUNCED pressed=0x%02x poll_ms=%" PRIu32 " max_poll_ms=%" PRIu32,
                      events.pressed, poll_gap_ms, max_poll_gap_ms);
-        if (CONFIG_CARRIER_CONTROLS_ACTIONS) {
+#ifdef HARMONY_MARK7_POWER
+        /* Seesaw GPIO_BULK reads clear the latched GPIO IRQ. A correlated
+         * button edge followed by a high line verifies the actual wake wire. */
+        bool irq_high = true;
+#ifdef CONFIG_MARK7_ANO_IRQ_WAKE
+        irq_high = gpio_get_level(GPIO_NUM_34) != 0;
+#endif
+        if (!first && irq_low && irq_high && ((buttons ^ previous_buttons) & 0x3e)) {
+            if (!atomic_exchange(&wake_verified, true)) ESP_LOGI("POWER", "ANO wake wire verified on A2/GPIO34");
+        }
+        if (ano_sleep_gate_poll(&sleep_gate, atomic_load(&sleep_arm)==1, buttons, irq_high, now_ms)) {
+            atomic_store(&sleep_arm, 2);
+            continue; /* No more reads: next button edge stays latched. */
+        }
+        bool deliver = atomic_load(&sleep_arm) == 0;
+#else
+        bool deliver = true;
+#endif
+        if (CONFIG_CARRIER_CONTROLS_ACTIONS && deliver) {
             int steps = events.steps;
             if (CONFIG_CARRIER_ENCODER_REVERSE) steps = -steps;
 #ifdef HARMONY_PLAYER_UI
@@ -115,6 +155,10 @@ static void controls_task(void *unused)
         vTaskDelay(pdMS_TO_TICKS(20));
 #endif
     }
+#ifdef HARMONY_MARK7_POWER
+    atomic_store(&sleep_arm, -1);
+    atomic_store(&wake_verified, false);
+#endif
     i2c_master_bus_rm_device(device);
     i2c_del_master_bus(bus);
     vTaskDelete(NULL);
@@ -142,6 +186,13 @@ esp_err_t carrier_controls_start(void)
         err = i2c_master_transmit(device, cmd, sizeof(cmd), 100);
         vTaskDelay(pdMS_TO_TICKS(2));
     }
+#if defined(HARMONY_MARK7_POWER) && defined(CONFIG_MARK7_ANO_IRQ_WAKE)
+    /* GPIO34 has no internal pull-up. External 10k to 3V is required. */
+    gpio_config_t irq = {.pin_bit_mask=1ULL<<34, .mode=GPIO_MODE_INPUT};
+    if (err == ESP_OK) err = gpio_config(&irq);
+    const uint8_t enable_irq[] = {0x01, 0x08, 0, 0, 0, 0x3e};
+    if (err == ESP_OK) err = i2c_master_transmit(device, enable_irq, sizeof(enable_irq), 100);
+#endif
     if (err == ESP_OK && xTaskCreatePinnedToCore(controls_task, "ano_diag", 3072,
                                                NULL, 3, NULL, 0) != pdPASS)
         err = ESP_ERR_NO_MEM;

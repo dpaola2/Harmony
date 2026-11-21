@@ -324,7 +324,12 @@ static portMUX_TYPE auth_lock = portMUX_INITIALIZER_UNLOCKED;
 static bool allow_pairing;
 static uint8_t allowed_address[6];
 static atomic_bool event_overflow;
-static atomic_bool worker_started;
+static atomic_bool worker_started, shutdown_requested, shutdown_complete;
+bool player_bluetooth_shutdown(void) {
+    if (!atomic_load(&worker_started)) return true;
+    atomic_store(&shutdown_requested, true);
+    return atomic_load(&shutdown_complete);
+}
 static nvs_handle_t preferences;
 static bool have_preferences;
 static int media_state;
@@ -505,6 +510,11 @@ static void worker(void *arg) {
     char logged_status[sizeof(manager.view.status)] = {0};
     for (;;) {
         bool received = xQueueReceive(events, &event, pdMS_TO_TICKS(100)) == pdTRUE;
+        if (atomic_load(&shutdown_requested)) {
+            atomic_store(&shutdown_complete, true);
+            vTaskDelete(NULL);
+            return;
+        }
         manager.now = (uint32_t)(esp_timer_get_time() / 1000);
         if (received) {
             switch (event.kind) {
