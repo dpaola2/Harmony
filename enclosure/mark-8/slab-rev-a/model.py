@@ -61,6 +61,7 @@ def build():
         add(f"board J1 leg {i + 1} (touch side)", 7, s, "board")
 
     add("battery 404050", 8, extras.battery(P.BAT_404050, "404050"), "battery")
+    add("battery foam", 8, extras.foam(), "foam")
     plug, wires = extras.battery_plug()
     add("battery plug PHR-2", 8, plug, "battery")
     add("battery wires", 8, wires, "battery")

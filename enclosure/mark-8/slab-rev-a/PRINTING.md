@@ -6,10 +6,10 @@ Printer: Bambu P2S Combo with AMS 2 Pro, 0.4 mm hardened steel nozzle, textured 
 
 | File | Parts | Filament | Time | Filament used |
 | --- | --- | --- | --- | --- |
-| `print/mark8-slab-p2s.3mf` (project) and `print/mark8-slab-p2s.gcode.3mf` (the same plate, sliced) | Front shell, back plate, button cap | Filament 1: Bambu PLA Basic, Jade White | 54 min for the plate | 20.6 g |
+| `print/mark8-slab-p2s.3mf` (project) and `print/mark8-slab-p2s.gcode.3mf` (the same plate, sliced) | Front shell, back plate, button cap | Filament 1: Bambu PLA Basic, Jade White | 54 min for the plate | 20.5 g |
 | | Wheel disc | Filament 2: Bambu PLA Basic, Black | | 1.9 g |
 
-Bambu Studio 2.09 gave these numbers. The 22.5 g total includes 3.6 g of waste from the colour changes (see "Colour changes" below).
+Bambu Studio 2.09 gave these numbers on 21 November 2026, after the review fixes (54 min 22 s, 20.54 g and 1.94 g). The 22.5 g total includes 3.6 g of waste from the colour changes (see "Colour changes" below).
 
 The project does not set AMS slot numbers. Load Jade White and Black in any two AMS slots. Map them in the print dialog (step 4 below).
 
@@ -35,7 +35,7 @@ The project holds every value below. Each part carries its own values as object 
 | Part | Orientation | Filament | Layer | Walls | Top / bottom | Infill | Other |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Front shell (1) | Front face down | 1, Jade White | 0.2 (first layer 0.2) | 4 | 5 / 5 | 25 % gyroid | Elephant foot compensation 0.15. No brim. No supports |
-| Back plate (10) | Outer face down | 1, Jade White | 0.2 | 4 | 5 / 5 | 25 % gyroid | Elephant foot compensation 0.15. No brim. No supports |
+| Back plate (10) | Outer face down | 1, Jade White | 0.2 | 4, Arachne | 5 / 5 | 25 % gyroid | Elephant foot compensation 0.15. No brim. No supports |
 | Wheel disc (2) | Back face down (flange on the plate), front face up | 2, Black | 0.2 | 3 | solid | 100 % | Ironing on the topmost surface (the front face). Elephant foot compensation 0.075. No brim. No supports |
 | Button cap (3) | Lying flat, as exported | 1, Jade White | 0.2 | 3, Arachne | solid | 100 % | Brim 3 mm, outside only. Elephant foot compensation 0.075. No supports |
 
@@ -48,7 +48,7 @@ Whole plate: seam aligned, walls inner then outer, infill after the walls, top s
 | Printer | Bambu A1, no AMS | Bambu P2S Combo, AMS 2 Pro |
 | Plates | Two: the case colour parts, then the disc | One plate with all four parts |
 | Layer height of the disc and the button cap | 0.1 | 0.2 (Decision 2) |
-| Button cap walls | Not set (classic) | Arachne (Decision 5) |
+| Button cap and back plate walls | Not set (classic) | Arachne (Decision 5) |
 | Elephant foot compensation, disc and button cap | A1 default 0.075 | 0.075. The P2S default is 0.15, so the project sets it |
 | Ironing on the disc | "On for the top surface" | Topmost surface only (Decision 6) |
 | Prime tower | None | 35 mm wide, back left corner, first 5 layers |
@@ -71,7 +71,7 @@ The project also overrides these P2S defaults: plate type (default Cool Plate), 
    What 0.2 costs in detail: the disc flange top (0.4), the label floors (0.6) and the front face (1.0) all fall on layer boundaries. The labels keep their full 0.4 depth. The line width sets the letter outlines, not the layer height. The two USB-C leg pockets on the back of the disc print 0.6 deep instead of 0.5, so the plastic over them is 0.4 instead of 0.5. The disc edge shows 5 layer lines instead of 9. The button cap is a straight 2.6 mm extrusion, so all its details lie flat on the plate. At 0.2 its sides only show coarser layer lines.
 3. **Prime tower on.** It wipes the nozzle after each colour change, in the layers that make the white front faces. Without it, Bambu Studio allows mixed heights, but the plate then needs 9 changes and more waste.
 4. **Flush volumes from Bambu Studio's colour calculation**, multiplier 1. If the white front face shows grey streaks, raise the flush multiplier to 1.2 (Bambu Studio, "Flushing volumes") and slice again.
-5. **Arachne walls on the button cap only.** With classic walls, the slicer left two gaps of about 0.3 mm² in the thin flange on every layer (94 % of the section filled). Arachne fills 98 %. The shell and the back plate keep classic walls; they fill more than 99 % of each layer checked.
+5. **Arachne walls on the button cap and the back plate.** With classic walls, the slicer left two gaps of about 0.3 mm² in the thin flange of the button cap on every layer (94 % of the section filled). Arachne fills 98 %. The back plate changed on 21 November: the neck of the LED light tube is now a 0.45 wall (README, conflict 11). Classic walls lay two loops 0.07 mm apart there, about 45 % more plastic than the wall holds, which would thicken the tube toward J1 and J3. Arachne lays one 0.4 mm bead (checked in the G-code). It adds about 10 s to the plate. The front shell keeps classic walls; it fills more than 99 % of each layer checked.
 6. **Ironing on the topmost surface only.** It irons the disc front face and not the floors of the labels.
 7. **Elephant foot compensation 0.075 on the disc and the button cap.** The A1 plan used 0.15 only on the shell and the back plate, and the A1 default (0.075) elsewhere. The project keeps that.
 8. **Layout.** No part is rotated; every file is already in print orientation. The shell and the back plate are side by side. The disc and the button cap are on the right. Bambu Studio put the prime tower in the back left corner.
@@ -99,8 +99,8 @@ If a fix changes the back plate geometry, run `build.py` first. Then right-click
 - **Window chamfer.** The 0.4 x 45 degree chamfer on the window's front edge is in the first two layers. It prints without support.
 - **Bridges, no supports needed:** the top of the USB-C opening and its port recess, the top of the card slot and its scallop (the scallop is 46 degrees at most), the top of the side button slot and its pocket, and the ring-shaped ceiling of each screw counterbore in the back plate. The disc has two small bridges over the USB-C leg pockets on its back face.
 - **Top boss shelves.** The two bosses under the screen's top corners start 3.6 mm above the plate and hang about 3 mm out from the corner walls. They print as a corner overhang. Their underside faces the back of the screen with a 0.45 gap, so a little sag does no harm. If they sag badly, paint a support enforcer on those two spots only, and scrape the support marks off the bezel area under the screen corners.
-- **Thin spots by design** (all listed with numbers in README.md "Printability"): the skin is 0.6 over the disc flange recess and 0.5 over the two USB-C leg reliefs; the bottom wall is 0.7 behind the port recess and the card scallop; the disc flange is 0.4 thick; the button cap flange is 0.4 in front of the switch and 0.6 at the ears; the LED shroud tube wall is 0.65; there is 0.7 of plastic under each screw head and 0.5 over each top insert hole.
-- **Heights that are not a multiple of 0.2.** The slicer moves them to a layer boundary. The A1 plan at 0.2 did the same. In the sliced file: the shell rim (8.3) prints at 8.4, so the closed case is about 0.1 thicker. The boss faces (7.7) print at 7.8, so the gap to the back plate stays the same. The floor of the USB-C leg reliefs in the shell (0.5) prints at 0.6, so the skin there is 0.6 and the reliefs are 0.1 shallower. The screw counterbore ceilings in the back plate (1.1) print at 1.0, so a 1.1 mm screw head stands about 0.1 proud of the back face.
+- **Thin spots by design** (all listed with numbers in README.md "Printability"): the skin is 0.6 over the disc flange recess and 0.5 over the two USB-C leg reliefs; the bottom wall is 0.7 behind the port recess and the card scallop; the disc flange is 0.4 thick; the button cap flange is 0.4 in front of the switch and 0.6 at the ears; the LED light tube wall is 0.65 at its base and 0.45 at its neck, where it passes J1 and J3 (README, conflict 11); there is 0.7 of plastic under each screw head and 0.5 over each top insert hole.
+- **Heights that are not a multiple of 0.2.** The slicer moves them to a layer boundary. The A1 plan at 0.2 did the same. In the sliced file: the shell rim (8.3) prints at 8.4, so the closed case is about 0.1 thicker. The boss faces (7.7) print at 7.8, so the gap to the back plate stays the same. The floor of the USB-C leg reliefs in the shell (0.5) prints at 0.6, so the skin there is 0.6 and the reliefs are 0.1 shallower. The screw counterbore ceilings in the back plate (1.1) print at 1.0, so a 1.1 mm screw head stands about 0.1 proud of the back face. The card slot (2.24 to 4.04 from the front face) prints at 2.2 to 4.0, still 1.8 tall.
 
 ## After printing
 
@@ -111,3 +111,4 @@ If a fix changes the back plate geometry, run `build.py` first. Then right-click
 5. Test-fit the screen without the board. It should drop in with very little play. If it is tight at the sides, scrape the two side walls of the pocket lightly.
 6. Test the button cap in its slot: it should slide freely and stop on the outside pocket floor.
 7. Check that both locating pins are complete and straight.
+8. Check that the LED light tube on the inside of the back plate (near the USB-C end) is complete and straight, and that the three small standoffs on the inside of the shell's bottom wall printed.

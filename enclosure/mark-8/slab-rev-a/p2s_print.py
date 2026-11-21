@@ -45,7 +45,9 @@ SOLID = {"wall_loops": "3", "top_shell_layers": "5", "bottom_shell_layers": "5",
 # (STL stem in print/, object name, filament, part centre on the plate, settings)
 PARTS = [
     ("front-shell", "front shell", 1, (75.0, 120.0), SHELL),
-    ("back-plate", "back plate", 1, (145.0, 120.0), SHELL),
+    # Arachne walls: the classic generator lays two overlapping loops in the
+    # 0.45 neck of the LED light tube (about 45 % too much plastic there).
+    ("back-plate", "back plate", 1, (145.0, 120.0), {**SHELL, "wall_generator": "arachne"}),
     ("wheel-disc", "wheel disc", 2, (210.0, 140.0),
      {**SOLID, "brim_type": "no_brim", "ironing_type": "topmost"}),
     # Arachne walls: the classic generator leaves gaps in the 0.4 flange.

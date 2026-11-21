@@ -25,7 +25,7 @@ Upload the files in this folder to JLCPCB and choose the settings below. Nothing
 | Product type | Industrial/Consumer electronics | |
 | Different design | 1 | |
 | Delivery format | Panel by Customer, 1 x 1 | the Gerbers hold one board with its own rails (review CC-1) |
-| Edge rails / fiducials | Added by customer | 5 mm rails on all four sides, three 1 mm fiducials with 2 mm openings, four 2.0 mm NPTH tooling holes. The frame is under JLC's 70 x 70 mm, so JLC may add its own rails outside it. JLC must not cut or change our three tabs and must ship the boards in the frame (remark 3) |
+| Edge rails / fiducials | On the assembly form (below) | Our frame has 5 mm rails on all four sides, three 1 mm fiducials with 2 mm openings and four 2.0 mm NPTH tooling holes |
 | PCB thickness | 0.8 mm | SPEC 6 |
 | PCB color | Green (recommended) or black | green: JLC's smallest solder-mask dam is 0.10 mm on green and 0.13 mm on black; the smallest pad gap on this board is 0.19 mm, so both work |
 | Silkscreen | White | |
@@ -49,16 +49,21 @@ Vias and the Plugged option: 166 of the 274 vias are closer than 0.35 mm to a pa
 | PCBA type | Standard | Economic assembly does not take this board: 4 layers at 0.8 mm with a 0.3 mm pitch FPC connector, a 0.4 mm pitch QFN, an LGA module and through-hole shell legs on the USB-C receptacle |
 | Assembly side | Top side | every part is on L1 |
 | PCBA qty | 2 (or 5) | 2 is enough to bring up and keep a spare |
-| Tooling holes | Added by customer | four 2.0 mm NPTH, one in each corner of the frame |
+| Edge rails/Fiducials | Added by JLCPCB | On 2026-11-21 the form said that for Standard PCBA each side must be longer than 70 mm, and it sized the order as 78.4 x 71.6 mm: JLC's rails go outside our 68.4 x 53.6 mm frame. This avoids an engineering hold for a frame under 70 mm (change review FAB-3). The remarks tell JLC not to cut our tabs. The form has no separate tooling-hole field |
 | Confirm parts placement | Yes | check the parts listed below in the preview before paying |
 | Bake components | Default | U1 is MSL 3; JLC handles it |
 | Edge rail removal | No | the rails stay on; cut the tabs yourself (see "When the boards arrive") |
 
-Order remark (paste it into the remark field):
+The form has two remark fields. PCB Remark (PCB form, Advanced Options, 200 characters):
 
-> 1. Vias closer than 0.35 mm to pads may be tented instead of plugged.
-> 2. J1 (C165948, USB-C): please solder the 4 shell legs. The paste layer has pin-in-paste openings over the 4 plated slots.
-> 3. Our Gerbers hold a 1 x 1 frame with rails, fiducials and tooling holes. If your line needs larger rails, add them outside our frame. Please do not cut or change our 3 tabs, and ship the boards in the frame.
+> 1. Vias closer than 0.35 mm to pads may be tented instead of plugged. 2. Our Gerbers include a frame with 3 mouse-bite tabs: please do not cut or change the tabs.
+
+Assembly remark (assembly form, Advanced Options, set to Yes):
+
+> 1. J1 (C165948, USB-C): please solder the 4 shell legs. The paste layer has pin-in-paste openings over the 4 plated slots.
+> 2. Our Gerbers hold a 1 x 1 frame with rails, fiducials and tooling holes. If your line needs larger rails, add them outside our frame. Please do not cut or change our 3 tabs, and ship the boards in the frame.
+
+On the quote page, Product Description: Audio and Video Appliance, Audio Equipment (HS code 851890).
 
 After upload JLC matches all 40 BOM lines by LCSC number. Expected result: 40 lines matched, 0 unmatched. The test pads TP1 to TP10, the motor pads M1 and M2, the touch wheel connection pads E1, the locating holes, the press-pad marks, the fiducials, the mouse bites and the tooling holes are not parts and are not in the BOM or CPL.
 
@@ -78,7 +83,23 @@ All lines in stock. Lowest: U6 MPR121QR2 668, U1 ESP32-PICO-MINI-02-N8R2 1021 (N
 
 ## Cost
 
-JLC's real quote for this design on 2026-11-21, before the review fixes: $185.82 before shipping for 5 PCBs and 2 assembled boards.
+JLC's real quote for revision A.2 on 2026-11-21: $208.06 before shipping and tax for 5 PCBs and 2 assembled boards (PCB $46.75, Standard PCBA $161.31). The assembly remark is "quoted after review", so JLC may add a charge for soldering J1's shell legs. Shipping was estimated at $25.99 (UPS Express Saver, DDP).
+
+| Item | Revision A.2 (frame, after the fixes) | Revision A (before the fixes) |
+| --- | --- | --- |
+| PCB: engineering fee (Panel by Customer) | $25.00 | none |
+| PCB: ENIG, board, confirm production file | $21.75 | $26.25 for the whole PCB |
+| Feeder (extended part loading) fees | $62.00 | $60.45 |
+| Assembly fixture | $16.54 | $16.54 |
+| Setup | $25.75 | $25.75 |
+| Stencil | $8.27 | $8.27 |
+| Parts (40 lines) | $41.90 | $41.76 |
+| SMT assembly, confirm placement, X-ray, packaging | $6.85 | (in the rest) |
+| Total before shipping and tax | $208.06 | $185.82 |
+
+The $25 engineering fee for Panel by Customer is the price of our own frame (review CC-1).
+
+The breakdown of the first quote, before the review fixes:
 
 | Item | Quote 2026-11-21 |
 | --- | --- |
@@ -90,7 +111,7 @@ JLC's real quote for this design on 2026-11-21, before the review fixes: $185.82
 | PCBs and assembly labour (the rest) | $33.05 |
 | Total before shipping and tax | $185.82 |
 
-What the review fixes change: the two new BOM lines are basic parts (no fee, under $0.02 a board). The frame makes the PCB 68.4 x 53.6 mm instead of 54.4 x 39.6 mm, which can raise the PCB price by a few dollars. JLC may add a small through-hole soldering charge for J1's shell legs. Expect about $186 to $200 before shipping and tax. Shipping (DHL about $20 to $25) and import tax come on top. A much higher number usually means a part was matched to a different LCSC number; check the BOM page.
+The two new BOM lines are basic parts (no fee, under $0.02 a board). Shipping (DHL about $20 to $25) and import tax come on top. A much higher number usually means a part was matched to a different LCSC number; check the BOM page.
 
 ## Check before paying
 

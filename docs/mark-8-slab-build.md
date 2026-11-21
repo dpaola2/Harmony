@@ -11,9 +11,9 @@ Work in this order. Each step links to the document that has the details.
 | 3 | Print the case and the wheel disc | [PRINTING.md](../enclosure/mark-8/slab-rev-a/PRINTING.md) |
 | 4 | Dry-fit the screen cable | "Dry-fit the screen cable" below |
 | 5 | Cut the board out of its frame | "Cut the board out of its frame" below |
-| 6 | Assemble up to step 13 with the back open | [ASSEMBLY.md](../enclosure/mark-8/slab-rev-a/ASSEMBLY.md) |
+| 6 | Assemble up to step 14 with the back open | [ASSEMBLY.md](../enclosure/mark-8/slab-rev-a/ASSEMBLY.md) |
 | 7 | Flash the bring-up test, then the player | [firmware README, section 2](../firmware/mark-8/README.md) |
-| 8 | Close the back plate | ASSEMBLY.md step 15 |
+| 8 | Close the back plate | ASSEMBLY.md step 16 |
 
 The board README has a "Review dispositions, November 21" table. It lists the firmware changes and the bring-up checks that the pre-order review asked for.
 
@@ -22,13 +22,13 @@ The board README has a "Review dispositions, November 21" table. It lists the fi
 Upload three files from `hardware/mark-8/slab-rev-a/jlcpcb/`: the Gerber zip, `bom.csv` and `cpl.csv`. ORDER.md has every form setting. The settings that matter most:
 
 - 4 layers, 0.8 mm thick, ENIG.
-- Delivery format Panel by Customer (1 x 1), edge rails and fiducials added by customer: the Gerbers already hold the board in its own frame.
+- Delivery format Panel by Customer (1 x 1): the Gerbers already hold the board in its own frame. On the assembly form, edge rails added by JLCPCB: JLC asks for sides over 70 mm, so its rails go outside our frame.
 - Via covering Plugged (JLC does not offer Tented on 4 layers).
 - Standard PCBA (Economic assembly does not take this board).
 - Top side only, 2 assembled (or 5).
-- Paste the three-line order remark from ORDER.md.
+- Paste the two remarks from ORDER.md: one in PCB Remark, one in the assembly remark.
 
-Expect 40 of 40 BOM lines matched and 15 extended parts. JLC quoted $185.82 before shipping for this design on November 21, before the review fixes; expect about $186 to $200 now. JLC's quote page gives the real price.
+Expect 40 of 40 BOM lines matched and 15 extended parts. JLC quoted $208.06 before shipping for revision A.2 on November 21, and may add a charge for soldering the USB-C shell legs. JLC's quote page gives the real price.
 
 On the order day, do these checks:
 
@@ -41,10 +41,10 @@ On the order day, do these checks:
 | Part | Qty | Source | Note |
 | --- | --- | --- | --- |
 | Screen DLC-T2.7DDS#1 (2.73 in, 320 x 320) | 2 | DigiKey, about $31 each | Small stock and a 12-week factory lead time. Order it first |
-| LiPo cell, 1S, protected, JST PH 2.0 plug, 404050 or 403450 | 1 | Any | J4 pin 2 is +. Packs come wired both ways |
+| LiPo cell, 1S, protected, JST PH 2.0 plug, 404050 or 403450 (4.0 mm thick) | 1 | Any | J4 pin 2 is +. Packs come wired both ways. With 0.5 mm foam, a pack can be 4.5 mm thick at most |
 | Heat-set insert M2, 3 mm long, about 3.2 mm OD | 4 | Any | |
 | Screw M2 x 4, button head (ISO 7380) | 4 | Any | Not M2 x 5: it bottoms out in the top bosses |
-| 1 mm double-sided foam tape | 1 piece, 35 x 45 mm | Any | For the battery |
+| Double-sided foam tape, 0.2 to 0.5 mm thick | 1 piece, 35 x 45 mm | Any | For the battery. Not 1 mm: the pack and the foam share 5.15 mm |
 | Vibration motor LCM1027A2445F | 1 | LCSC C2759984 | Optional. You can add it to the JLC order |
 
 You also need a microSD card (FAT32) with the Harmony music folder, a USB-C cable, a multimeter, and a soldering iron for the inserts. The Mark-7 card works as it is. To fill a new card, run `tools/harmony_sync.py` ([harmony-sync.md](harmony-sync.md)). It also writes `HARMONY/library.hdb`, the index the player needs for more than 512 tracks.
@@ -56,12 +56,13 @@ The Bambu P2S prints all four parts on one plate, without supports. The AMS chan
 - Filament 1, Bambu PLA Basic Jade White: the front shell, the back plate and the button cap.
 - Filament 2, Bambu PLA Basic Black: the wheel disc.
 
-In the print dialog, map filament 1 to the AMS slot with Jade White and filament 2 to the slot with Black. The plate takes about 54 minutes and uses 20.6 g of Jade White and 1.9 g of Black. PRINTING.md has the steps and the settings.
+In the print dialog, map filament 1 to the AMS slot with Jade White and filament 2 to the slot with Black. The plate takes about 54 minutes and uses 20.5 g of Jade White and 1.9 g of Black (Bambu Studio, 21 November). PRINTING.md has the steps and the settings.
 
 After the print, check:
 
 - the two thin top corners of the screen pocket
 - the two shelves at the top screw posts, for sag
+- the small light tube on the inside of the back plate, near the USB-C end: it must be complete and straight
 
 ## 4. Dry-fit the screen cable
 
@@ -79,6 +80,7 @@ The board arrives in a frame of rails, held by three mouse-bite tabs. Seen from 
 1. Hold the board, not the frame. Cut the left tab first, then the other two.
 2. Cut each tab with flush cutters along the hole line.
 3. File each nub flush with the board edge (up to 0.35 mm, with half-hole bumps), then deburr the edge. A straight edge must lie flat along it.
+4. File the small fillet the router leaves in each inside corner at the tab ends too. File gently at the lower end of the right tab: the board strip beside the screw notch there is only about 0.2 mm wide.
 
 Never snap a tab off: bending the 0.8 mm board can crack a capacitor near the edge or lift a pad of the battery connector. The edge must be flush, because the case has only 0.5 mm of clearance at the side walls.
 
@@ -86,7 +88,9 @@ Before the first USB plug-in, check the USB-C receptacle J1. Its four shell legs
 
 ## 6. Assemble with the back open
 
-Follow ASSEMBLY.md steps 1 to 13. Check the battery polarity with a meter before you connect it (step 11). With USB unplugged, the board blocks a reversed pack. With USB connected, a reversed pack is slowly discharged (about 37 mA) and the charge LED stays on, so never leave a reversed pack on USB. For the first power-up, leave the battery out.
+Follow ASSEMBLY.md steps 1 to 14. Check the battery polarity with a meter before you connect it (step 6). With USB unplugged, the board blocks a reversed pack. With USB connected, a reversed pack is slowly discharged (about 37 mA) and the charge LED stays on, so never leave a reversed pack on USB.
+
+The battery plugs into J4 before the board goes into the case (step 7), because the screen blocks J4 once the board is in. For the first power-up, leave the battery out: skip step 7 and run the first bring-up (section 7). Then take the board out, plug in the battery and put the board back (ASSEMBLY.md, "Take the board out").
 
 ## 7. Flash and test
 
@@ -101,13 +105,13 @@ Section 2 of the firmware README has the full procedure. In short:
    - touch every wheel sector, turn once clockwise and tap the centre
    - wake the player twice
 5. The README table gives the most likely cause of each FAIL on this board.
-6. Connect the battery and run the bring-up again. Then flash `firmware/mark-8/slab-player`.
+6. Connect the battery (take the board out first: ASSEMBLY.md, "Take the board out") and run the bring-up again. Then flash `firmware/mark-8/slab-player`.
 
 The bring-up measures the touch noise with the backlight at 100% duty and at three PWM frequencies. It saves the quietest setting and the touch thresholds, and the player uses them. Keep your hands off the wheel during that part (about 45 s).
 
 ## 8. Close it
 
-Do ASSEMBLY.md step 15. Tighten the four M2 x 4 screws in a cross pattern until each head sits in its counterbore, and no more.
+Do ASSEMBLY.md step 16. Tighten the four M2 x 4 screws in a cross pattern until each head sits in its counterbore, and no more.
 
 ## Not tested yet
 

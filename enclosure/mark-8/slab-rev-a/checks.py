@@ -27,6 +27,7 @@ INTENDED = [
     ("motor", "back plate", "motor glued in its seat on the back plate"),
     ("battery wires", "battery plug PHR-2", "same cable"),
     ("battery plug PHR-2", "board J4", "plug mated in J4 (face contact at the J4 face)"),
+    ("battery foam", "screen body", "foam stuck on the screen back (face contact)"),
     ("button cap", "front shell", "cap flange rests on the wall inner face (face contact)"),
     ("wheel disc", "front shell", "disc flange seats in the skin recess (face contact)"),
     ("board J1 leg *", "board *", "board model"),
@@ -148,6 +149,8 @@ def clearances(solids):
     out["battery_vs_top_bosses"] = bosses
     out["battery_vs_back_plate_ribs_xy"] = round(P.RIB_GAP, 3)
     out["battery_vs_screen_back"] = round(P.SCR_Z0 - (P.SPLIT_Z + P.BAT_404050[2]), 3)
+    out["battery_vs_foam"] = _dist(bat, by["battery foam"])
+    out["battery_foam_thickness"] = P.BAT_FOAM
     out["battery_plug_vs_screen"] = _dist(by["battery plug PHR-2"], by["screen body"])
     out["battery_plug_vs_front_shell"] = _dist(by["battery plug PHR-2"], shell)
     # Button cap and SW1.
@@ -208,6 +211,152 @@ def clearances(solids):
     out["motor_vs_board_parts"] = min(_dist(by["motor"], s) for r, s in board.items() if r != "PCB" and _bb_gap(_bb(by["motor"]), _bb(s)) < 4)
     out["screen_vs_top_bosses"] = round(P.SCR_Z0 - P.TOP_BOSS_TOP_Z, 3)
     out["screen_vs_front_shell_lateral"] = P.SCR_CLEAR
+    out["bottom_standoffs"] = standoffs(shell, board)
+    out["reg5_parts"] = reg5_parts(by, board)
+    out["frame_tabs"] = frame_tabs(by)
+    out["microsd_slot"] = microsd_slot(shell)
+    out["battery_tilt_in"] = battery_tilt_in(solids)
+    return out
+
+
+def standoffs(shell, board):
+    """MECH-6: each bottom-wall standoff against the board edge and the parts."""
+    rows = []
+    for x in P.STANDOFF_X:
+        st = shell.intersect(box(x - P.STANDOFF_W / 2 - 0.01, x + P.STANDOFF_W / 2 + 0.01,
+                                 -P.Y_IN + 0.001, P.BOARD_Y0, P.STANDOFF_Z1 - 0.01, -P.SKIN - 0.001))
+        best = None
+        for ref, sh in board.items():
+            if ref == "PCB" or _bb_gap(_bb(st), _bb(sh)) > 3:
+                continue
+            d = _dist(st, sh)
+            if d is not None and (best is None or d < best[1]):
+                best = (ref, d)
+        rows.append({"x": x, "to_board_edge": _dist(st, board["PCB"]),
+                     "nearest_part": best[0] if best else None, "nearest_part_clearance": best[1] if best else None})
+    return rows
+
+
+REG5_REFS = ("R31", "R32", "R34", "C26")
+
+
+def reg5_parts(by, board):
+    """REG-5: the moved R31 and R32 and the new R34 and C26 against the
+    screen FPC and every case part and bought part."""
+    import sources
+    mi = {p["ref"]: p for p in sources.mech()["parts"]}
+    others = [n for n in by if not n.startswith("board ")]
+    out = {}
+    for ref in REG5_REFS:
+        sh = board.get(ref)
+        if sh is None:
+            out[ref] = {"error": "not in the board STEP"}
+            continue
+        # Only what lies behind the board counts; the skin and the disc are on
+        # the other side of the 0.8 board.
+        behind = box(-40, 40, -60, 60, -10, P.Z_COMP - 0.001)
+        dists = {}
+        for n in others:
+            if _bb_gap(_bb(sh), _bb(by[n])) >= 12:
+                continue
+            o = by[n]
+            if _bb(o)[4] >= P.Z_COMP - 0.001:
+                continue
+            if _bb(o)[5] > P.Z_COMP:
+                o = o.intersect(behind)
+            dists[n] = _dist(sh, o)
+        fpc = {n: d for n, d in dists.items() if n.startswith("FPC") or n.startswith("screen FPC")}
+        case = {n: d for n, d in dists.items() if n not in fpc}
+        j = mi.get(ref, {})
+        bb = _bb(sh)
+        out[ref] = {"centre": j.get("centre"), "height_json": j.get("height"), "zone_json": j.get("zone"),
+                    "zone_limit_json": j.get("limit"), "zone_ok_json": j.get("ok"),
+                    "step_z": [round(bb[4], 3), round(bb[5], 3)],
+                    "nearest_fpc": min(fpc.items(), key=lambda kv: kv[1]) if fpc else None,
+                    "nearest_case_or_bought_part": min(case.items(), key=lambda kv: kv[1]) if case else None,
+                    "all": {k: v for k, v in sorted(dists.items(), key=lambda kv: kv[1])}}
+    return out
+
+
+def frame_tabs(by):
+    """Mouse-bite nubs at the three tabs: clearance to the case with a nub left
+    at its worst (0.35 proud) and after filing it flush."""
+    t = P.TAB_NUB_MAX
+    z0, z1 = P.Z_COMP, P.Z_TOUCH
+    x_edge, y_top = 27.2, -10.0
+    case = [n for n in by if n in ("front shell", "back plate", "button cap", "wheel disc")
+            or n.startswith("screen") or n.startswith("battery") or n.startswith("FPC")]
+    rows = []
+    for edge, (a, b) in P.FRAME_TABS:
+        if edge == "left":
+            nub, flush = box(-x_edge - t, -x_edge, a, b, z0, z1), box(-x_edge - 0.01, -x_edge, a, b, z0, z1)
+        elif edge == "right":
+            nub, flush = box(x_edge, x_edge + t, a, b, z0, z1), box(x_edge, x_edge + 0.01, a, b, z0, z1)
+        else:
+            nub, flush = box(a, b, y_top, y_top + t, z0, z1), box(a, b, y_top, y_top + 0.01, z0, z1)
+
+        # Lateral clearance only: leave out the skin the board lies on.
+        local = box(-40, 40, -60, 60, -10, P.Z_TOUCH - 0.02)
+
+        def near(sol):
+            best = None
+            for n in case:
+                if _bb_gap(_bb(sol), _bb(by[n])) > 4:
+                    continue
+                o = by[n].intersect(local) if n == "front shell" else by[n]
+                d = _dist(sol, o)
+                if d is not None and (best is None or d < best[1]):
+                    best = (n, d)
+            return best
+        rows.append({"edge": edge, "range": [a, b], "filed_flush": near(flush), "nub_0.35_left": near(nub)})
+    return rows
+
+
+def microsd_slot(shell):
+    """MECH-5: a 1.0 card at the drawing estimate and at the JSON card plane,
+    run through the wall and 3 mm out, against the front shell."""
+    out = {"slot_z": [round(P.SD_ZC + P.SD_SLOT_H / 2, 3), round(P.SD_ZC - P.SD_SLOT_H / 2, 3)]}
+    lay = 0.2
+    zt, zb = -P.SD_ZC - P.SD_SLOT_H / 2, -P.SD_ZC + P.SD_SLOT_H / 2     # print heights of the slot faces
+    out["slot_z_printed_0.2"] = [-math.floor(zt / lay) * lay, -math.floor(zb / lay) * lay]
+    cards = {"drawing estimate": P.SD_CARD_DRAWING_Z,
+             "JSON card plane": (P.SD_ZC + P.SD_CARD_T / 2, P.SD_ZC - P.SD_CARD_T / 2)}
+    for k, (za, zb_) in cards.items():
+        card = box(P.SD_X0, P.SD_X1, -P.Y_OUT - 3.0, -49.1, zb_, za)
+        out[k] = {"card_z": [za, zb_], "to_front_shell": _dist(card, shell),
+                  "margin_board_side": round(out["slot_z"][0] - za, 3),
+                  "margin_back_side": round(zb_ - out["slot_z"][1], 3)}
+    return out
+
+
+def battery_tilt_in(solids, angles=(0, 0.5, 1, 2, 3, 5, 8, 12, 18, 25)):
+    """MECH-1: the board goes in tilted, with the battery plug already in J4.
+    Turn the board, its parts and the plug about the bottom edge (far end up,
+    toward -Z) and measure the plug and J4 against the screen and the shell."""
+    by = {it["name"]: it["shape"] for it in solids}
+    moving = {"battery plug PHR-2": by["battery plug PHR-2"], "board J4": by["board J4"],
+              "battery wires": by["battery wires"], "board PCB": by["board PCB"]}
+    fixed = {"screen body": by["screen body"], "front shell": by["front shell"]}
+    pivots = {"touch-side bottom edge (y -49.6, z -1.0)": (P.BOARD_Y0, P.Z_TOUCH),
+              "USB-C shell, front top edge (y -50.4, z -1.8)": (P.USB_FACE_Y, P.Z_COMP)}
+    out = {}
+    for pname, (yp, zp) in pivots.items():
+        rows = []
+        for a in angles:
+            row = {"deg": a}
+            for mn, ms in moving.items():
+                m = ms.rotate(cq.Vector(0, yp, zp), cq.Vector(1, yp, zp), -a) if a else ms
+                for fn, fs in fixed.items():
+                    if mn == "board PCB" and fn == "front shell":
+                        continue
+                    row[f"{mn} to {fn}"] = _dist(m, fs)
+            rows.append(row)
+        mins = {}
+        for r in rows:
+            for k, v in r.items():
+                if k != "deg" and v is not None and (k not in mins or v < mins[k][0]):
+                    mins[k] = (v, r["deg"])
+        out[pname] = {"rows": rows, "min": mins}
     return out
 
 

@@ -2,14 +2,14 @@
 
 | Part | Thinnest wall found | Spots under 0.8 | Where and why |
 | --- | --- | --- | --- |
-| front shell | 0.50 | 5 | skin over the disc flange recess (0.6) and the USB-C leg reliefs (0.5), by design (brief items 1 and 3) (0.50); roof over the insert hole in a top boss, 0.5 (0.50); bottom wall at the microSD scallop, 0.7 (0.70) |
-| back plate | 0.65 | 5 | LED shroud tube wall, 0.65 (0.65); plastic under the screw head, 0.7 (0.70) |
-| wheel disc | 0.01 | 5 | ridges inside the debossed HOME letters (corners of M and E); they print slightly rounded (0.01); flange and key tab, 0.4 by design (brief item 1) (0.40); under a debossed label, 0.6 (0.55) |
+| front shell | 0.50 | 6 | skin over the disc flange recess (0.6) and the USB-C leg reliefs (0.5), by design (brief items 1 and 3) (0.50); roof over the insert hole in a top boss, 0.5 (0.50); bottom wall behind the USB-C port recess, 0.7 (0.70); bottom wall at the microSD scallop, 0.7 (0.70) |
+| back plate | 0.45 | 5 | LED light tube neck beside J1 and J3, 0.45 (MECH-2) (0.45); plastic under the screw head, 0.7 (0.70) |
+| wheel disc | 0.03 | 5 | ridges inside the debossed HOME letters (corners of M and E); they print slightly rounded (0.03); flange and key tab, 0.4 by design (brief item 1) (0.40); under a debossed label, 0.6 (0.55) |
 | button cap | 0.40 | 4 | flange: 0.4 in front of SW1, 0.6 at the ears (space between SW1 and the wall) (0.40); head corners (0.6 round on the 0.7 head) (0.64) |
 
 | Part | Overhangs over 45 deg (print orientation, above the first 0.3) | Where and why |
 | --- | --- | --- |
 | front shell | 6 areas | top boss shelf over the screen corner: corner overhang about 3 mm: 2 areas, 45.9 mm^2; top of the USB-C opening and overmold pocket: short bridge: 2 areas, 16.8 mm^2; top of the button slot and pocket: short bridge: 1 areas, 7.9 mm^2; top of the microSD slot and scallop: short bridge, scallop is 46 deg at most: 1 areas, 4.6 mm^2 |
 | back plate | 4 areas | ceiling of a screw counterbore: 0.9 wide ring, bridged: 4 areas, 37.3 mm^2 |
-| wheel disc | 2 areas | ceiling of a USB-C leg relief on the bed side: 2 x 3 bridge: 2 areas, 8.4 mm^2 |
+| wheel disc | 2 areas | ceiling of a USB-C leg relief on the bed side: 2 x 3 bridge: 2 areas, 7.3 mm^2 |
 | button cap | 0 areas | none |

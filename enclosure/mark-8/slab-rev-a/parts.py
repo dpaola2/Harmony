@@ -104,10 +104,11 @@ def front_shell():
                      P.SD_ZC - P.SD_SLOT_H / 2, P.SD_ZC + P.SD_SLOT_H / 2))
     ch = P.SD_CHAMFER
     hw, hh = P.SD_SLOT_W / 2, P.SD_SLOT_H / 2
-    # 45 deg lead-in that starts outside the scallop surface, so no ledge is left
-    ext = 0.45
-    tools.append(frustum_y(sd_xc, P.SD_ZC, 2 * (hw + ch + ext), 2 * (hh + ch + ext), 2 * hw, 2 * hh,
-                           sd_floor - ext, sd_floor + ch))
+    # Lead-in that starts inside the scallop, so no ledge is left. In Z it is
+    # 45 deg; in X it grows less, so it stays inside the scallop's ends.
+    ex, ez = P.SD_LEAD_EXT_X, P.SD_LEAD_EXT_Z
+    tools.append(frustum_y(sd_xc, P.SD_ZC, 2 * (hw + ch + ex), 2 * (hh + ch + ez), 2 * hw, 2 * hh,
+                           sd_floor - ez, sd_floor + ch))
     a = P.SD_SCALLOP_R - P.SD_SCALLOP_DEPTH
     sc = cq.Solid.makeCylinder(P.SD_SCALLOP_R, P.SD_SCALLOP_X[1] - P.SD_SCALLOP_X[0],
                                V(P.SD_SCALLOP_X[0], -P.Y_OUT - a, P.SD_ZC), V(1, 0, 0))
@@ -115,7 +116,25 @@ def front_shell():
     # Side button: stem slot and outer pocket in the right wall.
     tools += button_wall_cuts()
     shell = cut(shell, *tools)
+    # Standoffs on the inner face of the bottom wall (MECH-6).
+    shell = union(shell, *bottom_standoffs())
     return one_solid(shell)
+
+
+def bottom_standoffs():
+    """Small blocks on the bottom wall's inner face, 0.1 from the board edge,
+    from the skin to 0.4 past the board's component side. The back edge facing
+    the board is chamfered so the board edge slides past it on the tilt-in."""
+    out = []
+    y_wall = -P.Y_IN - 0.05            # 0.05 into the wall
+    y_face = P.BOARD_Y0 - P.STANDOFF_GAP
+    z0, z1 = P.STANDOFF_Z1, -P.SKIN + 0.01
+    c = P.STANDOFF_CHAMFER
+    for x in P.STANDOFF_X:
+        prof = [(x, y_wall, z0), (x, y_face - c, z0), (x, y_face, z0 + c), (x, y_face, z1), (x, y_wall, z1)]
+        prof = [(px - P.STANDOFF_W / 2, py, pz) for px, py, pz in prof]
+        out.append(prism(prof, (P.STANDOFF_W, 0, 0)))
+    return out
 
 
 def leg_reliefs():
@@ -299,9 +318,12 @@ def back_plate():
              box(-12, 12, yb1 + P.RIB_GAP, yb1 + P.RIB_GAP + P.RIB_W, z1 - 0.01, zr),
              box(-16, -6, yb0 - P.RIB_GAP - P.RIB_W, yb0 - P.RIB_GAP, z1 - 0.01, zr),
              box(6, 16, yb0 - P.RIB_GAP - P.RIB_W, yb0 - P.RIB_GAP, z1 - 0.01, zr)]
-    # Charge LED shroud tube.
+    # Charge LED light tube: 2.3 base, 1.9 neck beside J1 and J3, chamfered tip (MECH-2).
     ly = P.LED["centre"][1]
-    adds.append(cyl_z(P.LED_X, ly, P.LED_TUBE_OD / 2, z1 - 0.01, P.LED_TUBE_TOP))
+    rn, c = P.LED_NECK_OD / 2, P.LED_TIP_CHAMFER
+    adds += [cyl_z(P.LED_X, ly, P.LED_TUBE_OD / 2, z1 - 0.01, P.LED_NECK_Z),
+             cyl_z(P.LED_X, ly, rn, P.LED_NECK_Z - 0.01, P.LED_TUBE_TOP - c),
+             cone_z(P.LED_X, ly, rn, rn - c, P.LED_TUBE_TOP - c, P.LED_TUBE_TOP)]
     plate = union(plate, *adds)
     tools = []
     # Screw counterbores and clearance holes.

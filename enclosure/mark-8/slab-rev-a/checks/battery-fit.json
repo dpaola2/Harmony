@@ -3,14 +3,18 @@
   "wide": [
    52.0,
    47.65,
-   4.8
+   4.55
   ],
   "narrow": [
    43.4,
    52.400000000000006,
-   4.8
+   4.55
   ],
-  "z_space": 4.950000000000001
+  "t_max": 4.55,
+  "z_space_total": 5.15,
+  "foam": 0.5,
+  "screen_tol": 0.1,
+  "z_space": 4.65
  },
  "reference_solids": [
   {
@@ -18,7 +22,7 @@
    "size": [
     52.0,
     47.65,
-    4.8
+    4.55
    ],
    "overlaps": [],
    "fits": true
@@ -28,7 +32,7 @@
    "size": [
     43.4,
     52.4,
-    4.8
+    4.55
    ],
    "overlaps": [],
    "fits": true
@@ -70,6 +74,10 @@
     {
      "with": "screw 4",
      "volume_mm3": 12.252
+    },
+    {
+     "with": "battery foam",
+     "volume_mm3": 236.25
     }
    ],
    "fits": false

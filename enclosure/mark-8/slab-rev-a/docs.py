@@ -38,6 +38,8 @@ def explain_thin(part, cl):
             return "window edge: the 0.4 front chamfer leaves 0.6 at the edge"
         if x > P.X_IN - 0.5 and abs(y - P.SB_TIP[1]) < 4:
             return "right wall at the button slot"
+        if y < P.BOARD_Y0 and any(abs(x - sx) < P.STANDOFF_W / 2 + 0.3 for sx in P.STANDOFF_X):
+            return "chamfered edge of a bottom wall standoff"
     if part == "wheel disc":
         if _near((x, y), P.WC[0], P.WC[1] + P.LABEL_R, 4.5):
             return "ridges inside the debossed HOME letters (corners of M and E); they print slightly rounded"
@@ -54,7 +56,9 @@ def explain_thin(part, cl):
             if _near((x, y), bx, by, 3.0):
                 return "plastic under the screw head, 0.7"
         if _near((x, y), P.LED_X, P.LED["centre"][1], 1.6):
-            return "LED shroud tube wall, 0.65"
+            if z > P.LED_NECK_Z - 0.05:
+                return "LED light tube neck beside J1 and J3, 0.45 (MECH-2)"
+            return "LED light tube base, 0.65"
         if _near((x, y), P.BZ["centre"][0], P.BZ["centre"][1], 3.0):
             return "web between buzzer slots, 0.8"
         if -13.7 <= x <= 19.5 and abs(y - P.J2_YC) < 3.0:
@@ -122,7 +126,7 @@ def t_clearances(c):
         f"| 404050 pack to the top bosses | {min(c['battery_vs_top_bosses']):.2f} |",
         f"| 404050 pack to the front shell (any feature) | {c['battery_vs_front_shell']:.2f} |",
         f"| 404050 pack to the back plate ribs (each side) | {c['battery_vs_back_plate_ribs_xy']:.2f} |",
-        f"| 404050 pack (4.0) to the screen back | {c['battery_vs_screen_back']:.2f} |",
+        f"| 404050 pack (4.0) to the {c['battery_foam_thickness']} foam on the screen back | {c['battery_vs_foam']:.2f} |",
         f"| Battery plug to the screen / to the front shell lips | {c['battery_plug_vs_screen']:.2f} / {c['battery_plug_vs_front_shell']:.2f} |",
         f"| Button cap to SW1 at rest | {c['cap_vs_sw1_rest']:.2f} |",
         f"| Button cap at its stop ({cap['travel']} travel): plunger past the actuator rest tip | {cap['plunger_past_actuator_rest_tip']:.2f} (switch travel {cap['switch_travel']}) |",
@@ -131,12 +135,36 @@ def t_clearances(c):
     for k, v in c["press_posts_vs_parts"].items():
         lines.append(f"| Press post {k} to {v['nearest_part']} | {v['clearance']:.2f} |")
     for k, v in c["led_shroud"].items():
-        lines.append(f"| LED shroud tube to {k} | {v:.2f} |")
+        lines.append(f"| LED light tube to {k} | {v:.2f} |")
     for k, v in c["locating_pins"].items():
         lines.append(f"| Pin {k} in its hole (radial) | {v['radial_clearance']:.3f} |")
     lines += [f"| USB-C legs to the skin reliefs / to the disc pockets | {c['j1_legs_vs_skin']:.2f} / {c['j1_legs_vs_disc']:.2f} |",
               f"| Motor to the nearest board part | {c['motor_vs_board_parts']:.2f} |",
               f"| Screen back to the top bosses | {c['screen_vs_top_bosses']:.2f} |"]
+    for r in c["bottom_standoffs"]:
+        lines.append(f"| Bottom wall standoff at x {r['x']} to the board edge / to {r['nearest_part']} | "
+                     f"{r['to_board_edge']:.2f} / {_fmt(r['nearest_part_clearance'])} |")
+    for ref, r in c["reg5_parts"].items():
+        if "error" in r:
+            lines.append(f"| {ref} | {r['error']} |")
+            continue
+        f, k = r["nearest_fpc"] or ("FPC", None), r["nearest_case_or_bought_part"] or ("case", None)
+        lines.append(f"| {ref} ({r['centre'][0]}, {r['centre'][1]}, {r['zone_json']}) to the {f[0]} / to the {k[0]} (behind the board) | "
+                     f"{_fmt(f[1])} / {_fmt(k[1])} |")
+    for r in c["frame_tabs"]:
+        a, b = r["filed_flush"] or ("case", None), r["nub_0.35_left"] or ("case", None)
+        lines.append(f"| Frame tab, {r['edge']} edge ({r['range'][0]} to {r['range'][1]}), to the {a[0]}: filed flush / 0.35 nub left | "
+                     f"{_fmt(a[1])} / {_fmt(b[1])} |")
+    sd = c["microsd_slot"]
+    for k in ("drawing estimate", "JSON card plane"):
+        r = sd[k]
+        lines.append(f"| 1.0 card at the {k} (z {r['card_z'][0]} to {r['card_z'][1]}) to the slot, board side / back side | "
+                     f"{r['margin_board_side']:.2f} / {r['margin_back_side']:.2f} |")
+    t = c["battery_tilt_in"]
+    for pv, d in t.items():
+        m = d["min"]
+        lines.append(f"| Board tilt-in with the plug in J4 (0 to 25 deg about the {pv}): plug to the screen / to the front shell | "
+                     f"{m['battery plug PHR-2 to screen body'][0]:.2f} / {m['battery plug PHR-2 to front shell'][0]:.2f} |")
     return "\n".join(lines)
 
 
@@ -188,9 +216,10 @@ def t_fpc(f):
 def t_battery(fit, refs):
     w, n = fit["wide"], fit["narrow"]
     lines = ["| Item | Value |", "| --- | --- |",
-             f"| Height available (back plate to screen back, less 0.2 foam) | {fit['z_space']:.2f} |",
-             f"| Largest pack, full width | {w[0]:.1f} x {w[1]:.2f} x {w[2]:.1f} (stops 0.3 short of the top bosses) |",
-             f"| Largest pack, narrow enough to pass the top bosses | {n[0]:.1f} x {n[1]:.2f} x {n[2]:.1f} (stops 0.3 short of the back plate lip) |",
+             f"| Height from the back plate to the screen back | {fit['z_space_total']:.2f} |",
+             f"| Less the foam ({fit['foam']}) and the screen thickness tolerance ({fit['screen_tol']}): largest pack thickness | {fit['t_max']:.2f} |",
+             f"| Largest pack, full width | {w[0]:.1f} x {w[1]:.2f} x {w[2]:.2f} (stops 0.3 short of the top bosses) |",
+             f"| Largest pack, narrow enough to pass the top bosses | {n[0]:.1f} x {n[1]:.2f} x {n[2]:.2f} (stops 0.3 short of the back plate lip) |",
              f"| Pack lower edge | y {P.BAT_POCKET_Y0} (cable bay from the screen edge to here) |"]
     for r in refs:
         lines.append(f"| {r['solid']} | {'fits' if r['fits'] else 'does not fit: ' + ', '.join(h['with'] for h in r['overlaps'])} |")

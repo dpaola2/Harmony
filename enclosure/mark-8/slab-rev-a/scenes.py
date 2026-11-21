@@ -40,7 +40,7 @@ def _color(item, name=None):
 
 
 def _edges(it):
-    return it["group"] in ("printed", "battery", "motor", "screen", "hardware")
+    return it["group"] in ("printed", "battery", "foam", "motor", "screen", "hardware")
 
 
 def render_all(solids, meta, outdir):

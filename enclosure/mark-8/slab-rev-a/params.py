@@ -99,8 +99,17 @@ SD = MI["microsd"]
 SD_X0, SD_X1 = SD["card_slot_x_range"]
 SD_ZC = SD["card_plane_z"]
 SD_SLOT_W = (SD_X1 - SD_X0) + 0.4      # 11.4
-SD_SLOT_H = 1.4
+# MECH-5: the JSON card plane comes from a vendor model 0.21 taller than the
+# Hirose drawing (1.68). From the drawing, a 1.0 card under the cover sits
+# about z -2.38 to -3.38; the model puts it at z -2.64 to -3.64. The slot is
+# 1.8 tall on the old centre line (z -2.24 to -4.04) and covers both; at 0.2
+# layers it prints as z -2.2 to -4.0.
+SD_SLOT_H = 1.8
+SD_CARD_T = 1.0
+SD_CARD_DRAWING_Z = (-2.38, -3.38)     # card faces from the drawing estimate (review MECH-5)
 SD_CHAMFER = 0.3
+SD_LEAD_EXT_X = 0.45                   # lead-in starts this far outside the scallop floor, in X
+SD_LEAD_EXT_Z = 0.8                    # and in Z, so it starts inside the scallop for the taller slot
 SD_SCALLOP_R = 3.0
 SD_SCALLOP_DEPTH = 0.9
 SD_SCALLOP_X = (SD_X0 - 1.0, SD_X1 + 1.0)
@@ -139,11 +148,35 @@ POST_CONE_Z = -5.0
 
 # ---------------------------------------------------------------- back plate details
 LIP_W, LIP_H, LIP_GAP = 0.8, 0.8, 0.15
+
+# ---------------------------------------------------------------- bottom wall standoffs (MECH-6)
+# Three small standoffs on the inner face of the bottom wall close the 0.55 gap
+# to the board's bottom edge (y -49.6) to 0.1, so a USB-C pull is taken by the
+# wall, not only by the two pins. Away from the J1 opening (|x| < 4.65), the
+# card slot (x -19.4 to -8.0), the bottom bosses and the parts at the edge.
+STANDOFF_X = (-20.9, 13.5, 20.9)
+STANDOFF_W = 1.6               # along x
+STANDOFF_GAP = 0.1             # to the board edge
+STANDOFF_Z1 = -2.2             # 0.4 past the board's component side
+STANDOFF_CHAMFER = 0.3         # on the back edge, guides the board edge on the tilt-in
+BOARD_Y0 = -49.6               # board bottom edge (JSON outline)
+
+# ---------------------------------------------------------------- JLC frame tabs (board README Decision 10)
+# Mouse-bite tabs, device coordinates; a cut on the hole line leaves a nub up to
+# 0.35 proud, which the builder files flush. (edge, along-edge range)
+FRAME_TABS = [("left", (-17.9, -13.1)), ("top", (22.1, 26.1)), ("right", (-45.4, -40.6))]
+TAB_NUB_MAX = 0.35
 BZ = MI["buzzer"]
 LED = MI["charge_led"]
 LED_HOLE_D = 1.0
 LED_X = -5.83                  # 0.07 right of the LED centre, centres the tube between J3 and J1
-LED_TUBE_OD = 2.3
+# MECH-2: the tube passes between J3 (x max -7.195, down to z -3.69) and J1
+# (x min -4.47, down to z -5.06). The neck beside them is 1.9 OD (0.41 to
+# each), the base below J1 stays 2.3 OD for strength, the hole stays 1.0.
+LED_TUBE_OD = 2.3              # base, from the plate to LED_NECK_Z
+LED_NECK_OD = 1.9
+LED_NECK_Z = -5.5              # 0.44 below the J1 shell
+LED_TIP_CHAMFER = 0.15         # outer edge of the tip, so a misplaced tube slides off J1 or J3
 LED_TUBE_TOP = -2.9            # LED top is -2.5
 MOTOR_C = (-20.0, -39.5)
 MOTOR_D, MOTOR_H = 10.0, 2.7
@@ -152,7 +185,12 @@ MOTOR_POCKET_D, MOTOR_POCKET_DEPTH = 10.4, 0.3   # shallow round seat marks the 
 # ---------------------------------------------------------------- battery
 BAT_POCKET_Y0 = -3.5           # cable bay below this line
 BAT_TOP_Z = -3.15              # screen back
-BAT_FOAM = 0.2
+# MECH-3: 0.2 to 0.5 foam between the pack and the screen back. The model uses
+# the thick end, 0.5. The screen is 2.15 +-0.10 thick (DLC drawing), so the
+# largest pack is 5.15 - 0.5 - 0.1 = 4.55.
+BAT_FOAM = 0.5
+SCR_T_TOL = 0.10
+BAT_FOAM_W, BAT_FOAM_L = 35.0, 45.0
 BAT_MAX = (52.0, 54.0, 4.8)
 BAT_404050 = (40.0, 50.0, 4.0)
 BAT_403450 = (34.0, 50.0, 4.0)

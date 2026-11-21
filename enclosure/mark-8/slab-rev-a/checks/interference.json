@@ -1,6 +1,6 @@
 {
  "tolerance_mm3": 0.001,
- "pairs_checked": 264,
+ "pairs_checked": 273,
  "pairs_reported": [
   {
    "a": "front shell",
@@ -131,6 +131,14 @@
    "status": "ok"
   },
   {
+   "a": "screen body",
+   "b": "battery foam",
+   "volume_mm3": 0.0,
+   "intended": "foam stuck on the screen back (face contact)",
+   "error": null,
+   "status": "ok"
+  },
+  {
    "a": "screen FPC bonded end",
    "b": "FPC leg and wide section",
    "volume_mm3": 0.0,
@@ -170,7 +178,7 @@
    "size": [
     52.0,
     47.65,
-    4.8
+    4.55
    ],
    "overlaps": [],
    "fits": true
@@ -180,7 +188,7 @@
    "size": [
     43.4,
     52.4,
-    4.8
+    4.55
    ],
    "overlaps": [],
    "fits": true
@@ -222,6 +230,10 @@
     {
      "with": "screw 4",
      "volume_mm3": 12.252
+    },
+    {
+     "with": "battery foam",
+     "volume_mm3": 236.25
     }
    ],
    "fits": false
@@ -270,24 +282,24 @@
     "clearance": 1.341
    },
    {
+    "fpc": "FPC part",
+    "part": "R31",
+    "clearance": 1.51
+   },
+   {
     "fpc": "FPC leg and wide section",
     "part": "R14",
     "clearance": 1.528
    },
    {
     "fpc": "FPC leg and wide section",
-    "part": "R13",
-    "clearance": 2.073
-   },
-   {
-    "fpc": "FPC tail",
-    "part": "C19",
-    "clearance": 2.6
+    "part": "C26",
+    "clearance": 1.569
    },
    {
     "fpc": "FPC leg and wide section",
-    "part": "Q4",
-    "clearance": 2.664
+    "part": "R31",
+    "clearance": 1.575
    }
   ],
   "fpc_vs_pcb": 0.3,
@@ -310,6 +322,8 @@
   ],
   "battery_vs_back_plate_ribs_xy": 0.3,
   "battery_vs_screen_back": 1.15,
+  "battery_vs_foam": 0.65,
+  "battery_foam_thickness": 0.5,
   "battery_plug_vs_screen": 0.188,
   "battery_plug_vs_front_shell": 0.3,
   "cap_vs_sw1_rest": 0.12,
@@ -341,9 +355,9 @@
   },
   "led_shroud": {
    "LED1": 0.35,
-   "J1": 0.21,
-   "J3": 0.215,
-   "R8": 0.97
+   "J1": 0.41,
+   "J3": 0.415,
+   "R8": 1.217
   },
   "locating_pins": {
    "H1": {
@@ -365,6 +379,494 @@
   "disc_vs_shell": 0.0,
   "motor_vs_board_parts": 2.139,
   "screen_vs_top_bosses": 0.45,
-  "screen_vs_front_shell_lateral": 0.15
+  "screen_vs_front_shell_lateral": 0.15,
+  "bottom_standoffs": [
+   {
+    "x": -20.9,
+    "to_board_edge": 0.1,
+    "nearest_part": "J3",
+    "nearest_part_clearance": 0.605
+   },
+   {
+    "x": 13.5,
+    "to_board_edge": 0.1,
+    "nearest_part": "R1",
+    "nearest_part_clearance": 1.787
+   },
+   {
+    "x": 20.9,
+    "to_board_edge": 0.1,
+    "nearest_part": "R4",
+    "nearest_part_clearance": 2.802
+   }
+  ],
+  "reg5_parts": {
+   "R31": {
+    "centre": [
+     15.5,
+     -12.1
+    ],
+    "height_json": 0.35,
+    "zone_json": "FPC run zone",
+    "zone_limit_json": 4.9,
+    "zone_ok_json": true,
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "nearest_fpc": [
+     "FPC part",
+     1.51
+    ],
+    "nearest_case_or_bought_part": [
+     "screen body",
+     4.008
+    ],
+    "all": {
+     "FPC part": 1.51,
+     "FPC leg and wide section": 1.575,
+     "screen body": 4.008,
+     "front shell": 4.649,
+     "screen TFT glass": 5.058,
+     "back plate": 6.1,
+     "battery 404050": 8.61,
+     "screen rear polarizer": 9.088,
+     "battery foam": 10.892,
+     "button cap": 11.1
+    }
+   },
+   "R32": {
+    "centre": [
+     13.3,
+     -18.6
+    ],
+    "height_json": 0.35,
+    "zone_json": "FPC run zone",
+    "zone_limit_json": 4.9,
+    "zone_ok_json": true,
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     5.505
+    ],
+    "nearest_case_or_bought_part": [
+     "back plate",
+     5.019
+    ],
+    "all": {
+     "back plate": 5.019,
+     "FPC leg and wide section": 5.505,
+     "FPC part": 5.775,
+     "screen body": 10.508,
+     "front shell": 11.13,
+     "screen TFT glass": 11.558
+    }
+   },
+   "R34": {
+    "centre": [
+     -13.85,
+     -24.3
+    ],
+    "height_json": 0.35,
+    "zone_json": "FPC run zone",
+    "zone_limit_json": 4.9,
+    "zone_ok_json": true,
+    "step_z": [
+     -2.2,
+     -1.85
+    ],
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     1.823
+    ],
+    "nearest_case_or_bought_part": [
+     "back plate",
+     6.1
+    ],
+    "all": {
+     "FPC leg and wide section": 1.823,
+     "back plate": 6.1,
+     "motor": 11.589,
+     "front shell": 11.997
+    }
+   },
+   "C26": {
+    "centre": [
+     -14.36,
+     -25.7
+    ],
+    "height_json": 0.5,
+    "zone_json": "general",
+    "zone_limit_json": 5.6,
+    "zone_ok_json": true,
+    "step_z": [
+     -2.35,
+     -1.85
+    ],
+    "nearest_fpc": [
+     "FPC leg and wide section",
+     1.569
+    ],
+    "nearest_case_or_bought_part": [
+     "back plate",
+     5.95
+    ],
+    "all": {
+     "FPC leg and wide section": 1.569,
+     "back plate": 5.95,
+     "motor": 9.999,
+     "FPC tail": 12.056,
+     "front shell": 13.09
+    }
+   }
+  },
+  "frame_tabs": [
+   {
+    "edge": "left",
+    "range": [
+     -17.9,
+     -13.1
+    ],
+    "filed_flush": [
+     "front shell",
+     0.49
+    ],
+    "nub_0.35_left": [
+     "front shell",
+     0.15
+    ]
+   },
+   {
+    "edge": "top",
+    "range": [
+     22.1,
+     26.1
+    ],
+    "filed_flush": [
+     "front shell",
+     1.2
+    ],
+    "nub_0.35_left": [
+     "front shell",
+     0.86
+    ]
+   },
+   {
+    "edge": "right",
+    "range": [
+     -45.4,
+     -40.6
+    ],
+    "filed_flush": [
+     "front shell",
+     0.352
+    ],
+    "nub_0.35_left": [
+     "front shell",
+     0.15
+    ]
+   }
+  ],
+  "microsd_slot": {
+   "slot_z": [
+    -2.241,
+    -4.041
+   ],
+   "slot_z_printed_0.2": [
+    -2.2,
+    -4.0
+   ],
+   "drawing estimate": {
+    "card_z": [
+     -2.38,
+     -3.38
+    ],
+    "to_front_shell": 0.139,
+    "margin_board_side": 0.139,
+    "margin_back_side": 0.661
+   },
+   "JSON card plane": {
+    "card_z": [
+     -2.641,
+     -3.641
+    ],
+    "to_front_shell": 0.2,
+    "margin_board_side": 0.4,
+    "margin_back_side": 0.4
+   }
+  },
+  "battery_tilt_in": {
+   "touch-side bottom edge (y -49.6, z -1.0)": {
+    "rows": [
+     {
+      "deg": 0,
+      "battery plug PHR-2 to screen body": 0.188,
+      "battery plug PHR-2 to front shell": 0.3,
+      "board J4 to screen body": 2.688,
+      "board J4 to front shell": 0.85,
+      "battery wires to screen body": 1.0,
+      "battery wires to front shell": 2.05,
+      "board PCB to screen body": 2.158
+     },
+     {
+      "deg": 0.5,
+      "battery plug PHR-2 to screen body": 0.201,
+      "battery plug PHR-2 to front shell": 0.656,
+      "board J4 to screen body": 2.697,
+      "board J4 to front shell": 1.119,
+      "battery wires to screen body": 1.364,
+      "battery wires to front shell": 2.413,
+      "board PCB to screen body": 2.159
+     },
+     {
+      "deg": 1,
+      "battery plug PHR-2 to screen body": 0.218,
+      "battery plug PHR-2 to front shell": 1.012,
+      "board J4 to screen body": 2.708,
+      "board J4 to front shell": 1.389,
+      "battery wires to screen body": 1.729,
+      "battery wires to front shell": 2.775,
+      "board PCB to screen body": 2.164
+     },
+     {
+      "deg": 2,
+      "battery plug PHR-2 to screen body": 0.747,
+      "battery plug PHR-2 to front shell": 1.725,
+      "board J4 to screen body": 2.742,
+      "board J4 to front shell": 1.927,
+      "battery wires to screen body": 2.459,
+      "battery wires to front shell": 3.499,
+      "board PCB to screen body": 2.182
+     },
+     {
+      "deg": 3,
+      "battery plug PHR-2 to screen body": 1.459,
+      "battery plug PHR-2 to front shell": 2.437,
+      "board J4 to screen body": 2.883,
+      "board J4 to front shell": 2.464,
+      "battery wires to screen body": 3.188,
+      "battery wires to front shell": 4.221,
+      "board PCB to screen body": 2.212
+     },
+     {
+      "deg": 5,
+      "battery plug PHR-2 to screen body": 2.906,
+      "battery plug PHR-2 to front shell": 3.861,
+      "board J4 to screen body": 3.59,
+      "board J4 to front shell": 2.75,
+      "battery wires to screen body": 4.648,
+      "battery wires to front shell": 5.66,
+      "board PCB to screen body": 2.65
+     },
+     {
+      "deg": 8,
+      "battery plug PHR-2 to screen body": 5.083,
+      "battery plug PHR-2 to front shell": 4.5,
+      "board J4 to screen body": 5.216,
+      "board J4 to front shell": 2.75,
+      "battery wires to screen body": 6.832,
+      "battery wires to front shell": 6.093,
+      "board PCB to screen body": 4.215
+     },
+     {
+      "deg": 12,
+      "battery plug PHR-2 to screen body": 7.979,
+      "battery plug PHR-2 to front shell": 5.006,
+      "board J4 to screen body": 7.754,
+      "board J4 to front shell": 2.755,
+      "battery wires to screen body": 9.733,
+      "battery wires to front shell": 7.453,
+      "board PCB to screen body": 6.793
+     },
+     {
+      "deg": 18,
+      "battery plug PHR-2 to screen body": 12.259,
+      "battery plug PHR-2 to front shell": 7.584,
+      "board J4 to screen body": 11.782,
+      "board J4 to front shell": 4.285,
+      "battery wires to screen body": 14.059,
+      "battery wires to front shell": 10.485,
+      "board PCB to screen body": 10.887
+     },
+     {
+      "deg": 25,
+      "battery plug PHR-2 to screen body": 17.102,
+      "battery plug PHR-2 to front shell": 11.406,
+      "board J4 to screen body": 16.549,
+      "board J4 to front shell": 7.337,
+      "battery wires to screen body": 19.057,
+      "battery wires to front shell": 14.48,
+      "board PCB to screen body": 15.699
+     }
+    ],
+    "min": {
+     "battery plug PHR-2 to screen body": [
+      0.188,
+      0
+     ],
+     "battery plug PHR-2 to front shell": [
+      0.3,
+      0
+     ],
+     "board J4 to screen body": [
+      2.688,
+      0
+     ],
+     "board J4 to front shell": [
+      0.85,
+      0
+     ],
+     "battery wires to screen body": [
+      1.0,
+      0
+     ],
+     "battery wires to front shell": [
+      2.05,
+      0
+     ],
+     "board PCB to screen body": [
+      2.158,
+      0
+     ]
+    }
+   },
+   "USB-C shell, front top edge (y -50.4, z -1.8)": {
+    "rows": [
+     {
+      "deg": 0,
+      "battery plug PHR-2 to screen body": 0.188,
+      "battery plug PHR-2 to front shell": 0.3,
+      "board J4 to screen body": 2.688,
+      "board J4 to front shell": 0.85,
+      "battery wires to screen body": 1.0,
+      "battery wires to front shell": 2.05,
+      "board PCB to screen body": 2.158
+     },
+     {
+      "deg": 0.5,
+      "battery plug PHR-2 to screen body": 0.195,
+      "battery plug PHR-2 to front shell": 0.663,
+      "board J4 to screen body": 2.69,
+      "board J4 to front shell": 1.126,
+      "battery wires to screen body": 1.371,
+      "battery wires to front shell": 2.42,
+      "board PCB to screen body": 2.152
+     },
+     {
+      "deg": 1,
+      "battery plug PHR-2 to screen body": 0.205,
+      "battery plug PHR-2 to front shell": 1.026,
+      "board J4 to screen body": 2.695,
+      "board J4 to front shell": 1.403,
+      "battery wires to screen body": 1.743,
+      "battery wires to front shell": 2.789,
+      "board PCB to screen body": 2.15
+     },
+     {
+      "deg": 2,
+      "battery plug PHR-2 to screen body": 0.765,
+      "battery plug PHR-2 to front shell": 1.752,
+      "board J4 to screen body": 2.715,
+      "board J4 to front shell": 1.955,
+      "battery wires to screen body": 2.486,
+      "battery wires to front shell": 3.527,
+      "board PCB to screen body": 2.154
+     },
+     {
+      "deg": 3,
+      "battery plug PHR-2 to screen body": 1.493,
+      "battery plug PHR-2 to front shell": 2.478,
+      "board J4 to screen body": 2.855,
+      "board J4 to front shell": 2.507,
+      "battery wires to screen body": 3.229,
+      "battery wires to front shell": 4.264,
+      "board PCB to screen body": 2.171
+     },
+     {
+      "deg": 5,
+      "battery plug PHR-2 to screen body": 2.968,
+      "battery plug PHR-2 to front shell": 3.928,
+      "board J4 to screen body": 3.58,
+      "board J4 to front shell": 2.75,
+      "battery wires to screen body": 4.714,
+      "battery wires to front shell": 5.733,
+      "board PCB to screen body": 2.629
+     },
+     {
+      "deg": 8,
+      "battery plug PHR-2 to screen body": 5.186,
+      "battery plug PHR-2 to front shell": 4.5,
+      "board J4 to screen body": 5.249,
+      "board J4 to front shell": 2.75,
+      "battery wires to screen body": 6.936,
+      "battery wires to front shell": 6.132,
+      "board PCB to screen body": 4.25
+     },
+     {
+      "deg": 12,
+      "battery plug PHR-2 to screen body": 8.128,
+      "battery plug PHR-2 to front shell": 5.089,
+      "board J4 to screen body": 7.847,
+      "board J4 to front shell": 2.772,
+      "battery wires to screen body": 9.888,
+      "battery wires to front shell": 7.568,
+      "board PCB to screen body": 6.895
+     },
+     {
+      "deg": 18,
+      "battery plug PHR-2 to screen body": 12.467,
+      "battery plug PHR-2 to front shell": 7.816,
+      "board J4 to screen body": 11.961,
+      "board J4 to front shell": 4.506,
+      "battery wires to screen body": 14.293,
+      "battery wires to front shell": 10.722,
+      "board PCB to screen body": 11.078
+     },
+     {
+      "deg": 25,
+      "battery plug PHR-2 to screen body": 17.377,
+      "battery plug PHR-2 to front shell": 11.786,
+      "board J4 to screen body": 16.812,
+      "board J4 to front shell": 7.72,
+      "battery wires to screen body": 19.381,
+      "battery wires to front shell": 14.857,
+      "board PCB to screen body": 15.962
+     }
+    ],
+    "min": {
+     "battery plug PHR-2 to screen body": [
+      0.188,
+      0
+     ],
+     "battery plug PHR-2 to front shell": [
+      0.3,
+      0
+     ],
+     "board J4 to screen body": [
+      2.688,
+      0
+     ],
+     "board J4 to front shell": [
+      0.85,
+      0
+     ],
+     "battery wires to screen body": [
+      1.0,
+      0
+     ],
+     "battery wires to front shell": [
+      2.05,
+      0
+     ],
+     "board PCB to screen body": [
+      2.15,
+      1
+     ]
+    }
+   }
+  }
  }
 }

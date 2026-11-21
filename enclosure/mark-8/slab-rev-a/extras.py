@@ -3,6 +3,8 @@
 The board comes from the cached board STEP, the screen from the vendor STEP.
 The rest are simple solids sized from SPEC 10, the JSON and the part drawings.
 """
+import math
+
 import cadquery as cq
 
 import params as P
@@ -27,9 +29,25 @@ def battery(size, name):
     return box(-w / 2, w / 2, y0, y0 + l, z0, z0 + t)
 
 
-def largest_battery(t=4.8):
+def max_pack_thickness():
+    """Back plate to screen back, less the foam and the screen's thickness
+    tolerance, rounded down to 0.05."""
+    space = P.BAT_TOP_Z - P.BAT_FOAM - P.SCR_T_TOL - P.SPLIT_Z
+    return math.floor(space / 0.05 + 1e-6) * 0.05
+
+
+def foam():
+    """Double-sided foam on the back of the screen, under the pack (MECH-3)."""
+    bw, bl, _ = P.BAT_404050
+    yc = P.BAT_POCKET_Y0 + bl / 2
+    return box(-P.BAT_FOAM_W / 2, P.BAT_FOAM_W / 2, yc - P.BAT_FOAM_L / 2, yc + P.BAT_FOAM_L / 2,
+               P.BAT_TOP_Z - P.BAT_FOAM, P.BAT_TOP_Z)
+
+
+def largest_battery(t=None):
     """Largest rectangular pack (two cases: full width, or narrow enough to pass
     the top bosses), resting on the back plate above the cable bay."""
+    t = max_pack_thickness() if t is None else t
     clear = 0.3
     x_wall = P.X_IN - P.LIP_GAP - P.LIP_W - clear          # back plate lip
     y_top_wall = P.Y_IN - P.LIP_GAP - P.LIP_W - clear
@@ -39,7 +57,9 @@ def largest_battery(t=4.8):
     y0 = P.BAT_POCKET_Y0
     wide = (2 * min(x_wall, 26.0), boss_y - y0 - rib_clear, t)
     narrow = (2 * boss_x, y_top_wall - y0, t)
-    return {"wide": wide, "narrow": narrow, "z_space": P.BAT_TOP_Z - P.BAT_FOAM - P.SPLIT_Z}
+    return {"wide": wide, "narrow": narrow, "t_max": t,
+            "z_space_total": round(P.BAT_TOP_Z - P.SPLIT_Z, 3), "foam": P.BAT_FOAM, "screen_tol": P.SCR_T_TOL,
+            "z_space": P.BAT_TOP_Z - P.BAT_FOAM - P.SPLIT_Z}
 
 
 def battery_plug():
