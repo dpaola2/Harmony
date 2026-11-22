@@ -43,7 +43,8 @@
 static const char *TAG = "POWER";
 static portMUX_TYPE lock = portMUX_INITIALIZER_UNLOCKED;
 static player_power_status_t status;
-static bool backlight_on;
+static bool backlight_on, battery_empty, empty_reported, reversed_reported;
+static slab_bat_guard_t guard;
 static uint32_t last_gauge_request;
 
 player_power_status_t player_power_status(void)
@@ -95,10 +96,25 @@ void player_power_poll(void)
 {
     int vbus = slab_analog_vbus_mv(), vbat = slab_analog_vbat_mv();
     if (vbus >= 0 && vbat >= 0) {
+        bool usb = slab_vbus_present((unsigned)vbus);
         portENTER_CRITICAL(&lock);
-        status.usb = slab_vbus_present((unsigned)vbus);
+        status.usb = usb;
         status.vsys_mv = slab_vsys_estimate_mv((unsigned)vbus, (unsigned)vbat);
         portEXIT_CRITICAL(&lock);
+        slab_bat_state_t bat = slab_bat_guard_poll(&guard, (unsigned)vbat, usb);
+        if (bat == SLAB_BAT_EMPTY) {
+            /* Set again every second while the cell stays low, so a refused sleep is retried. */
+            battery_empty = true;
+            if (!empty_reported) {
+                ESP_LOGW(TAG, "Battery %d mV under load for %d s: save and sleep", vbat, SLAB_BAT_CUTOFF_POLLS);
+                player_ui_notice("Battery empty. Charge to wake.");
+                empty_reported = true;
+            }
+        } else if (bat == SLAB_BAT_REVERSED && !reversed_reported) {
+            ESP_LOGE(TAG, "VBAT %d mV with USB in: pack reversed or shorted?", vbat);
+            player_ui_notice("Battery reads 0 V on USB. Unplug it and check its polarity.");
+            reversed_reported = true;
+        }
     }
     apply_backlight();
     uint32_t now = (uint32_t)(esp_timer_get_time() / 1000);
@@ -109,10 +125,57 @@ void player_power_poll(void)
     }
 }
 
+bool player_power_take_battery_empty(void)
+{
+    bool empty = battery_empty;
+    battery_empty = false;
+    return empty;
+}
+
 void player_power_backlight(bool on)
 {
     backlight_on = on;
     apply_backlight();
+}
+
+/* ext0 on a side button that is still low wakes the chip at once, so arm it
+ * only after the line has gone high (review FW-HW-6). Returns false when the
+ * button stayed low for 10 s. */
+static bool arm_button_wake(void)
+{
+    int64_t deadline = esp_timer_get_time() + 10000000;
+    while (gpio_get_level(SLAB_PIN_SIDE_BTN) == 0 && esp_timer_get_time() < deadline) vTaskDelay(pdMS_TO_TICKS(10));
+    vTaskDelay(pdMS_TO_TICKS(50));
+    if (gpio_get_level(SLAB_PIN_SIDE_BTN) == 0) {
+        ESP_LOGW(TAG, "Side button still low after 10 s (stuck, or pressed by the case): no side-button wake");
+        return false;
+    }
+    esp_sleep_enable_ext0_wakeup(SLAB_PIN_SIDE_BTN, 0);
+    return true;
+}
+
+/* With no usable wake source, wake on a timer and try again rather than sleep
+ * for ever. */
+#define RETRY_WAKE_S 60
+
+void player_power_boot_check(void)
+{
+    if (slab_analog_init() != ESP_OK) return;
+    int vbus = slab_analog_vbus_mv(), vbat = slab_analog_vbat_mv();
+    if (vbus < 0 || vbat < 0) return;
+    if (slab_bat_wake_allowed((unsigned)vbat, slab_vbus_present((unsigned)vbus))) return;
+    /* Review PWR-6: below 3.5 V without USB the player would brown out soon after
+     * Bluetooth starts. Two short clicks say "charge me", then back to sleep. */
+    ESP_LOGW(TAG, "Battery %d mV and no USB: back to sleep; plug USB, then press the side button", vbat);
+    /* No clicks on a timer retry (a stuck button), only when a person woke it. */
+    if (esp_sleep_get_wakeup_cause() != ESP_SLEEP_WAKEUP_TIMER && slab_buzzer_init() == ESP_OK) {
+        slab_buzzer_clicks(2, 3000, 200000);
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+    slab_board_prepare_deep_sleep();
+    if (!arm_button_wake()) esp_sleep_enable_timer_wakeup((uint64_t)RETRY_WAKE_S * 1000000);
+    uart_wait_tx_idle_polling(CONFIG_ESP_CONSOLE_UART_NUM);
+    esp_deep_sleep_start();
 }
 
 static bool wait_shutdown(void)
@@ -153,13 +216,10 @@ void player_power_sleep(void)
     slab_board_periph_power(false);
     slab_board_prepare_deep_sleep();
     /* The long press that asked for sleep is usually still down. */
-    int64_t deadline = esp_timer_get_time() + 10000000;
-    while (gpio_get_level(SLAB_PIN_SIDE_BTN) == 0 && esp_timer_get_time() < deadline) vTaskDelay(pdMS_TO_TICKS(10));
-    vTaskDelay(pdMS_TO_TICKS(50));
-    esp_sleep_enable_ext0_wakeup(SLAB_PIN_SIDE_BTN, 0);
+    bool button_wake = arm_button_wake();
     if (touch_wake) {
         /* TOUCH_IRQ must be high before sleep or the player wakes at once. */
-        deadline = esp_timer_get_time() + 3000000;
+        int64_t deadline = esp_timer_get_time() + 3000000;
         while (gpio_get_level(SLAB_PIN_TOUCH_IRQ) == 0 && esp_timer_get_time() < deadline) {
             uint8_t s[2];
             slab_i2c_read(SLAB_I2C_ADDR_MPR121, MPR121_REG_TOUCH_STATUS, s, 2);
@@ -168,7 +228,9 @@ void player_power_sleep(void)
         if (gpio_get_level(SLAB_PIN_TOUCH_IRQ)) esp_sleep_enable_ext1_wakeup(1ULL << SLAB_PIN_TOUCH_IRQ, ESP_EXT1_WAKEUP_ALL_LOW);
         else touch_wake = false;
     }
-    ESP_LOGI(TAG, "DEEP_SLEEP: side button%s to wake; battery %u %%", touch_wake ? " or wheel touch" : "", status.percent);
+    if (!button_wake && !touch_wake) esp_sleep_enable_timer_wakeup((uint64_t)RETRY_WAKE_S * 1000000);
+    ESP_LOGI(TAG, "DEEP_SLEEP: %s%s to wake; battery %u %%", button_wake ? "side button" : "no side button",
+             touch_wake ? " or wheel touch (hold about 1 s)" : button_wake ? "" : ", timer retry", status.percent);
     uart_wait_tx_idle_polling(CONFIG_ESP_CONSOLE_UART_NUM);
     esp_deep_sleep_start();
 }

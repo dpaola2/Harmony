@@ -1,6 +1,6 @@
 # Harmony Mark-8 slab firmware (revision A)
 
-November 17, 2026. Firmware for the Mark-8 "slab" board in `hardware/mark-8/slab-rev-a/`. **Both projects build and every host test passes. Nothing has been flashed: the board does not exist yet.**
+November 17, 2026, updated November 22 for board revision A.2. Firmware for the Mark-8 "slab" board in `hardware/mark-8/slab-rev-a/`. **Both projects build and every host test passes. Nothing has been flashed: the board does not exist yet.**
 
 - `slab-bringup/` tests the new board block by block and prints one PASS or FAIL line for each block. It measures the touch noise against the backlight PWM, picks the quietest PWM frequency and saves it, with touch thresholds, for the player.
 - `slab-player/` is the Mark-7 player on the slab: the ST7365P at 320 x 320, the touch wheel, buzzer clicks, battery percent, a VSYS-compensated backlight and deep sleep. Bluetooth name **Harmony Mark-8**.
@@ -12,9 +12,35 @@ Flash the bring-up first, read its lines, then flash the player. The steps are i
 
 | | Bring-up | Player |
 | --- | --- | --- |
-| App image | 420,704 bytes | 1,216,208 bytes |
+| App image | 422,192 bytes | 1,218,864 bytes |
 | Factory partition (3 MB) | 87 percent free | 61 percent free |
 | ESP-IDF | 5.5, pinned `8c750b08` | same |
+
+## Changes on 22 November (board revision A.2)
+
+The pre-order board review changed parts that the firmware depends on, and it found firmware gaps. The hardware README lists them under "Firmware changes this revision needs". All of them are in this firmware:
+
+| Review item | Change |
+| --- | --- |
+| PWR-1, FW-HW-1, Q4-1 (change 1) | `SLAB_PERIPH_RAMP_MS` 5 to 20 ms for the new Q4 gate network (90 percent in 3.3 to 10.1 ms). The header now says that Q4 stays off from reset release until firmware drives GPIO13 low. |
+| BN-2, ESP32-4, FW-HW-5 (change 2) | `SLAB_VBUS_DIVIDER_X1000` 1667 to 2333 (R30 is 75k). `verify.py` now checks the dividers against the board as built and requires the "Changes from spec" row. |
+| CC-2, Q4-4 (change 3) | 3V3_PERIPH stays off at least 0.5 s before it comes back, so the card always gets a real power cycle. After a reset other than power-on or deep sleep, the first switch-on also waits. |
+| PWR-11 (change 4) | SD_CD is read twice, 5 ms apart (`slab_board_card_present`), because R25 is now 1M. |
+| CONN-2 (change 5) | When the card bus is freed while the card has power, GPIO19 (CMD) gets its internal pull-up. |
+| Q4-5 (change 6) | No change needed: every VBUS and VBAT reading is already the mean of 16 conversions. |
+| PWR-6 | Brownout at 2.80 V (level 7) in both projects. The player saves and sleeps after 5 s at or below 3.45 V on battery, and a wake without USB below 3.5 V clicks twice and goes back to sleep. |
+| PWR-2 (optional) | On USB, VBAT_SENSE under 2 V for 10 s shows "Battery reads 0 V on USB. Unplug it and check its polarity." |
+| PERIPH-2, PWR-10, CONN-4 | The R17 power cap uses the worst case (VF 2.7 V, 10 ohm) and 200 mW, 80 percent of the rating. Brightness stops at 100 percent. The 80 percent cap on USB stays. |
+| FP-5, PERIPH-3 | Tones only from 3 to 5 kHz, at 25 percent duty or less, and they stop by themselves after 60 s. The click frequency range is now 3 to 5 kHz. |
+| L6 | GPIO5 and GPIO19 at drive strength 1 for the card. A failed mount at 20 MHz retries once at 10 MHz. |
+| ESP32-3, FW-HW-4 | Card clock range stops at 20,000 kHz. |
+| FW-HW-3 | Screen clock range stops at 40 MHz; 13,333,333 Hz is the in-spec fallback. |
+| FW-HW-2 | Bring-up `wait_press()` counts a press only after the line has been high for 100 ms, and a press that lasts 10 s fails. A stuck button can no longer pass BUTTON, SCREEN or BUZZER. |
+| FW-HW-6 | The player arms the side-button wake only after the button is released. If it stays low for 10 s, the player sleeps with touch wake only, or with a 60 s timer if touch wake is off. |
+| FW-HW-7 | Documented: wake by touch needs a touch held about 1 s. |
+| ESP32-6 | Documented in `slab_pins.h`: if TE ever becomes an edge interrupt, mask it around ADC1 reads. |
+
+Nothing here is tested on a board yet. The host tests cover the new pure logic (drain wait, battery guard, backlight caps, divider).
 
 ## 1. What each project does
 
@@ -119,11 +145,11 @@ Then the bring-up lines follow, in this order. Each has the form `BRINGUP <BLOCK
 | BATTERY | `divider 4.2x V, gauge 4.2x V, .. %, v0x001x` | nothing | Divider and gauge differ by more than 0.15 V: R27/R28 or U5. Without a cell the charger output wanders; repeat with the battery fitted. The percent is meaningless without a cell. |
 | HAPTIC | `DRV2605L id 7, setup ESP_OK; no motor (config)` | with a motor: feel a buzz | No DRV2605L: U7 joints. Later "motor buzz not confirmed": the M+ and M- joints. |
 | TOUCH | `36 regs verified, autoconfig ok, untouched` | hands off | "reset check": U6 not answering right. "autoconfig FAILED": R10 (75k REXT) or an electrode shorted to ground. "out of range": one electrode open or shorted; the `TOUCH data:` line before it shows which (its value sits near 0 or 1023). "touched at start": a hand was on the wheel. |
-| PERIPH | `3V3_PERIPH off <400 mV, on >2800 mV (SD_CS pull-up)` | nothing | Off high: Q4 stays on (GPIO13 not driving, R13). On low: Q4 does not switch (R14, C18) or R22 is missing. |
-| (screen) | colour bars, white TOP arrow, 1 px white border | look | Backlight but black: FPC not seated or folded wrong (pin 1 at the -Y end), or RST. No backlight: Q5, R17, FPC pins 1, 14, 15. Noise or tearing: lower `CONFIG_SLAB_LCD_SPI_HZ` to 26666666. A missing edge: a RAM offset, set `CONFIG_SLAB_LCD_ROW_OFFSET` or `COL_OFFSET`. |
-| CARD | `NNNNN MB, 20 MHz, raw >1000 KB/s, file .. KB/s, 0 err` | card in | "no card": SD_CD switch or R25. "mount failed": card not FAT32, or the long card lines; try `CONFIG_SLAB_SD_SPI_KHZ=10000`. Errors or under 500 KB/s: signal quality at 20 MHz; lower the clock. |
+| PERIPH | `3V3_PERIPH off <400 mV, on >2800 mV (SD_CS pull-up)` | nothing | Off high: Q4 stays on (GPIO13 not driving, R13). On low: Q4 does not switch (R13, R14, R34, C18, C26) or R22 is missing. |
+| (screen) | colour bars, white TOP arrow, 1 px white border | look | Backlight but black: FPC not seated or folded wrong (pin 1 at the -Y end), or RST. No backlight: Q5, R17, FPC pins 1, 14, 15. Noise or tearing: lower `CONFIG_SLAB_LCD_SPI_HZ` to 13333333, the module sheet's own limit (26666666 and 20000000 are also above it). A missing edge: a RAM offset, set `CONFIG_SLAB_LCD_ROW_OFFSET` or `COL_OFFSET`. |
+| CARD | `NNNNN MB, 20 MHz, raw >1000 KB/s, file .. KB/s, 0 err` | card in | "no card": SD_CD switch or R25 (1M). "10 MHz" in the line: the mount at 20 MHz failed and the retry worked; set `CONFIG_SLAB_SD_SPI_KHZ=10000`. "mount failed": card not FAT32, or the long card lines failed at 10 MHz too. Errors or under 500 KB/s: signal quality at 20 MHz; lower the clock. |
 | NOISE | `PWM NNNNN Hz quietest, worst p-p N, touch 12..NN, saved` | hands off about 45 s | A touch threshold above 24 would be needed. The table above it shows which case and which electrode; see "Touch tuning". |
-| BUTTON | `pressed for NNN ms` | press the side button once | SW1, R26 or C23, or the button cap binds. |
+| BUTTON | `pressed for NNN ms` | press the side button once | SW1, R26 or C23, or the button cap binds. "stuck low": the line never went high or a press lasted 10 s; SW1 is shorted or the case presses it. |
 | SCREEN | `init ok at 40 MHz, picture confirmed` | press again if the arrow points to the top edge (away from the wheel) and the bars read RED GREEN BLUE WHITE | Not confirmed: wrong orientation (`CONFIG_SLAB_LCD_MADCTL`: 0x88 turns it 180 degrees; if the picture then shifts, set `CONFIG_SLAB_LCD_ROW_OFFSET`) or red and blue swapped (toggle 0x08). |
 | BUZZER | `3 beeps heard` | press if you heard 3 beeps | Q6, R18, BZ1 or D2. |
 | WHEEL | `9/9 seen, turn ok, centre tap ok, peak N.Nx threshold` | touch every sector, turn once clockwise, tap the centre (60 s) | Electrodes missing from "seen": that MPR121 pin or its electrode trace. "peak" under 2.0x: touches too weak for the thresholds (disc not flat on the board, air gap). Turn missing although you turned: set `CONFIG_SLAB_WHEEL_REVERSE`. |
@@ -164,9 +190,11 @@ Then the library loads, the screen shows the Harmony menu, and the player is vis
 | Tap next (right) or previous (left) | next or previous track |
 | Tap play/pause (bottom) | play or pause |
 | Side button, short | play or pause |
-| Side button, 1.5 s | deep sleep; the side button or a wheel touch wakes it |
+| Side button, 1.5 s | deep sleep; the side button or a wheel touch held about 1 s wakes it |
 
 The player also sleeps after 10 minutes without input while nothing plays (`CONFIG_SLAB_IDLE_SLEEP_MIN`), and Settings has a Sleep item. The display timeout from Mark-7 still turns the backlight off.
+
+Battery: on battery, when the cell stays at or below 3.45 V for 5 s, the player shows "Battery empty. Charge to wake.", saves and sleeps. A wake without USB below 3.5 V gives two short clicks and goes back to sleep: plug in USB, then press the side button.
 
 ## 4. Touch tuning
 
@@ -206,11 +234,11 @@ Change options with `bash build.sh menuconfig` in either project ("Harmony Mark-
 5. **After the first autoconfig**, the firmware writes 0x7B = 0x8A (autoconfig off) and resumes with ECR 0x09 (keep baselines). The start itself follows README item 4 exactly (0x7B = 0x8B, ECR 0x89). This lets the firmware stop the MPR121 to change thresholds or to read the gauge without new autoconfig runs or baseline jumps.
 6. **Other I2C traffic in quiet slots.** The fuel gauge read and haptic writes run right after an MPR121 read. If the wheel stays idle for 5 minutes, the gauge read runs with the MPR121 stopped; the 3-byte stop command itself is the only I2C transfer that is not timed to a scan.
 7. **Noise measurement by spaced polling.** The bring-up reads every 208 ms, which is (2 x SFI + 1) x ESI. The filters then never contain a scan that one of its own reads disturbed. The README asks for a noise log with nothing touching, when no IRQ fires, so this is the one place that polls. It also counts IRQ edges as false touches.
-8. **The 100 percent backlight case lasts about 3 s on USB** (12 samples) instead of 5. README Power note 3 keeps the duty at or below 80 percent on USB for R17; the brief asks for a no-edges case. 0.27 W for 3 s is inside the short-time overload rating of a 1206 thick-film resistor.
+8. **The 100 percent backlight case lasts about 3 s on USB** (12 samples) instead of 5. README Power note 3 keeps the duty at or below 80 percent on USB for R17; the brief asks for a no-edges case. With a 2.7 V panel on a 5.25 V port R17 takes up to about 0.5 W for those 3 s, inside the short-time overload rating of a 1206 thick-film resistor (review PERIPH-2).
 9. **Zone mapping.** HOME tap is BACK (Mark-7's Menu), HOME hold is back to the root (seven BACKs), centre is SELECT, left is previous, right is next, bottom is play/pause. Each zone is 40 degrees each side of its label, so taps at the diagonals do nothing. The side button plays and pauses on a short press and sleeps on a 1.5 s press. The Mark-6 UI code is unchanged.
 10. **Tap and hold.** A tap is at most 400 ms and 12 degrees of movement with no scroll step; 700 ms still is a hold. A touch that moves is never a tap or a hold.
-11. **Clicks.** 4 kHz, 50 percent, 1.5 ms per scroll step (up to three per read, 4 ms apart) and 5 ms per tap, started right after the read so they end before the next scan.
-12. **Backlight model.** LED current = (VSYS - 2.8 V) / 11.5 ohm, which gives 122 mA at 4.2 V and 165 mA at 4.7 V (README: about 120 and 170). Brightness 100 percent is the full current at a 3.7 V cell (78 mA); the default is 80 percent (62 mA). Duty = target / current, capped at 80 percent on USB and at 231 mW in R17. VSYS comes from the two ADC dividers.
+11. **Clicks.** 4 kHz, 50 percent, 1.5 ms per scroll step (up to three per read, 4 ms apart) and 5 ms per tap, started right after the read so they end before the next scan. Sustained tones (bring-up only) run at 25 percent and at most 60 s, because R18 is a 0.125 W part (review FP-5).
+12. **Backlight model.** LED current = (VSYS - 2.8 V) / 11.5 ohm, which gives 122 mA at 4.2 V and 165 mA at 4.7 V (README: about 120 and 170). Brightness 100 percent is the full current at a 3.7 V cell (78 mA); the default is 80 percent (62 mA). Duty = target / current, capped at 80 percent on USB and at 200 mW in R17. The R17 cap uses the worst case, (VSYS - 2.7 V) / 10 ohm, not the brightness model (review PERIPH-2); it lowers the duty only at high VSYS on USB (about 41 percent at VSYS 4.9 V). Brightness stops at 100 percent. VSYS comes from the two ADC dividers.
 13. **Battery percent** from the MAX17048 every 30 s (rounded, clamped to 100). The gauge is forced into hibernate in deep sleep and restored at boot.
 14. **Deep sleep**: touch wake on by default, with the MPR121 scanning every 64 ms in sleep. The board identity check accepts any slab board (package, 8 MB flash, 2 MB PSRAM); `CONFIG_SLAB_EXPECTED_MAC` can lock it to one board, as Mark-7 did.
 15. **Bring-up confirmations use the side button.** The screen picture, the beeps and an optional motor buzz need a person; the side button is tested first so it can answer.
@@ -218,7 +246,11 @@ Change options with `bash build.sh menuconfig` in either project ("Harmony Mark-
 17. **Player layout.** Six list rows (Mark-6's count), a larger now-playing page with a volume bar, the battery percent and icon in the status bar, wheel hints in the footer. Same palette and fonts as Mark-7.
 18. **I2C at 100 kHz.** 4.7k pull-ups with three parts may be outside the 400 kHz rise-time limit. A full wheel read (39 bytes) then takes about 4 ms of the 15 ms gap. It is a config value.
 19. **After a touch wake** the firmware waits, by IRQ edges, until the finger is off before it restarts the MPR121, so the new baselines are untouched ones.
-20. **Card clock range** stops at 26,666 kHz: above that IDF refuses full-duplex SPI on these pins.
+20. **Card clock range** stops at 20,000 kHz. IDF allows full-duplex SPI up to 26,666 kHz on these GPIO-matrix pins, but MISO then arrives too late for a reliable read (review ESP32-3). A failed mount retries once at 10 MHz.
+21. **Card power cycle by time, not by measurement.** After GPIO13 goes high, 3V3_PERIPH stays off at least 0.5 s (the hardware README gives about 0.4 s to fall below 0.5 V). The bring-up reads the rail through GPIO25 on ADC2, but the player runs Bluetooth, which blocks ADC2, so a fixed wait is the only method that works in both. After a reset that is not a power-on or a deep-sleep wake, the first switch-on waits too.
+22. **Low battery from VBAT_SENSE, not the gauge.** The divider is read every second; the gauge only every 30 s and only in a quiet slot. The ADC can read up to about 60 mV off, so the 3.45 V cutoff can come early by that much. The 3.5 V wake floor is a reading at light load. The brownout level 7 (2.80 V) is only the last guard.
+23. **Stuck side button.** Without a release the player arms no side-button wake: touch wake only, or a 60 s timer wake when touch wake is off, so a stuck button cannot cause a fast wake loop and the player still checks again.
+24. **Drive strength 1 on the card clock and MOSI.** Review L6 asks for 0 or 1. 1 (about 10 mA) keeps edges that 20 MHz still needs; 0 would be the next step if the touch noise table shows card reads.
 
 ## 6. Open risks
 
@@ -226,12 +258,13 @@ Change options with `bash build.sh menuconfig` in either project ("Harmony Mark-
 - **Touch noise is unknown until the board exists.** Seven switching nets run on L3 behind the electrodes (README "Touch-wheel re-route"). LCD_DC, SD_CS and BZ_GATE switch without regard to the scans; the noise table measures each one. I2C and the clicks are timed to the gaps.
 - **Scroll feel** with IRQ-only reads (about 16 updates per turn) is not tested by hand.
 - **Baselines after start** come from the 5 high bits of the data (CL = BVA = 10, as the README asks), so a baseline can start up to 31 counts low and the slow rising filter takes some seconds to settle. Touches right after boot may feel weaker.
-- **Sleep current is estimated, not measured.** MPR121: about 3 uA stopped; at a 64 ms scan about 10 uA (6 to 25 uA, scaled from the datasheet's 29 uA at 16 ms; FFI 18 raises it). Board total from the hardware README: 30 to 50 uA with the MPR121 stopped, plus the slow scan, plus 33 uA through R25 whenever a card is in the slot. ext0 keeps the RTC peripherals powered (a few uA). Measure it on battery with a meter in series.
+- **Sleep current is estimated, not measured.** MPR121: about 3 uA stopped; at a 64 ms scan about 10 uA (6 to 25 uA, scaled from the datasheet's 29 uA at 16 ms; FFI 18 raises it). Board total from the hardware README: 30 to 50 uA with the MPR121 stopped, plus the slow scan, plus 3.3 uA through R25 (1M) whenever a card is in the slot. ext0 keeps the RTC peripherals powered (a few uA). Measure it on battery with a meter in series.
 - **Card at 20 MHz** over 77 to 88 mm traces is not tested.
 - **Audio dropouts while scrolling**: the screen no longer shares a bus with the card, but library reads still share the card with the MP3 stream. The refill wait from Mark-7 is kept. Not measured with Bluetooth.
 - **Backlight model** is fitted to the two README points; LED forward voltage varies.
 - **DRV2605L** runs the ERM in open loop with the chip's default drive voltage (about 3 V). No auto-calibration.
-- **VBUS reading** sits near the top of the ADC range (5.25 V gives 3.15 V at the pin).
+- **VBUS reading**: revision A.2 gives 2.25 V at the pin for 5.25 V, inside the ADC range. GPIO36 has no filter capacitor, so a single conversion is noisy; the firmware averages 16.
+- **Battery cutoff** uses the divider reading, not measured against the real current draw yet. Check the 3.45 V point on the first board with a bench supply in place of the cell.
 
 ## 7. Shared Mark-6 files
 

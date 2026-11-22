@@ -62,7 +62,8 @@ static void draw_task(void *arg)
         player_ui_tick(now_ms);
         player_ui_update();
         if (now_ms - last_power_ms >= 1000) { player_power_poll(); last_power_ms = now_ms; }
-        if (player_ui_take_sleep_request() || slab_controls_take_sleep_request()) player_power_sleep();
+        if (player_ui_take_sleep_request() || slab_controls_take_sleep_request() || player_power_take_battery_empty())
+            player_power_sleep();
         /* Library reads share the card bus with the decoder: let it refill first. */
         if (audio_player_needs_refill()) { vTaskDelay(pdMS_TO_TICKS(20)); continue; }
         player_ui_view_t view = player_ui_view();

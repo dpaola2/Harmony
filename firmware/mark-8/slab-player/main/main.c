@@ -52,6 +52,7 @@ static void wheel_settings(wheel_config_t *c, const mpr121_settings_t *touch)
 void app_main(void)
 {
     if (slab_board_init() != ESP_OK) return;
+    player_power_boot_check();
     /* Preferences, Bluetooth bonds and the bring-up calibration share NVS; never erase it here. */
     esp_err_t ret = nvs_flash_init();
     if (ret != ESP_OK) ESP_LOGE(BT_AV_TAG, "NVS unavailable (%s); preferences cannot be saved", esp_err_to_name(ret));

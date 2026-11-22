@@ -32,6 +32,12 @@ int slab_periph_on(const slab_gpio_ops_t *ops)
     return ops->output(SLAB_PIN_SD_CS, 1);
 }
 
+unsigned slab_periph_drain_wait_ms(bool drained, unsigned ms_since_off)
+{
+    if (drained || ms_since_off >= SLAB_PERIPH_DRAIN_MS) return 0;
+    return SLAB_PERIPH_DRAIN_MS - ms_since_off;
+}
+
 int slab_periph_off(const slab_gpio_ops_t *ops)
 {
     int err = ops->output(SLAB_PIN_LCD_BL, 0);

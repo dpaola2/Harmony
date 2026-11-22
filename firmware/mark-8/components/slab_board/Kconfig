@@ -10,13 +10,15 @@ menu "Harmony Mark-8 slab board"
 
     config SLAB_LCD_SPI_HZ
         int "Screen SPI clock (Hz)"
-        range 1000000 80000000
+        range 1000000 40000000
         default 40000000
         help
             40 MHz sends a full 320 x 320 RGB565 frame in about 41 ms. The DLC
             sheet gives a 66 ns minimum write cycle (15 MHz); 40 MHz is common
-            practice for this controller family. Use 26666666 or 20000000 if
-            the bring-up picture shows noise.
+            practice for this controller family but is outside that sheet, and
+            so are 26666666 and 20000000. 13333333 is the in-spec fallback if
+            the bring-up picture shows noise (review FW-HW-3). The screen pins
+            go through the GPIO matrix, so 40 MHz is the most this bus can do.
 
     config SLAB_LCD_MADCTL
         hex "ST7365P MADCTL (0x36) value"
@@ -38,13 +40,14 @@ menu "Harmony Mark-8 slab board"
 
     config SLAB_SD_SPI_KHZ
         int "microSD SPI clock (kHz)"
-        range 400 26666
+        range 400 20000
         default 20000
         help
-            The card lines are 77 to 88 mm long. Start at 20 MHz and raise the
-            clock only after the bring-up reads stay clean. The card pins go
-            through the GPIO matrix, where IDF allows full-duplex SPI up to
-            about 26.7 MHz; 26666 is the only faster setting.
+            The card lines are 77 to 88 mm long and cross the touch wheel. The
+            card pins go through the GPIO matrix, so MISO arrives late: 20 MHz
+            is the read-timing limit (review ESP32-3, FW-HW-4). If a mount at
+            this clock fails, the firmware tries once more at 10 MHz. Set
+            10000 if the bring-up shows read errors.
 
     config SLAB_I2C_HZ
         int "I2C clock (Hz)"
@@ -70,8 +73,11 @@ menu "Harmony Mark-8 slab board"
 
     config SLAB_BL_BRIGHTNESS_PCT
         int "Backlight brightness (percent of the current at a 3.7 V cell)"
-        range 5 150
+        range 5 100
         default 80
+        help
+            The duty also has a cap from the worst-case R17 power (VF 2.7 V,
+            10 ohm, 200 mW) and at most 80 percent on USB (review PERIPH-2).
 
     config SLAB_TOUCH_THRESHOLD
         int "MPR121 touch threshold when nothing is saved"
@@ -167,8 +173,11 @@ menu "Harmony Mark-8 slab board"
 
     config SLAB_CLICK_HZ
         int "Buzzer click frequency (Hz)"
-        range 500 8000
+        range 3000 5000
         default 4000
+        help
+            Near the MLT-5020's 4 kHz resonance. Tones outside 3 to 5 kHz are
+            refused, because R18 overheats at low frequencies (review FP-5).
 
     config SLAB_CLICK_DUTY_PCT
         int "Buzzer click duty (percent, sets loudness)"

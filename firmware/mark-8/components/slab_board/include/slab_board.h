@@ -16,9 +16,13 @@ bool slab_board_ready(void);
 void slab_board_describe(char *out, size_t size);
 
 /* 3V3_PERIPH on or off through the back-power-safe sequence. The caller frees
- * both SPI buses before switching off. */
+ * both SPI buses before switching off. Switching on waits until the rail has
+ * been off SLAB_PERIPH_DRAIN_MS, so the card always gets a real power cycle. */
 esp_err_t slab_board_periph_power(bool on);
 bool slab_board_periph_powered(void);
+
+/* microSD card in the slot: SD_CD low on two reads about 5 ms apart. */
+bool slab_board_card_present(void);
 
 /* Before esp_deep_sleep_start: hold PERIPH_EN_N high (Q4 off), backlight and
  * buzzer gates low, every screen and card line an input. */

@@ -90,13 +90,23 @@ def check_pins():
     for part, key in (('MAX17048', 'MAX17048'), ('MPR121', 'MPR121'), ('DRV2605', 'DRV2605L')):
         line = next(l for l in spec.splitlines() if l.startswith('| U') and part in l)
         assert int(re.search(r'I2C (0x[0-9A-Fa-f]{2})', line)[1], 16) == addrs[key], (part, line)
+    # Dividers come from the board as built (hardware README pin map). Revision A.2 changed R30
+    # from SPEC's 150k to 75k (review BN-2); the README's "Changes from spec" table must say so.
     vbat = re.search(r'VBAT through (\d+) ?M / (\d+) ?M', spec)
-    vbus = re.search(r'VBUS through (\d+) ?k / (\d+) ?k', spec)
+    vbat_built = re.search(r'VBAT through (\d+) ?M R\d+ / (\d+) ?M', readme) or vbat
+    vbus = re.search(r'VBUS through (\d+) ?k R\d+ / (\d+) ?k R\d+', readme)
+    assert vbus, 'hardware README pin map: VBUS_SENSE row not found'
+    assert (vbat_built[1], vbat_built[2]) == (vbat[1], vbat[2]), (vbat_built[0], vbat[0])
+    spec_vbus = re.search(r'VBUS through (\d+) ?k / (\d+) ?k', spec)
+    if (spec_vbus[1], spec_vbus[2]) != (vbus[1], vbus[2]):
+        assert re.search(r'\| VBUS_SENSE "%s ?k / %s ?k" \(SPEC 5\.3\) \| %sk / %sk \|' % (spec_vbus[1], spec_vbus[2], vbus[1], vbus[2]),
+                         readme), 'VBUS divider differs from SPEC without a "Changes from spec" row'
     ratio = lambda top, bottom: round((top + bottom) / bottom * 1000)
     assert ratio(int(vbat[1]), int(vbat[2])) == int(re.search(r'SLAB_VBAT_DIVIDER_X1000 (\d+)', header)[1])
     assert ratio(int(vbus[1]), int(vbus[2])) == int(re.search(r'SLAB_VBUS_DIVIDER_X1000 (\d+)', header)[1])
     ok('pin map: all 20 slab_pins.h GPIOs match the hardware README "ESP32 pin map" and SPEC 5.3; every '
-       'peripheral net is covered; input-only pins carry inputs; I2C addresses and both dividers match SPEC')
+       'peripheral net is covered; input-only pins carry inputs; I2C addresses match SPEC; both dividers match '
+       'the board as built (VBUS 100k / 75k, a listed change from SPEC)')
 
 
 # ---------------------------------------------------------------- wheel geometry

@@ -15,3 +15,14 @@ unsigned slab_vsys_estimate_mv(unsigned vbus_mv, unsigned vbat_mv)
     unsigned from_diode = vbat_mv > SLAB_Q3_BODY_DIODE_MV ? vbat_mv - SLAB_Q3_BODY_DIODE_MV : 0;
     return from_usb > from_diode ? from_usb : from_diode;
 }
+
+slab_bat_state_t slab_bat_guard_poll(slab_bat_guard_t *g, unsigned vbat_mv, bool usb)
+{
+    g->low_polls = !usb && vbat_mv <= SLAB_BAT_CUTOFF_MV ? g->low_polls + 1 : 0;
+    g->reversed_polls = usb && vbat_mv < SLAB_BAT_REVERSED_MV ? g->reversed_polls + 1 : 0;
+    if (g->low_polls >= SLAB_BAT_CUTOFF_POLLS) return SLAB_BAT_EMPTY;
+    if (g->reversed_polls >= SLAB_BAT_REVERSED_POLLS) return SLAB_BAT_REVERSED;
+    return SLAB_BAT_OK;
+}
+
+bool slab_bat_wake_allowed(unsigned vbat_mv, bool usb) { return usb || vbat_mv >= SLAB_BAT_WAKE_MIN_MV; }

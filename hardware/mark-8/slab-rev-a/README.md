@@ -398,6 +398,8 @@ One row per finding of `review/2026-11-21-preorder-review.md`. "Fixed" means fix
 
 Changes 1 and 2 (and the test in `tests/test_power.c` that asserts the old divider) must be made before any firmware, the bring-up test included, runs on a revision A board (change review Q4-1).
 
+**Status, 2026-11-22:** changes 1 to 6 and the firmware items of change 7 are in `firmware/mark-8` (its README, "Changes on 22 November", has one row per item). Both projects build and the host tests pass. None of it has run on a board yet.
+
 ### Table
 
 | ID | Severity | Disposition | What was done, or why not now |

@@ -15,7 +15,7 @@ Work in this order. Each step links to the document that has the details.
 | 7 | Flash the bring-up test, then the player | [firmware README, section 2](../firmware/mark-8/README.md) |
 | 8 | Close the back plate | ASSEMBLY.md step 16 |
 
-The board README has a "Review dispositions, November 21" table. It lists the firmware changes and the bring-up checks that the pre-order review asked for.
+The board README has a "Review dispositions, November 21" table. It lists the firmware changes and the bring-up checks that the pre-order review asked for. The firmware changes are in since November 22 (firmware README, "Changes on 22 November"); the bring-up checks wait for the board.
 
 ## 1. Order the board
 

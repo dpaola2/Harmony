@@ -109,23 +109,35 @@ static void result(int id, uint8_t status, const char *fmt, ...)
 /* ---------------------------------------------------------------- side button */
 static bool button_down(void) { return gpio_get_level(SLAB_PIN_SIDE_BTN) == 0; }
 
-/* Waits for a press and release. Returns the press length in ms, or -1. */
+#define PRESS_NONE  (-1)     /* no press before the timeout */
+#define PRESS_STUCK (-2)     /* the line never went high, or a press reached PRESS_MAX_MS */
+#define PRESS_ARM_MS 100     /* the line must be high this long before a press counts */
+#define PRESS_MAX_MS 10000
+
+/* Waits for a press and release. Returns the press length in ms, PRESS_NONE or
+ * PRESS_STUCK. A stuck-low or case-pressed button must not pass the prompts
+ * (review FW-HW-2): the wait arms only after the line has been high for
+ * PRESS_ARM_MS, and a press that lasts PRESS_MAX_MS is a failure. */
 static int wait_press(unsigned timeout_ms)
 {
-    uint32_t start = now_ms();
-    while (button_down() && now_ms() - start < 3000) sleep_ms(10);   /* let go first */
+    uint32_t start = now_ms(), high_since = now_ms();
+    bool armed = false;
     while (now_ms() - start < timeout_ms) {
-        if (button_down()) {
+        if (!armed) {
+            if (button_down()) high_since = now_ms();
+            else if (now_ms() - high_since >= PRESS_ARM_MS) armed = true;
+        } else if (button_down()) {
             sleep_ms(30);
             if (!button_down()) continue;
             uint32_t t0 = now_ms() - 30;
-            while (button_down() && now_ms() - t0 < 10000) sleep_ms(10);
+            while (button_down() && now_ms() - t0 < PRESS_MAX_MS) sleep_ms(10);
+            if (button_down()) return PRESS_STUCK;
             sleep_ms(30);
             return (int)(now_ms() - t0);
         }
         sleep_ms(10);
     }
-    return -1;
+    return armed ? PRESS_NONE : PRESS_STUCK;
 }
 
 /* ---------------------------------------------------------------- 3V3_PERIPH through the SD_CS pull-up */
@@ -305,7 +317,7 @@ static int largest_file(const char *dir, int depth, char *best, size_t best_size
 static void test_card(void)
 {
     gpio_set_direction(SLAB_PIN_SD_CD, GPIO_MODE_INPUT);
-    if (gpio_get_level(SLAB_PIN_SD_CD) != 0) { result(BU_CARD, BU_FAIL, "no card: SD_CD high (insert a card)"); return; }
+    if (!slab_board_card_present()) { result(BU_CARD, BU_FAIL, "no card: SD_CD high (insert a card)"); return; }
     esp_err_t err = bench_storage_mount();
     sdmmc_card_t *card = bench_storage_card();
     if (err != ESP_OK || !card) { result(BU_CARD, BU_FAIL, "card detected, mount failed: %s", esp_err_to_name(err)); return; }
@@ -341,7 +353,7 @@ static void test_card(void)
            card->ocr & (1u << 30) ? "SDHC/SDXC" : "SDSC", mb, raw_kbs, path[0] ? path : "(none)", got, file_kbs, errors);
     card_ok = errors == 0;
     result(BU_CARD, errors == 0 && raw_kbs >= 500 ? BU_PASS : BU_FAIL, "%u MB, %d MHz, raw %u KB/s, file %u KB/s, %u err",
-           (unsigned)mb, CONFIG_SLAB_SD_SPI_KHZ / 1000, raw_kbs, file_kbs, errors);
+           (unsigned)mb, (int)(bench_storage_khz() / 1000), raw_kbs, file_kbs, errors);
 }
 
 /* ---------------------------------------------------------------- noise table */
@@ -480,7 +492,8 @@ static void test_button_and_screen(void)
     else show_results("BUTTON: press the side button once now.");
     printf("BRINGUP prompt: press the side button\n");
     int ms = wait_press(CONFIG_SLAB_PROMPT_SECONDS * 1000u);
-    result(BU_BUTTON, ms > 0 ? BU_PASS : BU_FAIL, ms > 0 ? "pressed for %d ms" : "no press in %d s", ms > 0 ? ms : CONFIG_SLAB_PROMPT_SECONDS);
+    if (ms == PRESS_STUCK) result(BU_BUTTON, BU_FAIL, "stuck low: line never released or held 10 s (SW1, R26, or the case pressing it)");
+    else result(BU_BUTTON, ms > 0 ? BU_PASS : BU_FAIL, ms > 0 ? "pressed for %d ms" : "no press in %d s", ms > 0 ? ms : CONFIG_SLAB_PROMPT_SECONDS);
     if (!screen_ok) return;
     if (ms <= 0) { result(BU_SCREEN, BU_SKIP, "init ok; orientation not confirmed (no button)"); return; }
     bu_render_bars(fb, "Arrow at the top edge, bars RED GREEN BLUE WHITE? Press for yes; wait 15 s for no.");

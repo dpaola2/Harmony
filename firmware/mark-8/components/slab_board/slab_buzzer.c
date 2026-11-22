@@ -95,11 +95,22 @@ void slab_buzzer_click(unsigned duration_us) { slab_buzzer_clicks(1, duration_us
 esp_err_t slab_buzzer_tone(unsigned hz, unsigned duty_pct)
 {
     if (!lock) return ESP_ERR_INVALID_STATE;
+    bool stop_only = !hz || !duty_pct;
+    if (!stop_only && (hz < SLAB_TONE_MIN_HZ || hz > SLAB_TONE_MAX_HZ)) {
+        slab_buzzer_tone(0, 0);
+        return ESP_ERR_INVALID_ARG;
+    }
+    if (duty_pct > SLAB_TONE_MAX_DUTY_PCT) duty_pct = SLAB_TONE_MAX_DUTY_PCT;
     xSemaphoreTake(lock, portMAX_DELAY);
     if (stop_timer) esp_timer_stop(stop_timer);
     clicks_left = 0;
     click_on = false;
-    esp_err_t err = set(hz, duty_pct);
+    esp_err_t err = set(stop_only ? 0 : hz, stop_only ? 0 : duty_pct);
+    /* The click sequencer's stop path ends the tone after SLAB_TONE_MAX_MS. */
+    if (err == ESP_OK && !stop_only && stop_timer) {
+        click_on = true;
+        esp_timer_start_once(stop_timer, (uint64_t)SLAB_TONE_MAX_MS * 1000u);
+    }
     xSemaphoreGive(lock);
     return err;
 }

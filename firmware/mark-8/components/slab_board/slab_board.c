@@ -14,6 +14,7 @@
 #include "esp_psram.h"
 #include "esp_system.h"
 #include "esp_sleep.h"
+#include "esp_timer.h"
 #include "soc/efuse_defs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -24,6 +25,9 @@
 
 static const char *TAG = "SLAB";
 static bool ready, periph_on;
+/* When 3V3_PERIPH last went off, for the card's power cycle (review CC-2). */
+static bool periph_drained = true;
+static int64_t periph_off_us;
 
 static int idf_output(int gpio, int level)
 {
@@ -110,6 +114,13 @@ esp_err_t slab_board_init(void)
     for (unsigned i = 0; err == ESP_OK && i < 3; ++i) err = idf_input(inputs[i]);
     if (err != ESP_OK) return err;
     periph_on = false;
+    /* Q4 turns off at every chip reset (up to about 20 ms after reset release).
+     * After a power-on or a deep sleep the rail has long been off. After any
+     * other reset (software, watchdog, panic, brownout) it may have been on a
+     * moment ago, so the card gets the full drain time before it comes back. */
+    esp_reset_reason_t why = esp_reset_reason();
+    periph_drained = why == ESP_RST_POWERON || why == ESP_RST_DEEPSLEEP;
+    periph_off_us = esp_timer_get_time();
     ready = true;
     char line[160];
     slab_board_describe(line, sizeof(line));
@@ -120,10 +131,31 @@ esp_err_t slab_board_init(void)
 esp_err_t slab_board_periph_power(bool on)
 {
     if (!ready) return ESP_ERR_INVALID_STATE;
+    if (on && !periph_on) {
+        int64_t since_us = esp_timer_get_time() - periph_off_us;
+        unsigned since_ms = since_us > 60000000 ? 60000u : (unsigned)(since_us / 1000);
+        unsigned wait = slab_periph_drain_wait_ms(periph_drained, since_ms);
+        if (wait) {
+            ESP_LOGI(TAG, "3V3_PERIPH off %u ms ago: waiting %u ms so the card gets a full power cycle", since_ms, wait);
+            vTaskDelay(pdMS_TO_TICKS(wait));
+        }
+    }
     esp_err_t err = on ? slab_periph_on(&idf_ops) : slab_periph_off(&idf_ops);
-    if (err == ESP_OK) periph_on = on;
+    if (err == ESP_OK) {
+        if (!on && periph_on) { periph_off_us = esp_timer_get_time(); periph_drained = false; }
+        periph_on = on;
+    }
     ESP_LOGI(TAG, "3V3_PERIPH %s: %s", on ? "on" : "off", esp_err_to_name(err));
     return err;
+}
+
+bool slab_board_card_present(void)
+{
+    /* R25 is 1M (revision A.2), so the line is easy to disturb: act only on two
+     * low readings a few milliseconds apart (hardware README firmware note 4). */
+    if (gpio_get_level(SLAB_PIN_SD_CD) != 0) return false;
+    vTaskDelay(pdMS_TO_TICKS(5));
+    return gpio_get_level(SLAB_PIN_SD_CD) == 0;
 }
 
 void slab_board_prepare_deep_sleep(void)

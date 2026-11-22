@@ -87,7 +87,16 @@ static void test_sequence(void)
         SLAB_PIN_LCD_TE, SLAB_PIN_SD_SCK, SLAB_PIN_SD_MOSI, SLAB_PIN_SD_MISO, SLAB_PIN_SD_CS};
     for (unsigned i = 0; i < sizeof(expect) / sizeof(expect[0]); ++i) assert(is_line(expect[i]));
     assert(slab_periph_line_count == 10);
-    puts("PASS 3V3_PERIPH sequence: lines low or input before every switch, nothing high into the dead rail, CS only low, ramp wait, failures stop early");
+    /* Revision A.2 Q4 network: 90 percent at 3.3 to 10.1 ms, so the wait is at least 10.1 ms plus margin. */
+    assert(SLAB_PERIPH_RAMP_MS >= 20);
+    /* Card power cycle (review CC-2): the rail drains for about 0.4 s before it may come back. */
+    assert(SLAB_PERIPH_DRAIN_MS >= 400);
+    assert(slab_periph_drain_wait_ms(true, 0) == 0);
+    assert(slab_periph_drain_wait_ms(false, 0) == SLAB_PERIPH_DRAIN_MS);
+    assert(slab_periph_drain_wait_ms(false, 120) == SLAB_PERIPH_DRAIN_MS - 120);
+    assert(slab_periph_drain_wait_ms(false, SLAB_PERIPH_DRAIN_MS) == 0);
+    assert(slab_periph_drain_wait_ms(false, 60000) == 0);
+    puts("PASS 3V3_PERIPH sequence: lines low or input before every switch, nothing high into the dead rail, CS only low, 20 ms ramp wait, 0.5 s drain before the rail returns, failures stop early");
 }
 
 static void test_backlight(void)
@@ -96,6 +105,10 @@ static void test_backlight(void)
     unsigned bat = slab_bl_full_ma(4200), usb = slab_bl_full_ma(4700);
     assert(bat >= 115 && bat <= 125 && usb >= 160 && usb <= 175);
     assert(slab_bl_full_ma(2800) == 0 && slab_bl_full_ma(2000) == 0);
+    /* Worst case for the R17 cap (review PERIPH-2): VF 2.7 V, 10 ohm, about 224 mA at 4.95 V. */
+    assert(slab_bl_worst_ma(4950) >= 224 && slab_bl_worst_ma(4950) <= 226);
+    assert(slab_bl_worst_ma(2700) == 0);
+    for (unsigned v = 2900; v <= 5400; v += 10) assert(slab_bl_worst_ma(v) >= slab_bl_full_ma(v));
     slab_bl_plan_t p = slab_bl_plan(100, 3700, false);
     assert(p.duty_permille >= 995 && !p.limited);
     p = slab_bl_plan(80, 4200, false);
@@ -103,14 +116,21 @@ static void test_backlight(void)
     /* Same brightness on battery and on USB: same average current, lower duty on USB. */
     slab_bl_plan_t b = slab_bl_plan(80, 3900, false), u = slab_bl_plan(80, 4650, true);
     assert(u.duty_permille < b.duty_permille && (int)u.avg_ma - (int)b.avg_ma <= 1 && (int)b.avg_ma - (int)u.avg_ma <= 1);
+    assert(!b.limited && !u.limited);
     /* Low cell: cannot reach the target, runs at full duty. */
     p = slab_bl_plan(100, 3400, false);
     assert(p.duty_permille == 1000 && p.limited && p.avg_ma == slab_bl_full_ma(3400));
-    /* USB cap (README: at or below 80 percent) and the R17 power cap at high VBUS. */
-    p = slab_bl_plan(250, 4700, true);
-    assert(p.duty_permille == SLAB_BL_USB_MAX_PERMILLE && p.limited);
-    p = slab_bl_plan(250, 4900, true);
-    assert(p.duty_permille < SLAB_BL_USB_MAX_PERMILLE && p.r17_mw <= SLAB_BL_P_MAX_MW + 1 && p.limited);
+    /* Brightness stops at 100 percent. */
+    for (unsigned v = 3000; v <= 5400; v += 50) {
+        slab_bl_plan_t a = slab_bl_plan(100, v, v > 4300), c = slab_bl_plan(250, v, v > 4300);
+        assert(a.duty_permille == c.duty_permille && a.avg_ma == c.avg_ma);
+    }
+    /* The R17 power cap bites at high VSYS: a 5.25 V port through D1 with a 2.7 V panel. */
+    p = slab_bl_plan(100, 4900, true);
+    assert(p.limited && p.duty_permille <= 420 && p.r17_mw <= SLAB_BL_P_MAX_MW);
+    /* The USB 80 percent cap bites when VSYS is low on USB. */
+    p = slab_bl_plan(100, 3900, true);
+    assert(p.limited && p.duty_permille == SLAB_BL_USB_MAX_PERMILLE);
     assert(slab_bl_plan(0, 4200, false).duty_permille == 0);
     for (unsigned v = 2500; v <= 5400; v += 10)
         for (unsigned pct = 0; pct <= 250; pct += 5)
@@ -118,12 +138,17 @@ static void test_backlight(void)
                 slab_bl_plan_t q = slab_bl_plan(pct, v, usbp);
                 assert(q.duty_permille <= 1000);
                 if (usbp) assert(q.duty_permille <= SLAB_BL_USB_MAX_PERMILLE);
-                assert(q.r17_mw <= SLAB_BL_P_MAX_MW + 1);
+                /* Worst-case R17 power, recomputed here from the panel's minimum VF. */
+                unsigned long w = v > 2700 ? (v - 2700 + 9) / 10 : 0;
+                assert(w * w * 10 / 1000 * q.duty_permille / 1000 <= SLAB_BL_P_MAX_MW);
+                assert(q.r17_mw <= SLAB_BL_P_MAX_MW);
                 if (pct && slab_bl_full_ma(v)) assert(q.duty_permille >= SLAB_BL_MIN_PERMILLE);
             }
-    printf("BACKLIGHT full 4.2V=%u mA, full 4.7V=%u mA, 80%% at 3.9V duty=%u avg=%u mA, on USB 4.65V duty=%u avg=%u mA\n",
-           bat, usb, b.duty_permille, b.avg_ma, u.duty_permille, u.avg_ma);
-    puts("PASS VSYS backlight compensation: README currents, constant average current, USB 80 percent cap, R17 power cap");
+    printf("BACKLIGHT full 4.2V=%u mA, full 4.7V=%u mA, 80%% at 3.9V duty=%u avg=%u mA, on USB 4.65V duty=%u avg=%u mA, "
+           "100%% at 4.9V USB duty=%u (R17 %u mW worst case)\n",
+           bat, usb, b.duty_permille, b.avg_ma, u.duty_permille, u.avg_ma,
+           slab_bl_plan(100, 4900, true).duty_permille, slab_bl_plan(100, 4900, true).r17_mw);
+    puts("PASS VSYS backlight compensation: README currents, constant average current, brightness at most 100 percent, USB 80 percent cap, R17 cap from VF 2.7 V and 10 ohm");
 }
 
 static void test_battery(void)
@@ -138,14 +163,34 @@ static void test_battery(void)
     max17048_reading_t r;
     max17048_parse((uint8_t[]){0xC5, 0x00}, (uint8_t[]){0x3A, 0xC0}, (uint8_t[]){0xFF, 0xF6}, 0x0012, &r);
     assert(r.vcell_mv == 3940 && r.percent == 59 && r.soc_x256 == 0x3AC0 && r.crate_pct_x1000 == -2080 && r.version == 0x12);
-    /* Dividers: VBAT 1M/1M, VBUS 100k/150k. */
+    /* Dividers: VBAT 1M/1M, VBUS 100k/75k (revision A.2): 5.0 V is 2.14 V and 5.25 V is 2.25 V at the pin. */
+    assert(SLAB_VBUS_DIVIDER_X1000 == 2333);
     assert(slab_divider_mv(2000, SLAB_VBAT_DIVIDER_X1000) == 4000);
-    assert(slab_divider_mv(3000, SLAB_VBUS_DIVIDER_X1000) == 5001);
+    assert(slab_divider_mv(2143, SLAB_VBUS_DIVIDER_X1000) == 5000);
+    assert(slab_divider_mv(2250, SLAB_VBUS_DIVIDER_X1000) == 5249);
+    assert(slab_divider_mv(1843, SLAB_VBUS_DIVIDER_X1000) >= SLAB_VBUS_PRESENT_MV);   /* README: 4.3 V is 1.84 V */
+    assert(slab_divider_mv(1842, SLAB_VBUS_DIVIDER_X1000) < SLAB_VBUS_PRESENT_MV);
     assert(slab_vbus_present(4300) && !slab_vbus_present(4299) && !slab_vbus_present(0));
     assert(slab_vsys_estimate_mv(0, 3900) == 3900);
     assert(slab_vsys_estimate_mv(5000, 4200) == 4650);
     assert(slab_vsys_estimate_mv(4400, 4200) == 4050);    /* weak USB: VBUS minus D1 still wins */
-    puts("PASS battery: MAX17048 VCELL, SOC rounding and clamp, CRATE sign, version; dividers; VSYS estimate");
+    /* Low-battery cutoff (review PWR-6): 5 readings in a row at or below 3.45 V on battery. */
+    slab_bat_guard_t g = {0};
+    for (int i = 0; i < SLAB_BAT_CUTOFF_POLLS - 1; ++i) assert(slab_bat_guard_poll(&g, 3450, false) == SLAB_BAT_OK);
+    assert(slab_bat_guard_poll(&g, 3451, false) == SLAB_BAT_OK);           /* one good reading restarts the count */
+    for (int i = 0; i < SLAB_BAT_CUTOFF_POLLS - 1; ++i) assert(slab_bat_guard_poll(&g, 3300, false) == SLAB_BAT_OK);
+    assert(slab_bat_guard_poll(&g, 3300, false) == SLAB_BAT_EMPTY);
+    assert(slab_bat_guard_poll(&g, 3300, false) == SLAB_BAT_EMPTY);        /* stays tripped while low */
+    memset(&g, 0, sizeof(g));
+    for (int i = 0; i < 100; ++i) assert(slab_bat_guard_poll(&g, 3300, true) == SLAB_BAT_OK);   /* never on USB */
+    /* Reversed pack on USB (review PWR-2): VBAT_SENSE under 2 V for 10 s. */
+    memset(&g, 0, sizeof(g));
+    for (int i = 0; i < SLAB_BAT_REVERSED_POLLS - 1; ++i) assert(slab_bat_guard_poll(&g, 0, true) == SLAB_BAT_OK);
+    assert(slab_bat_guard_poll(&g, 0, true) == SLAB_BAT_REVERSED);
+    assert(slab_bat_guard_poll(&g, 4100, true) == SLAB_BAT_OK);
+    assert(slab_bat_wake_allowed(3500, false) && !slab_bat_wake_allowed(3499, false) && slab_bat_wake_allowed(3000, true));
+    puts("PASS battery: MAX17048 VCELL, SOC rounding and clamp, CRATE sign, version; dividers (VBUS 100k/75k); VSYS estimate; "
+         "3.45 V cutoff after 5 s on battery only; 3.5 V wake floor without USB; reversed-pack notice on USB");
 }
 
 static void test_identity(void)

@@ -22,3 +22,7 @@ CONFIG_FATFS_API_ENCODING_UTF_8=y
 # The ESP32-PICO-V3-02 inside the module is an ECO V3 chip (bench boots report v3.1). Rev 3
 # drops the PSRAM cache workaround and frees IRAM.
 CONFIG_ESP32_REV_MIN_3=y
+# Brownout at 2.80 V, the highest level below the 3.0 V minimum (review PWR-6). The
+# player also saves and sleeps at 3.45 V under load, so this is the last resort.
+CONFIG_ESP_BROWNOUT_DET=y
+CONFIG_ESP_BROWNOUT_DET_LVL_SEL_7=y
